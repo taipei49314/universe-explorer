@@ -1,0 +1,65 @@
+{
+  "10.1126/science.203.4385.1073": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.203.4385.1073",
+    "retrieved_at": "2026-07-10T13:09:43Z",
+    "cache_file": "10-1126_science-203-4385-1073.json",
+    "sha256": "ea606176aaa209e8407c962c62e5598ddc1b4354ea7b44502469e322475f30f0",
+    "title": "Submarine Thermal Springs on the Galápagos Rift",
+    "container": "Science",
+    "issued": 1979
+  },
+  "10.1126/science.207.4438.1421": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.207.4438.1421",
+    "retrieved_at": "2026-07-10T13:09:45Z",
+    "cache_file": "10-1126_science-207-4438-1421.json",
+    "sha256": "b8a4ca70b65c3e56b3e3a6c9b002582f41b58cd83b4ba48ec7d5dc3de4f1c79d",
+    "title": "East Pacific Rise: Hot Springs and Geophysical Experiments",
+    "container": "Science",
+    "issued": 1980
+  },
+  "10.1038/s41586-018-0006-5": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2Fs41586-018-0006-5",
+    "retrieved_at": "2026-07-10T13:09:47Z",
+    "cache_file": "10-1038_s41586-018-0006-5.json",
+    "sha256": "a1151dd971ad3017ada6d3b8e45d706f038f983cb0d16537e2e31dfb7d1388a3",
+    "title": "Observed fingerprint of a weakening Atlantic Ocean overturning circulation",
+    "container": "Nature",
+    "issued": 2018
+  },
+  "10.5194/os-17-285-2021": {
+    "endpoint": "https://api.crossref.org/works/10.5194%2Fos-17-285-2021",
+    "retrieved_at": "2026-07-10T13:09:49Z",
+    "cache_file": "10-5194_os-17-285-2021.json",
+    "sha256": "7b64ae3a8ecc2449d025a054a9b82f1e953b9e591e27cb7606161d005e71bf58",
+    "title": "A 30-year reconstruction of the Atlantic meridional overturning circulation shows no decline",
+    "container": "Ocean Science",
+    "issued": 2021
+  },
+  "10.1016/j.cub.2023.04.052": {
+    "endpoint": "https://api.crossref.org/works/10.1016%2Fj.cub.2023.04.052",
+    "retrieved_at": "2026-07-10T13:09:51Z",
+    "cache_file": "10-1016_j-cub-2023-04-052.json",
+    "sha256": "5d0d5a21748fd76d30cbbe737b016f1a63fd895973cc4253efc50d3ac48ba7fc",
+    "title": "How many metazoan species live in the world’s largest mineral exploration region?",
+    "container": "Current Biology",
+    "issued": 2023
+  },
+  "10.1038/s41561-024-01480-8": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2Fs41561-024-01480-8",
+    "retrieved_at": "2026-07-10T13:09:53Z",
+    "cache_file": "10-1038_s41561-024-01480-8.json",
+    "sha256": "9c509673aa1b3e9d5f645f2b3d7837eaac532ba6200367609fef815da3448cd2",
+    "title": "Evidence of dark oxygen production at the abyssal seafloor",
+    "container": "Nature Geoscience",
+    "issued": 2024
+  },
+  "10.3389/fmars.2025.1721853": {
+    "endpoint": "https://api.crossref.org/works/10.3389%2Ffmars.2025.1721853",
+    "retrieved_at": "2026-07-10T13:09:54Z",
+    "cache_file": "10-3389_fmars-2025-1721853.json",
+    "sha256": "2517275c591bae79812467b5264b56080549f338d2ecb108410f3841189fc3ac",
+    "title": "Extraordinary claims require extraordinary evidence: evaluating nodule-associated dark oxygen production",
+    "container": "Frontiers in Marine Science",
+    "issued": 2025
+  }
+}

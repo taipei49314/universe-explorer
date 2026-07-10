@@ -86,6 +86,9 @@ def test_amendment5_every_rule_has_a_law():
         # P1 (provenance.py)
         "arxiv_source_unfetched", "provenance_cache_missing",
         "provenance_hash_mismatch", "provenance_id_mismatch",
+        # Amendment #6 (provenance.py, DOI)
+        "doi_source_unfetched", "doi_cache_missing",
+        "doi_hash_mismatch", "doi_id_mismatch",
         # P3 (watch.py)
         "undocumented_status_change",
     }

@@ -24,6 +24,7 @@ SUITES = [
     "test_tiers.py",          # C1/Amendment #3 source credibility tiers
     "test_llm_proposals.py",  # B2 the LLM drafter locked in its cell (offline)
     "test_explore.py",        # D2 anchors, explore page, claims.json export
+    "test_crossref.py",       # C2/Amendment #6 DOI cite=>fetch rules bite
 ]
 
 

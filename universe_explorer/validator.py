@@ -86,6 +86,11 @@ LAWS = {
     "provenance_id_mismatch": "p1-spec §1",
     # P3 change constitution
     "undocumented_status_change": "p3-spec §0 (no silent changes)",
+    # Amendment #6: DOI sources have an endpoint too (Crossref)
+    "doi_source_unfetched": "amendment-6 (cite => fetch)",
+    "doi_cache_missing": "amendment-6",
+    "doi_hash_mismatch": "amendment-6",
+    "doi_id_mismatch": "amendment-6",
 }
 
 
