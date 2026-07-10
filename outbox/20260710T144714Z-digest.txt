@@ -1,0 +1,5 @@
+UNIVERSE EXPLORER — change digest
+(mechanical restatement of recorded state changes; every line names its event file, which carries the derivation back to the evidence)
+
+== 20260710T144714Z  (20260710T144714Z-events.json)
+  * trappist1_inner_planets_airless: new claim recorded — status FRONTIER, evidence axis E1

@@ -472,6 +472,31 @@ CLAIMS = {
             "M 型矮星活動如何剝離或保存次生大氣,是活躍的建模前沿。",
         ],
     },
+    "trappist1_inner_planets_airless": {
+        "title": "TRAPPIST-1 最內側的兩顆行星缺乏厚大氣",
+        "reasons": {
+            "new_discovery":
+                "對地球大小溫帶行星的熱輻射測量,直到 JWST 才成為可能;"
+                "這是該系統最早的兩筆此類結果。",
+            "insufficient_sample":
+                "每顆行星的結論都建立在單一測光波段的少數幾次掩星上。",
+            "rapidly_growing_literature":
+                "針對 TRAPPIST-1 的 JWST 計畫持續快速產出後續論文。",
+        },
+        "evidence": [
+            "JWST/MIRI 在 15 微米對 TRAPPIST-1 b 的次掩星測光,以高置信度"
+            "偵測到行星日側熱輻射,符合幾乎無大氣重新分配熱量、"
+            "且無可偵測 CO2 吸收的情形。",
+            "同一技術應用於 TRAPPIST-1 c,測得約 380 K 的日側亮溫 —— "
+            "足夠熱,使該行星也不利於擁有厚的富 CO2 大氣。",
+        ],
+        "open_questions": [
+            "單一波段測光無法完全排除稀薄或特殊組成的大氣。",
+            "較冷的外側行星(d 至 h)是否保有大氣,是該系統的開放前沿。",
+            "兩顆無大氣的內側岩石行星,對活躍 M 矮星周圍的揮發物輸送與"
+            "逃逸意味著什麼?",
+        ],
+    },
     "k2_18b_biosignature": {
         "title": "K2-18 b 的大氣帶有生物訊號(DMS)",
         "reasons": {

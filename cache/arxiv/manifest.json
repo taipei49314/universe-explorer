@@ -1995,5 +1995,34 @@
       "A. Zanutta",
       "F. Zerbi"
     ]
+  },
+  "2306.10150": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=2306.10150&max_results=1",
+    "retrieved_at": "2026-07-10T14:45:12Z",
+    "cache_file": "2306.10150.xml",
+    "sha256": "0e1404eccd3a1ec5738f6e546bb1491ef587245667042ed9d9f0cd26eab8eb07",
+    "title": "No thick carbon dioxide atmosphere on the rocky exoplanet TRAPPIST-1 c",
+    "published": "2023-06-16T19:39:44Z",
+    "authors": [
+      "Sebastian Zieba",
+      "Laura Kreidberg",
+      "Elsa Ducrot",
+      "Michaël Gillon",
+      "Caroline Morley",
+      "Laura Schaefer",
+      "Patrick Tamburo",
+      "Daniel D. B. Koll",
+      "Xintong Lyu",
+      "Lorena Acuña",
+      "Eric Agol",
+      "Aishwarya R. Iyer",
+      "Renyu Hu",
+      "Andrew P. Lincowski",
+      "Victoria S. Meadows",
+      "Franck Selsis",
+      "Emeline Bolmont",
+      "Avi M. Mandell",
+      "Gabrielle Suissa"
+    ]
   }
 }

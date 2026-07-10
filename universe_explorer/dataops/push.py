@@ -38,6 +38,7 @@ _KIND_TEXT = {
     "evidence_items_changed": "evidence count changed",
     "sources_changed": "source count changed",
     "diverges_changed": "axis divergence changed",
+    "source_update_found": "cited source has formal update records",
 }
 
 

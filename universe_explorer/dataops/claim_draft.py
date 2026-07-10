@@ -134,6 +134,58 @@ def build_prompt(claim_id: str, sources: List[Dict[str, str]],
     )
 
 
+def build_evidence_prompt(source: Dict[str, str]) -> str:
+    """V4-4 stepwise drafting: one small call per source. A 7B model that
+    cannot keep one-evidence-per-source across a big prompt handles a single
+    source perfectly well."""
+    return (
+        "Restate ONE fetched scientific record as ONE evidence item.\n"
+        f"SOURCE label: {source['label']}\n"
+        f"TITLE: {source['title']}\n"
+        f"ABSTRACT: {source['abstract']}\n\n"
+        f"Allowed types: {sorted(EVIDENCE_TYPE_VOCAB)}\n"
+        "Rules: description restates the abstract only; no invented numbers "
+        "(a percentage only if verbatim in the abstract); source_ref must be "
+        f"exactly {source['label']!r}.\n"
+        'Answer ONLY JSON: {"type": "...", "description": "...", '
+        '"source_ref": "..."}\n'
+    )
+
+
+def build_meta_prompt(claim_id: str, evidence: List[Dict],
+                      target_status: str) -> str:
+    """Stepwise step 2: with evidence already drafted per source, ask only for
+    the claim-level fields."""
+    human_conds = {
+        st.name: [c for c in spec["conditions"] if c not in MACHINE_CONDITIONS]
+        for st, spec in STATUS_CONDITIONS.items()
+    }
+    target_line = (
+        f"suggested_status MUST be exactly {target_status!r} (chosen by the "
+        f"human operator); draft a note for EVERY human condition of that "
+        f"status — a note may honestly say holds: false.\n"
+        if target_status else
+        "pick the most defensible suggested_status and draft a note for "
+        "EVERY human condition of that status.\n")
+    return (
+        "You draft claim-level fields for HUMAN review, based ONLY on the "
+        "already-drafted evidence below.\n"
+        f"CLAIM ID: {claim_id}\n"
+        f"EVIDENCE (already drafted, do not change): "
+        f"{json.dumps(evidence, ensure_ascii=False)}\n"
+        f"STATUSES and their HUMAN conditions: {json.dumps(human_conds)}\n\n"
+        "Rules:\n"
+        "1. title: a claim STATEMENT (what the evidence shows), never a "
+        "paper's name.\n"
+        f"2. {target_line}"
+        "3. open_questions: questions the evidence leaves open. No "
+        "percentages, no confidence-as-number phrasing anywhere.\n"
+        'Answer ONLY JSON: {"title": "...", "suggested_status": "...", '
+        '"human_condition_notes": {"<condition>": {"holds": true, '
+        '"note": "..."}}, "open_questions": ["..."]}\n'
+    )
+
+
 def call_model(prompt: str, model: str = DEFAULT_MODEL,
                timeout: int = 300) -> str:
     req = urllib.request.Request(
@@ -304,11 +356,24 @@ def main(argv: List[str]) -> int:
 
     sources = fetch_and_read_sources(ids)
     try:
-        raw = call_model(build_prompt(claim_id, sources, target_status))
+        if len(sources) > 1:
+            # V4-4 stepwise path: one small call per source for its evidence
+            # item (a 7B model handles a single source reliably), then one
+            # call for the claim-level fields. Same courts afterwards.
+            evidence = []
+            for s in sources:
+                ev = parse_json_object(call_model(build_evidence_prompt(s)))
+                ev["source_ref"] = s["label"]  # enforced, not trusted
+                evidence.append(ev)
+            d = parse_json_object(call_model(
+                build_meta_prompt(claim_id, evidence, target_status)))
+            d["evidence"] = evidence
+        else:
+            raw = call_model(build_prompt(claim_id, sources, target_status))
+            d = parse_json_object(raw)
         # completion loop (engineering, not law): a small model often misses a
-        # human-condition note; ask ONCE for exactly the missing ones, merge,
+        # human-condition note; ask for exactly the missing ones, merge,
         # then face the unchanged courts.
-        d = parse_json_object(raw)
         normalize_notes(d)
         for _round in range(3):
             missing = missing_human_conditions(d)

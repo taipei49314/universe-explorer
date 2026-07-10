@@ -1,5 +1,5 @@
 {
-  "committed_at": "2026-07-10T14:29:04Z",
+  "committed_at": "2026-07-10T14:47:14Z",
   "claims": {
     "event_horizon_exists": {
       "status": "ESTABLISHED",
@@ -164,6 +164,17 @@
       "derivation": [
         "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
         "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    "trappist1_inner_planets_airless": {
+      "status": "FRONTIER",
+      "evidence_axis": "E1",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
       ]
     },
     "k2_18b_biosignature": {

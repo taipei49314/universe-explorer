@@ -49,6 +49,30 @@ def test_findings_carry_zero_interpretation():
     assert set(F1) <= allowed
 
 
+# --- V4-3: arXiv version watch ------------------------------------------------
+
+def test_entry_version_parsing():
+    from universe_explorer.dataops.source_health import _entry_version
+    xml = ('<feed xmlns="http://www.w3.org/2005/Atom"><entry>'
+           '<id>http://arxiv.org/abs/2111.03606v4</id></entry></feed>')
+    assert _entry_version(xml) == 4
+    xml_nov = ('<feed xmlns="http://www.w3.org/2005/Atom"><entry>'
+               '<id>http://arxiv.org/abs/2111.03606</id></entry></feed>')
+    assert _entry_version(xml_nov) == 0
+
+
+def test_arxiv_version_finding_uses_same_ack_mechanism():
+    f = {"source_doi": "arXiv:2111.03606",
+         "updating_doi": "arXiv:2111.03606v5",
+         "update_types": ["new_arxiv_version"],
+         "title": "cached v4 -> latest v5", "issued": [None]}
+    assert new_findings([f], set()) == [f]
+    assert new_findings([f], {"arXiv:2111.03606v5"}) == []
+    # a later v6 is a NEW finding even after v5 was acknowledged
+    f6 = dict(f, updating_doi="arXiv:2111.03606v6")
+    assert new_findings([f6], {"arXiv:2111.03606v5"}) == [f6]
+
+
 def _run():
     passed = 0
     for name, fn in sorted(globals().items()):

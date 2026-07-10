@@ -383,6 +383,80 @@ trappist1b_bare_rock = Claim(
 )
 
 # --------------------------------------------------------------------------- #
+# Claim 3b — TRAPPIST-1's inner pair lack thick atmospheres  🟠 Frontier       #
+# (Second claim through the T4 pipeline — first via the V4-4 stepwise path.
+#  Human review corrected: evidence-2 type (MIRI secondary-eclipse thermal
+#  emission is a direct observation, same technique as evidence 1 -> E1),
+#  title de-overclaimed ("thick" added), venues confirmed: Greene 2023
+#  Nature 618, 39; Zieba 2023 Nature 620, 746.)
+# --------------------------------------------------------------------------- #
+trappist1_inner_pair_airless = Claim(
+    id="trappist1_inner_planets_airless",
+    title="TRAPPIST-1's two innermost planets lack thick atmospheres",
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Greene2023b",
+            url_or_id="arXiv:2303.14849",
+            kind="peer-reviewed paper (Nature 618, 39-42, 2023; planet b)",
+        ),
+        Source(
+            label="Zieba2023",
+            url_or_id="arXiv:2306.10150",
+            kind="peer-reviewed paper (Nature 620, 746-749, 2023; planet c)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "JWST/MIRI secondary-eclipse photometry of TRAPPIST-1 b at 15 "
+                "microns detected the planet's dayside thermal emission at "
+                "high confidence, consistent with little or no atmosphere "
+                "redistributing heat and no detectable CO2 absorption."
+            ),
+            source_ref="Greene2023b",
+        ),
+        Evidence(
+            type="direct observation",
+            description=(
+                "The same technique applied to TRAPPIST-1 c measured a dayside "
+                "brightness temperature of about 380 K — hot enough to "
+                "disfavour a thick, CO2-rich atmosphere on that planet too."
+            ),
+            source_ref="Zieba2023",
+        ),
+    ],
+    open_questions=[
+        "Thin or exotic atmospheres are not fully excluded by single-band "
+        "photometry.",
+        "Whether the cooler outer planets (d through h) retain atmospheres is "
+        "the system's open frontier.",
+        "What do two airless inner rocky planets imply for volatile delivery "
+        "and escape around active M dwarfs?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "new_discovery", True,
+            "Thermal-emission measurements of Earth-sized temperate-zone "
+            "planets only became possible with JWST; these are the first two "
+            "such results in this system.",
+        ),
+        ConditionAssessment(
+            "insufficient_sample", True,
+            "Each conclusion rests on a handful of eclipses in a single "
+            "photometric band per planet.",
+        ),
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "JWST programmes on TRAPPIST-1 continue to produce follow-up "
+            "papers at a fast clip.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
 # Claim 4 — a biosignature on K2-18 b                     🔴 Speculative       #
 # --------------------------------------------------------------------------- #
 k2_18b_biosignature = Claim(
@@ -456,6 +530,7 @@ EXOPLANETS = Topic(
         planets_are_common,
         planet_nine,
         trappist1b_bare_rock,
+        trappist1_inner_pair_airless,
         k2_18b_biosignature,
     ],
 )
