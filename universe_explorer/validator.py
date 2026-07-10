@@ -49,26 +49,44 @@ _COUNT_RE = re.compile(
 )
 
 # Amendment #3 (docs/amendment-3-source-tiers.md): source credibility tiers.
-# Mechanical classification by kind keywords — discrete categories, never a
-# numeric score (that would be fake precision wearing a different face).
-# Being classifiable is constitutional: at scale, every incoming source is
-# forced to declare honestly what it is. Tiers do NOT yet weigh into the
-# evidence axis (registered as R8; needs its own amendment).
-SOURCE_TIERS = {
-    "PRIMARY": ("peer-reviewed",),            # primary literature
-    "SECONDARY": ("textbook", "prize citation"),  # authoritative secondary
-    "PREPRINT": ("preprint",),                # unreviewed preprint
-    "DATASET": ("dataset", "archive"),        # data record
+# The table itself lives in model.py since Amendment #4 (tiers are taxonomy);
+# re-exported here so existing call sites keep working.
+from .model import SOURCE_TIERS, tier_of  # noqa: F401  (re-export)
+
+# Amendment #5 (docs/amendment-4-r8-tier-weighting.md, part 2): every rule
+# must name its legal basis. A violation message cites the law that created
+# the rule — "you broke the constitution" becomes "you broke THIS article".
+# A rule missing from this registry is itself a test failure: no law, no rule.
+LAWS = {
+    # v0 constitution
+    "invalid_status": "v0-constitution §2",
+    "evidence_without_source": "v0-constitution §1/§4",
+    "dangling_source_ref": "v0-constitution §4",
+    "unsupported_claim": "v0-constitution §4",
+    "no_fake_precision": "v0-constitution §3 (as amended by amendment-1)",
+    "declared_confidence": "amendment-1",
+    "no_numeric_open_questions": "v0-constitution §3",
+    "empty_open_question": "v0-constitution §3",
+    "numeric_open_question": "v0-constitution §3",
+    "foreign_condition": "v0-constitution §3/§4",
+    "unjustified_condition": "v0-constitution §4",
+    "status_reason_incomplete": "v0-constitution §3",
+    "condition_not_satisfied": "v0-constitution §3",
+    "no_condition_satisfied": "v0-constitution §3",
+    "competing_needs_models": "v0-constitution §2",
+    "unexpected_competing_models": "v0-constitution §2",
+    # P1.5 controlled vocabulary
+    "invalid_evidence_type": "p1.5-spec §1",
+    # Amendment #3 tiers
+    "unclassifiable_source_kind": "amendment-3",
+    # P1 data-layer provenance
+    "arxiv_source_unfetched": "p1-spec §1 (cite => fetch)",
+    "provenance_cache_missing": "p1-spec §1",
+    "provenance_hash_mismatch": "p1-spec §1",
+    "provenance_id_mismatch": "p1-spec §1",
+    # P3 change constitution
+    "undocumented_status_change": "p3-spec §0 (no silent changes)",
 }
-
-
-def tier_of(kind: str):
-    """Return the tier name for a source kind, or None if unclassifiable."""
-    k = kind.lower()
-    for tier, keywords in SOURCE_TIERS.items():
-        if any(w in k for w in keywords):
-            return tier
-    return None
 
 
 @dataclass
@@ -78,7 +96,8 @@ class Violation:
     detail: str
 
     def __str__(self) -> str:
-        return f"[{self.claim_id}] {self.rule}: {self.detail}"
+        law = LAWS.get(self.rule, "UNREGISTERED LAW")
+        return f"[{self.claim_id}] {self.rule} (law: {law}): {self.detail}"
 
 
 def _scan_text(fields: List[tuple]) -> List[tuple]:

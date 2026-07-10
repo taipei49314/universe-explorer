@@ -81,6 +81,59 @@ def test_real_data_vocab_clean():
         assert "invalid_evidence_type" not in rules, claim.id
 
 
+# --- Amendment #4: tiers weigh into E1 ---------------------------------------
+
+def test_amendment4_real_grades_unchanged():
+    """The amendment changes the law, not any existing verdict."""
+    from universe_explorer.data.registry import TOPICS
+    expected = {
+        "event_horizon_exists": EvidenceStrength.E1_MULTIPLE_DIRECT,
+        "hydrothermal_vents_exist": EvidenceStrength.E1_MULTIPLE_DIRECT,
+        "exoplanets_exist": EvidenceStrength.E1_MULTIPLE_DIRECT,
+        "dark_oxygen_production": EvidenceStrength.E2_SINGLE_DIRECT,
+    }
+    for t in TOPICS:
+        for c in t.claims:
+            if c.id in expected:
+                assert derive(c).strength is expected[c.id], c.id
+
+
+def test_amendment4_preprints_cannot_establish_independence():
+    """Two direct observations from two distinct PREPRINT sources: still a
+    direct record, but unreviewed — E2, never E1."""
+    c = copy.deepcopy(firewall)
+    c.sources = [
+        Source("PRE-A", "arXiv-like id A", "preprint"),
+        Source("PRE-B", "arXiv-like id B", "preprint"),
+    ]
+    c.evidence = [
+        Evidence(DIRECT, "obs a", "PRE-A"),
+        Evidence(DIRECT, "obs b", "PRE-B"),
+    ]
+    d = derive(c)
+    assert d.strength is EvidenceStrength.E2_SINGLE_DIRECT
+    assert any("PRIMARY: 0" in r for r in d.reasoning)
+
+
+def test_amendment4_mixed_tier_stays_e2_two_primary_gives_e1():
+    c = copy.deepcopy(firewall)
+    c.sources = [
+        Source("P1s", "id1", "peer-reviewed paper"),
+        Source("PRE", "id2", "preprint"),
+    ]
+    c.evidence = [
+        Evidence(DIRECT, "obs a", "P1s"),
+        Evidence(DIRECT, "obs b", "PRE"),
+    ]
+    assert derive(c).strength is EvidenceStrength.E2_SINGLE_DIRECT
+
+    c.sources[1] = Source("P2s", "id2", "peer-reviewed paper")
+    c.evidence[1] = Evidence(DIRECT, "obs b", "P2s")
+    d = derive(c)
+    assert d.strength is EvidenceStrength.E1_MULTIPLE_DIRECT
+    assert any("amendment-4" in r for r in d.reasoning)  # law cited in reasoning
+
+
 def _run():
     passed = 0
     for name, fn in sorted(globals().items()):

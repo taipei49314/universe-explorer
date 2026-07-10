@@ -21,7 +21,7 @@ from dataclasses import dataclass
 from enum import Enum
 from typing import List
 
-from .model import Claim, Status
+from .model import Claim, Status, tier_of
 
 # Evidence.type controlled vocabulary. Without this, mechanical derivation
 # would be built on free-text sand. Validator enforces membership.
@@ -61,7 +61,8 @@ class Derivation:
 
 
 def derive(claim: Claim) -> Derivation:
-    """Apply the public rules (P1.5 spec section 1), strongest cell first."""
+    """Apply the public rules (P1.5 spec section 1, E1 as amended by
+    Amendment #4), strongest cell first."""
     reasons: List[str] = []
 
     direct = [e for e in claim.evidence if e.type == DIRECT]
@@ -69,22 +70,30 @@ def derive(claim: Claim) -> Derivation:
     theoretical = [e for e in claim.evidence
                    if e.type in (THEORY_DERIVATION, THEORY_RESULT)]
 
+    # Amendment #4: independence-of-replication is a claim about the reviewed
+    # record — only PRIMARY-tier sources can establish E1.
+    tier_by_label = {s.label: tier_of(s.kind) for s in claim.sources}
     direct_sources = {e.source_ref for e in direct}
+    primary_direct_sources = {
+        ref for ref in direct_sources
+        if tier_by_label.get(ref) == "PRIMARY"
+    }
     reasons.append(
         f"recorded evidence: {len(direct)} direct "
-        f"(distinct sources: {len(direct_sources)}), "
+        f"(distinct sources: {len(direct_sources)}, "
+        f"of which PRIMARY: {len(primary_direct_sources)}), "
         f"{len(indirect_analog)} indirect/analog, {len(theoretical)} theoretical")
 
-    if len(direct) >= 2 and len(direct_sources) >= 2:
+    if len(direct) >= 2 and len(primary_direct_sources) >= 2:
         reasons.append(
-            "rule E1: at least two direct observations hanging on distinct "
-            "sources -> multiple independent direct")
+            "rule E1 (amendment-4): at least two direct observations hanging "
+            "on distinct PRIMARY sources -> multiple independent direct")
         return Derivation(EvidenceStrength.E1_MULTIPLE_DIRECT, reasons)
 
     if direct:
         reasons.append(
             "rule E2: direct observation exists but not from two distinct "
-            "sources -> single direct line")
+            "PRIMARY sources -> single direct line")
         return Derivation(EvidenceStrength.E2_SINGLE_DIRECT, reasons)
 
     if indirect_analog:

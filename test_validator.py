@@ -70,6 +70,35 @@ def test_amendment1_percent_outside_evidence_still_banned():
     assert "no_fake_precision" in _rules(c)
 
 
+def test_amendment5_every_rule_has_a_law():
+    """No law, no rule: every rule name emitted anywhere must be registered."""
+    from universe_explorer.validator import LAWS
+    emitted_rules = {
+        # v0 + amendments (validator.py)
+        "invalid_status", "evidence_without_source", "dangling_source_ref",
+        "unsupported_claim", "no_fake_precision", "declared_confidence",
+        "no_numeric_open_questions", "empty_open_question",
+        "numeric_open_question", "foreign_condition", "unjustified_condition",
+        "status_reason_incomplete", "condition_not_satisfied",
+        "no_condition_satisfied", "competing_needs_models",
+        "unexpected_competing_models", "invalid_evidence_type",
+        "unclassifiable_source_kind",
+        # P1 (provenance.py)
+        "arxiv_source_unfetched", "provenance_cache_missing",
+        "provenance_hash_mismatch", "provenance_id_mismatch",
+        # P3 (watch.py)
+        "undocumented_status_change",
+    }
+    assert emitted_rules <= set(LAWS), sorted(emitted_rules - set(LAWS))
+
+
+def test_amendment5_violation_cites_its_law():
+    c = copy.deepcopy(firewall)
+    c.status_reason[0].note += " roughly 40% agree"
+    v = [x for x in validate_claim(c) if x.rule == "no_fake_precision"][0]
+    assert "(law: v0-constitution §3" in str(v)
+
+
 def test_numeric_open_question_count():
     c = copy.deepcopy(firewall)
     c.evidence[0].description += " Open questions: 2 remain."

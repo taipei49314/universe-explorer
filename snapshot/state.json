@@ -1,5 +1,5 @@
 {
-  "committed_at": "2026-07-10T09:24:23Z",
+  "committed_at": "2026-07-10T12:34:05Z",
   "claims": {
     "event_horizon_exists": {
       "status": "ESTABLISHED",
@@ -8,8 +8,8 @@
       "sources": 4,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 4 direct (distinct sources: 4), 0 indirect/analog, 0 theoretical",
-        "rule E1: at least two direct observations hanging on distinct sources -> multiple independent direct"
+        "recorded evidence: 4 direct (distinct sources: 4, of which PRIMARY: 3), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
       ]
     },
     "hawking_radiation": {
@@ -19,7 +19,7 @@
       "sources": 2,
       "diverges": true,
       "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0), 1 indirect/analog, 1 theoretical",
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 1 theoretical",
         "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
       ]
     },
@@ -30,7 +30,7 @@
       "sources": 4,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0), 0 indirect/analog, 2 theoretical",
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 0 indirect/analog, 2 theoretical",
         "rule E4: only theoretical derivations/results are recorded -> theoretical only"
       ]
     },
@@ -41,7 +41,7 @@
       "sources": 1,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0), 0 indirect/analog, 1 theoretical",
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 0 indirect/analog, 1 theoretical",
         "rule E4: only theoretical derivations/results are recorded -> theoretical only"
       ]
     },
@@ -52,8 +52,8 @@
       "sources": 2,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 2 direct (distinct sources: 2), 0 indirect/analog, 0 theoretical",
-        "rule E1: at least two direct observations hanging on distinct sources -> multiple independent direct"
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
       ]
     },
     "amoc_weakening": {
@@ -63,7 +63,7 @@
       "sources": 2,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0), 2 indirect/analog, 0 theoretical",
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
         "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
       ]
     },
@@ -74,7 +74,7 @@
       "sources": 1,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0), 1 indirect/analog, 0 theoretical",
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
         "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
       ]
     },
@@ -85,8 +85,8 @@
       "sources": 2,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 1 direct (distinct sources: 1), 0 indirect/analog, 1 theoretical",
-        "rule E2: direct observation exists but not from two distinct sources -> single direct line"
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
       ]
     },
     "exoplanets_exist": {
@@ -96,8 +96,8 @@
       "sources": 2,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 2 direct (distinct sources: 2), 0 indirect/analog, 0 theoretical",
-        "rule E1: at least two direct observations hanging on distinct sources -> multiple independent direct"
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
       ]
     },
     "planet_nine": {
@@ -107,7 +107,7 @@
       "sources": 2,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0), 2 indirect/analog, 0 theoretical",
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
         "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
       ]
     },
@@ -118,8 +118,8 @@
       "sources": 1,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 1 direct (distinct sources: 1), 0 indirect/analog, 0 theoretical",
-        "rule E2: direct observation exists but not from two distinct sources -> single direct line"
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
       ]
     },
     "k2_18b_biosignature": {
@@ -129,8 +129,8 @@
       "sources": 2,
       "diverges": false,
       "derivation": [
-        "recorded evidence: 1 direct (distinct sources: 1), 0 indirect/analog, 1 theoretical",
-        "rule E2: direct observation exists but not from two distinct sources -> single direct line"
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
       ]
     }
   }

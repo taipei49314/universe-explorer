@@ -114,6 +114,27 @@ STATUS_CONDITIONS = {
 }
 
 
+# Source credibility tiers (Amendment #3; moved here from validator.py by
+# Amendment #4 — tiers are taxonomy, so they live with the schema). Discrete
+# categories, never numeric scores. Since Amendment #4 they weigh into the
+# evidence axis: E1 independence requires PRIMARY sources (axes.py).
+SOURCE_TIERS = {
+    "PRIMARY": ("peer-reviewed",),               # primary literature
+    "SECONDARY": ("textbook", "prize citation"),  # authoritative secondary
+    "PREPRINT": ("preprint",),                   # unreviewed preprint
+    "DATASET": ("dataset", "archive"),           # data record
+}
+
+
+def tier_of(kind: str):
+    """Return the tier name for a source kind, or None if unclassifiable."""
+    k = kind.lower()
+    for tier, keywords in SOURCE_TIERS.items():
+        if any(w in k for w in keywords):
+            return tier
+    return None
+
+
 @dataclass
 class ConditionAssessment:
     """One line of `status_reason`: which entry condition, whether it holds,
