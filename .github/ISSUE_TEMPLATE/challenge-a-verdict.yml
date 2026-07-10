@@ -1,0 +1,51 @@
+name: "Challenge a verdict / 推翻一個判定"
+description: "Argue that a claim's status light is wrong, using the entry conditions. 用入格條件論證某個 claim 的燈號判錯了。"
+title: "[challenge] <claim_id>"
+labels: ["challenge"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The whole point of this system is that every verdict can be overturned.
+        A valid challenge attacks the **entry conditions**, not vibes:
+        find the claim in [claims.json](https://taipei49314.github.io/universe-explorer/claims.json),
+        check its `status_reason` against the five-cell taxonomy, and show which
+        condition fails (or which unlisted condition should have blocked the light).
+
+        本系統的核心賣點就是「判定可被推翻」。有效的挑戰攻擊**入格條件**,不是感覺:
+        在 claims.json 找到該 claim,拿它的 status_reason 對照五格入格條件,
+        指出哪一條不成立(或哪一條漏列)。
+  - type: input
+    id: claim_id
+    attributes:
+      label: "Claim id"
+      description: "e.g. hawking_radiation, dark_oxygen_production"
+      placeholder: "claim_id"
+    validations:
+      required: true
+  - type: dropdown
+    id: attack
+    attributes:
+      label: "What kind of failure? / 哪一類失誤?"
+      options:
+        - "A listed condition does not actually hold / 列出的條件其實不成立"
+        - "A required condition is missing from status_reason / 該燈號必要條件漏列"
+        - "The evidence does not support the axis grade / 證據不支撐該證據軸等級"
+        - "A cited source is misrepresented / 引用來源被曲解"
+        - "Other (explain below) / 其他(下方說明)"
+    validations:
+      required: true
+  - type: textarea
+    id: argument
+    attributes:
+      label: "Your argument, condition by condition / 逐條論證"
+      description: "Name the exact condition key(s) and why they fail. 指名條件鍵,說明為何不成立。"
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: "Your sources (real, checkable) / 你的依據來源(真實可查)"
+      description: "DOI / arXiv id / journal reference. A challenge without a checkable source is itself an unsupported claim. 無可查來源的挑戰,本身就是無出處宣稱。"
+    validations:
+      required: true

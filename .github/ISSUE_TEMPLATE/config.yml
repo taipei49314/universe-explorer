@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: "Browse the live site / 瀏覽網站"
+    url: "https://taipei49314.github.io/universe-explorer/"
+    about: "Read the claims, lights, evidence and sources before challenging."
+  - name: "Open data (claims.json)"
+    url: "https://taipei49314.github.io/universe-explorer/claims.json"
+    about: "Every recorded field, machine-readable — the re-review interface."

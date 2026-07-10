@@ -1,0 +1,29 @@
+name: "Report a source problem / 回報來源問題"
+description: "A cited source is retracted, corrected, misquoted, or its DOI/arXiv id is wrong. 引用來源被撤稿/更正/誤引,或識別碼錯誤。"
+title: "[source] <label>"
+labels: ["source-health"]
+body:
+  - type: input
+    id: source_label
+    attributes:
+      label: "Source label"
+      description: "e.g. Sweetman2024, Caesar2018 (see the Sources section on any claim card)"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: "Problem kind / 問題類型"
+      options:
+        - "Retraction or formal correction exists / 已有撤稿或正式更正"
+        - "Identifier (DOI/arXiv) wrong / 識別碼錯誤"
+        - "Evidence description misstates the source / 證據描述曲解原文"
+        - "Better primary source exists / 有更好的一次文獻"
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: "Details + checkable reference / 細節與可查依據"
+    validations:
+      required: true

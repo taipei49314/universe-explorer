@@ -65,7 +65,12 @@ def _claim_html(claim: Claim) -> str:
         f'{_esc(derivation.strength.value)}</span> {diverge_badge}'
         f'<code class="cid">{_esc(claim.id)}</code>'
         f'<a class="permalink" href="#c-{_esc(claim.id)}" '
-        f'title="permanent link to this claim">&para;</a></div></div>'
+        f'title="permanent link to this claim">&para;</a>'
+        f'<a class="challenge-link" title="argue this light is wrong — the '
+        f'whole point is that verdicts can be overturned" '
+        f'href="https://github.com/taipei49314/universe-explorer/issues/new'
+        f'?template=challenge-a-verdict.yml&title=%5Bchallenge%5D%20'
+        f'{_esc(claim.id)}">challenge</a></div></div>'
     )
 
     # evidence axis — derived, never declared; the derivation is expandable so
@@ -344,6 +349,10 @@ _PAGE = """<!doctype html>
   .cid {{ opacity: .6; font-size: .82em; margin-left: 6px; }}
   .permalink {{ opacity: .35; text-decoration: none; margin-left: 6px; }}
   .permalink:hover {{ opacity: .9; }}
+  .challenge-link {{ font-size: .74em; opacity: .55; margin-left: 8px;
+                    text-decoration: none; border: 1px solid currentColor;
+                    border-radius: 999px; padding: 0 8px; }}
+  .challenge-link:hover {{ opacity: 1; }}
   article:target {{ outline: 2px solid currentColor; outline-offset: 4px; }}
   details {{ margin: 8px 0; }}
   summary {{ cursor: pointer; font-weight: 600; font-size: .9em; }}
@@ -476,6 +485,139 @@ recorded field, machine-readable, for third-party re-review.</p>
 """
 
 
+def render_about(lang: str = "en") -> str:
+    """T3: the charter page — a stranger should understand the system in three
+    minutes. Content is condensed from the frozen specs; it asserts nothing new."""
+    return _ABOUT_ZH if lang == "zh" else _ABOUT
+
+
+_ABOUT_BASE_CSS = """
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.65 system-ui, sans-serif; max-width: 720px;
+         margin: 0 auto; padding: 24px; }
+  .home { font-size: .85em; opacity: .7; text-decoration: none; }
+  h1 { margin: 10px 0 4px; }
+  h2 { font-size: 1.15rem; margin: 26px 0 6px; }
+  p, li { opacity: .92; }
+  .lights td { padding: 3px 10px 3px 0; vertical-align: top; }
+  code { font-family: ui-monospace, monospace; font-size: .88em; }
+  .rule { border-left: 3px solid currentColor; padding: 2px 12px;
+          opacity: .85; margin: 10px 0; }
+"""
+
+_ABOUT = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universe Explorer — How to read this</title>
+<style>{_ABOUT_BASE_CSS}</style>
+</head>
+<body>
+<a class="home" href="index.html">&larr; all topics</a>
+<h1>How to read this</h1>
+<p>This site does not tell you answers. It tells you: what we know, how we
+know it, what we still don't, and which hypotheses are competing. It was built
+so that <b>every verdict can be checked — and overturned — by anyone</b>.
+<a href="about-zh.html">中文版 &rarr;</a></p>
+
+<h2>The five lights (they belong to claims, never to topics)</h2>
+<table class="lights">
+<tr><td>🟢</td><td><b>Established</b> — independently replicated, in the
+textbooks, no mainstream rival, nothing recently overturned it.</td></tr>
+<tr><td>🔵</td><td><b>Strong</b> — mainstream-supported; minority alternatives
+exist; details may shift, direction won't.</td></tr>
+<tr><td>🟡</td><td><b>Competing</b> — the field genuinely holds two or more
+positions and no decisive evidence picks one.</td></tr>
+<tr><td>🟠</td><td><b>Frontier</b> — new, under-sampled, fast-moving, no
+consensus yet.</td></tr>
+<tr><td>🔴</td><td><b>Speculative</b> — no observation, pure theory, or the
+mainstream simply doesn't buy it.</td></tr>
+</table>
+<p>Each light has machine-checkable entry conditions; every claim card's
+&ldquo;Why this light&rdquo; lists them one by one, so you can audit the verdict.</p>
+
+<h2>The evidence axis (nobody fills it in)</h2>
+<p>E1 (multiple independent direct observations, peer-reviewed sources only)
+down to E4 (theory only). It is <i>derived by public rules</i> from the
+recorded evidence — the only way to move it is to record new evidence. When a
+strong consensus rests on non-direct evidence, the card shows
+<b>⚡ axes diverge</b>: an honest tension, stated, not hidden.</p>
+
+<h2>What this system refuses to do</h2>
+<div class="rule">No confidence percentages. Ever. Certainty must emerge from
+evidence you can open — it is never declared as a number.</div>
+<div class="rule">No citation without a fetch: every arXiv/DOI source was
+retrieved from the official API, stored verbatim, and hash-verified.
+Unclassifiable sources are unconstitutional.</div>
+<div class="rule">No silent changes: a status may move only with a recorded
+date, origin and trigger — and sources are re-checked weekly for formally
+deposited corrections and retractions.</div>
+<div class="rule">Machines may exclude, only humans approve. AI drafts are
+stamped UNVERIFIED and live outside the data.</div>
+
+<h2>Overturn us</h2>
+<p>Pick any claim, press <code>challenge</code> on its card, and argue against
+its entry conditions with a checkable source. The full re-review path is in
+<a href="https://github.com/taipei49314/universe-explorer/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>;
+the machine-readable data is <a href="claims.json">claims.json</a>; changes
+stream to the <a href="feed.xml">Atom feed</a>.</p>
+</body>
+</html>
+"""
+
+_ABOUT_ZH = f"""<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宇宙探索者 — 這個網站怎麼讀</title>
+<style>{_ABOUT_BASE_CSS}</style>
+</head>
+<body>
+<a class="home" href="zh.html">&larr; 中文總覽</a>
+<h1>這個網站怎麼讀</h1>
+<p>這個網站不告訴你答案。它告訴你:我們知道什麼、怎麼知道的、還不知道什麼、
+有哪些假說在競爭。它被造出來,就是為了讓<b>任何人都能查核 —— 並推翻 ——
+任何一個判定</b>。<a href="about.html">English &rarr;</a></p>
+
+<h2>五格燈號(屬於 claim,永不屬於 topic)</h2>
+<table class="lights">
+<tr><td>🟢</td><td><b>已確立</b> —— 多團隊獨立驗證、寫進教科書、無主流競爭理論、近期無反證。</td></tr>
+<tr><td>🔵</td><td><b>強共識</b> —— 主流支持;有少數替代理論;細節會修,方向不動。</td></tr>
+<tr><td>🟡</td><td><b>競爭模型</b> —— 學界真的有兩派以上,且無決定性證據。</td></tr>
+<tr><td>🟠</td><td><b>前沿研究</b> —— 新、樣本不足、變動快、尚無共識。</td></tr>
+<tr><td>🔴</td><td><b>推測性</b> —— 無觀測、純理論,或主流就是不買帳。</td></tr>
+</table>
+<p>每格燈號都有機器可查的入格條件;每張卡片的「為什麼是這個燈號」逐條列出,
+供你稽核。</p>
+
+<h2>證據軸(沒有人填它)</h2>
+<p>從 E1(多重獨立直接觀測,僅計同儕審查來源)到 E4(僅理論)。它由公開規則
+從已收錄證據<i>機械推導</i> —— 想動它,唯一的路是收錄新證據。當強共識建立在
+非直接證據上,卡片會顯示 <b>⚡ 雙軸分岔</b>:張力誠實攤開,不藏。</p>
+
+<h2>這個系統拒絕做的事</h2>
+<div class="rule">永不出現信心百分比。確定性必須從你能展開的證據湧現,
+不得被宣告成一個數字。</div>
+<div class="rule">引用即必須抓過原文:每個 arXiv/DOI 來源都從官方 API 取回、
+逐字保存、雜湊驗證。無法分級的來源即違憲。</div>
+<div class="rule">不准無聲地變:燈號要動,必須留下日期、來歷與觸發原因 ——
+且來源每週自動回查正式存繳的更正與撤稿。</div>
+<div class="rule">機器只能排除,核准永遠是人。AI 草稿蓋 UNVERIFIED 章,
+住在資料之外。</div>
+
+<h2>來推翻我們</h2>
+<p>挑任何一個 claim,按卡片上的 <code>challenge</code>,拿可查證的來源逐條
+攻擊它的入格條件。完整覆核路徑在
+<a href="https://github.com/taipei49314/universe-explorer/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>;
+機器可讀資料在 <a href="claims.json">claims.json</a>;所有變化流向
+<a href="feed.xml">Atom feed</a>。</p>
+</body>
+</html>
+"""
+
+
 # Chinese explore page: same template, translated chrome. Derived by literal
 # replacement so the two can never drift structurally.
 _EXPLORE_ZH = (
@@ -538,6 +680,7 @@ _INDEX = """<!doctype html>
   container &mdash; it has no status light of its own; each claim inside carries
   its own. Same engine, any domain.
   <a href="explore.html">Explore all claims &rarr;</a> ·
+  <a href="about.html">How to read this</a> ·
   <a href="zh.html">中文版 &rarr;</a> ·
   <a href="feed.xml">RSS</a></p>
   <div class="banner">Reference first, AI last. Certainty emerges from evidence

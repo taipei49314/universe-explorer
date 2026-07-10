@@ -69,6 +69,28 @@ def test_claims_json_invents_nothing():
     walk(data)
 
 
+# --- T2/T3: challenge channel + charter page ---------------------------------
+
+def test_every_claim_card_has_a_challenge_link():
+    for t in TOPICS:
+        html = render_topic(t)
+        for c in t.claims:
+            assert (f'template=challenge-a-verdict.yml&title=%5Bchallenge%5D'
+                    f'%20{c.id}' in html), c.id
+
+
+def test_about_pages_carry_the_charter():
+    from universe_explorer.render import render_about
+    en, zh = render_about(), render_about("zh")
+    for needle in ("No confidence percentages", "axes diverge",
+                   "claims.json", "challenge"):
+        assert needle in en, needle
+    for needle in ("信心百分比", "雙軸分岔", "claims.json", "推翻"):
+        assert needle in zh, needle
+    # the charter page asserts nothing new: no DOIs, no claim verdicts
+    assert "doi:" not in en.lower().replace("challenge-a-verdict", "")
+
+
 def _run():
     passed = 0
     for name, fn in sorted(globals().items()):
