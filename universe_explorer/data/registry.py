@@ -13,8 +13,9 @@ from ..model import Topic
 from .black_hole import BLACK_HOLE
 from .exoplanets import EXOPLANETS
 from .ocean import OCEAN
+from .seismology import SEISMOLOGY
 
-TOPICS: List[Topic] = [BLACK_HOLE, OCEAN, EXOPLANETS]
+TOPICS: List[Topic] = [BLACK_HOLE, OCEAN, EXOPLANETS, SEISMOLOGY]
 
 
 def get_topic(topic_id: str) -> Topic:

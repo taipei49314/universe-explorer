@@ -57,6 +57,8 @@ def fetch_dois(dois: List[str]) -> int:
 
     failures = 0
     for i, doi in enumerate(dois):
+        doi = doi.lower()  # DOIs are case-insensitive; the court normalizes
+                           # to lowercase, so the courier must key the same way
         if i:
             time.sleep(RATE_LIMIT_S)
         endpoint = API + urllib.request.quote(doi, safe="")

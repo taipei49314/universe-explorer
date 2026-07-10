@@ -1,0 +1,81 @@
+{
+  "at": "20260710T153407Z",
+  "note": "mechanical diff against the committed snapshot; the trigger interface for future push channels",
+  "events": [
+    {
+      "kind": "claim_added",
+      "claim": "plate_tectonics_drives_earthquakes",
+      "after": {
+        "status": "ESTABLISHED",
+        "evidence_axis": "E1",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "eew_gives_usable_warning",
+      "after": {
+        "status": "STRONG",
+        "evidence_axis": "E3",
+        "evidence_items": 1,
+        "sources": 1,
+        "diverges": true
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "characteristic_earthquake_model",
+      "after": {
+        "status": "COMPETING",
+        "evidence_axis": "E3",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "oef_informs_civil_protection",
+      "after": {
+        "status": "FRONTIER",
+        "evidence_axis": "E3",
+        "evidence_items": 1,
+        "sources": 1,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "van_electric_precursors",
+      "after": {
+        "status": "SPECULATIVE",
+        "evidence_axis": "E3",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 1 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+UNIVERSE EXPLORER — change digest
+(mechanical restatement of recorded state changes; every line names its event file, which carries the derivation back to the evidence)
+
+== 20260710T153407Z  (20260710T153407Z-events.json)
+  * plate_tectonics_drives_earthquakes: new claim recorded — status ESTABLISHED, evidence axis E1
+  * eew_gives_usable_warning: new claim recorded — status STRONG, evidence axis E3
+  * characteristic_earthquake_model: new claim recorded — status COMPETING, evidence axis E3
+  * oef_informs_civil_protection: new claim recorded — status FRONTIER, evidence axis E3
+  * van_electric_precursors: new claim recorded — status SPECULATIVE, evidence axis E3

@@ -246,7 +246,7 @@ def build(lang: str = "en") -> str:
     out = [f"<title>{E(site)}</title>", f"<style>{CSS}</style>",
            f'<div class="wrap"{wrap_lang}>']
     out.append(f'<h1>{E(site)}</h1>')
-    out.append(f'<p class="sub">{_L("tagline", "Honestly separating what we know from what we don&rsquo;t &mdash; three domains, one engine.")}</p>')
+    out.append(f'<p class="sub">{_L("tagline", "Honestly separating what we know from what we don&rsquo;t &mdash; many domains, one engine.")}</p>')
     out.append(f'<div class="charter">{_L("charter", "Reference first, AI last. Every claim hangs on a recorded, verified source. No confidence numbers are declared &mdash; certainty emerges from evidence you can open and read. A topic is only a container: each claim carries its own status light.")}</div>')
 
     out.append("<nav>")
@@ -272,7 +272,7 @@ def build(lang: str = "en") -> str:
             out.append(claim_html(c))
         out.append("</section>")
 
-    out.append(f'<footer>{_L("footer", "Generated from the live data of the Universe Explorer engine &mdash; 12 claims, 3 domains, all sources real and verified. Lights belong to claims, never to topics.")}</footer>')
+    out.append(f'<footer>{_L("footer", "Generated from the live data of the Universe Explorer engine &mdash; every source real and verified. Lights belong to claims, never to topics.")}</footer>')
     out.append("</div>")
     return "\n".join(out)
 

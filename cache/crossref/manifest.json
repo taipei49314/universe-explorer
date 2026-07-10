@@ -79,5 +79,77 @@
     "title": "One or more bound planets per Milky Way star from microlensing observations",
     "container": "Nature",
     "issued": 2012
+  },
+  "10.1038/199947a0": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2F199947a0",
+    "retrieved_at": "2026-07-10T15:33:38Z",
+    "cache_file": "10-1038_199947a0.json",
+    "sha256": "dd0517d2555d2c75ada38d0ef4801c0561d45d8a4ddfbe994b8aed0bcd05c8d1",
+    "title": "Magnetic Anomalies Over Oceanic Ridges",
+    "container": "Nature",
+    "issued": 1963
+  },
+  "10.1111/j.1365-246x.2009.04491.x": {
+    "endpoint": "https://api.crossref.org/works/10.1111%2Fj.1365-246X.2009.04491.x",
+    "retrieved_at": "2026-07-10T15:33:40Z",
+    "cache_file": "10-1111_j-1365-246X-2009-04491-x.json",
+    "sha256": "93e6beab6554a9b9600f7907ff463b4a2a1881e49619b400b1e399b3e8f88a75",
+    "title": "Geologically current plate motions",
+    "container": "Geophysical Journal International",
+    "issued": 2010
+  },
+  "10.1146/annurev-earth-053018-060457": {
+    "endpoint": "https://api.crossref.org/works/10.1146%2Fannurev-earth-053018-060457",
+    "retrieved_at": "2026-07-10T15:33:42Z",
+    "cache_file": "10-1146_annurev-earth-053018-060457.json",
+    "sha256": "f8dfe64b93a7b3005523b21f3556be1c5f172ef589652c8f3169c3b677e1de1e",
+    "title": "Earthquake Early Warning: Advances, Scientific Challenges, and Societal Needs",
+    "container": "Annual Review of Earth and Planetary Sciences",
+    "issued": 2019
+  },
+  "10.1029/jb089ib07p05681": {
+    "endpoint": "https://api.crossref.org/works/10.1029%2FJB089iB07p05681",
+    "retrieved_at": "2026-07-10T15:33:44Z",
+    "cache_file": "10-1029_JB089iB07p05681.json",
+    "sha256": "a8970e5d3d53a935e4ed77524c0713bdacc379c1b6c5460ca4546ab955ad8f84",
+    "title": "Fault behavior and characteristic earthquakes: Examples from the Wasatch and San Andreas Fault Zones",
+    "container": "Journal of Geophysical Research: Solid Earth",
+    "issued": 1984
+  },
+  "10.1029/91jb02210": {
+    "endpoint": "https://api.crossref.org/works/10.1029%2F91JB02210",
+    "retrieved_at": "2026-07-10T15:33:46Z",
+    "cache_file": "10-1029_91JB02210.json",
+    "sha256": "436947e59e0597ebe34925b89da2512762a9d7911cc4df0c87920fcd4b9136c3",
+    "title": "Seismic Gap Hypothesis: Ten years after",
+    "container": "Journal of Geophysical Research: Solid Earth",
+    "issued": 1991
+  },
+  "10.4401/ag-5350": {
+    "endpoint": "https://api.crossref.org/works/10.4401%2Fag-5350",
+    "retrieved_at": "2026-07-10T15:33:47Z",
+    "cache_file": "10-4401_ag-5350.json",
+    "sha256": "1aa42823587f8540547cf6c851cf95ccaa4138a02c624a78c6eb53bf0c7152e2",
+    "title": "OPERATIONAL EARTHQUAKE FORECASTING. State of Knowledge and Guidelines for Utilization",
+    "container": "Annals of Geophysics",
+    "issued": 2011
+  },
+  "10.1016/0040-1951(84)90059-3": {
+    "endpoint": "https://api.crossref.org/works/10.1016%2F0040-1951%2884%2990059-3",
+    "retrieved_at": "2026-07-10T15:33:49Z",
+    "cache_file": "10-1016_0040-1951(84)90059-3.json",
+    "sha256": "e4362f397e8ad9f0d4d5c528b572199af67cca3d339969ea5691dd2fb433d4c5",
+    "title": "Physical properties of the variations of the electric field of the earth preceding earthquakes, I",
+    "container": "Tectonophysics",
+    "issued": 1984
+  },
+  "10.1126/science.275.5306.1616": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.275.5306.1616",
+    "retrieved_at": "2026-07-10T15:33:51Z",
+    "cache_file": "10-1126_science-275-5306-1616.json",
+    "sha256": "d3c12eac4ec4c962f966a7e480d148c89eb1bd7f5d7d88945d0165c92e61c974",
+    "title": "Earthquakes Cannot Be Predicted",
+    "container": "Science",
+    "issued": 1997
   }
 }

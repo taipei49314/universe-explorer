@@ -44,7 +44,8 @@ def test_all_narratives_pass_their_gate():
 
 def test_registry_lookup():
     assert get_topic("exoplanets").id == "exoplanets"
-    assert len(TOPICS) == 3
+    assert get_topic("seismology").id == "seismology"
+    assert len(TOPICS) >= 4
 
 
 def _run():
