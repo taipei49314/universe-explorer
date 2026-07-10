@@ -1,0 +1,40 @@
+# The constitution rides in CI: unconstitutional data cannot reach the site.
+# run_tests.py = 10 suites + the four-gate build check; only then do we build
+# and deploy dist/ to GitHub Pages.
+name: constitution-gate-and-pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  gate-build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Constitution gate (10 suites + build check)
+        run: python run_tests.py
+      - name: Build site (en topics + index + zh single-file)
+        run: python build.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

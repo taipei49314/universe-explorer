@@ -1,0 +1,5 @@
+# Line endings are load-bearing here: both the engine-freeze check
+# (engine_hashes.json) and the P1 provenance check (cache/arxiv sha256)
+# hash file bytes. Force LF everywhere so hashes are identical on
+# Windows checkouts and Linux CI.
+* text=auto eol=lf

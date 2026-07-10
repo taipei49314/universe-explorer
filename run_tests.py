@@ -20,6 +20,7 @@ SUITES = [
     "test_narrative.py",    # R6 + Amendment #2 localization
     "test_registry.py",     # every gate x every topic
     "test_push.py",         # P5 digest restates, never interprets
+    "test_llm_narrative.py",  # B1 the court bites LLM output equally (offline)
 ]
 
 

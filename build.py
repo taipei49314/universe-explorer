@@ -56,7 +56,15 @@ def main(argv) -> int:
         (out_dir / f"{topic.id}.html").write_text(
             render_topic(topic), encoding="utf-8")
     (out_dir / "index.html").write_text(render_index(TOPICS), encoding="utf-8")
-    print(f"\nRendered {len(TOPICS)} topic(s) + index -> {out_dir}")
+
+    # single-file Chinese edition (presentation overlay, same data)
+    from dataops_artifact import build as build_single
+    zh = ('<!doctype html>\n<meta charset="utf-8">\n'
+          '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+          + build_single("zh"))
+    (out_dir / "zh.html").write_text(zh, encoding="utf-8")
+
+    print(f"\nRendered {len(TOPICS)} topic(s) + index + zh.html -> {out_dir}")
     return 0
 
 

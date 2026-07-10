@@ -306,7 +306,7 @@ _INDEX = """<!doctype html>
   <h1>Universe Explorer</h1>
   <p>Honestly separating what we know from what we don't. A topic is only a
   container &mdash; it has no status light of its own; each claim inside carries
-  its own. Same engine, any domain.</p>
+  its own. Same engine, any domain. <a href="zh.html">中文版 &rarr;</a></p>
   <div class="banner">Reference first, AI last. Certainty emerges from evidence
   you can open and read &mdash; never from a declared number.</div>
   {legend}
