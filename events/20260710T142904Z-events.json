@@ -1,0 +1,21 @@
+{
+  "at": "20260710T142904Z",
+  "note": "mechanical diff against the committed snapshot; the trigger interface for future push channels",
+  "events": [
+    {
+      "kind": "claim_added",
+      "claim": "proxima_b_exists",
+      "after": {
+        "status": "ESTABLISHED",
+        "evidence_axis": "E1",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    }
+  ]
+}

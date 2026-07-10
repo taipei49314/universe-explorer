@@ -1,0 +1,5 @@
+UNIVERSE EXPLORER — change digest
+(mechanical restatement of recorded state changes; every line names its event file, which carries the derivation back to the evidence)
+
+== 20260710T142904Z  (20260710T142904Z-events.json)
+  * proxima_b_exists: new claim recorded — status ESTABLISHED, evidence axis E1

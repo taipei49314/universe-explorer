@@ -373,6 +373,33 @@ CLAIMS = {
             "真正地球類比體的出現率仍在確定中。",
         ],
     },
+    "proxima_b_exists": {
+        "title": "最近的恆星比鄰星,擁有一顆溫帶地球質量行星",
+        "reasons": {
+            "multiple_independent_replications":
+                "兩套獨立儀器與團隊(2016 HARPS/UVES 觀測戰役;2020 ESPRESSO,"
+                "其後再獲後續 ESPRESSO 分析確認)偵測到同一行星訊號。",
+            "accepted_in_mainstream_textbooks":
+                "比鄰星 b 作為已知最近的系外行星,是當代天文教材與系外行星"
+                "參考書的標準內容。",
+            "no_mainstream_competing_theory":
+                "早期的恆星活動假象疑慮已被獨立的 ESPRESSO 資料檢驗並排除;"
+                "行星詮釋已無主流替代方案。",
+            "no_recent_major_refutation":
+                "後續的徑向速度觀測只讓偵測更加銳利。",
+        },
+        "evidence": [
+            "徑向速度監測揭示一顆最小質量約 1.3 地球質量的行星,"
+            "以 11.2 天的溫帶軌道繞行比鄰星。",
+            "獨立且精度更高的 ESPRESSO 光譜儀在 2019 年的全新資料中"
+            "重新偵測到同一 11.2 天訊號,確認行星並精修其最小質量。",
+        ],
+        "open_questions": [
+            "在 M 型矮星宿主的閃焰環境下,行星是否保有大氣仍屬未知。",
+            "其真實質量(而非最小質量)取決於未測得的軌道傾角。",
+            "受潮汐影響的溫帶行星,其表面條件是否容許液態水仍屬開放。",
+        ],
+    },
     "planets_are_common": {
         "title": "在銀河系恆星周圍,行星是常態而非例外",
         "reasons": {

@@ -98,6 +98,86 @@ exoplanets_exist = Claim(
 )
 
 # --------------------------------------------------------------------------- #
+# Claim 1c — Proxima b exists                             🟢 Established       #
+# (T5 cycle: sources chosen and web-verified by human; T4 LLM drafting was
+#  lawfully rejected on the multi-source case — see t4-spec §1.5 — so this
+#  one was authored manually on the fetched, verified sources.)
+# --------------------------------------------------------------------------- #
+proxima_b_exists = Claim(
+    id="proxima_b_exists",
+    title="The nearest star, Proxima Centauri, hosts a temperate "
+          "Earth-mass planet",
+    status=Status.ESTABLISHED,
+    sources=[
+        Source(
+            label="AngladaEscude2016",
+            url_or_id="arXiv:1609.03449",
+            kind="peer-reviewed paper (Nature 536, 437-440, 2016)",
+        ),
+        Source(
+            label="SuarezMascareno2020",
+            url_or_id="arXiv:2005.12114",
+            kind="peer-reviewed paper (A&A 639, A77, 2020; independent "
+                 "ESPRESSO confirmation)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "Radial-velocity monitoring revealed a minimum-mass ~1.3 "
+                "Earth-mass planet in an 11.2-day temperate orbit around "
+                "Proxima Centauri."
+            ),
+            source_ref="AngladaEscude2016",
+        ),
+        Evidence(
+            type="direct observation",
+            description=(
+                "The independent, higher-precision ESPRESSO spectrograph "
+                "re-detected the same 11.2-day signal in fresh 2019 data, "
+                "confirming the planet and refining its minimum mass."
+            ),
+            source_ref="SuarezMascareno2020",
+        ),
+    ],
+    open_questions=[
+        "Whether the planet retains an atmosphere under its M-dwarf host's "
+        "flaring is unknown.",
+        "Its true (not minimum) mass depends on the unmeasured orbital "
+        "inclination.",
+        "Whether conditions on a tidally influenced temperate planet permit "
+        "surface liquid water is open.",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "multiple_independent_replications", True,
+            "Two independent instruments and teams (HARPS/UVES campaign 2016; "
+            "ESPRESSO 2020, further re-confirmed in later ESPRESSO analyses) "
+            "detect the same planetary signal.",
+        ),
+        ConditionAssessment(
+            "accepted_in_mainstream_textbooks", True,
+            "Proxima b is standard content in current astronomy teaching "
+            "materials and exoplanet references as the nearest known "
+            "exoplanet.",
+        ),
+        ConditionAssessment(
+            "no_mainstream_competing_theory", True,
+            "The early stellar-activity-artifact concern was tested and "
+            "rejected by the independent ESPRESSO data; no mainstream "
+            "alternative to the planet interpretation remains.",
+        ),
+        ConditionAssessment(
+            "no_recent_major_refutation", True,
+            "Subsequent radial-velocity campaigns have only sharpened the "
+            "detection.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
 # Claim 1b — planets are the rule                         🔵 Strong            #
 # --------------------------------------------------------------------------- #
 planets_are_common = Claim(
@@ -372,6 +452,7 @@ EXOPLANETS = Topic(
     ),
     claims=[
         exoplanets_exist,
+        proxima_b_exists,
         planets_are_common,
         planet_nine,
         trappist1b_bare_rock,

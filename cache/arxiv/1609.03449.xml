@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/HtKW2AUotfLp96WoFnVGmhZrYz4</id>
+  <title>arXiv Query: search_query=&amp;id_list=1609.03449&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T14:26:04Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1609.03449" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1609.03449v1</id>
+    <title>A terrestrial planet candidate in a temperate orbit around Proxima Centauri</title>
+    <updated>2016-09-12T15:39:25Z</updated>
+    <link href="https://arxiv.org/abs/1609.03449v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1609.03449v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>At a distance of 1.295 parsecs, the red-dwarf Proxima Centauri ($α$ Centauri C, GL 551, HIP 70890, or simply Proxima) is the Sun's closest stellar neighbor and one of the best studied low-mass stars. It has an effective temperature of only $\sim$ 3050 K, a luminosity of $\sim$0.1 per cent solar, a measured radius of 0.14 R$_\odot$ and a mass of about 12 per cent the mass of the Sun. Although Proxima is considered a moderately active star, its rotation period is $\sim$ 83 days, and its quiescent activity levels and X-ray luminosity are comparable to the Sun's. New observations reveal the presence of a small planet orbiting Proxima with a minimum mass of 1.3~Earth masses and an orbital period of $\sim$11.2 days. Its orbital semi-major axis is $\sim0.05$ AU, with an equilibrium temperature in the range where water could be liquid on its surface.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-09-12T15:39:25Z</published>
+    <arxiv:comment>Version accepted for publication by Nature (unedited, July 7th, 2016), figures inserted in text for easier read. Article body : 10 pages, 3 figures, 1 table. Methods section : 23 pages, 9 figures, 1 table. IMPORTANT NOTE : Acknowledgment to IAA/CSIC researchers Javier Pascual Granado and Rafael Garrido added for useful discussions and feedback on the mathematical properties of time-series</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <arxiv:journal_ref>Nature 536 (2016) 437-440</arxiv:journal_ref>
+    <author>
+      <name>Guillem Anglada-Escudé</name>
+    </author>
+    <author>
+      <name>Pedro J. Amado</name>
+    </author>
+    <author>
+      <name>John Barnes</name>
+    </author>
+    <author>
+      <name>Zaira M. Berdiñas</name>
+    </author>
+    <author>
+      <name>R. Paul Butler</name>
+    </author>
+    <author>
+      <name>Gavin A. L. Coleman</name>
+    </author>
+    <author>
+      <name>Ignacio de la Cueva</name>
+    </author>
+    <author>
+      <name>Stefan Dreizler</name>
+    </author>
+    <author>
+      <name>Michael Endl</name>
+    </author>
+    <author>
+      <name>Benjamin Giesers</name>
+    </author>
+    <author>
+      <name>Sandra V. Jeffers</name>
+    </author>
+    <author>
+      <name>James S. Jenkins</name>
+    </author>
+    <author>
+      <name>Hugh R. A. Jones</name>
+    </author>
+    <author>
+      <name>Marcin Kiraga</name>
+    </author>
+    <author>
+      <name>Martin Kürster</name>
+    </author>
+    <author>
+      <name>María J. López-González</name>
+    </author>
+    <author>
+      <name>Christopher J. Marvin</name>
+    </author>
+    <author>
+      <name>Nicolás Morales</name>
+    </author>
+    <author>
+      <name>Julien Morin</name>
+    </author>
+    <author>
+      <name>Richard P. Nelson</name>
+    </author>
+    <author>
+      <name>José L. Ortiz</name>
+    </author>
+    <author>
+      <name>Aviv Ofir</name>
+    </author>
+    <author>
+      <name>Sijme-Jan Paardekooper</name>
+    </author>
+    <author>
+      <name>Ansgar Reiners</name>
+    </author>
+    <author>
+      <name>Eloy Rodríguez</name>
+    </author>
+    <author>
+      <name>Cristina Rodríguez-López</name>
+    </author>
+    <author>
+      <name>Luis F. Sarmiento</name>
+    </author>
+    <author>
+      <name>John P. Strachan</name>
+    </author>
+    <author>
+      <name>Yiannis Tsapras</name>
+    </author>
+    <author>
+      <name>Mikko Tuomi</name>
+    </author>
+    <author>
+      <name>Mathias Zechmeister</name>
+    </author>
+    <arxiv:doi>10.1038/nature19106</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/nature19106" title="doi"/>
+  </entry>
+</feed>

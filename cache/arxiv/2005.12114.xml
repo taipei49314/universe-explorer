@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/zx0LL00xznCKxP/hbA3Dhugxals</id>
+  <title>arXiv Query: search_query=&amp;id_list=2005.12114&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T14:26:08Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2005.12114" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2005.12114v2</id>
+    <title>Revisiting Proxima with ESPRESSO</title>
+    <updated>2020-05-26T11:19:45Z</updated>
+    <link href="https://arxiv.org/abs/2005.12114v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2005.12114v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We aim to confirm the presence of Proxima b using independent measurements obtained with the new ESPRESSO spectrograph, and refine the planetary parameters taking advantage of its improved precision. We analysed 63 spectroscopic ESPRESSO observations of Proxima taken during 2019. We obtained radial velocity measurements with a typical radial velocity photon noise of 26 cm/s. We ran a joint MCMC analysis on the time series of the radial velocity and full-width half maximum of the cross-correlation function to model the planetary and stellar signals present in the data, applying Gaussian process regression to deal with stellar activity. We confirm the presence of Proxima b independently in the ESPRESSO data. The ESPRESSO data on its own shows Proxima b at a period of 11.218 $\pm$ 0.029 days, with a minimum mass of 1.29 $\pm$ 0.13 Me. In the combined dataset we measure a period of 11.18427 $\pm$ 0.00070 days with a minimum mass of 1.173 $\pm$ 0.086 Me. We find no evidence of stellar activity as a potential cause for the 11.2 days signal. We find some evidence for the presence of a second short-period signal, at 5.15 days with a semi-amplitude of merely 40 cm/s. If caused by a planetary companion, it would correspond to a minimum mass of 0.29 $\pm$ 0.08 Me. We find that the FWHM of the CCF can be used as a proxy for the brightness changes and that its gradient with time can be used to successfully detrend the radial velocity data from part of the influence of stellar activity. The activity-induced radial velocity signal in the ESPRESSO data shows a trend in amplitude towards redder wavelengths. Velocities measured using the red end of the spectrograph are less affected by activity, suggesting that the stellar activity is spot-dominated. The data collected excludes the presence of extra companions with masses above 0.6 Me at periods shorter than 50 days.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-05-25T13:54:37Z</published>
+    <arxiv:comment>25 pages, 26 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <arxiv:journal_ref>A&amp;A 639, A77 (2020)</arxiv:journal_ref>
+    <author>
+      <name>A. Suárez Mascareño</name>
+    </author>
+    <author>
+      <name>J. P. Faria</name>
+    </author>
+    <author>
+      <name>P. Figueira</name>
+    </author>
+    <author>
+      <name>C. Lovis</name>
+    </author>
+    <author>
+      <name>M. Damasso</name>
+    </author>
+    <author>
+      <name>J. I. González Hernández</name>
+    </author>
+    <author>
+      <name>R. Rebolo</name>
+    </author>
+    <author>
+      <name>S. Cristiano</name>
+    </author>
+    <author>
+      <name>F. Pepe</name>
+    </author>
+    <author>
+      <name>N. C. Santos</name>
+    </author>
+    <author>
+      <name>M. R. Zapatero Osorio</name>
+    </author>
+    <author>
+      <name>V. Adibekyan</name>
+    </author>
+    <author>
+      <name>S. Hojjatpanah</name>
+    </author>
+    <author>
+      <name>A. Sozzetti</name>
+    </author>
+    <author>
+      <name>F. Murgas</name>
+    </author>
+    <author>
+      <name>M. Abreo</name>
+    </author>
+    <author>
+      <name>M. Affolter</name>
+    </author>
+    <author>
+      <name>Y. Alibert</name>
+    </author>
+    <author>
+      <name>M. Aliverti</name>
+    </author>
+    <author>
+      <name>R. Allart</name>
+    </author>
+    <author>
+      <name>C. Allende Prieto</name>
+    </author>
+    <author>
+      <name>D. Alves</name>
+    </author>
+    <author>
+      <name>M. Amate</name>
+    </author>
+    <author>
+      <name>G. Avila</name>
+    </author>
+    <author>
+      <name>V. Baldini</name>
+    </author>
+    <author>
+      <name>T. Bandi</name>
+    </author>
+    <author>
+      <name>S. C. C. Barros</name>
+    </author>
+    <author>
+      <name>A. Bianco</name>
+    </author>
+    <author>
+      <name>W. Benz</name>
+    </author>
+    <author>
+      <name>F. Bouchy</name>
+    </author>
+    <author>
+      <name>C. Broeng</name>
+    </author>
+    <author>
+      <name>A. Cabral</name>
+    </author>
+    <author>
+      <name>G. Calderone</name>
+    </author>
+    <author>
+      <name>R. Cirami</name>
+    </author>
+    <author>
+      <name>J. Coelho</name>
+    </author>
+    <author>
+      <name>P. Conconi</name>
+    </author>
+    <author>
+      <name>I. Coretti</name>
+    </author>
+    <author>
+      <name>C. Cumani</name>
+    </author>
+    <author>
+      <name>G. Cupani</name>
+    </author>
+    <author>
+      <name>V. D'Odorico</name>
+    </author>
+    <author>
+      <name>S. Deiries</name>
+    </author>
+    <author>
+      <name>B. Delabre</name>
+    </author>
+    <author>
+      <name>P. Di Marcantonio</name>
+    </author>
+    <author>
+      <name>X. Dumusque</name>
+    </author>
+    <author>
+      <name>D. Ehrenreich</name>
+    </author>
+    <author>
+      <name>A. Fragoso</name>
+    </author>
+    <author>
+      <name>L. Genolet</name>
+    </author>
+    <author>
+      <name>M. Genoni</name>
+    </author>
+    <author>
+      <name>R. Génova Santos</name>
+    </author>
+    <author>
+      <name>I. Hughes</name>
+    </author>
+    <author>
+      <name>O. Iwert</name>
+    </author>
+    <author>
+      <name>K. Ferber</name>
+    </author>
+    <author>
+      <name>J. Knusdrtrup</name>
+    </author>
+    <author>
+      <name>M. Landoni</name>
+    </author>
+    <author>
+      <name>B. Lavie</name>
+    </author>
+    <author>
+      <name>J. Lillo-Box</name>
+    </author>
+    <author>
+      <name>J. Lizon</name>
+    </author>
+    <author>
+      <name>G. Lo Curto</name>
+    </author>
+    <author>
+      <name>C. Maire</name>
+    </author>
+    <author>
+      <name>A. Manescau</name>
+    </author>
+    <author>
+      <name>C. J. A. P. Martins</name>
+    </author>
+    <author>
+      <name>D. Mégevand</name>
+    </author>
+    <author>
+      <name>A. Mehner</name>
+    </author>
+    <author>
+      <name>G. Micela</name>
+    </author>
+    <author>
+      <name>A. Modigliani</name>
+    </author>
+    <author>
+      <name>P. Molaro</name>
+    </author>
+    <author>
+      <name>M. A. Monteiro</name>
+    </author>
+    <author>
+      <name>M. J. P. F. G. Monteiro</name>
+    </author>
+    <author>
+      <name>M. Moschetti</name>
+    </author>
+    <author>
+      <name>E. Mueller</name>
+    </author>
+    <author>
+      <name>N. J. Nunes</name>
+    </author>
+    <author>
+      <name>L. Oggioni</name>
+    </author>
+    <author>
+      <name>A. Oliveira</name>
+    </author>
+    <author>
+      <name>E. Pallé</name>
+    </author>
+    <author>
+      <name>G. Pariani</name>
+    </author>
+    <author>
+      <name>L. Pasquini</name>
+    </author>
+    <author>
+      <name>E. Poretti</name>
+    </author>
+    <author>
+      <name>J. L. Rasilla</name>
+    </author>
+    <author>
+      <name>E. Redaelli</name>
+    </author>
+    <author>
+      <name>M. Riva</name>
+    </author>
+    <author>
+      <name>S. Santana Tschudi</name>
+    </author>
+    <author>
+      <name>P. Santin</name>
+    </author>
+    <author>
+      <name>P. Santos</name>
+    </author>
+    <author>
+      <name>A. Segovia</name>
+    </author>
+    <author>
+      <name>D. Sosnoswska</name>
+    </author>
+    <author>
+      <name>S. Sousa</name>
+    </author>
+    <author>
+      <name>P. Spanò</name>
+    </author>
+    <author>
+      <name>F. Tenegi</name>
+    </author>
+    <author>
+      <name>S. Udry</name>
+    </author>
+    <author>
+      <name>A. Zanutta</name>
+    </author>
+    <author>
+      <name>F. Zerbi</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/202037745</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/202037745" title="doi"/>
+  </entry>
+</feed>
