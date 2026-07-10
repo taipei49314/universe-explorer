@@ -1,0 +1,21 @@
+{
+  "at": "20260710T141728Z",
+  "note": "mechanical diff against the committed snapshot; the trigger interface for future push channels",
+  "events": [
+    {
+      "kind": "claim_added",
+      "claim": "bbh_mergers_catalogued",
+      "after": {
+        "status": "FRONTIER",
+        "evidence_axis": "E2",
+        "evidence_items": 1,
+        "sources": 1,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    }
+  ]
+}

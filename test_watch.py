@@ -18,6 +18,10 @@ from universe_explorer.watch import (
 )
 
 
+def _fw(topic):
+    return next(c for c in topic.claims if c.id == "firewall")
+
+
 def _snap() -> dict:
     return current_state(BLACK_HOLE)
 
@@ -31,7 +35,7 @@ def test_stable_means_zero_noise():
 def test_diff_is_idempotent():
     snap = _snap()
     topic = copy.deepcopy(BLACK_HOLE)
-    topic.claims[3].status = Status.FRONTIER
+    _fw(topic).status = Status.FRONTIER
     now = current_state(topic)
     first = diff_events(snap, now)
     second = diff_events(snap, now)
@@ -41,7 +45,7 @@ def test_diff_is_idempotent():
 def test_silent_status_change_is_caught():
     snap = _snap()
     topic = copy.deepcopy(BLACK_HOLE)
-    topic.claims[3].status = Status.FRONTIER  # firewall promoted, no history
+    _fw(topic).status = Status.FRONTIER  # firewall promoted, no history
     v = check_documented_transitions(topic, snap)
     assert [x.rule for x in v] == ["undocumented_status_change"]
     assert v[0].claim_id == "firewall"
@@ -50,7 +54,7 @@ def test_silent_status_change_is_caught():
 def test_documented_status_change_passes():
     snap = _snap()
     topic = copy.deepcopy(BLACK_HOLE)
-    c = topic.claims[3]
+    c = _fw(topic)
     c.status = Status.FRONTIER
     c.status_history.append(StatusChange(
         date="2026-07-10", from_status="Speculative",
@@ -81,7 +85,7 @@ def test_events_written_as_files():
     snap = _snap()
     topic = copy.deepcopy(BLACK_HOLE)
     topic.claims[0].open_questions.append("does not affect watched keys")
-    topic.claims[3].status = Status.FRONTIER
+    _fw(topic).status = Status.FRONTIER
     events = diff_events(snap, current_state(topic))
     with tempfile.TemporaryDirectory() as tmp:
         out = emit_events(events, Path(tmp))

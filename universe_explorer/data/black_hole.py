@@ -206,6 +206,65 @@ hawking_radiation = Claim(
 )
 
 # --------------------------------------------------------------------------- #
+# Claim 2b — binary mergers catalogued at scale           🟠 Frontier          #
+#
+# First claim inducted through the T4 drafting pipeline (drafts/
+# bbh_mergers_are_common.json, 2026-07-10): local LLM drafted it, every court
+# passed it mechanically, then a human verified faithfulness (venue confirmed
+# Phys. Rev. X 13, 041039 (2023); evidence checked against the cached
+# abstract; title rewritten from the paper name into a claim statement).
+# --------------------------------------------------------------------------- #
+bbh_mergers_catalogued = Claim(
+    id="bbh_mergers_catalogued",
+    title="Gravitational-wave astronomy has catalogued dozens of compact "
+          "binary coalescences",
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="GWTC3-2023",
+            url_or_id="arXiv:2111.03606",
+            kind="collaboration result (peer-reviewed, Phys. Rev. X 13, "
+                 "041039, 2023)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "The GWTC-3 catalog reports 35 compact-binary-coalescence "
+                "candidates from the second half of the third observing run — "
+                "including the first confident neutron-star–black-hole "
+                "binaries — bringing the cumulative count of observed "
+                "candidates to 90."
+            ),
+            source_ref="GWTC3-2023",
+        ),
+    ],
+    open_questions=[
+        "Can gravitational-wave data alone cleanly distinguish neutron stars "
+        "from black holes among the lighter binary components?",
+        "What do the observed merger populations imply about massive-star "
+        "and binary evolution?",
+        "How will the population statistics shift as detector sensitivity "
+        "improves and further observing runs accumulate?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "new_discovery", True,
+            "Gravitational-wave astronomy is a newly opened observational "
+            "channel; population-scale catalogues of mergers only began with "
+            "the third observing run.",
+        ),
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "Each observing run multiplies the catalogue and produces a fast-"
+            "growing body of population-analysis papers.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
 # Claim 3 — the information paradox                      🟠 Frontier           #
 # --------------------------------------------------------------------------- #
 information_paradox = Claim(
@@ -349,6 +408,7 @@ BLACK_HOLE = Topic(
     claims=[
         event_horizon_exists,
         hawking_radiation,
+        bbh_mergers_catalogued,
         information_paradox,
         firewall,
     ],

@@ -1,5 +1,5 @@
 {
-  "committed_at": "2026-07-10T13:19:07Z",
+  "committed_at": "2026-07-10T14:17:28Z",
   "claims": {
     "event_horizon_exists": {
       "status": "ESTABLISHED",
@@ -21,6 +21,17 @@
       "derivation": [
         "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 1 theoretical",
         "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "bbh_mergers_catalogued": {
+      "status": "FRONTIER",
+      "evidence_axis": "E2",
+      "evidence_items": 1,
+      "sources": 1,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
       ]
     },
     "information_paradox": {
