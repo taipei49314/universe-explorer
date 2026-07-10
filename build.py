@@ -70,10 +70,11 @@ def main(argv) -> int:
     (out_dir / "about.html").write_text(render_about(), encoding="utf-8")
     (out_dir / "about-zh.html").write_text(render_about("zh"), encoding="utf-8")
 
-    # D4: the dynamic frontend — a static source file + a bilingual data payload
-    app_src = Path(__file__).parent / "web" / "app.html"
-    (out_dir / "app.html").write_text(
-        app_src.read_text(encoding="utf-8"), encoding="utf-8")
+    # D4: the dynamic frontends — static source files + a bilingual payload
+    web = Path(__file__).parent / "web"
+    for page in ("app.html", "universe.html"):
+        (out_dir / page).write_text(
+            (web / page).read_text(encoding="utf-8"), encoding="utf-8")
     (out_dir / "app-data.json").write_text(
         app_data_json(TOPICS), encoding="utf-8")
 

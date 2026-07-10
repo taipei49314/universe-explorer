@@ -12,6 +12,7 @@ from universe_explorer.render import app_data_json
 
 DATA = json.loads(app_data_json(TOPICS))
 APP = Path("web/app.html").read_text(encoding="utf-8")
+UNI = Path("web/universe.html").read_text(encoding="utf-8")
 
 
 def test_app_data_complete_and_consistent():
@@ -77,6 +78,22 @@ def test_divergent_claims_land_in_the_marked_zone():
     for c in DATA["claims"]:
         if c["diverges"]:
             assert c["status_rank"] <= 1 and c["axis_rank"] >= 2, c["id"]
+
+
+def test_universe_self_contained_and_epistemic():
+    """The drift view: same self-containment law, and its visuals must encode
+    epistemics — every status has a distinct body form, size follows the
+    evidence axis, divergence pulses."""
+    assert "<script src" not in UNI and "<link " not in UNI
+    assert "@import" not in UNI and "url(http" not in UNI
+    fetches = re.findall(r'fetch\("([^"]+)"\)', UNI)
+    assert fetches == ["app-data.json"]
+    for needle in ("ESTABLISHED", "STRONG", "COMPETING", "FRONTIER",
+                   "SPECULATIVE", "axis_rank", "diverges",
+                   "prefers-reduced-motion", "binary", "nebula"):
+        assert needle in UNI, needle
+    # size = evidence strength: the layout derives size from axis_rank
+    assert "size:24 - k.axis_rank" in UNI
 
 
 def _run():

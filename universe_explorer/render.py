@@ -786,6 +786,7 @@ _INDEX = """<!doctype html>
   <p>Honestly separating what we know from what we don't. A topic is only a
   container &mdash; it has no status light of its own; each claim inside carries
   its own. Same engine, any domain.
+  <a href="universe.html"><b>Drift the universe &rarr;</b></a> ·
   <a href="app.html"><b>Knowledge map &rarr;</b></a> ·
   <a href="explore.html">Explore all claims &rarr;</a> ·
   <a href="about.html">How to read this</a> ·

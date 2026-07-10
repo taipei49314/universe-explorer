@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universe Explorer — Drift</title>
+<style>
+/* This page deliberately commits to one visual world: deep space.
+   Body VISUALS encode epistemics (form=status, size=evidence, binary=competing,
+   nebula=frontier, ghost=speculative, pulse=divergence) — never decoration. */
+:root {
+  --est:#57C186; --strong:#6FA8E8; --comp:#D9B14A; --front:#E8794E; --spec:#D66BB4;
+  --ink:#DCE6E0; --muted:#8296A0; --panel:rgba(13,18,28,.92); --line:#2A3548;
+}
+* { box-sizing:border-box; margin:0; }
+html, body { height:100%; overflow:hidden; background:#05080F;
+  font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); }
+#space { position:fixed; inset:0; display:block; cursor:grab; touch-action:none; }
+#space.drag { cursor:grabbing; }
+.hud { position:fixed; z-index:10; }
+#brand { top:18px; left:20px; pointer-events:none; }
+#brand h1 { font:500 1.25rem Georgia,"Songti SC","Noto Serif CJK TC",serif;
+  letter-spacing:.02em; text-shadow:0 0 18px rgba(0,0,0,.9); }
+#brand p { color:var(--muted); font-size:.78rem; margin-top:2px; }
+#nav { top:18px; right:18px; display:flex; gap:8px; flex-wrap:wrap;
+  justify-content:flex-end; max-width:60vw; }
+.btn { border:1px solid var(--line); background:var(--panel); color:var(--ink);
+  border-radius:999px; padding:5px 14px; font:inherit; font-size:.8rem;
+  cursor:pointer; backdrop-filter:blur(6px); }
+.btn:hover { border-color:var(--muted); }
+.btn.on { border-color:var(--est); font-weight:700; }
+#hint { bottom:16px; left:50%; transform:translateX(-50%); color:var(--muted);
+  font-size:.75rem; background:var(--panel); border:1px solid var(--line);
+  border-radius:999px; padding:4px 16px; pointer-events:none; opacity:.9; }
+#legend { bottom:16px; left:18px; font-size:.72rem; color:var(--muted);
+  background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:8px 12px; display:grid; gap:3px; }
+#legend i { display:inline-block; width:9px; height:9px; border-radius:50%;
+  margin-right:7px; }
+#panel { position:fixed; top:0; right:0; height:100%; width:min(480px,94vw);
+  background:var(--panel); backdrop-filter:blur(10px);
+  border-left:1px solid var(--line); z-index:20; transform:translateX(103%);
+  overflow-y:auto; padding:20px 22px 60px; }
+#panel.open { transform:translateX(0); }
+@media (prefers-reduced-motion: no-preference) {
+  #panel { transition:transform .25s ease; } }
+#panel h2 { font:500 1.2rem Georgia,"Songti SC",serif; margin:6px 0;
+  text-wrap:balance; }
+#panel h3 { font-size:.72rem; letter-spacing:.07em; text-transform:uppercase;
+  color:var(--muted); margin:16px 0 5px; border-top:1px dashed var(--line);
+  padding-top:10px; }
+#panel ul { padding-left:16px; }
+#panel li { margin:5px 0; font-size:.86rem; }
+.badge { font-family:ui-monospace,Consolas,monospace; font-size:.72rem;
+  background:rgba(255,255,255,.07); border-radius:4px; padding:2px 8px;
+  color:var(--muted); }
+.cond { font-family:ui-monospace,Consolas,monospace; font-size:.72rem;
+  display:block; color:var(--est); }
+.note { color:var(--muted); }
+.ref { font-family:ui-monospace,Consolas,monospace; font-size:.7rem;
+  color:var(--muted); }
+.tier { font-size:.64em; font-weight:700; border:1px solid currentColor;
+  border-radius:3px; padding:0 4px; opacity:.75; }
+#closep { float:right; border:1px solid var(--line); background:transparent;
+  color:var(--ink); border-radius:8px; font:inherit; padding:3px 11px;
+  cursor:pointer; }
+.plinks { margin-top:14px; font-size:.82rem; display:flex; gap:14px;
+  flex-wrap:wrap; }
+.plinks a { color:var(--est); }
+button:focus-visible, a:focus-visible { outline:2px solid var(--est);
+  outline-offset:2px; }
+</style>
+</head>
+<body>
+<canvas id="space"></canvas>
+<div class="hud" id="brand"><h1 id="t-title"></h1><p id="t-sub"></p></div>
+<div class="hud" id="nav"></div>
+<div class="hud" id="legend"></div>
+<div class="hud" id="hint"></div>
+<aside id="panel" aria-label="claim detail"></aside>
+
+<script>
+"use strict";
+const COLORS = { ESTABLISHED:"#57C186", STRONG:"#6FA8E8", COMPETING:"#D9B14A",
+  FRONTIER:"#E8794E", SPECULATIVE:"#D66BB4" };
+const I18N = {
+  en: { title:"Universe Explorer", sub:"drift through what we know — and what we don't",
+    hint:"drag to drift · scroll to zoom · click a body to read it",
+    overview:"Overview", lang:"中文", map:"Map view", plain:"Plain site",
+    whylight:"Why this light", evidence:"Evidence",
+    open:"Open questions", sources:"Sources", close:"close",
+    diverge:"axes diverge", permalink:"permalink",
+    challenge:"challenge this verdict",
+    legend:["star — established","planet — strong","binary — two camps",
+            "nebula — frontier","ghost — speculative","pulse — ⚡ divergence"] },
+  zh: { title:"宇宙探索者", sub:"漂流過我們的已知 —— 與未知",
+    hint:"拖曳漂移 · 滾輪縮放 · 點擊天體閱讀它",
+    overview:"總覽", lang:"EN", map:"地圖視圖", plain:"陽春版",
+    whylight:"為什麼是這個燈號", evidence:"證據",
+    open:"開放問題", sources:"出處", close:"關閉",
+    diverge:"雙軸分岔", permalink:"永久連結",
+    challenge:"挑戰這個判定",
+    legend:["恆星 —— 已確立","行星 —— 強共識","雙星 —— 兩派拉鋸",
+            "星雲 —— 前沿","幽靈 —— 推測","脈動 —— ⚡ 分岔"] },
+};
+
+let DATA = null, bodies = [], clusters = [];
+let state = { lang:"en", sel:null };
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const cv = document.getElementById("space");
+const cx = cv.getContext("2d");
+let W = 0, H = 0, DPR = 1;
+function resize() {
+  DPR = Math.min(devicePixelRatio || 1, 2);
+  // some webviews report a 0 viewport for the first frames — never trust it
+  W = innerWidth || document.documentElement.clientWidth || 960;
+  H = innerHeight || document.documentElement.clientHeight || 600;
+  cv.width = W * DPR; cv.height = H * DPR;
+  cx.setTransform(DPR, 0, 0, DPR, 0, 0);
+}
+addEventListener("resize", resize); resize();
+
+/* camera */
+const cam = { x:0, y:0, z:0.62, vx:0, vy:0 };
+let fly = null;
+// overview must FIT the viewport, whatever its size — never a fixed zoom
+function overviewZ() {
+  return Math.max(0.3, Math.min(0.9, Math.min(W / 3050, H / 2050)));
+}
+function flyTo(x, y, z) {
+  if (REDUCED) { cam.x = x; cam.y = y; cam.z = z; return; }
+  fly = { fx:cam.x, fy:cam.y, fz:cam.z, tx:x, ty:y, tz:z, t:0 };
+}
+
+/* deterministic pseudo-random (stable layout per claim) */
+function rnd(seed) { let s = 0;
+  for (const ch of seed) s = (s * 31 + ch.charCodeAt(0)) % 2147483647;
+  return () => (s = s * 16807 % 2147483647) / 2147483647; }
+
+/* starfield layers + dust */
+const stars = [], dust = [];
+{ const r = rnd("starfield");
+  for (let L = 0; L < 3; L++)
+    for (let i = 0; i < 240; i++)
+      stars.push({ x:r()*4800-2400, y:r()*3200-1600, l:0.18+L*0.3,
+        s:0.5+r()*(L+1)*0.8, tw:r()*6.28, ts:0.3+r()*1.2 });
+  for (let i = 0; i < 130; i++)
+    dust.push({ x:r()*4800-2400, y:r()*3200-1600, s:0.6+r()*1.7,
+      dx:(r()-0.5)*7, dy:(r()-0.5)*7, a:0.05+r()*0.12 });
+}
+
+/* layout: each topic = a constellation cluster */
+function layout() {
+  const anchors = [ {x:-950,y:-520}, {x:900,y:-480}, {x:-880,y:560}, {x:930,y:600} ];
+  clusters = DATA.topics.map((t, i) => ({ ...t, ...anchors[i % 4] }));
+  bodies = [];
+  for (const c of clusters) {
+    const cl = DATA.claims.filter(k => k.topic === c.id);
+    const r = rnd(c.id);
+    cl.forEach((k, i) => {
+      const ang = (i / cl.length) * 6.283 + r() * 0.8;
+      const dist = 170 + r() * 210;
+      bodies.push({ c:k, cl:c,
+        bx:c.x + Math.cos(ang) * dist, by:c.y + Math.sin(ang) * dist * 0.72,
+        x:0, y:0, ph:r() * 6.283, sp:0.25 + r() * 0.5,
+        size:24 - k.axis_rank * 3.6,   // size = evidence strength
+        orb:r() * 6.283 });
+    });
+  }
+}
+
+/* draw one epistemic body */
+function drawBody(b, t, hov) {
+  const k = b.c, col = COLORS[k.status], s = b.size;
+  const x = b.x, y = b.y;
+  cx.save();
+  if (k.diverges) {                      // divergence: pulsing ring
+    const p = REDUCED ? 0.5 : (Math.sin(t*2.1 + b.ph) + 1) / 2;
+    cx.beginPath(); cx.arc(x, y, s + 8 + p*6, 0, 6.283);
+    cx.strokeStyle = col; cx.globalAlpha = 0.35 + p*0.3; cx.lineWidth = 1.5;
+    cx.setLineDash([4,5]); cx.stroke(); cx.setLineDash([]); cx.globalAlpha = 1;
+  }
+  cx.shadowColor = col;
+  if (k.status === "ESTABLISHED") {      // star: solid, steady glow
+    cx.shadowBlur = 26;
+    cx.fillStyle = col; cx.beginPath(); cx.arc(x, y, s, 0, 6.283); cx.fill();
+    cx.shadowBlur = 0; cx.fillStyle = "rgba(255,255,255,.85)";
+    cx.beginPath(); cx.arc(x - s*0.28, y - s*0.28, s*0.3, 0, 6.283); cx.fill();
+  } else if (k.status === "STRONG") {    // planet: calm, ringed
+    cx.shadowBlur = 14; cx.fillStyle = col;
+    cx.beginPath(); cx.arc(x, y, s, 0, 6.283); cx.fill(); cx.shadowBlur = 0;
+    cx.strokeStyle = "rgba(255,255,255,.35)"; cx.lineWidth = 1.4;
+    cx.beginPath(); cx.ellipse(x, y, s*1.65, s*0.5, -0.45, 0, 6.283); cx.stroke();
+  } else if (k.status === "COMPETING") { // binary: two camps orbiting
+    const a = REDUCED ? b.orb : t * b.sp + b.orb, d = s * 0.95;
+    for (const sgn of [1, -1]) {
+      cx.shadowBlur = 12; cx.fillStyle = col;
+      cx.beginPath();
+      cx.arc(x + Math.cos(a)*d*sgn, y + Math.sin(a)*d*0.55*sgn, s*0.62, 0, 6.283);
+      cx.fill();
+    }
+    cx.shadowBlur = 0; cx.strokeStyle = col; cx.globalAlpha = 0.3;
+    cx.beginPath(); cx.ellipse(x, y, d*1.15, d*0.68, 0, 0, 6.283); cx.stroke();
+    cx.globalAlpha = 1;
+  } else if (k.status === "FRONTIER") {  // nebula: still coalescing
+    const g = cx.createRadialGradient(x, y, 1, x, y, s*1.9);
+    g.addColorStop(0, col + "E6"); g.addColorStop(0.55, col + "55");
+    g.addColorStop(1, col + "00");
+    cx.fillStyle = g; cx.beginPath(); cx.arc(x, y, s*1.9, 0, 6.283); cx.fill();
+    const r2 = rnd(k.id);
+    for (let i = 0; i < 7; i++) {
+      const aa = (REDUCED ? 0 : t * (0.2 + r2()*0.4)) + r2()*6.283;
+      const dd = s * (0.8 + r2()*1.1);
+      cx.globalAlpha = 0.6; cx.fillStyle = col;
+      cx.beginPath();
+      cx.arc(x + Math.cos(aa)*dd, y + Math.sin(aa)*dd*0.8, 1.6, 0, 6.283);
+      cx.fill(); cx.globalAlpha = 1;
+    }
+  } else {                                // SPECULATIVE ghost: flickering
+    const f = REDUCED ? 0.55 : 0.35 + ((Math.sin(t*3.1 + b.ph) + 1) / 2) * 0.4;
+    cx.globalAlpha = f; cx.shadowBlur = 18; cx.strokeStyle = col;
+    cx.lineWidth = 1.6; cx.setLineDash([5,4]);
+    cx.beginPath(); cx.arc(x, y, s, 0, 6.283); cx.stroke(); cx.setLineDash([]);
+    cx.fillStyle = col; cx.globalAlpha = f * 0.35;
+    cx.beginPath(); cx.arc(x, y, s, 0, 6.283); cx.fill();
+    cx.globalAlpha = 1;
+  }
+  cx.shadowBlur = 0;
+  if (hov || cam.z > 1.05) {              // label on hover or close zoom
+    cx.font = (hov ? "600 " : "") + "12px system-ui";
+    cx.fillStyle = hov ? "#FFFFFF" : "rgba(220,230,224,.75)";
+    cx.textAlign = "center";
+    const title = state.lang === "zh" ? k.title_zh : k.title;
+    cx.fillText(title.length > 34 ? title.slice(0, 33) + "…" : title,
+                x, y + s + (k.status === "FRONTIER" ? s : 0) + 18);
+  }
+  cx.restore();
+}
+
+let hover = null, tPrev = 0;
+function frame(ms) {
+  const t = ms / 1000;
+  // late-arriving viewport (0-width first frames): keep checking cheaply
+  const liveW = innerWidth || document.documentElement.clientWidth || 960;
+  const liveH = innerHeight || document.documentElement.clientHeight || 600;
+  if (liveW !== W || liveH !== H) resize();
+  if (fly) { fly.t = Math.min(1, fly.t + (ms - tPrev) / 900);
+    const e = 1 - Math.pow(1 - fly.t, 3);
+    cam.x = fly.fx + (fly.tx - fly.fx) * e;
+    cam.y = fly.fy + (fly.ty - fly.fy) * e;
+    cam.z = fly.fz + (fly.tz - fly.fz) * e;
+    if (fly.t >= 1) fly = null; }
+  else if (!drag.on) { cam.x += cam.vx; cam.y += cam.vy;
+    cam.vx *= 0.93; cam.vy *= 0.93; }
+  tPrev = ms;
+
+  cx.fillStyle = "#05080F"; cx.fillRect(0, 0, W, H);
+
+  for (const s of stars) {               // parallax starfield
+    const sx = (s.x - cam.x * s.l) * cam.z + W/2;
+    const sy = (s.y - cam.y * s.l) * cam.z + H/2;
+    if (sx < -8 || sx > W+8 || sy < -8 || sy > H+8) continue;
+    const tw = REDUCED ? 0.75 : 0.55 + 0.45 * Math.sin(t * s.ts + s.tw);
+    cx.globalAlpha = 0.35 * tw + s.l * 0.35;
+    cx.fillStyle = "#CFE0EA";
+    cx.beginPath(); cx.arc(sx, sy, s.s * (0.6 + s.l), 0, 6.283); cx.fill();
+  }
+  cx.globalAlpha = 1;
+  for (const d of dust) {                // suspended dust, slow drift
+    if (!REDUCED) { d.x += d.dx * 0.016; d.y += d.dy * 0.016;
+      if (d.x > 2400) d.x = -2400; if (d.x < -2400) d.x = 2400;
+      if (d.y > 1600) d.y = -1600; if (d.y < -1600) d.y = 1600; }
+    const sx = (d.x - cam.x * 0.9) * cam.z + W/2;
+    const sy = (d.y - cam.y * 0.9) * cam.z + H/2;
+    if (sx < 0 || sx > W || sy < 0 || sy > H) continue;
+    cx.globalAlpha = d.a; cx.fillStyle = "#9FB8C8";
+    cx.beginPath(); cx.arc(sx, sy, d.s * cam.z, 0, 6.283); cx.fill();
+  }
+  cx.globalAlpha = 1;
+
+  for (const b of bodies) {              // ambient bobbing in world space
+    b.wx = b.bx + (REDUCED ? 0 : Math.sin(t * b.sp + b.ph) * 9);
+    b.wy = b.by + (REDUCED ? 0 : Math.cos(t * b.sp * 0.8 + b.ph) * 7);
+    b.x = (b.wx - cam.x) * cam.z + W/2;
+    b.y = (b.wy - cam.y) * cam.z + H/2;
+  }
+  for (const c of clusters) {            // constellation lines + name
+    const mem = bodies.filter(b => b.cl === c);
+    cx.strokeStyle = "rgba(150,175,190,.16)"; cx.lineWidth = 1;
+    cx.beginPath();
+    mem.forEach((b, i) => i ? cx.lineTo(b.x, b.y) : cx.moveTo(b.x, b.y));
+    cx.stroke();
+    const sx = (c.x - cam.x) * cam.z + W/2, sy = (c.y - cam.y) * cam.z + H/2;
+    cx.font = "500 " + Math.max(13, 15*cam.z) + "px Georgia, Songti SC, serif";
+    cx.fillStyle = "rgba(190,205,212,.5)"; cx.textAlign = "center";
+    cx.fillText(state.lang === "zh" ? c.title_zh : c.title, sx, sy);
+  }
+  const sc = [...bodies].sort((a, b) => a === hover ? 1 : b === hover ? -1 : 0);
+  for (const b of sc) drawBody(b, t, b === hover);
+
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+/* input: drag / momentum / wheel zoom / hover / click */
+const drag = { on:false, x:0, y:0, moved:0 };
+cv.addEventListener("pointerdown", e => { drag.on = true; drag.moved = 0;
+  drag.x = e.clientX; drag.y = e.clientY; cam.vx = cam.vy = 0; fly = null;
+  cv.classList.add("drag"); cv.setPointerCapture(e.pointerId); });
+cv.addEventListener("pointermove", e => {
+  if (drag.on) { const dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    drag.moved += Math.abs(dx) + Math.abs(dy);
+    cam.x -= dx / cam.z; cam.y -= dy / cam.z;
+    cam.vx = -dx / cam.z * 0.35; cam.vy = -dy / cam.z * 0.35;
+    drag.x = e.clientX; drag.y = e.clientY; }
+  else { hover = null;
+    for (const b of bodies) {
+      const hitR = Math.max(16, (b.size + 10) * cam.z);
+      if (Math.hypot(e.clientX - b.x, e.clientY - b.y) < hitR) hover = b; }
+    cv.style.cursor = hover ? "pointer" : "grab"; } });
+cv.addEventListener("pointerup", e => { drag.on = false;
+  cv.classList.remove("drag");
+  if (drag.moved < 6) {                   // click, not drag
+    let hit = null;
+    for (const b of bodies) {
+      const hitR = Math.max(16, (b.size + 10) * cam.z);
+      if (Math.hypot(e.clientX - b.x, e.clientY - b.y) < hitR) hit = b; }
+    if (hit) openPanel(hit.c); else closePanel(); } });
+cv.addEventListener("wheel", e => { e.preventDefault();
+  const f = Math.exp(-e.deltaY * 0.0012);
+  const z2 = Math.min(2.4, Math.max(0.3, cam.z * f));
+  const wx = (e.clientX - W/2) / cam.z + cam.x;
+  const wy = (e.clientY - H/2) / cam.z + cam.y;
+  cam.x = wx - (e.clientX - W/2) / z2; cam.y = wy - (e.clientY - H/2) / z2;
+  cam.z = z2; }, { passive:false });
+
+/* panel (condensed record; full record lives one link away) */
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g,
+  c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const L = () => I18N[state.lang];
+function openPanel(k) {
+  state.sel = k; const t = L(), zh = state.lang === "zh";
+  const reasons = k.status_reason.map(r => `<li>
+    <span class="cond">${r.holds ? "✓" : "✗"} ${esc(zh ? r.condition_zh : r.condition)}</span>
+    <span class="note">${esc(zh ? r.note_zh : r.note)}</span></li>`).join("");
+  const ev = k.evidence.map(e => `<li><span class="badge">${esc(zh ? e.type_zh : e.type)}</span>
+    ${esc(zh ? e.description_zh : e.description)} <span class="ref">[${esc(e.source_ref)}]</span></li>`).join("");
+  const oq = (zh ? k.open_questions_zh : k.open_questions)
+    .map(q => `<li>${esc(q)}</li>`).join("");
+  const src = k.sources.map(s => `<li><b>${esc(s.label)}</b>
+    <span class="tier">${esc(s.tier || "?")}</span> — ${esc(s.url_or_id)}</li>`).join("");
+  $("panel").innerHTML = `
+    <button id="closep">${esc(t.close)} ✕</button>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <span style="font-size:1.5em">${k.status_light}</span>
+      <span class="badge" style="color:${COLORS[k.status]};font-weight:700">
+        ${esc(zh ? k.status_name_zh : k.status_name)}</span>
+      <span class="badge">${esc(k.axis)} · ${esc(zh ? k.axis_name_zh : k.axis_name)}</span>
+      ${k.diverges ? `<span class="badge" style="color:#D9B14A">⚡ ${esc(t.diverge)}</span>` : ""}
+    </div>
+    <h2>${esc(zh ? k.title_zh : k.title)}</h2>
+    <h3>${esc(t.whylight)}</h3><ul>${reasons}</ul>
+    <h3>${esc(t.evidence)}</h3><ul>${ev}</ul>
+    <h3>${esc(t.open)}</h3><ul>${oq}</ul>
+    <h3>${esc(t.sources)}</h3><ul>${src}</ul>
+    <div class="plinks">
+      <a href="${esc(k.permalink)}">${esc(t.permalink)} →</a>
+      <a href="https://github.com/taipei49314/universe-explorer/issues/new?template=challenge-a-verdict.yml&title=%5Bchallenge%5D%20${esc(k.id)}">${esc(t.challenge)} →</a>
+    </div>`;
+  $("panel").classList.add("open");
+  $("closep").addEventListener("click", closePanel);
+}
+function closePanel() { state.sel = null; $("panel").classList.remove("open"); }
+document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
+
+/* HUD */
+function renderHud() {
+  const t = L();
+  document.documentElement.lang = state.lang === "zh" ? "zh-Hant" : "en";
+  document.title = t.title + " — Drift";
+  $("t-title").textContent = t.title; $("t-sub").textContent = t.sub;
+  $("hint").textContent = t.hint;
+  $("legend").innerHTML = [
+    `<span><i style="background:${COLORS.ESTABLISHED}"></i>${esc(t.legend[0])}</span>`,
+    `<span><i style="background:${COLORS.STRONG}"></i>${esc(t.legend[1])}</span>`,
+    `<span><i style="background:${COLORS.COMPETING}"></i>${esc(t.legend[2])}</span>`,
+    `<span><i style="background:${COLORS.FRONTIER}"></i>${esc(t.legend[3])}</span>`,
+    `<span><i style="background:${COLORS.SPECULATIVE}"></i>${esc(t.legend[4])}</span>`,
+    `<span><i style="background:transparent;border:1px dashed ${COLORS.COMPETING}"></i>${esc(t.legend[5])}</span>`,
+  ].join("");
+  const nav = [`<button class="btn" data-a="home">${esc(t.overview)}</button>`];
+  for (const c of clusters)
+    nav.push(`<button class="btn" data-a="c:${esc(c.id)}">
+      ${esc(state.lang === "zh" ? c.title_zh : c.title)}</button>`);
+  nav.push(`<button class="btn" id="langbtn">${esc(t.lang)}</button>`);
+  nav.push(`<a class="btn" href="app.html">${esc(t.map)}</a>`);
+  nav.push(`<a class="btn" href="index.html">${esc(t.plain)}</a>`);
+  $("nav").innerHTML = nav.join("");
+  $("nav").querySelectorAll("button[data-a]").forEach(b =>
+    b.addEventListener("click", () => {
+      if (b.dataset.a === "home") flyTo(0, 30, overviewZ());
+      else { const c = clusters.find(x => x.id === b.dataset.a.slice(2));
+        flyTo(c.x, c.y, 1.15); } }));
+  $("langbtn").addEventListener("click", () => {
+    state.lang = state.lang === "zh" ? "en" : "zh";
+    renderHud(); if (state.sel) openPanel(state.sel); });
+}
+
+fetch("app-data.json").then(r => r.json()).then(d => {
+  DATA = d; layout(); renderHud(); flyTo(0, 30, overviewZ());
+});
+</script>
+</body>
+</html>
