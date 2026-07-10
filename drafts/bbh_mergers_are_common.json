@@ -1,0 +1,72 @@
+{
+  "verified": "UNVERIFIED",
+  "drafted_at": "2026-07-10T14:00:30Z",
+  "claim": {
+    "id": "bbh_mergers_are_common",
+    "title": "GWTC-3: Compact Binary Coalescences Observed by LIGO and Virgo During the Second Part of the Third Observing Run",
+    "status": "FRONTIER",
+    "status_reason": [
+      {
+        "condition": "new_discovery",
+        "holds": true,
+        "note": "UNVERIFIED (LLM draft): GWTC-3 contains observations that are new and unprecedented"
+      },
+      {
+        "condition": "insufficient_sample",
+        "holds": false,
+        "note": "UNVERIFIED (LLM draft): The sample size is not insufficient as it includes the first confident observations of neutron star-black hole binaries."
+      },
+      {
+        "condition": "insufficient_observation",
+        "holds": false,
+        "note": "[machine] no direct observation recorded (E2); recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical"
+      },
+      {
+        "condition": "rapidly_growing_literature",
+        "holds": true,
+        "note": "UNVERIFIED (LLM draft): The literature on compact binary coalescences continues to grow rapidly with new discoveries and analyses."
+      }
+    ],
+    "evidence": [
+      {
+        "type": "direct observation",
+        "description": "The third Gravitational-Wave Transient Catalog (GWTC-3) describes signals detected with Advanced LIGO and Advanced Virgo up to the end of their third observing run. It presents candidate gravitational waves from compact binary coalescences during the second half of the third observing run.",
+        "source_ref": "arXiv-2111-03606"
+      }
+    ],
+    "open_questions": [
+      "Can gravitational-wave data alone distinguish between neutron stars and black holes in the binary components?",
+      "What is the significance of observing neutron star-black hole binaries for our understanding of stellar evolution?"
+    ],
+    "sources": [
+      {
+        "label": "arXiv-2111-03606",
+        "url_or_id": "arXiv:2111.03606",
+        "kind": "peer-reviewed paper (arXiv record; venue to be confirmed by human review)"
+      }
+    ]
+  },
+  "court_report": {
+    "constitution": "zero violations",
+    "provenance": "all sources fetched and verified",
+    "evidence_axis": "E2 (direct observation (single line))",
+    "axis_derivation": [
+      "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
+      "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+    ],
+    "compatible_statuses": [
+      "STRONG",
+      "COMPETING",
+      "FRONTIER",
+      "SPECULATIVE"
+    ],
+    "narrative_court": "passed"
+  },
+  "human_todo": [
+    "verify every evidence description is FAITHFUL to its source",
+    "verify the venue/peer-review state of each source (kind field)",
+    "verify UNVERIFIED condition notes against real references",
+    "then write the claim into data/<topic>.py yourself — all gates run again there"
+  ],
+  "topic": "black_hole"
+}

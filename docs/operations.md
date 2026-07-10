@@ -31,6 +31,17 @@ python run_tests.py          # 9 個套件 + 憲法擋關,一個 exit code
 8. **git commit**。修改引擎七檔 = 修憲:先寫 `docs/amendment-N-*.md`,
    重新蓋章 `engine_hashes.json`,commit message 註明修正案編號。
 
+## 用 LLM 起草新 claim(T4,可選)
+
+```sh
+python -m universe_explorer.dataops.claim_draft <topic_id> <claim_id> <arxiv_id> ... [--status FRONTIER]
+```
+
+來源由你選、燈號可由你定(`--status`);本地模型只起草。草稿在你看到之前
+已過完**全部**法院(憲法/詞彙/cite⇒fetch/證據軸/相容集/敘事),寫入 `drafts/`
+帶 UNVERIFIED 章。你要做的是機器做不到的那件事:**核對內容忠於來源**,
+然後自己把 Python 寫進 data/(屆時全部把關再跑一次)。
+
 ## 發現新來源
 
 ```sh
