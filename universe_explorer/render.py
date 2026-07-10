@@ -560,8 +560,11 @@ stamped UNVERIFIED and live outside the data.</div>
 <p>Pick any claim, press <code>challenge</code> on its card, and argue against
 its entry conditions with a checkable source. The full re-review path is in
 <a href="https://github.com/taipei49314/universe-explorer/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>;
+every rule and its legal basis is consolidated in the
+<a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/constitution.md">constitution</a>;
 the machine-readable data is <a href="claims.json">claims.json</a>; changes
-stream to the <a href="feed.xml">Atom feed</a>.</p>
+stream to the <a href="feed.xml">Atom feed</a>. Code is MIT; content is
+CC BY 4.0 — challenging us requires no permission at all.</p>
 </body>
 </html>
 """
@@ -611,8 +614,11 @@ _ABOUT_ZH = f"""<!doctype html>
 <p>挑任何一個 claim,按卡片上的 <code>challenge</code>,拿可查證的來源逐條
 攻擊它的入格條件。完整覆核路徑在
 <a href="https://github.com/taipei49314/universe-explorer/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>;
+全部規則與法源彙編於
+<a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/constitution.md">憲法</a>;
 機器可讀資料在 <a href="claims.json">claims.json</a>;所有變化流向
-<a href="feed.xml">Atom feed</a>。</p>
+<a href="feed.xml">Atom feed</a>。程式碼 MIT、內容 CC BY 4.0 ——
+挑戰我們,完全不需要任何人的許可。</p>
 </body>
 </html>
 """
