@@ -1,0 +1,44 @@
+# T1 — weekly source health check: cited papers can be corrected or retracted,
+# and that must never happen silently. On new formally-deposited update records
+# (Crossref filter=updates:DOI) this opens an issue so a human re-judges the
+# citing claims. The check reports; humans decide — never auto-relight.
+#
+# Note: event files emitted inside this ephemeral runner are not committed;
+# the issue IS the notification. Running the check locally and committing
+# routes findings into the digest + Atom feed as usual.
+name: source-health
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"   # weekly, Monday 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run health check
+        id: health
+        run: |
+          set +e
+          python -m universe_explorer.dataops.source_health | tee health.log
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+      - name: Open issue on new findings
+        if: steps.health.outputs.code == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Source health: new update records on cited DOIs" \
+            --body "$(printf 'The weekly Crossref reverse lookup found NEW formally-deposited update records (correction/erratum/retraction) on cited sources.\n\nMechanical report:\n\n```\n%s\n```\n\nHumans must re-judge the citing claims; acknowledge by adding the updating DOI to health/acknowledged.json (and, if the claim moves, write the status_history entry — lights never change silently).' "$(cat health.log)")"
+      - name: Fail visibly when findings exist
+        if: steps.health.outputs.code == '1'
+        run: exit 1

@@ -26,6 +26,7 @@ SUITES = [
     "test_explore.py",        # D2 anchors, explore page, claims.json export
     "test_crossref.py",       # C2/Amendment #6 DOI cite=>fetch rules bite
     "test_feed.py",           # D3 Atom feed restates, never interprets
+    "test_health.py",         # T1 source health: report, never re-judge
 ]
 
 
