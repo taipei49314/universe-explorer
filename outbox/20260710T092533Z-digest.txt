@@ -1,0 +1,22 @@
+UNIVERSE EXPLORER — change digest
+(mechanical restatement of recorded state changes; every line names its event file, which carries the derivation back to the evidence)
+
+== 20260710T092422Z  (20260710T092422Z-events.json)
+  * hydrothermal_vents_exist: new claim recorded — status ESTABLISHED, evidence axis E1
+  * amoc_weakening: new claim recorded — status COMPETING, evidence axis E3
+  * ccz_biodiversity_unknown: new claim recorded — status FRONTIER, evidence axis E3
+  * dark_oxygen_production: new claim recorded — status SPECULATIVE, evidence axis E2
+  * exoplanets_exist: new claim recorded — status ESTABLISHED, evidence axis E1
+  * planet_nine: new claim recorded — status COMPETING, evidence axis E3
+  * trappist1b_bare_rock: new claim recorded — status FRONTIER, evidence axis E2
+  * k2_18b_biosignature: new claim recorded — status SPECULATIVE, evidence axis E2
+
+== 20260710T092423Z  (20260710T092423Z-events.json)
+  * hydrothermal_vents_exist: new claim recorded — status ESTABLISHED, evidence axis E1
+  * amoc_weakening: new claim recorded — status COMPETING, evidence axis E3
+  * ccz_biodiversity_unknown: new claim recorded — status FRONTIER, evidence axis E3
+  * dark_oxygen_production: new claim recorded — status SPECULATIVE, evidence axis E2
+  * exoplanets_exist: new claim recorded — status ESTABLISHED, evidence axis E1
+  * planet_nine: new claim recorded — status COMPETING, evidence axis E3
+  * trappist1b_bare_rock: new claim recorded — status FRONTIER, evidence axis E2
+  * k2_18b_biosignature: new claim recorded — status SPECULATIVE, evidence axis E2

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/uw57cZFw27PdHNeFOh1DffnFHt0</id>
+  <title>arXiv Query: search_query=&amp;id_list=1510.00621&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T08:21:06Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1510.00621" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1510.00621v3</id>
+    <title>Observation of quantum Hawking radiation and its entanglement in an analogue black hole</title>
+    <updated>2017-08-08T12:22:51Z</updated>
+    <link href="https://arxiv.org/abs/1510.00621v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1510.00621v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We observe spontaneous Hawking radiation, stimulated by quantum vacuum fluctuations, emanating from an analogue black hole in an atomic Bose-Einstein condensate. Correlations are observed between the Hawking particles outside the black hole and the partner particles inside. These correlations indicate an approximately thermal distribution of Hawking radiation. We find that the high energy pairs are entangled, while the low energy pairs are not, within the reasonable assumption that excitations with different frequencies are not correlated. The entanglement verifies the quantum nature of the Hawking radiation. The results are consistent with a driven oscillation experiment and a numerical simulation.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2015-10-02T15:27:27Z</published>
+    <arxiv:comment>The latest version has additional data and explanations</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <arxiv:journal_ref>Nature Phys. 12, 959 (2016)</arxiv:journal_ref>
+    <author>
+      <name>Jeff Steinhauer</name>
+    </author>
+    <arxiv:doi>10.1038/nphys3863</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/nphys3863" title="doi"/>
+  </entry>
+</feed>

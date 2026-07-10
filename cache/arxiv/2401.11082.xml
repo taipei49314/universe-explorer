@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/m00431/odx1gtZo5jpJqhHqhCAA</id>
+  <title>arXiv Query: search_query=&amp;id_list=2401.11082&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T09:23:34Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2401.11082" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2401.11082v2</id>
+    <title>JWST observations of K2-18b can be explained by a gas-rich mini-Neptune with no habitable surface</title>
+    <updated>2024-02-03T15:20:42Z</updated>
+    <link href="https://arxiv.org/abs/2401.11082v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2401.11082v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>JWST recently measured the transmission spectrum of K2-18b, a habitable-zone sub-Neptune exoplanet, detecting CH$_4$ and CO$_2$ in its atmosphere. The discovery paper argued the data are best explained by a habitable "Hycean" world, consisting of a relatively thin H$_2$-dominated atmosphere overlying a liquid water ocean. Here, we use photochemical and climate models to simulate K2-18b as both a Hycean planet and a gas-rich mini-Neptune with no defined surface. We find that a lifeless Hycean world is hard to reconcile with the JWST observations because photochemistry only supports $&lt; 1$ part-per-million CH$_4$ in such an atmosphere while the data suggest about $\sim 1\%$ of the gas is present. Sustaining %-level CH$_4$ on a Hycean K2-18b may require the presence of a methane-producing biosphere, similar to microbial life on Earth $\sim 3$ billion years ago. On the other hand, we predict that a gas-rich mini-Neptune with $100 \times$ solar metallicity should have 4% CH$_4$ and nearly 0.1% CO$_2$, which are compatible with the JWST data. The CH$_4$ and CO$_2$ are produced thermochemically in the deep atmosphere and mixed upward to the low pressures sensitive to transmission spectroscopy. The model predicts H$_2$O, NH$_3$ and CO abundances broadly consistent with the non-detections. Given the additional obstacles to maintaining a stable temperate climate on Hycean worlds due to H$_2$ escape and potential supercriticality at depth, we favor the mini-Neptune interpretation because of its relative simplicity and because it does not need a biosphere or other unknown source of methane to explain the data.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2024-01-20T02:16:18Z</published>
+    <arxiv:comment>Accepted for publication at ApJL</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <author>
+      <name>Nicholas F. Wogan</name>
+    </author>
+    <author>
+      <name>Natasha E. Batalha</name>
+    </author>
+    <author>
+      <name>Kevin Zahnle</name>
+    </author>
+    <author>
+      <name>Joshua Krissansen-Totton</name>
+    </author>
+    <author>
+      <name>Shang-Min Tsai</name>
+    </author>
+    <author>
+      <name>Renyu Hu</name>
+    </author>
+  </entry>
+</feed>

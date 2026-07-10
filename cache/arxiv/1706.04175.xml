@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/tebU22cvoE+f2c/rP5Lo2dtxS5A</id>
+  <title>arXiv Query: search_query=&amp;id_list=1706.04175&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T09:23:07Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1706.04175" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1706.04175v1</id>
+    <title>Observational bias and the clustering of distant eccentric Kuiper belt objects</title>
+    <updated>2017-06-13T17:41:43Z</updated>
+    <link href="https://arxiv.org/abs/1706.04175v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1706.04175v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The hypothesis that a massive Planet Nine exists in the outer solar system on a distant eccentric orbit was inspired by observations showing that the objects with the most distant eccentric orbits in the Kuiper belt have orbits which are physically aligned, that is, they are clustered in longitude of perihelion and have similar orbital planes. Questions have remained, however, about the effects of observational bias on these observations, particularly on the longitudes of perihelion. Specifically, distant eccentric Kuiper belt objects tend to be faint and only observable near their perihelia, suggesting that the longitudes of perihelion of the known distant objects could be strongly biased by the limited number of locations in the sky where deep surveys have been carried out. We have developed a method to rigorously estimate the longitude of perihelion bias for Kuiper belt observations. We find that the probability that the 10 known Kuiper belt objects with semimajor axis beyond 230 AU are drawn from a population with uniform longitude of perihelion is 1.2%. Combined with the observation that the orbital poles of these object are also clustered, the overall probability of detecting these two independent clusterings in a randomly distributed sample is 0.025%. While observational bias is clearly present in these observations, it is unlikely to explain the observed alignment of the distant eccentric Kuiper belt objects.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-06-13T17:41:43Z</published>
+    <arxiv:comment>AJ, in press</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <author>
+      <name>Michael E. Brown</name>
+    </author>
+    <arxiv:doi>10.3847/1538-3881/aa79f4</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3847/1538-3881/aa79f4" title="doi"/>
+  </entry>
+</feed>

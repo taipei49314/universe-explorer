@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/nUN2fYYf7PEAY/Z597kbOHnA8yE</id>
+  <title>arXiv Query: search_query=&amp;id_list=astro-ph/9911436&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T09:23:00Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=astro-ph/9911436" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/astro-ph/9911436v1</id>
+    <title>Detection of Planetary Transits Across a Sun-like Star</title>
+    <updated>1999-11-23T14:52:56Z</updated>
+    <link href="https://arxiv.org/abs/astro-ph/9911436v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/astro-ph/9911436v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  We report high precision, high cadence photometric measurements of the star HD 209458, which is known from radial velocity measurements to have a planetary mass companion in a close orbit. We detect two separate transit events at times that are consistent with the radial velocity measurements. In both cases, the detailed shape of the transit curve due to both the limb darkening of the star and the finite size of the planet is clearly evident. Assuming stellar parameters of 1.1 R_Sun and 1.1 M_Sun, we find that the data are best interpreted as a gas giant with a radius of 1.27 +/- 0.02 R_Jup in an orbit with an inclination of 87.1 +/- 0.2 degrees. We present values for the planetary surface gravity, escape velocity, and average density, and discuss the numerous observations that are warranted now that a planet is known to transit the disk of its parent star.</summary>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>1999-11-23T14:52:56Z</published>
+    <arxiv:comment>10 pages, 3 figures, accepted by ApJ Letters</arxiv:comment>
+    <arxiv:primary_category term="astro-ph"/>
+    <arxiv:journal_ref>Astrophys.J. 529 (2000) L45</arxiv:journal_ref>
+    <author>
+      <name>David Charbonneau</name>
+    </author>
+    <author>
+      <name>Timothy M. Brown</name>
+    </author>
+    <author>
+      <name>David W. Latham</name>
+    </author>
+    <author>
+      <name>Michel Mayor</name>
+    </author>
+    <arxiv:doi>10.1086/312457</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1086/312457" title="doi"/>
+  </entry>
+</feed>

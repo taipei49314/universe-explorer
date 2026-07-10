@@ -1,0 +1,114 @@
+{
+  "query": "black hole information paradox islands",
+  "endpoint": "https://export.arxiv.org/api/query?search_query=all%3Ablack+hole+information+paradox+islands&max_results=10&sortBy=relevance",
+  "retrieved_at": "20260710T082241Z",
+  "note": "pending candidates only — citing one requires a human edit to the data file, which then falls under the cite=>fetch rule",
+  "results": [
+    {
+      "arxiv_id": "2502.05642",
+      "title": "Paradox No More: How Stimulated Emission of Radiation Preserves Information Absorbed by Black Holes",
+      "published": "2025-02-08T17:06:36Z",
+      "authors": [
+        "Christoph Adami"
+      ],
+      "summary": "Black holes have been implicated in two paradoxes that involve apparently non-unitary dynamics. According to Hawking's theory, information that is absorbed by a black hole is destroyed, and the originally pure state of a black hole is converted to a mixed state upon complete evaporation. Here we address one of the two, namely the apparent loss of (classical) information when it crosses the event horizon. We show that this paradox is due to a mistake in Hawking's original derivation: he ignored the contribution of the stimulated emission of radiation that according to Einstein's theory of blackbody radiance must accompany the spontaneous emission (the Hawking radiation). Resurrecting the contribution of stimulated emission makes it possible to calculate the (positive) classical information transmission capacity of black holes, which implies that information is fully recoverable from the radiation outside the black hole horizon.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "astro-ph/0412101",
+      "title": "Black Hole Paradoxes",
+      "published": "2004-12-03T23:34:41Z",
+      "authors": [
+        "Mario Rabinowitz"
+      ],
+      "summary": "The Black Hole enigma has produced many paradoxes. A consensus regarding the resolution of some conundrums such as the Naked Singularity Paradox and the Black Hole Lost Information Paradox (LIP) has still not been achieved. Black hole complementarity as related to the LIP and the LIP itself are challenged by gravitational tunneling radiation. Where possible, the paradoxes will be presented in historical context presenting the interplay of competing perspectives such as those of Bekenstein, Belinski, Chandrasekar, Finkelstein, Hawking, Maldacena, Page, Penrose, Preskill, Susskind, 't Hooft, Veneziano, Wald, Winterberg, Yilmaz, and others. The simplest possible equation is obtained for Hawking radiation. The average kinetic energy of emitted particles may have a feature in common with thermionic emission. A broad range of topics will be covered including: Why can or can't the formation of a black hole be observed? Can one observe a naked singularity like the one clothed by a black hole? What can come out of, or seem to come out of, a black hole? What happens to the information that falls into a black hole? Doesn't the resolution of the original black hole entropy paradox introduce an equally challenging puzzle? Related anomalies in the speed of light, the speed of gravity, the speed of inflation, and Mach's principle are considered. Black hole entropy violation of the Nernst heat theorem is virtual As we shall see, these paradoxes have served as an incentive for research to sharpen our thinking, and even to promote the development of new theoretical and experimental physics. A reasonable number of paradoxes are a good thing. But too many paradoxes requiring manifold patchwork fixes may augur basic flaws/inconsistencies that signal the need for a paradigm shift.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2505.23011",
+      "title": "Page Curve of average subsystem entropy",
+      "published": "2025-05-29T02:40:07Z",
+      "authors": [
+        "Oscar C. O. Dahlsten"
+      ],
+      "summary": "The Page curve is a curve of average subsystem entropy as a function of subsystem size. The curve starts from 0, rises, peaks near the maximal possible entropy when the subsystem makes up half of the total system, and then falls back to 0. We here describe subsystem entropy, averaging over quantum states, and why the curve rises and falls in that manner. We also discuss the connection between the curve and the black hole information paradox.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2408.00058",
+      "title": "Information Scrambling at Quantum Hall Interfaces and Their Analog to Black Hole Event Horizon",
+      "published": "2024-07-31T17:57:42Z",
+      "authors": [
+        "Ken K. W. Ma",
+        "Kun Yang"
+      ],
+      "summary": "The black hole information paradox has been hotly debated for the last few decades without a full resolution. This makes it desirable to find analogues of this paradox in simple and experimentally accessible systems, whose resolutions may shed light on this longstanding and fundamental problem. Here, we review and resolve the apparent \"information paradox\" in two different interfaces separating Abelian and non-Abelian quantum Hall states. In both cases, the information carried by the pseudospin degree of freedom of the Abelian anyons get scrambled when they cross the interface and enter the non-Abelian quantum Hall liquid. Nevertheless, it is found that the scrambling mechanism depends on the nature of the interface. The corresponding analogues of different concepts in black hole physics such as event horizon, black hole interior, Hawking radiation, and Page curve will also be discussed.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1602.06600",
+      "title": "Black Hole Information Loss: Some Food for Thoughts",
+      "published": "2016-02-21T23:21:11Z",
+      "authors": [
+        "Yen Chin Ong",
+        "Dong-han Yeom"
+      ],
+      "summary": "We provide some thoughts on the black hole information loss paradox, highlighting some important aspects of the problem that need to be addressed in order to resolve the paradox.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2004.01601",
+      "title": "Notes on islands in asymptotically flat 2d dilaton black holes",
+      "published": "2020-04-03T14:47:08Z",
+      "authors": [
+        "Takanori Anegawa",
+        "Norihiro Iizuka"
+      ],
+      "summary": "We study the islands and the Page curve in the 1+1-dimensional eternal dilaton black hole models. Without islands, the entanglement entropy of the radiation grows linearly at late time. However with an island, its growth stops at the value of almost twice of the black hole entropy. Therefore an island emerges at the late time, and the entanglement entropy of the radiation shows the Page curve.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2504.03835",
+      "title": "The firewall paradox is Wigner's friend paradox",
+      "published": "2025-04-04T18:00:01Z",
+      "authors": [
+        "Ladina Hausmann",
+        "Renato Renner"
+      ],
+      "summary": "The firewall paradox, a puzzle in black hole physics, depends on an implicit assumption: a rule that allows the infalling and the outside observer to combine their perspectives. However, a recent extension of the Wigner's friend paradox shows that such a combination rule conflicts with quantum theory $\\unicode{x2013}$ without involving gravity. This challenges the usual conclusion of the firewall paradox, that standard quantum gravity assumptions are incompatible. More generally, black hole puzzles and Wigner's friend puzzles are closely related by a correspondence. This suggests that the firewall paradox may be a symptom of the same fundamental issue that leads to the extended Wigner's friend paradox.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2105.03271",
+      "title": "Island may not save the information paradox of Liouville black holes",
+      "published": "2021-05-07T13:49:43Z",
+      "authors": [
+        "Ran Li",
+        "Xuanhua Wang",
+        "Jin Wang"
+      ],
+      "summary": "By using the quantum extremal island formula, we perform a simple calculation of the generalized entanglement entropy of Hawking radiation from the two dimensional Liouville black hole. No reasonable island was found when extremizing the generalized entropy. We explain qualitatively the reason why the page curve cannot be reproduced in the present model. This suggests that the islands may not necessarily save the information paradox for the Liouville black holes.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "gr-qc/9805045",
+      "title": "Disturbing the Black Hole",
+      "published": "1998-05-13T08:02:39Z",
+      "authors": [
+        "Jacob D. Bekenstein"
+      ],
+      "summary": "I describe some examples in support of the conjecture that the horizon area of a near equilibrium black hole is an adiabatic invariant. These include a Schwarzschild black hole perturbed by quasistatic scalar fields (which may be minimally or nonminimally coupled to curvature), a Kerr black under the influence of scalar radiation at the superradiance treshold, and a Reissner--Nordström black hole absorbing a charge marginally. These clarify somewhat the conditions under which the conjecture would be true. The desired ``adiabatic theorem'' provides an important motivation for a scheme for black hole quantization.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2404.00374",
+      "title": "How does information emerge from a black hole?",
+      "published": "2024-03-30T13:58:29Z",
+      "authors": [
+        "Suvrat Raju"
+      ],
+      "summary": "An examination of the constraints of quantum gravity leads to a clear physical picture for how information about the initial state is transferred to the Hawking radiation that emerges from a black hole.",
+      "status": "pending"
+    }
+  ]
+}

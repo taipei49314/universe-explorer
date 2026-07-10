@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/n68mt0nK1JirpK6sT1P0thEfexc</id>
+  <title>arXiv Query: search_query=&amp;id_list=1906.11238&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T08:20:54Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1906.11238" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1906.11238v1</id>
+    <title>First M87 Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole</title>
+    <updated>2019-06-26T18:06:46Z</updated>
+    <link href="https://arxiv.org/abs/1906.11238v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1906.11238v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>When surrounded by a transparent emission region, black holes are expected to reveal a dark shadow caused by gravitational light bending and photon capture at the event horizon. To image and study this phenomenon, we have assembled the Event Horizon Telescope, a global very long baseline interferometry array observing at a wavelength of 1.3 mm. This allows us to reconstruct event-horizon-scale images of the supermassive black hole candidate in the center of the giant elliptical galaxy M87. We have resolved the central compact radio source as an asymmetric bright emission ring with a diameter of 42+/-3 micro-as, which is circular and encompasses a central depression in brightness with a flux ratio ~10:1. The emission ring is recovered using different calibration and imaging schemes, with its diameter and width remaining stable over four different observations carried out in different days. Overall, the observed image is consistent with expectations for the shadow of a Kerr black hole as predicted by general relativity. The asymmetry in brightness in the ring can be explained in terms of relativistic beaming of the emission from a plasma rotating close to the speed of light around a black hole. We compare our images to an extensive library of ray-traced general-relativistic magnetohydrodynamic simulations of black holes and derive a central mass of M = (6.5+/-0.7) x 10^9 Msun. Our radio-wave observations thus provide powerful evidence for the presence of supermassive black holes in centers of galaxies and as the central engines of active galactic nuclei. They also present a new tool to explore gravity in its most extreme limit and on a mass scale that was so far not accessible.</summary>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-06-26T18:06:46Z</published>
+    <arxiv:primary_category term="astro-ph.GA"/>
+    <arxiv:journal_ref>ApJ, 875, L1, 2019 (April 10)</arxiv:journal_ref>
+    <author>
+      <name> The Event Horizon Telescope Collaboration</name>
+    </author>
+    <arxiv:doi>10.3847/2041-8213/ab0ec7</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3847/2041-8213/ab0ec7" title="doi"/>
+  </entry>
+</feed>

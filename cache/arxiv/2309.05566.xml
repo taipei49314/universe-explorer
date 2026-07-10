@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/T/8Ti5HNyyTb9HJVJVun0SI4GUA</id>
+  <title>arXiv Query: search_query=&amp;id_list=2309.05566&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T09:23:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2309.05566" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2309.05566v2</id>
+    <title>Carbon-bearing Molecules in a Possible Hycean Atmosphere</title>
+    <updated>2023-10-04T17:45:42Z</updated>
+    <link href="https://arxiv.org/abs/2309.05566v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2309.05566v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The search for habitable environments and biomarkers in exoplanetary atmospheres is the holy grail of exoplanet science. The detection of atmospheric signatures of habitable Earth-like exoplanets is challenging due to their small planet-star size contrast and thin atmospheres with high mean molecular weight. Recently, a new class of habitable exoplanets, called Hycean worlds, has been proposed, defined as temperate ocean-covered worlds with H2-rich atmospheres. Their large sizes and extended atmospheres, compared to rocky planets of the same mass, make Hycean worlds significantly more accessible to atmospheric spectroscopy with the JWST. Here we report a transmission spectrum of the candidate Hycean world, K2-18 b, observed with the JWST NIRISS and NIRSpec instruments in the 0.9-5.2 $μ$m range. The spectrum reveals strong detections of methane (CH4) and carbon dioxide (CO2) at 5$σ$ and 3$σ$ confidence, respectively, with high volume mixing ratios of ~1% each in a H2-rich atmosphere. The abundant CH4 and CO2 along with the non-detection of ammonia (NH3) are consistent with chemical predictions for an ocean under a temperate H2-rich atmosphere on K2-18 b. The spectrum also suggests potential signs of dimethyl sulfide (DMS), which has been predicted to be an observable biomarker in Hycean worlds, motivating considerations of possible biological activity on the planet. The detection of CH4 resolves the long-standing missing methane problem for temperate exoplanets and the degeneracy in the atmospheric composition of K2-18 b from previous observations. We discuss possible implications of the findings, open questions, and future observations to explore this new regime in the search for life elsewhere.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-09-11T15:53:01Z</published>
+    <arxiv:comment>Accepted for publication in ApJ Letters, updated with proof edits</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <author>
+      <name>Nikku Madhusudhan</name>
+    </author>
+    <author>
+      <name>Subhajit Sarkar</name>
+    </author>
+    <author>
+      <name>Savvas Constantinou</name>
+    </author>
+    <author>
+      <name>Måns Holmberg</name>
+    </author>
+    <author>
+      <name>Anjali A. A. Piette</name>
+    </author>
+    <author>
+      <name>Julianne I. Moses</name>
+    </author>
+  </entry>
+</feed>

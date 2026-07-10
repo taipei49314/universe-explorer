@@ -1,0 +1,185 @@
+{
+  "1906.11238": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=1906.11238&max_results=1",
+    "retrieved_at": "2026-07-10T08:20:56Z",
+    "cache_file": "1906.11238.xml",
+    "sha256": "013194af3d2b5f76c64e8a67933f03422104e84e62b0fe3624136b2eec58b73c",
+    "title": "First M87 Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole",
+    "published": "2019-06-26T18:06:46Z",
+    "authors": [
+      "The Event Horizon Telescope Collaboration"
+    ]
+  },
+  "2311.08680": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=2311.08680&max_results=1",
+    "retrieved_at": "2026-07-10T08:21:00Z",
+    "cache_file": "2311.08680.xml",
+    "sha256": "cb798e31b0b5b0db8919178dce50dd050e2393d6965dfa3e50f42fff50f1d9a3",
+    "title": "First Sagittarius A* Event Horizon Telescope Results. I. The Shadow of the Supermassive Black Hole in the Center of the Milky Way",
+    "published": "2023-11-15T04:01:03Z",
+    "authors": [
+      "The Event Horizon Telescope Collaboration"
+    ]
+  },
+  "1602.03837": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=1602.03837&max_results=1",
+    "retrieved_at": "2026-07-10T08:21:04Z",
+    "cache_file": "1602.03837.xml",
+    "sha256": "08f7e61bb6826d6ca0fe244c60480bf6345c9c3f47debf0528a84da68350ef1f",
+    "title": "Observation of Gravitational Waves from a Binary Black Hole Merger",
+    "published": "2016-02-11T19:26:44Z",
+    "authors": [
+      "The LIGO Scientific Collaboration",
+      "the Virgo Collaboration"
+    ]
+  },
+  "1510.00621": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=1510.00621&max_results=1",
+    "retrieved_at": "2026-07-10T08:21:07Z",
+    "cache_file": "1510.00621.xml",
+    "sha256": "c79246ec23f12a49bd5096bfc32275756dcab141dac31e12643895f81be64425",
+    "title": "Observation of quantum Hawking radiation and its entanglement in an analogue black hole",
+    "published": "2015-10-02T15:27:27Z",
+    "authors": [
+      "Jeff Steinhauer"
+    ]
+  },
+  "hep-th/9306069": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=hep-th%2F9306069&max_results=1",
+    "retrieved_at": "2026-07-10T08:21:11Z",
+    "cache_file": "hep-th_9306069.xml",
+    "sha256": "f3104a71c160105d9b4cbe950910768bbcb4d405ba49500d6a8669dbc9c96ad3",
+    "title": "The Stretched Horizon and Black Hole Complementarity",
+    "published": "1993-06-16T00:48:25Z",
+    "authors": [
+      "L. Susskind",
+      "L. Thorlacius",
+      "J. Uglum"
+    ]
+  },
+  "1905.08255": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=1905.08255&max_results=1",
+    "retrieved_at": "2026-07-10T08:21:15Z",
+    "cache_file": "1905.08255.xml",
+    "sha256": "c86851cd6a1cd4e6dff7b7bc4bb37b0426054d20530124df707d85a63bbceb08",
+    "title": "Entanglement Wedge Reconstruction and the Information Paradox",
+    "published": "2019-05-20T18:00:01Z",
+    "authors": [
+      "Geoffrey Penington"
+    ]
+  },
+  "1911.12333": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=1911.12333&max_results=1",
+    "retrieved_at": "2026-07-10T08:21:19Z",
+    "cache_file": "1911.12333.xml",
+    "sha256": "9e60acfb4e204001629554428133e98191cbb9055550a066ac779a11573d0c1e",
+    "title": "Replica Wormholes and the Entropy of Hawking Radiation",
+    "published": "2019-11-27T18:23:34Z",
+    "authors": [
+      "Ahmed Almheiri",
+      "Thomas Hartman",
+      "Juan Maldacena",
+      "Edgar Shaghoulian",
+      "Amirhossein Tajdini"
+    ]
+  },
+  "1207.3123": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=1207.3123&max_results=1",
+    "retrieved_at": "2026-07-10T08:21:22Z",
+    "cache_file": "1207.3123.xml",
+    "sha256": "210cc2f4dd533e7e18921318dbfd4c5121e13f21939171356b280128ae857eae",
+    "title": "Black Holes: Complementarity or Firewalls?",
+    "published": "2012-07-13T00:22:37Z",
+    "authors": [
+      "Ahmed Almheiri",
+      "Donald Marolf",
+      "Joseph Polchinski",
+      "James Sully"
+    ]
+  },
+  "astro-ph/9911436": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=astro-ph%2F9911436&max_results=1",
+    "retrieved_at": "2026-07-10T09:23:01Z",
+    "cache_file": "astro-ph_9911436.xml",
+    "sha256": "83bc79d0b1ee4a4f44d3554b0114bfdce67191f1be124fc7f74d900aff60e468",
+    "title": "Detection of Planetary Transits Across a Sun-like Star",
+    "published": "1999-11-23T14:52:56Z",
+    "authors": [
+      "David Charbonneau",
+      "Timothy M. Brown",
+      "David W. Latham",
+      "Michel Mayor"
+    ]
+  },
+  "1601.05438": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=1601.05438&max_results=1",
+    "retrieved_at": "2026-07-10T09:23:06Z",
+    "cache_file": "1601.05438.xml",
+    "sha256": "6247265198a0a22cd3bf834ec00a154be387237c803f94f7da654eae02f7d3df",
+    "title": "Evidence for a Distant Giant Planet in the Solar System",
+    "published": "2016-01-20T21:19:40Z",
+    "authors": [
+      "Konstantin Batygin",
+      "Michael E. Brown"
+    ]
+  },
+  "1706.04175": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=1706.04175&max_results=1",
+    "retrieved_at": "2026-07-10T09:23:09Z",
+    "cache_file": "1706.04175.xml",
+    "sha256": "f702104e9c82bf8d8ba33c77cf7056bce363384e9c00205ad4118523fefcf50a",
+    "title": "Observational bias and the clustering of distant eccentric Kuiper belt objects",
+    "published": "2017-06-13T17:41:43Z",
+    "authors": [
+      "Michael E. Brown"
+    ]
+  },
+  "2303.14849": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=2303.14849&max_results=1",
+    "retrieved_at": "2026-07-10T09:23:29Z",
+    "cache_file": "2303.14849.xml",
+    "sha256": "99318b764707515f0c426039a8b60ae9ee04c9a4020e413d3751e908decee525",
+    "title": "Thermal emission from the Earth-sized exoplanet TRAPPIST-1 b using JWST",
+    "published": "2023-03-26T23:27:03Z",
+    "authors": [
+      "Thomas P. Greene",
+      "Taylor J. Bell",
+      "Elsa Ducrot",
+      "Achrène Dyrek",
+      "Pierre-Olivier Lagage",
+      "Jonathan J. Fortney"
+    ]
+  },
+  "2309.05566": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=2309.05566&max_results=1",
+    "retrieved_at": "2026-07-10T09:23:33Z",
+    "cache_file": "2309.05566.xml",
+    "sha256": "53ffda49f20128f81aa095baf12bafa15faef03f8ebacf07afa1cbb7834502b7",
+    "title": "Carbon-bearing Molecules in a Possible Hycean Atmosphere",
+    "published": "2023-09-11T15:53:01Z",
+    "authors": [
+      "Nikku Madhusudhan",
+      "Subhajit Sarkar",
+      "Savvas Constantinou",
+      "Måns Holmberg",
+      "Anjali A. A. Piette",
+      "Julianne I. Moses"
+    ]
+  },
+  "2401.11082": {
+    "endpoint": "https://export.arxiv.org/api/query?id_list=2401.11082&max_results=1",
+    "retrieved_at": "2026-07-10T09:23:36Z",
+    "cache_file": "2401.11082.xml",
+    "sha256": "fdaeb9621a8fd0fe99faa8a4ab989898463222b877d1a9d064d8686ab57406a2",
+    "title": "JWST observations of K2-18b can be explained by a gas-rich mini-Neptune with no habitable surface",
+    "published": "2024-01-20T02:16:18Z",
+    "authors": [
+      "Nicholas F. Wogan",
+      "Natasha E. Batalha",
+      "Kevin Zahnle",
+      "Joshua Krissansen-Totton",
+      "Shang-Min Tsai",
+      "Renyu Hu"
+    ]
+  }
+}

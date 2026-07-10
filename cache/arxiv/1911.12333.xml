@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/JOKgMAJZG9YS2YHqAfo8kYr+pO0</id>
+  <title>arXiv Query: search_query=&amp;id_list=1911.12333&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T08:21:17Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1911.12333" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1911.12333v2</id>
+    <title>Replica Wormholes and the Entropy of Hawking Radiation</title>
+    <updated>2020-04-24T11:14:44Z</updated>
+    <link href="https://arxiv.org/abs/1911.12333v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1911.12333v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The information paradox can be realized in anti-de Sitter spacetime joined to a Minkowski region. In this setting, we show that the large discrepancy between the von Neumann entropy as calculated by Hawking and the requirements of unitarity is fixed by including new saddles in the gravitational path integral. These saddles arise in the replica method as complexified wormholes connecting different copies of the black hole. As the replica number $n \to 1$, the presence of these wormholes leads to the island rule for the computation of the fine-grained gravitational entropy. We discuss these replica wormholes explicitly in two-dimensional Jackiw-Teitelboim gravity coupled to matter.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-11-27T18:23:34Z</published>
+    <arxiv:comment>46 pages; v2 references added</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <author>
+      <name>Ahmed Almheiri</name>
+    </author>
+    <author>
+      <name>Thomas Hartman</name>
+    </author>
+    <author>
+      <name>Juan Maldacena</name>
+    </author>
+    <author>
+      <name>Edgar Shaghoulian</name>
+    </author>
+    <author>
+      <name>Amirhossein Tajdini</name>
+    </author>
+    <arxiv:doi>10.1007/JHEP05(2020)013</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/JHEP05(2020)013" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,126 @@
+{
+  "at": "20260710T092423Z",
+  "note": "mechanical diff against the committed snapshot; the trigger interface for future push channels",
+  "events": [
+    {
+      "kind": "claim_added",
+      "claim": "hydrothermal_vents_exist",
+      "after": {
+        "status": "ESTABLISHED",
+        "evidence_axis": "E1",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1: at least two direct observations hanging on distinct sources -> multiple independent direct"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "amoc_weakening",
+      "after": {
+        "status": "COMPETING",
+        "evidence_axis": "E3",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "ccz_biodiversity_unknown",
+      "after": {
+        "status": "FRONTIER",
+        "evidence_axis": "E3",
+        "evidence_items": 1,
+        "sources": 1,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0), 1 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "dark_oxygen_production",
+      "after": {
+        "status": "SPECULATIVE",
+        "evidence_axis": "E2",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct sources -> single direct line"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "exoplanets_exist",
+      "after": {
+        "status": "ESTABLISHED",
+        "evidence_axis": "E1",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1: at least two direct observations hanging on distinct sources -> multiple independent direct"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "planet_nine",
+      "after": {
+        "status": "COMPETING",
+        "evidence_axis": "E3",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "trappist1b_bare_rock",
+      "after": {
+        "status": "FRONTIER",
+        "evidence_axis": "E2",
+        "evidence_items": 1,
+        "sources": 1,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1), 0 indirect/analog, 0 theoretical",
+        "rule E2: direct observation exists but not from two distinct sources -> single direct line"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "k2_18b_biosignature",
+      "after": {
+        "status": "SPECULATIVE",
+        "evidence_axis": "E2",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct sources -> single direct line"
+      ]
+    }
+  ]
+}

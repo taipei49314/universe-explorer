@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Rt/bNVTG8jeiPShMFPAaYy6QODY</id>
+  <title>arXiv Query: search_query=&amp;id_list=1207.3123&amp;start=0&amp;max_results=1</title>
+  <updated>2026-07-10T08:18:18Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1207.3123" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1207.3123v4</id>
+    <title>Black Holes: Complementarity or Firewalls?</title>
+    <updated>2013-04-13T00:39:27Z</updated>
+    <link href="https://arxiv.org/abs/1207.3123v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1207.3123v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We argue that the following three statements cannot all be true: (i) Hawking radiation is in a pure state, (ii) the information carried by the radiation is emitted from the region near the horizon, with low energy effective field theory valid beyond some microscopic distance from the horizon, and (iii) the infalling observer encounters nothing unusual at the horizon. Perhaps the most conservative resolution is that the infalling observer burns up at the horizon. Alternatives would seem to require novel dynamics that nevertheless cause notable violations of semiclassical physics at macroscopic distances from the horizon.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2012-07-13T00:22:37Z</published>
+    <arxiv:comment>22 pages, 1 figure. v2: We have not changed our minds. Various arguments are expanded and sharpened. v3: Relation to previous work clarified. v4: Additional reference to earlier work</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <author>
+      <name>Ahmed Almheiri</name>
+    </author>
+    <author>
+      <name>Donald Marolf</name>
+    </author>
+    <author>
+      <name>Joseph Polchinski</name>
+    </author>
+    <author>
+      <name>James Sully</name>
+    </author>
+    <arxiv:doi>10.1007/JHEP02(2013)062</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/JHEP02(2013)062" title="doi"/>
+  </entry>
+</feed>
