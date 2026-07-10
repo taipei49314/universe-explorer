@@ -47,7 +47,9 @@ def _legend() -> str:
 def _claim_html(claim: Claim) -> str:
     color = _LIGHT_COLOR[claim.status]
     derivation = derive(claim)
-    parts = [f'<article class="claim" style="border-left-color:{color}">']
+    # stable anchor: anyone can share exactly one claim (D2)
+    parts = [f'<article class="claim" id="c-{_esc(claim.id)}" '
+             f'style="border-left-color:{color}">']
     diverge_badge = (
         '<span class="diverge" title="high consensus resting on non-direct '
         'evidence — the two axes point apart">⚡ axes diverge</span>'
@@ -61,7 +63,9 @@ def _claim_html(claim: Claim) -> str:
         f'</span> <span class="axis-badge">'
         f'{_esc(derivation.strength.short)} · '
         f'{_esc(derivation.strength.value)}</span> {diverge_badge}'
-        f'<code class="cid">{_esc(claim.id)}</code></div></div>'
+        f'<code class="cid">{_esc(claim.id)}</code>'
+        f'<a class="permalink" href="#c-{_esc(claim.id)}" '
+        f'title="permanent link to this claim">&para;</a></div></div>'
     )
 
     # evidence axis — derived, never declared; the derivation is expandable so
@@ -192,6 +196,85 @@ def render_topic(topic: Topic) -> str:
     )
 
 
+def render_explore(topics: List[Topic]) -> str:
+    """D2: one compact page over every claim in every domain, filterable by
+    light and evidence axis, text-searchable. Pure static + vanilla JS, zero
+    external resources. Counts shown are counts of a visible list the reader
+    can recount — constitutional. Order is fixed: bedrock first, ceiling last."""
+    cards = []
+    for t in topics:
+        for c in sorted(t.claims, key=lambda c: c.status.rank):
+            d = derive(c)
+            div = ('<span class="diverge">⚡</span>' if diverges(c) else "")
+            cards.append(
+                f'<a class="ecard" href="{_esc(t.id)}.html#c-{_esc(c.id)}" '
+                f'data-status="{c.status.name}" data-axis="{d.strength.short}" '
+                f'data-text="{_esc((c.title + " " + c.id + " " + t.title).lower())}" '
+                f'style="border-left-color:{_LIGHT_COLOR[c.status]}">'
+                f'<span class="elight">{c.status.light}</span>'
+                f'<span class="etitle">{_esc(c.title)}</span>'
+                f'<span class="emeta">{_esc(t.title)} · '
+                f'{_esc(d.strength.short)} {div}</span></a>'
+            )
+    status_chips = "".join(
+        f'<button class="chip f" data-k="status" data-v="{s.name}">'
+        f'{s.light} {_esc(s.value)}</button>' for s in Status)
+    axis_chips = "".join(
+        f'<button class="chip f" data-k="axis" data-v="{a.short}">'
+        f'{a.short}</button>' for a in EvidenceStrength)
+    return _EXPLORE.format(
+        status_chips=status_chips, axis_chips=axis_chips,
+        cards="".join(cards), total=len(cards))
+
+
+def claims_json(topics: List[Topic]) -> str:
+    """D2: machine-readable export of everything recorded — the interface for
+    third-party re-review. Only recorded fields and mechanical derivations;
+    nothing invented at export time."""
+    import json as _json
+    from .validator import tier_of
+    out = []
+    for t in topics:
+        for c in t.claims:
+            d = derive(c)
+            out.append({
+                "topic": t.id,
+                "id": c.id,
+                "title": c.title,
+                "status": c.status.name,
+                "status_light": c.status.value,
+                "evidence_axis": d.strength.short,
+                "evidence_axis_name": d.strength.value,
+                "axis_derivation": d.reasoning,
+                "diverges": diverges(c),
+                "status_reason": [
+                    {"condition": ca.condition, "holds": ca.holds,
+                     "note": ca.note} for ca in c.status_reason],
+                "evidence": [
+                    {"type": e.type, "description": e.description,
+                     "source_ref": e.source_ref} for e in c.evidence],
+                "competing_models": [
+                    {"name": m.name, "supporting": m.supporting,
+                     "opposing": m.opposing, "limitations": m.limitations}
+                    for m in c.competing_models],
+                "open_questions": list(c.open_questions),
+                "sources": [
+                    {"label": s.label, "url_or_id": s.url_or_id,
+                     "kind": s.kind, "tier": tier_of(s.kind)}
+                    for s in c.sources],
+                "status_history": [
+                    {"date": h.date, "from": h.from_status,
+                     "to": h.to_status, "trigger": h.trigger}
+                    for h in c.status_history],
+            })
+    return _json.dumps({
+        "note": ("Universe Explorer open data. Only recorded fields and "
+                 "mechanical derivations — no confidence numbers exist "
+                 "anywhere in this system by constitution."),
+        "claims": out,
+    }, ensure_ascii=False, indent=1)
+
+
 def render_index(topics: List[Topic]) -> str:
     """The multi-topic landing page (P4). Each topic is a container with no
     light of its own; its claim lights are previewed so the knowledge shape is
@@ -242,6 +325,9 @@ _PAGE = """<!doctype html>
              padding: 1px 8px; margin-left: 6px;
              background: color-mix(in srgb, currentColor 12%, transparent); }}
   .cid {{ opacity: .6; font-size: .82em; margin-left: 6px; }}
+  .permalink {{ opacity: .35; text-decoration: none; margin-left: 6px; }}
+  .permalink:hover {{ opacity: .9; }}
+  article:target {{ outline: 2px solid currentColor; outline-offset: 4px; }}
   details {{ margin: 8px 0; }}
   summary {{ cursor: pointer; font-weight: 600; font-size: .9em; }}
   ul {{ margin: 6px 0; padding-left: 18px; }}
@@ -282,6 +368,96 @@ _PAGE = """<!doctype html>
 """
 
 
+_EXPLORE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universe Explorer — Explore</title>
+<style>
+  :root {{ color-scheme: light dark; }}
+  body {{ font: 16px/1.55 system-ui, sans-serif; max-width: 820px;
+         margin: 0 auto; padding: 24px; }}
+  .home {{ font-size: .85em; opacity: .7; text-decoration: none; }}
+  h1 {{ margin: 8px 0 4px; }}
+  .sub {{ opacity: .75; margin: 0 0 16px; }}
+  .bar {{ display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }}
+  .chip {{ border: 1px solid currentColor; background: transparent;
+          color: inherit; border-radius: 999px; padding: 3px 12px;
+          font-size: .82em; cursor: pointer; opacity: .65; }}
+  .chip.on {{ opacity: 1; font-weight: 700;
+             background: color-mix(in srgb, currentColor 12%, transparent); }}
+  #q {{ width: 100%; box-sizing: border-box; font: inherit; padding: 8px 12px;
+       border: 1px solid currentColor; border-radius: 8px;
+       background: transparent; color: inherit; margin: 6px 0 4px; }}
+  .count {{ font-size: .8em; opacity: .6; margin: 4px 0 12px; }}
+  .ecard {{ display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap;
+           text-decoration: none; color: inherit; border: 1px solid
+           color-mix(in srgb, currentColor 25%, transparent);
+           border-left: 5px solid; border-radius: 0 8px 8px 0;
+           padding: 10px 14px; margin: 8px 0; }}
+  .ecard:hover {{ background: color-mix(in srgb, currentColor 6%, transparent); }}
+  .ecard.hide {{ display: none; }}
+  .elight {{ font-size: 1.15em; }}
+  .etitle {{ font-weight: 600; }}
+  .emeta {{ font-size: .8em; opacity: .65; margin-left: auto; }}
+  .diverge {{ opacity: 1; }}
+  .foot {{ font-size: .8em; opacity: .6; margin-top: 24px; }}
+  .chip:focus-visible, .ecard:focus-visible, #q:focus-visible {{
+    outline: 2px solid currentColor; outline-offset: 2px; }}
+</style>
+</head>
+<body>
+<a class="home" href="index.html">&larr; all topics</a>
+<h1>Explore</h1>
+<p class="sub">Every claim across every domain. Filter by light or evidence
+axis; the order never changes: bedrock first, ceiling last.</p>
+<input id="q" type="search" placeholder="search title / id / topic&hellip;"
+ aria-label="search claims">
+<div class="bar" id="statusbar">{status_chips}</div>
+<div class="bar" id="axisbar">{axis_chips}</div>
+<div class="count"><span id="n">{total}</span> / {total} shown
+ (a count of the visible list &mdash; recount it yourself)</div>
+<main id="cards">
+{cards}
+</main>
+<p class="foot">Open data: <a href="claims.json">claims.json</a> &mdash; every
+recorded field, machine-readable, for third-party re-review.</p>
+<script>
+(function () {{
+  var active = {{ status: new Set(), axis: new Set() }};
+  var q = "";
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".ecard"));
+  function apply() {{
+    var n = 0;
+    cards.forEach(function (c) {{
+      var ok = true;
+      if (active.status.size && !active.status.has(c.dataset.status)) ok = false;
+      if (active.axis.size && !active.axis.has(c.dataset.axis)) ok = false;
+      if (q && c.dataset.text.indexOf(q) === -1) ok = false;
+      c.classList.toggle("hide", !ok);
+      if (ok) n++;
+    }});
+    document.getElementById("n").textContent = n;
+  }}
+  document.querySelectorAll(".chip.f").forEach(function (b) {{
+    b.addEventListener("click", function () {{
+      var set = active[b.dataset.k];
+      if (set.has(b.dataset.v)) {{ set.delete(b.dataset.v); b.classList.remove("on"); }}
+      else {{ set.add(b.dataset.v); b.classList.add("on"); }}
+      apply();
+    }});
+  }});
+  document.getElementById("q").addEventListener("input", function (e) {{
+    q = e.target.value.trim().toLowerCase(); apply();
+  }});
+}})();
+</script>
+</body>
+</html>
+"""
+
+
 _INDEX = """<!doctype html>
 <html lang="en">
 <head>
@@ -313,7 +489,9 @@ _INDEX = """<!doctype html>
   <h1>Universe Explorer</h1>
   <p>Honestly separating what we know from what we don't. A topic is only a
   container &mdash; it has no status light of its own; each claim inside carries
-  its own. Same engine, any domain. <a href="zh.html">中文版 &rarr;</a></p>
+  its own. Same engine, any domain.
+  <a href="explore.html">Explore all claims &rarr;</a> ·
+  <a href="zh.html">中文版 &rarr;</a></p>
   <div class="banner">Reference first, AI last. Certainty emerges from evidence
   you can open and read &mdash; never from a declared number.</div>
   {legend}

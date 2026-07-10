@@ -23,6 +23,7 @@ SUITES = [
     "test_llm_narrative.py",  # B1 the court bites LLM output equally (offline)
     "test_tiers.py",          # C1/Amendment #3 source credibility tiers
     "test_llm_proposals.py",  # B2 the LLM drafter locked in its cell (offline)
+    "test_explore.py",        # D2 anchors, explore page, claims.json export
 ]
 
 

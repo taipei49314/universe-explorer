@@ -23,7 +23,12 @@ from pathlib import Path
 
 from universe_explorer.data.registry import TOPICS
 from universe_explorer.provenance import validate_provenance
-from universe_explorer.render import render_index, render_topic
+from universe_explorer.render import (
+    claims_json,
+    render_explore,
+    render_index,
+    render_topic,
+)
 from universe_explorer.validator import format_report, validate_topic
 from universe_explorer.watch import check_documented_transitions, load_snapshot
 
@@ -56,6 +61,8 @@ def main(argv) -> int:
         (out_dir / f"{topic.id}.html").write_text(
             render_topic(topic), encoding="utf-8")
     (out_dir / "index.html").write_text(render_index(TOPICS), encoding="utf-8")
+    (out_dir / "explore.html").write_text(render_explore(TOPICS), encoding="utf-8")
+    (out_dir / "claims.json").write_text(claims_json(TOPICS), encoding="utf-8")
 
     # single-file Chinese edition (presentation overlay, same data)
     from dataops_artifact import build as build_single
@@ -64,7 +71,8 @@ def main(argv) -> int:
           + build_single("zh"))
     (out_dir / "zh.html").write_text(zh, encoding="utf-8")
 
-    print(f"\nRendered {len(TOPICS)} topic(s) + index + zh.html -> {out_dir}")
+    print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
+          f"+ zh.html -> {out_dir}")
     return 0
 
 
