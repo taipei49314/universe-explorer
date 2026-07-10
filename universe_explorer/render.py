@@ -142,11 +142,15 @@ def _claim_html(claim: Claim) -> str:
             f'</summary><ul class="narrative">{n_rows}</ul></details>'
         )
 
-    # sources — Data layer.
+    # sources — Data layer. Tier chip = mechanical classification (Amend. #3).
+    from .validator import tier_of
     src_rows = []
     for s in claim.sources:
+        tier = tier_of(s.kind) or "?"
         src_rows.append(
-            f'<li><b>{_esc(s.label)}</b> &mdash; {_esc(s.url_or_id)} '
+            f'<li><b>{_esc(s.label)}</b> '
+            f'<span class="tier">{_esc(tier)}</span> &mdash; '
+            f'{_esc(s.url_or_id)} '
             f'<span class="kind">({_esc(s.kind)})</span></li>'
         )
     parts.append(
@@ -249,6 +253,9 @@ _PAGE = """<!doctype html>
            border-radius: 4px; padding: 0 5px; margin-right: 6px; }}
   .ref {{ font-size: .82em; opacity: .7; }}
   .kind {{ opacity: .65; font-size: .85em; }}
+  .tier {{ font-size: .68em; font-weight: 700; letter-spacing: .05em;
+          border: 1px solid currentColor; border-radius: 3px;
+          padding: 0 5px; opacity: .75; }}
   .cm-grid {{ display: grid; grid-template-columns: auto 1fr; gap: 2px 10px;
              margin: 4px 0 0; font-size: .92em; }}
   .cm-grid span:nth-child(odd) {{ opacity: .6; text-transform: uppercase;

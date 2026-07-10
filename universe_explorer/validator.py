@@ -48,6 +48,28 @@ _COUNT_RE = re.compile(
     re.IGNORECASE,
 )
 
+# Amendment #3 (docs/amendment-3-source-tiers.md): source credibility tiers.
+# Mechanical classification by kind keywords — discrete categories, never a
+# numeric score (that would be fake precision wearing a different face).
+# Being classifiable is constitutional: at scale, every incoming source is
+# forced to declare honestly what it is. Tiers do NOT yet weigh into the
+# evidence axis (registered as R8; needs its own amendment).
+SOURCE_TIERS = {
+    "PRIMARY": ("peer-reviewed",),            # primary literature
+    "SECONDARY": ("textbook", "prize citation"),  # authoritative secondary
+    "PREPRINT": ("preprint",),                # unreviewed preprint
+    "DATASET": ("dataset", "archive"),        # data record
+}
+
+
+def tier_of(kind: str):
+    """Return the tier name for a source kind, or None if unclassifiable."""
+    k = kind.lower()
+    for tier, keywords in SOURCE_TIERS.items():
+        if any(w in k for w in keywords):
+            return tier
+    return None
+
 
 @dataclass
 class Violation:
@@ -99,6 +121,14 @@ def validate_claim(claim: Claim) -> List[Violation]:
                 claim.id, "invalid_evidence_type",
                 f"evidence type {ev.type!r} is not in the controlled "
                 f"vocabulary {sorted(EVIDENCE_TYPE_VOCAB)}"))
+
+    # --- every source must classify into a credibility tier (Amend. #3) --
+    for src in claim.sources:
+        if tier_of(src.kind) is None:
+            v.append(Violation(
+                claim.id, "unclassifiable_source_kind",
+                f"source {src.label!r} kind {src.kind!r} matches no "
+                f"credibility tier {sorted(SOURCE_TIERS)}"))
 
     # --- every "known" claim must hang on a real source -----------------
     source_labels = {s.label for s in claim.sources}
