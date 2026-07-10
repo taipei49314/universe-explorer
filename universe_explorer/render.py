@@ -297,6 +297,107 @@ def claims_json(topics: List[Topic]) -> str:
     }, ensure_ascii=False, indent=1)
 
 
+def app_data_json(topics: List[Topic]) -> str:
+    """D4: the bilingual payload for the dynamic frontend. Same constitution
+    as claims.json — only recorded fields and mechanical derivations; the zh
+    fields come from the presentation overlay and fall back to English."""
+    import json as _json
+    from .data import translations_zh as ZH
+    from .data.translations_zh import ZH_LOC
+    from .narrative import narrate
+    from .validator import tier_of
+
+    def _zc(cid):
+        return ZH.CLAIMS.get(cid, {})
+
+    topics_out = []
+    claims_out = []
+    for t in topics:
+        tz = ZH.TOPIC_ZH.get(t.id, {})
+        topics_out.append({
+            "id": t.id, "title": t.title,
+            "title_zh": tz.get("title", t.title),
+            "summary": t.summary,
+            "summary_zh": tz.get("summary", t.summary),
+        })
+        for c in t.claims:
+            d = derive(c)
+            z = _zc(c.id)
+            ev_zh = z.get("evidence", [])
+            cm_zh = z.get("competing", [])
+            claims_out.append({
+                "topic": t.id,
+                "id": c.id,
+                "title": c.title,
+                "title_zh": z.get("title", c.title),
+                "status": c.status.name,
+                "status_light": c.status.light,
+                "status_name": c.status.value,
+                "status_name_zh": ZH.STATUS_ZH.get(c.status.value,
+                                                   c.status.value),
+                "status_rank": c.status.rank,
+                "axis": d.strength.short,
+                "axis_rank": list(EvidenceStrength).index(d.strength),
+                "axis_name": d.strength.value,
+                "axis_name_zh": ZH.AXIS_ZH.get(d.strength.short,
+                                               d.strength.value),
+                "axis_derivation": d.reasoning,
+                "diverges": diverges(c),
+                "status_reason": [{
+                    "condition": ca.condition,
+                    "condition_zh": ZH.CONDITION_ZH.get(ca.condition,
+                                                        ca.condition),
+                    "holds": ca.holds,
+                    "note": ca.note,
+                    "note_zh": z.get("reasons", {}).get(ca.condition, ca.note),
+                } for ca in c.status_reason],
+                "evidence": [{
+                    "type": e.type,
+                    "type_zh": ZH.EVIDENCE_TYPE_ZH.get(e.type, e.type),
+                    "description": e.description,
+                    "description_zh": (ev_zh[i] if i < len(ev_zh)
+                                       else e.description),
+                    "source_ref": e.source_ref,
+                } for i, e in enumerate(c.evidence)],
+                "competing": [{
+                    "name": m.name,
+                    "name_zh": (cm_zh[i].get("name", m.name)
+                                if i < len(cm_zh) else m.name),
+                    "supporting": m.supporting,
+                    "supporting_zh": (cm_zh[i].get("for", m.supporting)
+                                      if i < len(cm_zh) else m.supporting),
+                    "opposing": m.opposing,
+                    "opposing_zh": (cm_zh[i].get("against", m.opposing)
+                                    if i < len(cm_zh) else m.opposing),
+                    "limitations": m.limitations,
+                    "limitations_zh": (cm_zh[i].get("limits", m.limitations)
+                                       if i < len(cm_zh) else m.limitations),
+                } for i, m in enumerate(c.competing_models)],
+                "open_questions": list(c.open_questions),
+                "open_questions_zh": (z.get("open_questions")
+                                      or list(c.open_questions)),
+                "sources": [{
+                    "label": s.label, "url_or_id": s.url_or_id,
+                    "kind": s.kind, "tier": tier_of(s.kind),
+                } for s in c.sources],
+                "narrative": [{"text": s.text, "refs": s.refs}
+                              for s in narrate(c)],
+                "narrative_zh": [{"text": s.text, "refs": s.refs}
+                                 for s in narrate(c, ZH_LOC)],
+                "history": [{"date": h.date, "from": h.from_status,
+                             "to": h.to_status, "trigger": h.trigger}
+                            for h in c.status_history],
+                "permalink": f"{t.id}.html#c-{c.id}",
+            })
+    return _json.dumps({
+        "note": ("Universe Explorer app data. Only recorded fields and "
+                 "mechanical derivations; zh fields are a presentation "
+                 "overlay that falls back to English."),
+        "topics": topics_out,
+        "claims": claims_out,
+    }, ensure_ascii=False)
+
+
 def render_index(topics: List[Topic]) -> str:
     """The multi-topic landing page (P4). Each topic is a container with no
     light of its own; its claim lights are previewed so the knowledge shape is
@@ -685,6 +786,7 @@ _INDEX = """<!doctype html>
   <p>Honestly separating what we know from what we don't. A topic is only a
   container &mdash; it has no status light of its own; each claim inside carries
   its own. Same engine, any domain.
+  <a href="app.html"><b>Knowledge map &rarr;</b></a> ·
   <a href="explore.html">Explore all claims &rarr;</a> ·
   <a href="about.html">How to read this</a> ·
   <a href="zh.html">中文版 &rarr;</a> ·

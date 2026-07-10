@@ -24,6 +24,7 @@ from pathlib import Path
 from universe_explorer.data.registry import TOPICS
 from universe_explorer.provenance import validate_provenance
 from universe_explorer.render import (
+    app_data_json,
     claims_json,
     render_about,
     render_explore,
@@ -68,6 +69,13 @@ def main(argv) -> int:
     (out_dir / "claims.json").write_text(claims_json(TOPICS), encoding="utf-8")
     (out_dir / "about.html").write_text(render_about(), encoding="utf-8")
     (out_dir / "about-zh.html").write_text(render_about("zh"), encoding="utf-8")
+
+    # D4: the dynamic frontend — a static source file + a bilingual data payload
+    app_src = Path(__file__).parent / "web" / "app.html"
+    (out_dir / "app.html").write_text(
+        app_src.read_text(encoding="utf-8"), encoding="utf-8")
+    (out_dir / "app-data.json").write_text(
+        app_data_json(TOPICS), encoding="utf-8")
 
     # D3: the public push channel — an Atom feed of change events.
     from universe_explorer.dataops.feed import build_feed

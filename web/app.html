@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universe Explorer — Knowledge Map</title>
+<style>
+/* tokens — both palettes validated with the dataviz six-checks script:
+   light on #F4F6F3, dark on #131917; adjacent-pair CVD ΔE >= 12.7 / 13.2 */
+:root {
+  --bg:#F4F6F3; --panel:#FDFDFB; --ink:#1B2320; --muted:#5A665F;
+  --line:#D5DCD6; --accent:#2E6E5E; --mono-bg:#EBEFEA;
+  --est:#2F7D46; --strong:#2762A8; --comp:#A17C0A; --front:#C13E2A; --spec:#93265E;
+  --band:rgba(27,35,32,.045); --divzone:rgba(193,62,42,.05);
+}
+@media (prefers-color-scheme: dark) { :root {
+  --bg:#131917; --panel:#1A211E; --ink:#D7DED9; --muted:#8FA097;
+  --line:#2C3630; --accent:#6FB5A3; --mono-bg:#222B26;
+  --est:#3E9E5C; --strong:#4C89CC; --comp:#A99312; --front:#D0512F; --spec:#C04E96;
+  --band:rgba(215,222,217,.05); --divzone:rgba(208,81,47,.07);
+}}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink);
+  font:15px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+a { color:var(--accent); }
+header { max-width:1060px; margin:0 auto; padding:26px 20px 0; }
+h1 { font:500 1.7rem Georgia,"Times New Roman","Songti SC","Noto Serif CJK TC",serif;
+  margin:0 0 2px; }
+.sub { color:var(--muted); margin:0; font-size:.92rem; }
+.toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+  margin:14px 0 4px; }
+.chip, .langbtn { border:1px solid var(--line); background:var(--panel);
+  color:var(--ink); border-radius:999px; padding:4px 13px; font:inherit;
+  font-size:.82rem; cursor:pointer; }
+.chip.on { border-color:var(--accent); font-weight:700;
+  background:var(--mono-bg); }
+.langbtn { margin-left:auto; }
+#q { flex:1 1 180px; min-width:160px; font:inherit; font-size:.88rem;
+  padding:6px 12px; border:1px solid var(--line); border-radius:8px;
+  background:var(--panel); color:var(--ink); }
+main { max-width:1060px; margin:0 auto; padding:0 20px 90px;
+  display:grid; grid-template-columns:minmax(0,1fr); gap:22px; }
+.mapwrap { background:var(--panel); border:1px solid var(--line);
+  border-radius:10px; padding:16px 14px 8px; overflow-x:auto; }
+.mapnote { font-size:.78rem; color:var(--muted); margin:2px 4px 10px; }
+svg text { fill:var(--ink); }
+.axlab { font-size:11.5px; fill:var(--muted); }
+.axtitle { font-size:11px; fill:var(--muted); letter-spacing:.06em;
+  text-transform:uppercase; }
+.dot { cursor:pointer; }
+.dot circle.core { stroke:var(--panel); stroke-width:2; }
+.dot.dv circle.ring { fill:none; stroke-dasharray:3 3; stroke-width:1.6; }
+.dot.dim { opacity:.14; }
+.dot:focus { outline:none; }
+.dot:focus circle.core, .dot:hover circle.core { stroke:var(--ink); }
+@media (prefers-reduced-motion: no-preference) {
+  .dot circle.core { transition:r .12s ease, stroke .12s ease; }
+  .dot:hover circle.core, .dot:focus circle.core { r:10; }
+  #panel { transition:transform .22s ease; }
+}
+.legend { display:flex; flex-wrap:wrap; gap:6px 16px; margin:8px 4px 6px;
+  font-size:.78rem; color:var(--muted); }
+.legend span { display:inline-flex; align-items:center; gap:6px; }
+.swatch { width:11px; height:11px; border-radius:50%; display:inline-block; }
+#tip { position:fixed; pointer-events:none; background:var(--ink);
+  color:var(--bg); font-size:.8rem; padding:5px 10px; border-radius:6px;
+  max-width:280px; opacity:0; z-index:30; }
+#cards { display:grid; gap:8px; }
+.card { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap;
+  background:var(--panel); border:1px solid var(--line);
+  border-left:5px solid; border-radius:0 8px 8px 0; padding:9px 14px;
+  cursor:pointer; }
+.card:hover { background:var(--mono-bg); }
+.card b { font-weight:600; }
+.card .m { font-size:.76rem; color:var(--muted); margin-left:auto;
+  font-family:ui-monospace,Consolas,monospace; }
+#panel { position:fixed; top:0; right:0; height:100%; width:min(560px,94vw);
+  background:var(--panel); border-left:1px solid var(--line); z-index:20;
+  transform:translateX(102%); overflow-y:auto; padding:20px 22px 60px;
+  box-shadow:-12px 0 32px rgba(0,0,0,.18); }
+#panel.open { transform:translateX(0); }
+#panel h2 { font:500 1.25rem Georgia,serif; margin:4px 0 4px;
+  text-wrap:balance; }
+#panel h3 { font-size:.8rem; letter-spacing:.05em; text-transform:uppercase;
+  color:var(--muted); margin:20px 0 6px; border-top:1px dashed var(--line);
+  padding-top:12px; }
+#panel ul { margin:4px 0; padding-left:18px; }
+#panel li { margin:6px 0; font-size:.92rem; }
+.meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+.badge { font-family:ui-monospace,Consolas,monospace; font-size:.74rem;
+  background:var(--mono-bg); border-radius:4px; padding:2px 8px;
+  color:var(--muted); }
+.stbadge { font-weight:700; font-size:.78rem; letter-spacing:.04em;
+  text-transform:uppercase; }
+.dvbadge { font-size:.74rem; font-weight:700; border:1px solid currentColor;
+  border-radius:4px; padding:1px 7px; }
+.cond { font-family:ui-monospace,Consolas,monospace; font-size:.76rem;
+  color:var(--accent); display:block; }
+.note { color:var(--muted); }
+.ref { font-family:ui-monospace,Consolas,monospace; font-size:.72rem;
+  color:var(--muted); }
+.tier { font-size:.66em; font-weight:700; letter-spacing:.05em;
+  border:1px solid currentColor; border-radius:3px; padding:0 4px;
+  opacity:.75; }
+#closep { float:right; border:1px solid var(--line); background:var(--panel);
+  color:var(--ink); border-radius:8px; font:inherit; padding:3px 11px;
+  cursor:pointer; }
+.plinks { margin-top:16px; font-size:.85rem; display:flex; gap:14px;
+  flex-wrap:wrap; }
+footer { max-width:1060px; margin:0 auto; padding:0 20px 40px;
+  font-size:.8rem; color:var(--muted); }
+button:focus-visible, .dot:focus-visible, a:focus-visible, #q:focus-visible {
+  outline:2px solid var(--accent); outline-offset:2px; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="t-title"></h1>
+  <p class="sub" id="t-sub"></p>
+  <div class="toolbar" id="topicbar"></div>
+  <div class="toolbar">
+    <input id="q" type="search">
+    <button class="langbtn" id="langbtn"></button>
+  </div>
+</header>
+<main>
+  <div class="mapwrap">
+    <svg id="map" viewBox="0 0 720 470" role="img"></svg>
+    <div class="legend" id="legend"></div>
+    <p class="mapnote" id="mapnote"></p>
+  </div>
+  <div id="cards"></div>
+</main>
+<footer id="foot"></footer>
+<div id="tip"></div>
+<aside id="panel" aria-label="claim detail"></aside>
+
+<script>
+"use strict";
+const COLORS = { ESTABLISHED:"var(--est)", STRONG:"var(--strong)",
+  COMPETING:"var(--comp)", FRONTIER:"var(--front)", SPECULATIVE:"var(--spec)" };
+const STATUS_ORDER = ["ESTABLISHED","STRONG","COMPETING","FRONTIER","SPECULATIVE"];
+const I18N = {
+  en: { title:"Universe Explorer — Knowledge Map",
+    sub:"Every claim placed on the two axes the system actually judges by: community consensus × recorded evidence. Dots off the diagonal are honest tensions.",
+    search:"search claims…", all:"All domains", lang:"中文",
+    xaxis:"consensus (human-judged, traceable)",
+    yaxis:"evidence (derived, never declared)",
+    note:"Shaded corner = high consensus on non-direct evidence: the ⚡ divergence zone. Counts are counts of the visible list — recount them yourself.",
+    whylight:"Why this light", evidence:"Evidence",
+    axisder:"Evidence axis — derived, not declared",
+    competing:"Competing models", open:"Open questions — count them yourself",
+    narrative:"AI narrative — every sentence carries its refs",
+    sources:"Sources", history:"Status history",
+    forlbl:"for", againstlbl:"against", limitslbl:"limits",
+    permalink:"permalink", challenge:"challenge this verdict",
+    close:"close", diverge:"axes diverge",
+    foot:'Plain site: <a href="index.html">topics</a> · <a href="explore.html">explore</a> · <a href="about.html">how to read this</a> · <a href="claims.json">open data</a> · <a href="feed.xml">feed</a>. No confidence numbers exist anywhere here — certainty emerges from evidence you can open.' },
+  zh: { title:"宇宙探索者 — 知識地圖",
+    sub:"把每個宣稱放上系統真正用來判定的兩條軸:社群共識 × 已收錄證據。偏離對角線的點,是誠實攤開的張力。",
+    search:"搜尋宣稱…", all:"全部領域", lang:"EN",
+    xaxis:"共識軸(人工判定,可回溯)",
+    yaxis:"證據軸(機械湧現,無人宣告)",
+    note:"著色角落 = 強共識建立在非直接證據上:⚡ 分岔區。計數皆為可見清單之計數 —— 請自行重數。",
+    whylight:"為什麼是這個燈號", evidence:"證據",
+    axisder:"證據軸 —— 機械推導,非人工宣告",
+    competing:"競爭模型", open:"開放問題 —— 自己數",
+    narrative:"AI 敘事 —— 每句都帶著它的 refs",
+    sources:"出處", history:"燈號遷移史",
+    forlbl:"支持", againstlbl:"反對", limitslbl:"侷限",
+    permalink:"永久連結", challenge:"挑戰這個判定",
+    close:"關閉", diverge:"雙軸分岔",
+    foot:'陽春版:<a href="index.html">領域</a> · <a href="explore-zh.html">探索</a> · <a href="about-zh.html">這網站怎麼讀</a> · <a href="claims.json">開放資料</a> · <a href="feed.xml">feed</a>。這裡不存在任何信心數字 —— 確定性從你能展開的證據湧現。' },
+};
+
+let DATA = null;
+let state = { lang:"en", topic:"", q:"", sel:null };
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g,
+  c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const L = () => I18N[state.lang];
+const cf = (c, f) => state.lang === "zh" ? c[f + "_zh"] : c[f];
+
+function visible() {
+  const q = state.q.toLowerCase();
+  return DATA.claims.filter(c =>
+    (!state.topic || c.topic === state.topic) &&
+    (!q || (c.title + " " + c.title_zh + " " + c.id + " " + c.topic)
+       .toLowerCase().includes(q)));
+}
+
+/* ---------------- map ---------------- */
+const GEO = { left:96, top:34, cw:118, ch:76, r:8 };
+const OFF = [[0,0],[-26,0],[26,0],[0,-22],[0,22],[-26,-22],[26,-22],[-26,22],[26,22]];
+
+function renderMap() {
+  const vis = new Set(visible().map(c => c.id));
+  const g = GEO, axes = ["E1","E2","E3","E4","E5"];
+  let s = "";
+  // divergence corner: high consensus (x 0-1) x weak evidence (y 2-4)
+  s += `<rect x="${g.left}" y="${g.top + 2*g.ch}" width="${2*g.cw}" height="${3*g.ch}"
+        fill="var(--divzone)" rx="8"></rect>`;
+  for (let i = 0; i < 5; i++) {
+    // diagonal band cells
+    s += `<rect x="${g.left + i*g.cw}" y="${g.top + i*g.ch}" width="${g.cw}"
+          height="${g.ch}" fill="var(--band)" rx="8"></rect>`;
+    const st = DATA.claims.find(c => c.status_rank === i);
+    const name = st ? (state.lang === "zh" ? st.status_name_zh : st.status_name)
+                    : STATUS_ORDER[i];
+    s += `<text class="axlab" x="${g.left + i*g.cw + g.cw/2}" y="${g.top - 12}"
+          text-anchor="middle">${esc(name)}</text>`;
+    const ax = DATA.claims.find(c => c.axis_rank === i);
+    const axname = ax ? (state.lang === "zh" ? ax.axis_name_zh : ax.axis_name) : "";
+    s += `<text class="axlab" x="${g.left - 10}" y="${g.top + i*g.ch + g.ch/2 - 6}"
+          text-anchor="end">${axes[i]}</text>`;
+    s += `<text class="axlab" x="${g.left - 10}" y="${g.top + i*g.ch + g.ch/2 + 9}"
+          text-anchor="end" opacity=".65" font-size="9.5">${esc(axname.slice(0, 14))}</text>`;
+  }
+  s += `<text class="axtitle" x="${g.left + 2.5*g.cw}" y="${g.top + 5*g.ch + 26}"
+        text-anchor="middle">${esc(L().xaxis)}</text>`;
+  s += `<text class="axtitle" transform="rotate(-90 14 ${g.top + 2.5*g.ch})"
+        x="14" y="${g.top + 2.5*g.ch}" text-anchor="middle">${esc(L().yaxis)}</text>`;
+  s += `<text class="axlab" x="${g.left + g.cw}" y="${g.top + 4.55*g.ch}"
+        text-anchor="middle" opacity=".8">⚡</text>`;
+
+  const cells = {};
+  for (const c of DATA.claims) {
+    const key = c.status_rank + "," + c.axis_rank;
+    (cells[key] = cells[key] || []).push(c);
+  }
+  for (const key in cells) {
+    const [xr, yr] = key.split(",").map(Number);
+    cells[key].forEach((c, i) => {
+      const [dx, dy] = OFF[i % OFF.length];
+      const x = g.left + xr*g.cw + g.cw/2 + dx;
+      const y = g.top + yr*g.ch + g.ch/2 + dy;
+      const dim = vis.has(c.id) ? "" : " dim";
+      const dv = c.diverges ? " dv" : "";
+      s += `<g class="dot${dv}${dim}" tabindex="0" role="button" data-id="${esc(c.id)}"
+            aria-label="${esc(cf(c,"title"))} — ${esc(cf(c,"status_name"))}, ${esc(c.axis)}">`;
+      if (c.diverges) s += `<circle class="ring" cx="${x}" cy="${y}" r="${g.r+4}"
+            stroke="${COLORS[c.status]}"></circle>`;
+      s += `<circle class="core" cx="${x}" cy="${y}" r="${g.r}"
+            fill="${COLORS[c.status]}"></circle></g>`;
+    });
+  }
+  $("map").innerHTML = s;
+
+  $("map").querySelectorAll(".dot").forEach(el => {
+    const c = DATA.claims.find(x => x.id === el.dataset.id);
+    el.addEventListener("click", () => openPanel(c));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openPanel(c); }});
+    el.addEventListener("mousemove", e => {
+      const tip = $("tip");
+      tip.innerHTML = `${c.status_light} ${esc(cf(c,"title"))}<br>
+        <span style="opacity:.75">${esc(c.axis)} · ${esc(c.topic)}${c.diverges ? " · ⚡" : ""}</span>`;
+      tip.style.left = Math.min(e.clientX + 14, innerWidth - 300) + "px";
+      tip.style.top = (e.clientY + 14) + "px";
+      tip.style.opacity = 1; });
+    el.addEventListener("mouseleave", () => $("tip").style.opacity = 0);
+  });
+}
+
+/* ---------------- cards ---------------- */
+function renderCards() {
+  $("cards").innerHTML = visible().map(c => `
+    <div class="card" style="border-left-color:${COLORS[c.status]}"
+         data-id="${esc(c.id)}" tabindex="0" role="button">
+      <span>${c.status_light}</span><b>${esc(cf(c,"title"))}</b>
+      ${c.diverges ? "<span>⚡</span>" : ""}
+      <span class="m">${esc(c.topic)} · ${esc(c.axis)}</span>
+    </div>`).join("");
+  $("cards").querySelectorAll(".card").forEach(el => {
+    const c = DATA.claims.find(x => x.id === el.dataset.id);
+    el.addEventListener("click", () => openPanel(c));
+    el.addEventListener("keydown", e => {
+      if (e.key === "Enter") openPanel(c); });
+  });
+}
+
+/* ---------------- panel ---------------- */
+function section(title, inner) {
+  return inner ? `<h3>${esc(title)}</h3>${inner}` : "";
+}
+function openPanel(c) {
+  state.sel = c;
+  const t = L();
+  const lang = state.lang;
+  const reasons = c.status_reason.map(r => `
+    <li><span class="cond">${r.holds ? "✓" : "✗"} ${esc(
+      lang === "zh" ? r.condition_zh : r.condition)}</span>
+    <span class="note">${esc(lang === "zh" ? r.note_zh : r.note)}</span></li>`).join("");
+  const ev = c.evidence.map(e => `
+    <li><span class="badge">${esc(lang === "zh" ? e.type_zh : e.type)}</span>
+    ${esc(lang === "zh" ? e.description_zh : e.description)}
+    <span class="ref">[${esc(e.source_ref)}]</span></li>`).join("");
+  const der = c.axis_derivation.map(r => `<li class="ref">${esc(r)}</li>`).join("");
+  const cm = c.competing.map(m => `
+    <li><b>${esc(lang === "zh" ? m.name_zh : m.name)}</b><br>
+    <span class="note">${esc(t.forlbl)}:${esc(lang === "zh" ? m.supporting_zh : m.supporting)}</span><br>
+    <span class="note">${esc(t.againstlbl)}:${esc(lang === "zh" ? m.opposing_zh : m.opposing)}</span><br>
+    <span class="note">${esc(t.limitslbl)}:${esc(lang === "zh" ? m.limitations_zh : m.limitations)}</span></li>`).join("");
+  const oq = (lang === "zh" ? c.open_questions_zh : c.open_questions)
+    .map(q => `<li>${esc(q)}</li>`).join("");
+  const nar = (lang === "zh" ? c.narrative_zh : c.narrative)
+    .map(s => `<li>${esc(s.text)} <span class="ref">[${esc(s.refs.join(", "))}]</span></li>`).join("");
+  const src = c.sources.map(s => `
+    <li><b>${esc(s.label)}</b> <span class="tier">${esc(s.tier || "?")}</span>
+    — ${esc(s.url_or_id)} <span class="note">(${esc(s.kind)})</span></li>`).join("");
+  const hist = c.history.map(h => `
+    <li>${esc(h.date)}: ${esc(h.from)} → ${esc(h.to)} — ${esc(h.trigger)}</li>`).join("");
+
+  $("panel").innerHTML = `
+    <button id="closep">${esc(t.close)} ✕</button>
+    <div class="meta"><span style="font-size:1.4em">${c.status_light}</span>
+      <span class="stbadge" style="color:${COLORS[c.status]}">${esc(cf(c,"status_name"))}</span>
+      <span class="badge">${esc(c.axis)} · ${esc(cf(c,"axis_name"))}</span>
+      ${c.diverges ? `<span class="dvbadge" style="color:${COLORS.COMPETING}">⚡ ${esc(t.diverge)}</span>` : ""}
+      <span class="badge">${esc(c.id)}</span></div>
+    <h2>${esc(cf(c,"title"))}</h2>
+    ${section(t.whylight, `<ul>${reasons}</ul>`)}
+    ${section(t.evidence, `<ul>${ev}</ul>`)}
+    ${section(t.axisder, `<ul>${der}</ul>`)}
+    ${c.competing.length ? section(t.competing, `<ul>${cm}</ul>`) : ""}
+    ${section(t.open, `<ul>${oq}</ul>`)}
+    ${nar ? section(t.narrative, `<ul>${nar}</ul>`) : ""}
+    ${section(t.sources, `<ul>${src}</ul>`)}
+    ${hist ? section(t.history, `<ul>${hist}</ul>`) : ""}
+    <div class="plinks">
+      <a href="${esc(c.permalink)}">${esc(t.permalink)} →</a>
+      <a href="https://github.com/taipei49314/universe-explorer/issues/new?template=challenge-a-verdict.yml&title=%5Bchallenge%5D%20${esc(c.id)}">${esc(t.challenge)} →</a>
+    </div>`;
+  $("panel").classList.add("open");
+  $("closep").addEventListener("click", closePanel);
+  $("closep").focus();
+}
+function closePanel() {
+  state.sel = null;
+  $("panel").classList.remove("open");
+}
+
+/* ---------------- chrome ---------------- */
+function renderChrome() {
+  const t = L();
+  document.documentElement.lang = state.lang === "zh" ? "zh-Hant" : "en";
+  document.title = t.title;
+  $("t-title").textContent = t.title;
+  $("t-sub").textContent = t.sub;
+  $("q").placeholder = t.search;
+  $("q").setAttribute("aria-label", t.search);
+  $("langbtn").textContent = t.lang;
+  $("mapnote").textContent = t.note;
+  $("foot").innerHTML = t.foot;
+  const bar = [`<button class="chip${state.topic ? "" : " on"}" data-t="">${esc(t.all)}</button>`];
+  for (const tp of DATA.topics) {
+    bar.push(`<button class="chip${state.topic === tp.id ? " on" : ""}"
+      data-t="${esc(tp.id)}">${esc(state.lang === "zh" ? tp.title_zh : tp.title)}</button>`);
+  }
+  $("topicbar").innerHTML = bar.join("");
+  $("topicbar").querySelectorAll(".chip").forEach(b =>
+    b.addEventListener("click", () => { state.topic = b.dataset.t; renderAll(); }));
+  const seen = new Set();
+  $("legend").innerHTML = DATA.claims
+    .filter(c => !seen.has(c.status) && seen.add(c.status))
+    .sort((a, b) => a.status_rank - b.status_rank)
+    .map(c => `<span><i class="swatch" style="background:${COLORS[c.status]}"></i>
+      ${esc(cf(c,"status_name"))}</span>`).join("");
+}
+
+function renderAll() { renderChrome(); renderMap(); renderCards(); }
+
+$("q").addEventListener("input", e => { state.q = e.target.value.trim(); renderMap(); renderCards(); });
+$("langbtn").addEventListener("click", () => {
+  state.lang = state.lang === "zh" ? "en" : "zh";
+  renderAll();
+  if (state.sel) openPanel(state.sel);
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
+document.addEventListener("click", e => {
+  if (state.sel && !$("panel").contains(e.target)
+      && !e.target.closest(".dot") && !e.target.closest(".card")) closePanel();
+});
+
+fetch("app-data.json").then(r => r.json()).then(d => { DATA = d; renderAll(); });
+</script>
+</body>
+</html>
