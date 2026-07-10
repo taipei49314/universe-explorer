@@ -37,7 +37,7 @@ def test_ocean_passes_every_gate():
 
 def test_ocean_light_diversity():
     lights = {c.status for c in OCEAN.claims}
-    assert len(lights) == 4, "expected four distinct lights in the ocean topic"
+    assert len(lights) == 5, "the ocean topic now spans the full spectrum"
     assert Status.COMPETING in lights
 
 

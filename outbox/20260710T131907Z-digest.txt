@@ -1,0 +1,6 @@
+UNIVERSE EXPLORER — change digest
+(mechanical restatement of recorded state changes; every line names its event file, which carries the derivation back to the evidence)
+
+== 20260710T131907Z  (20260710T131907Z-events.json)
+  * ocean_heat_uptake: new claim recorded — status STRONG, evidence axis E2
+  * planets_are_common: new claim recorded — status STRONG, evidence axis E3

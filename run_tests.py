@@ -25,6 +25,7 @@ SUITES = [
     "test_llm_proposals.py",  # B2 the LLM drafter locked in its cell (offline)
     "test_explore.py",        # D2 anchors, explore page, claims.json export
     "test_crossref.py",       # C2/Amendment #6 DOI cite=>fetch rules bite
+    "test_feed.py",           # D3 Atom feed restates, never interprets
 ]
 
 

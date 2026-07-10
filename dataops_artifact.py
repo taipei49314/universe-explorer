@@ -154,7 +154,7 @@ def claim_html(c) -> str:
     tok = ST_TOKEN[c.status]
     d = derive(c)
     t = _ct(c.id)
-    parts = [f'<article style="--stc:var(--st-{tok})">']
+    parts = [f'<article id="c-{E(c.id)}" style="--stc:var(--st-{tok})">']
     title = t.get("title", c.title)
     parts.append(f'<div class="head"><span class="dot"></span><h3>{E(title)}</h3></div>')
 

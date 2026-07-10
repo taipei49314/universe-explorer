@@ -98,6 +98,59 @@ exoplanets_exist = Claim(
 )
 
 # --------------------------------------------------------------------------- #
+# Claim 1b — planets are the rule                         🔵 Strong            #
+# --------------------------------------------------------------------------- #
+planets_are_common = Claim(
+    id="planets_are_common",
+    title="Planets are the rule rather than the exception around Milky Way stars",
+    status=Status.STRONG,
+    sources=[
+        Source(
+            label="Cassan2012",
+            url_or_id="doi:10.1038/nature10684",
+            kind="peer-reviewed paper (Nature 481, 167-169, 2012)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "A statistical analysis of six years of microlensing survey "
+                "data concludes that Milky Way stars host on average one or "
+                "more bound planets, making planets the rule rather than the "
+                "exception."
+            ),
+            source_ref="Cassan2012",
+        ),
+    ],
+    open_questions=[
+        "Occurrence rates for true Earth analogues in habitable zones remain "
+        "the least constrained part of the statistics.",
+        "How occurrence varies with stellar type, metallicity and Galactic "
+        "environment is still being mapped.",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "mainstream_model_support", True,
+            "Independent survey methods (microlensing, transit statistics, "
+            "radial-velocity surveys) converge on planetary abundance.",
+        ),
+        ConditionAssessment(
+            "minor_alternatives_exist", True,
+            "Methodological debates persist over completeness corrections and "
+            "exact occurrence numbers, not over abundance itself.",
+        ),
+        ConditionAssessment(
+            "overall_direction_robust", True,
+            "Every enlarged survey has raised, never lowered, the inferred "
+            "abundance of planets. Note: the statistical (indirect) character "
+            "of the evidence is expressed structurally on the evidence axis.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
 # Claim 2 — Planet Nine                                   🟡 Competing         #
 # --------------------------------------------------------------------------- #
 planet_nine = Claim(
@@ -319,6 +372,7 @@ EXOPLANETS = Topic(
     ),
     claims=[
         exoplanets_exist,
+        planets_are_common,
         planet_nine,
         trappist1b_bare_rock,
         k2_18b_biosignature,

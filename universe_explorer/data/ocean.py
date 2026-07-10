@@ -103,6 +103,61 @@ hydrothermal_vents_exist = Claim(
 )
 
 # --------------------------------------------------------------------------- #
+# Claim 1b — the ocean absorbs most excess heat           🔵 Strong            #
+# --------------------------------------------------------------------------- #
+ocean_heat_uptake = Claim(
+    id="ocean_heat_uptake",
+    title="The ocean absorbs the vast majority of anthropogenic excess heat",
+    status=Status.STRONG,
+    sources=[
+        Source(
+            label="vonSchuckmann2020",
+            url_or_id="doi:10.5194/essd-12-2013-2020",
+            kind="peer-reviewed paper (Earth Syst. Sci. Data 12, 2013-2041, "
+                 "2020; multi-team synthesis)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "A synthesis of in-situ ocean temperature measurements (Argo "
+                "floats and historical profiles) by more than thirty research "
+                "groups finds that about 89% of the heat accumulated in the "
+                "Earth system over 1971-2018 is stored in the ocean."
+            ),
+            source_ref="vonSchuckmann2020",
+        ),
+    ],
+    open_questions=[
+        "Coverage before the Argo era (pre-2005) is sparse, widening error "
+        "bars on the earlier decades.",
+        "The deep ocean below 2000 m is still poorly sampled.",
+        "Closing the Earth energy imbalance budget across independent "
+        "observing systems remains an active effort.",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "mainstream_model_support", True,
+            "Ocean-dominated heat uptake is the consistent result of Argo-era "
+            "observations and successive international assessments.",
+        ),
+        ConditionAssessment(
+            "minor_alternatives_exist", True,
+            "Debate persists over the exact partitioning and pre-Argo "
+            "magnitudes, not over the ocean's dominant role.",
+        ),
+        ConditionAssessment(
+            "overall_direction_robust", True,
+            "Independent observing systems (in-situ, satellite altimetry, "
+            "top-of-atmosphere radiation) point the same way; new data refine "
+            "the numbers without moving the direction.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
 # Claim 2 — AMOC is weakening                            🟡 Competing          #
 # --------------------------------------------------------------------------- #
 amoc_weakening = Claim(
@@ -315,6 +370,7 @@ OCEAN = Topic(
     ),
     claims=[
         hydrothermal_vents_exist,
+        ocean_heat_uptake,
         amoc_weakening,
         ccz_biodiversity_unknown,
         dark_oxygen_production,

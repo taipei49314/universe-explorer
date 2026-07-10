@@ -1,0 +1,36 @@
+{
+  "at": "20260710T131907Z",
+  "note": "mechanical diff against the committed snapshot; the trigger interface for future push channels",
+  "events": [
+    {
+      "kind": "claim_added",
+      "claim": "ocean_heat_uptake",
+      "after": {
+        "status": "STRONG",
+        "evidence_axis": "E2",
+        "evidence_items": 1,
+        "sources": 1,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "planets_are_common",
+      "after": {
+        "status": "STRONG",
+        "evidence_axis": "E3",
+        "evidence_items": 1,
+        "sources": 1,
+        "diverges": true
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    }
+  ]
+}

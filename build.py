@@ -62,7 +62,13 @@ def main(argv) -> int:
             render_topic(topic), encoding="utf-8")
     (out_dir / "index.html").write_text(render_index(TOPICS), encoding="utf-8")
     (out_dir / "explore.html").write_text(render_explore(TOPICS), encoding="utf-8")
+    (out_dir / "explore-zh.html").write_text(
+        render_explore(TOPICS, lang="zh"), encoding="utf-8")
     (out_dir / "claims.json").write_text(claims_json(TOPICS), encoding="utf-8")
+
+    # D3: the public push channel — an Atom feed of change events.
+    from universe_explorer.dataops.feed import build_feed
+    (out_dir / "feed.xml").write_text(build_feed(), encoding="utf-8")
 
     # single-file Chinese edition (presentation overlay, same data)
     from dataops_artifact import build as build_single

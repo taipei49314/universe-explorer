@@ -61,5 +61,23 @@
     "title": "Extraordinary claims require extraordinary evidence: evaluating nodule-associated dark oxygen production",
     "container": "Frontiers in Marine Science",
     "issued": 2025
+  },
+  "10.5194/essd-12-2013-2020": {
+    "endpoint": "https://api.crossref.org/works/10.5194%2Fessd-12-2013-2020",
+    "retrieved_at": "2026-07-10T13:16:43Z",
+    "cache_file": "10-5194_essd-12-2013-2020.json",
+    "sha256": "4bb175bd2837dbf8314fb22572cff10b944fcaadf3433786c79318f5100c6692",
+    "title": "Heat stored in the Earth system: where does the energy go?",
+    "container": "Earth System Science Data",
+    "issued": 2020
+  },
+  "10.1038/nature10684": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2Fnature10684",
+    "retrieved_at": "2026-07-10T13:16:45Z",
+    "cache_file": "10-1038_nature10684.json",
+    "sha256": "51f042859f96e824c50b0b157acce6cb1f9e1d9e9086c2d718460e8df4c02a25",
+    "title": "One or more bound planets per Milky Way star from microlensing observations",
+    "container": "Nature",
+    "issued": 2012
   }
 }

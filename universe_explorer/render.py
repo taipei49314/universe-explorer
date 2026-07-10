@@ -196,33 +196,50 @@ def render_topic(topic: Topic) -> str:
     )
 
 
-def render_explore(topics: List[Topic]) -> str:
+def render_explore(topics: List[Topic], lang: str = "en") -> str:
     """D2: one compact page over every claim in every domain, filterable by
     light and evidence axis, text-searchable. Pure static + vanilla JS, zero
     external resources. Counts shown are counts of a visible list the reader
-    can recount — constitutional. Order is fixed: bedrock first, ceiling last."""
+    can recount — constitutional. Order is fixed: bedrock first, ceiling last.
+
+    lang="zh" renders the Chinese presentation overlay (falls back to the
+    authored English wherever a translation is missing — visible degradation,
+    never fabrication) and points cards at the zh single-page anchors."""
+    zh = lang == "zh"
+    if zh:
+        from .data import translations_zh as ZH
+
     cards = []
     for t in topics:
+        t_title = ZH.TOPIC_ZH[t.id]["title"] if zh else t.title
         for c in sorted(t.claims, key=lambda c: c.status.rank):
             d = derive(c)
             div = ('<span class="diverge">⚡</span>' if diverges(c) else "")
+            title = (ZH.CLAIMS.get(c.id, {}).get("title", c.title)
+                     if zh else c.title)
+            href = (f'zh.html#c-{_esc(c.id)}' if zh
+                    else f'{_esc(t.id)}.html#c-{_esc(c.id)}')
+            search_text = " ".join([title, c.title, c.id, t_title, t.title])
             cards.append(
-                f'<a class="ecard" href="{_esc(t.id)}.html#c-{_esc(c.id)}" '
+                f'<a class="ecard" href="{href}" '
                 f'data-status="{c.status.name}" data-axis="{d.strength.short}" '
-                f'data-text="{_esc((c.title + " " + c.id + " " + t.title).lower())}" '
+                f'data-text="{_esc(search_text.lower())}" '
                 f'style="border-left-color:{_LIGHT_COLOR[c.status]}">'
                 f'<span class="elight">{c.status.light}</span>'
-                f'<span class="etitle">{_esc(c.title)}</span>'
-                f'<span class="emeta">{_esc(t.title)} · '
+                f'<span class="etitle">{_esc(title)}</span>'
+                f'<span class="emeta">{_esc(t_title)} · '
                 f'{_esc(d.strength.short)} {div}</span></a>'
             )
     status_chips = "".join(
         f'<button class="chip f" data-k="status" data-v="{s.name}">'
-        f'{s.light} {_esc(s.value)}</button>' for s in Status)
+        f'{s.light} {_esc(ZH.STATUS_ZH[s.value] if zh else s.value)}</button>'
+        for s in Status)
     axis_chips = "".join(
         f'<button class="chip f" data-k="axis" data-v="{a.short}">'
         f'{a.short}</button>' for a in EvidenceStrength)
-    return _EXPLORE.format(
+
+    tpl = _EXPLORE_ZH if zh else _EXPLORE
+    return tpl.format(
         status_chips=status_chips, axis_chips=axis_chips,
         cards="".join(cards), total=len(cards))
 
@@ -411,7 +428,8 @@ _EXPLORE = """<!doctype html>
 <a class="home" href="index.html">&larr; all topics</a>
 <h1>Explore</h1>
 <p class="sub">Every claim across every domain. Filter by light or evidence
-axis; the order never changes: bedrock first, ceiling last.</p>
+axis; the order never changes: bedrock first, ceiling last.
+<a href="explore-zh.html">中文版 &rarr;</a></p>
 <input id="q" type="search" placeholder="search title / id / topic&hellip;"
  aria-label="search claims">
 <div class="bar" id="statusbar">{status_chips}</div>
@@ -458,6 +476,35 @@ recorded field, machine-readable, for third-party re-review.</p>
 """
 
 
+# Chinese explore page: same template, translated chrome. Derived by literal
+# replacement so the two can never drift structurally.
+_EXPLORE_ZH = (
+    _EXPLORE
+    .replace('<html lang="en">', '<html lang="zh-Hant">')
+    .replace("<title>Universe Explorer &mdash; Explore</title>",
+             "<title>宇宙探索者 — 探索</title>")
+    .replace("<title>Universe Explorer — Explore</title>",
+             "<title>宇宙探索者 — 探索</title>")
+    .replace('<a class="home" href="index.html">&larr; all topics</a>',
+             '<a class="home" href="zh.html">&larr; 中文總覽</a>')
+    .replace("<h1>Explore</h1>", "<h1>探索</h1>")
+    .replace("Every claim across every domain. Filter by light or evidence\n"
+             "axis; the order never changes: bedrock first, ceiling last.\n"
+             '<a href="explore-zh.html">中文版 &rarr;</a>',
+             "跨領域的全部宣稱。可依燈號或證據軸篩選;排序永遠不變:地基在前、"
+             '天花板在後。<a href="explore.html">English &rarr;</a>')
+    .replace('placeholder="search title / id / topic&hellip;"',
+             'placeholder="搜尋標題 / id / 領域…"')
+    .replace("aria-label=\"search claims\"", 'aria-label="搜尋宣稱"')
+    .replace("shown\n (a count of the visible list &mdash; recount it yourself)",
+             "顯示中\n(這是可見清單的計數 —— 請自行重數)")
+    .replace("Open data: <a href=\"claims.json\">claims.json</a> &mdash; every\n"
+             "recorded field, machine-readable, for third-party re-review.",
+             '開放資料:<a href="claims.json">claims.json</a> —— 全部已收錄欄位,'
+             "機器可讀,供第三方覆核。")
+)
+
+
 _INDEX = """<!doctype html>
 <html lang="en">
 <head>
@@ -491,7 +538,8 @@ _INDEX = """<!doctype html>
   container &mdash; it has no status light of its own; each claim inside carries
   its own. Same engine, any domain.
   <a href="explore.html">Explore all claims &rarr;</a> ·
-  <a href="zh.html">中文版 &rarr;</a></p>
+  <a href="zh.html">中文版 &rarr;</a> ·
+  <a href="feed.xml">RSS</a></p>
   <div class="banner">Reference first, AI last. Certainty emerges from evidence
   you can open and read &mdash; never from a declared number.</div>
   {legend}
