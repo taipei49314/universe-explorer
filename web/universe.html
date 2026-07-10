@@ -84,7 +84,8 @@ button:focus-visible, a:focus-visible { outline:2px solid var(--est);
 const COLORS = { ESTABLISHED:"#57C186", STRONG:"#6FA8E8", COMPETING:"#D9B14A",
   FRONTIER:"#E8794E", SPECULATIVE:"#D66BB4" };
 const I18N = {
-  en: { title:"Universe Explorer", sub:"drift through what we know — and what we don't",
+  en: { title:"Universe Explorer",
+    sub:"drift through what we know — and what we don't. every body here cost a verified source; the dark is honest.",
     hint:"drag to drift · scroll to zoom · click a body to read it",
     overview:"Overview", lang:"中文", map:"Map view", plain:"Plain site",
     whylight:"Why this light", evidence:"Evidence",
@@ -92,8 +93,13 @@ const I18N = {
     diverge:"axes diverge", permalink:"permalink",
     challenge:"challenge this verdict",
     legend:["star — established","planet — strong","binary — two camps",
-            "nebula — frontier","ghost — speculative","pulse — ⚡ divergence"] },
-  zh: { title:"宇宙探索者", sub:"漂流過我們的已知 —— 與未知",
+            "nebula — frontier","ghost — speculative","pulse — ⚡ divergence",
+            "moon — a verified source"],
+    uncharted:"uncharted", unchartedTitle:"Not yet charted",
+    unchartedBody:"Nothing is drawn here because nothing has been verified here. Every body in this universe costs a real, fetched, hash-checked source — emptiness is not a bug, it is the honest report of how much work knowing takes. Want this region mapped? Suggest a domain:",
+    suggest:"suggest a domain →" },
+  zh: { title:"宇宙探索者",
+    sub:"漂流過我們的已知與未知。這裡每顆天體都以一筆經核實的出處為代價;黑暗是誠實的。",
     hint:"拖曳漂移 · 滾輪縮放 · 點擊天體閱讀它",
     overview:"總覽", lang:"EN", map:"地圖視圖", plain:"陽春版",
     whylight:"為什麼是這個燈號", evidence:"證據",
@@ -101,10 +107,15 @@ const I18N = {
     diverge:"雙軸分岔", permalink:"永久連結",
     challenge:"挑戰這個判定",
     legend:["恆星 —— 已確立","行星 —— 強共識","雙星 —— 兩派拉鋸",
-            "星雲 —— 前沿","幽靈 —— 推測","脈動 —— ⚡ 分岔"] },
+            "星雲 —— 前沿","幽靈 —— 推測","脈動 —— ⚡ 分岔",
+            "衛星 —— 一筆經核實的出處"],
+    uncharted:"未測繪", unchartedTitle:"尚未測繪",
+    unchartedBody:"這裡什麼都沒畫,因為這裡還沒有任何東西被核實過。這個宇宙裡每顆天體都要價一筆真實、已抓取、雜湊驗證過的出處 —— 空曠不是缺陷,是「知道」要花多少工的誠實報告。想讓這片區域被測繪?提議一個領域:",
+    suggest:"提議一個領域 →" },
 };
 
 let DATA = null, bodies = [], clusters = [];
+const UNCHARTED = [ {x:0,y:-1500}, {x:2320,y:220}, {x:-2380,y:160}, {x:60,y:1660} ];
 let state = { lang:"en", sel:null };
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -126,7 +137,7 @@ const cam = { x:0, y:0, z:0.62, vx:0, vy:0 };
 let fly = null;
 // overview must FIT the viewport, whatever its size — never a fixed zoom
 function overviewZ() {
-  return Math.max(0.3, Math.min(0.9, Math.min(W / 3050, H / 2050)));
+  return Math.max(0.17, Math.min(0.8, Math.min(W / 4600, H / 3100)));
 }
 function flyTo(x, y, z) {
   if (REDUCED) { cam.x = x; cam.y = y; cam.z = z; return; }
@@ -139,20 +150,24 @@ function rnd(seed) { let s = 0;
   return () => (s = s * 16807 % 2147483647) / 2147483647; }
 
 /* starfield layers + dust */
-const stars = [], dust = [];
+const stars = [], dust = [], galaxies = [];
 { const r = rnd("starfield");
-  for (let L = 0; L < 3; L++)
-    for (let i = 0; i < 240; i++)
-      stars.push({ x:r()*4800-2400, y:r()*3200-1600, l:0.18+L*0.3,
-        s:0.5+r()*(L+1)*0.8, tw:r()*6.28, ts:0.3+r()*1.2 });
-  for (let i = 0; i < 130; i++)
-    dust.push({ x:r()*4800-2400, y:r()*3200-1600, s:0.6+r()*1.7,
+  for (let L = 0; L < 4; L++)
+    for (let i = 0; i < 420; i++)
+      stars.push({ x:r()*9600-4800, y:r()*6400-3200, l:0.1+L*0.24,
+        s:0.4+r()*(L+1)*0.7, tw:r()*6.28, ts:0.3+r()*1.2 });
+  for (let i = 0; i < 220; i++)
+    dust.push({ x:r()*9600-4800, y:r()*6400-3200, s:0.6+r()*1.7,
       dx:(r()-0.5)*7, dy:(r()-0.5)*7, a:0.05+r()*0.12 });
+  for (let i = 0; i < 16; i++)
+    galaxies.push({ x:r()*9000-4500, y:r()*6000-3000, rx:60+r()*150,
+      ry:22+r()*46, rot:r()*3.14, a:0.05+r()*0.06,
+      hue:["199,224,234","234,214,199","214,199,234"][i % 3] });
 }
 
 /* layout: each topic = a constellation cluster */
 function layout() {
-  const anchors = [ {x:-950,y:-520}, {x:900,y:-480}, {x:-880,y:560}, {x:930,y:600} ];
+  const anchors = [ {x:-1520,y:-840}, {x:1460,y:-780}, {x:-1400,y:900}, {x:1500,y:960} ];
   clusters = DATA.topics.map((t, i) => ({ ...t, ...anchors[i % 4] }));
   bodies = [];
   for (const c of clusters) {
@@ -165,7 +180,11 @@ function layout() {
         bx:c.x + Math.cos(ang) * dist, by:c.y + Math.sin(ang) * dist * 0.72,
         x:0, y:0, ph:r() * 6.283, sp:0.25 + r() * 0.5,
         size:24 - k.axis_rank * 3.6,   // size = evidence strength
-        orb:r() * 6.283 });
+        orb:r() * 6.283,
+        // every verified source is a real moon — density that cost provenance
+        moons:k.sources.map((s, mi) => ({ label:s.label, tier:s.tier,
+          d:(24 - k.axis_rank*3.6) + 13 + mi*8, sp:0.35 + r()*0.5,
+          ph:r()*6.283 })) });
     });
   }
 }
@@ -227,6 +246,19 @@ function drawBody(b, t, hov) {
     cx.globalAlpha = 1;
   }
   cx.shadowBlur = 0;
+  for (const m of b.moons) {              // moons = verified sources
+    const ma = (REDUCED ? 0 : t * m.sp) + m.ph;
+    const mx = x + Math.cos(ma) * m.d, my = y + Math.sin(ma) * m.d * 0.62;
+    cx.globalAlpha = 0.85; cx.fillStyle = "#B9C7D2";
+    cx.beginPath();
+    cx.arc(mx, my, m.tier === "PRIMARY" ? 2.6 : 2.0, 0, 6.283); cx.fill();
+    cx.globalAlpha = 1;
+    if (cam.z > 1.5) {
+      cx.font = "9px ui-monospace, monospace";
+      cx.fillStyle = "rgba(185,199,210,.6)"; cx.textAlign = "center";
+      cx.fillText(m.label, mx, my - 5);
+    }
+  }
   if (hov || cam.z > 1.05) {              // label on hover or close zoom
     cx.font = (hov ? "600 " : "") + "12px system-ui";
     cx.fillStyle = hov ? "#FFFFFF" : "rgba(220,230,224,.75)";
@@ -257,6 +289,31 @@ function frame(ms) {
 
   cx.fillStyle = "#05080F"; cx.fillRect(0, 0, W, H);
 
+  for (const g of galaxies) {            // distant galaxies, deepest parallax
+    const gx = (g.x - cam.x * 0.07) * cam.z + W/2;
+    const gy = (g.y - cam.y * 0.07) * cam.z + H/2;
+    if (gx < -260 || gx > W+260 || gy < -260 || gy > H+260) continue;
+    cx.save(); cx.translate(gx, gy); cx.rotate(g.rot);
+    const gg = cx.createRadialGradient(0, 0, 1, 0, 0, g.rx * cam.z);
+    gg.addColorStop(0, "rgba(" + g.hue + "," + (g.a*2.2) + ")");
+    gg.addColorStop(1, "rgba(" + g.hue + ",0)");
+    cx.fillStyle = gg; cx.scale(1, g.ry / g.rx);
+    cx.beginPath(); cx.arc(0, 0, g.rx * cam.z, 0, 6.283); cx.fill();
+    cx.restore();
+  }
+  for (const u of UNCHARTED) {           // the honest dark: not yet charted
+    const ux = (u.x - cam.x) * cam.z + W/2, uy = (u.y - cam.y) * cam.z + H/2;
+    if (ux < -600 || ux > W+600 || uy < -600 || uy > H+600) continue;
+    const ur = 430 * cam.z;
+    const ug = cx.createRadialGradient(ux, uy, 1, ux, uy, ur);
+    ug.addColorStop(0, "rgba(130,150,160,.07)");
+    ug.addColorStop(1, "rgba(130,150,160,0)");
+    cx.fillStyle = ug; cx.beginPath(); cx.arc(ux, uy, ur, 0, 6.283); cx.fill();
+    cx.font = "500 " + Math.max(11, 13*cam.z) + "px Georgia, Songti SC, serif";
+    cx.fillStyle = "rgba(160,180,190,.38)"; cx.textAlign = "center";
+    cx.fillText(L().uncharted, ux, uy);
+  }
+
   for (const s of stars) {               // parallax starfield
     const sx = (s.x - cam.x * s.l) * cam.z + W/2;
     const sy = (s.y - cam.y * s.l) * cam.z + H/2;
@@ -269,8 +326,8 @@ function frame(ms) {
   cx.globalAlpha = 1;
   for (const d of dust) {                // suspended dust, slow drift
     if (!REDUCED) { d.x += d.dx * 0.016; d.y += d.dy * 0.016;
-      if (d.x > 2400) d.x = -2400; if (d.x < -2400) d.x = 2400;
-      if (d.y > 1600) d.y = -1600; if (d.y < -1600) d.y = 1600; }
+      if (d.x > 4800) d.x = -4800; if (d.x < -4800) d.x = 4800;
+      if (d.y > 3200) d.y = -3200; if (d.y < -3200) d.y = 3200; }
     const sx = (d.x - cam.x * 0.9) * cam.z + W/2;
     const sy = (d.y - cam.y * 0.9) * cam.z + H/2;
     if (sx < 0 || sx > W || sy < 0 || sy > H) continue;
@@ -326,7 +383,12 @@ cv.addEventListener("pointerup", e => { drag.on = false;
     for (const b of bodies) {
       const hitR = Math.max(16, (b.size + 10) * cam.z);
       if (Math.hypot(e.clientX - b.x, e.clientY - b.y) < hitR) hit = b; }
-    if (hit) openPanel(hit.c); else closePanel(); } });
+    if (hit) { openPanel(hit.c); return; }
+    for (const u of UNCHARTED) {
+      const ux = (u.x - cam.x) * cam.z + W/2, uy = (u.y - cam.y) * cam.z + H/2;
+      if (Math.hypot(e.clientX - ux, e.clientY - uy) < 300 * cam.z) {
+        openUncharted(); return; } }
+    closePanel(); } });
 cv.addEventListener("wheel", e => { e.preventDefault();
   const f = Math.exp(-e.deltaY * 0.0012);
   const z2 = Math.min(2.4, Math.max(0.3, cam.z * f));
@@ -372,6 +434,16 @@ function openPanel(k) {
   $("panel").classList.add("open");
   $("closep").addEventListener("click", closePanel);
 }
+function openUncharted() {
+  const t = L();
+  $("panel").innerHTML = `
+    <button id="closep">${esc(t.close)} ✕</button>
+    <h2>${esc(t.unchartedTitle)}</h2>
+    <p class="note" style="margin-top:10px">${esc(t.unchartedBody)}</p>
+    <div class="plinks"><a href="https://github.com/taipei49314/universe-explorer/issues/new">${esc(t.suggest)}</a></div>`;
+  $("panel").classList.add("open");
+  $("closep").addEventListener("click", closePanel);
+}
 function closePanel() { state.sel = null; $("panel").classList.remove("open"); }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
 
@@ -389,6 +461,7 @@ function renderHud() {
     `<span><i style="background:${COLORS.FRONTIER}"></i>${esc(t.legend[3])}</span>`,
     `<span><i style="background:${COLORS.SPECULATIVE}"></i>${esc(t.legend[4])}</span>`,
     `<span><i style="background:transparent;border:1px dashed ${COLORS.COMPETING}"></i>${esc(t.legend[5])}</span>`,
+    `<span><i style="background:#B9C7D2"></i>${esc(t.legend[6])}</span>`,
   ].join("");
   const nav = [`<button class="btn" data-a="home">${esc(t.overview)}</button>`];
   for (const c of clusters)

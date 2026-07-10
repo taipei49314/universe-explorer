@@ -94,6 +94,11 @@ def test_universe_self_contained_and_epistemic():
         assert needle in UNI, needle
     # size = evidence strength: the layout derives size from axis_rank
     assert "size:24 - k.axis_rank" in UNI
+    # scale is honest, never inflated: moons are real sources; the empty
+    # regions are labeled uncharted and say why they are empty
+    assert "moons:k.sources.map" in UNI
+    assert "UNCHARTED" in UNI and "unchartedBody" in UNI
+    assert "verified source" in UNI  # the moon legend names what a moon is
 
 
 def _run():
