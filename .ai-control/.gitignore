@@ -1,0 +1,3 @@
+ACTIVE_TASK
+artifacts/*
+!artifacts/.gitkeep

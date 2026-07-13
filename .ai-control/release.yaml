@@ -1,0 +1,8 @@
+# 發布紀錄 — 只有人類可以新增條目
+# releases:
+#   - version: v0.1.0
+#     date: 2026-07-13
+#     merged_tasks: [T-20260713-001]
+#     verified_by: Nelson
+#     notes: ""
+releases: []

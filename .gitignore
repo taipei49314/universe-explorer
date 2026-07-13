@@ -9,3 +9,5 @@ __pycache__/
 #   events/    — historical change records
 #   audit/     — human decision log
 #   candidates/— pending discovery inlet
+TASK_PACKET.md
+HANDOFF.md

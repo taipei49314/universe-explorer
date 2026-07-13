@@ -1,0 +1,31 @@
+{
+  "_comment": "機器強制層 — guard-paths.ps1 讀這個檔。policies.md 是給 AI 讀的敘述版。",
+  "forbidden_write_paths": [
+    "*.env",
+    "*.env.*",
+    "*secret*",
+    "*credentials*",
+    "*.pem",
+    "*.key",
+    "*.ai-control\\policies*",
+    "*.ai-control\\decisions\\*",
+    "*.ai-control\\ledger\\*",
+    "*.claude\\settings*",
+    "*engine_hashes.json",
+    "*docs\\constitution.md"
+  ],
+  "allowed_write_overrides": [
+    "*.ai-control\\tasks\\*\\notes*",
+    "*.ai-control\\tasks\\*\\packet.md"
+  ],
+  "forbidden_command_patterns": [
+    "git\\s+merge",
+    "git\\s+push\\s+.*(--force|-f)\\b",
+    "git\\s+reset\\s+--hard",
+    "git\\s+worktree\\s+remove",
+    "git\\s+branch\\s+(-D|-d)",
+    "git\\s+checkout\\s+(main|master)\\b",
+    "git\\s+switch\\s+(main|master)\\b"
+  ],
+  "log_tools": ["Write", "Edit", "NotebookEdit", "Bash"]
+}

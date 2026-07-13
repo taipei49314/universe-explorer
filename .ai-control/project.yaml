@@ -1,0 +1,19 @@
+﻿# 專案概況 — AI 接手任何工作前必讀
+name: "universe-explorer"
+created: "2026-07-13"
+owner: Nelson
+description: "知識探索系統：誠實區分人類已知與未知。憲法紀律：來源優先、AI 不宣告事實、無假精確、每個 known 掛真來源。"
+
+# 預設值（Task Packet 可覆蓋）
+default_worker: claude-code   # claude-code | codex | sol | ollama | human
+main_branch: main
+test_command: "python run_tests.py"
+
+# AI 必讀順序
+reading_order:
+  - .ai-control/policies.md
+  - .ai-control/architecture.md
+  - 你被指派的 Task Packet（.ai-control/tasks/<id>/packet.md）
+
+notes: |
+  沒有 Task Packet 就不要動手。跟人類要一份。
