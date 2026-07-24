@@ -1,0 +1,8 @@
+﻿{
+    "id":  "T-20260713-001",
+    "test_command":  "python run_tests.py",
+    "collected":  "2026-07-13T17:24:16.3179268+08:00",
+    "base":  "main",
+    "head":  "a47edad4da64a4db11e1641373d805e8118608ef",
+    "test_exit":  0
+}

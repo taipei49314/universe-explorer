@@ -1,0 +1,98 @@
+﻿diff --git a/test_health.py b/test_health.py
+index 4ac1e56..dec4bcd 100644
+--- a/test_health.py
++++ b/test_health.py
+@@ -61,6 +61,40 @@ def test_entry_version_parsing():
+     assert _entry_version(xml_nov) == 0
+ 
+ 
++def test_arxiv_version_comparison_mechanics():
++    """T-20260713-001: the comparison itself, offline. A revision fires a
++    mechanical record (id, cached version, latest version); an unchanged
++    version is silence, not noise."""
++    from universe_explorer.dataops.source_health import _version_findings
++    cached = {"2111.03606": 4, "1207.3123": 2}
++
++    # unchanged -> zero events, zero noise
++    assert _version_findings(cached, {"2111.03606": 4, "1207.3123": 2}) == []
++
++    # one revised -> exactly one finding, carrying id + old + new
++    out = _version_findings(cached, {"2111.03606": 5, "1207.3123": 2})
++    assert len(out) == 1
++    f = out[0]
++    assert f["source_doi"] == "arXiv:2111.03606"
++    assert f["updating_doi"] == "arXiv:2111.03606v5"
++    assert f["title"] == "cached v4 -> latest v5"
++    assert f["update_types"] == ["new_arxiv_version"]
++    # zero interpretation: same mechanical schema as Crossref findings
++    assert set(f) == {"source_doi", "updating_doi", "update_types",
++                      "title", "issued"}
++
++
++def test_arxiv_unknown_versions_stay_silent():
++    """0 = version unknown/unparsable. The machine records what it can prove;
++    it never guesses — unknown on either side must not fire."""
++    from universe_explorer.dataops.source_health import _version_findings
++    assert _version_findings({"a": 0}, {"a": 3}) == []
++    assert _version_findings({"a": 2}, {"a": 0}) == []
++    assert _version_findings({"a": 2}, {}) == []
++    # and a DOWNgrade (api hiccup) is not "a new version" either
++    assert _version_findings({"a": 3}, {"a": 2}) == []
++
++
+ def test_arxiv_version_finding_uses_same_ack_mechanism():
+     f = {"source_doi": "arXiv:2111.03606",
+          "updating_doi": "arXiv:2111.03606v5",
+diff --git a/universe_explorer/dataops/source_health.py b/universe_explorer/dataops/source_health.py
+index 57abe7e..6d3fc0c 100644
+--- a/universe_explorer/dataops/source_health.py
++++ b/universe_explorer/dataops/source_health.py
+@@ -63,6 +63,26 @@ def _entry_version(xml_text: str) -> int:
+     return int(m.group(1)) if m else 0
+ 
+ 
++def _version_findings(cached: Dict[str, int], current: Dict[str, int]) -> List[dict]:
++    """The pure comparison: cached-at-fetch-time versions vs the live latest.
++    0 means "version unknown / unparsable" and stays silent on either side —
++    the machine records what it can prove, it never guesses. Separated from
++    the network fetch so the mechanics are testable offline."""
++    findings = []
++    for a in sorted(cached):
++        cur = current.get(a, 0)
++        if cur and cached.get(a, 0) and cur > cached[a]:
++            findings.append({
++                "source_doi": f"arXiv:{a}",
++                # ack key, same mechanism as Crossref updates:
++                "updating_doi": f"arXiv:{a}v{cur}",
++                "update_types": ["new_arxiv_version"],
++                "title": (f"cached v{cached[a]} -> latest v{cur}"),
++                "issued": [None],
++            })
++    return findings
++
++
+ def arxiv_version_findings() -> List[dict]:
+     """V4-3: cached arXiv papers get revised (v2, v3, ...) and that must not
+     happen silently either. Compare the version cached at fetch time with the
+@@ -97,19 +117,7 @@ def arxiv_version_findings() -> List[dict]:
+         if m:
+             current[bare] = int(m.group(1))
+ 
+-    findings = []
+-    for a in ids:
+-        cur = current.get(a, 0)
+-        if cur and cached_versions.get(a, 0) and cur > cached_versions[a]:
+-            findings.append({
+-                "source_doi": f"arXiv:{a}",
+-                # ack key, same mechanism as Crossref updates:
+-                "updating_doi": f"arXiv:{a}v{cur}",
+-                "update_types": ["new_arxiv_version"],
+-                "title": (f"cached v{cached_versions[a]} -> latest v{cur}"),
+-                "issued": [None],
+-            })
+-    return findings
++    return _version_findings(cached_versions, current)
+ 
+ 
+ def _updates_for(doi: str) -> List[dict]:
+
