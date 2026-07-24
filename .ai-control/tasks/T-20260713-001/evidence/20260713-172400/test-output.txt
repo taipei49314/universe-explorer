@@ -1,0 +1,23 @@
+﻿  ok  test_validator.py      17 tests passed.
+  ok  test_provenance.py     8 tests passed.
+  ok  test_axes.py           10 tests passed.
+  ok  test_proposals.py      8 tests passed.
+  ok  test_watch.py          7 tests passed.
+  ok  test_p4.py             8 tests passed.
+  ok  test_narrative.py      11 tests passed.
+  ok  test_registry.py       6 tests passed.
+  ok  test_push.py           3 tests passed.
+  ok  test_llm_narrative.py  7 tests passed.
+  ok  test_tiers.py          5 tests passed.
+  ok  test_llm_proposals.py  7 tests passed.
+  ok  test_explore.py        7 tests passed.
+  ok  test_crossref.py       8 tests passed.
+  ok  test_feed.py           4 tests passed.
+  ok  test_health.py         9 tests passed.
+  ok  test_claim_draft.py    6 tests passed.
+  ok  test_constitution.py   4 tests passed.
+  ok  test_app.py            6 tests passed.
+  ok  build.py --check       (constitution gate, all topics)
+
+all suites + constitution gate: green
+
