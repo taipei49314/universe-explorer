@@ -333,6 +333,8 @@ class ReadingPath:
     steps: Tuple[str, ...]
     note: str
     note_zh: str
+    guide: str = ""      # P-Guide: short authored walkthrough (not a verdict)
+    guide_zh: str = ""
 
     def as_dict(self) -> dict:
         d = {
@@ -344,6 +346,8 @@ class ReadingPath:
             "n_steps": len(self.steps),
             "note": self.note,
             "note_zh": self.note_zh,
+            "guide": self.guide,
+            "guide_zh": self.guide_zh,
         }
         assert not (set(d) & BANNED_KEYS)
         return d
@@ -374,6 +378,18 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
             "擴張/CMB 地基 → 傘形宣稱 → 本地與早期兩極 → 本地校準分裂 → "
             "三條前沿緩解路徑。"
         ),
+        guide=(
+            "Start from expansion and the CMB (what is Established). "
+            "The yellow umbrella is the disagreement under standard assumptions — "
+            "not a claim that cosmology is broken. Then read the two poles, the "
+            "local calibrator split, and three Frontier routes that might arbitrate. "
+            "No path step is a winner."
+        ),
+        guide_zh=(
+            "先從擴張與 CMB(已確立)讀起。黃燈傘形是在標準假設下的不一致 — "
+            "不是「宇宙學壞了」。再讀兩極、本地校準分裂、三條可能仲裁的前沿路徑。"
+            "路徑上沒有勝負。"
+        ),
     ),
     ReadingPath(
         id="path_stars",
@@ -399,6 +415,17 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
         note_zh=(
             "聚變與太陽內部 → 核合成與殘骸 → 黃燈死亡通道 → PISN 間隙 → "
             "紅燈 Pop III 天花板。"
+        ),
+        guide=(
+            "Fusion is the floor. Solar interior and CNO neutrinos deepen the "
+            "laboratory. Nucleosynthesis and remnants are Strong. Yellow nodes "
+            "are open engineering of death channels. The red ceiling forbids "
+            "routine local Pop III — absence of acceptance, not a joke claim."
+        ),
+        guide_zh=(
+            "聚變是地板。太陽內部與 CNO 微中子加深實驗室。核合成與殘骸是強共識。"
+            "黃燈是死亡通道的開放工程問題。紅燈天花板禁止「本地常規 Pop III」—"
+            "是主流不接受，不是玩笑宣稱。"
         ),
     ),
     ReadingPath(
@@ -426,6 +453,16 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
             "視界地基 → 克爾/SMBH 平台 → 低質量間隙 → 目錄與噴流 → "
             "資訊悖論 → 防火牆與回聲天花板。"
         ),
+        guide=(
+            "Horizons exist (Established). Kerr and nuclear SMBHs are the Strong "
+            "working picture. The lower mass gap is Competing. Catalogues, jets and "
+            "the information paradox are Frontier programmes. Firewall and "
+            "established GW echoes stay Speculative ceilings."
+        ),
+        guide_zh=(
+            "視界存在(已確立)。克爾與星系核 SMBH 是強共識工作圖像。低質量間隙是 Competing。"
+            "目錄、噴流與資訊悖論是前沿。防火牆與「回聲已確立」停在推測天花板。"
+        ),
     ),
     ReadingPath(
         id="path_dark_matter",
@@ -452,6 +489,16 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
             "差異地基 → CDM → 粒子 vs 修正重力 → 身份綱領 → "
             "爭議與推測天花板。"
         ),
+        guide=(
+            "Mass discrepancy is the floor. CDM is Strong scaffolding. Particle vs "
+            "modified gravity is the structural yellow split. Identity programmes "
+            "(WIMP, axion, …) are specialisations. Red ceilings mark claims the "
+            "mainstream does not accept as discovery."
+        ),
+        guide_zh=(
+            "質量差異是地板。CDM 是強鷹架。粒子 vs 修正重力是結構性黃燈分裂。"
+            "身份綱領(WIMP、軸子…)是具體化。紅燈天花板標記主流不接受為發現的宣稱。"
+        ),
     ),
     ReadingPath(
         id="path_exoplanets",
@@ -474,6 +521,15 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
         ),
         note_zh=(
             "存在與常見性 → 黃燈辯論 → JWST 大氣 → 生物訊號紅燈天花板。"
+        ),
+        guide=(
+            "Existence is Established; commonality is Strong demography. Planet Nine "
+            "and the radius-valley mechanism are Competing debates. JWST atmospheres "
+            "are Frontier measurement. Biosignature-as-life stays Speculative."
+        ),
+        guide_zh=(
+            "存在是已確立；常見性是強共識人口統計。Planet Nine 與半徑谷機制是 Competing。"
+            "JWST 大氣是前沿測量。生物訊號-as-生命停在推測。"
         ),
     ),
     ReadingPath(
@@ -498,6 +554,15 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
         note_zh=(
             "熱泉地基 → 熱與酸化 → AMOC 辯論 → CCZ/採礦/塑膠前沿 → 暗氧天花板。"
         ),
+        guide=(
+            "Vents are Established ecology. Heat uptake and acidification are Strong "
+            "bulk responses. AMOC is Competing. CCZ biodiversity, plastics and mining "
+            "impacts are Frontier. Dark oxygen is a Speculative ceiling after critique."
+        ),
+        guide_zh=(
+            "熱泉是已確立生態。熱吸收與酸化是強共識總量回應。AMOC 是 Competing。"
+            "CCZ 生物多樣性、塑膠與採礦影響是前沿。暗氧在批評後停在推測天花板。"
+        ),
     ),
     ReadingPath(
         id="path_seismology",
@@ -520,6 +585,16 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
         ),
         note_zh=(
             "板塊地基 → EEW 與誘發地震 → 黃燈特徵/預測辯論 → OEF 與 ETS → VAN 天花板。"
+        ),
+        guide=(
+            "Plates cause earthquakes (Established). EEW and induced seismicity are "
+            "Strong capabilities/facts. Characteristic quakes and deterministic "
+            "prediction vs forecasting are Competing. OEF and ETS are Frontier. "
+            "VAN electric precursors remain Speculative."
+        ),
+        guide_zh=(
+            "板塊造成地震(已確立)。EEW 與誘發地震是強能力/事實。特徵地震與確定性預測"
+            "vs 預報是 Competing。OEF 與 ETS 是前沿。VAN 電前兆停在推測。"
         ),
     ),
 )
@@ -595,7 +670,7 @@ def coverage_stats(
         "n_reading_paths": len(reading_paths()),
         "note": (
             "Isolation is honest sparsity, not a defect. "
-            "Counts are list counts — not coverage confidence."
+            "Counts are list counts — recount them yourself."
         ),
     }
     assert not (set(stats) & BANNED_KEYS)

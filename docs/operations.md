@@ -5,8 +5,28 @@
 ## 一鍵驗證
 
 ```sh
-python run_tests.py          # 9 個套件 + 憲法擋關,一個 exit code
+python run_tests.py          # 全部套件 + 憲法擋關,一個 exit code
 ```
+
+## 產品表面頁(build 產出)
+
+| 頁 | 用途 |
+|----|------|
+| `app.html` | 主殼:地圖 · 展開 · R-Graph · 導覽 · 對照 |
+| `app.html?c=<id>` | 深鏈開宣稱 |
+| `app.html?path=path_h0` | 打開閱讀路徑 |
+| `app.html?tour=1` | 強制 60 秒導覽 |
+| `changes.html` | 最近 digest / 事件(機械轉述) |
+| `health.html` | 覆核清單 + 當日抽 3 則 |
+| `about.html#how-to-read` | 讀法 + 霍金輻射範例 |
+| `about.html#support` | 如何支持(不賣燈號) |
+
+## 週節奏(P-Pulse)
+
+- GitHub Action: `.github/workflows/weekly.yml`(週一 UTC 或手動)
+- 本機:`python -m universe_explorer.dataops.source_health` → `push` → `build.py`
+- 可選 secrets:`UE_WEBHOOK_URL` 等(見 transport)
+- 編輯佇列:`docs/editorial-queue.md`
 
 ## 新增 / 修改一個 claim 的完整循環
 

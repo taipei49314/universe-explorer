@@ -1,0 +1,45 @@
+# P-Pulse: weekly mechanical pulse (source health + digest).
+# Does not interpret science. Fails open on missing secrets for delivery.
+name: weekly-pulse
+
+on:
+  schedule:
+    - cron: "0 12 * * 1"   # Mondays 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Source health (report only)
+        run: python -m universe_explorer.dataops.source_health || true
+        # exit 1 on new findings is informational for humans; do not fail the pulse
+      - name: Digest new events
+        run: python -m universe_explorer.dataops.push
+      - name: Optional deliver (webhook/SMTP)
+        env:
+          UE_WEBHOOK_URL: ${{ secrets.UE_WEBHOOK_URL }}
+          UE_SMTP_HOST: ${{ secrets.UE_SMTP_HOST }}
+          UE_SMTP_PORT: ${{ secrets.UE_SMTP_PORT }}
+          UE_SMTP_USER: ${{ secrets.UE_SMTP_USER }}
+          UE_SMTP_PASS: ${{ secrets.UE_SMTP_PASS }}
+          UE_SMTP_FROM: ${{ secrets.UE_SMTP_FROM }}
+          UE_SMTP_TO: ${{ secrets.UE_SMTP_TO }}
+        run: |
+          if [ -n "$UE_WEBHOOK_URL" ] || [ -n "$UE_SMTP_HOST" ]; then
+            python -m universe_explorer.dataops.push --all --deliver || true
+          else
+            echo "No transport secrets configured — outbox files only (legal silence)."
+          fi
+      - name: Rebuild surface pages
+        run: python build.py
+      - name: Upload outbox digests
+        uses: actions/upload-artifact@v4
+        with:
+          name: outbox-digests
+          path: outbox/*
+          if-no-files-found: ignore

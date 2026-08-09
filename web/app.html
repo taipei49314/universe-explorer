@@ -284,17 +284,73 @@ svg text { fill:var(--ink); }
   border-color:var(--accent); transform:scale(1.03); }
 .path-arrow { color:var(--muted); font-size:.7rem; opacity:.6; user-select:none; }
 .covnote { font-size:.72rem; color:var(--muted); margin:8px 4px 0; line-height:1.4; }
+/* P-Shell top nav */
+.topnav {
+  display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center;
+  max-width:1100px; margin:0 auto; padding:14px 24px 0; position:relative; z-index:2;
+  font-size:.8rem; font-weight:500; }
+.topnav a, .topnav button {
+  color:var(--muted); text-decoration:none; border:0; background:none;
+  font:inherit; font-weight:500; cursor:pointer; padding:4px 0; }
+.topnav a:hover, .topnav button:hover { color:var(--accent); }
+.topnav a.on { color:var(--accent); }
+.topnav .sep { opacity:.3; user-select:none; }
+.path-guide {
+  font-size:.88rem; color:var(--muted); line-height:1.45; margin:8px 0 4px;
+  padding:10px 12px; border-left:3px solid var(--accent); background:var(--mono-bg);
+  border-radius:0 12px 12px 0; }
+.qchips { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 12px; }
+.qchip {
+  border:1px dashed var(--line); background:transparent; color:var(--ink);
+  border-radius:980px; padding:6px 12px; font:inherit; font-size:.75rem;
+  cursor:pointer; }
+.qchip:hover { border-color:var(--accent); color:var(--accent); }
+.compare-wrap {
+  background:var(--panel); border:1px solid var(--line); border-radius:20px;
+  padding:14px 16px; box-shadow:var(--shadow); margin-top:4px; }
+.compare-wrap h2 { margin:0 0 8px; font-size:1rem; }
+.compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+@media (max-width:640px) { .compare-grid { grid-template-columns:1fr; } }
+.compare-slot {
+  border:1px solid var(--line); border-radius:14px; padding:12px; min-height:88px;
+  background:var(--mono-bg); font-size:.88rem; }
+.compare-slot .pick { font-size:.75rem; color:var(--muted); }
+.compare-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+/* P-Read tour */
+#tour {
+  position:fixed; inset:0; z-index:50; display:none; align-items:center;
+  justify-content:center; padding:20px;
+  background:rgba(0,0,0,.45); backdrop-filter:blur(6px); }
+#tour.on { display:flex; }
+.tour-card {
+  width:min(420px, 100%); background:var(--panel-solid); color:var(--ink);
+  border-radius:20px; padding:22px 22px 16px; box-shadow:var(--shadow);
+  border:1px solid var(--line); }
+.tour-card h2 { margin:0 0 8px; font-size:1.2rem; letter-spacing:-.02em; }
+.tour-card p { margin:0 0 14px; color:var(--muted); font-size:.92rem; line-height:1.45; }
+.tour-actions { display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end; }
+.tour-dotbar { display:flex; gap:6px; margin:0 0 12px; }
+.tour-dotbar i { width:7px; height:7px; border-radius:50%; background:var(--line); display:block; }
+.tour-dotbar i.on { background:var(--accent); }
+.panel-tools { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 4px; }
+.panel-tools button {
+  border:1px solid var(--line); background:var(--mono-bg); color:var(--ink);
+  border-radius:980px; font:inherit; font-size:.72rem; padding:4px 10px; cursor:pointer; }
+.panel-tools button.on { background:var(--accent); color:#fff; border-color:transparent; }
+.howto-link { font-size:.78rem; margin:0 6px 8px; }
 footer { max-width:1100px; margin:0 auto; padding:0 24px 56px;
   font-size:.8rem; color:var(--muted); line-height:1.5; position:relative; z-index:1; }
 button:focus-visible, .dot:focus-visible, a:focus-visible, #q:focus-visible {
   outline:2px solid var(--accent); outline-offset:3px; }
 @media (max-width:640px) {
   h1 { font-size:1.75rem; }
-  header { padding-top:28px; }
+  header { padding-top:16px; }
+  #panel { width:100%; max-width:100%; }
 }
 </style>
 </head>
 <body>
+<nav class="topnav" id="topnav" aria-label="primary"></nav>
 <header>
   <h1 id="t-title"></h1>
   <p class="sub" id="t-sub"></p>
@@ -304,13 +360,16 @@ button:focus-visible, .dot:focus-visible, a:focus-visible, #q:focus-visible {
     <input id="q" type="search">
     <button class="langbtn" id="soundbtn" type="button" aria-pressed="false"></button>
     <button class="langbtn" id="langbtn"></button>
+    <button class="langbtn" id="tourbtn" type="button"></button>
   </div>
 </header>
 <main>
+  <div class="qchips" id="qchips" aria-label="questions"></div>
   <div class="mapwrap">
     <svg id="map" viewBox="0 0 720 470" role="img"></svg>
     <div class="legend" id="legend"></div>
     <p class="mapnote" id="mapnote"></p>
+    <p class="howto-link"><a href="about.html#how-to-read" id="howto-a"></a></p>
   </div>
   <section class="rgraph-wrap" id="rgraph-section" aria-label="relation graph">
     <div class="rgraph-head">
@@ -318,15 +377,39 @@ button:focus-visible, .dot:focus-visible, a:focus-visible, #q:focus-visible {
       <p class="hint" id="rgraph-hint"></p>
     </div>
     <div class="pathbar" id="pathbar"></div>
+    <div class="path-guide" id="pathguide" hidden></div>
     <div class="path-steps" id="pathsteps" hidden></div>
     <svg id="rgraph-svg" viewBox="0 0 640 320" role="img" aria-label="ego relation graph"></svg>
     <p class="rgraph-empty" id="rgraph-empty" hidden></p>
     <p class="covnote" id="rgraph-cov"></p>
   </section>
+  <section class="compare-wrap" id="compare-section" aria-label="compare claims">
+    <h2 id="compare-title"></h2>
+    <p class="hint" id="compare-hint" style="font-size:.78rem;color:var(--muted);margin:0 0 10px"></p>
+    <div class="compare-grid">
+      <div class="compare-slot" id="compare-a"><span class="pick" id="compare-a-ph"></span></div>
+      <div class="compare-slot" id="compare-b"><span class="pick" id="compare-b-ph"></span></div>
+    </div>
+    <div class="compare-actions">
+      <button type="button" class="chip" id="compare-use-sel"></button>
+      <button type="button" class="chip" id="compare-clear"></button>
+    </div>
+  </section>
   <div id="cards"></div>
 </main>
 <footer id="foot"></footer>
 <div id="tip"></div>
+<div id="tour" role="dialog" aria-modal="true" aria-labelledby="tour-h">
+  <div class="tour-card">
+    <div class="tour-dotbar" id="tour-dots" aria-hidden="true"></div>
+    <h2 id="tour-h"></h2>
+    <p id="tour-p"></p>
+    <div class="tour-actions">
+      <button type="button" class="chip" id="tour-skip"></button>
+      <button type="button" class="chip on" id="tour-next" style="color:#fff;background:var(--accent);border-color:transparent"></button>
+    </div>
+  </div>
+</div>
 <div id="scrim" aria-hidden="true"></div>
 <aside id="panel" aria-label="claim detail"></aside>
 
@@ -366,7 +449,30 @@ const I18N = {
     permalink:"permalink", challenge:"challenge this verdict",
     close:"close", diverge:"axes diverge",
     soundOn:"Sound on", soundOff:"Sound off",
-    foot:'<a href="universe.html"><b>Drift the universe →</b></a> · Plain site: <a href="index.html">topics</a> · <a href="explore.html">explore</a> · <a href="about.html">how to read this</a> · <a href="claims.json">open data</a> · <a href="feed.xml">feed</a>. No confidence numbers exist anywhere here — certainty emerges from evidence you can open.' },
+    navMap:"Map", navDrift:"Drift", navRead:"How to read", navChanges:"Changes",
+    navHealth:"Health", navFeed:"Feed",
+    tourBtn:"Tour", tourSkip:"Skip", tourNext:"Next", tourDone:"Done",
+    tourDots:4,
+    tour:[
+      { h:"Lights belong to claims", p:"🟢 Established → 🔴 Speculative. A topic is only a container — it has no light. Red is not “fake”; it means not accepted / thin evidence." },
+      { h:"Two axes, no confidence %", p:"Consensus (human, checkable) × evidence strength (derived from recorded sources). ⚡ means high consensus on non-direct evidence — honest tension." },
+      { h:"Relations are recorded edges", p:"Supports, tensions, boundaries… listed routes you can recount. They are not a score and not a verdict on who is right." },
+      { h:"Open questions — count them", p:"Expand a claim, read sources, challenge a light or an edge on GitHub. Certainty emerges from what you open." },
+    ],
+    howto:"How to read this map →",
+    simple:"Simple", advanced:"Advanced",
+    addCompare:"Use open claim in compare",
+    clearCompare:"Clear compare",
+    compareTitle:"Compare two claims",
+    compareHint:"Side-by-side lights and axes only — no winner. Pick claims from the map, then assign A/B.",
+    comparePhA:"Slot A — open a claim, then press “use in compare”.",
+    comparePhB:"Slot B — open another claim.",
+    setAsA:"Set as A", setAsB:"Set as B",
+    qConcern:"I care about…",
+    qH0:"Hubble tension", qQuake:"Earthquake prediction?", qMine:"Deep-sea mining?",
+    qBH:"Black holes", qDM:"Dark matter",
+    relDisclaimer:"Recorded edges only — not a ranking of truth.",
+    foot:'<a href="universe.html"><b>Drift (immersive)</b></a> · <a href="index.html">Plain topics</a> · <a href="explore.html">explore</a> · <a href="about.html">how to read</a> · <a href="changes.html">changes</a> · <a href="health.html">health</a> · <a href="claims.json">open data</a> · <a href="feed.xml">feed</a>. No confidence numbers — certainty emerges from evidence you can open. Support: <a href="about.html#support">how this stays alive</a>.' },
   zh: { title:"宇宙探索者 — 知識地圖",
     sub:"宇宙 · 星球 · 地球。把每個宣稱放上兩條軸:社群共識 × 已收錄證據。偏離對角線的點,是誠實攤開的張力。",
     search:"搜尋宣稱…", all:"全部領域", allThemes:"全部主題",
@@ -397,13 +503,37 @@ const I18N = {
     permalink:"永久連結", challenge:"挑戰這個判定",
     close:"關閉", diverge:"雙軸分岔",
     soundOn:"開啟音效", soundOff:"關閉音效",
-    foot:'<a href="universe.html"><b>漂流宇宙 →</b></a> · 陽春版:<a href="index.html">領域</a> · <a href="explore-zh.html">探索</a> · <a href="about-zh.html">這網站怎麼讀</a> · <a href="claims.json">開放資料</a> · <a href="feed.xml">feed</a>。這裡不存在任何信心數字 —— 確定性從你能展開的證據湧現。' },
+    navMap:"地圖", navDrift:"漂流", navRead:"怎麼讀", navChanges:"變更",
+    navHealth:"健康", navFeed:"Feed",
+    tourBtn:"導覽", tourSkip:"略過", tourNext:"下一步", tourDone:"完成",
+    tourDots:4,
+    tour:[
+      { h:"燈號屬於宣稱", p:"🟢 已確立 → 🔴 推測。Topic 只是容器、沒有燈。紅燈不是「假」,而是未接受／證據薄。" },
+      { h:"雙軸,沒有信心 %", p:"共識(人工可查)× 證據強度(從已錄出處推導)。⚡ 表示強共識建立在非直接證據上 —— 誠實的張力。" },
+      { h:"關聯是已記錄的邊", p:"支持、張力、邊界…是可重數的路徑,不是分數,也不是誰對誰錯的判決。" },
+      { h:"開放問題 —— 自己數", p:"展開宣稱、讀出處、在 GitHub 挑戰燈號或邊。確定性從你能打開的東西湧現。" },
+    ],
+    howto:"這張地圖怎麼讀 →",
+    simple:"簡表", advanced:"進階",
+    addCompare:"把開啟中的宣稱放入對照",
+    clearCompare:"清除對照",
+    compareTitle:"對照兩則宣稱",
+    compareHint:"只並排燈號與軸 —— 沒有勝負。從地圖選宣稱後指定 A/B。",
+    comparePhA:"欄位 A — 開啟一則宣稱後按「放入對照」。",
+    comparePhB:"欄位 B — 再開另一則。",
+    setAsA:"設為 A", setAsB:"設為 B",
+    qConcern:"我關心…",
+    qH0:"哈勃張力", qQuake:"地震能預測嗎?", qMine:"深海能挖嗎?",
+    qBH:"黑洞", qDM:"暗物質",
+    relDisclaimer:"僅為已記錄的邊 —— 不是真理排名。",
+    foot:'<a href="universe.html"><b>漂流(沉浸)</b></a> · <a href="index.html">陽春領域</a> · <a href="explore-zh.html">探索</a> · <a href="about-zh.html">怎麼讀</a> · <a href="changes.html">變更</a> · <a href="health.html">健康</a> · <a href="claims.json">開放資料</a> · <a href="feed.xml">feed</a>。沒有信心數字 —— 確定性從你能展開的證據湧現。支持:<a href="about-zh.html#support">這專案如何活著</a>。' },
 };
 
 let DATA = null;
 let state = {
   lang:"en", theme:"", topic:"", q:"", sel:null, openDomains:{},
   graphFocus:null, activePath:null, pathStep:0,
+  panelAdvanced:false, compareA:null, compareB:null, tourStep:0,
 };
 
 /* Measure channel: opt-in only (?measure=1 or localStorage ue_measure=1).
@@ -775,6 +905,36 @@ function openPanel(c) {
   const infTitle = `${t.inferences}${c.n_inferences != null ? ` · ${c.n_inferences}` : ""}`;
   const edgeChallenge =
     `https://github.com/taipei49314/universe-explorer/issues/new?template=challenge-a-relation.yml&title=${encodeURIComponent("[edge] " + c.id)}`;
+  const adv = state.panelAdvanced;
+  const whySimple = c.status_reason.slice(0, 2).map(r => `
+    <li><span class="cond">${r.holds ? "✓" : "✗"} ${esc(
+      lang === "zh" ? r.condition_zh : r.condition)}</span>
+    <span class="note">${esc(lang === "zh" ? r.note_zh : r.note)}</span></li>`).join("");
+  const tools = `<div class="panel-tools">
+    <button type="button" class="${adv ? "" : "on"}" data-mode="simple">${esc(t.simple)}</button>
+    <button type="button" class="${adv ? "on" : ""}" data-mode="advanced">${esc(t.advanced)}</button>
+    <button type="button" data-cmp="a">${esc(t.setAsA)}</button>
+    <button type="button" data-cmp="b">${esc(t.setAsB)}</button>
+  </div>`;
+
+  let body = `
+    ${section(t.whylight, `<ul>${adv ? reasons : whySimple}</ul>`)}
+    ${section(t.open, `<ul>${oq}</ul>`)}
+    ${section(relTitle, `<p class="note" style="font-size:.78rem;margin:0 0 8px">${esc(t.relDisclaimer)}</p>${relBlock}`)}
+    ${section(t.sources, `<ul>${src}</ul>`)}`;
+  if (adv) {
+    body = `
+    ${section(t.whylight, `<ul>${reasons}</ul>`)}
+    ${section(t.evidence, `<ul>${ev}</ul>`)}
+    ${section(t.axisder, `<ul>${der}</ul>`)}
+    ${c.competing.length ? section(t.competing, `<ul>${cm}</ul>`) : ""}
+    ${section(t.open, `<ul>${oq}</ul>`)}
+    ${section(relTitle, `<p class="note" style="font-size:.78rem;margin:0 0 8px">${esc(t.relDisclaimer)}</p>${relBlock}`)}
+    ${infBlock ? section(infTitle, infBlock) : ""}
+    ${nar ? section(t.narrative, `<ul>${nar}</ul>`) : ""}
+    ${section(t.sources, `<ul>${src}</ul>`)}
+    ${hist ? section(t.history, `<ul>${hist}</ul>`) : ""}`;
+  }
 
   $("panel").innerHTML = `
     <button id="closep">${esc(t.close)} ✕</button>
@@ -784,16 +944,8 @@ function openPanel(c) {
       ${c.diverges ? `<span class="dvbadge" style="color:${COLORS.COMPETING}">⚡ ${esc(t.diverge)}</span>` : ""}
       <span class="badge">${esc(c.id)}</span></div>
     <h2>${esc(cf(c,"title"))}</h2>
-    ${section(t.whylight, `<ul>${reasons}</ul>`)}
-    ${section(t.evidence, `<ul>${ev}</ul>`)}
-    ${section(t.axisder, `<ul>${der}</ul>`)}
-    ${c.competing.length ? section(t.competing, `<ul>${cm}</ul>`) : ""}
-    ${section(t.open, `<ul>${oq}</ul>`)}
-    ${section(relTitle, relBlock)}
-    ${infBlock ? section(infTitle, infBlock) : ""}
-    ${nar ? section(t.narrative, `<ul>${nar}</ul>`) : ""}
-    ${section(t.sources, `<ul>${src}</ul>`)}
-    ${hist ? section(t.history, `<ul>${hist}</ul>`) : ""}
+    ${tools}
+    ${body}
     <div class="plinks p-sec">
       <a href="${esc(c.permalink)}">${esc(t.permalink)} →</a>
       <a href="https://github.com/taipei49314/universe-explorer/issues/new?template=challenge-a-verdict.yml&title=%5Bchallenge%5D%20${esc(c.id)}">${esc(t.challenge)} →</a>
@@ -803,10 +955,36 @@ function openPanel(c) {
   $("scrim").classList.add("on");
   $("closep").addEventListener("click", closePanel);
   $("closep").focus();
+  $("panel").querySelectorAll("[data-mode]").forEach(b => {
+    b.addEventListener("click", () => {
+      state.panelAdvanced = b.dataset.mode === "advanced";
+      openPanel(c);
+    });
+  });
+  $("panel").querySelectorAll("[data-cmp]").forEach(b => {
+    b.addEventListener("click", () => {
+      if (b.dataset.cmp === "a") state.compareA = c.id;
+      else state.compareB = c.id;
+      renderCompare();
+    });
+  });
+  // per-edge challenge links on related items
+  $("panel").querySelectorAll(".rel-item").forEach(btn => {
+    const id = btn.getAttribute("data-rel");
+    if (!id) return;
+    const a = document.createElement("a");
+    a.href = `https://github.com/taipei49314/universe-explorer/issues/new?template=challenge-a-relation.yml&title=${encodeURIComponent("[edge] " + c.id + " → " + id)}`;
+    a.textContent = " ↗";
+    a.title = t.challengeEdge;
+    a.style.cssText = "margin-left:4px;font-size:.75rem;text-decoration:none";
+    a.addEventListener("click", e => e.stopPropagation());
+    btn.querySelector("b") && btn.querySelector("b").appendChild(a);
+  });
   bindRelatedNav($("panel"));
   requestAnimationFrame(() => {
     revealPanelSections();
     renderRelationGraph();
+    renderCompare();
   });
 }
 function closePanel() {
@@ -999,10 +1177,18 @@ function renderPathSteps() {
   const t = L();
   const zh = state.lang === "zh";
   const el = $("pathsteps");
+  const guide = $("pathguide");
   const paths = (DATA.relations && DATA.relations.reading_paths) || [];
   const p = paths.find(x => x.id === state.activePath);
-  if (!p) { el.hidden = true; el.innerHTML = ""; return; }
+  if (!p) {
+    el.hidden = true; el.innerHTML = "";
+    guide.hidden = true; guide.textContent = "";
+    return;
+  }
   el.hidden = false;
+  const gtxt = zh ? (p.guide_zh || p.guide) : (p.guide || p.guide_zh);
+  if (gtxt) { guide.hidden = false; guide.textContent = gtxt; }
+  else { guide.hidden = true; guide.textContent = ""; }
   const steps = p.step_meta || (p.steps || []).map(id => ({ id }));
   let html = "";
   steps.forEach((s, i) => {
@@ -1032,6 +1218,125 @@ function renderPathSteps() {
   });
 }
 
+function renderTopNav() {
+  const t = L();
+  $("topnav").innerHTML = [
+    `<a class="on" href="app.html">${esc(t.navMap)}</a>`,
+    `<span class="sep">·</span>`,
+    `<a href="universe.html">${esc(t.navDrift)}</a>`,
+    `<span class="sep">·</span>`,
+    `<a href="${state.lang === "zh" ? "about-zh.html" : "about.html"}#how-to-read">${esc(t.navRead)}</a>`,
+    `<span class="sep">·</span>`,
+    `<a href="changes.html">${esc(t.navChanges)}</a>`,
+    `<span class="sep">·</span>`,
+    `<a href="health.html">${esc(t.navHealth)}</a>`,
+    `<span class="sep">·</span>`,
+    `<a href="feed.xml">${esc(t.navFeed)}</a>`,
+  ].join("");
+}
+function renderQChips() {
+  const t = L();
+  const chips = [
+    { lab: t.qH0, path: "path_h0" },
+    { lab: t.qBH, path: "path_black_hole" },
+    { lab: t.qDM, path: "path_dark_matter" },
+    { lab: t.qQuake, path: "path_seismology" },
+    { lab: t.qMine, path: "path_ocean" },
+  ];
+  $("qchips").innerHTML = `<span style="font-size:.75rem;color:var(--muted);align-self:center">${esc(t.qConcern)}</span>` +
+    chips.map(c => `<button type="button" class="qchip" data-path="${esc(c.path)}">${esc(c.lab)}</button>`).join("");
+  $("qchips").querySelectorAll(".qchip").forEach(b => {
+    b.addEventListener("click", () => {
+      state.activePath = b.dataset.path;
+      state.pathStep = 0;
+      Measure.rec("reading_path", { id: state.activePath, action: "qchip" });
+      const paths = (DATA.relations && DATA.relations.reading_paths) || [];
+      const p = paths.find(x => x.id === state.activePath);
+      if (p && p.steps && p.steps[0]) {
+        state.graphFocus = p.steps[0];
+        const c = claimById(p.steps[0]);
+        if (c) openPanel(c);
+      }
+      renderRelationGraph();
+      $("rgraph-section").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+function renderCompare() {
+  const t = L();
+  const zh = state.lang === "zh";
+  $("compare-title").textContent = t.compareTitle;
+  $("compare-hint").textContent = t.compareHint;
+  $("compare-use-sel").textContent = t.addCompare;
+  $("compare-clear").textContent = t.clearCompare;
+  const fill = (el, id, ph) => {
+    const c = id && claimById(id);
+    if (!c) {
+      el.innerHTML = `<span class="pick">${esc(ph)}</span>`;
+      return;
+    }
+    const title = zh ? (c.title_zh || c.title) : c.title;
+    el.innerHTML = `<div style="font-size:1.2em">${c.status_light}</div>
+      <b>${esc(title)}</b>
+      <div class="pick">${esc(c.id)} · ${esc(c.axis)} · ${esc(cf(c, "status_name"))}
+      ${c.diverges ? " · ⚡" : ""}</div>
+      <button type="button" class="chip" data-open="${esc(c.id)}" style="margin-top:8px">${esc(t.simple)} →</button>`;
+    el.querySelector("[data-open]")?.addEventListener("click", () => openPanel(c));
+  };
+  fill($("compare-a"), state.compareA, t.comparePhA);
+  fill($("compare-b"), state.compareB, t.comparePhB);
+}
+function showTour(step) {
+  const t = L();
+  const steps = t.tour || [];
+  if (!steps.length) return;
+  state.tourStep = Math.max(0, Math.min(step, steps.length - 1));
+  const s = steps[state.tourStep];
+  $("tour-h").textContent = s.h;
+  $("tour-p").textContent = s.p;
+  $("tour-dots").innerHTML = steps.map((_, i) =>
+    `<i class="${i === state.tourStep ? "on" : ""}"></i>`).join("");
+  $("tour-skip").textContent = t.tourSkip;
+  $("tour-next").textContent =
+    state.tourStep >= steps.length - 1 ? t.tourDone : t.tourNext;
+  $("tour").classList.add("on");
+  Measure.rec("tour_step", { step: state.tourStep });
+}
+function endTour() {
+  $("tour").classList.remove("on");
+  try { localStorage.setItem("ue_tour_done", "1"); } catch (_) {}
+}
+function maybeStartTour() {
+  const params = new URLSearchParams(location.search);
+  if (params.get("tour") === "0") return;
+  if (params.get("tour") === "1") { showTour(0); return; }
+  try {
+    if (localStorage.getItem("ue_tour_done") === "1") return;
+  } catch (_) {}
+  showTour(0);
+}
+function applyDeepLink() {
+  const params = new URLSearchParams(location.search);
+  const c = params.get("c");
+  const path = params.get("path");
+  if (path) {
+    state.activePath = path;
+    state.pathStep = 0;
+  }
+  if (c) {
+    const claim = claimById(c);
+    if (claim) {
+      Measure.rec("deep_link_open", { id: c });
+      if (claim.topic) {
+        state.openDomains[claim.topic] = true;
+      }
+      openPanel(claim);
+    }
+  } else if (path) {
+    renderRelationGraph();
+  }
+}
+
 /* ---------------- chrome ---------------- */
 function renderChrome() {
   const t = L();
@@ -1042,10 +1347,16 @@ function renderChrome() {
   $("q").placeholder = t.search;
   $("q").setAttribute("aria-label", t.search);
   $("langbtn").textContent = t.lang;
+  $("tourbtn").textContent = "ⓘ " + t.tourBtn;
   $("soundbtn").textContent = AudioFX.isMuted() ? "🔇 " + t.soundOff : "🔊 " + t.soundOn;
   $("soundbtn").setAttribute("aria-pressed", AudioFX.isMuted() ? "false" : "true");
   $("mapnote").textContent = t.note;
+  $("howto-a").textContent = t.howto;
+  $("howto-a").href = (state.lang === "zh" ? "about-zh.html" : "about.html") + "#how-to-read";
   $("foot").innerHTML = t.foot;
+  renderTopNav();
+  renderQChips();
+  renderCompare();
   const themes = DATA.themes || [
     {id:"cosmos", title:"Cosmos", title_zh:"宇宙"},
     {id:"planets", title:"Planets", title_zh:"星球"},
@@ -1122,16 +1433,43 @@ $("langbtn").addEventListener("click", () => {
   renderAll();
   if (state.sel) openPanel(state.sel);
 });
-document.addEventListener("keydown", e => { if (e.key === "Escape") closePanel(); });
+$("tourbtn").addEventListener("click", () => showTour(0));
+$("tour-skip").addEventListener("click", endTour);
+$("tour-next").addEventListener("click", () => {
+  const n = (L().tour || []).length;
+  if (state.tourStep >= n - 1) endTour();
+  else showTour(state.tourStep + 1);
+});
+$("compare-clear").addEventListener("click", () => {
+  state.compareA = null; state.compareB = null; renderCompare();
+});
+$("compare-use-sel").addEventListener("click", () => {
+  if (!state.sel) return;
+  if (!state.compareA) state.compareA = state.sel.id;
+  else state.compareB = state.sel.id;
+  renderCompare();
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    if ($("tour").classList.contains("on")) endTour();
+    else closePanel();
+  }
+});
 $("scrim").addEventListener("click", closePanel);
 document.addEventListener("click", e => {
+  if ($("tour").classList.contains("on")) return;
   if (state.sel && !$("panel").contains(e.target)
       && !e.target.closest(".dot") && !e.target.closest(".card")
+      && !e.target.closest(".path-step") && !e.target.closest(".rg-node")
+      && !e.target.closest(".qchip") && !e.target.closest(".pathchip")
       && e.target.id !== "scrim") closePanel();
 });
 
 fetch("app-data.json").then(r => r.json()).then(d => {
-  DATA = d; renderAll();
+  DATA = d;
+  renderAll();
+  applyDeepLink();
+  maybeStartTour();
   document.body.classList.add("ready");
 });
 </script>

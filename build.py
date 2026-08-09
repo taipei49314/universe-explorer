@@ -78,6 +78,10 @@ def main(argv) -> int:
     (out_dir / "app-data.json").write_text(
         app_data_json(TOPICS), encoding="utf-8")
 
+    # P-Pulse / P-Audit: changes + health surface pages
+    from universe_explorer.surface import write_surface_pages
+    write_surface_pages(out_dir, TOPICS)
+
     # D3: the public push channel — an Atom feed of change events.
     from universe_explorer.dataops.feed import build_feed
     (out_dir / "feed.xml").write_text(build_feed(), encoding="utf-8")

@@ -294,13 +294,13 @@ P5b 已完成；**不依赖**新科學內容。
 
 | 代號 | 狀態 | 完成 commit |
 |------|------|-------------|
-| P-Read | ⬜ planned | |
-| P-Shell | ⬜ planned | |
-| P-Pulse | ⬜ planned | |
-| P-Audit | ⬜ planned | |
-| P-Guide | ⬜ planned | |
-| P-Edit | ⬜ planned | |
-| P-Sustain | ⬜ planned | |
+| P-Read | ✅ shipping | product surface sprint |
+| P-Shell | ✅ shipping | topnav + `?c=` / `?path=` |
+| P-Pulse | ✅ shipping | changes.html + weekly.yml |
+| P-Audit | ✅ shipping | health.html / health.json |
+| P-Guide | ✅ shipping | path guides + compare + qchips |
+| P-Edit | ✅ shipping | docs/editorial-queue.md |
+| P-Sustain | ✅ shipping | about#support |
 
 ---
 

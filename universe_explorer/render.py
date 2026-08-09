@@ -70,7 +70,9 @@ def _claim_html(claim: Claim) -> str:
         f'whole point is that verdicts can be overturned" '
         f'href="https://github.com/taipei49314/universe-explorer/issues/new'
         f'?template=challenge-a-verdict.yml&title=%5Bchallenge%5D%20'
-        f'{_esc(claim.id)}">challenge</a></div></div>'
+        f'{_esc(claim.id)}">challenge</a>'
+        f' <a class="challenge-link" href="app.html?c={_esc(claim.id)}">'
+        f'open in map</a></div></div>'
     )
 
     # evidence axis — derived, never declared; the derivation is expandable so
@@ -704,12 +706,24 @@ _ABOUT = f"""<!doctype html>
 <style>{_ABOUT_BASE_CSS}</style>
 </head>
 <body>
-<a class="home" href="index.html">&larr; all topics</a>
-<h1>How to read this</h1>
+<a class="home" href="app.html">&larr; knowledge map</a>
+ · <a class="home" href="index.html">plain topics</a>
+<h1 id="how-to-read">How to read this</h1>
 <p>This site does not tell you answers. It tells you: what we know, how we
 know it, what we still don't, and which hypotheses are competing. It was built
 so that <b>every verdict can be checked — and overturned — by anyone</b>.
 <a href="about-zh.html">中文版 &rarr;</a></p>
+<p><a href="app.html">Open the map</a> · first visit shows a 60-second tour ·
+or jump to the <a href="app.html?c=hawking_radiation">Hawking radiation example</a>.</p>
+
+<h2 id="example">Canonical example: Hawking radiation</h2>
+<p>Open <a href="app.html?c=hawking_radiation"><code>hawking_radiation</code></a>
+on the map. The light is <b>Strong</b> (mainstream theory + analogue support),
+but the evidence axis is weaker than the consensus — so the card may show
+<b>⚡ axes diverge</b>. That is the product in one claim: high agreement does
+not invent direct astrophysical detection. Count the open questions yourself.
+Related edges (e.g. to the horizon or the information paradox) are
+<i>recorded links</i>, not a score of who is right.</p>
 
 <h2>The five lights (they belong to claims, never to topics)</h2>
 <table class="lights">
@@ -753,8 +767,19 @@ its entry conditions with a checkable source. The full re-review path is in
 every rule and its legal basis is consolidated in the
 <a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/constitution.md">constitution</a>;
 the machine-readable data is <a href="claims.json">claims.json</a>; changes
-stream to the <a href="feed.xml">Atom feed</a>. Code is MIT; content is
+stream to the <a href="feed.xml">Atom feed</a> and
+<a href="changes.html">changes.html</a>. Audit inventory:
+<a href="health.html">health.html</a>. Code is MIT; content is
 CC BY 4.0 — challenging us requires no permission at all.</p>
+
+<h2 id="support">How this stays alive</h2>
+<p>This project does <b>not</b> sell “higher confidence lights.” If you support
+it, you fund <i>editorial hours and infrastructure</i> — domain deepening,
+source fetch, weekly health runs — never a paid verdict. See
+<a href="https://github.com/taipei49314/universe-explorer">GitHub</a> for
+issues and forks; domain forks may grow content while the engine stays the court.
+Optional: star the repo, open careful challenges, or adopt the map in a course
+with the constitution intact.</p>
 </body>
 </html>
 """
@@ -768,11 +793,20 @@ _ABOUT_ZH = f"""<!doctype html>
 <style>{_ABOUT_BASE_CSS}</style>
 </head>
 <body>
-<a class="home" href="zh.html">&larr; 中文總覽</a>
-<h1>這個網站怎麼讀</h1>
+<a class="home" href="app.html">&larr; 知識地圖</a>
+ · <a class="home" href="zh.html">中文總覽</a>
+<h1 id="how-to-read">這個網站怎麼讀</h1>
 <p>這個網站不告訴你答案。它告訴你:我們知道什麼、怎麼知道的、還不知道什麼、
 有哪些假說在競爭。它被造出來,就是為了讓<b>任何人都能查核 —— 並推翻 ——
 任何一個判定</b>。<a href="about.html">English &rarr;</a></p>
+<p><a href="app.html">打開地圖</a> · 首次造訪有約 60 秒導覽 ·
+或直接看範例 <a href="app.html?c=hawking_radiation">霍金輻射</a>。</p>
+
+<h2 id="example">標準範例:霍金輻射</h2>
+<p>在地圖打開 <a href="app.html?c=hawking_radiation"><code>hawking_radiation</code></a>。
+燈號是<strong>強共識</strong>(主流理論 + 類比實驗),但證據軸可能弱於共識 —
+卡片可能出現 <b>⚡ 雙軸分岔</b>。這就是產品的一句話:高共識不捏造直接天文偵測。
+開放問題請自己數。關聯邊(例如連到視界或資訊悖論)是<i>已記錄的連結</i>,不是勝負分數。</p>
 
 <h2>五格燈號(屬於 claim,永不屬於 topic)</h2>
 <table class="lights">
@@ -807,8 +841,16 @@ _ABOUT_ZH = f"""<!doctype html>
 全部規則與法源彙編於
 <a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/constitution.md">憲法</a>;
 機器可讀資料在 <a href="claims.json">claims.json</a>;所有變化流向
-<a href="feed.xml">Atom feed</a>。程式碼 MIT、內容 CC BY 4.0 ——
+<a href="feed.xml">Atom feed</a> 與 <a href="changes.html">changes.html</a>。
+覆核清單:<a href="health.html">health.html</a>。程式碼 MIT、內容 CC BY 4.0 ——
 挑戰我們,完全不需要任何人的許可。</p>
+
+<h2 id="support">這專案如何活著</h2>
+<p>這裡<b>不賣</b>「更高信心的燈號」。若你支持,買的是<i>編輯工時與基礎設施</i>
+—— 加深領域、抓取出處、每週健康巡檢 —— 永遠不是付費判決。見
+<a href="https://github.com/taipei49314/universe-explorer">GitHub</a>
+的 issue 與 fork;分域 fork 可養內容,上游養法院。可選:star、開謹慎的挑戰、
+或在課程採用此地圖並保留憲法。</p>
 </body>
 </html>
 """

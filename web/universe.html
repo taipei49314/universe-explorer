@@ -119,6 +119,7 @@ const I18N = {
     sub:"Drift through verified knowledge. Every star costs a source — the dark is honest.",
     hint:"Drag to drift  ·  Scroll to zoom  ·  Click a body",
     overview:"Overview", lang:"中文", map:"Map view", plain:"Plain site",
+    immersive:"Immersive mode — same claims as the knowledge map",
     whylight:"Why this light", evidence:"Evidence",
     open:"Open questions", sources:"Sources", close:"close",
     related:"Related claims", inferences:"Inference paths",
@@ -136,6 +137,7 @@ const I18N = {
     sub:"漂流過已核實的知識。每顆天體都以出處為代價 —— 黑暗是誠實的。",
     hint:"拖曳漂移  ·  滾輪縮放  ·  點擊天體",
     overview:"總覽", lang:"EN", map:"地圖視圖", plain:"陽春版",
+    immersive:"沉浸模式 —— 與知識地圖同一批宣稱",
     whylight:"為什麼是這個燈號", evidence:"證據",
     open:"開放問題", sources:"出處", close:"關閉",
     related:"關聯宣稱", inferences:"推論路徑",
@@ -722,7 +724,9 @@ function renderHud() {
   const t = L();
   document.documentElement.lang = state.lang === "zh" ? "zh-Hant" : "en";
   document.title = t.title + " — Drift";
-  $("t-title").textContent = t.title; $("t-sub").textContent = t.sub;
+  $("t-title").textContent = t.title;
+  $("t-sub").textContent = t.sub + " · " + (t.immersive || "");
+  // map button already links app.html
   $("hint").textContent = t.hint;
   $("legend").innerHTML = [
     `<span><i style="background:${COLORS.ESTABLISHED}"></i>${esc(t.legend[0])}</span>`,
