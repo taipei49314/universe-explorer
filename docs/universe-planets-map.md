@@ -68,7 +68,13 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
 
 **Boundary with exoplanets:** `planets` = solar system + formation chronology; `exoplanets` = other stars (existence, Planet Nine, JWST atmospheres, biosignature claims).
 
-**H0 Discussion prose:** `docs/paper/h0-discussion.md`
+**Discussion prose (near-final English, Author Year):**
+
+| Topic | Path |
+|-------|------|
+| H0 tension | `docs/paper/h0-discussion.md` |
+| Ocean worlds | `docs/paper/ocean-worlds-discussion.md` |
+| Cosmic inflation | `docs/paper/inflation-discussion.md` |
 
 ## Paper / narrative hooks
 
