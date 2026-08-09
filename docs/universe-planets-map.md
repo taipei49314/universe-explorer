@@ -9,7 +9,7 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
 |-------|-----------|------|------------|
 | **宇宙** | `cosmology` | Expansion, CMB, H0, inflation | 16 claims |
 | **宇宙** | `dark_matter` | Mass discrepancy → particle searches | 18 claims |
-| **宇宙** | `black_hole` | Compact objects / horizons | 5 claims |
+| **宇宙** | `black_hole` | Horizons → Kerr → populations → ceilings | 10 claims |
 | **宇宙** | `stars` | Fusion → solar interior → death channels | 12 claims |
 | **星球** | `planets` | Solar system + ocean worlds | 10 claims |
 | **星球** | `exoplanets` | Other stars; radius valley; JWST | 9 claims |
@@ -18,7 +18,7 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
 ```
                     ┌─ cosmology ──────────── large-scale / H0 / inflation
   宇宙 Cosmos ──────┼─ dark_matter ────────── matter budget / identity
-                    ├─ black_hole ─────────── strong-gravity endpoints
+                    ├─ black_hole ─────────── horizons / Kerr / GW / ceilings (deepened)
                     └─ stars ──────────────── stellar physics (deepened)
 
   星球 Planets ─────┬─ planets ────────────── solar system + ocean worlds
@@ -27,6 +27,24 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
   地球 Earth ───────┬─ ocean
                     └─ seismology
 ```
+
+## Black hole claim map (deepened)
+
+| Light | Claim id | Role |
+|:-----:|----------|------|
+| 🟢 | `event_horizon_exists` | Horizon bedrock (EHT + GW + Sgr A*) |
+| 🔵 | `hawking_radiation` | Thermal evaporation (theory + analogue) |
+| 🔵 | `kerr_describes_astrophysical_bh` | Kerr mass+spin working spacetime |
+| 🔵 | `smbh_common_in_galaxy_nuclei` | Nuclear SMBHs in massive galaxies |
+| 🟡 | `lower_mass_gap_compact_objects` | NS–BH lower mass gap debate |
+| 🟠 | `bbh_mergers_catalogued` | GW catalogue population science |
+| 🟠 | `jets_extract_bh_spin` | Blandford–Znajek–type jet power |
+| 🟠 | `information_paradox` | Unitary evaporation / islands |
+| 🔴 | `firewall` | Horizon firewall (not accepted) |
+| 🔴 | `horizonless_gw_echoes` | Established GW echoes (not accepted) |
+
+**Discussion:** `docs/paper/black-hole-discussion.md`.  
+**Boundary:** upper (PISN) mass gap → `stars`; PBH-as-all-DM → `dark_matter`.
 
 ## Stars claim map (deepened)
 
@@ -93,6 +111,22 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
 
 **Boundary with exoplanets:** `planets` = solar system + formation chronology; `exoplanets` = other stars (existence, Planet Nine, JWST atmospheres, biosignature claims).
 
+## Exoplanets claim map
+
+| Light | Claim id | Role |
+|:-----:|----------|------|
+| 🟢 | `exoplanets_exist` | Existence bedrock (RV + transit) |
+| 🟢 | `proxima_b_exists` | Nearest-star temperate planet |
+| 🔵 | `planets_are_common` | Demographic abundance |
+| 🟡 | `planet_nine` | Distant giant vs survey bias |
+| 🟡 | `radius_valley_mechanism` | Photoevaporation vs core-powered |
+| 🟠 | `trappist1b_bare_rock` | JWST TRAPPIST-1 b airless |
+| 🟠 | `trappist1_inner_planets_airless` | Inner pair atmospheres |
+| 🟠 | `jwst_exoplanet_atmospheres` | Transmission spectroscopy era |
+| 🔴 | `k2_18b_biosignature` | DMS-as-life (not accepted) |
+
+**Discussion:** `docs/paper/exoplanets-discussion.md`.
+
 **Discussion prose (near-final English, Author Year):**
 
 | Topic | Path |
@@ -101,6 +135,8 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
 | Ocean worlds | `docs/paper/ocean-worlds-discussion.md` |
 | Cosmic inflation | `docs/paper/inflation-discussion.md` |
 | Stars (deepened) | `docs/paper/stars-discussion.md` |
+| Black holes (deepened) | `docs/paper/black-hole-discussion.md` |
+| Exoplanets | `docs/paper/exoplanets-discussion.md` |
 
 ## Paper / narrative hooks
 

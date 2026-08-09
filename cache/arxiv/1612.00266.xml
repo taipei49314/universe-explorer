@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/CoD18m92EOglxvebbj4JGn6E05c</id>
+  <title>arXiv Query: search_query=&amp;id_list=1612.00266&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:38:40Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1612.00266" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1612.00266v2</id>
+    <title>Echoes from the Abyss: Tentative evidence for Planck-scale structure at black hole horizons</title>
+    <updated>2017-10-03T14:31:30Z</updated>
+    <link href="https://arxiv.org/abs/1612.00266v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1612.00266v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In classical General Relativity (GR), an observer falling into an astrophysical black hole is not expected to experience anything dramatic as she crosses the event horizon. However, tentative resolutions to problems in quantum gravity, such as the cosmological constant problem, or the black hole information paradox, invoke significant departures from classicality in the vicinity of the horizon. It was recently pointed out that such near-horizon structures can lead to late-time echoes in the black hole merger gravitational wave signals that are otherwise indistinguishable from GR. We search for observational signatures of these echoes in the gravitational wave data released by advanced Laser Interferometer Gravitational-Wave Observatory (LIGO), following the three black hole merger events GW150914, GW151226, and LVT151012. In particular, we look for repeating damped echoes with time-delays of $8 M \log M$ (+spin corrections, in Planck units), corresponding to Planck-scale departures from GR near their respective horizons. Accounting for the "look elsewhere" effect due to uncertainty in the echo template, we find tentative evidence for Planck-scale structure near black hole horizons at false detection probability of $1\%$ (corresponding to $2.5σ$ significance level). Future observations from interferometric detectors at higher sensitivity, along with more physical echo templates, will be able to confirm (or rule out) this finding, providing possible empirical evidence for alternatives to classical black holes, such as in ${\it firewall}$ or ${\it fuzzball}$ paradigms.</summary>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-12-01T14:31:12Z</published>
+    <arxiv:comment>13 pages, 13 figures, 2 tables, Extended discussions, PRD in press</arxiv:comment>
+    <arxiv:primary_category term="gr-qc"/>
+    <arxiv:journal_ref>Phys. Rev. D 96, 082004 (2017)</arxiv:journal_ref>
+    <author>
+      <name>Jahed Abedi</name>
+    </author>
+    <author>
+      <name>Hannah Dykaar</name>
+    </author>
+    <author>
+      <name>Niayesh Afshordi</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevD.96.082004</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevD.96.082004" title="doi"/>
+  </entry>
+</feed>

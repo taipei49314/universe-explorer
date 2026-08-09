@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/sw5mlwlCaMs5CN1gjI69kh16s6s</id>
+  <title>arXiv Query: search_query=&amp;id_list=2105.01169&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:38:36Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2105.01169" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2105.01169v1</id>
+    <title>First M87 Event Horizon Telescope Results. VII. Polarization of the Ring</title>
+    <updated>2021-05-03T21:12:04Z</updated>
+    <link href="https://arxiv.org/abs/2105.01169v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2105.01169v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In 2017 April, the Event Horizon Telescope (EHT) observed the near-horizon region around the supermassive black hole at the core of the M87 galaxy. These 1.3 mm wavelength observations revealed a compact asymmetric ring-like source morphology. This structure originates from synchrotron emission produced by relativistic plasma located in the immediate vicinity of the black hole. Here we present the corresponding linear-polarimetric EHT images of the center of M87. We find that only a part of the ring is significantly polarized. The resolved fractional linear polarization has a maximum located in the southwest part of the ring, where it rises to the level of about 15%. The polarization position angles are arranged in a nearly azimuthal pattern. We perform quantitative measurements of relevant polarimetric properties of the compact emission and find evidence for the temporal evolution of the polarized source structure over one week of EHT observations. The details of the polarimetric data reduction and calibration methodology are provided. We carry out the data analysis using multiple independent imaging and modeling techniques, each of which is validated against a suite of synthetic data sets. The gross polarimetric structure and its apparent evolution with time are insensitive to the method used to reconstruct the image. These polarimetric images carry information about the structure of the magnetic fields responsible for the synchrotron emission. Their physical interpretation is discussed in an accompanying publication.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-05-03T21:12:04Z</published>
+    <arxiv:comment>48 pages, 35 figures, published in The Astrophysical Journal Letters on March 24, 2021</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <arxiv:journal_ref>The Astrophysical Journal Letters, Volume 910, Issue 1, id.L12, 48 pp., 2021 March 24</arxiv:journal_ref>
+    <author>
+      <name> The Event Horizon Telescope Collaboration</name>
+    </author>
+    <arxiv:doi>10.3847/2041-8213/abe71d</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3847/2041-8213/abe71d" title="doi"/>
+  </entry>
+</feed>

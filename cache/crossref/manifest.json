@@ -367,5 +367,14 @@
     "title": "The Maximum Mass of Ideal White Dwarfs",
     "container": "The Astrophysical Journal",
     "issued": 1931
+  },
+  "10.1093/mnras/179.3.433": {
+    "endpoint": "https://api.crossref.org/works/10.1093%2Fmnras%2F179.3.433",
+    "retrieved_at": "2026-08-09T13:38:41Z",
+    "cache_file": "10-1093_mnras_179-3-433.json",
+    "sha256": "25609cd0d098ee1752e92dbacac507b5bdceaeb7d13bbd59bacf827af4b9112f",
+    "title": "Electromagnetic extraction of energy from Kerr black holes",
+    "container": "Monthly Notices of the Royal Astronomical Society",
+    "issued": 1977
   }
 }

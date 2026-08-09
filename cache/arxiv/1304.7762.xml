@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/SeMsBCKk1s2j/zgwpX7xRdIbKSo</id>
+  <title>arXiv Query: search_query=&amp;id_list=1304.7762&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:38:28Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1304.7762" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1304.7762v1</id>
+    <title>Coevolution (Or Not) of Supermassive Black Holes and Host Galaxies</title>
+    <updated>2013-04-29T19:58:33Z</updated>
+    <link href="https://arxiv.org/abs/1304.7762v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1304.7762v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We review the observed demographics and inferred evolution of supermassive black holes (BHs) found by dynamical modeling of spatially resolved kinematics. Most influential was the discovery of a tight correlation between BH mass and the velocity dispersion of the host-galaxy bulge. It and other correlations led to the belief that BHs and bulges coevolve by regulating each other's growth. New results are now replacing this simple story with a richer and more plausible picture in which BHs correlate differently with different galaxy components. BHs are found in pure-disk galaxies, so classical (elliptical-galaxy-like) bulges are not necessary to grow BHs. But BHs do not correlate with galaxy disks. And any correlations with disk-grown pseudobulges or halo dark matter are so weak as to imply no close coevolution. We suggest that there are four regimes of BH feedback. 1- Local, stochastic feeding of small BHs in mainly bulgeless galaxies involves too little energy to result in coevolution. 2- Global feeding in major, wet galaxy mergers grows giant BHs in short, quasar-like "AGN" events whose feedback does affect galaxies. This makes classical bulges and coreless-rotating ellipticals. 3- At the highest BH masses, maintenance-mode feedback into X-ray gas has the negative effect of helping to keep baryons locked up in hot gas. This happens in giant, core-nonrotating ellipticals. They inherit coevolution magic from smaller progenitors. 4- Independent of any feedback physics, the averaging that results from successive mergers helps to engineer tight BH correlations.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2013-04-29T19:58:33Z</published>
+    <arxiv:comment>136 pages, 38 postscript figures, 4 tables; requires cittable.tex, psfig.tex, annrev4K-E.tex; accepted for publication in Volume 51 (2013) of Annual Review of Astronomy and Astrophysics; Supplementary Information will be submitted to arXiv separately in approximately 2013 June</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>John Kormendy</name>
+    </author>
+    <author>
+      <name>Luis C. Ho</name>
+    </author>
+    <arxiv:doi>10.1146/annurev-astro-082708-101811</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1146/annurev-astro-082708-101811" title="doi"/>
+  </entry>
+</feed>

@@ -1,21 +1,27 @@
-"""Black hole — the single v0 topic (spec sections 2 and 5).
+"""Black hole — cosmos theme (v0 seed, deepened).
 
-Every field below is hand-filled with real content and a real source. Where a
-source is genuinely near-absent (hawking_radiation has strong theory but almost
-no direct observation) the split is recorded honestly in status_reason rather
-than papered over. Rather under-fill than invent.
+Every field is hand-filled with real content and a real source. Where a source
+is genuinely near-absent (hawking_radiation: strong theory, almost no direct
+observation) the split is recorded honestly. Rather under-fill than invent.
 
-Expected lights (used to stress the "light belongs to the claim" pivot):
-  event_horizon_exists  -> 🟢 Established
-  hawking_radiation     -> 🔵 Strong   (theory strong, direct evidence ~ zero)
-  information_paradox   -> 🟠 Frontier
-  firewall              -> 🔴 Speculative
+Deepened map:
+  🟢 event_horizon_exists
+  🔵 hawking_radiation
+  🔵 kerr_describes_astrophysical_bh
+  🔵 smbh_common_in_galaxy_nuclei
+  🟡 lower_mass_gap_compact_objects
+  🟠 bbh_mergers_catalogued
+  🟠 jets_extract_bh_spin
+  🟠 information_paradox
+  🔴 firewall
+  🔴 horizonless_gw_echoes
 """
 
 from __future__ import annotations
 
 from ..model import (
     Claim,
+    CompetingModel,
     ConditionAssessment,
     Evidence,
     Source,
@@ -396,20 +402,404 @@ firewall = Claim(
     status_history=[],
 )
 
+# --------------------------------------------------------------------------- #
+# Claim 5 — Kerr describes astrophysical BHs              🔵 Strong             #
+# --------------------------------------------------------------------------- #
+kerr_describes_astrophysical_bh = Claim(
+    id="kerr_describes_astrophysical_bh",
+    title=(
+        "Astrophysical black holes are well described by the Kerr metric "
+        "(mass and spin)"
+    ),
+    status=Status.STRONG,
+    sources=[
+        Source(
+            label="LIGO2016-GR-tests",
+            url_or_id="arXiv:1602.03841",
+            kind="collaboration result (peer-reviewed, PRL 116, 221101, 2016; "
+                 "tests of GR with GW150914)",
+        ),
+        Source(
+            label="EHT2019-M87-I-kerr",
+            url_or_id="arXiv:1906.11238",
+            kind="collaboration result (peer-reviewed, ApJL 875, L1; M87* "
+                 "shadow size vs Kerr prediction)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "The GW150914 ringdown and inspiral–merger consistency tests "
+                "agree with a Kerr remnant within the precision of the first "
+                "detection, with no evidence for large deviations from GR."
+            ),
+            source_ref="LIGO2016-GR-tests",
+        ),
+        Evidence(
+            type="direct observation",
+            description=(
+                "The M87* ring diameter matches the photon-orbit / shadow scale "
+                "expected for a Kerr black hole of the dynamically estimated "
+                "mass, under standard emission assumptions."
+            ),
+            source_ref="EHT2019-M87-I-kerr",
+        ),
+    ],
+    open_questions=[
+        "How tightly can higher multipoles and non-Kerr metrics be constrained "
+        "with next-generation GW detectors and multi-frequency EHT?",
+        "Do accretion-flow systematics still allow mild horizonless mimickers "
+        "at current resolution?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "mainstream_model_support", True,
+            "Kerr as the astrophysical black-hole spacetime is the default in "
+            "GW data analysis and EHT modelling.",
+        ),
+        ConditionAssessment(
+            "minor_alternatives_exist", True,
+            "Parametrised non-Kerr metrics and exotic compact objects remain "
+            "active minority programmes.",
+        ),
+        ConditionAssessment(
+            "overall_direction_robust", True,
+            "Each new ringdown and horizon-scale image has been consistent with "
+            "Kerr within errors, refining bounds rather than displacing the "
+            "framework.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 6 — SMBHs in galaxy nuclei                        🔵 Strong             #
+# --------------------------------------------------------------------------- #
+smbh_common_in_galaxy_nuclei = Claim(
+    id="smbh_common_in_galaxy_nuclei",
+    title=(
+        "Supermassive black holes commonly inhabit the nuclei of massive "
+        "galaxies"
+    ),
+    status=Status.STRONG,
+    sources=[
+        Source(
+            label="KormendyHo2013",
+            url_or_id="arXiv:1304.7762",
+            kind="peer-reviewed paper (ARA&A 51, 511, 2013; coevolution of "
+                 "SMBHs and galaxies)",
+        ),
+        Source(
+            label="EHT2022-SgrA-smbh",
+            url_or_id="arXiv:2311.08680",
+            kind="collaboration result (peer-reviewed, ApJL 930, L12; Sgr A* "
+                 "shadow)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Decades of stellar and gas dynamical measurements find "
+                "central dark masses of millions to billions of solar masses "
+                "in nearby massive galaxies, correlating with bulge "
+                "properties."
+            ),
+            source_ref="KormendyHo2013",
+        ),
+        Evidence(
+            type="direct observation",
+            description=(
+                "Horizon-scale imaging of Sgr A* confirms that the Milky Way's "
+                "central dark mass is consistent with a four-million-solar-mass "
+                "black hole, anchoring the local calibration of the SMBH "
+                "picture."
+            ),
+            source_ref="EHT2022-SgrA-smbh",
+        ),
+    ],
+    open_questions=[
+        "How did the first seeds form and grow to billion-solar-mass quasars "
+        "by z ~ 7?",
+        "What is the occupation fraction in low-mass and dwarf galaxies?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "mainstream_model_support", True,
+            "Central SMBHs in massive galaxies are standard extragalactic "
+            "astronomy.",
+        ),
+        ConditionAssessment(
+            "minor_alternatives_exist", True,
+            "Some nuclei may host nuclear star clusters without a dominant "
+            "BH; that is a refinement of occupation, not a rejection of SMBHs "
+            "in massive systems.",
+        ),
+        ConditionAssessment(
+            "overall_direction_robust", True,
+            "Dynamical samples, AGN demography and EHT targets continually "
+            "reinforce the nuclear-SMBH paradigm.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 7 — lower mass gap                                🟡 Competing          #
+# --------------------------------------------------------------------------- #
+lower_mass_gap_compact_objects = Claim(
+    id="lower_mass_gap_compact_objects",
+    title=(
+        "A lower mass gap between the heaviest neutron stars and the lightest "
+        "stellar black holes is a real feature of nature versus a selection "
+        "effect"
+    ),
+    status=Status.COMPETING,
+    sources=[
+        Source(
+            label="GW190814",
+            url_or_id="arXiv:2006.12611",
+            kind="collaboration result (peer-reviewed, ApJL 896, L44, 2020; "
+                 "2.6 Msun compact object in the mass-gap region)",
+        ),
+        Source(
+            label="GWTC3-2023-gap",
+            url_or_id="arXiv:2111.03606",
+            kind="collaboration result (peer-reviewed, Phys. Rev. X 13, "
+                 "041039, 2023; population context)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "GW190814's secondary has a mass ~2.6 Msun, sitting above "
+                "canonical neutron-star maxima and below many stellar-BH "
+                "masses, forcing the gap question into multi-messenger view."
+            ),
+            source_ref="GW190814",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Population analyses of GW catalogues and X-ray binaries "
+                "debate whether the ~2–5 Msun region is underpopulated by "
+                "physics (explosion engine / pair physics) or by detection "
+                "and classification bias."
+            ),
+            source_ref="GWTC3-2023-gap",
+        ),
+    ],
+    competing_models=[
+        CompetingModel(
+            name="Physical lower mass gap",
+            supporting=(
+                "Core-collapse engines and fallback models can suppress "
+                "remnants in a window above the maximum NS mass."
+            ),
+            opposing=(
+                "Events like GW190814 may fill or blur the window; the gap "
+                "edges depend on uncertain NS EOS and explosion physics."
+            ),
+            limitations=(
+                "Small-number statistics at the NS–BH boundary."
+            ),
+        ),
+        CompetingModel(
+            name="Selection / classification continuum",
+            supporting=(
+                "Detection thresholds, electromagnetic follow-up bias and "
+                "ambiguous mass–spin degeneracies can mimic a gap."
+            ),
+            opposing=(
+                "Some X-ray binary samples still show a dearth even after "
+                "bias discussions."
+            ),
+            limitations=(
+                "Heterogeneous electromagnetic and GW selection functions."
+            ),
+        ),
+    ],
+    open_questions=[
+        "Is GW190814's secondary a heavy NS, a light BH, or something else?",
+        "Will larger GW samples fill 2–5 Msun smoothly?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "two_or_more_mainstream_models", True,
+            "Physical-gap and selection-effect camps are both actively "
+            "published in the GW and X-ray binary literature.",
+        ),
+        ConditionAssessment(
+            "no_decisive_evidence_yet", True,
+            "Borderline-mass events and still-limited samples leave the "
+            "gap's reality unsettled.",
+        ),
+        ConditionAssessment(
+            "genuine_scientific_camps", True,
+            "Reviews and catalogue papers document the split explicitly.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 8 — jets extract BH spin                          🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+jets_extract_bh_spin = Claim(
+    id="jets_extract_bh_spin",
+    title=(
+        "Powerful extragalactic jets are powered by extracting black-hole "
+        "rotational energy (Blandford–Znajek–type processes)"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="BlandfordZnajek1977",
+            url_or_id="doi:10.1093/mnras/179.3.433",
+            kind="peer-reviewed paper (MNRAS 179, 433, 1977; electromagnetic "
+                 "extraction of BH rotational energy)",
+        ),
+        Source(
+            label="EHT2021-M87-pol",
+            url_or_id="arXiv:2105.01169",
+            kind="collaboration result (peer-reviewed, ApJL 910, L12/L13; "
+                 "M87* polarised ring / magnetic structure)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="theoretical result",
+            description=(
+                "The Blandford–Znajek mechanism shows that ordered magnetic "
+                "fields threading a spinning Kerr hole can extract rotational "
+                "energy as a Poynting-flux dominated outflow."
+            ),
+            source_ref="BlandfordZnajek1977",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "EHT polarimetric images of M87* reveal a magnetised "
+                "near-horizon flow organised in a way consistent with "
+                "magnetically arrested disk / jet-launching models often "
+                "paired with spin extraction."
+            ),
+            source_ref="EHT2021-M87-pol",
+        ),
+    ],
+    open_questions=[
+        "What fraction of jet power comes from BH spin versus the accretion "
+        "disk (Blandford–Payne)?",
+        "Can spin measurements from X-ray reflection and jet power be "
+        "reconciled object by object?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "GRMHD jet-launching simulations and EHT polarimetry form a "
+            "fast-moving programme.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "Spin extraction is a leading framework; disk-wind power remains "
+            "a live alternative or co-channel for many sources.",
+        ),
+        ConditionAssessment(
+            "insufficient_observation", True,
+            "Direct, clean spin–jet efficiency measurements are still sparse.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 9 — horizonless GW echoes                         🔴 Speculative        #
+# --------------------------------------------------------------------------- #
+horizonless_gw_echoes = Claim(
+    id="horizonless_gw_echoes",
+    title=(
+        "Gravitational-wave echoes from reflective horizonless surfaces have "
+        "been observationally established"
+    ),
+    status=Status.SPECULATIVE,
+    sources=[
+        Source(
+            label="Abedi2017",
+            url_or_id="arXiv:1612.00266",
+            kind="peer-reviewed paper (echo searches in LIGO open data; "
+                 "claims and methods contested)",
+        ),
+        Source(
+            label="LIGO2016-GR-tests-echo",
+            url_or_id="arXiv:1602.03841",
+            kind="collaboration result (peer-reviewed; GR tests / ringdown "
+                 "consistency — no established echo detection)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Some horizonless ultra-compact object models predict delayed "
+                "repeating pulses (echoes) after the main ringdown if the "
+                "would-be horizon is replaced by a partially reflecting "
+                "surface."
+            ),
+            source_ref="Abedi2017",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "LIGO–Virgo analyses of merger ringdowns are consistent with "
+                "standard Kerr damping within published tests; the community "
+                "does not treat echo detections as established."
+            ),
+            source_ref="LIGO2016-GR-tests-echo",
+        ),
+    ],
+    open_questions=[
+        "Can future detectors set decisive upper limits that close popular "
+        "echo parameter spaces?",
+        "Are reported low-significance echo candidates reproducible under "
+        "blind analyses?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "not_accepted_by_mainstream", True,
+            "The field does not accept GW echoes as an established detection.",
+        ),
+        ConditionAssessment(
+            "no_observational_evidence", True,
+            "No community-accepted observational evidence establishes echoes; "
+            "claimed signals remain contested or unreproduced at discovery "
+            "significance.",
+        ),
+    ],
+    status_history=[],
+)
+
 
 BLACK_HOLE = Topic(
     id="black_hole",
     title="Black holes",
     summary=(
-        "A container topic. It carries no status light of its own — each claim "
-        "below carries its own. Read the shape: a 🟢 bedrock (the horizon exists) "
-        "under a 🔴 ceiling (the firewall)."
+        "Container topic (no light of its own). 🟢 horizon bedrock; 🔵 "
+        "Hawking theory, Kerr description, nuclear SMBHs; 🟡 lower mass "
+        "gap; 🟠 GW catalogues, spin-powered jets, information paradox; "
+        "🔴 firewall + established GW echoes (not accepted)."
     ),
     claims=[
         event_horizon_exists,
         hawking_radiation,
+        kerr_describes_astrophysical_bh,
+        smbh_common_in_galaxy_nuclei,
+        lower_mass_gap_compact_objects,
         bbh_mergers_catalogued,
+        jets_extract_bh_spin,
         information_paradox,
         firewall,
+        horizonless_gw_echoes,
     ],
 )
