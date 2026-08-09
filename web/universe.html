@@ -121,6 +121,8 @@ const I18N = {
     overview:"Overview", lang:"中文", map:"Map view", plain:"Plain site",
     whylight:"Why this light", evidence:"Evidence",
     open:"Open questions", sources:"Sources", close:"close",
+    related:"Related claims", inferences:"Inference paths",
+    inferNote:"Paths over recorded edges only — not confidence.",
     diverge:"axes diverge", permalink:"permalink",
     challenge:"challenge this verdict",
     legend:["star — established","planet — strong","binary — two camps",
@@ -136,6 +138,8 @@ const I18N = {
     overview:"總覽", lang:"EN", map:"地圖視圖", plain:"陽春版",
     whylight:"為什麼是這個燈號", evidence:"證據",
     open:"開放問題", sources:"出處", close:"關閉",
+    related:"關聯宣稱", inferences:"推論路徑",
+    inferNote:"路徑只沿已記錄的邊 —— 不是信心分數。",
     diverge:"雙軸分岔", permalink:"永久連結",
     challenge:"挑戰這個判定",
     legend:["恆星 —— 已確立","行星 —— 強共識","雙星 —— 兩派拉鋸",
@@ -648,6 +652,22 @@ function openPanel(k) {
     .map(q => `<li>${esc(q)}</li>`).join("");
   const src = k.sources.map(s => `<li><b>${esc(s.label)}</b>
     <span class="tier">${esc(s.tier || "?")}</span> — ${esc(s.url_or_id)}</li>`).join("");
+  const rel = (k.related || []).slice(0, 12).map(r => {
+    const lab = zh ? (r.kind_label_zh || r.kind) : (r.kind_label_en || r.kind);
+    return `<li style="margin:8px 0"><button type="button" data-rel="${esc(r.id)}"
+      style="all:unset;cursor:pointer;color:inherit;display:block;width:100%">
+      <span style="color:#8ec7ff;font-size:.72rem;font-weight:700">${esc(lab)}</span>
+      ${r.status_light || ""} <b>${esc(r.title || r.id)}</b>
+      <span class="note" style="display:block;margin-top:2px">${esc(r.note || "")}</span>
+    </button></li>`;
+  }).join("");
+  const inf = (k.inferences || []).filter(p => (p.depth || 0) >= 2).slice(0, 6).map(p =>
+    `<li class="note" style="font-family:ui-monospace,monospace;font-size:.78rem">
+      ${(p.path || []).map(id => `<button type="button" data-rel="${esc(id)}"
+        style="all:unset;cursor:pointer;color:#8ec7ff;text-decoration:underline">${esc(id)}</button>`
+      ).join(" → ")}
+      <span style="opacity:.6"> · ${esc((p.kinds || []).join(" · "))}</span>
+    </li>`).join("");
   $("panel").innerHTML = `
     <button id="closep">${esc(t.close)} ✕</button>
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
@@ -661,6 +681,11 @@ function openPanel(k) {
     ${sec(t.whylight, `<ul>${reasons}</ul>`)}
     ${sec(t.evidence, `<ul>${ev}</ul>`)}
     ${sec(t.open, `<ul>${oq}</ul>`)}
+    ${rel ? sec(t.related + (k.n_related != null ? " · " + k.n_related : ""),
+      `<ul style="padding-left:0;list-style:none">${rel}</ul>
+       <p class="note" style="font-size:.78rem">${esc(t.inferNote)}</p>`) : ""}
+    ${inf ? sec(t.inferences, `<ul>${inf}</ul>
+       <p class="note" style="font-size:.78rem">${esc(t.inferNote)}</p>`) : ""}
     ${sec(t.sources, `<ul>${src}</ul>`)}
     <div class="plinks p-sec">
       <a href="${esc(k.permalink)}">${esc(t.permalink)} →</a>
@@ -668,6 +693,14 @@ function openPanel(k) {
     </div>`;
   $("panel").classList.add("open");
   $("closep").addEventListener("click", closePanel);
+  $("panel").querySelectorAll("[data-rel]").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      const id = btn.getAttribute("data-rel");
+      const next = DATA.claims.find(x => x.id === id);
+      if (next) { Measure.rec("relation_nav", { from: k.id, to: id }); openPanel(next); }
+    });
+  });
   requestAnimationFrame(() => revealSecs());
 }
 function openUncharted() {

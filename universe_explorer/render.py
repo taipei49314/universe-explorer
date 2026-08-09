@@ -412,10 +412,32 @@ def app_data_json(topics: List[Topic]) -> str:
                             for h in c.status_history],
                 "permalink": f"{t.id}.html#c-{c.id}",
             })
+    # Claim relations + mechanical inference paths (no confidence fields).
+    from .relations import relations_payload
+    rel = relations_payload(topics)
+    by = rel["by_claim"]
+    for row in claims_out:
+        block = by.get(row["id"], {})
+        # attach lightweight related list; full paths under inferences
+        row["related"] = block.get("related", [])
+        row["inferences"] = block.get("inferences", [])
+        row["n_related"] = block.get("n_related", 0)
+        row["n_inferences"] = block.get("n_inferences", 0)
     return _json.dumps({
         "note": ("Universe Explorer app data. Only recorded fields and "
                  "mechanical derivations; zh fields are a presentation "
-                 "overlay that falls back to English."),
+                 "overlay that falls back to English. Relations are authored "
+                 "edges plus mechanical shared-source; inference paths are "
+                 "listed routes — never confidence scores."),
+        "relations": {
+            "note": rel["note"],
+            "kinds": rel["kinds"],
+            "kind_labels": rel["kind_labels"],
+            "n_links": rel["n_links"],
+            "n_authored": rel["n_authored"],
+            "n_mechanical": rel["n_mechanical"],
+            "links": rel["links"],
+        },
         "themes": [
             {"id": k, "title": v["title"], "title_zh": v["title_zh"]}
             for k, v in THEME_META.items()

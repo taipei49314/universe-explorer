@@ -217,6 +217,27 @@ svg text { fill:var(--ink); }
 #closep:hover { transform:scale(1.04); background:var(--panel-solid); }
 .plinks { margin-top:24px; font-size:.88rem; display:flex; gap:18px;
   flex-wrap:wrap; font-weight:500; }
+.rel { list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+.rel-item {
+  display:flex; flex-wrap:wrap; gap:8px; align-items:baseline;
+  border:1px solid var(--line); border-radius:12px; padding:10px 12px;
+  background:var(--mono-bg); cursor:pointer; text-align:left;
+  font:inherit; color:inherit; width:100%;
+  transition:background .2s var(--ease), transform .2s var(--ease); }
+.rel-item:hover { background:var(--panel-solid); transform:translateX(2px); }
+.rel-kind { font-size:.68rem; font-weight:700; letter-spacing:.04em;
+  text-transform:uppercase; color:var(--accent);
+  font-family:ui-monospace,"SF Mono",Consolas,monospace; }
+.rel-origin { font-size:.64rem; color:var(--muted); opacity:.85; }
+.rel-note { width:100%; font-size:.82rem; color:var(--muted); line-height:1.4;
+  margin:0; padding-left:2px; }
+.inf-path { font-family:ui-monospace,"SF Mono",Consolas,monospace;
+  font-size:.78rem; line-height:1.45; word-break:break-word; }
+.inf-path button {
+  border:0; background:transparent; color:var(--accent); font:inherit;
+  cursor:pointer; padding:0 2px; text-decoration:underline;
+  text-underline-offset:2px; }
+.inf-meta { font-size:.75rem; color:var(--muted); margin-top:2px; }
 footer { max-width:1100px; margin:0 auto; padding:0 24px 56px;
   font-size:.8rem; color:var(--muted); line-height:1.5; position:relative; z-index:1; }
 button:focus-visible, .dot:focus-visible, a:focus-visible, #q:focus-visible {
@@ -271,6 +292,10 @@ const I18N = {
     axisder:"Evidence axis — derived, not declared",
     competing:"Competing models", open:"Open questions — count them yourself",
     narrative:"AI narrative — every sentence carries its refs",
+    related:"Related claims",
+    inferences:"Inference paths",
+    inferNote:"Paths over recorded edges only — not a confidence score. Recount the list.",
+    relatedEmpty:"No recorded relation for this claim yet.",
     sources:"Sources", history:"Status history",
     forlbl:"for", againstlbl:"against", limitslbl:"limits",
     permalink:"permalink", challenge:"challenge this verdict",
@@ -290,6 +315,10 @@ const I18N = {
     axisder:"證據軸 —— 機械推導,非人工宣告",
     competing:"競爭模型", open:"開放問題 —— 自己數",
     narrative:"AI 敘事 —— 每句都帶著它的 refs",
+    related:"關聯宣稱",
+    inferences:"推論路徑",
+    inferNote:"路徑只沿已記錄的邊 —— 不是信心分數。請自行重數清單。",
+    relatedEmpty:"此宣稱尚未錄入關聯。",
     sources:"出處", history:"燈號遷移史",
     forlbl:"支持", againstlbl:"反對", limitslbl:"侷限",
     permalink:"永久連結", challenge:"挑戰這個判定",
@@ -587,6 +616,53 @@ function revealPanelSections() {
     setTimeout(() => el.classList.add("vis"), 80 + i * 70);
   });
 }
+function relatedHTML(c, t, lang) {
+  const rows = c.related || [];
+  if (!rows.length) {
+    return `<p class="note">${esc(t.relatedEmpty)}</p>`;
+  }
+  return `<ul class="rel">${rows.map(r => {
+    const lab = lang === "zh" ? (r.kind_label_zh || r.kind) : (r.kind_label_en || r.kind);
+    const title = r.title || r.id;
+    return `<li><button type="button" class="rel-item" data-rel="${esc(r.id)}">
+      <span>${r.status_light || ""}</span>
+      <span class="rel-kind">${esc(lab)}</span>
+      <span class="rel-origin">[${esc(r.origin || "?")}]</span>
+      <b>${esc(title)}</b>
+      <span class="m" style="margin-left:auto;font-size:.7rem;color:var(--muted)">${esc(r.id)}</span>
+      <p class="rel-note">${esc(r.note || "")}</p>
+    </button></li>`;
+  }).join("")}</ul>
+  <p class="note" style="margin-top:10px;font-size:.78rem">${esc(t.inferNote)}</p>`;
+}
+function inferencesHTML(c, t) {
+  const paths = (c.inferences || []).filter(p => (p.depth || 0) >= 1).slice(0, 10);
+  if (!paths.length) return "";
+  const items = paths.map(p => {
+    const chain = (p.path || []).map((id, i) => {
+      const isEnd = i === p.path.length - 1;
+      const lab = isEnd && p.end_light ? `${p.end_light} ` : "";
+      return `<button type="button" data-rel="${esc(id)}">${lab}${esc(id)}</button>`;
+    }).join(" <span style=\"opacity:.45\">→</span> ");
+    return `<li><div class="inf-path">${chain}</div>
+      <div class="inf-meta">${esc((p.kinds || []).join(" · "))} — ${esc(p.note || "")}</div></li>`;
+  }).join("");
+  return `<ul class="rel">${items}</ul>
+    <p class="note" style="margin-top:10px;font-size:.78rem">${esc(t.inferNote)}</p>`;
+}
+function bindRelatedNav(root) {
+  root.querySelectorAll("[data-rel]").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      e.stopPropagation();
+      const id = btn.getAttribute("data-rel");
+      const next = DATA.claims.find(x => x.id === id);
+      if (!next) return;
+      Measure.rec("relation_nav", { from: state.sel && state.sel.id, to: id });
+      openPanel(next);
+    });
+  });
+}
 function openPanel(c) {
   state.sel = c;
   const t = L();
@@ -616,6 +692,10 @@ function openPanel(c) {
     — ${esc(s.url_or_id)} <span class="note">(${esc(s.kind)})</span></li>`).join("");
   const hist = c.history.map(h => `
     <li>${esc(h.date)}: ${esc(h.from)} → ${esc(h.to)} — ${esc(h.trigger)}</li>`).join("");
+  const relBlock = relatedHTML(c, t, lang);
+  const infBlock = inferencesHTML(c, t);
+  const relTitle = `${t.related}${c.n_related != null ? ` · ${c.n_related}` : ""}`;
+  const infTitle = `${t.inferences}${c.n_inferences != null ? ` · ${c.n_inferences}` : ""}`;
 
   $("panel").innerHTML = `
     <button id="closep">${esc(t.close)} ✕</button>
@@ -630,6 +710,8 @@ function openPanel(c) {
     ${section(t.axisder, `<ul>${der}</ul>`)}
     ${c.competing.length ? section(t.competing, `<ul>${cm}</ul>`) : ""}
     ${section(t.open, `<ul>${oq}</ul>`)}
+    ${section(relTitle, relBlock)}
+    ${infBlock ? section(infTitle, infBlock) : ""}
     ${nar ? section(t.narrative, `<ul>${nar}</ul>`) : ""}
     ${section(t.sources, `<ul>${src}</ul>`)}
     ${hist ? section(t.history, `<ul>${hist}</ul>`) : ""}
@@ -641,6 +723,7 @@ function openPanel(c) {
   $("scrim").classList.add("on");
   $("closep").addEventListener("click", closePanel);
   $("closep").focus();
+  bindRelatedNav($("panel"));
   requestAnimationFrame(() => revealPanelSections());
 }
 function closePanel() {
