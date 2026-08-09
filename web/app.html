@@ -150,10 +150,16 @@ svg text { fill:var(--ink); }
 #panel h2 { font:600 1.45rem/1.2 -apple-system,BlinkMacSystemFont,"SF Pro Display",serif;
   margin:10px 0 6px; letter-spacing:-.02em; text-wrap:balance; }
 #panel h3 { font-size:.7rem; letter-spacing:.08em; text-transform:uppercase;
-  color:var(--muted); margin:28px 0 10px; border-top:1px solid var(--line);
-  padding-top:16px; font-weight:600; }
+  color:var(--muted); margin:0 0 10px; font-weight:600; }
 #panel ul { margin:4px 0; padding-left:18px; }
 #panel li { margin:8px 0; font-size:.92rem; line-height:1.45; }
+.p-sec { margin-top:22px; padding-top:16px; border-top:1px solid var(--line);
+  opacity:0; transform:translateY(14px); }
+.p-sec.vis { opacity:1; transform:none;
+  transition:opacity .55s var(--ease-out), transform .55s var(--ease-out); }
+@media (prefers-reduced-motion: reduce) {
+  .p-sec { opacity:1; transform:none; }
+}
 .meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
 .badge { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:.72rem;
   background:var(--mono-bg); border-radius:8px; padding:3px 9px; color:var(--muted); }
@@ -193,6 +199,7 @@ button:focus-visible, .dot:focus-visible, a:focus-visible, #q:focus-visible {
   <div class="toolbar" id="topicbar"></div>
   <div class="toolbar">
     <input id="q" type="search">
+    <button class="langbtn" id="soundbtn" type="button" aria-pressed="false"></button>
     <button class="langbtn" id="langbtn"></button>
   </div>
 </header>
@@ -230,6 +237,7 @@ const I18N = {
     forlbl:"for", againstlbl:"against", limitslbl:"limits",
     permalink:"permalink", challenge:"challenge this verdict",
     close:"close", diverge:"axes diverge",
+    soundOn:"Sound on", soundOff:"Sound off",
     foot:'<a href="universe.html"><b>Drift the universe →</b></a> · Plain site: <a href="index.html">topics</a> · <a href="explore.html">explore</a> · <a href="about.html">how to read this</a> · <a href="claims.json">open data</a> · <a href="feed.xml">feed</a>. No confidence numbers exist anywhere here — certainty emerges from evidence you can open.' },
   zh: { title:"宇宙探索者 — 知識地圖",
     sub:"宇宙 · 星球 · 地球。把每個宣稱放上兩條軸:社群共識 × 已收錄證據。偏離對角線的點,是誠實攤開的張力。",
@@ -246,6 +254,7 @@ const I18N = {
     forlbl:"支持", againstlbl:"反對", limitslbl:"侷限",
     permalink:"永久連結", challenge:"挑戰這個判定",
     close:"關閉", diverge:"雙軸分岔",
+    soundOn:"開啟音效", soundOff:"關閉音效",
     foot:'<a href="universe.html"><b>漂流宇宙 →</b></a> · 陽春版:<a href="index.html">領域</a> · <a href="explore-zh.html">探索</a> · <a href="about-zh.html">這網站怎麼讀</a> · <a href="claims.json">開放資料</a> · <a href="feed.xml">feed</a>。這裡不存在任何信心數字 —— 確定性從你能展開的證據湧現。' },
 };
 
@@ -362,14 +371,87 @@ function renderCards() {
   });
 }
 
-/* ---------------- panel ---------------- */
+/* ---------------- panel + soft SFX (muted by default) ---------------- */
+const AudioFX = (() => {
+  let ctx = null, master = null, muted = true, drone = null;
+  function ensure() {
+    if (ctx) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    ctx = new AC();
+    master = ctx.createGain();
+    master.gain.value = 0;
+    master.connect(ctx.destination);
+  }
+  function setMuted(m) {
+    muted = m;
+    ensure();
+    if (!master || !ctx) return;
+    if (ctx.state === "suspended") ctx.resume().catch(() => {});
+    const t = ctx.currentTime;
+    master.gain.cancelScheduledValues(t);
+    master.gain.setTargetAtTime(muted ? 0 : 0.09, t, 0.08);
+    if (!muted) startDrone(); else stopDrone();
+  }
+  function startDrone() {
+    if (!ctx || drone || muted) return;
+    const o1 = ctx.createOscillator(), o2 = ctx.createOscillator();
+    const g = ctx.createGain(), f = ctx.createBiquadFilter();
+    o1.type = "sine"; o2.type = "sine";
+    o1.frequency.value = 55; o2.frequency.value = 82.5;
+    f.type = "lowpass"; f.frequency.value = 280;
+    g.gain.value = 0.045;
+    o1.connect(f); o2.connect(f); f.connect(g); g.connect(master);
+    o1.start(); o2.start();
+    drone = { o1, o2, g, f };
+  }
+  function stopDrone() {
+    if (!drone) return;
+    try { drone.o1.stop(); drone.o2.stop(); } catch (_) {}
+    drone = null;
+  }
+  function blip() {
+    if (muted) return;
+    ensure();
+    if (!ctx || !master) return;
+    if (ctx.state === "suspended") ctx.resume().catch(() => {});
+    const t = ctx.currentTime;
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = "sine"; o.frequency.setValueAtTime(420, t);
+    o.frequency.exponentialRampToValueAtTime(180, t + 0.18);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.07, t + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.22);
+    o.connect(g); g.connect(master);
+    o.start(t); o.stop(t + 0.25);
+  }
+  return {
+    isMuted: () => muted,
+    toggle() { setMuted(!muted); return muted; },
+    blip,
+    unlock() { ensure(); if (ctx && ctx.state === "suspended") ctx.resume().catch(() => {}); },
+  };
+})();
+
 function section(title, inner) {
-  return inner ? `<h3>${esc(title)}</h3>${inner}` : "";
+  return inner
+    ? `<div class="p-sec"><h3>${esc(title)}</h3>${inner}</div>`
+    : "";
+}
+function revealPanelSections() {
+  const secs = [...$("panel").querySelectorAll(".p-sec")];
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  secs.forEach((el, i) => {
+    if (reduced) { el.classList.add("vis"); return; }
+    setTimeout(() => el.classList.add("vis"), 80 + i * 70);
+  });
 }
 function openPanel(c) {
   state.sel = c;
   const t = L();
   const lang = state.lang;
+  AudioFX.unlock();
+  AudioFX.blip();
   const reasons = c.status_reason.map(r => `
     <li><span class="cond">${r.holds ? "✓" : "✗"} ${esc(
       lang === "zh" ? r.condition_zh : r.condition)}</span>
@@ -410,7 +492,7 @@ function openPanel(c) {
     ${nar ? section(t.narrative, `<ul>${nar}</ul>`) : ""}
     ${section(t.sources, `<ul>${src}</ul>`)}
     ${hist ? section(t.history, `<ul>${hist}</ul>`) : ""}
-    <div class="plinks">
+    <div class="plinks p-sec">
       <a href="${esc(c.permalink)}">${esc(t.permalink)} →</a>
       <a href="https://github.com/taipei49314/universe-explorer/issues/new?template=challenge-a-verdict.yml&title=%5Bchallenge%5D%20${esc(c.id)}">${esc(t.challenge)} →</a>
     </div>`;
@@ -418,6 +500,7 @@ function openPanel(c) {
   $("scrim").classList.add("on");
   $("closep").addEventListener("click", closePanel);
   $("closep").focus();
+  requestAnimationFrame(() => revealPanelSections());
 }
 function closePanel() {
   state.sel = null;
@@ -435,6 +518,8 @@ function renderChrome() {
   $("q").placeholder = t.search;
   $("q").setAttribute("aria-label", t.search);
   $("langbtn").textContent = t.lang;
+  $("soundbtn").textContent = AudioFX.isMuted() ? "🔇 " + t.soundOff : "🔊 " + t.soundOn;
+  $("soundbtn").setAttribute("aria-pressed", AudioFX.isMuted() ? "false" : "true");
   $("mapnote").textContent = t.note;
   $("foot").innerHTML = t.foot;
   const themes = DATA.themes || [
@@ -480,6 +565,13 @@ function renderChrome() {
 function renderAll() { renderChrome(); renderMap(); renderCards(); }
 
 $("q").addEventListener("input", e => { state.q = e.target.value.trim(); renderMap(); renderCards(); });
+$("soundbtn").addEventListener("click", () => {
+  AudioFX.unlock();
+  AudioFX.toggle();
+  const t = L();
+  $("soundbtn").textContent = AudioFX.isMuted() ? "🔇 " + t.soundOff : "🔊 " + t.soundOn;
+  $("soundbtn").setAttribute("aria-pressed", AudioFX.isMuted() ? "false" : "true");
+});
 $("langbtn").addEventListener("click", () => {
   state.lang = state.lang === "zh" ? "en" : "zh";
   renderAll();

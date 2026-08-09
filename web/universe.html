@@ -63,10 +63,20 @@ html, body { height:100%; overflow:hidden; background:#03050A;
   Georgia,"Songti SC",serif; margin:10px 0 8px; letter-spacing:-.02em;
   text-wrap:balance; }
 #panel h3 { font-size:.68rem; letter-spacing:.09em; text-transform:uppercase;
-  color:var(--muted); margin:20px 0 8px; border-top:1px solid var(--line);
-  padding-top:14px; font-weight:600; }
+  color:var(--muted); margin:0 0 8px; font-weight:600; }
 #panel ul { padding-left:16px; }
 #panel li { margin:7px 0; font-size:.86rem; line-height:1.45; }
+.p-sec { margin-top:18px; padding-top:14px; border-top:1px solid var(--line);
+  opacity:0; transform:translateY(12px); }
+.p-sec.vis { opacity:1; transform:none;
+  transition:opacity .5s var(--ease-out), transform .5s var(--ease-out); }
+@media (prefers-reduced-motion: reduce) {
+  .p-sec { opacity:1; transform:none; }
+}
+#intro { position:fixed; inset:0; z-index:30; pointer-events:none;
+  background:#000; opacity:1; transition:opacity 1.4s var(--ease-out); }
+#intro.gone { opacity:0; }
+#soundbtn.btn { min-width:2.6em; }
 .badge { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:.7rem;
   background:rgba(255,255,255,.07); border-radius:8px; padding:3px 9px;
   color:var(--muted); }
@@ -93,6 +103,7 @@ button:focus-visible, a:focus-visible { outline:2px solid var(--est);
 <body>
 <canvas id="space"></canvas>
 <div id="vignette" aria-hidden="true"></div>
+<div id="intro" aria-hidden="true"></div>
 <div class="hud" id="brand"><h1 id="t-title"></h1><p id="t-sub"></p></div>
 <div class="hud" id="nav"></div>
 <div class="hud" id="legend"></div>
@@ -117,7 +128,8 @@ const I18N = {
             "moon — a verified source"],
     uncharted:"uncharted", unchartedTitle:"Not yet charted",
     unchartedBody:"Nothing is drawn here because nothing has been verified here. Every body in this universe costs a real, fetched, hash-checked source — emptiness is not a bug, it is the honest report of how much work knowing takes. Want this region mapped? Suggest a domain:",
-    suggest:"suggest a domain →" },
+    suggest:"suggest a domain →",
+    soundOn:"🔊", soundOff:"🔇" },
   zh: { title:"宇宙探索者",
     sub:"漂流過已核實的知識。每顆天體都以出處為代價 —— 黑暗是誠實的。",
     hint:"拖曳漂移  ·  滾輪縮放  ·  點擊天體",
@@ -131,7 +143,8 @@ const I18N = {
             "衛星 —— 一筆經核實的出處"],
     uncharted:"未測繪", unchartedTitle:"尚未測繪",
     unchartedBody:"這裡什麼都沒畫,因為這裡還沒有任何東西被核實過。這個宇宙裡每顆天體都要價一筆真實、已抓取、雜湊驗證過的出處 —— 空曠不是缺陷,是「知道」要花多少工的誠實報告。想讓這片區域被測繪?提議一個領域:",
-    suggest:"提議一個領域 →" },
+    suggest:"提議一個領域 →",
+    soundOn:"🔊", soundOff:"🔇" },
 };
 
 let DATA = null, bodies = [], clusters = [];
@@ -153,16 +166,80 @@ function resize() {
 addEventListener("resize", resize); resize();
 
 /* camera */
-const cam = { x:0, y:0, z:0.62, vx:0, vy:0 };
+const cam = { x:0, y:0, z:4.2, vx:0, vy:0 };
 let fly = null;
+let introBH = { active:true, life:1 }; // pull back from black hole
 // overview must FIT the viewport, whatever its size — never a fixed zoom
 function overviewZ() {
   return Math.max(0.17, Math.min(0.8, Math.min(W / 4600, H / 3100)));
 }
-function flyTo(x, y, z) {
+function flyTo(x, y, z, dur) {
   if (REDUCED) { cam.x = x; cam.y = y; cam.z = z; return; }
-  fly = { fx:cam.x, fy:cam.y, fz:cam.z, tx:x, ty:y, tz:z, t:0, dur:1.15 };
+  fly = { fx:cam.x, fy:cam.y, fz:cam.z, tx:x, ty:y, tz:z, t:0, dur:dur || 1.15 };
 }
+
+/* soft ambient — muted by default, procedural (no asset files) */
+const AudioFX = (() => {
+  let ctx = null, master = null, muted = true, drone = null;
+  function ensure() {
+    if (ctx) return;
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    ctx = new AC();
+    master = ctx.createGain();
+    master.gain.value = 0;
+    master.connect(ctx.destination);
+  }
+  function setMuted(m) {
+    muted = m;
+    ensure();
+    if (!master || !ctx) return;
+    if (ctx.state === "suspended") ctx.resume().catch(() => {});
+    const t = ctx.currentTime;
+    master.gain.cancelScheduledValues(t);
+    master.gain.setTargetAtTime(muted ? 0 : 0.11, t, 0.12);
+    if (!muted) startDrone(); else stopDrone();
+  }
+  function startDrone() {
+    if (!ctx || drone || muted) return;
+    const o1 = ctx.createOscillator(), o2 = ctx.createOscillator();
+    const g = ctx.createGain(), f = ctx.createBiquadFilter();
+    o1.type = "sine"; o2.type = "triangle";
+    o1.frequency.value = 48; o2.frequency.value = 72;
+    f.type = "lowpass"; f.frequency.value = 220;
+    g.gain.value = 0.05;
+    o1.connect(f); o2.connect(f); f.connect(g); g.connect(master);
+    o1.start(); o2.start();
+    drone = { o1, o2 };
+  }
+  function stopDrone() {
+    if (!drone) return;
+    try { drone.o1.stop(); drone.o2.stop(); } catch (_) {}
+    drone = null;
+  }
+  function blip() {
+    if (muted) return;
+    ensure();
+    if (!ctx || !master) return;
+    if (ctx.state === "suspended") ctx.resume().catch(() => {});
+    const t = ctx.currentTime;
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = "sine";
+    o.frequency.setValueAtTime(380, t);
+    o.frequency.exponentialRampToValueAtTime(140, t + 0.22);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.08, t + 0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.28);
+    o.connect(g); g.connect(master);
+    o.start(t); o.stop(t + 0.3);
+  }
+  return {
+    isMuted: () => muted,
+    toggle() { setMuted(!muted); return muted; },
+    blip,
+    unlock() { ensure(); if (ctx && ctx.state === "suspended") ctx.resume().catch(() => {}); },
+  };
+})();
 
 /* deterministic pseudo-random (stable layout per claim) */
 function rnd(seed) { let s = 0;
@@ -402,6 +479,25 @@ function frame(ms) {
   const sc = [...bodies].sort((a, b) => a === hover ? 1 : b === hover ? -1 : 0);
   for (const b of sc) drawBody(b, t, b === hover);
 
+  // intro black hole (pull-back from event horizon)
+  if (introBH.active || introBH.life > 0.01) {
+    const life = introBH.life;
+    const hx = (0 - cam.x) * cam.z + W/2, hy = (0 - cam.y) * cam.z + H/2;
+    const hr = Math.max(W, H) * (0.55 + (1 - life) * 0.15) / Math.max(cam.z, 0.15);
+    const g = cx.createRadialGradient(hx, hy, 0, hx, hy, hr);
+    g.addColorStop(0, "rgba(0,0,0," + (0.98 * life) + ")");
+    g.addColorStop(0.35, "rgba(8,4,20," + (0.75 * life) + ")");
+    g.addColorStop(0.7, "rgba(40,20,80," + (0.25 * life) + ")");
+    g.addColorStop(1, "rgba(0,0,0,0)");
+    cx.fillStyle = g;
+    cx.beginPath(); cx.arc(hx, hy, hr, 0, 6.283); cx.fill();
+    // photon ring
+    cx.strokeStyle = "rgba(255,180,120," + (0.35 * life) + ")";
+    cx.lineWidth = 2.5;
+    cx.beginPath(); cx.arc(hx, hy, hr * 0.42, 0, 6.283); cx.stroke();
+    if (!introBH.active) introBH.life = Math.max(0, life - 0.012);
+  }
+
   requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
@@ -449,8 +545,21 @@ const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g,
   c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const L = () => I18N[state.lang];
+function sec(title, body) {
+  return body
+    ? `<div class="p-sec"><h3>${esc(title)}</h3>${body}</div>`
+    : "";
+}
+function revealSecs() {
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  [...$("panel").querySelectorAll(".p-sec")].forEach((el, i) => {
+    if (reduced) el.classList.add("vis");
+    else setTimeout(() => el.classList.add("vis"), 70 + i * 65);
+  });
+}
 function openPanel(k) {
   state.sel = k; const t = L(), zh = state.lang === "zh";
+  AudioFX.unlock(); AudioFX.blip();
   const reasons = k.status_reason.map(r => `<li>
     <span class="cond">${r.holds ? "✓" : "✗"} ${esc(zh ? r.condition_zh : r.condition)}</span>
     <span class="note">${esc(zh ? r.note_zh : r.note)}</span></li>`).join("");
@@ -470,24 +579,26 @@ function openPanel(k) {
       ${k.diverges ? `<span class="badge" style="color:#D9B14A">⚡ ${esc(t.diverge)}</span>` : ""}
     </div>
     <h2>${esc(zh ? k.title_zh : k.title)}</h2>
-    <h3>${esc(t.whylight)}</h3><ul>${reasons}</ul>
-    <h3>${esc(t.evidence)}</h3><ul>${ev}</ul>
-    <h3>${esc(t.open)}</h3><ul>${oq}</ul>
-    <h3>${esc(t.sources)}</h3><ul>${src}</ul>
-    <div class="plinks">
+    ${sec(t.whylight, `<ul>${reasons}</ul>`)}
+    ${sec(t.evidence, `<ul>${ev}</ul>`)}
+    ${sec(t.open, `<ul>${oq}</ul>`)}
+    ${sec(t.sources, `<ul>${src}</ul>`)}
+    <div class="plinks p-sec">
       <a href="${esc(k.permalink)}">${esc(t.permalink)} →</a>
       <a href="https://github.com/taipei49314/universe-explorer/issues/new?template=challenge-a-verdict.yml&title=%5Bchallenge%5D%20${esc(k.id)}">${esc(t.challenge)} →</a>
     </div>`;
   $("panel").classList.add("open");
   $("closep").addEventListener("click", closePanel);
+  requestAnimationFrame(() => revealSecs());
 }
 function openUncharted() {
   const t = L();
+  AudioFX.blip();
   $("panel").innerHTML = `
     <button id="closep">${esc(t.close)} ✕</button>
     <h2>${esc(t.unchartedTitle)}</h2>
-    <p class="note" style="margin-top:10px">${esc(t.unchartedBody)}</p>
-    <div class="plinks"><a href="https://github.com/taipei49314/universe-explorer/issues/new">${esc(t.suggest)}</a></div>`;
+    <div class="p-sec vis"><p class="note" style="margin-top:10px">${esc(t.unchartedBody)}</p>
+    <div class="plinks"><a href="https://github.com/taipei49314/universe-explorer/issues/new">${esc(t.suggest)}</a></div></div>`;
   $("panel").classList.add("open");
   $("closep").addEventListener("click", closePanel);
 }
@@ -514,6 +625,7 @@ function renderHud() {
   for (const c of clusters)
     nav.push(`<button class="btn" data-a="c:${esc(c.id)}">
       ${esc(state.lang === "zh" ? c.title_zh : c.title)}</button>`);
+  nav.push(`<button class="btn" id="soundbtn" type="button" title="ambient (default off)">${esc(AudioFX.isMuted() ? t.soundOff : t.soundOn)}</button>`);
   nav.push(`<button class="btn" id="langbtn">${esc(t.lang)}</button>`);
   nav.push(`<a class="btn" href="app.html">${esc(t.map)}</a>`);
   nav.push(`<a class="btn" href="index.html">${esc(t.plain)}</a>`);
@@ -523,13 +635,37 @@ function renderHud() {
       if (b.dataset.a === "home") flyTo(0, 30, overviewZ());
       else { const c = clusters.find(x => x.id === b.dataset.a.slice(2));
         flyTo(c.x, c.y, 1.15); } }));
+  $("soundbtn").addEventListener("click", () => {
+    AudioFX.unlock();
+    AudioFX.toggle();
+    $("soundbtn").textContent = AudioFX.isMuted() ? t.soundOff : t.soundOn;
+  });
   $("langbtn").addEventListener("click", () => {
     state.lang = state.lang === "zh" ? "en" : "zh";
     renderHud(); if (state.sel) openPanel(state.sel); });
 }
 
+function runIntro() {
+  // start inside the event horizon, pull back to overview
+  cam.x = 0; cam.y = 0; cam.z = REDUCED ? overviewZ() : 5.2;
+  introBH.active = !REDUCED;
+  introBH.life = 1;
+  const el = $("intro");
+  if (REDUCED) {
+    el.classList.add("gone");
+    flyTo(0, 30, overviewZ(), 0.01);
+    introBH.active = false; introBH.life = 0;
+    return;
+  }
+  requestAnimationFrame(() => {
+    el.classList.add("gone");
+    flyTo(0, 30, overviewZ(), 2.4);
+    setTimeout(() => { introBH.active = false; }, 900);
+  });
+}
+
 fetch("app-data.json").then(r => r.json()).then(d => {
-  DATA = d; layout(); renderHud(); flyTo(0, 30, overviewZ());
+  DATA = d; layout(); renderHud(); runIntro();
 });
 </script>
 </body>
