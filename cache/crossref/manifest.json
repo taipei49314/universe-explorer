@@ -127,9 +127,9 @@
   },
   "10.4401/ag-5350": {
     "endpoint": "https://api.crossref.org/works/10.4401%2Fag-5350",
-    "retrieved_at": "2026-07-10T15:33:47Z",
+    "retrieved_at": "2026-08-09T13:56:38Z",
     "cache_file": "10-4401_ag-5350.json",
-    "sha256": "1aa42823587f8540547cf6c851cf95ccaa4138a02c624a78c6eb53bf0c7152e2",
+    "sha256": "6aa3485f08f588f1319f6830d55f577df0093b536e46c758340d302a475c10b5",
     "title": "OPERATIONAL EARTHQUAKE FORECASTING. State of Knowledge and Guidelines for Utilization",
     "container": "Annals of Geophysics",
     "issued": 2011
@@ -145,9 +145,9 @@
   },
   "10.1126/science.275.5306.1616": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.275.5306.1616",
-    "retrieved_at": "2026-07-10T15:33:51Z",
+    "retrieved_at": "2026-08-09T13:56:37Z",
     "cache_file": "10-1126_science-275-5306-1616.json",
-    "sha256": "d3c12eac4ec4c962f966a7e480d148c89eb1bd7f5d7d88945d0165c92e61c974",
+    "sha256": "3d7a12572589ad723c8690b2e0509add0dcc135cec9885c8f4e5d7cee95a3acf",
     "title": "Earthquakes Cannot Be Predicted",
     "container": "Science",
     "issued": 1997
@@ -376,5 +376,122 @@
     "title": "Electromagnetic extraction of energy from Kerr black holes",
     "container": "Monthly Notices of the Royal Astronomical Society",
     "issued": 1977
+  },
+  "10.1146/annurev.marine.010908.163834": {
+    "endpoint": "https://api.crossref.org/works/10.1146%2Fannurev.marine.010908.163834",
+    "retrieved_at": "2026-08-09T13:56:24Z",
+    "cache_file": "10-1146_annurev-marine-010908-163834.json",
+    "sha256": "80e2093f23e83da903ff80313c494f8e895748ac55fbd00d0ddf1cd138e6418e",
+    "title": "Ocean Acidification: The Other CO<sub>2</sub>Problem",
+    "container": "Annual Review of Marine Science",
+    "issued": 2009
+  },
+  "10.1017/9781009157896": {
+    "endpoint": "https://api.crossref.org/works/10.1017%2F9781009157896",
+    "retrieved_at": "2026-08-09T13:56:25Z",
+    "cache_file": "10-1017_9781009157896.json",
+    "sha256": "ae08dd8742d87b65c4026f9c68d050b8d1e0dc21710ffd1de12bdf71874ccaaf",
+    "title": "Climate Change 2021 – The Physical Science Basis",
+    "container": "",
+    "issued": 2023
+  },
+  "10.1098/rsos.140317": {
+    "endpoint": "https://api.crossref.org/works/10.1098%2Frsos.140317",
+    "retrieved_at": "2026-08-09T13:56:27Z",
+    "cache_file": "10-1098_rsos-140317.json",
+    "sha256": "baf5d6f85562ea229ab7d7a1c3e6c6ddce221e07454108b04d495c68e1eb92ab",
+    "title": "The deep sea is a major sink for microplastic debris",
+    "container": "Royal Society Open Science",
+    "issued": 2014
+  },
+  "10.1021/acs.est.8b02279": {
+    "endpoint": "https://api.crossref.org/works/10.1021%2Facs.est.8b02279",
+    "retrieved_at": "2026-08-09T13:56:28Z",
+    "cache_file": "10-1021_acs-est-8b02279.json",
+    "sha256": "2b2698ea20324248167c34eb01ad37f1959c802e4a333a5f13e0277a350d08b3",
+    "title": "Microplastics in Small Waterbodies and Tadpoles from Yangtze River Delta, China",
+    "container": "Environmental Science &amp; Technology",
+    "issued": 2018
+  },
+  "10.3389/fmars.2017.00418": {
+    "endpoint": "https://api.crossref.org/works/10.3389%2Ffmars.2017.00418",
+    "retrieved_at": "2026-08-09T13:56:30Z",
+    "cache_file": "10-3389_fmars-2017-00418.json",
+    "sha256": "8c2836c73c8dbf3f3a2eb8cc27bdd84a3b8b636e9cd041282892ee1e97089128",
+    "title": "An Overview of Seabed Mining Including the Current State of Development, Environmental Impacts, and Knowledge Gaps",
+    "container": "Frontiers in Marine Science",
+    "issued": 2018
+  },
+  "10.1016/j.marpol.2022.105050": {
+    "endpoint": "https://api.crossref.org/works/10.1016%2Fj.marpol.2022.105050",
+    "retrieved_at": "2026-08-09T13:56:32Z",
+    "cache_file": "10-1016_j-marpol-2022-105050.json",
+    "sha256": "7672f542f228753371125de8ad680f780cfe0cb40c1a8121e6be70d104aafefc",
+    "title": "The roles of Taiwanese universities in coastal revitalization: A study of two case projects",
+    "container": "Marine Policy",
+    "issued": 2022
+  },
+  "10.1126/science.1225942": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1225942",
+    "retrieved_at": "2026-08-09T13:56:34Z",
+    "cache_file": "10-1126_science-1225942.json",
+    "sha256": "570ef4eaecdc14e76adf351f18b92c1ddec0e4a07458caf12ebbee522e3a1883",
+    "title": "Injection-Induced Earthquakes",
+    "container": "Science",
+    "issued": 2013
+  },
+  "10.1126/science.1255802": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1255802",
+    "retrieved_at": "2026-08-09T13:56:35Z",
+    "cache_file": "10-1126_science-1255802.json",
+    "sha256": "b26aee7aec2fe8196f879169f0ad8a8c7d32f8b577567974f35322731685a8e1",
+    "title": "Sharp increase in central Oklahoma seismicity since 2008 induced by massive wastewater injection",
+    "container": "Science",
+    "issued": 2014
+  },
+  "10.1126/science.1084783": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1084783",
+    "retrieved_at": "2026-08-09T13:56:40Z",
+    "cache_file": "10-1126_science-1084783.json",
+    "sha256": "80284c33ab1b2dec06f049cbfe69fb2e5d0bfdc03ea325ef196d3a0774541889",
+    "title": "Episodic Tremor and Slip on the Cascadia Subduction Zone: The Chatter of Silent Slip",
+    "container": "Science",
+    "issued": 2003
+  },
+  "10.1126/science.1070378": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1070378",
+    "retrieved_at": "2026-08-09T13:56:42Z",
+    "cache_file": "10-1126_science-1070378.json",
+    "sha256": "0e8d0991706ecf438c9d0a1708c7407d72403a366a5319c6221c0a64609bf560",
+    "title": "Nonvolcanic Deep Tremor Associated with Subduction in Southwest Japan",
+    "container": "Science",
+    "issued": 2002
+  },
+  "10.7185/geochemlet.1829": {
+    "endpoint": "https://api.crossref.org/works/10.7185%2Fgeochemlet.1829",
+    "retrieved_at": "2026-08-09T13:58:20Z",
+    "cache_file": "10-7185_geochemlet-1829.json",
+    "sha256": "ac7f680f32a95296af809fe16183ab76e66d53dd55bd00f2b9dda7f2f3c9b4a4",
+    "title": "Microplastics contaminate the deepest part of the world’s ocean",
+    "container": "Geochemical Perspectives Letters",
+    "issued": 2018
+  },
+  "10.1038/s41559-017-0224-5": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2Fs41559-017-0224-5",
+    "retrieved_at": "2026-08-09T13:58:22Z",
+    "cache_file": "10-1038_s41559-017-0224-5.json",
+    "sha256": "46eeecf973e1215b47cd972ac7afc279af64497bf0a0a430571ccf4949c3f335",
+    "title": "Molecular signatures of fossil leaves provide unexpected new evidence for extinct plant relationships",
+    "container": "Nature Ecology &amp; Evolution",
+    "issued": 2017
+  },
+  "10.3389/fmars.2018.00053": {
+    "endpoint": "https://api.crossref.org/works/10.3389%2Ffmars.2018.00053",
+    "retrieved_at": "2026-08-09T13:58:39Z",
+    "cache_file": "10-3389_fmars-2018-00053.json",
+    "sha256": "7994da849377211e5fb04f86fb90511c9c60db964331832ae391032931e8701b",
+    "title": "Deep-Sea Mining With No Net Loss of Biodiversity—An Impossible Aim",
+    "container": "Frontiers in Marine Science",
+    "issued": 2018
   }
 }

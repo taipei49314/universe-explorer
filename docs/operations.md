@@ -26,7 +26,10 @@ python run_tests.py          # 9 個套件 + 憲法擋關,一個 exit code
    python -m universe_explorer.dataops.watch_all           # 看 diff/事件
    python -m universe_explorer.dataops.watch_all --commit  # 接受為新基線
    ```
-6. **產出 digest**(可選):`python -m universe_explorer.dataops.push`
+6. **產出 digest**(可選):`python -m universe_explorer.dataops.push`  
+   可選傳輸(P5b):設定 `UE_WEBHOOK_URL` 或 SMTP 環境變數後  
+   `python -m universe_explorer.dataops.push --deliver`  
+   (或 `--deliver --dry-run`)。未設定則只寫 `outbox/`。
 7. **重建頁面**:`python build.py` → dist/
 8. **git commit**。修改引擎七檔 = 修憲:先寫 `docs/amendment-N-*.md`,
    重新蓋章 `engine_hashes.json`,commit message 註明修正案編號。

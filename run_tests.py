@@ -32,6 +32,7 @@ SUITES = [
     "test_app.py",            # D4 dynamic frontend: data + self-containment
     "test_ui_expand.py",      # domain expand: measure first, then gate
     "test_relations.py",      # claim links + inference paths (no confidence)
+    "test_transport.py",      # P5b webhook/SMTP transport (env-gated)
 ]
 
 

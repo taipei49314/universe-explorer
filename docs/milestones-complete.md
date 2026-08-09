@@ -1,0 +1,47 @@
+# Milestone closeout (unattended run)
+
+**Date:** 2026-08-09  
+**Commit family:** R-Graph + P5b + Earth deepen  
+
+## Status board
+
+| Milestone | Status | Notes |
+|-----------|--------|--------|
+| P0–P4 / P1.5 / R6 | ✅ prior | Constitution engine |
+| P5 digest | ✅ prior | `outbox/` restatement |
+| **P5b transport** | ✅ | `dataops/transport.py` — webhook/SMTP env-gated; dry-run; body constitution check |
+| V4-1 License | ✅ prior | `LICENSE` MIT + `LICENSE-CONTENT.md` CC BY |
+| V4-2 Constitution | ✅ prior | `docs/constitution.md` + about links |
+| V4-3 arXiv version watch | ✅ prior | `source_health.arxiv_version_findings` + tests |
+| R-Graph | ✅ | Ego graph, reading paths, edge challenges |
+| Relations + inference | ✅ | 87+ authored edges |
+| Stars / BH / exoplanets depth | ✅ | Discussions on disk |
+| **Earth deepen** | ✅ | ocean 5→8, seismology 5→8 + short Discussions |
+| NASA/ESA adapter | ❌ deferred | Explicit non-goal until a real inlet exists |
+| T4b multi-source 7B | ❌ deferred | Needs model ops; not blocking product honesty |
+
+## Totals after closeout
+
+- **Topics:** 8  
+- **Claims:** 91  
+- **Reading paths:** 7  
+- **Authored relation edges:** 87  
+
+## How to deliver digests (P5b)
+
+```sh
+# write digest only (default)
+python -m universe_explorer.dataops.push
+
+# deliver if configured
+export UE_WEBHOOK_URL="https://…"
+# optional: UE_SMTP_HOST, UE_SMTP_PORT, UE_SMTP_USER, UE_SMTP_PASS, UE_SMTP_FROM, UE_SMTP_TO
+python -m universe_explorer.dataops.push --deliver
+python -m universe_explorer.dataops.push --deliver --dry-run
+```
+
+Unconfigured transport is **silent OK** — outbox files remain the interface.
+
+## Honesty note
+
+Completing a roadmap item does not invent confidence. Every new claim still hangs on fetched sources; every digest still restates events; every edge is still challengeable.

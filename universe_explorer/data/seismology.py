@@ -377,24 +377,256 @@ van_electric_precursors = Claim(
     status_history=[],
 )
 
+# --------------------------------------------------------------------------- #
+# Claim 6 — induced seismicity                           🔵 Strong             #
+# --------------------------------------------------------------------------- #
+induced_seismicity_human_activities = Claim(
+    id="induced_seismicity_human_activities",
+    title=(
+        "Human activities (especially fluid injection) can induce earthquakes"
+    ),
+    status=Status.STRONG,
+    sources=[
+        Source(
+            label="Ellsworth2013",
+            url_or_id="doi:10.1126/science.1225942",
+            kind="peer-reviewed paper (Science 341, 1225942, 2013; injection-"
+                 "induced earthquakes)",
+        ),
+        Source(
+            label="Keranen2014",
+            url_or_id="doi:10.1126/science.1255802",
+            kind="peer-reviewed paper (Science 345, 448, 2014; Oklahoma "
+                 "wastewater injection)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "Spatial and temporal correlations between high-rate wastewater "
+                "injection and earthquake rate increases establish a causal "
+                "link in well-studied regions."
+            ),
+            source_ref="Ellsworth2013",
+        ),
+        Evidence(
+            type="direct observation",
+            description=(
+                "Detailed studies in the central United States link specific "
+                "injection wells and volumes to elevated seismicity, including "
+                "damaging events."
+            ),
+            source_ref="Keranen2014",
+        ),
+    ],
+    open_questions=[
+        "What pore-pressure thresholds best predict induced sequences?",
+        "How should regulation balance energy operations with seismic risk?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "mainstream_model_support", True,
+            "Induced seismicity from fluid injection is standard applied "
+            "seismology.",
+        ),
+        ConditionAssessment(
+            "minor_alternatives_exist", True,
+            "Some events remain ambiguous between induced and natural; the "
+            "class of injection-induced quakes is not in doubt.",
+        ),
+        ConditionAssessment(
+            "overall_direction_robust", True,
+            "Additional basins and mechanisms (geothermal, fracking, reservoir "
+            "impoundment) keep confirming the phenomenon.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 7 — short-term prediction vs forecasting         🟡 Competing          #
+# --------------------------------------------------------------------------- #
+short_term_deterministic_prediction = Claim(
+    id="short_term_deterministic_prediction",
+    title=(
+        "Deterministic short-term earthquake prediction is achievable with "
+        "current science versus fundamentally limited to probabilistic "
+        "forecasting"
+    ),
+    status=Status.COMPETING,
+    sources=[
+        Source(
+            label="Geller1997",
+            url_or_id="doi:10.1126/science.275.5306.1616",
+            kind="peer-reviewed paper (Science 275, 1616, 1997; earthquakes "
+                 "cannot be predicted)",
+        ),
+        Source(
+            label="Jordan2011",
+            url_or_id="doi:10.4401/ag-5350",
+            kind="peer-reviewed paper (Ann. Geophys.; operational earthquake "
+                 "forecasting principles)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="theoretical result",
+            description=(
+                "A long-standing mainstream assessment holds that reliable "
+                "deterministic short-term prediction of large earthquakes is "
+                "not supported by physics or statistics of fault systems."
+            ),
+            source_ref="Geller1997",
+        ),
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Operational earthquake forecasting frameworks instead offer "
+                "time-dependent probabilities for civil protection, explicitly "
+                "distinguished from deterministic prediction."
+            ),
+            source_ref="Jordan2011",
+        ),
+    ],
+    competing_models=[
+        CompetingModel(
+            name="Prediction is not achievable (forecasting only)",
+            supporting=(
+                "Chaotic loading, limited precursor reproducibility and failed "
+                "prospective tests support probabilistic forecasts only."
+            ),
+            opposing=(
+                "Some researchers still pursue multi-parameter precursor "
+                "systems aiming at short-term alerts."
+            ),
+            limitations=(
+                "Public demand for 'when' messages pressures agencies beyond "
+                "what physics delivers."
+            ),
+        ),
+        CompetingModel(
+            name="Useful short-term prediction may still emerge",
+            supporting=(
+                "Improved dense networks, AI pattern searches and multi-sensor "
+                "precursors are argued to reopen the question."
+            ),
+            opposing=(
+                "Prospective, pre-registered successes at operational skill "
+                "remain lacking for large events."
+            ),
+            limitations=(
+                "Retrospective selection and publication bias are chronic."
+            ),
+        ),
+    ],
+    open_questions=[
+        "Can any precursor claim survive prospective, pre-registered tests?",
+        "How should agencies communicate forecast probabilities without "
+        "implying false prediction skill?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "two_or_more_mainstream_models", True,
+            "Forecasting-only orthodoxy and continued prediction-research "
+            "programmes both appear in the peer-reviewed literature.",
+        ),
+        ConditionAssessment(
+            "no_decisive_evidence_yet", True,
+            "No consensus operational short-term predictor has been "
+            "demonstrated.",
+        ),
+        ConditionAssessment(
+            "genuine_scientific_camps", True,
+            "The prediction vs forecasting split is a multi-decade debate, "
+            "not a rhetorical invention.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 8 — slow slip / ETS                              🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+slow_slip_and_ets_observed = Claim(
+    id="slow_slip_and_ets_observed",
+    title=(
+        "Slow-slip events and episodic tremor and slip are observed on some "
+        "subduction zones"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="RogersDragert2003",
+            url_or_id="doi:10.1126/science.1084783",
+            kind="peer-reviewed paper (Science 300, 1942, 2003; episodic "
+                 "tremor and slip)",
+        ),
+        Source(
+            label="Obara2002",
+            url_or_id="doi:10.1126/science.1070378",
+            kind="peer-reviewed paper (Science 296, 1679, 2002; nonvolcanic "
+                 "deep tremor)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "Geodetic and seismic records in Cascadia document repeating "
+                "slow-slip episodes accompanied by tremor (ETS)."
+            ),
+            source_ref="RogersDragert2003",
+        ),
+        Evidence(
+            type="direct observation",
+            description=(
+                "Deep nonvolcanic tremor discovered in southwest Japan opened "
+                "the observational class of slow deformation phenomena."
+            ),
+            source_ref="Obara2002",
+        ),
+    ],
+    open_questions=[
+        "How do slow-slip cycles relate to the timing of great megathrust "
+        "earthquakes?",
+        "What physical conditions select slow vs fast rupture?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "new_discovery", True,
+            "Slow slip and ETS were established observationally this century.",
+        ),
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "Global catalogues of slow earthquakes continue to expand.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "Links to great-earthquake timing remain an open research "
+            "programme.",
+        ),
+    ],
+    status_history=[],
+)
+
 
 SEISMOLOGY = Topic(
     id="seismology",
     title="Earthquakes",
     summary=(
-        "The domain where the gap between what the public asks ('when?') and "
-        "what science honestly knows is widest — and deadliest. The shape: a "
-        "🟢 bedrock (plates cause earthquakes) through a 🔵 real capability "
-        "(warning seconds), a 🟡 genuine dispute (how faults repeat), an 🟠 "
-        "frontier (operational forecasting), to a 🔴 ceiling (electric "
-        "precursors). First domain whose provenance runs primarily through "
-        "the Crossref DOI pipeline."
+        "Earthquakes domain: 🟢 plates; 🔵 EEW + induced seismicity; 🟡 "
+        "characteristic quakes + prediction-vs-forecast; 🟠 OEF + slow slip; "
+        "🔴 VAN electric precursors (not accepted)."
     ),
     claims=[
         plate_tectonics_drives_earthquakes,
         eew_gives_usable_warning,
+        induced_seismicity_human_activities,
         characteristic_earthquake_model,
+        short_term_deterministic_prediction,
         oef_informs_civil_protection,
+        slow_slip_and_ets_observed,
         van_electric_precursors,
     ],
 )

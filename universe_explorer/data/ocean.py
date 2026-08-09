@@ -358,21 +358,221 @@ dark_oxygen_production = Claim(
     status_history=[],
 )
 
+# --------------------------------------------------------------------------- #
+# Claim 6 — ocean acidification                          🔵 Strong             #
+# --------------------------------------------------------------------------- #
+ocean_acidification_anthropogenic = Claim(
+    id="ocean_acidification_anthropogenic",
+    title=(
+        "Anthropogenic CO2 uptake is acidifying the surface ocean"
+    ),
+    status=Status.STRONG,
+    sources=[
+        Source(
+            label="Doney2009",
+            url_or_id="doi:10.1146/annurev.marine.010908.163834",
+            kind="peer-reviewed paper (Annu. Rev. Mar. Sci. 1, 169, 2009; "
+                 "ocean acidification)",
+        ),
+        Source(
+            label="IPCCAR6WGI",
+            url_or_id="doi:10.1017/9781009157896",
+            kind="peer-reviewed paper (IPCC AR6 WGI; ocean carbon and "
+                 "acidification assessment)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "Time series of surface ocean pH and carbonate chemistry show "
+                "declining pH concurrent with rising atmospheric CO2."
+            ),
+            source_ref="Doney2009",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Global assessments attribute the multi-decadal acidification "
+                "trend primarily to anthropogenic carbon uptake by the ocean."
+            ),
+            source_ref="IPCCAR6WGI",
+        ),
+    ],
+    open_questions=[
+        "How will regional upwelling and biology modulate coastal acidification "
+        "extremes?",
+        "What are organism- and ecosystem-level thresholds across taxa?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "mainstream_model_support", True,
+            "Anthropogenic ocean acidification is standard marine chemistry "
+            "and IPCC assessment content.",
+        ),
+        ConditionAssessment(
+            "minor_alternatives_exist", True,
+            "Natural variability modulates the signal regionally; it does not "
+            "replace the anthropogenic driver of the long-term trend.",
+        ),
+        ConditionAssessment(
+            "overall_direction_robust", True,
+            "Longer records and denser observing networks have strengthened "
+            "the trend detection.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 7 — microplastics deep ocean                     🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+microplastics_reach_deep_ocean = Claim(
+    id="microplastics_reach_deep_ocean",
+    title=(
+        "Microplastic particles are widespread in the deep ocean and trenches"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Woodall2014",
+            url_or_id="doi:10.1098/rsos.140317",
+            kind="peer-reviewed paper (R. Soc. Open Sci. 1, 140317, 2014; "
+                 "deep-sea microplastics)",
+        ),
+        Source(
+            label="Peng2018",
+            url_or_id="doi:10.7185/geochemlet.1829",
+            kind="peer-reviewed paper (Geochem. Persp. Lett. 9, 1, 2018; "
+                 "hadal microplastics)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "Sediment cores and deep-sea samples contain microplastic "
+                "fibres and fragments far below the sunlit surface ocean."
+            ),
+            source_ref="Woodall2014",
+        ),
+        Evidence(
+            type="direct observation",
+            description=(
+                "Hadal trench samples show plastic debris and microplastics "
+                "in some of the deepest marine environments sampled."
+            ),
+            source_ref="Peng2018",
+        ),
+    ],
+    open_questions=[
+        "What fraction of surface plastic production reaches the abyss?",
+        "How do deep-sea food webs interact with microplastic loads?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "new_discovery", True,
+            "Deep-ocean and hadal microplastic detections are a recent "
+            "observational frontier.",
+        ),
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "Sampling papers across basins and trenches are accumulating "
+            "quickly.",
+        ),
+        ConditionAssessment(
+            "insufficient_sample", True,
+            "Global deep coverage remains sparse relative to the ocean volume.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 8 — deep-sea mining impacts                      🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+deep_sea_mining_impacts_uncertain = Claim(
+    id="deep_sea_mining_impacts_uncertain",
+    title=(
+        "Commercial deep-sea mining would cause large, long-lived ecological "
+        "impacts that cannot yet be fully quantified"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Miller2018",
+            url_or_id="doi:10.3389/fmars.2017.00418",
+            kind="peer-reviewed paper (Front. Mar. Sci.; deep-sea mining "
+                 "impacts review)",
+        ),
+        Source(
+            label="Niner2018",
+            url_or_id="doi:10.3389/fmars.2018.00053",
+            kind="peer-reviewed paper (Front. Mar. Sci. 5, 53, 2018; "
+                 "deep-sea mining and no net loss of biodiversity)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Reviews of trial mining and analogous disturbances document "
+                "sediment plumes, habitat removal and slow recovery of abyssal "
+                "communities."
+            ),
+            source_ref="Miller2018",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Analyses of 'no net loss' biodiversity goals for deep-sea "
+                "mining conclude that residual impacts cannot be fully "
+                "offset with present knowledge and tools."
+            ),
+            source_ref="Niner2018",
+        ),
+    ],
+    open_questions=[
+        "What plume and noise footprints scale to commercial operations?",
+        "Can protected-area designs offset nodule-field losses?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "Mining-impact and baseline biodiversity papers are expanding "
+            "ahead of possible commercial start.",
+        ),
+        ConditionAssessment(
+            "insufficient_observation", True,
+            "No full commercial-scale mining time series exists to calibrate "
+            "long-term recovery.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "Policy and science still negotiate how large and lasting impacts "
+            "will be under real operations.",
+        ),
+    ],
+    status_history=[],
+)
+
 
 OCEAN = Topic(
     id="ocean",
     title="The deep ocean",
     summary=(
-        "A second Data layer running through the identical engine — proof the "
-        "epistemology is domain-agnostic. Same shape to read: a 🟢 bedrock "
-        "(vents exist) under a 🔴 ceiling (dark oxygen), with a genuine 🟡 "
-        "two-camp dispute (AMOC) in between."
+        "Earth-systems ocean container. 🟢 vents; 🔵 heat uptake + "
+        "acidification; 🟡 AMOC; 🟠 CCZ biodiversity, microplastics, mining "
+        "impacts; 🔴 dark oxygen (not accepted)."
     ),
     claims=[
         hydrothermal_vents_exist,
         ocean_heat_uptake,
+        ocean_acidification_anthropogenic,
         amoc_weakening,
         ccz_biodiversity_unknown,
+        microplastics_reach_deep_ocean,
+        deep_sea_mining_impacts_uncertain,
         dark_oxygen_production,
     ],
 )

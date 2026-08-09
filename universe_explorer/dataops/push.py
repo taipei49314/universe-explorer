@@ -9,13 +9,15 @@ could receive. Constitution applies all the way down the pipe:
     the mechanical derivation — the push is traceable back to evidence;
   * no events => no digest. The channel is silent when knowledge is stable.
 
-Channels: the default writes digests to outbox/ (files ARE the interface — an
-email/webhook sender later just picks them up). Real transport (SMTP, webhook
-POST) is deliberately not wired here: sending is deployment, digesting is model.
+Channels: the default writes digests to outbox/ (files ARE the interface).
+P5b optional transport (webhook / SMTP) is env-gated via ``--deliver`` and
+``dataops.transport`` — deployment only; the digest body is never rewritten.
 
 Usage:
     python -m universe_explorer.dataops.push          # digest all new events
     python -m universe_explorer.dataops.push --all    # re-digest everything
+    python -m universe_explorer.dataops.push --deliver  # digest + transport
+    python -m universe_explorer.dataops.push --deliver --dry-run
 """
 
 from __future__ import annotations
@@ -83,12 +85,16 @@ def render_digest(event_files: List[Path]) -> str:
 
 
 def main(argv: List[str]) -> int:
+    deliver = "--deliver" in argv
+    dry_run = "--dry-run" in argv
+    do_all = "--all" in argv
+
     if not EVENTS_DIR.exists():
         print("no events directory — nothing to digest")
         return 0
 
     all_events = sorted(EVENTS_DIR.glob("*-events.json"))
-    todo = (all_events if "--all" in argv
+    todo = (all_events if do_all
             else [f for f in all_events if f.name not in _digested()])
     if not todo:
         print("no new events — the channel stays silent (zero noise)")
@@ -103,6 +109,26 @@ def main(argv: List[str]) -> int:
     print(f"digest of {len(todo)} event file(s) -> {out}")
     print()
     print(digest)
+
+    if deliver:
+        from .transport import deliver_digest
+        report = deliver_digest(digest, dry_run=dry_run or None)
+        print()
+        print(f"transport: configured={report.get('configured')} "
+              f"ok={report.get('ok')} status={report.get('status')}")
+        for c in report.get("channels") or []:
+            print(f"  {c.get('channel')}: ok={c.get('ok')} "
+                  f"{c.get('status') or c.get('error')}")
+        # write mechanical transport receipt next to digest
+        receipt = out.with_suffix(".transport.json")
+        receipt.write_text(
+            __import__("json").dumps(report, ensure_ascii=False, indent=2)
+            + "\n",
+            encoding="utf-8",
+        )
+        print(f"transport receipt -> {receipt}")
+        if not report.get("ok"):
+            return 1
     return 0
 
 

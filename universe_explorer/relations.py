@@ -276,8 +276,38 @@ _AUTHORED: Tuple[Tuple[str, str, str, str], ...] = (
     ("plate_tectonics_drives_earthquakes", "characteristic_earthquake_model",
      "requires",
      "Characteristic-earthquake debates presuppose tectonic quakes."),
+    ("plate_tectonics_drives_earthquakes", "induced_seismicity_human_activities",
+     "supports",
+     "Induced events are still elastic failure on faults — often plate-loaded."),
+    ("plate_tectonics_drives_earthquakes", "short_term_deterministic_prediction",
+     "requires",
+     "Prediction/forecasting debates presuppose tectonic earthquake generation."),
+    ("short_term_deterministic_prediction", "oef_informs_civil_protection",
+     "tensions",
+     "OEF is probabilistic forecasting; deterministic prediction is the rival ask."),
+    ("short_term_deterministic_prediction", "van_electric_precursors",
+     "specializes",
+     "VAN is a concrete prediction-claim under the short-term prediction debate."),
+    ("eew_gives_usable_warning", "oef_informs_civil_protection", "boundary",
+     "Seconds of EEW vs days–weeks of forecast probabilities — different tools."),
+    ("slow_slip_and_ets_observed", "plate_tectonics_drives_earthquakes",
+     "supports",
+     "ETS is observed deformation on subduction plate interfaces."),
     ("hydrothermal_vents_exist", "ocean_heat_uptake", "boundary",
      "Vents and heat uptake are different ocean-science cuts."),
+    ("ocean_heat_uptake", "ocean_acidification_anthropogenic", "supports",
+     "Both are primary ocean responses to anthropogenic CO2 / heat forcing."),
+    ("ocean_acidification_anthropogenic", "hydrothermal_vents_exist", "boundary",
+     "Acidification is surface-carbon chemistry; vents are chemosynthetic oases."),
+    ("ccz_biodiversity_unknown", "deep_sea_mining_impacts_uncertain",
+     "supports",
+     "Undescribed CCZ diversity is why mining impacts stay hard to quantify."),
+    ("microplastics_reach_deep_ocean", "hydrothermal_vents_exist", "boundary",
+     "Deep plastics are a contamination layer; vents are ecosystems."),
+    ("dark_oxygen_production", "hydrothermal_vents_exist", "boundary",
+     "Dark-oxygen claim is abyssal nodules — not vent chemistry consensus."),
+    ("amoc_weakening", "ocean_heat_uptake", "supports",
+     "AMOC debates sit inside a warming, heat-absorbing ocean."),
 )
 
 
@@ -444,6 +474,52 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
         ),
         note_zh=(
             "存在與常見性 → 黃燈辯論 → JWST 大氣 → 生物訊號紅燈天花板。"
+        ),
+    ),
+    ReadingPath(
+        id="path_ocean",
+        title="Deep ocean — vents to dark-oxygen ceiling",
+        title_zh="深海 —— 熱泉到暗氧天花板",
+        domain="ocean",
+        steps=(
+            "hydrothermal_vents_exist",
+            "ocean_heat_uptake",
+            "ocean_acidification_anthropogenic",
+            "amoc_weakening",
+            "ccz_biodiversity_unknown",
+            "microplastics_reach_deep_ocean",
+            "deep_sea_mining_impacts_uncertain",
+            "dark_oxygen_production",
+        ),
+        note=(
+            "Vent bedrock → heat and acidification → AMOC debate → "
+            "CCZ/mining/plastics frontier → dark oxygen ceiling."
+        ),
+        note_zh=(
+            "熱泉地基 → 熱與酸化 → AMOC 辯論 → CCZ/採礦/塑膠前沿 → 暗氧天花板。"
+        ),
+    ),
+    ReadingPath(
+        id="path_seismology",
+        title="Earthquakes — plates to prediction ceiling",
+        title_zh="地震 —— 板塊到預測天花板",
+        domain="seismology",
+        steps=(
+            "plate_tectonics_drives_earthquakes",
+            "eew_gives_usable_warning",
+            "induced_seismicity_human_activities",
+            "characteristic_earthquake_model",
+            "short_term_deterministic_prediction",
+            "oef_informs_civil_protection",
+            "slow_slip_and_ets_observed",
+            "van_electric_precursors",
+        ),
+        note=(
+            "Plate bedrock → EEW and induced seismicity → yellow "
+            "characteristic/prediction debates → OEF and ETS → VAN ceiling."
+        ),
+        note_zh=(
+            "板塊地基 → EEW 與誘發地震 → 黃燈特徵/預測辯論 → OEF 與 ETS → VAN 天花板。"
         ),
     ),
 )

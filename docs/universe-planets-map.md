@@ -13,7 +13,7 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
 | **宇宙** | `stars` | Fusion → solar interior → death channels | 12 claims |
 | **星球** | `planets` | Solar system + ocean worlds | 10 claims |
 | **星球** | `exoplanets` | Other stars; radius valley; JWST | 9 claims |
-| **地球** | `ocean` / `seismology` | Earth systems | 5+5 |
+| **地球** | `ocean` / `seismology` | Earth systems (deepened) | 8+8 |
 
 ```
                     ┌─ cosmology ──────────── large-scale / H0 / inflation
@@ -137,6 +137,8 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
 | Stars (deepened) | `docs/paper/stars-discussion.md` |
 | Black holes (deepened) | `docs/paper/black-hole-discussion.md` |
 | Exoplanets | `docs/paper/exoplanets-discussion.md` |
+| Deep ocean | `docs/paper/ocean-discussion.md` |
+| Earthquakes | `docs/paper/seismology-discussion.md` |
 
 ## Paper / narrative hooks
 
