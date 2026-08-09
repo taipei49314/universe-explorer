@@ -72,6 +72,40 @@ def test_app_html_has_the_required_surfaces():
         assert hexv in APP, hexv
 
 
+def test_app_html_domains_are_expandable():
+    """Clicking a domain (e.g. 恆星 / stars) must expand its claim list."""
+    for needle in (
+        "openDomains",
+        "domain-block",
+        "domain-head",
+        'classList.toggle("open"',
+        "state.openDomains[id] = true",
+        "aria-expanded",
+        "點領域即可展開底下的宣稱",
+        "則宣稱",
+    ):
+        assert needle in APP, needle
+    # stars topic is present in app-data with a bilingual title
+    stars = next(t for t in DATA["topics"] if t["id"] == "stars")
+    assert stars["title_zh"] == "恆星"
+    assert stars["n_claims"] == len(
+        [c for c in DATA["claims"] if c["topic"] == "stars"]
+    )
+    assert stars["n_claims"] >= 1
+
+
+def test_universe_domains_expand_on_click():
+    """Drift view: constellation label / nav expands a domain cluster."""
+    for needle in (
+        "function expandCluster",
+        "expandId",
+        "expandCluster(c.id)",
+        "expandCluster(b.dataset.a.slice(2))",
+        "stars:[-80,200]",
+    ):
+        assert needle in UNI, needle
+
+
 def test_divergent_claims_land_in_the_marked_zone():
     """The shaded corner is x(status_rank) in {0,1} × y(axis_rank) in {2,3,4};
     every mechanically divergent claim must land inside it."""
