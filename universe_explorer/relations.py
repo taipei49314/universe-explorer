@@ -288,6 +288,333 @@ def authored_links() -> List[ClaimLink]:
     ]
 
 
+# ---------------------------------------------------------------------------
+# Authored reading paths (ordered claim ids). Not rankings — sequences.
+# Each step should already be connected by some authored edge when possible;
+# disconnected steps are allowed if the note explains the map jump.
+# ---------------------------------------------------------------------------
+
+@dataclass(frozen=True)
+class ReadingPath:
+    id: str
+    title: str
+    title_zh: str
+    domain: str          # primary topic id
+    steps: Tuple[str, ...]
+    note: str
+    note_zh: str
+
+    def as_dict(self) -> dict:
+        d = {
+            "id": self.id,
+            "title": self.title,
+            "title_zh": self.title_zh,
+            "domain": self.domain,
+            "steps": list(self.steps),
+            "n_steps": len(self.steps),
+            "note": self.note,
+            "note_zh": self.note_zh,
+        }
+        assert not (set(d) & BANNED_KEYS)
+        return d
+
+
+_READING_PATHS: Tuple[ReadingPath, ...] = (
+    ReadingPath(
+        id="path_h0",
+        title="H0 tension — poles and relief routes",
+        title_zh="H0 張力 —— 兩極與緩解路徑",
+        domain="cosmology",
+        steps=(
+            "universe_is_expanding",
+            "cmb_hot_big_bang",
+            "H0_tension_local_vs_cmb",
+            "shoes_local_H0_high",
+            "cmb_lcdm_implies_low_H0",
+            "trgb_vs_cepheid_local_H0",
+            "early_dark_energy_H0_fix",
+            "strong_lensing_time_delay_H0",
+            "standard_sirens_H0",
+        ),
+        note=(
+            "Bedrock expansion/CMB → umbrella → local and early poles → "
+            "local calibrator split → three Frontier relief routes."
+        ),
+        note_zh=(
+            "擴張/CMB 地基 → 傘形宣稱 → 本地與早期兩極 → 本地校準分裂 → "
+            "三條前沿緩解路徑。"
+        ),
+    ),
+    ReadingPath(
+        id="path_stars",
+        title="Stars — fusion floor to death channels",
+        title_zh="恆星 —— 聚變地基到死亡通道",
+        domain="stars",
+        steps=(
+            "stars_powered_by_fusion",
+            "helioseismology_constrains_solar_interior",
+            "cno_cycle_solar_neutrinos_detected",
+            "stellar_nucleosynthesis_makes_elements",
+            "core_collapse_forms_ns_bh",
+            "white_dwarfs_electron_degenerate",
+            "red_supergiant_problem",
+            "sn_ia_progenitor_channels",
+            "pair_instability_bh_mass_gap",
+            "pop_iii_already_routinely_observed",
+        ),
+        note=(
+            "Fusion and solar interior → nucleosynthesis and remnants → "
+            "yellow death-channel debates → PISN gap → red Pop III ceiling."
+        ),
+        note_zh=(
+            "聚變與太陽內部 → 核合成與殘骸 → 黃燈死亡通道 → PISN 間隙 → "
+            "紅燈 Pop III 天花板。"
+        ),
+    ),
+    ReadingPath(
+        id="path_black_hole",
+        title="Black holes — horizon to ceilings",
+        title_zh="黑洞 —— 視界到天花板",
+        domain="black_hole",
+        steps=(
+            "event_horizon_exists",
+            "kerr_describes_astrophysical_bh",
+            "smbh_common_in_galaxy_nuclei",
+            "hawking_radiation",
+            "lower_mass_gap_compact_objects",
+            "bbh_mergers_catalogued",
+            "jets_extract_bh_spin",
+            "information_paradox",
+            "firewall",
+            "horizonless_gw_echoes",
+        ),
+        note=(
+            "Horizon bedrock → Kerr/SMBH shelf → lower mass gap → "
+            "catalogues and jets → information → firewall and echo ceilings."
+        ),
+        note_zh=(
+            "視界地基 → 克爾/SMBH 平台 → 低質量間隙 → 目錄與噴流 → "
+            "資訊悖論 → 防火牆與回聲天花板。"
+        ),
+    ),
+    ReadingPath(
+        id="path_dark_matter",
+        title="Dark matter — discrepancy to identity ceiling",
+        title_zh="暗物質 —— 差異到身份天花板",
+        domain="dark_matter",
+        steps=(
+            "mass_discrepancy_observed",
+            "lcdm_includes_cold_dm",
+            "particle_vs_modified_gravity",
+            "dm_particle_identity",
+            "thermal_wimp_freezeout_benchmark",
+            "direct_detection_wimp_searches",
+            "axion_dm_candidate",
+            "fermi_gc_excess_origin",
+            "sterile_neutrino_7kev_line",
+            "pbh_all_dark_matter",
+        ),
+        note=(
+            "Discrepancy floor → CDM → particle vs modified gravity → "
+            "identity programmes → contested and speculative ceilings."
+        ),
+        note_zh=(
+            "差異地基 → CDM → 粒子 vs 修正重力 → 身份綱領 → "
+            "爭議與推測天花板。"
+        ),
+    ),
+    ReadingPath(
+        id="path_exoplanets",
+        title="Exoplanets — existence to biosignature ceiling",
+        title_zh="系外行星 —— 存在到生物訊號天花板",
+        domain="exoplanets",
+        steps=(
+            "exoplanets_exist",
+            "proxima_b_exists",
+            "planets_are_common",
+            "planet_nine",
+            "radius_valley_mechanism",
+            "jwst_exoplanet_atmospheres",
+            "trappist1b_bare_rock",
+            "k2_18b_biosignature",
+        ),
+        note=(
+            "Existence and commonality → yellow debates → JWST atmospheres → "
+            "biosignature red ceiling."
+        ),
+        note_zh=(
+            "存在與常見性 → 黃燈辯論 → JWST 大氣 → 生物訊號紅燈天花板。"
+        ),
+    ),
+)
+
+
+def reading_paths() -> List[ReadingPath]:
+    return list(_READING_PATHS)
+
+
+def validate_reading_paths(topics: Sequence[Topic]) -> List[str]:
+    idx = claim_index(topics)
+    bad: List[str] = []
+    seen_ids: Set[str] = set()
+    for rp in reading_paths():
+        if rp.id in seen_ids:
+            bad.append(f"duplicate_path_id {rp.id}")
+        seen_ids.add(rp.id)
+        if len(rp.steps) < 2:
+            bad.append(f"path_too_short {rp.id}")
+        for s in rp.steps:
+            if s not in idx:
+                bad.append(f"path_missing_claim {rp.id}:{s}")
+        if len(set(rp.steps)) != len(rp.steps):
+            bad.append(f"path_duplicate_step {rp.id}")
+    return bad
+
+
+def coverage_stats(
+    topics: Sequence[Topic],
+    links: Optional[Sequence[ClaimLink]] = None,
+) -> dict:
+    """Sparse-honesty inventory: how many claims have any related edge."""
+    idx = claim_index(topics)
+    links = list(links if links is not None else all_links(topics))
+    touched: Set[str] = set()
+    authored_touched: Set[str] = set()
+    for L in links:
+        touched.add(L.source)
+        touched.add(L.target)
+        if L.origin == "authored":
+            authored_touched.add(L.source)
+            authored_touched.add(L.target)
+    n = len(idx)
+    n_any = sum(1 for c in idx if c in touched)
+    n_auth = sum(1 for c in idx if c in authored_touched)
+    # degree histogram (authored undirected)
+    deg: Dict[str, int] = {c: 0 for c in idx}
+    for L in links:
+        if L.origin != "authored":
+            continue
+        if L.source in deg:
+            deg[L.source] += 1
+        if L.target in deg:
+            deg[L.target] += 1
+    # string keys only — JSON-stable and walk-safe (no int dict keys)
+    hist = {"0": 0, "1": 0, "2": 0, "3+": 0}
+    for d in deg.values():
+        if d == 0:
+            hist["0"] += 1
+        elif d == 1:
+            hist["1"] += 1
+        elif d == 2:
+            hist["2"] += 1
+        else:
+            hist["3+"] += 1
+    stats = {
+        "n_claims": n,
+        "n_with_any_edge": n_any,
+        "n_with_authored_edge": n_auth,
+        "n_isolated": n - n_any,
+        "n_isolated_authored": n - n_auth,
+        "authored_degree_hist": hist,
+        "n_reading_paths": len(reading_paths()),
+        "note": (
+            "Isolation is honest sparsity, not a defect. "
+            "Counts are list counts — not coverage confidence."
+        ),
+    }
+    assert not (set(stats) & BANNED_KEYS)
+    return stats
+
+
+def graph_neighborhood(
+    claim_id: str,
+    topics: Sequence[Topic],
+    *,
+    authored_only: bool = False,
+) -> dict:
+    """Layout-ready ego network for one claim (center + 1-hop neighbors).
+
+    Positions are deterministic polar layout — no physics, no scores.
+    """
+    import math
+    idx = claim_index(topics)
+    if claim_id not in idx:
+        return {"center": None, "nodes": [], "edges": []}
+    links = all_links(topics)
+    if authored_only:
+        links = [L for L in links if L.origin == "authored"]
+    rel = enrich_related(neighbors(claim_id, links), idx)
+    # unique neighbor ids preserving order
+    seen: Set[str] = set()
+    neigh_ids: List[str] = []
+    for r in rel:
+        if r["id"] not in seen:
+            seen.add(r["id"])
+            neigh_ids.append(r["id"])
+    # cap fan-out for readability
+    neigh_ids = neigh_ids[:16]
+    nodes = []
+    t0, c0 = idx[claim_id]
+    nodes.append({
+        "id": claim_id,
+        "title": c0.title,
+        "status_light": c0.status.light,
+        "status": c0.status.name,
+        "topic": t0.id,
+        "role": "center",
+        "x": 0.0,
+        "y": 0.0,
+        "permalink": f"{t0.id}.html#c-{claim_id}",
+    })
+    n = max(len(neigh_ids), 1)
+    for i, nid in enumerate(neigh_ids):
+        t, c = idx[nid]
+        ang = (2 * math.pi * i / n) - math.pi / 2
+        r = 1.0
+        nodes.append({
+            "id": nid,
+            "title": c.title,
+            "status_light": c.status.light,
+            "status": c.status.name,
+            "topic": t.id,
+            "role": "neighbor",
+            "x": round(r * math.cos(ang), 4),
+            "y": round(r * math.sin(ang), 4),
+            "permalink": f"{t.id}.html#c-{nid}",
+        })
+    # edges between center and neighbors only (ego graph)
+    edges = []
+    for L in links:
+        pair = {L.source, L.target}
+        if claim_id not in pair:
+            continue
+        other = L.target if L.source == claim_id else L.source
+        if other not in seen and other != claim_id:
+            continue
+        if other not in neigh_ids and other != claim_id:
+            continue
+        if other == claim_id:
+            continue
+        edges.append({
+            "source": L.source,
+            "target": L.target,
+            "kind": L.kind,
+            "kind_label_en": KIND_LABELS[L.kind]["en"],
+            "kind_label_zh": KIND_LABELS[L.kind]["zh"],
+            "note": L.note,
+            "origin": L.origin,
+        })
+    g = {
+        "center": claim_id,
+        "nodes": nodes,
+        "edges": edges,
+        "n_nodes": len(nodes),
+        "n_edges": len(edges),
+    }
+    assert not (set(g) & BANNED_KEYS)
+    return g
+
+
 def _norm_source_key(url_or_id: str) -> str:
     s = (url_or_id or "").strip().lower()
     for pref in ("arxiv:", "doi:", "https://doi.org/", "http://doi.org/",
@@ -553,10 +880,35 @@ def relations_payload(topics: Sequence[Topic]) -> dict:
             "n_inferences": len(paths),
         }
 
+    path_bad = validate_reading_paths(topics)
+    if path_bad:
+        raise ValueError("reading paths invalid: " + "; ".join(path_bad[:8]))
+
+    paths_out = []
+    for rp in reading_paths():
+        d = rp.as_dict()
+        # attach lights/titles for each step (presentation only)
+        step_meta = []
+        for sid in rp.steps:
+            t, c = idx[sid]
+            step_meta.append({
+                "id": sid,
+                "title": c.title,
+                "status_light": c.status.light,
+                "status": c.status.name,
+                "topic": t.id,
+                "permalink": f"{t.id}.html#c-{sid}",
+            })
+        d["step_meta"] = step_meta
+        paths_out.append(d)
+
+    cov = coverage_stats(topics, links)
+
     payload = {
         "note": (
             "Claim relations: authored edges + mechanical shared-source. "
-            "Inference paths are listed routes over edges — not confidence."
+            "Inference paths and reading paths are listed routes — "
+            "not confidence."
         ),
         "kinds": sorted(LINK_KINDS),
         "kind_labels": KIND_LABELS,
@@ -565,6 +917,8 @@ def relations_payload(topics: Sequence[Topic]) -> dict:
         "n_authored": len(authored),
         "n_mechanical": len(mech_filtered),
         "by_claim": per_claim,
+        "reading_paths": paths_out,
+        "coverage": cov,
     }
     assert not (set(payload) & BANNED_KEYS)
     return payload
@@ -616,14 +970,19 @@ def main(argv: Optional[List[str]] = None) -> int:
     args = p.parse_args(argv)
 
     if args.validate:
-        bad = validate_links(TOPICS)
+        bad = validate_links(TOPICS) + validate_reading_paths(TOPICS)
         if bad:
             print("FAIL")
             for b in bad:
                 print(" ", b)
             return 1
+        cov = coverage_stats(TOPICS)
         print(f"OK  {len(authored_links())} authored links, "
-              f"{len(claim_index(TOPICS))} claims")
+              f"{len(claim_index(TOPICS))} claims, "
+              f"{len(reading_paths())} reading paths")
+        print(f"    with authored edge: {cov['n_with_authored_edge']}/"
+              f"{cov['n_claims']}  isolated(authored): "
+              f"{cov['n_isolated_authored']}")
         return 0
 
     if args.claim:

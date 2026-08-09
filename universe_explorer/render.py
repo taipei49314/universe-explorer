@@ -437,6 +437,8 @@ def app_data_json(topics: List[Topic]) -> str:
             "n_authored": rel["n_authored"],
             "n_mechanical": rel["n_mechanical"],
             "links": rel["links"],
+            "reading_paths": rel["reading_paths"],
+            "coverage": rel["coverage"],
         },
         "themes": [
             {"id": k, "title": v["title"], "title_zh": v["title_zh"]}

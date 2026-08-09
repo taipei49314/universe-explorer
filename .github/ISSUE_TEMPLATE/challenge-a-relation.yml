@@ -1,0 +1,76 @@
+name: "Challenge a relation edge / 挑戰一條關聯邊"
+description: "Argue that a recorded claim-to-claim link is wrong or missing a needed edge. 論證某條宣稱關聯邊錯誤,或應補邊。"
+title: "[edge] <source_id> → <target_id>"
+labels: ["challenge", "relation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Relation edges are **authored notes** (or mechanical shared-source links).
+        They are not confidence scores. A valid challenge says which discrete
+        `kind` is wrong, or that the note misstates the map.
+
+        關聯邊是**人工註記**(或機械共用出處),不是信心分數。
+        有效挑戰應指出哪種 `kind` 用錯,或 note 是否曲解地圖。
+
+        Kinds: `supports` · `requires` · `specializes` · `tensions` · `boundary` · `shares_source`
+
+        Browse: [app.html](https://taipei49314.github.io/universe-explorer/app.html) ·
+        open data [app-data.json](https://taipei49314.github.io/universe-explorer/app-data.json) → `relations.links`
+  - type: input
+    id: source_id
+    attributes:
+      label: "Source claim id"
+      description: "From end of the directed edge (e.g. event_horizon_exists)"
+      placeholder: "source_claim_id"
+    validations:
+      required: true
+  - type: input
+    id: target_id
+    attributes:
+      label: "Target claim id"
+      placeholder: "target_claim_id"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: "Recorded kind (if challenging an existing edge)"
+      options:
+        - supports
+        - requires
+        - specializes
+        - tensions
+        - boundary
+        - shares_source
+        - unknown / not sure
+        - proposing a new edge (none yet)
+    validations:
+      required: true
+  - type: dropdown
+    id: attack
+    attributes:
+      label: "What is wrong? / 哪裡不對?"
+      options:
+        - "Wrong kind for this pair / 邊的 kind 用錯"
+        - "Note is inaccurate / note 不準確"
+        - "Edge should not exist / 不應存在這條邊"
+        - "Missing edge that should be authored / 應補一條人工邊"
+        - "Mechanical shared_source is a false positive / 共用出處誤連"
+        - "Other (explain below) / 其他"
+    validations:
+      required: true
+  - type: textarea
+    id: argument
+    attributes:
+      label: "Argument / 論證"
+      description: "Cite claim records, sources, or Discussion prose. No confidence percentages."
+      placeholder: "Why the edge fails the map's honesty…"
+    validations:
+      required: true
+  - type: textarea
+    id: proposed_fix
+    attributes:
+      label: "Proposed fix (optional) / 建議修法"
+      description: "e.g. delete edge · change kind to tensions · add boundary note …"
+      placeholder: "Optional concrete fix"

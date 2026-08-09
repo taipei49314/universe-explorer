@@ -5,22 +5,30 @@ from __future__ import annotations
 import json
 
 from universe_explorer.data.registry import TOPICS
+from pathlib import Path
+
 from universe_explorer.relations import (
     BANNED_KEYS,
     authored_links,
     claim_index,
+    coverage_stats,
     format_claim_report,
+    graph_neighborhood,
     infer_paths,
     neighbors,
+    reading_paths,
     relations_payload,
     validate_links,
+    validate_reading_paths,
 )
 from universe_explorer.render import app_data_json
 
 
 def test_authored_graph_validates():
     assert validate_links(TOPICS) == []
+    assert validate_reading_paths(TOPICS) == []
     assert len(authored_links()) >= 40
+    assert len(reading_paths()) >= 3
 
 
 def test_payload_has_no_certainty_fields():
@@ -29,7 +37,8 @@ def test_payload_has_no_certainty_fields():
     def walk(x, path=""):
         if isinstance(x, dict):
             for k, v in x.items():
-                assert k.lower() not in BANNED_KEYS, (path, k)
+                if isinstance(k, str):
+                    assert k.lower() not in BANNED_KEYS, (path, k)
                 walk(v, f"{path}.{k}")
         elif isinstance(x, list):
             for i, v in enumerate(x[:30]):
@@ -108,6 +117,55 @@ def test_boundary_cross_domain():
     links = authored_links()
     n = neighbors("pair_instability_bh_mass_gap", links)
     assert any(r["id"] == "lower_mass_gap_compact_objects" for r in n)
+
+
+def test_reading_paths_in_payload():
+    payload = relations_payload(TOPICS)
+    paths = payload["reading_paths"]
+    assert len(paths) >= 3
+    ids = {p["id"] for p in paths}
+    assert "path_h0" in ids and "path_stars" in ids and "path_black_hole" in ids
+    for p in paths:
+        assert p["n_steps"] == len(p["steps"]) == len(p["step_meta"])
+        assert p["n_steps"] >= 2
+        assert "confidence" not in p
+
+
+def test_coverage_stats_honest_sparsity():
+    cov = coverage_stats(TOPICS)
+    assert cov["n_claims"] == sum(len(t.claims) for t in TOPICS)
+    assert cov["n_with_authored_edge"] + cov["n_isolated_authored"] == cov["n_claims"]
+    assert cov["n_reading_paths"] == len(reading_paths())
+    assert "confidence" not in cov
+
+
+def test_graph_neighborhood_ego():
+    g = graph_neighborhood("event_horizon_exists", TOPICS, authored_only=True)
+    assert g["center"] == "event_horizon_exists"
+    assert g["n_nodes"] >= 2
+    assert any(n["role"] == "center" for n in g["nodes"])
+    assert g["n_edges"] >= 1
+    # positions finite
+    for n in g["nodes"]:
+        assert abs(n["x"]) <= 1.01 and abs(n["y"]) <= 1.01
+
+
+def test_app_html_has_rgraph_surface():
+    app = Path("web/app.html").read_text(encoding="utf-8")
+    for needle in (
+        "rgraph-svg", "renderRelationGraph", "reading_paths",
+        "pathbar", "relation_nav", "reading_path",
+        "challenge-a-relation",
+    ):
+        assert needle in app, needle
+
+
+def test_challenge_relation_template_exists():
+    p = Path(".github/ISSUE_TEMPLATE/challenge-a-relation.yml")
+    assert p.is_file()
+    text = p.read_text(encoding="utf-8")
+    assert "source_id" in text and "target_id" in text
+    assert "supports" in text
 
 
 def _run():

@@ -47,9 +47,13 @@ python test_relations.py
 ## Frontend
 
 - `app-data.json` → each claim has `related`, `inferences`, `n_related`, `n_inferences`.
-- Top-level `relations` block: kinds, labels, full `links` list, counts.
+- Top-level `relations` block: kinds, labels, full `links` list, counts,
+  **`reading_paths`**, **`coverage`**.
+- Knowledge map: **R-Graph** ego neighbourhood SVG + reading-path chips
+  (see `docs/r-graph.md`).
 - Knowledge map + Drift panels: **Related claims** and **Inference paths**; click navigates to the neighbour claim.
-- Opt-in measure: `relation_nav` events when `?measure=1`.
+- Opt-in measure: `relation_nav` / `reading_path` events when `?measure=1`.
+- Challenge an edge: GitHub template `challenge-a-relation.yml`.
 
 ## Growing the graph
 
