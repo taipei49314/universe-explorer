@@ -110,3 +110,9 @@ Paper artifacts (auto-exported):
 | Fig.1 light × evidence | `docs/paper/fig1-light-vs-evidence.svg` |
 
 Regenerate: `python -m universe_explorer.dataops.export_dm_paper`
+
+Manuscript skeleton (Intro + Discussion):
+
+| Artifact | Path |
+|----------|------|
+| Intro + Discussion scaffold | `docs/paper/dark-matter-intro-discussion-skeleton.md` |
