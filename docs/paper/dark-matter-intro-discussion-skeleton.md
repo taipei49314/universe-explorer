@@ -258,7 +258,7 @@ Discussion should state **mechanisms of light migration**, not predictions of wi
 
 - [ ] No sentence upgrades 🔴/🟠 identity claims to Established.  
 - [ ] Divergence of `lcdm_includes_cold_dm` mentioned once in Intro and once in Discussion.  
-- [ ] Each 🟡 has both camps in prose.  
+- [x] Each 🟡 has both camps in prose (§8.3).  
 - [x] Abstract near-final; matches claim lights (trim if journal word cap requires).  
 - [x] §8.3 three competitions in near-final prose; both camps each.  
 - [ ] Remaining `[FILL]` outside Abstract/§8.3 removed or resolved.  
