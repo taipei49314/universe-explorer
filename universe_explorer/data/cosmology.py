@@ -16,8 +16,12 @@ H0 cluster (read together):
 Other claims:
   universe_is_expanding / cmb_hot_big_bang 🟢
   accelerated_expansion 🔵
-  cosmic_inflation_early_universe 🟠
-  cyclic_or_bounce_replaces_bb 🔴
+  cosmic_inflation_early_universe 🟠  (umbrella)
+  inflation_slow_roll_planck      🟠  Planck slow-roll preference
+  primordial_tensors_undetected   🟠  B-mode / r upper limits
+  inflation_vs_noninflation_alts  🟡  inflation vs bounce-class alternatives
+  eternal_inflation_multiverse    🔴  speculative multiverse reading
+  cyclic_or_bounce_replaces_bb    🔴
 """
 
 from __future__ import annotations
@@ -852,6 +856,305 @@ cosmic_inflation_early_universe = Claim(
 )
 
 # --------------------------------------------------------------------------- #
+# Claim 5a — Planck slow-roll preference                 🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+inflation_slow_roll_planck = Claim(
+    id="inflation_slow_roll_planck",
+    title=(
+        "CMB data prefer simple slow-roll inflationary potentials and "
+        "constrain the scalar spectral index"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Planck2018-Xb",
+            url_or_id="arXiv:1807.06211",
+            kind="collaboration result (peer-reviewed, A&A 641, A10, 2020)",
+        ),
+        Source(
+            label="Guth1981b",
+            url_or_id="doi:10.1103/PhysRevD.23.347",
+            kind="peer-reviewed paper (Phys. Rev. D 23, 347, 1981)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Planck analyses of primordial spectra report ns < 1 and "
+                "tight limits on running and tensors, favouring plateau-like "
+                "slow-roll models over many large-field alternatives."
+            ),
+            source_ref="Planck2018-Xb",
+        ),
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Slow-roll inflation supplies the dynamical framework in "
+                "which a scalar field generates the observed nearly "
+                "scale-invariant spectrum."
+            ),
+            source_ref="Guth1981b",
+        ),
+    ],
+    open_questions=[
+        "Which specific potential (if any) will survive next-generation "
+        "CMB-S4 / LiteBIRD constraints?",
+        "Is there detectable running of the spectral index?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "Model-by-model Planck constraints and forecasts for future "
+            "CMB missions form a large literature.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "A class of slow-roll models is preferred, not a unique inflaton.",
+        ),
+        ConditionAssessment(
+            "insufficient_observation", True,
+            "ns and upper limits on r do not identify a single microphysical "
+            "model.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 5b — primordial tensors undetected               🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+primordial_tensors_undetected = Claim(
+    id="primordial_tensors_undetected",
+    title=(
+        "Primordial gravitational-wave B-modes remain undetected, bounding "
+        "the tensor-to-scalar ratio"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="BK2021",
+            url_or_id="arXiv:2110.00483",
+            kind="collaboration result (peer-reviewed; BICEP/Keck r limits)",
+        ),
+        Source(
+            label="Planck2018-Xc",
+            url_or_id="arXiv:1807.06211",
+            kind="collaboration result (peer-reviewed, A&A 641, A10, 2020)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "BICEP/Keck degree-scale polarisation searches report no "
+                "significant primordial B-mode excess after dust modelling, "
+                "setting leading upper limits on the tensor-to-scalar ratio r."
+            ),
+            source_ref="BK2021",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Planck temperature and polarisation combinations similarly "
+                "bound r and jointly constrain inflationary model space when "
+                "combined with BICEP/Keck."
+            ),
+            source_ref="Planck2018-Xc",
+        ),
+    ],
+    open_questions=[
+        "Will the next generation of B-mode experiments detect r > 0?",
+        "How low must r fall before large classes of high-scale inflation "
+        "are excluded?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "B-mode experiments and foreground-cleaning methods are a major "
+            "ongoing effort.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "Upper limits are robust in outline; a positive primordial "
+            "detection has not been established.",
+        ),
+        ConditionAssessment(
+            "insufficient_observation", True,
+            "No confirmed primordial B-mode signal; only limits on r.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 5c — inflation vs non-inflation alternatives     🟡 Competing          #
+# --------------------------------------------------------------------------- #
+inflation_vs_noninflation_alts = Claim(
+    id="inflation_vs_noninflation_alts",
+    title=(
+        "The early universe is described by inflation versus non-inflationary "
+        "alternatives such as bounces"
+    ),
+    status=Status.COMPETING,
+    sources=[
+        Source(
+            label="Planck2018-Xd",
+            url_or_id="arXiv:1807.06211",
+            kind="collaboration result (peer-reviewed, A&A 641, A10, 2020)",
+        ),
+        Source(
+            label="IjjasSteinhardt2018b",
+            url_or_id="arXiv:1803.01961",
+            kind="peer-reviewed paper (bounce / alternative early-universe "
+                 "discussion)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "CMB constraints are routinely interpreted within "
+                "inflationary slow-roll scenarios that fit ns and limit r, "
+                "making inflation the working early-universe standard."
+            ),
+            source_ref="Planck2018-Xd",
+        ),
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Bouncing and related non-singular scenarios are developed "
+                "as alternatives that aim to replace or precede the hot big "
+                "bang without a quasi-de Sitter inflating phase."
+            ),
+            source_ref="IjjasSteinhardt2018b",
+        ),
+    ],
+    competing_models=[
+        CompetingModel(
+            name="Inflationary hot big bang",
+            supporting=(
+                "Horizon/flatness motivation, near-scale-invariant spectrum, "
+                "and detailed CMB fits under slow-roll."
+            ),
+            opposing=(
+                "Inflation has an initial-conditions and multiverse debate; "
+                "the inflaton is unidentified."
+            ),
+            limitations=(
+                "Many viable potentials remain; tensors not yet seen."
+            ),
+        ),
+        CompetingModel(
+            name="Bounce / non-inflationary early universe",
+            supporting=(
+                "Seeks to avoid singular beginnings and can generate "
+                "perturbations in some constructions."
+            ),
+            opposing=(
+                "Must confront instability, anisotropy and detailed CMB "
+                "success of inflation-based fits."
+            ),
+            limitations=(
+                "No consensus bounce model matches the full precision dataset."
+            ),
+        ),
+    ],
+    open_questions=[
+        "Which observable most cleanly separates inflation from bounce "
+        "scenarios?",
+        "Do primordial features or non-Gaussianity favour one camp?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "two_or_more_mainstream_models", True,
+            "Inflation is the default framework; bounce-class alternatives "
+            "remain actively published theoretical programmes.",
+        ),
+        ConditionAssessment(
+            "no_decisive_evidence_yet", True,
+            "CMB success under inflation is strong but not a logical "
+            "elimination of all alternatives.",
+        ),
+        ConditionAssessment(
+            "genuine_scientific_camps", True,
+            "Reviews and dedicated papers document inflation-versus-"
+            "alternative debates over decades.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 5d — eternal inflation / multiverse              🔴 Speculative        #
+# --------------------------------------------------------------------------- #
+eternal_inflation_multiverse = Claim(
+    id="eternal_inflation_multiverse",
+    title=(
+        "Eternal inflation generates a multiverse of pocket universes as "
+        "the correct reading of high-scale inflation"
+    ),
+    status=Status.SPECULATIVE,
+    sources=[
+        Source(
+            label="Guth1981c",
+            url_or_id="doi:10.1103/PhysRevD.23.347",
+            kind="peer-reviewed paper (Phys. Rev. D 23, 347, 1981; "
+                 "inflation framework)",
+        ),
+        Source(
+            label="Planck2018-Xe",
+            url_or_id="arXiv:1807.06211",
+            kind="collaboration result (peer-reviewed, A&A 641, A10, 2020; "
+                 "data constrain models, not multiverse ontology)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Some inflationary dynamics generically lead to eternal "
+                "inflation and a multiverse of causally disconnected "
+                "regions — a theoretical extrapolation beyond what CMB "
+                "data can directly confirm."
+            ),
+            source_ref="Guth1981c",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Precision CMB constraints test inflationary *potentials* "
+                "and spectra; they do not observationally establish a "
+                "multiverse ontology."
+            ),
+            source_ref="Planck2018-Xe",
+        ),
+    ],
+    open_questions=[
+        "Is eternal inflation inevitable in viable high-scale models?",
+        "Are there any empirical signatures of a multiverse?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "not_accepted_by_mainstream", True,
+            "Multiverse readings of inflation are highly debated and not "
+            "established empirical consensus.",
+        ),
+        ConditionAssessment(
+            "philosophical_inference", True,
+            "Much of the multiverse claim extrapolates beyond currently "
+            "testable cosmology into interpretative territory.",
+        ),
+        ConditionAssessment(
+            "pure_theoretical_derivation", True,
+            "The positive case is theoretical dynamics, not a confirmed "
+            "observation of other pocket universes.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
 # Claim 6 — cyclic / bounce replaces big bang            🔴 Speculative        #
 # --------------------------------------------------------------------------- #
 cyclic_or_bounce_replaces_bb = Claim(
@@ -905,10 +1208,10 @@ COSMOLOGY = Topic(
     id="cosmology",
     title="Cosmology",
     summary=(
-        "Universe-scale container (theme: 宇宙), with a deepened H0 cluster. "
-        "🟢 expansion + CMB; 🔵 acceleration; 🟡 H0 umbrella + TRGB/Cepheid "
-        "split; 🟠 SH0ES, CMB+ΛCDM H0, EDE, lensing, sirens, inflation; "
-        "🔴 bounce/cyclic. Complements dark_matter."
+        "Universe-scale container (theme: 宇宙): deepened H0 cluster + "
+        "inflation cluster. 🟢 expansion/CMB; 🔵 acceleration; 🟡 H0 + "
+        "TRGB/Cepheid + inflation-vs-bounce; 🟠 ladders, EDE, lensing, "
+        "sirens, slow-roll, tensors; 🔴 multiverse + bounce-as-replacement."
     ),
     claims=[
         universe_is_expanding,
@@ -922,6 +1225,10 @@ COSMOLOGY = Topic(
         strong_lensing_time_delay_H0,
         standard_sirens_H0,
         cosmic_inflation_early_universe,
+        inflation_slow_roll_planck,
+        primordial_tensors_undetected,
+        inflation_vs_noninflation_alts,
+        eternal_inflation_multiverse,
         cyclic_or_bounce_replaces_bb,
     ],
 )

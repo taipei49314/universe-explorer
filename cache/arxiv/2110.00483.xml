@@ -1,0 +1,419 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/aPFcc+1w2ZSFs7j1f6tvskCFD3Q</id>
+  <title>arXiv Query: search_query=&amp;id_list=2110.00483&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:35:20Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2110.00483" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2110.00483v1</id>
+    <title>BICEP / Keck XIII: Improved Constraints on Primordial Gravitational Waves using Planck, WMAP, and BICEP/Keck Observations through the 2018 Observing Season</title>
+    <updated>2021-10-01T15:32:35Z</updated>
+    <link href="https://arxiv.org/abs/2110.00483v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2110.00483v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present results from an analysis of all data taken by the BICEP2, Keck Array and BICEP3 CMB polarization experiments up to and including the 2018 observing season. We add additional Keck Array observations at 220 GHz and BICEP3 observations at 95 GHz to the previous 95/150/220 GHz data set. The $Q/U$ maps now reach depths of 2.8, 2.8 and 8.8 $μ{\mathrm K}_{cmb}$ arcmin at 95, 150 and 220 GHz respectively over an effective area of $\approx 600$ square degrees at 95 GHz and $\approx 400$ square degrees at 150 &amp; 220 GHz. The 220 GHz maps now achieve a signal-to-noise on polarized dust emission exceeding that of Planck at 353 GHz. We take auto- and cross-spectra between these maps and publicly available WMAP and Planck maps at frequencies from 23 to 353 GHz and evaluate the joint likelihood of the spectra versus a multicomponent model of lensed-$Λ$CDM+$r$+dust+synchrotron+noise. The foreground model has seven parameters, and no longer requires a prior on the frequency spectral index of the dust emission taken from measurements on other regions of the sky. This model is an adequate description of the data at the current noise levels. The likelihood analysis yields the constraint $r_{0.05}&lt;0.036$ at 95% confidence. Running maximum likelihood search on simulations we obtain unbiased results and find that $σ(r)=0.009$. These are the strongest constraints to date on primordial gravitational waves.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-10-01T15:32:35Z</published>
+    <arxiv:comment>22 pages, 24 figures, as published in PRL, data and figures available for download at http://bicepkeck.org</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>Phys. Rev. Lett. 127, 151301 (2021)</arxiv:journal_ref>
+    <author>
+      <name>BICEP/Keck Collaboration</name>
+      <arxiv:affiliation>Cardiff University</arxiv:affiliation>
+    </author>
+    <author>
+      <name> :</name>
+      <arxiv:affiliation>Cardiff University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>P. A. R. Ade</name>
+      <arxiv:affiliation>Cardiff University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Z. Ahmed</name>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Amiri</name>
+      <arxiv:affiliation>University of British Columbia</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. Barkats</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. Basu Thakur</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. Beck</name>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Bischoff</name>
+      <arxiv:affiliation>University of Cincinnati</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. J. Bock</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+      <arxiv:affiliation>NASA JPL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. Boenish</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. Bullock</name>
+      <arxiv:affiliation>Minnesota Institute for Astrophysics</arxiv:affiliation>
+    </author>
+    <author>
+      <name>V. Buza</name>
+      <arxiv:affiliation>University of Chicago</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. R. Cheshire</name>
+      <arxiv:affiliation>Minnesota Institute for Astrophysics</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Connors</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Cornelison</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Crumrine</name>
+      <arxiv:affiliation>University of Minnesota</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Cukierman</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. V. Denison</name>
+      <arxiv:affiliation>NIST</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Dierickx</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>L. Duband</name>
+      <arxiv:affiliation>SBT Grenoble</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Eiben</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Fatigoni</name>
+      <arxiv:affiliation>University of British Columbia</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. P. Filippini</name>
+      <arxiv:affiliation>University of Illinois at Urbana-Champaign</arxiv:affiliation>
+      <arxiv:affiliation>University of Illinois at Urbana-Champaign</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Fliescher</name>
+      <arxiv:affiliation>University of Minnesota</arxiv:affiliation>
+    </author>
+    <author>
+      <name>N. Goeckner-Wald</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. C. Goldfinger</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Grayson</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>P. Grimes</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>G. Halal</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>G. Hall</name>
+      <arxiv:affiliation>University of Minnesota</arxiv:affiliation>
+    </author>
+    <author>
+      <name>M. Halpern</name>
+      <arxiv:affiliation>University of British Columbia</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. Hand</name>
+      <arxiv:affiliation>University of Cincinnati</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Harrison</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Henderson</name>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. R. Hildebrandt</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+      <arxiv:affiliation>NASA JPL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>G. C. Hilton</name>
+      <arxiv:affiliation>NIST</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Hubmayr</name>
+      <arxiv:affiliation>NIST</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. Hui</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>K. D. Irwin</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+      <arxiv:affiliation>NIST</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Kang</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>K. S. Karkare</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+      <arxiv:affiliation>University of Chicago</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. Karpel</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Kefeli</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. A. Kernasovskiy</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. M. Kovac</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+      <arxiv:affiliation>Harvard University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. L. Kuo</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>K. Lau</name>
+      <arxiv:affiliation>University of Minnesota</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. M. Leitch</name>
+      <arxiv:affiliation>University of Chicago</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Lennox</name>
+      <arxiv:affiliation>University of Illinois at Urbana-Champaign</arxiv:affiliation>
+    </author>
+    <author>
+      <name>K. G. Megerian</name>
+      <arxiv:affiliation>NASA JPL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>L. Minutolo</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>L. Moncelsi</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Y. Nakato</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>T. Namikawa</name>
+      <arxiv:affiliation>The University of Tokyo</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. T. Nguyen</name>
+      <arxiv:affiliation>NASA JPL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. O'Brient</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+      <arxiv:affiliation>NASA JPL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. W. Ogburn</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Palladino</name>
+      <arxiv:affiliation>University of Cincinnati</arxiv:affiliation>
+    </author>
+    <author>
+      <name>T. Prouve</name>
+      <arxiv:affiliation>SBT Grenoble</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Pryke</name>
+      <arxiv:affiliation>University of Minnesota</arxiv:affiliation>
+      <arxiv:affiliation>Minnesota Institute for Astrophysics</arxiv:affiliation>
+    </author>
+    <author>
+      <name>B. Racine</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+      <arxiv:affiliation>Aix-Marseille Universite</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. D. Reintsema</name>
+      <arxiv:affiliation>NIST</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Richter</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Schillaci</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>B. L. Schmitt</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. Schwarz</name>
+      <arxiv:affiliation>University of Minnesota</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. D. Sheehy</name>
+      <arxiv:affiliation>Brookhaven National Laboratory</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Soliman</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>T. St Germaine</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+      <arxiv:affiliation>Harvard University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>B. Steinbach</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>R. V. Sudiwala</name>
+      <arxiv:affiliation>Cardiff University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>G. P. Teply</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>K. L. Thompson</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. E. Tolan</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Tucker</name>
+      <arxiv:affiliation>Cardiff University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Turner</name>
+      <arxiv:affiliation>NASA JPL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Umilta</name>
+      <arxiv:affiliation>University of Cincinnati</arxiv:affiliation>
+      <arxiv:affiliation>University of Illinois at Urbana-Champaign</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Verges</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. G. Vieregg</name>
+      <arxiv:affiliation>University of Chicago</arxiv:affiliation>
+      <arxiv:affiliation>University of Chicago</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. Wandui</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. C. Weber</name>
+      <arxiv:affiliation>NASA JPL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>D. V. Wiebe</name>
+      <arxiv:affiliation>University of British Columbia</arxiv:affiliation>
+    </author>
+    <author>
+      <name>J. Willmert</name>
+      <arxiv:affiliation>University of Minnesota</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. L. Wong</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+      <arxiv:affiliation>Harvard University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>W. L. K. Wu</name>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>H. Yang</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>K. W. Yoon</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. Young</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+      <arxiv:affiliation>KIPAC/SLAC</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Yu</name>
+      <arxiv:affiliation>Stanford University</arxiv:affiliation>
+    </author>
+    <author>
+      <name>L. Zeng</name>
+      <arxiv:affiliation>Harvard/CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>C. Zhang</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <author>
+      <name>S. Zhang</name>
+      <arxiv:affiliation>Caltech</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.127.151301</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.127.151301" title="doi"/>
+  </entry>
+</feed>

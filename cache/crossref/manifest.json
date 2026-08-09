@@ -277,5 +277,50 @@
     "title": "Isotopic evidence for a terminal lunar cataclysm",
     "container": "Earth and Planetary Science Letters",
     "issued": 1974
+  },
+  "10.1126/science.1123013": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1123013",
+    "retrieved_at": "2026-08-09T12:35:23Z",
+    "cache_file": "10-1126_science-1123013.json",
+    "sha256": "3abf8f19cad633f7aa1c98200e9fadf8b23bb34e0957325477ad0b2ce8a6b7ff",
+    "title": "Cassini Observes the Active South Pole of Enceladus",
+    "container": "Science",
+    "issued": 2006
+  },
+  "10.1126/science.1219631": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1219631",
+    "retrieved_at": "2026-08-09T12:35:24Z",
+    "cache_file": "10-1126_science-1219631.json",
+    "sha256": "e97a85b262a68a2a952809d84fde0297d8c9a9094c83ec82890aafd428da90b7",
+    "title": "The Tides of Titan",
+    "container": "Science",
+    "issued": 2012
+  },
+  "10.1038/27394": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2F27394",
+    "retrieved_at": "2026-08-09T12:36:12Z",
+    "cache_file": "10-1038_27394.json",
+    "sha256": "bf4cb436e8ffd64dde587fc917a9fd0bfe4354ca9270259ec67b07ccca2fa4b5",
+    "title": "Induced magnetic fields as evidence for subsurface oceans in Europa and Callisto",
+    "container": "Nature",
+    "issued": 1998
+  },
+  "10.1038/s41586-018-0246-4": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2Fs41586-018-0246-4",
+    "retrieved_at": "2026-08-09T12:36:14Z",
+    "cache_file": "10-1038_s41586-018-0246-4.json",
+    "sha256": "69f6d764a47dd9ae51e8b582a02e8c3fd24871a1deff36e89bdbd0d0942fbd2c",
+    "title": "Macromolecular organic compounds from the depths of Enceladus",
+    "container": "Nature",
+    "issued": 2018
+  },
+  "10.1016/j.icarus.2019.03.003": {
+    "endpoint": "https://api.crossref.org/works/10.1016%2Fj.icarus.2019.03.003",
+    "retrieved_at": "2026-08-09T12:36:15Z",
+    "cache_file": "10-1016_j-icarus-2019-03-003.json",
+    "sha256": "4da7404ced7472be93ec61f9f0b09daa19056009df5d4e4ac9f4360ddf29f8cd",
+    "title": "Titan's gravity field and interior structure after Cassini",
+    "container": "Icarus",
+    "issued": 2019
   }
 }

@@ -40,24 +40,35 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
 | 🟠 | `early_dark_energy_H0_fix` | Proposed early-universe fix |
 | 🟠 | `strong_lensing_time_delay_H0` | Geometric H0LiCOW/TDCOSMO |
 | 🟠 | `standard_sirens_H0` | GW170817-style sirens |
-| 🟠 | `cosmic_inflation_early_universe` | Inflation programme |
-| 🔴 | `cyclic_or_bounce_replaces_bb` | Bounce / cyclic alternatives |
+| 🟠 | `cosmic_inflation_early_universe` | Inflation umbrella |
+| 🟠 | `inflation_slow_roll_planck` | Planck slow-roll preference |
+| 🟠 | `primordial_tensors_undetected` | B-mode / r upper limits |
+| 🟡 | `inflation_vs_noninflation_alts` | Inflation vs bounce-class alts |
+| 🔴 | `eternal_inflation_multiverse` | Multiverse reading |
+| 🔴 | `cyclic_or_bounce_replaces_bb` | Bounce as replacement |
 
 **H0 reading order:** umbrella 🟡 → two poles (SH0ES / CMB+ΛCDM) → local split (TRGB vs Cepheid) → relief routes (EDE, lensing, sirens).
 
 **Boundary with dark_matter:** cosmology owns expansion / CMB / H0 / inflation; dark_matter owns mass discrepancy, particle candidates, and lab channels. Cross-link H0 ↔ S8 in prose only.
 
-## Planets claim map (new)
+## Planets claim map (incl. ocean-worlds cluster)
 
 | Light | Claim id |
 |:-----:|----------|
 | 🟢 | `solar_system_age` |
 | 🔵 | `moon_giant_impact` |
 | 🟡 | `late_heavy_bombardment` |
-| 🟠 | `ocean_worlds_icy_moons` |
+| 🟠 | `ocean_worlds_icy_moons` (umbrella) |
+| 🟠 | `europa_induced_field_ocean` |
+| 🟠 | `enceladus_plume_global_ocean` |
+| 🟠 | `titan_subsurface_ocean` |
+| 🟠 | `enceladus_plume_organics` |
+| 🔴 | `ocean_world_life_today` |
 | 🔴 | `mars_sustained_surface_habitability_now` |
 
 **Boundary with exoplanets:** `planets` = solar system + formation chronology; `exoplanets` = other stars (existence, Planet Nine, JWST atmospheres, biosignature claims).
+
+**H0 Discussion prose:** `docs/paper/h0-discussion.md`
 
 ## Paper / narrative hooks
 

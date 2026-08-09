@@ -128,16 +128,15 @@ TOPIC_ZH = {
     },
     "cosmology": {
         "title": "宇宙學",
-        "summary": ("主題「宇宙」+ 加深的 H0 叢集。🟢 膨脹與 CMB;🔵 加速;"
-                    "🟡 H0 總張力與 TRGB/造父分裂;🟠 SH0ES、CMB+ΛCDM H0、"
-                    "早期暗能量、強透鏡、標準汽笛、暴脹;🔴 反彈/循環。"
-                    "與暗物質分工:此處管膨脹率張力,彼處管質量缺失與粒子。"),
+        "summary": ("主題「宇宙」:H0 叢集 + 暴脹叢集。🟢 膨脹/CMB;🔵 加速;"
+                    "🟡 H0、TRGB/造父、暴脹 vs 反彈;🟠 階梯/EDE/透鏡/汽笛/"
+                    "慢滾/張量;🔴 多重宇宙與反彈取代。"),
     },
     "planets": {
         "title": "行星",
-        "summary": ("主題「星球」:太陽系與形成史 —— 補系外行星(其他恆星)。"
-                    "🟢 年齡地基;🔵 大碰撞成月;🟡 晚期重轟擊;"
-                    "🟠 冰衛星海洋世界;🔴 今日火星表面廣適居(主流不接受)。"),
+        "summary": ("主題「星球」+ 加深海洋世界叢集。🟢 年齡;🔵 成月;"
+                    "🟡 晚期重轟擊;🟠 總覽/木衛二/土衛二/土衛六/羽流有機物;"
+                    "🔴 冰衛星現存生命與今日火星表面適居(主流不接受)。"),
     },
 }
 
@@ -904,6 +903,95 @@ CLAIMS = {
             "反彈或其他非暴脹早期宇宙模型是否可行?",
         ],
     },
+    "inflation_slow_roll_planck": {
+        "title": "CMB 資料偏好簡單慢滾暴脹勢,並約束標量譜指數",
+        "reasons": {
+            "rapidly_growing_literature":
+                "逐模型 Planck 約束與未來 CMB 任務預估形成大量文獻。",
+            "no_consensus_formed_yet":
+                "偏好一類慢滾模型,而非唯一通膨子。",
+            "insufficient_observation":
+                "ns 與 r 上限無法鑑定單一微物理模型。",
+        },
+        "evidence": [
+            "Planck 對原初譜的分析報告 ns < 1,並緊緊限制跑動與張量,"
+            "相對許多大場模型更偏好平台型慢滾。",
+            "慢滾暴脹提供標量場產生近尺度不變譜的動力學框架。",
+        ],
+        "open_questions": [
+            "哪個具體勢(若有)能在下一代 CMB-S4/LiteBIRD 約束下存活?",
+            "譜指數跑動是否可偵測?",
+        ],
+    },
+    "primordial_tensors_undetected": {
+        "title": "原初重力波 B 模仍未偵測到,並限制張量–標量比",
+        "reasons": {
+            "rapidly_growing_literature":
+                "B 模實驗與前景清理方法是主要持續努力。",
+            "no_consensus_formed_yet":
+                "上限大綱穩健;尚未確立正向原初偵測。",
+            "insufficient_observation":
+                "無確認的原初 B 模訊號;只有 r 的上限。",
+        },
+        "evidence": [
+            "BICEP/Keck 度尺度偏振搜尋在塵埃建模後未報告顯著原初 B 模過剩,"
+            "給出張量–標量比 r 的領先上限。",
+            "Planck 溫度與偏振組合同樣限制 r,並在與 BICEP/Keck 聯合時約束暴脹模型空間。",
+        ],
+        "open_questions": [
+            "下一代 B 模實驗會否偵測到 r > 0?",
+            "r 須多低才排除大類高尺度暴脹?",
+        ],
+    },
+    "inflation_vs_noninflation_alts": {
+        "title": "早期宇宙由暴脹描述,還是由反彈等非暴脹替代描述",
+        "reasons": {
+            "two_or_more_mainstream_models":
+                "暴脹是預設框架;反彈類替代仍是活躍發表的理論綱領。",
+            "no_decisive_evidence_yet":
+                "暴脹下的 CMB 成功很強,但不是對所有替代的邏輯消除。",
+            "genuine_scientific_camps":
+                "綜述與專文記錄數十年暴脹 vs 替代的辯論。",
+        },
+        "evidence": [
+            "CMB 約束通常在擬合 ns 並限制 r 的慢滾暴脹情境下詮釋,使暴脹成為工作標準。",
+            "反彈及相關非奇異情境被發展為替代,旨在不以準 de Sitter 暴脹相取代或先於熱大爆炸。",
+        ],
+        "competing": [
+            {"name": "暴脹熱大爆炸",
+             "for": "視界/平坦性動機、近尺度不變譜、慢滾下詳細 CMB 擬合。",
+             "against": "暴脹有初始條件與多重宇宙辯論;通膨子未鑑定。",
+             "limits": "許多可行勢仍在;張量尚未見到。"},
+            {"name": "反彈/非暴脹早期宇宙",
+             "for": "試圖避免奇異開端,並在某些建構中產生擾動。",
+             "against": "須面對不穩定性、各向異性與暴脹擬合的詳細 CMB 成功。",
+             "limits": "沒有共識反彈模型匹配全部精密資料集。"},
+        ],
+        "open_questions": [
+            "哪個可觀測量最乾淨區分暴脹與反彈?",
+            "原初特徵或非高斯性是否偏好一派?",
+        ],
+    },
+    "eternal_inflation_multiverse": {
+        "title": "永恆暴脹產生口袋宇宙的多重宇宙,是高尺度暴脹的正確讀法",
+        "reasons": {
+            "not_accepted_by_mainstream":
+                "對暴脹的多重宇宙讀法高度爭議,非已確立的經驗共識。",
+            "philosophical_inference":
+                "多重宇宙宣稱多半外推到目前可檢驗宇宙學之外的詮釋領域。",
+            "pure_theoretical_derivation":
+                "正面論述是理論動力學,非對其他口袋宇宙的確認觀測。",
+        },
+        "evidence": [
+            "某些暴脹動力學一般性地導致永恆暴脹與因果斷開區域的多重宇宙 ——"
+            "這是超出 CMB 資料能直接確認的理論外推。",
+            "精密 CMB 約束檢驗暴脹*勢*與譜;它們並不觀測上確立多重宇宙本體論。",
+        ],
+        "open_questions": [
+            "在可行高尺度模型中永恆暴脹是否不可避免?",
+            "多重宇宙是否有任何經驗印記?",
+        ],
+    },
     "cyclic_or_bounce_replaces_bb": {
         "title": "循環或反彈宇宙學取代熱大爆炸奇點,成為正確的早期宇宙描述",
         "reasons": {
@@ -1013,6 +1101,103 @@ CLAIMS = {
         "open_questions": [
             "哪些衛星的海洋與岩石接觸足夠久以產生有趣化學?",
             "未來任務能否在羽流或冰中偵測 unambiguously 的生物訊號?",
+        ],
+    },
+    "europa_induced_field_ocean": {
+        "title": "木衛二擁有由感應磁場推論的全球含鹽地下海洋",
+        "reasons": {
+            "rapidly_growing_literature":
+                "Europa Clipper 與 JUICE 持續推動地球物理與行星科學文獻。",
+            "no_consensus_formed_yet":
+                "地下海洋是領先詮釋;細節性質仍依賴模型。",
+            "insufficient_observation":
+                "無原位海洋樣品;證據是磁場與遙測。",
+        },
+        "evidence": [
+            "伽利略磁力計在木衛二測得時變感應場,符合全球導電殼,"
+            "解讀為冰下含鹽液態水海洋。",
+            "更早的飛掠已顯示需要近表面導電層的感應響應。",
+        ],
+        "open_questions": [
+            "海洋鹽度、厚度與冰殼厚度為何?",
+            "海洋是否接觸岩石以允許熱液化學?",
+        ],
+    },
+    "enceladus_plume_global_ocean": {
+        "title": "土衛二從全球地下海洋噴出水富集羽流",
+        "reasons": {
+            "rapidly_growing_literature":
+                "卡西尼遺產分析與任務構想維持大量文獻。",
+            "no_consensus_formed_yet":
+                "全球海洋加羽流是領先圖像;細節管路仍有辯論。",
+            "insufficient_observation":
+                "無登陸或送回的海洋樣品;羽流化學是代理。",
+        },
+        "evidence": [
+            "卡西尼成像並取樣土衛二南極地形噴出的水富集噴流,確立向太空的活躍噴發。",
+            "測得的物理天平動要求冰殼與全球液層解耦,把羽流源區連到整月海洋而非僅局部海。",
+        ],
+        "open_questions": [
+            "南極下海洋–岩石交互有多連續?",
+            "羽流物質有多少是新鮮海洋噴霧、多少是冰風化層?",
+        ],
+    },
+    "titan_subsurface_ocean": {
+        "title": "土衛六冰殼下擁有深層地下水海洋",
+        "reasons": {
+            "rapidly_growing_literature":
+                "Dragonfly 時代的土衛六科學使內部海洋模型保持活躍。",
+            "no_consensus_formed_yet":
+                "地下海洋被廣泛偏好;厚度與組成仍不確定。",
+            "insufficient_observation":
+                "推論是地球物理;無直接海洋通道。",
+        },
+        "evidence": [
+            "卡西尼對土衛六潮汐響應的重力測量暗示解耦殼層與高密度流體層,"
+            "解讀為地下海洋。",
+            "完整卡西尼資料集的更新重力場解精煉內部結構,並與冰殼下全球深海一致。",
+        ],
+        "open_questions": [
+            "海洋深度、鹽度與矽酸鹽接觸如何?",
+            "表面有機物如何耦合到任何深層水化學?",
+        ],
+    },
+    "enceladus_plume_organics": {
+        "title": "土衛二羽流含來自內部水環境的複雜有機分子",
+        "reasons": {
+            "rapidly_growing_literature":
+                "羽流化學論文仍是高產量土衛二主題。",
+            "no_consensus_formed_yet":
+                "已報告複雜有機物;生物學詮釋尚未確立。",
+            "insufficient_observation":
+                "冰粒譜不是送回的海洋樣品;途徑仍依賴模型。",
+        },
+        "evidence": [
+            "卡西尼宇宙塵分析器對羽流冰粒的質譜顯示大分子有機物,"
+            "符合與液態水接觸的複雜有機庫。",
+            "羽流本身是觀測到的、持續從南極裂縫噴出的水富集物質,提供被取樣的冰粒。",
+        ],
+        "open_questions": [
+            "有機物是熱液、原初,還是兩者皆有?",
+            "是否包含 unambiguous 生物訊號,或僅有非生物複雜性?",
+        ],
+    },
+    "ocean_world_life_today": {
+        "title": "至少一個冰衛星地下海洋中今日存在現存生命",
+        "reasons": {
+            "not_accepted_by_mainstream":
+                "領域不接受任何冰衛星現存生命偵測;有機物與海洋僅動機搜尋。",
+            "no_observational_evidence":
+                "已錄證據支持海洋與有機物,不支持生物體。",
+        },
+        "evidence": [
+            "土衛二羽流冰粒中的複雜有機物展示海洋世界環境中的有趣化學,"
+            "但不構成對活體生物的偵測。",
+            "地下海洋的地球物理證據確立適居*潛力*,而非生命存在。",
+        ],
+        "open_questions": [
+            "羽流或冰殼中什麼測量可算決定性生物訊號?",
+            "如何排除非生物有機複雜性?",
         ],
     },
     "mars_sustained_surface_habitability_now": {
