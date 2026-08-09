@@ -1,16 +1,23 @@
 """Cosmology — universe-scale domain (complements dark_matter / black_hole).
 
-Paper-grade seed map for the expanded theme 「宇宙」. Same schema and courts
-as every other topic. Do not conflate expansion (🟢) with particle dark matter
-(see dark_matter domain) or with the still-open nature of dark energy.
+Paper-grade map for theme 「宇宙」, with a deepened **H0 cluster**.
+Same schema and courts as every other topic. Do not conflate expansion (🟢)
+with particle dark matter (see dark_matter) or settle H0 by tone alone.
 
-Expected lights:
-  universe_is_expanding              -> 🟢 Established
-  cmb_hot_big_bang                   -> 🟢 Established
-  accelerated_expansion              -> 🔵 Strong
-  H0_tension_local_vs_cmb            -> 🟡 Competing
-  cosmic_inflation_early_universe    -> 🟠 Frontier
-  cyclic_or_bounce_replaces_bb       -> 🔴 Speculative
+H0 cluster (read together):
+  H0_tension_local_vs_cmb     🟡 umbrella competition (local ladder vs CMB+ΛCDM)
+  shoes_local_H0_high         🟠 Cepheid–SN local programme
+  cmb_lcdm_implies_low_H0     🟠 early-universe inference under ΛCDM
+  trgb_vs_cepheid_local_H0    🟡 calibrator split inside the local ladder
+  early_dark_energy_H0_fix  🟠 proposed early-universe relief
+  strong_lensing_time_delay_H0 🟠 geometric time-delay route
+  standard_sirens_H0          🟠 GW multi-messenger route
+
+Other claims:
+  universe_is_expanding / cmb_hot_big_bang 🟢
+  accelerated_expansion 🔵
+  cosmic_inflation_early_universe 🟠
+  cyclic_or_bounce_replaces_bb 🔴
 """
 
 from __future__ import annotations
@@ -312,6 +319,7 @@ H0_tension_local_vs_cmb = Claim(
         "Will JWST Cepheid/TRGB work remove or harden the local H0 value?",
         "Which early-universe extensions survive joint BAO+CMB+SNe fits?",
         "Is the H0 tension physically linked to the S8 tension, or separate?",
+        "Do strong-lensing and standard-siren routes converge with either pole?",
     ],
     status_reason=[
         ConditionAssessment(
@@ -328,6 +336,447 @@ H0_tension_local_vs_cmb = Claim(
             "genuine_scientific_camps", True,
             "Cosmology reviews and collaboration papers document a multi-year "
             "split — not an AI-invented dichotomy.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 4a — SH0ES local ladder                          🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+shoes_local_H0_high = Claim(
+    id="shoes_local_H0_high",
+    title=(
+        "Cepheid-calibrated Type Ia supernova ladders measure a high local "
+        "Hubble constant near 73 km s^-1 Mpc^-1"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Riess2022b",
+            url_or_id="arXiv:2112.04510",
+            kind="peer-reviewed paper (ApJL 934, L7, 2022; SH0ES)",
+        ),
+        Source(
+            label="Verde2019",
+            url_or_id="arXiv:1907.10625",
+            kind="peer-reviewed paper (Nat. Astron. 3, 891, 2019; H0 tension "
+                 "review)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "The SH0ES programme builds a geometric anchor → Cepheid → "
+                "SN Ia distance ladder and reports a local H0 substantially "
+                "above the Planck ΛCDM inference, with detailed systematic "
+                "error budgets."
+            ),
+            source_ref="Riess2022b",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Community reviews place Cepheid–SN local determinations "
+                "among the highest-precision late-universe H0 routes and "
+                "document their persistent offset from early-universe "
+                "inferences."
+            ),
+            source_ref="Verde2019",
+        ),
+    ],
+    open_questions=[
+        "How much do metallicity, crowding and SN Ia host-mass steps still "
+        "shift the SH0ES central value?",
+        "Will JWST Cepheid photometry change the ladder zero-point?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "SH0ES updates, JWST Cepheid papers and systematic reanalyses "
+            "form a fast-moving literature.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "The local high-H0 result is highly cited but not universally "
+            "accepted as free of residual systematics.",
+        ),
+        ConditionAssessment(
+            "insufficient_observation", True,
+            "Independent geometric anchors and alternate calibrators still "
+            "limit a single closed local value.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 4b — CMB+ΛCDM low H0                             🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+cmb_lcdm_implies_low_H0 = Claim(
+    id="cmb_lcdm_implies_low_H0",
+    title=(
+        "Under flat ΛCDM, CMB acoustic-scale data imply a Hubble constant "
+        "near 67–68 km s^-1 Mpc^-1"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Planck2018-VI-H0b",
+            url_or_id="arXiv:1807.06209",
+            kind="collaboration result (peer-reviewed, A&A 641, A6, 2020)",
+        ),
+        Source(
+            label="Verde2019b",
+            url_or_id="arXiv:1907.10625",
+            kind="peer-reviewed paper (Nat. Astron. 3, 891, 2019)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Planck baseline fits within flat ΛCDM calibrate the sound "
+                "horizon and infer H0 ≈ 67.4 km s^-1 Mpc^-1, tightly coupled "
+                "to other early-universe parameters."
+            ),
+            source_ref="Planck2018-VI-H0b",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Reviews of the H0 tension treat the CMB+ΛCDM route as the "
+                "standard early-universe pole against which late-universe "
+                "ladders are compared."
+            ),
+            source_ref="Verde2019b",
+        ),
+    ],
+    open_questions=[
+        "How model-dependent is the low H0 once early dark energy or Neff "
+        "extensions are allowed?",
+        "Do ground-based CMB experiments confirm Planck's acoustic-scale "
+        "H0 inference?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "CMB parameter papers and tension reviews continually update "
+            "the early-universe H0 pole.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "The inference is standard *inside* ΛCDM; whether ΛCDM is the "
+            "correct model for H0 is the open question.",
+        ),
+        ConditionAssessment(
+            "insufficient_observation", True,
+            "H0 is not measured directly from the CMB; it is model-inferred "
+            "from the angular scale of the sound horizon.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 4c — TRGB vs Cepheid local calibrators           🟡 Competing          #
+# --------------------------------------------------------------------------- #
+trgb_vs_cepheid_local_H0 = Claim(
+    id="trgb_vs_cepheid_local_H0",
+    title=(
+        "Tip-of-the-red-giant-branch and Cepheid calibrations of the local "
+        "distance ladder disagree on H0"
+    ),
+    status=Status.COMPETING,
+    sources=[
+        Source(
+            label="Freedman2019",
+            url_or_id="arXiv:1907.05922",
+            kind="peer-reviewed paper (ApJ 882, 34, 2019; CCHP TRGB H0)",
+        ),
+        Source(
+            label="Riess2022c",
+            url_or_id="arXiv:2112.04510",
+            kind="peer-reviewed paper (ApJL 934, L7, 2022; SH0ES Cepheids)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "The Carnegie–Chicago Hubble Programme uses TRGB stars as "
+                "an alternate Population II calibrator and reports a local "
+                "H0 lower than SH0ES Cepheid results, reducing tension with "
+                "Planck in some analyses."
+            ),
+            source_ref="Freedman2019",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "SH0ES Cepheid-based ladders continue to report higher local "
+                "H0 with expanded samples and JWST-era cross-checks, "
+                "sustaining a calibrator-level disagreement inside the "
+                "late universe."
+            ),
+            source_ref="Riess2022c",
+        ),
+    ],
+    competing_models=[
+        CompetingModel(
+            name="Cepheid ladder (SH0ES-like) is closer to truth",
+            supporting=(
+                "Large Cepheid–SN samples, multiple anchors and detailed "
+                "systematic campaigns favour a high local H0."
+            ),
+            opposing=(
+                "Crowding, metallicity and photometric zero-points remain "
+                "contested systematics."
+            ),
+            limitations=(
+                "Depends on understanding of massive-star photometry in "
+                "crowded fields."
+            ),
+        ),
+        CompetingModel(
+            name="TRGB ladder (CCHP-like) is closer to truth",
+            supporting=(
+                "TRGB is a Population II standard candle less tied to young "
+                "star-forming regions; some TRGB values sit nearer CMB+ΛCDM."
+            ),
+            opposing=(
+                "TRGB tip measurement, extinction and sample selection have "
+                "their own systematics; not all TRGB analyses agree."
+            ),
+            limitations=(
+                "Smaller SN calibrator samples than the Cepheid route in "
+                "some releases."
+            ),
+        ),
+    ],
+    open_questions=[
+        "Will JWST resolve Cepheid crowding enough to end the split?",
+        "Can masers, eclipsing binaries and TRGB be forced onto one "
+        "zero-point?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "two_or_more_mainstream_models", True,
+            "Cepheid- and TRGB-led local H0 programmes are both actively "
+            "published at high precision.",
+        ),
+        ConditionAssessment(
+            "no_decisive_evidence_yet", True,
+            "No community consensus has selected a single local calibrator "
+            "hierarchy.",
+        ),
+        ConditionAssessment(
+            "genuine_scientific_camps", True,
+            "SH0ES vs CCHP and related exchanges document a real split in "
+            "the distance-ladder community.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 4d — early dark energy as H0 relief              🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+early_dark_energy_H0_fix = Claim(
+    id="early_dark_energy_H0_fix",
+    title=(
+        "An early dark-energy component before recombination can raise the "
+        "CMB-inferred Hubble constant toward local values"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Poulin2019",
+            url_or_id="arXiv:1811.04083",
+            kind="peer-reviewed paper (Phys. Rev. Lett. 122, 221301, 2019; "
+                 "early dark energy)",
+        ),
+        Source(
+            label="Verde2019c",
+            url_or_id="arXiv:1907.10625",
+            kind="peer-reviewed paper (Nat. Astron. 3, 891, 2019)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Early dark energy (EDE) models inject extra energy density "
+                "before recombination, shrinking the sound horizon so that "
+                "CMB data accommodate a higher H0 while attempting to "
+                "preserve acoustic-peak fits."
+            ),
+            source_ref="Poulin2019",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Tension reviews list EDE and related early-universe "
+                "extensions among the leading *proposed* resolutions, while "
+                "noting residual conflicts with large-scale structure or "
+                "other datasets in many implementations."
+            ),
+            source_ref="Verde2019c",
+        ),
+    ],
+    open_questions=[
+        "Can EDE fit Planck+BAO+SNe without worsening S8 or other tensions?",
+        "Is there a microphysical EDE candidate tied to particle physics?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "EDE and early-universe extension papers proliferated after the "
+            "H0 tension intensified.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "EDE is a leading proposal, not an established resolution.",
+        ),
+        ConditionAssessment(
+            "insufficient_observation", True,
+            "No unique EDE signature has been confirmed; constraints are "
+            "from global fits, not direct detection of a new component.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 4e — strong-lensing time-delay H0                🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+strong_lensing_time_delay_H0 = Claim(
+    id="strong_lensing_time_delay_H0",
+    title=(
+        "Time delays in strongly lensed quasars provide a geometric Hubble "
+        "constant independent of the traditional distance ladder"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Wong2020",
+            url_or_id="arXiv:1907.04869",
+            kind="peer-reviewed paper (MNRAS 498, 1420, 2020; H0LiCOW)",
+        ),
+        Source(
+            label="Verde2019d",
+            url_or_id="arXiv:1907.10625",
+            kind="peer-reviewed paper (Nat. Astron. 3, 891, 2019)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "The H0LiCOW collaboration combines lensed-quasar time delays "
+                "with mass models of the lens galaxies to infer H0, reporting "
+                "values that have often sat closer to local ladders than to "
+                "Planck ΛCDM — with mass-modelling systematics under scrutiny."
+            ),
+            source_ref="Wong2020",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "H0 tension reviews treat time-delay strong lensing as a "
+                "key one-step geometric method complementary to Cepheids "
+                "and the CMB."
+            ),
+            source_ref="Verde2019d",
+        ),
+    ],
+    open_questions=[
+        "How much do lens mass-sheet degeneracies still shift H0?",
+        "Will larger TDCOSMO samples pull toward the local or CMB pole?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "H0LiCOW/TDCOSMO and related lensing-H0 papers form an active "
+            "subfield.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "Time-delay H0 is competitive but systematics-limited; not a "
+            "sole arbiter of the tension.",
+        ),
+        ConditionAssessment(
+            "insufficient_sample", True,
+            "The number of golden lenses with exquisite models remains "
+            "modest.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 4f — standard sirens                             🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+standard_sirens_H0 = Claim(
+    id="standard_sirens_H0",
+    title=(
+        "Gravitational-wave standard sirens can measure H0 without a "
+        "classical distance ladder"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Abbott2017-H0",
+            url_or_id="arXiv:1710.05835",
+            kind="collaboration result (peer-reviewed, Nature 551, 85, 2017; "
+                 "GW170817 H0)",
+        ),
+        Source(
+            label="Verde2019e",
+            url_or_id="arXiv:1907.10625",
+            kind="peer-reviewed paper (Nat. Astron. 3, 891, 2019)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "The binary neutron-star merger GW170817 with an "
+                "electromagnetic counterpart provided a luminosity distance "
+                "from the gravitational-wave signal and a redshift from the "
+                "host, yielding a first standard-siren H0 constraint."
+            ),
+            source_ref="Abbott2017-H0",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Reviews highlight standard sirens as a maturing third route "
+                "to H0 whose error bars will shrink with the gravitational-wave "
+                "event rate — still too wide to end the tension alone."
+            ),
+            source_ref="Verde2019e",
+        ),
+    ],
+    open_questions=[
+        "How many bright sirens are needed to match SH0ES or Planck "
+        "precision?",
+        "Can dark sirens with statistical host redshifts become competitive?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "Post-GW170817 siren cosmology is a rapidly growing literature.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "Sirens are established *as a method*; they have not yet "
+            "delivered a tension-resolving H0.",
+        ),
+        ConditionAssessment(
+            "insufficient_sample", True,
+            "Bright siren events remain rare; current H0 posteriors are broad.",
         ),
     ],
     status_history=[],
@@ -456,16 +905,22 @@ COSMOLOGY = Topic(
     id="cosmology",
     title="Cosmology",
     summary=(
-        "Universe-scale container (theme: 宇宙). No topic light. Shape: "
-        "🟢 expansion + CMB bedrock; 🔵 accelerated expansion; 🟡 H0 tension; "
-        "🟠 inflation; 🔴 bounce/cyclic alternatives. Complements dark_matter "
-        "without duplicating particle identity claims."
+        "Universe-scale container (theme: 宇宙), with a deepened H0 cluster. "
+        "🟢 expansion + CMB; 🔵 acceleration; 🟡 H0 umbrella + TRGB/Cepheid "
+        "split; 🟠 SH0ES, CMB+ΛCDM H0, EDE, lensing, sirens, inflation; "
+        "🔴 bounce/cyclic. Complements dark_matter."
     ),
     claims=[
         universe_is_expanding,
         cmb_hot_big_bang,
         accelerated_expansion,
         H0_tension_local_vs_cmb,
+        shoes_local_H0_high,
+        cmb_lcdm_implies_low_H0,
+        trgb_vs_cepheid_local_H0,
+        early_dark_energy_H0_fix,
+        strong_lensing_time_delay_H0,
+        standard_sirens_H0,
         cosmic_inflation_early_universe,
         cyclic_or_bounce_replaces_bb,
     ],

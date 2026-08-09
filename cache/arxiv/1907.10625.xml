@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/f8EDrhZrx+FySMm9lJeL36VCeoc</id>
+  <title>arXiv Query: search_query=&amp;id_list=1907.10625&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:29:38Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1907.10625" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1907.10625v1</id>
+    <title>Tensions between the Early and the Late Universe</title>
+    <updated>2019-07-24T18:00:09Z</updated>
+    <link href="https://arxiv.org/abs/1907.10625v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1907.10625v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The standard cosmological model successfully describes many observations from widely different epochs of the Universe, from primordial nucleosynthesis to the accelerating expansion of the present day. However, as the basic cosmological parameters of the model are being determined with increasing and unprecedented precision, it is not guaranteed that the same model will fit more precise observations from widely different cosmic epochs. Discrepancies developing between observations at early and late cosmological time may require an expansion of the standard model, and may lead to the discovery of new physics. The workshop "Tensions between the Early and the Late Universe" was held at the Kavli Institute for Theoretical Physics on July 15-17 2019 (More details of the workshop (including on-line presentations) are given at the website: https://www.kitp.ucsb.edu/activities/enervac-c19) to evaluate increasing evidence for these discrepancies, primarily in the value of the Hubble constant as well as ideas recently proposed to explain this tension. Multiple new observational results for the Hubble constant were presented in the time frame of the workshop using different probes: Cepheids, strong lensing time delays, tip of the red giant branch (TRGB), megamasers, Oxygen-rich Miras and surface brightness fluctuations (SBF) resulting in a set of six new ones in the last several months. Here we present the summary plot of the meeting that shows combining any three independent approaches to measure H$_0$ in the late universe yields tension with the early Universe values between 4.0$σ$ and 5.8$σ$. This shows that the discrepancy does not appear to be dependent on the use of any one method, team, or source. Theoretical ideas to explain the discrepancy focused on new physics in the decade of expansion preceding recombination as the most plausible. This is a brief summary of the workshop.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-07-24T18:00:09Z</published>
+    <arxiv:comment>(10 pages 1 figure; summary of KITP conference described at this link https://www.kitp.ucsb.edu/activities/enervac-c19 )</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>Nature Astronomy 2019</arxiv:journal_ref>
+    <author>
+      <name>L. Verde</name>
+      <arxiv:affiliation>ICREA &amp; ICC UB, University of Barcelona</arxiv:affiliation>
+    </author>
+    <author>
+      <name>T. Treu</name>
+      <arxiv:affiliation>UCLA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>A. G. Riess</name>
+      <arxiv:affiliation>JHU</arxiv:affiliation>
+      <arxiv:affiliation>STScI</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1038/s41550-019-0902-0</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/s41550-019-0902-0" title="doi"/>
+  </entry>
+</feed>

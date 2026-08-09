@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ee6GJ6Gz1DDtqAO+mUQj6phTMOs</id>
+  <title>arXiv Query: search_query=&amp;id_list=1907.04869&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:29:49Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1907.04869" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1907.04869v2</id>
+    <title>H0LiCOW XIII. A 2.4% measurement of $H_{0}$ from lensed quasars: $5.3σ$ tension between early and late-Universe probes</title>
+    <updated>2019-11-06T02:34:45Z</updated>
+    <link href="https://arxiv.org/abs/1907.04869v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1907.04869v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present a measurement of the Hubble constant ($H_{0}$) and other cosmological parameters from a joint analysis of six gravitationally lensed quasars with measured time delays. All lenses except the first are analyzed blindly with respect to the cosmological parameters. In a flat $Λ$CDM cosmology, we find $H_{0} = 73.3_{-1.8}^{+1.7}$, a 2.4% precision measurement, in agreement with local measurements of $H_{0}$ from type Ia supernovae calibrated by the distance ladder, but in $3.1σ$ tension with $Planck$ observations of the cosmic microwave background (CMB). This method is completely independent of both the supernovae and CMB analyses. A combination of time-delay cosmography and the distance ladder results is in $5.3σ$ tension with $Planck$ CMB determinations of $H_{0}$ in flat $Λ$CDM. We compute Bayes factors to verify that all lenses give statistically consistent results, showing that we are not underestimating our uncertainties and are able to control our systematics. We explore extensions to flat $Λ$CDM using constraints from time-delay cosmography alone, as well as combinations with other cosmological probes, including CMB observations from $Planck$, baryon acoustic oscillations, and type Ia supernovae. Time-delay cosmography improves the precision of the other probes, demonstrating the strong complementarity. Allowing for spatial curvature does not resolve the tension with $Planck$. Using the distance constraints from time-delay cosmography to anchor the type Ia supernova distance scale, we reduce the sensitivity of our $H_0$ inference to cosmological model assumptions. For six different cosmological models, our combined inference on $H_{0}$ ranges from $\sim73$-$78~\mathrm{km~s^{-1}~Mpc^{-1}}$, which is consistent with the local distance ladder constraints.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-07-10T18:00:07Z</published>
+    <arxiv:comment>Accepted for publication in MNRAS; 23 pages, 13 figures, 8 tables</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Kenneth C. Wong</name>
+    </author>
+    <author>
+      <name>Sherry H. Suyu</name>
+    </author>
+    <author>
+      <name>Geoff C. -F. Chen</name>
+    </author>
+    <author>
+      <name>Cristian E. Rusu</name>
+    </author>
+    <author>
+      <name>Martin Millon</name>
+    </author>
+    <author>
+      <name>Dominique Sluse</name>
+    </author>
+    <author>
+      <name>Vivien Bonvin</name>
+    </author>
+    <author>
+      <name>Christopher D. Fassnacht</name>
+    </author>
+    <author>
+      <name>Stefan Taubenberger</name>
+    </author>
+    <author>
+      <name>Matthew W. Auger</name>
+    </author>
+    <author>
+      <name>Simon Birrer</name>
+    </author>
+    <author>
+      <name>James H. H. Chan</name>
+    </author>
+    <author>
+      <name>Frederic Courbin</name>
+    </author>
+    <author>
+      <name>Stefan Hilbert</name>
+    </author>
+    <author>
+      <name>Olga Tihhonova</name>
+    </author>
+    <author>
+      <name>Tommaso Treu</name>
+    </author>
+    <author>
+      <name>Adriano Agnello</name>
+    </author>
+    <author>
+      <name>Xuheng Ding</name>
+    </author>
+    <author>
+      <name>Inh Jee</name>
+    </author>
+    <author>
+      <name>Eiichiro Komatsu</name>
+    </author>
+    <author>
+      <name>Anowar J. Shajib</name>
+    </author>
+    <author>
+      <name>Alessandro Sonnenfeld</name>
+    </author>
+    <author>
+      <name>Roger D. Blandford</name>
+    </author>
+    <author>
+      <name>Leon V. E. Koopmans</name>
+    </author>
+    <author>
+      <name>Philip J. Marshall</name>
+    </author>
+    <author>
+      <name>Georges Meylan</name>
+    </author>
+    <arxiv:doi>10.1093/mnras/stz3094</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1093/mnras/stz3094" title="doi"/>
+  </entry>
+</feed>

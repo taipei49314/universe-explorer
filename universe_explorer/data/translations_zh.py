@@ -128,9 +128,10 @@ TOPIC_ZH = {
     },
     "cosmology": {
         "title": "宇宙學",
-        "summary": ("主題「宇宙」的大尺度容器。🟢 膨脹與 CMB 地基;🔵 加速膨脹;"
-                    "🟡 H0 張力;🟠 暴脹;🔴 反彈/循環替代。與暗物質領域分工:"
-                    "此處管膨脹史,彼處管質量缺失與粒子搜尋。"),
+        "summary": ("主題「宇宙」+ 加深的 H0 叢集。🟢 膨脹與 CMB;🔵 加速;"
+                    "🟡 H0 總張力與 TRGB/造父分裂;🟠 SH0ES、CMB+ΛCDM H0、"
+                    "早期暗能量、強透鏡、標準汽笛、暴脹;🔴 反彈/循環。"
+                    "與暗物質分工:此處管膨脹率張力,彼處管質量缺失與粒子。"),
     },
     "planets": {
         "title": "行星",
@@ -744,6 +745,142 @@ CLAIMS = {
             "JWST 造父/TRGB 工作會消除還是加固本地 H0?",
             "哪些早期宇宙擴展能在聯合 BAO+CMB+SNe 擬合下存活?",
             "H0 張力與 S8 張力在物理上相連,還是分開?",
+            "強透鏡與標準汽笛路線會收斂到哪一極?",
+        ],
+    },
+    "shoes_local_H0_high": {
+        "title": "以造父變星校準的 Ia 型超新星階梯測得偏高的本地哈伯常數(約 73 km s^-1 Mpc^-1)",
+        "reasons": {
+            "rapidly_growing_literature":
+                "SH0ES 更新、JWST 造父論文與系統誤差再分析形成快速文獻。",
+            "no_consensus_formed_yet":
+                "本地高 H0 結果被高度引用,但尚未被普遍接受為無殘餘系統誤差。",
+            "insufficient_observation":
+                "獨立幾何錨與替代校準器仍限制單一封閉的本地值。",
+        },
+        "evidence": [
+            "SH0ES 計畫建立幾何錨 → 造父 → SN Ia 距離階梯,報告本地 H0 明顯高於"
+            "Planck ΛCDM 推論,並附詳細系統誤差預算。",
+            "社群綜述把造父–SN 本地測定列為最高精度晚期宇宙 H0 路線之一,"
+            "並記錄其與早期宇宙推論的持續偏移。",
+        ],
+        "open_questions": [
+            "金屬豐度、擁擠與 SN Ia 宿主質量階仍會使 SH0ES 中心值移動多少?",
+            "JWST 造父測光會否改變階梯零點?",
+        ],
+    },
+    "cmb_lcdm_implies_low_H0": {
+        "title": "在平坦 ΛCDM 下,CMB 聲學尺度資料暗示哈伯常數約 67–68 km s^-1 Mpc^-1",
+        "reasons": {
+            "rapidly_growing_literature":
+                "CMB 參數論文與張力綜述持續更新早期宇宙 H0 一極。",
+            "no_consensus_formed_yet":
+                "此推論在 ΛCDM *內部*是標準;ΛCDM 是否為 H0 的正確模型仍是開放問題。",
+            "insufficient_observation":
+                "H0 並非由 CMB 直接測量;而是從聲速視界角尺度模型推論。",
+        },
+        "evidence": [
+            "Planck 在平坦 ΛCDM 下的基線擬合校準聲速視界並推論 H0 ≈ 67.4,"
+            "與其他早期宇宙參數緊密耦合。",
+            "H0 張力綜述把 CMB+ΛCDM 路線視為與晚期宇宙階梯比較的標準早期宇宙極。",
+        ],
+        "open_questions": [
+            "一旦允許早期暗能量或 Neff 擴展,低 H0 的模型依賴有多大?",
+            "地基 CMB 實驗是否確認 Planck 的聲學尺度 H0 推論?",
+        ],
+    },
+    "trgb_vs_cepheid_local_H0": {
+        "title": "紅巨星支頂端(TRGB)與造父變星對本地距離階梯的校準在 H0 上不一致",
+        "reasons": {
+            "two_or_more_mainstream_models":
+                "造父主導與 TRGB 主導的本地 H0 計畫都以高精度活躍發表。",
+            "no_decisive_evidence_yet":
+                "社群尚未共識選定單一本地校準器層級。",
+            "genuine_scientific_camps":
+                "SH0ES 與 CCHP 及相關交鋒記錄了距離階梯社群的真實分裂。",
+        },
+        "evidence": [
+            "Carnegie–Chicago Hubble 計畫以 TRGB 作為替代的第二星族校準器,"
+            "報告的本地 H0 低於 SH0ES 造父結果,在某些分析中減輕與 Planck 的張力。",
+            "SH0ES 造父階梯持續以擴大樣本與 JWST 時代交叉檢驗報告較高本地 H0,"
+            "維持晚期宇宙內部的校準器層級分歧。",
+        ],
+        "competing": [
+            {"name": "造父階梯(SH0ES 類)更接近真相",
+             "for": "大樣本造父–SN、多重錨與詳細系統誤差戰役支持高本地 H0。",
+             "against": "擁擠、金屬豐度與測光零點仍是有爭議的系統誤差。",
+             "limits": "依賴對擁擠場中大質量恆星測光的理解。"},
+            {"name": "TRGB 階梯(CCHP 類)更接近真相",
+             "for": "TRGB 是較不綁定年輕恆星形成區的第二星族標準燭;"
+                    "部分 TRGB 值較靠近 CMB+ΛCDM。",
+             "against": "TRGB 尖端測量、消光與樣本選擇自有系統誤差;並非所有 TRGB 分析一致。",
+             "limits": "某些版本的 SN 校準器樣本小於造父路線。"},
+        ],
+        "open_questions": [
+            "JWST 能否把造父擁擠解決到足以結束分裂?",
+            "能否把 Megamaser、食雙星與 TRGB 逼到同一零點?",
+        ],
+    },
+    "early_dark_energy_H0_fix": {
+        "title": "復合前的早期暗能量成分可把 CMB 推論的哈伯常數提高到接近本地值",
+        "reasons": {
+            "rapidly_growing_literature":
+                "H0 張力加劇後,EDE 與早期宇宙擴展論文大量湧現。",
+            "no_consensus_formed_yet":
+                "EDE 是領先提案,不是已確立的解決方案。",
+            "insufficient_observation":
+                "尚無確認的獨特 EDE 印記;約束來自全域擬合,非直接偵測新成分。",
+        },
+        "evidence": [
+            "早期暗能量(EDE)模型在復合前注入額外能量密度,縮小聲速視界,"
+            "使 CMB 資料在試圖保持聲學峰擬合的同時容納較高 H0。",
+            "張力綜述把 EDE 及相關早期宇宙擴展列為領先的*提議*解決方案,"
+            "同時指出許多實現仍與大尺度結構或其他資料集衝突。",
+        ],
+        "open_questions": [
+            "EDE 能否擬合 Planck+BAO+SNe 而不惡化 S8 或其他張力?",
+            "是否存在連結粒子物理的微觀 EDE 候選?",
+        ],
+    },
+    "strong_lensing_time_delay_H0": {
+        "title": "強透鏡類星體的時間延遲提供不依賴傳統距離階梯的幾何哈伯常數",
+        "reasons": {
+            "rapidly_growing_literature":
+                "H0LiCOW/TDCOSMO 及相關透鏡 H0 論文形成活躍子領域。",
+            "no_consensus_formed_yet":
+                "時間延遲 H0 具競爭力但受系統誤差限制;尚非張力的唯一仲裁。",
+            "insufficient_sample":
+                "具精緻模型的黃金透鏡數量仍然不多。",
+        },
+        "evidence": [
+            "H0LiCOW 合作結合透鏡類星體時間延遲與透鏡星系質量模型推論 H0,"
+            "報告值常較靠近本地階梯而非 Planck ΛCDM —— 質量模型系統誤差仍在審視。",
+            "H0 張力綜述把時間延遲強透鏡視為互補造父與 CMB 的關鍵一步幾何方法。",
+        ],
+        "open_questions": [
+            "透鏡 mass-sheet 簡併仍使 H0 移動多少?",
+            "更大的 TDCOSMO 樣本會拉向本地極還是 CMB 極?",
+        ],
+    },
+    "standard_sirens_H0": {
+        "title": "重力波標準汽笛可不靠經典距離階梯測量 H0",
+        "reasons": {
+            "rapidly_growing_literature":
+                "GW170817 之後的汽笛宇宙學是快速增長的文獻。",
+            "no_consensus_formed_yet":
+                "汽笛作為*方法*已確立;尚未給出能裁定張力的 H0。",
+            "insufficient_sample":
+                "亮汽笛事件仍稀少;目前 H0 後驗仍寬。",
+        },
+        "evidence": [
+            "雙中子星併合 GW170817 加上電磁對應體,以重力波訊號給出光度距離、"
+            "以宿主給出紅移,得到首個標準汽笛 H0 約束。",
+            "綜述強調標準汽笛是成熟中的第三條 H0 路線,誤差會隨重力波事件率縮小 ——"
+            "目前仍太寬,無法單獨結束張力。",
+        ],
+        "open_questions": [
+            "需要多少亮汽笛才能匹配 SH0ES 或 Planck 精度?",
+            "帶統計宿主紅移的暗汽笛能否具競爭力?",
         ],
     },
     "cosmic_inflation_early_universe": {

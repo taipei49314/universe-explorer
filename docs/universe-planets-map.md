@@ -26,16 +26,24 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
                     └─ seismology
 ```
 
-## Cosmology claim map (new)
+## Cosmology claim map (incl. deepened H0 cluster)
 
-| Light | Claim id |
-|:-----:|----------|
-| 🟢 | `universe_is_expanding` |
-| 🟢 | `cmb_hot_big_bang` |
-| 🔵 | `accelerated_expansion` |
-| 🟡 | `H0_tension_local_vs_cmb` |
-| 🟠 | `cosmic_inflation_early_universe` |
-| 🔴 | `cyclic_or_bounce_replaces_bb` |
+| Light | Claim id | Role |
+|:-----:|----------|------|
+| 🟢 | `universe_is_expanding` | Expansion bedrock |
+| 🟢 | `cmb_hot_big_bang` | Hot big bang / CMB |
+| 🔵 | `accelerated_expansion` | Late-time acceleration |
+| 🟡 | `H0_tension_local_vs_cmb` | **Umbrella** local vs CMB+ΛCDM |
+| 🟠 | `shoes_local_H0_high` | Cepheid–SN (SH0ES) high local H0 |
+| 🟠 | `cmb_lcdm_implies_low_H0` | Planck ΛCDM low H0 pole |
+| 🟡 | `trgb_vs_cepheid_local_H0` | **Local calibrator split** |
+| 🟠 | `early_dark_energy_H0_fix` | Proposed early-universe fix |
+| 🟠 | `strong_lensing_time_delay_H0` | Geometric H0LiCOW/TDCOSMO |
+| 🟠 | `standard_sirens_H0` | GW170817-style sirens |
+| 🟠 | `cosmic_inflation_early_universe` | Inflation programme |
+| 🔴 | `cyclic_or_bounce_replaces_bb` | Bounce / cyclic alternatives |
+
+**H0 reading order:** umbrella 🟡 → two poles (SH0ES / CMB+ΛCDM) → local split (TRGB vs Cepheid) → relief routes (EDE, lensing, sirens).
 
 **Boundary with dark_matter:** cosmology owns expansion / CMB / H0 / inflation; dark_matter owns mass discrepancy, particle candidates, and lab channels. Cross-link H0 ↔ S8 in prose only.
 

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/vHRLOlH2UtnC+31paW4924WWEJo</id>
+  <title>arXiv Query: search_query=&amp;id_list=1811.04083&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:29:46Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1811.04083" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1811.04083v2</id>
+    <title>Early Dark Energy Can Resolve The Hubble Tension</title>
+    <updated>2019-06-11T10:04:20Z</updated>
+    <link href="https://arxiv.org/abs/1811.04083v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1811.04083v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Early dark energy (EDE) that behaves like a cosmological constant at early times (redshifts $z\gtrsim3000$) and then dilutes away like radiation or faster at later times can solve the Hubble tension. In these models, the sound horizon at decoupling is reduced resulting in a larger value of the Hubble parameter $H_0$ inferred from the cosmic microwave background (CMB). We consider two physical models for this EDE, one involving an oscillating scalar field and another a slowly-rolling field. We perform a detailed calculation of the evolution of perturbations in these models. A Markov Chain Monte Carlo search of the parameter space for the EDE parameters, in conjunction with the standard cosmological parameters, identifies regions in which $H_0$ inferred from {\it Planck} CMB data agrees with the SH0ES local measurement. In these cosmologies, current baryon acoustic oscillation and supernova data are described as successfully as in \LCDM, while the fit to {\it Planck} data is slightly improved. Future CMB and large-scale-structure surveys will further probe this scenario.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-11-09T19:00:00Z</published>
+    <arxiv:comment>v1: 4p+appendix, 3 figures. v2: small changes, notably estimates of bayesian evidence. matches the version published in PRL</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>Phys. Rev. Lett. 122, 221301 (2019)</arxiv:journal_ref>
+    <author>
+      <name>Vivian Poulin</name>
+    </author>
+    <author>
+      <name>Tristan L. Smith</name>
+    </author>
+    <author>
+      <name>Tanvi Karwal</name>
+    </author>
+    <author>
+      <name>Marc Kamionkowski</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.122.221301</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.122.221301" title="doi"/>
+  </entry>
+</feed>
