@@ -153,6 +153,26 @@ let state = { lang:"en", sel:null, expandId:null };
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
 let expandT = 0; // 0..1 animated expand factor
 
+/* Measure channel: opt-in (?measure=1). Event list only — no confidence. */
+const Measure = (() => {
+  const on = /(?:\?|&)measure=1(?:&|$)/.test(location.search)
+    || (typeof localStorage !== "undefined" && localStorage.getItem("ue_measure") === "1");
+  const log = [];
+  function rec(event, detail) {
+    if (!on) return;
+    log.push(Object.assign({ t: Date.now(), event }, detail || {}));
+  }
+  const api = {
+    enabled: on,
+    rec,
+    snapshot() { return log.slice(); },
+    count(event) { return log.filter(x => x.event === event).length; },
+    n() { return log.length; },
+  };
+  if (on && typeof window !== "undefined") window.__UE_MEASURE__ = api;
+  return api;
+})();
+
 const cv = document.getElementById("space");
 const cx = cv.getContext("2d");
 let W = 0, H = 0, DPR = 1;
@@ -309,6 +329,10 @@ function expandCluster(id) {
   if (!c) return;
   const was = state.expandId === id;
   state.expandId = was ? null : id;
+  const nBodies = bodies.filter(b => b.cl.id === id).length;
+  Measure.rec("cluster_expand", {
+    id, open: !!state.expandId, n_claims: nBodies, lang: state.lang,
+  });
   AudioFX.unlock(); AudioFX.blip();
   if (state.expandId) flyTo(c.x, c.y, 1.35, 1.0);
   else flyTo(0, 30, overviewZ(), 1.0);

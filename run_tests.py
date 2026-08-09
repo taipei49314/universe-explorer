@@ -30,6 +30,7 @@ SUITES = [
     "test_claim_draft.py",    # T4 every court bites the drafting pipeline
     "test_constitution.py",   # V4-2 the doc and the code cannot drift
     "test_app.py",            # D4 dynamic frontend: data + self-containment
+    "test_ui_expand.py",      # domain expand: measure first, then gate
 ]
 
 

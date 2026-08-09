@@ -301,6 +301,28 @@ const I18N = {
 let DATA = null;
 let state = { lang:"en", theme:"", topic:"", q:"", sel:null, openDomains:{} };
 
+/* Measure channel: opt-in only (?measure=1 or localStorage ue_measure=1).
+   Records expand events as a list you can recount — never a confidence score. */
+const Measure = (() => {
+  const on = /(?:\?|&)measure=1(?:&|$)/.test(location.search)
+    || (typeof localStorage !== "undefined" && localStorage.getItem("ue_measure") === "1");
+  const log = [];
+  function rec(event, detail) {
+    if (!on) return;
+    const row = Object.assign({ t: Date.now(), event }, detail || {});
+    log.push(row);
+  }
+  const api = {
+    enabled: on,
+    rec,
+    snapshot() { return log.slice(); },
+    count(event) { return log.filter(x => x.event === event).length; },
+    n() { return log.length; },
+  };
+  if (on && typeof window !== "undefined") window.__UE_MEASURE__ = api;
+  return api;
+})();
+
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g,
   c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -477,6 +499,12 @@ function renderCards() {
       }
       block.classList.toggle("open", willOpen);
       btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      const nCards = block.querySelectorAll(".domain-body .card").length;
+      Measure.rec("domain_expand", {
+        id, open: willOpen, n_claims: nCards,
+        topic_filter: state.topic || "",
+        lang: state.lang,
+      });
       AudioFX.unlock();
       if (willOpen) AudioFX.blip();
     });
@@ -670,6 +698,10 @@ function renderChrome() {
       const id = b.dataset.t || "";
       state.topic = id;
       if (id) state.openDomains[id] = true;
+      Measure.rec("domain_chip", {
+        id: id || "(all)",
+        open: id ? true : !!state.openDomains[id],
+      });
       renderAll();
       // scroll to expanded domain block
       if (id) {
