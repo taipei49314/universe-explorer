@@ -1,0 +1,135 @@
+{
+  "query": "nongravitational interactions of dark matter colliding galaxy clusters Harvey",
+  "endpoint": "https://export.arxiv.org/api/query?search_query=all%3Anongravitational+interactions+of+dark+matter+colliding+galaxy+clusters+Harvey&max_results=10&sortBy=relevance",
+  "retrieved_at": "20260809T105205Z",
+  "note": "pending candidates only — citing one requires a human edit to the data file, which then falls under the cite=>fetch rule",
+  "results": [
+    {
+      "arxiv_id": "2212.01018",
+      "title": "Two mysterious universal dark matter-baryon relations in galaxies and galaxy clusters",
+      "published": "2022-12-02T08:06:15Z",
+      "authors": [
+        "Man Ho Chan"
+      ],
+      "summary": "Starting from the 1970s, some relations connecting dark matter and baryons were discovered, such as the Tully-Fisher relation. However, many of the relations found in galaxies are quite different from that found in galaxy clusters. Here, we report two new mysterious universal relations connecting dark matter and baryons in both galaxies and galaxy clusters. The first relation indicates that the total dynamical mass of a galaxy or a galaxy cluster $M_{500}$ has a power-law relation with its total baryonic mass $M_b$ within the `virial region': $M_{500} \\propto M_b^a$, with $a \\approx 3/4$. The second relation indicates that the enclosed dynamical mass $M_d$ is almost directly proportional to the baryonic mass for galaxies and galaxy clusters within the central baryonic region: $M_d \\propto M_b$. The close relations between dark matter and baryons in both galaxies and galaxy clusters suggest that some unknown interaction or interplay except gravity might exist between dark matter and baryons.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "astro-ph/0510346",
+      "title": "The Dark Energy Survey",
+      "published": "2005-10-12T13:33:59Z",
+      "authors": [
+        "The Dark Energy Survey Collaboration"
+      ],
+      "summary": "We describe the Dark Energy Survey (DES), a proposed optical-near infrared survey of 5000 sq. deg of the South Galactic Cap to ~24th magnitude in SDSS griz, that would use a new 3 sq. deg CCD camera to be mounted on the Blanco 4-m telescope at Cerro Telolo Inter-American Observatory (CTIO). The survey data will allow us to measure the dark energy and dark matter densities and the dark energy equation of state through four independent methods: galaxy clusters, weak gravitational lensing tomography, galaxy angular clustering, and supernova distances. These methods are doubly complementary: they constrain different combinations of cosmological model parameters and are subject to different systematic errors. By deriving the four sets of measurements from the same data set with a common analysis framework, we will obtain important cross checks of the systematic errors and thereby make a substantial and robust advance in the precision of dark energy measurements.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1809.09971",
+      "title": "Possible Couplings of Dark Matter",
+      "published": "2018-09-24T19:05:16Z",
+      "authors": [
+        "Kevin J. Ludwick"
+      ],
+      "summary": "Dark matter interacts gravitationally, but it presumably interacts weakly through other channels, especially with respect to regular luminous matter. We look at different ways in which dark matter may couple to other fields. We briefly review some example approaches in the literature for modeling the coupling between dark energy and dark matter and examine the possibility of an arguably better-motivated approach via non-minimal coupling between a scalar field and the Ricci scalar, which is necessary for renormalization of the scalar field in curved space-time. We also show an example of a theory beyond the Standard Model in which dark matter is uniquely connected to the inflaton, and we use observational astrophysical constraints to specify an upper bound on the dark matter mass. In turn, this mass constraint implies a limit on the unification scale of the theory, a decoupling scale of the theory, and the number of $e$-folds of inflation allowed.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "astro-ph/0507222",
+      "title": "Galaxy Cluster Masses Without Non-Baryonic Dark Matter",
+      "published": "2005-07-08T22:00:13Z",
+      "authors": [
+        "J. R. Brownstein",
+        "J. W. Moffat"
+      ],
+      "summary": "We apply the modified acceleration law obtained from Einstein gravity coupled to a massive skew symmetric field, F_{μνλ}, to the problem of explaining X-ray galaxy cluster masses without exotic dark matter. Utilizing X-ray observations to fit the gas mass profile and temperature profile of the hot intracluster medium (ICM) with King beta-models, we show that the dynamical masses of the galaxy clusters resulting from our modified acceleration law fit the cluster gas masses for our sample of 106 clusters without the need of introducing a non-baryonic dark matter component. We are further able to show for our sample of 106 clusters that the distribution of gas in the ICM as a function of radial distance is well fit by the dynamical mass distribution arising from our modified acceleration law without any additional dark matter component. In previous work, we applied this theory to galaxy rotation curves and demonstrated good fits to our sample of 101 LSB, HSB and dwarf galaxies including 58 galaxies that were fit photometrically with the single parameter (M/L)_{stars}. The results there were qualitatively similar to those obtained using Milgrom's phenomenological MOND model, although the determined galaxy masses were quantitatively different and MOND does not show a return to Keplerian behavior at extragalactic distances. The results here are compared to those obtained using Milgrom's phenomenological MOND model which does not fit the X-ray galaxy cluster masses unless an auxiliary dark matter component is included.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1503.07675",
+      "title": "The non-gravitational interactions of dark matter in colliding galaxy clusters",
+      "published": "2015-03-26T10:22:48Z",
+      "authors": [
+        "David Harvey",
+        "Richard Massey",
+        "Thomas Kitching",
+        "Andy Taylor",
+        "Eric Tittley"
+      ],
+      "summary": "Collisions between galaxy clusters provide a test of the non-gravitational forces acting on dark matter. Dark matter's lack of deceleration in the `bullet cluster collision' constrained its self-interaction cross-section σ_DM/m < 1.25cm2/g (68% confidence limit) for long-ranged forces. Using the Chandra and Hubble Space Telescopes we have now observed 72 collisions, including both `major' and `minor' mergers. Combining these measurements statistically, we detect the existence of dark mass at 7.6σsignificance. The position of the dark mass has remained closely aligned within 5.8+/-8.2 kpc of associated stars: implying a self-interaction cross-section σ_DM/m < 0.47 cm2/g (95% CL) and disfavoring some proposed extensions to the standard model.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1803.08427",
+      "title": "A fresh look into the interacting dark matter scenario",
+      "published": "2018-03-22T16:05:44Z",
+      "authors": [
+        "Miguel Escudero",
+        "Laura Lopez-Honorez",
+        "Olga Mena",
+        "Sergio Palomares-Ruiz",
+        "Pablo Villanueva-Domingo"
+      ],
+      "summary": "The elastic scattering between dark matter particles and  radiation represents an attractive possibility to solve a  number of discrepancies between observations and standard cold dark  matter predictions, as the induced collisional damping would imply a  suppression of small-scale structures. We consider this scenario and  confront it with measurements of the ionization history of the  Universe at several redshifts and with recent estimates of the  counts of Milky Way satellite galaxies. We derive a conservative  upper bound on the dark matter-photon elastic scattering cross  section of $σ_{γ\\rm{DM}} < 8 \\times 10^{-10} \\, σ_T  \\, \\left(m_{\\rm DM}/{\\rm GeV}\\right)$ at $95\\%$~CL, about one order of magnitude tighter than previous {constraints from satellite  number counts}. Due to the strong degeneracies with astrophysical  parameters, the bound on the dark matter-photon scattering cross  section derived here is driven by the estimate of the number of  Milky Way satellite galaxies. Finally, we also argue that future  21~cm probes could help in disentangling among possible non-cold  dark matter candidates, such as interacting and warm dark matter  scenarios. Let us emphasize that bounds of similar magnitude to  the ones obtained here could be also derived for models with dark  matter-neutrino interactions and would be as constraining as the  tightest limits on such scenarios.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1211.0310",
+      "title": "Large Synoptic Survey Telescope: Dark Energy Science Collaboration",
+      "published": "2012-11-01T21:23:33Z",
+      "authors": [
+        "LSST Dark Energy Science Collaboration"
+      ],
+      "summary": "This white paper describes the LSST Dark Energy Science Collaboration (DESC), whose goal is the study of dark energy and related topics in fundamental physics with data from the Large Synoptic Survey Telescope (LSST). It provides an overview of dark energy science and describes the current and anticipated state of the field. It makes the case for the DESC by laying out a robust analytical framework for dark energy science that has been defined by its members and the comprehensive three-year work plan they have developed for implementing that framework. The analysis working groups cover five key probes of dark energy: weak lensing, large scale structure, galaxy clusters, Type Ia supernovae, and strong lensing. The computing working groups span cosmological simulations, galaxy catalogs, photon simulations and a systematic software and computational framework for LSST dark energy data analysis. The technical working groups make the connection between dark energy science and the LSST system. The working groups have close linkages, especially through the use of the photon simulations to study the impact of instrument design and survey strategy on analysis methodology and cosmological parameter estimation. The white paper describes several high priority tasks identified by each of the 16 working groups. Over the next three years these tasks will help prepare for LSST analysis, make synergistic connections with ongoing cosmological surveys and provide the dark energy community with state of the art analysis tools. Members of the community are invited to join the LSST DESC, according to the membership policies described in the white paper. Applications to sign up for associate membership may be made by submitting the Web form at http://www.slac.stanford.edu/exp/lsst/desc/signup.html with a short statement of the work they wish to pursue that is relevant to the LSST DESC.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "0810.3676",
+      "title": "Measurement of the dark matter velocity anisotropy profile in galaxy clusters",
+      "published": "2008-10-20T20:51:55Z",
+      "authors": [
+        "Ole Host"
+      ],
+      "summary": "Dark matter particles form halos that contribute the major part of the mass of galaxy clusters. The formation of these cosmological structures have been investigated both observationally and in numerical simulations, which have confirmed the existence of a universal mass profile. However, the dynamic behaviour of dark matter in halos is not as well understood. We have used observations of 16 equilibrated galaxy clusters to show that the random velocities of dark matter particles are larger on average along the radial direction than along the tangential, and that the magnitude of this velocity anisotropy is radially varying. Our measurement implies that the collective behaviour of dark matter particles is fundamentally different from that of normal particles and the radial variation of the anisotropy velocity agrees with the predictions of numerical simulation.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1211.7222",
+      "title": "Direct dark matter detection: the next decade",
+      "published": "2012-11-30T11:54:43Z",
+      "authors": [
+        "Laura Baudis"
+      ],
+      "summary": "Direct dark matter searches are promising techniques to identify the nature of dark matter particles. I describe the future of this field of research, focussing on the question of what can be achieved in the next decade. I will present the main techniques and R&D projects that will allow to build so-called ultimate WIMP detectors, capable of probing spin-independent interactions down to the unimaginably low cross section of 1e-48 cm2, before the irreducible neutrino background takes over. If a discovery is within the reach of a near-future dark matter experiment, these detectors will be able to constrain WIMP properties such as its mass, scattering cross section and possibly spin. With input from the LHC and from indirect searches, direct detection experiments will hopefully allow to determine the local density and to constrain the local phase-space structure of our dark matter halo.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1305.1605",
+      "title": "Dark Matter in the Coming Decade: Complementary Paths to Discovery and Beyond",
+      "published": "2013-05-07T18:29:02Z",
+      "authors": [
+        "Daniel Bauer",
+        "James Buckley",
+        "Matthew Cahill-Rowley",
+        "Randel Cotta",
+        "Alex Drlica-Wagner",
+        "Jonathan L. Feng",
+        "Stefan Funk",
+        "JoAnne Hewett",
+        "Dan Hooper",
+        "Ahmed Ismail",
+        "Manoj Kaplinghat",
+        "Alexander Kusenko",
+        "Konstantin Matchev",
+        "Daniel McKinsey",
+        "Tom Rizzo",
+        "William Shepherd",
+        "Tim M. P. Tait",
+        "Alexander M. Wijangco",
+        "Matthew Wood"
+      ],
+      "summary": "In this report we summarize the many dark matter searches currently being pursued through four complementary approaches: direct detection, indirect detection, collider experiments, and astrophysical probes. The essential features of broad classes of experiments are described, each with their own strengths and weaknesses. The complementarity of the different dark matter searches is discussed qualitatively and illustrated quantitatively in two simple theoretical frameworks. Our primary conclusion is that the diversity of possible dark matter candidates requires a balanced program drawing from all four approaches.",
+      "status": "pending"
+    }
+  ]
+}

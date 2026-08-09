@@ -1,0 +1,119 @@
+{
+  "query": "Davies Beasor red supergiant problem",
+  "endpoint": "https://export.arxiv.org/api/query?search_query=all%3ADavies+Beasor+red+supergiant+problem&max_results=10&sortBy=relevance",
+  "retrieved_at": "20260809T125902Z",
+  "note": "pending candidates only — citing one requires a human edit to the data file, which then falls under the cite=>fetch rule",
+  "results": [
+    {
+      "arxiv_id": "2001.06020",
+      "title": "The `Red Supergiant Problem': the upper luminosity boundary of type-II supernova progenitors",
+      "published": "2020-01-16T19:00:18Z",
+      "authors": [
+        "Ben Davies",
+        "Emma R. Beasor"
+      ],
+      "summary": "By comparing the properties of Red Supergiant (RSG) supernova progenitors to those of field RSGs, it has been claimed that there is an absence of progenitors with luminosities $L$ above $\\log(L/L_\\odot) > 5.2$. This is in tension with the empirical upper luminosity limit of RSGs at $\\log(L/L_\\odot) = 5.5$, a result known as the `Red Supergiant Problem'. This has been interpreted as evidence for an upper mass threshold for the formation of black-holes. In this paper, we compare the observed luminosities of RSG SN progenitors with the observed RSG $L$-distribution in the Magellanic Clouds. Our results indicate that the absence of bright SN II-P/L progenitors in the current sample can be explained at least in part by the steepness of the $L$-distribution and a small sample size, and that the statistical significance of the Red Supergiant Problem is between 1-2$σ$ . Secondly, we model the luminosity distribution of II-P/L progenitors as a simple power-law with an upper and lower cutoff, and find an upper luminosity limit of $\\log(L_{\\rm hi}/L_\\odot) = 5.20^{+0.17}_{-0.11}$ (68\\% confidence), though this increases to $\\sim$5.3 if one fixes the power-law slope to be that expected from theoretical arguments. Again, the results point to the significance of the RSG Problem being within $\\sim 2 σ$. Under the assumption that all progenitors are the result of single-star evolution, this corresponds to an upper mass limit for the parent distribution of $M_{\\rm hi} = 19.2{\\rm M_\\odot}$, $\\pm1.3 {\\rm M_\\odot (systematic)}$, $^{+4.5}_{-2.3} {\\rm M_\\odot}$ (random) (68\\% confidence limits).",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1608.03895",
+      "title": "The evolution of Red Supergiants to supernova in the LMC cluster NGC 2100",
+      "published": "2016-08-12T20:00:04Z",
+      "authors": [
+        "Emma R. Beasor",
+        "Ben Davies"
+      ],
+      "summary": "The mass loss rates of red supergiants (RSGs) govern their evolution towards supernova and dictate the appearance of the resulting explosion. To study how mass-loss rates change with evolution we measure the mass-loss rates (\\mdot) and extinctions of 19 red supergiants in the young massive cluster NGC2100 in the Large Magellanic Cloud. By targeting stars in a coeval cluster we can study the mass-loss rate evolution whilst keeping the variables of mass and metallicity fixed. Mass-loss rates were determined by fitting DUSTY models to mid-IR photometry from WISE and Spitzer/IRAC. We find that the \\mdot\\ in red supergiants increases as the star evolves, and is well described by \\mdot\\ prescription of de Jager, used widely in stellar evolution calculations. We find the extinction caused by the warm dust is negligible, meaning the warm circumstellar material of the inner wind cannot explain the higher levels of extinction found in the RSGs compared to other cluster stars. We discuss the implications of this work in terms of supernova progenitors and stellar evolution theory. We argue there is little justification for substantially increasing the \\mdot\\ during the RSG phase, as has been suggested recently in order to explain the absence of high mass Type IIP supernova progenitors. We also argue that an increase in reddening towards the end of the RSG phase, as observed for the two most evolved cluster stars, may provide a solution to the red supergiant problem.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2005.13855",
+      "title": "On `On the Red Supergiant Problem': a rebuttal, and a consensus on the upper mass cutoff for II-P progenitors",
+      "published": "2020-05-28T09:10:37Z",
+      "authors": [
+        "Ben Davies",
+        "Emma Beasor"
+      ],
+      "summary": "The `Red Supergiant Problem' describes the claim that the brightest Red Supergiant (RSG) progenitors to type II-P supernovae are significantly fainter than RSGs in the field. This mismatch has been interpreted by several authors as being a manifestation of the mass threshold for the production of black holes (BHs), such that stars with initial masses above a cutoff of $M_{\\rm hi}=17$M$_\\odot$ and below 25$M_\\odot$ will die as RSGs, but with no visible SN explosion as the BH is formed. However, we have previously cautioned that this cutoff is more likely to be higher and has large uncertainties ($M_{\\rm hi}=19^{+4}_{-2}M_{\\odot}$), meaning that the statistical significance of the RSG Problem is less than $2σ$. Recently, Kochanek (2020) has claimed that our work is statistically flawed, and with their analysis has argued that the upper mass cutoff is as low as $M_{\\rm hi} = 15.7 \\pm 0.8M_\\odot$, giving the RSG Problem a significance of $>10σ$. In this letter, we show that Kochanek's low cutoff is caused by a statistical misinterpretation, and the associated fit to the progenitor mass spectrum can be ruled out at the 99.6\\% confidence level. Once this problem is remedied, Kochanek's best fit becomes $M_{\\rm hi} =19^{+4}_{-2}M_{\\odot}$, in excellent agreement with our work. Finally, we argue that, in the search for a RSG `vanishing' as it collapses directly to a BH, any such survey would have to operate for decades before the absence of any such detection became statistically significant.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1709.06116",
+      "title": "The Initial Masses of the Red Supergiant Progenitors to Type-II Supernovae",
+      "published": "2017-09-18T18:28:31Z",
+      "authors": [
+        "Ben Davies",
+        "Emma Beasor"
+      ],
+      "summary": "There are a growing number of nearby SNe for which the progenitor star is detected in archival pre-explosion imaging. From these images it is possible to measure the progenitor's brightness a few years before explosion, and ultimately estimate its initial mass. Previous work has shown that II-P and II-L supernovae (SNe) have Red Supergiant (RSG) progenitors, and that the range of initial masses for these progenitors seems to be limited to $<$17M$_\\odot$. This is in contrast with the cutoff of 25-30M$_\\odot$ predicted by evolutionary models, a result which is termed the 'Red Supergiant Problem'. Here we investigate one particular source of systematic error present in converting pre-explosion photometry into an initial mass, that of the bolometric correction (BC) used to convert a single-band flux into a bolometric luminosity. We show, using star clusters, that RSGs evolve to later spectral types as they approach SN, which in turn causes the BC to become larger. Failure to account for this results in a systematic underestimate of a star's luminosity, and hence its initial mass. Using our empirically motivated BCs we reappraise the II-P and II-L SNe that have their progenitors detected in pre-explosion imaging. Fitting an initial mass function to these updated masses results in an increased upper mass cutoff of $M_{\\rm hi}$=$19.0^{+2.5}_{-1.3}$M$_\\odot$, with a 95% upper confidence limit of $<$27M$_\\odot$. Accounting for finite sample size effects and systematic uncertainties in the mass-luminosity relationship raises the cutoff to $M_{\\rm hi}$=25M$_\\odot$ ($<$33M$_\\odot$, 95% confidence). We therefore conclude that there is currently no strong evidence for `missing' high mass progenitors to core-collapse SNe.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1702.04566",
+      "title": "The evolution of red supergiants to supernovae",
+      "published": "2017-02-15T12:00:29Z",
+      "authors": [
+        "Emma R. Beasor",
+        "Ben Davies"
+      ],
+      "summary": "With red supergiants (RSGs) predicted to end their lives as Type IIP core collapse supernova (CCSN), their behaviour before explosion needs to be fully understood. Mass loss rates govern RSG evolution towards SN and have strong implications on the appearance of the resulting explosion. To study how the mass-loss rates change with the evolution of the star, we have measured the amount of circumstellar material around 19 RSGs in a coeval cluster. Our study has shown that mass loss rates ramp up throughout the lifetime of an RSG, with more evolved stars having mass loss rates a factor of 40 higher than early stage RSGs. Interestingly, we have also found evidence for an increase in circumstellar extinction throughout the RSG lifetime, meaning the most evolved stars are most severely affected. We find that, were the most evolved RSGs in NGC2100 to go SN, this extra extinction would cause the progenitor's initial mass to be underestimated by up to 9M$_\\odot$.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1712.01852",
+      "title": "The evolution of Red Supergiant mass-loss rates",
+      "published": "2017-12-05T19:00:07Z",
+      "authors": [
+        "Emma R. Beasor",
+        "Ben Davies"
+      ],
+      "summary": "The fate of massive stars with initial masses >8M$_\\odot$ depends largely on the mass-loss rate (\\mdot ) in the end stages of their lives. Red supergiants (RSGs) are the direct progenitors to Type II-P core collapse supernovae (SN), but there is uncertainty regarding the scale and impact of any mass-loss during this phase. Here we used near and mid-IR photometry and the radiative transfer code DUSTY to determine luminosity and \\mdot\\ values for the RSGs in two Galactic clusters (NGC 7419 and $χ$ Per) where the RSGs are all of similar initial mass ($M_{\\rm initial}$$\\sim$16M$_\\odot$), allowing us to study how \\mdot\\ changes with time along an evolutionary sequence. We find a clear, tight correlation between luminosity and \\mdot\\ suggesting the scatter seen in studies of field stars is caused by stars of similar luminosity being of different initial masses. From our results we estimate how much mass a 16M$_\\odot$ star would lose during the RSG phase, finding a star of this mass would lose a total of 0.61$^{+0.92}_{-0.31}$M$_\\odot$. This is much less than expected for \\mdot\\ prescriptions currently used in evolutionary models.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2001.07216",
+      "title": "On The Red Supergiant Problem",
+      "published": "2020-01-20T19:00:02Z",
+      "authors": [
+        "C. S. Kochanek"
+      ],
+      "summary": "We examine the problem of estimating the mass range corresponding to the observed red supergiant (RSG) progenitors of Type IIP supernovae. Using Monte Carlo simulations designed to reproduce the properties of the observations, we find that the approach of Davies & Beasor (2018) significantly overestimates the maximum mass, yielding an upper limit of Mh/Msun=20.5+/-2.6 for an input population with Mh/Msun=18. Our preferred Bayesian approach does better, with Mh/Msun=18.6+/-2.1 for the same input populations, but also tends to overestimate Mh. For the actual progenitor sample and a Salpeter initial mass function we find Mh/Msun=19.01-2.04+4.04 for the Eldridge et al. (2004) mass-luminosity relation used by Smartt et al. (2009) and Davies & Beasor (2018), and Mh/Msun=21.28_-2.28+4.52 for the Sukhbold et al. (2018) mass-luminosity relation. Based on the Monte Carlo simulations, we estimate that these are overestimated by 3.3+/-0.8Mh. The red supergiant problem remains.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2004.08502",
+      "title": "On aging star clusters using red supergiants independent of the fraction of interacting binary stars",
+      "published": "2020-04-18T01:15:17Z",
+      "authors": [
+        "J. J. Eldridge",
+        "Emma R. Beasor",
+        "N. Britavskiy"
+      ],
+      "summary": "We use the Binary Population and Spectral Synthesis (BPASS) models to test the recent suggestion that red supergiants can provide an accurate age estimate of a co-eval stellar population that is unaffected by interacting binary stars. Ages are estimated by using both the minimum luminosity red supergiant and the mean luminosity of red supergiants in a cluster. We test these methods on a number of observed star clusters and find our results in agreement with previous estimates. Importantly we find the difference between the ages derived from stellar population models with and without a realistic population of interacting binary stars is only a few 100,000 years at most. We find that the mean luminosity of red supergiants in a cluster is the best method to determine the age of a cluster because it is based o the entire red supergiant population rather than using only the least luminous red supergiant.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2410.14027",
+      "title": "The red supergiant progenitor luminosity problem",
+      "published": "2024-10-17T20:57:29Z",
+      "authors": [
+        "Emma R. Beasor",
+        "Nathan Smith",
+        "Jacob E. Jencson"
+      ],
+      "summary": "Analysis of pre-explosion imaging has confirmed red supergiants (RSGs) as the progenitors to Type II-P supernovae (SNe). However, extracting the RSG's luminosity requires assumptions regarding the star's temperature or spectral type and the corresponding bolometric correction, circumstellar extinction, and possible variability. The robustness of these assumptions is difficult to test, since we cannot go back in time and obtain additional pre-explosion imaging. Here, we perform a simple test using the RSGs in M31, which have been well observed from optical to mid-IR. We ask the following: By treating each star as if we only had single-band photometry and making assumptions typically used in SN progenitor studies, what bolometric luminosity would we infer for each star? How close is this to the bolometric luminosity for that same star inferred from the full optical-to-IR spectral energy distribution (SED)? We find common assumptions adopted in progenitor studies systematically underestimate the bolometric luminosity by a factor of 2, typically leading to inferred progenitor masses that are systematically too low. Additionally, we find a much larger spread in luminosity derived from single-filter photometry compared to SED-derived luminosities, indicating uncertainties in progenitor luminosities are also underestimated. When these corrections and larger uncertainties are included in the analysis, even the most luminous known RSGs are not ruled out at the 3$σ$ level, indicating there is currently no statistically significant evidence that the most luminous RSGs are missing from the observed sample of II-P progenitors. The proposed correction also alleviates the problem of having progenitors with masses below the expected lower-mass bound for core-collapse.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "math/0508505",
+      "title": "Rejoinder to \"Breakdown and groups\" by P. L. Davies and U. Gather",
+      "published": "2005-08-25T12:49:44Z",
+      "authors": [
+        "P. Laurie Davies",
+        "Ursula Gather"
+      ],
+      "summary": "Rejoinder to ``Breakdown and groups'' by P. L. Davies and U. Gather [math.ST/0508497]",
+      "status": "pending"
+    }
+  ]
+}

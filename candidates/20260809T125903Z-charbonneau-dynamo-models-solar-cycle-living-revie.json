@@ -1,0 +1,119 @@
+{
+  "query": "Charbonneau dynamo models solar cycle Living Reviews",
+  "endpoint": "https://export.arxiv.org/api/query?search_query=all%3ACharbonneau+dynamo+models+solar+cycle+Living+Reviews&max_results=10&sortBy=relevance",
+  "retrieved_at": "20260809T125903Z",
+  "note": "pending candidates only — citing one requires a human edit to the data file, which then falls under the cite=>fetch rule",
+  "results": [
+    {
+      "arxiv_id": "1502.07020",
+      "title": "The Solar Cycle",
+      "published": "2015-02-25T00:54:37Z",
+      "authors": [
+        "David H. Hathaway"
+      ],
+      "summary": "The Solar Cycle is reviewed. The 11-year cycle of solar activity is characterized by the rise and fall in the numbers and surface area of sunspots. A number of other solar activity indicators also vary in association with the sunspots including; the 10.7cm radio flux, the total solar irradiance, the magnetic field, flares and coronal mass ejections, geomagnetic activity, galactic cosmic ray fluxes, and radioisotopes in tree rings and ice cores. Individual solar cycles are characterized by their maxima and minima, cycle periods and amplitudes, cycle shape, the equatorward drift of the active latitudes, hemispheric asymmetries, and active longitudes. Cycle-to-cycle variability includes the Maunder Minimum, the Gleissberg Cycle, and the Gnevyshev-Ohl (even-odd) Rule. Short-term variability includes the 154-day periodicity, quasi-biennial variations, and double-peaked maxima. We conclude with an examination of prediction techniques for the solar cycle and a closer look at cycles 23 and 24.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2305.16553",
+      "title": "Evolution of solar and stellar dynamo theory",
+      "published": "2023-05-26T00:41:35Z",
+      "authors": [
+        "Paul Charbonneau",
+        "Dmitry Sokoloff"
+      ],
+      "summary": "In this paper, written as a general historical and technical introduction to the various review papers collected in the special issue ``Solar and Stellar Dynamo: A New Era'', we review the evolution and current state of dynamo theory and modelling, with emphasis on the solar dynamo. Starting with a historical survey, we then focus on a set of ``tension points'' that are still left unresolved despite the remarkable progress of the past century. In our discussion of these tension points we touch upon the physical well-posedness of mean-field electrodynamics; constraints imposed by magnetic helicity conservation; the troublesome role of differential rotation; meridional flows and flux transpost dynamos; competing inductive mechanisms and Babcock-Leighton dynamos; the ambiguous precursor properties of the solar dipole; cycle amplitude regulation and fluctuation through nonlinear backreaction and stochastic forcing, including Grand Minima; and the promises and puzzles offered by global magnethydrodynamical numerical simulations of convection and dynamo action. We close by considering the potential bridges to be constructed between solar dynamo theory and modelling, and observations of magnetic activity in late-type stars.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2007.06488",
+      "title": "Solar structure and evolution",
+      "published": "2020-07-13T16:38:09Z",
+      "authors": [
+        "Joergen Christensen-Dalsgaard"
+      ],
+      "summary": "The Sun provides a critical benchmark for the general study of stellar structure and evolution. Also, knowledge about the internal properties of the Sun is important for the understanding of solar atmospheric phenomena, including the solar magnetic cycle. Here I provide a brief overview of the theory of stellar structure and evolution, including the physical processes and parameters that are involved. This is followed by a discussion of solar evolution, extending from the birth to the latest stages. As a background for the interpretation of observations related to the solar interior I provide a rather extensive analysis of the sensitivity of solar models to the assumptions underlying their calculation. I then discuss the detailed information about the solar interior that has become available through helioseismic investigations and the detection of solar neutrinos, with further constraints provided by the observed abundances of the lightest elements. Revisions in the determination of the solar surface abundances have led to increased discrepancies, discussed in some detail, between the observational inferences and solar models. I finally briefly address the relation of the Sun to other similar stars and the prospects for asteroseismic investigations of stellar structure and evolution.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1511.03613",
+      "title": "A Three-Dimensional Babcock-Leighton Solar Dynamo Model: Initial Results with Axisymmetric Flows",
+      "published": "2015-11-11T19:20:24Z",
+      "authors": [
+        "Mark S. Miesch",
+        "Kinfe Teweldebirhan"
+      ],
+      "summary": "The main objective of this paper is to introduce the STABLE (Surface flux Transport And Babcock-LEighton) solar dynamo model. STABLE is a 3D Babcock-Leighton/Flux Transport dynamo model in which the source of poloidal field is the explicit emergence, distortion, and dispersal of bipolar magnetic regions (BMRs). Here we describe the STABLE model in more detail than we have previously and we verify it by reproducing a 2D mean-field benchmark. We also present some representative dynamo simulations, focusing on the special case of kinematic magnetic induction and axisymmetric flow fields. Not all solutions are supercritical; it can be a challenge for the BL mechanism to sustain the dynamo when the turbulent diffusion near the surface is $\\geq 10^{12}$ cm$^2$ s$^{-1}$. However, if BMRs are sufficiently large, deep, and numerous, then sustained, cyclic, dynamo solutions can be found that exhibit solar-like features. Furthermore, we find that the shearing of radial magnetic flux by the surface differential rotation can account for most of the net toroidal flux generation in each hemisphere, as has been recently argued for the Sun by Cameron & Schussler (2015).",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1210.1209",
+      "title": "Torsional Oscillations in a Global Solar Dynamo",
+      "published": "2012-10-03T20:18:32Z",
+      "authors": [
+        "P. Beaudoin",
+        "P. Charbonneau",
+        "E. Racine",
+        "P. K. Smolarkiewicz"
+      ],
+      "summary": "We characterize and analyze rotational torsional oscillations developing in a large-eddy magnetohydrodynamical simulation of solar convection (Ghizaru, Charbonneau, and Smolarkiewicz, Astrophys. J. Lett., 715, L133 (2010); Racine et al., Astrophys. J., 735, 46 (2011)) producing an axisymmetric large-scale magnetic field undergoing periodic polarity reversals. Motivated by the many solar-like features exhibited by these oscillations, we carry out an analysis of the large-scale zonal dynamics. We demonstrate that simulated torsional oscillations are not driven primarily by the periodically-varying large-scale magnetic torque, as one might have expected, but rather via the magnetic modulation of angular-momentum transport by the large-scale meridional flow. This result is confirmed by a straightforward energy analysis. We also detect a fairly sharp transition in rotational dynamics taking place as one moves from the base of the convecting layers to the base of the thin tachocline-like shear layer formed in the stably stratified fluid layers immediately below. We conclude by discussing the implications of our analyses with regards to the mechanism of amplitude saturation in the global dynamo operating in the simulation, and speculate on the possible precursor value of torsional oscillations for the forecast of solar cycle characteristics.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1711.04117",
+      "title": "Will Solar Cycles 25 and 26 Be Weaker than Cycle 24 ?",
+      "published": "2017-11-11T11:08:36Z",
+      "authors": [
+        "J. Javaraiah"
+      ],
+      "summary": "The study of variations in solar activity is important for understanding the underlying mechanism of solar activity and for predicting the level of activity in view of the activity impact on space weather and global climate. Here we have used the amplitudes (the peak values of the 13-month smoothed international sunspot number) of Solar Cycles 1-24 to predict the relative amplitudes of the solar cycles during the rising phase of the upcoming Gleissberg cycle. We fitted a cosine function to the amplitudes and times of the solar cycles after subtracting a linear fit of the amplitudes. The best cosine fit shows overall properties (periods, maxima, minima, etc.) of Gleissberg cycles, but with large uncertainties. We obtain a pattern of the rising phase of the upcoming Gleissberg cycle, but there is considerable ambiguity. Using the epochs of violations of the Gnevyshev-Ohl rule (G-O rule) and the `tentative inverse G-O rule' of solar cycles during the period 1610-2015, and also using the epochs where the orbital angular momentum of the Sun is steeply decreased during the period 1600-2099, we infer that Solar Cycle 25 will be weaker than Cycle 24. Cycles 25 and 26 will have almost same strength, and their epochs are at the minimum between the current and upcoming Gleissberg cycles. In addition, Cycle 27 is expected to be stronger than Cycle 26 and weaker than Cycle 28, and Cycle 29 is expected to be stronger than both Cycles 28 and 30. The maximum of Cycle 29 is expected to represent the next Gleissberg maximum. Our analysis also suggests a much lower value (30-40) for the maximum amplitude of the upcoming Cycle 25.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1006.4861",
+      "title": "The State of Self-Organized Criticality of the Sun During the Last 3 Solar Cycles. I. Observations",
+      "published": "2010-06-24T19:08:04Z",
+      "authors": [
+        "Markus J. Aschwanden"
+      ],
+      "summary": "We analyze the occurrence frequency distributions of peak fluxes $P$, total fluxes $E$, and durations $T$ of solar flares over the last three solar cycles (during 1980--2010) from hard X-ray data of HXRBS/SMM, BATSE/CGRO, and RHESSI. From the synthesized data we find powerlaw slopes with mean values of $α_P=1.72\\pm0.08$ for the peak flux, $α_E=1.60\\pm0.14$ for the total flux, and $α_T=1.98\\pm0.35$ for flare durations. We find a systematic anti-correlation of the powerlaw slope of peak fluxes as a function of the solar cycle, varying with an approximate sinusoidal variation $α_P(t)=α_0+Δα\\cos{[2π(t-t_0)/T_{cycle}]}$, with a mean of $α_0=1.73$, a variation of $Δα=0.14$, a solar cycle period $T_{cycle}=12.6$ yrs, and a cycle minimum time $t_0=1984.1$. The powerlaw slope is flattest during the maximum of a solar cycle, which indicates a higher magnetic complexity of the solar corona that leads to an overproportional rate of powerful flares.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1311.7387",
+      "title": "Solar Modulation of Cosmic Rays during the Declining and Minimum Phases of Solar Cycle 23: Comparison with Past Three Solar Cycles",
+      "published": "2013-11-28T17:50:27Z",
+      "authors": [
+        "O. P. M. Aslam",
+        "Badruddin"
+      ],
+      "summary": "We study solar modulation of galactic cosmic rays (GCRs) during the deep solar minimum, including the declining phase, of solar cycle 23 and compare the results of this unusual period with the results obtained during similar phases of the previous solar cycles 20, 21, and 22. These periods consist of two epochs each of negative and positive polarities of the heliospheric magnetic field from the north polar region of the Sun. In addition to cosmic ray data, we utilize simultaneous solar and interplanetary plasma/field data including the tilt angle of the heliospheric current sheet. We study the relation between simultaneous variations in cosmic ray intensity and solar/interplanetary parameters during the declining and the minimum phases of cycle 23. We compare these relations with those obtained for the same phases in the three previous solar cycles. We observe certain peculiar features in cosmic ray modulation during the minimum of solar cycle 23 including the record high GCR intensity. We find, during this unusual minimum, that the correlation of GCR intensity is poor with sunspot number (R = -0.41), better with interplanetary magnetic field (R = -0.66), still better with solar wind velocity (R = -0.80) and much better with the tilt angle of the heliospheric current sheet (R = -0.92). In our view, it is not the diffusion or the drift alone, but the solar wind convection is the most likely additional effect responsible for the record high GCR intensity observed during the deep minimum of solar cycle 23.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2501.02262",
+      "title": "Analyses of features of magnetic cycles at different amounts of dynamo supercriticality: Solar dynamo is about two times critical",
+      "published": "2025-01-04T11:34:33Z",
+      "authors": [
+        "Sanket Wavhal",
+        "Pawan Kumar",
+        "Bidya Binay Karak"
+      ],
+      "summary": "The growth of a large-scale magnetic field in the Sun and stars is usually possible when the dynamo number (D) is above a critical value Dc. As the star ages, its rotation rate and thus D decrease. Hence, the question is how far the solar dynamo is from the critical dynamo transition. To answer this question, we have performed a set of simulations using Babcock-Leighton type dynamo models at different values of dynamo supercriticality and analyzed various features of magnetic cycle. By comparing the recovery rates of the dynamo from the Maunder minimum and statistics (numbers and durations) of the grand minima and maxima with that of observations and we show that the solar dynamo is only about two times critical and thus not highly supercritical. The observed correlation between the polar field proxy and the following cycle amplitudes and Gnevyshev-Ohl rule are also compatible with this conclusion.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "0806.3331",
+      "title": "Solar Grand Minima and random fluctuations in dynamo parameters",
+      "published": "2008-06-20T07:23:54Z",
+      "authors": [
+        "D. Moss",
+        "D. Sokoloff",
+        "I. Usoskin",
+        "V. Tutubalin"
+      ],
+      "summary": "We consider to what extent the long-term dynamics of cyclic solar activity in the form of Grand Minima can be associated with random fluctuations of the parameters governing the solar dynamo. We consider fluctuations of the alpha-coefficient in the conventional Parker migratory dynamo, and also in slightly more sophisticated dynamo models, and demonstrate that they can mimic the gross features of the phenomenon of the occurrence of Grand Minima over a suitable parameter range. The temporal distribution of these Grand Minima appears chaotic, with a more or less exponential waiting time distribution, typical of Poisson processes. In contrast however, the available reconstruction of Grand Minima statistics based on cosmogenic isotope data demonstrates substantial deviations from this exponential law. We were unable to reproduce the non-Poissonic tail of the waiting time distribution either in the framework of a simple alpha-quenched Parker model, or in its straightforward generalization, nor in simple models with feedback on the differential rotation. We suggest that the disagreement may only be apparent and is plausibly related to the limited observational data, and that the observations and results of numerical modeling can be consistent and represent physically similar dynamo regimes.",
+      "status": "pending"
+    }
+  ]
+}

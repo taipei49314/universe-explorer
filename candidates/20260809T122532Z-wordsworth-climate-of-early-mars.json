@@ -1,0 +1,143 @@
+{
+  "query": "Wordsworth climate of early Mars",
+  "endpoint": "https://export.arxiv.org/api/query?search_query=all%3AWordsworth+climate+of+early+Mars&max_results=10&sortBy=relevance",
+  "retrieved_at": "20260809T122532Z",
+  "note": "pending candidates only — citing one requires a human edit to the data file, which then falls under the cite=>fetch rule",
+  "results": [
+    {
+      "arxiv_id": "2008.01035",
+      "title": "Invasive species, extreme fire risk, and toxin release under a changing climate",
+      "published": "2020-08-03T17:22:18Z",
+      "authors": [
+        "Kimberley Miner",
+        "Laura Meyerson",
+        ". Climate Change Institute",
+        "School of Earth",
+        "Climate Sciences",
+        "University of Maine",
+        "Orono",
+        "ME 04469 2. Department of Natural Resources Science",
+        "University of Rhode Island",
+        "Kingston",
+        "RI 02881"
+      ],
+      "summary": "Mediterranean ecosystems such as those found in California, Central Chile, Southern Europe, and Southwest Australia host numerous, diverse, fire-adapted micro-ecosystems. These micro-ecosystems are as diverse as mountainous conifer to desert-like chaparral communities. Over the last few centuries, human intervention, invasive species, and climate warming have drastically affected the composition and health of Mediterranean ecosystems on almost every continent. Increased fuel load from fire suppression policies and the continued range expansion of non-native insects and plants, some driven by long-term drought, produced the deadliest wildfire season on record in 2018. As a consequence of these fires, a large number of structures are destroyed, releasing household chemicals into the environment as uncontrolled toxins. The mobilization of these materials can lead to health risks and disruption in both human and natural systems. This article identifies drivers that led to a structural weakening of the mosaic of fire-adapted ecosystems in California, and subsequently increased the risk of destructive and explosive wildfires throughout the state. Under a new climate regime, managing the impacts on systems moving out-of-phase with natural processes may protect lives and ensure the stability of ecosystem services.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1606.02813",
+      "title": "The Climate of Early Mars",
+      "published": "2016-06-09T03:41:16Z",
+      "authors": [
+        "Robin Wordsworth"
+      ],
+      "summary": "The nature of the early Martian climate is one of the major unanswered questions of planetary science. Key challenges remain, but a new wave of orbital and in situ observations and improvements in climate modeling have led to significant advances over the last decade. Multiple lines of geologic evidence now point to an episodically warm surface during the late Noachian and early Hesperian periods 3-4 Ga. The low solar flux received by Mars in its first billion years and inefficiency of plausible greenhouse gases such as CO2 means that the steady-state early Martian climate was likely cold. A denser CO2 atmosphere would have caused adiabatic cooling of the surface and hence migration of water ice to the higher altitude equatorial and southern regions of the planet. Transient warming caused melting of snow and ice deposits and a temporarily active hydrological cycle, leading to erosion of the valley networks and other fluvial features. Precise details of the warming mechanisms remain unclear, but impacts, volcanism and orbital forcing all likely played an important role. The lack of evidence for glaciation across much of Mars' ancient terrain suggests the late Noachian surface water inventory was not sufficient to sustain a northern ocean. While mainly inhospitable on the surface, early Mars may nonetheless have presented significant opportunities for the development of microbial life.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1210.4216",
+      "title": "3D modelling of the early Martian Climate under a denser CO2 atmosphere: Temperatures and CO2 ice clouds",
+      "published": "2012-10-15T23:22:29Z",
+      "authors": [
+        "Francois Forget",
+        "Robin Wordsworth",
+        "Ehouarn Millour",
+        "Jean-Baptiste Madeleine",
+        "Laura Kerber",
+        "Jeremy Leconte",
+        "Emmanuel Marcq",
+        "Robert M. Haberle"
+      ],
+      "summary": "On the basis of geological evidence, it is often stated that the early martian climate was warm enough for liquid water to flow on the surface thanks to the greenhouse effect of a thick atmosphere. We present 3D global climate simulations of the early martian climate performed assuming a faint young sun and a CO2 atmosphere with pressure between 0.1 and 7 bars. The model includes a detailed radiative transfer model using revised CO2 gas collision induced absorption properties, and a parameterisation of the CO2 ice cloud microphysical and radiative properties. A wide range of possible climates is explored by using various values of obliquities, orbital parameters, cloud microphysic parameters, atmospheric dust loading, and surface properties. Unlike on present day Mars, for pressures higher than a fraction of a bar, surface temperatures vary with altitude because of the adiabatic cooling and warming of the atmosphere when it moves vertically. In most simulations, CO2 ice clouds cover a major part of the planet but greenhouse effect does not exceed +15 K. We find that a CO2 atmosphere could not have raised the annual mean temperature above 0°C anywhere on the planet. The collapse of the atmosphere into permanent CO2 ice caps is predicted for pressures higher than 3 bar, or conversely at pressure lower than one bar if the obliquity is low enough. Summertime diurnal mean surface temperatures above 0°C (a condition which could have allowed rivers to form) are predicted for obliquity larger than 40° at high latitudes but not in locations where most valley networks are observed. In the absence of other warming mechanisms, our climate model results are thus consistent with a cold early Mars scenario in which non climatic mechanisms must occur to explain the evidence for liquid water. In a companion paper by Wordsworth et al., we simulate the hydrological cycle on such a planet.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2411.11111",
+      "title": "Greenhouse warming potential of a suite of gas species on early Mars evaluated using a radiative-convective climate model",
+      "published": "2024-11-17T16:05:12Z",
+      "authors": [
+        "Jason Jorge",
+        "Robin Wordsworth",
+        "Danica Adams"
+      ],
+      "summary": "Abundant geomorphological and geochemical evidence of liquid water on the surface of early Mars during the late Noachian and early Hesperian periods needs to be reconciled with a fainter young Sun. While a dense CO2 atmosphere and related warming mechanisms are potential solutions to the early Mars climate problem, further investigation is warranted. Here, we complete a comprehensive survey of the warming potential of all known greenhouse gases and perform detailed calculations for 15 different minor gas species under early Martian conditions. We find that of these 15 species, H2O2, HNO3, NH3, SO2, and C2H4 cause significant greenhouse warming at concentrations of ~0.1 ppmv or greater. However, the most highly effective greenhouse gas species also tend to be more condensable, soluble and vulnerable to photolytic destruction. To provide a reference for future atmospheric evolution and photochemical studies, we have made our warming potential database freely available online.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1610.09697",
+      "title": "Transient reducing greenhouse warming on early Mars",
+      "published": "2016-10-30T19:33:20Z",
+      "authors": [
+        "Robin Wordsworth",
+        "Yulia Kalugina",
+        "Sergei Lokshtanov",
+        "Andrei Vigasin",
+        "Bethany Ehlmann",
+        "James Head",
+        "Cecilia Sanders",
+        "Huize Wang"
+      ],
+      "summary": "The evidence for abundant liquid water on early Mars despite the faint young Sun is a long-standing problem in planetary research. Here we present new ab initio spectroscopic and line-by-line climate calculations of the warming potential of reduced atmospheres on early Mars. We show that the strength of both CO2-H2 and CO2-CH4 collision-induced absorption (CIA) has previously been significantly underestimated. Contrary to previous expectations, methane could have acted as a powerful greenhouse gas on early Mars due to CO2-CH4 CIA in the critical 250-500 cm^-1 spectral window region. In atmospheres of 0.5 bar CO2 or more, percent levels of H2 or CH4 raise annual mean surface temperatures by tens of degrees, with temperatures reaching 273 K for pressures of 1.25-2~bar and 2-10% of H2 and CH4. Methane and hydrogen produced following aqueous alteration of Mars' crust could have combined with volcanically outgassed CO2 to form transient atmospheres of this composition 4.5-3.5 Ga. Our results also suggest that inhabited exoplanets could retain surface liquid water at significant distances from their host stars.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1503.07557",
+      "title": "Precipitation extremes under climate change",
+      "published": "2015-03-25T21:11:05Z",
+      "authors": [
+        "Paul A. O'Gorman"
+      ],
+      "summary": "The response of precipitation extremes to climate change is considered using results from theory, modeling, and observations, with a focus on the physical factors that control the response. Observations and simulations with climate models show that precipitation extremes intensify in response to a warming climate. However, the sensitivity of precipitation extremes to warming remains uncertain when convection is important, and it may be higher in the tropics than the extratropics. Several physical contributions govern the response of precipitation extremes. The thermodynamic contribution is robust and well understood, but theoretical understanding of the microphysical and dynamical contributions is still being developed. Orographic precipitation extremes and snowfall extremes respond differently from other precipitation extremes and require particular attention. Outstanding research challenges include the influence of mesoscale convective organization, the dependence on the duration considered, and the need to better constrain the sensitivity of tropical precipitation extremes to warming.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1912.05630",
+      "title": "Measurements and semi-empirical calculations of CO2+CH4 and CO2+H2 collision-induced absorption across a wide range of wavelengths and temperatures. Application for the prediction of early Mars surface temperature",
+      "published": "2019-12-11T21:09:51Z",
+      "authors": [
+        "Martin Turbet",
+        "Christian Boulet",
+        "Tijs Karman"
+      ],
+      "summary": "Reducing atmospheres have recently emerged as a promising scenario to warm the surface of early Mars enough to drive the formation of valley networks and other ancient aqueous features that have been detected so far on the surface of Mars. Here we present a series of experiments and calculations to better constrain CO2+CH4 and CO2+H2 collision-induced absorptions (CIAs) as well as their effect on the prediction of early Mars surface temperature. First, we carried out a new set of experimental measurements (using the AILES line of the SOLEIL synchrotron) of both CO2+CH4 and CO2+H2 CIAs. These measurements confirm the previous results of Turbet et al. 2019, Icarus vol. 321, while significantly reducing the experimental uncertainties. Secondly, we fitted a semi-empirical model to these CIAs measurements, allowing us to compute the CO2+CH4 and CO2+H2 CIAs across a broad spectral domain (0-1500cm-1) and for a wide range of temperatures (100-600K). Last, we performed 1-D numerical radiative-convective climate calculations (using the LMD Generic Model) to compute the surface temperature expected on the surface of early Mars for several CO2, CH4 and H2 atmospheric contents, taking into account the radiative effect of these revised CIAs. These calculations demonstrate that thick CO2+H2-dominated atmospheres remain a viable solution for warming the surface of Mars above the melting point of water, but not CO2+CH4-dominated atmospheres. Our calculated CO2+CH4 and CO2+H2 CIA spectra and predicted early Mars surface temperatures are provided to the community for future uses.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1812.11722",
+      "title": "Geologic Constraints on Early Mars Climate",
+      "published": "2018-12-31T08:32:21Z",
+      "authors": [
+        "Edwin S. Kite"
+      ],
+      "summary": "Early Mars climate research has well-defined goals (Mars Exploration Program Analysis Group 2018). Achieving these goals requires geologists and climate modelers to coordinate. Coordination is easier if results are expressed in terms of well-defined parameters. Key parameters include the following quantitative geologic constraints. (1) Cumulative post-3.4 Ga precipitation-sourced water runoff in some places exceeded 1 km column. (2) There is no single Early Mars climate problem: the traces of $\\ge$2 river-forming periods are seen. Relative to rivers that formed earlier in Mars history, rivers that formed later in Mars history are found preferentially at lower elevations, and show a stronger dependence on latitude. (3) The duration of the longest individual river-forming climate was >(10$^2$-10$^3$) yr, based on paleolake hydrology. (4) Peak runoff production was >0.1 mm/hr. However, (5) peak runoff production was intermittent, sustained (in a given catchment) for only <10% of the duration of river-forming climates. (6) The cumulative number of wet years during the valley-network-forming period was >10$^5$ yr. (7) Post-Noachian light-toned, layered sedimentary rocks took >10$^7$ yr to accumulate. However, (8) an \"average\" place on Mars saw water for <10$^7$ yr after the Noachian, suggesting that the river-forming climates were interspersed with long globally-dry intervals. (9) Geologic proxies for Early Mars atmospheric pressure indicate pressure was not less than 0.012 bar but not much more than 1 bar. A truth table of these geologic constraints versus currently published climate models shows that the late persistence of river-forming climates, combined with the long duration of individual lake forming climates, is a challenge for most models.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "1810.01974",
+      "title": "The geological and climatological case for a warmer and wetter early Mars",
+      "published": "2018-10-03T21:02:35Z",
+      "authors": [
+        "Ramses M. Ramirez",
+        "Robert A. Craddock"
+      ],
+      "summary": "The climate of early Mars remains a topic of intense debate. Ancient terrains preserve landscapes consistent with stream channels, lake basins, and possibly even oceans, and thus the presence of liquid water flowing on the Martian surface 4 billion years ago. However, despite the geological evidence, determining how long climatic conditions supporting liquid water lasted remains uncertain. Climate models have struggled to generate sufficiently warm surface conditions given the faint young Sun - even assuming a denser early atmosphere. A warm climate could have potentially been sustained by supplementing atmospheric CO2 and H2O warming with either secondary greenhouse gases or clouds. Alternatively, the Martian climate could have been predominantly cold and icy, with transient warming episodes triggered by meteoritic impacts, volcanic eruptions, methane bursts, or limit cycles. Here, we argue that a warm and semi-arid climate capable of producing rain is most consistent with the geological and climatological evidence.",
+      "status": "pending"
+    },
+    {
+      "arxiv_id": "2103.06736",
+      "title": "A coupled model of episodic warming, oxidation and geochemical transitions on early Mars",
+      "published": "2021-03-11T15:35:53Z",
+      "authors": [
+        "Robin Wordsworth",
+        "Andrew H. Knoll",
+        "Joel Hurowitz",
+        "Mark Baum",
+        "Bethany L. Ehlmann",
+        "James W. Head",
+        "Kathryn Steakley"
+      ],
+      "summary": "Reconciling the geology of Mars with models of atmospheric evolution remains a major challenge. Martian geology is characterized by past evidence for episodic surface liquid water, and geochemistry indicating a slow and intermittent transition from wetter to drier and more oxidizing surface conditions. Here we present a new model incorporating randomized injection of reducing greenhouse gases and oxidation due to hydrogen escape, to investigate the conditions responsible for these diverse observations. We find that Mars could have transitioned repeatedly from reducing (H2-rich) to oxidizing (O2-rich) atmospheric conditions in its early history. Our model predicts a generally cold early Mars, with mean annual temperatures below 240 K. If peak reducing gas release rates and background CO2 levels are high enough, it nonetheless exhibits episodic warm intervals sufficient to degrade crater walls, form valley networks and create other fluvial/lacustrine features. Our model also predicts transient buildup of atmospheric O2, which can help explain the occurrence of oxidized mineral species such as manganese oxides at Gale Crater. We suggest that the apparent Noachian--Hesperian transition from phyllosilicate deposition to sulfate deposition around 3.5 billion years ago can be explained as a combined outcome of increasing planetary oxidation, decreasing groundwater availability and a waning bolide impactor flux, which dramatically slowed the remobilization and thermochemical destruction of surface sulfates. Ultimately, rapid and repeated variations in Mars' early climate and surface chemistry would have presented both challenges and opportunities for any emergent microbial life.",
+      "status": "pending"
+    }
+  ]
+}

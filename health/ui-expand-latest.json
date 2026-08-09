@@ -1,0 +1,514 @@
+{
+  "kind": "ui_expand_measure",
+  "focus": "stars",
+  "n_measurements": 56,
+  "n_pass": 56,
+  "n_fail": 0,
+  "all_ok": true,
+  "measurements": [
+    {
+      "id": "data.focus_topic_present",
+      "surface": "data",
+      "kind": "inventory",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "topic id stars"
+    },
+    {
+      "id": "data.focus_title_zh",
+      "surface": "data",
+      "kind": "inventory",
+      "expected": "恆星",
+      "observed": "恆星",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "data.focus_n_claims_field",
+      "surface": "data",
+      "kind": "inventory",
+      "expected": 6,
+      "observed": 6,
+      "ok": true,
+      "note": "n_claims must equal counted claims"
+    },
+    {
+      "id": "data.focus_claim_count_positive",
+      "surface": "data",
+      "kind": "inventory",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "n=6"
+    },
+    {
+      "id": "data.no_banned_certainty_keys",
+      "surface": "data",
+      "kind": "inventory",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "confidence/score/probability/certainty/trust forbidden"
+    },
+    {
+      "id": "app_default.focus_closed",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "all domains: not auto-opened"
+    },
+    {
+      "id": "app_default.view_has_focus",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "focus domain is listed"
+    },
+    {
+      "id": "app_default.view_count_gt1",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "multi-domain view"
+    },
+    {
+      "id": "app_click_open.returns_true",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "app_click_open.is_open",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "app_click_open.other_still_closed",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "other=black_hole"
+    },
+    {
+      "id": "app_click_close.returns_false",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "app_click_close.is_closed",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "app_chip.topic_set",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": "stars",
+      "observed": "stars",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "app_chip.is_open",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "app_chip.single_in_view",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "app_chip.claim_count",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": 6,
+      "observed": 6,
+      "ok": true,
+      "note": "claims under focus domain"
+    },
+    {
+      "id": "app_chip_clear.focus_stays_open",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "openDomains persists after All"
+    },
+    {
+      "id": "app_theme.multi_no_mass_open",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "cosmos domains in view: 4"
+    },
+    {
+      "id": "uni_default.expand_id_null",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": null,
+      "observed": null,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "uni_expand.id_set",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": "stars",
+      "observed": "stars",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "uni_expand.state",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": "stars",
+      "observed": "stars",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "uni_collapse.id_cleared",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": null,
+      "observed": null,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "uni_collapse.state",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": null,
+      "observed": null,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "uni_switch.to_other",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": "cosmology",
+      "observed": "cosmology",
+      "ok": true,
+      "note": "expand other replaces focus"
+    },
+    {
+      "id": "index_default.closed",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "index_toggle_open.returns_true",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "index_toggle_open.is_open",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "index_toggle_close.returns_false",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "index_toggle_close.is_closed",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "index_deeplink.opens",
+      "surface": "scenario",
+      "kind": "scenario_step",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "app.openDomains_state",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains 'openDomains'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.domain_block_css",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains '.domain-block'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.domain_head_control",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains 'domain-head'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.toggle_open_class",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains 'classList.toggle(\"open\"'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.chip_auto_expand",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains 'state.openDomains[id] = true'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.auto_expand_selected_topic",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains 'if (state.topic) state.openDomains[state.topic] = true'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.auto_expand_single",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains 'if (topics.length === 1) state.openDomains[topics[0].id] = true'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.aria_expanded",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains 'aria-expanded'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.zh_hint",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains '點領域即可展開底下的宣稱'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.zh_claims_word",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains '則宣稱'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.measure_hook",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains '__UE_MEASURE__'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "app.measure_rec_expand",
+      "surface": "app",
+      "kind": "contract",
+      "expected": "contains 'domain_expand'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "uni.expand_cluster_fn",
+      "surface": "universe",
+      "kind": "contract",
+      "expected": "contains 'function expandCluster'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "uni.expand_id_state",
+      "surface": "universe",
+      "kind": "contract",
+      "expected": "contains 'expandId'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "uni.label_click",
+      "surface": "universe",
+      "kind": "contract",
+      "expected": "contains 'expandCluster(c.id)'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "uni.nav_click",
+      "surface": "universe",
+      "kind": "contract",
+      "expected": "contains 'expandCluster(b.dataset.a.slice(2))'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "uni.stars_layout",
+      "surface": "universe",
+      "kind": "contract",
+      "expected": "contains 'stars:[-80,200]'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "uni.measure_hook",
+      "surface": "universe",
+      "kind": "contract",
+      "expected": "contains '__UE_MEASURE__'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "uni.measure_rec_expand",
+      "surface": "universe",
+      "kind": "contract",
+      "expected": "contains 'cluster_expand'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "index.topic_toggle",
+      "surface": "index",
+      "kind": "contract",
+      "expected": "contains 'topic-toggle'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "index.open_css",
+      "surface": "index",
+      "kind": "contract",
+      "expected": "contains '.topic-card.open'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "index.deeplink_open",
+      "surface": "index",
+      "kind": "contract",
+      "expected": "contains 'get(\"open\")'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "index.toggle_open",
+      "surface": "index",
+      "kind": "contract",
+      "expected": "contains 'classList.toggle(\"open\"'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "index.claim_list",
+      "surface": "index",
+      "kind": "contract",
+      "expected": "contains 'claim-list'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    },
+    {
+      "id": "index.data_topic_attr",
+      "surface": "index",
+      "kind": "contract",
+      "expected": "contains 'data-topic=\"'",
+      "observed": true,
+      "ok": true,
+      "note": "source contract"
+    }
+  ]
+}
