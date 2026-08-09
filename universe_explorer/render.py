@@ -297,6 +297,23 @@ def claims_json(topics: List[Topic]) -> str:
     }, ensure_ascii=False, indent=1)
 
 
+# Theme clusters for the expanded 宇宙 / 星球 / 地球 frontend (docs only + UI).
+TOPIC_THEMES = {
+    "cosmology": "cosmos",
+    "dark_matter": "cosmos",
+    "black_hole": "cosmos",
+    "planets": "planets",
+    "exoplanets": "planets",
+    "ocean": "earth",
+    "seismology": "earth",
+}
+THEME_META = {
+    "cosmos": {"title": "Cosmos", "title_zh": "宇宙"},
+    "planets": {"title": "Planets", "title_zh": "星球"},
+    "earth": {"title": "Earth", "title_zh": "地球"},
+}
+
+
 def app_data_json(topics: List[Topic]) -> str:
     """D4: the bilingual payload for the dynamic frontend. Same constitution
     as claims.json — only recorded fields and mechanical derivations; the zh
@@ -314,11 +331,16 @@ def app_data_json(topics: List[Topic]) -> str:
     claims_out = []
     for t in topics:
         tz = ZH.TOPIC_ZH.get(t.id, {})
+        theme = TOPIC_THEMES.get(t.id, "cosmos")
         topics_out.append({
             "id": t.id, "title": t.title,
             "title_zh": tz.get("title", t.title),
             "summary": t.summary,
             "summary_zh": tz.get("summary", t.summary),
+            "theme": theme,
+            "theme_title": THEME_META[theme]["title"],
+            "theme_title_zh": THEME_META[theme]["title_zh"],
+            "n_claims": len(t.claims),
         })
         for c in t.claims:
             d = derive(c)
@@ -393,6 +415,10 @@ def app_data_json(topics: List[Topic]) -> str:
         "note": ("Universe Explorer app data. Only recorded fields and "
                  "mechanical derivations; zh fields are a presentation "
                  "overlay that falls back to English."),
+        "themes": [
+            {"id": k, "title": v["title"], "title_zh": v["title_zh"]}
+            for k, v in THEME_META.items()
+        ],
         "topics": topics_out,
         "claims": claims_out,
     }, ensure_ascii=False)
@@ -401,22 +427,47 @@ def app_data_json(topics: List[Topic]) -> str:
 def render_index(topics: List[Topic]) -> str:
     """The multi-topic landing page (P4). Each topic is a container with no
     light of its own; its claim lights are previewed so the knowledge shape is
-    legible before you even open the topic."""
-    cards = []
+    legible before you even open the topic. Grouped by 宇宙 / 星球 / 地球."""
+    by_theme: dict = {k: [] for k in THEME_META}
     for t in topics:
+        theme = TOPIC_THEMES.get(t.id, "cosmos")
         claims = sorted(t.claims, key=lambda c: c.status.rank)
         dots = "".join(
             f'<span class="dot" style="color:{_LIGHT_COLOR[c.status]}" '
             f'title="{_esc(c.title)}">{c.status.light}</span>'
             for c in claims
         )
-        cards.append(
+        by_theme.setdefault(theme, []).append(
             f'<a class="topic-card" href="{_esc(t.id)}.html">'
-            f'<h2>{_esc(t.title)}</h2>'
+            f'<h2>{_esc(t.title)} '
+            f'<span class="n">{len(t.claims)}</span></h2>'
             f'<div class="dots">{dots}</div>'
             f'<p>{_esc(t.summary)}</p></a>'
         )
-    return _INDEX.format(legend=_legend(), cards="".join(cards))
+    sections = []
+    for tid, meta in THEME_META.items():
+        cards = by_theme.get(tid) or []
+        if not cards:
+            continue
+        sections.append(
+            f'<section class="theme-block" id="theme-{_esc(tid)}">'
+            f'<h2 class="theme-h">{_esc(meta["title"])} '
+            f'<span class="theme-h-zh">{_esc(meta["title_zh"])}</span></h2>'
+            f'<div class="theme-grid">{"".join(cards)}</div></section>'
+        )
+    total = sum(len(t.claims) for t in topics)
+    lead = (
+        f'<p class="lead">Cosmos · Planets · Earth — '
+        f'{len(topics)} domains, <b>{total}</b> claims. '
+        f'Lights belong to claims, never to topics. '
+        f'<a href="app.html">Knowledge map</a> · '
+        f'<a href="universe.html">Drift</a> · '
+        f'<a href="zh.html">中文</a></p>'
+    )
+    return _INDEX.format(
+        legend=_legend(),
+        cards=lead + "".join(sections),
+    )
 
 
 _PAGE = """<!doctype html>
@@ -772,20 +823,30 @@ _INDEX = """<!doctype html>
           font-size: .82em; }}
   .topic-card {{ display: block; text-decoration: none; color: inherit;
                 border: 1px solid currentColor; border-radius: 10px;
-                padding: 12px 18px; margin: 14px 0;
+                padding: 12px 18px; margin: 0;
                 background: color-mix(in srgb, currentColor 4%, transparent); }}
   .topic-card:hover {{ background: color-mix(in srgb, currentColor 9%, transparent); }}
   .topic-card h2 {{ margin: 0 0 4px; }}
+  .topic-card .n {{ font-size: .72em; font-weight: 500; opacity: .55;
+                   font-family: ui-monospace, monospace; }}
   .dots {{ font-size: 1.3em; letter-spacing: 3px; margin-bottom: 4px; }}
   .topic-card p {{ margin: 0; opacity: .8; font-size: .92em; }}
+  .lead {{ opacity: .85; margin: 8px 0 20px; }}
+  .theme-block {{ margin: 28px 0; }}
+  .theme-h {{ font: 500 1.15rem Georgia, "Songti SC", serif; margin: 0 0 12px;
+             border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+             padding-bottom: 6px; }}
+  .theme-h-zh {{ font-size: .85em; opacity: .65; margin-left: 8px;
+                font-weight: 400; }}
+  .theme-grid {{ display: grid; gap: 12px; }}
 </style>
 </head>
 <body>
 <header>
   <h1>Universe Explorer</h1>
-  <p>Honestly separating what we know from what we don't. A topic is only a
-  container &mdash; it has no status light of its own; each claim inside carries
-  its own. Same engine, any domain.
+  <p>Honestly separating what we know from what we don't. Themes:
+  <b>Cosmos</b> · <b>Planets</b> · <b>Earth</b>. A topic is only a
+  container &mdash; lights belong to claims.
   <a href="universe.html"><b>Drift the universe &rarr;</b></a> ·
   <a href="app.html"><b>Knowledge map &rarr;</b></a> ·
   <a href="explore.html">Explore all claims &rarr;</a> ·

@@ -29,12 +29,15 @@ h1 { font:500 1.7rem Georgia,"Times New Roman","Songti SC","Noto Serif CJK TC",s
 .sub { color:var(--muted); margin:0; font-size:.92rem; }
 .toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center;
   margin:14px 0 4px; }
-.chip, .langbtn { border:1px solid var(--line); background:var(--panel);
+.chip, .langbtn, .themechip { border:1px solid var(--line); background:var(--panel);
   color:var(--ink); border-radius:999px; padding:4px 13px; font:inherit;
   font-size:.82rem; cursor:pointer; }
-.chip.on { border-color:var(--accent); font-weight:700;
+.chip.on, .themechip.on { border-color:var(--accent); font-weight:700;
   background:var(--mono-bg); }
+.themechip { opacity:.92; font-size:.78rem; letter-spacing:.03em; }
+.themechip.on { opacity:1; }
 .langbtn { margin-left:auto; }
+#themebar { margin-bottom:2px; }
 #q { flex:1 1 180px; min-width:160px; font:inherit; font-size:.88rem;
   padding:6px 12px; border:1px solid var(--line); border-radius:8px;
   background:var(--panel); color:var(--ink); }
@@ -117,6 +120,7 @@ button:focus-visible, .dot:focus-visible, a:focus-visible, #q:focus-visible {
 <header>
   <h1 id="t-title"></h1>
   <p class="sub" id="t-sub"></p>
+  <div class="toolbar" id="themebar"></div>
   <div class="toolbar" id="topicbar"></div>
   <div class="toolbar">
     <input id="q" type="search">
@@ -142,8 +146,9 @@ const COLORS = { ESTABLISHED:"var(--est)", STRONG:"var(--strong)",
 const STATUS_ORDER = ["ESTABLISHED","STRONG","COMPETING","FRONTIER","SPECULATIVE"];
 const I18N = {
   en: { title:"Universe Explorer — Knowledge Map",
-    sub:"Every claim placed on the two axes the system actually judges by: community consensus × recorded evidence. Dots off the diagonal are honest tensions.",
-    search:"search claims…", all:"All domains", lang:"中文",
+    sub:"Cosmos · Planets · Earth. Every claim on two axes: community consensus × recorded evidence. Dots off the diagonal are honest tensions.",
+    search:"search claims…", all:"All domains", allThemes:"All themes",
+    themes:{cosmos:"Cosmos", planets:"Planets", earth:"Earth"}, lang:"中文",
     xaxis:"consensus (human-judged, traceable)",
     yaxis:"evidence (derived, never declared)",
     note:"Shaded corner = high consensus on non-direct evidence: the ⚡ divergence zone. Counts are counts of the visible list — recount them yourself.",
@@ -157,8 +162,9 @@ const I18N = {
     close:"close", diverge:"axes diverge",
     foot:'<a href="universe.html"><b>Drift the universe →</b></a> · Plain site: <a href="index.html">topics</a> · <a href="explore.html">explore</a> · <a href="about.html">how to read this</a> · <a href="claims.json">open data</a> · <a href="feed.xml">feed</a>. No confidence numbers exist anywhere here — certainty emerges from evidence you can open.' },
   zh: { title:"宇宙探索者 — 知識地圖",
-    sub:"把每個宣稱放上系統真正用來判定的兩條軸:社群共識 × 已收錄證據。偏離對角線的點,是誠實攤開的張力。",
-    search:"搜尋宣稱…", all:"全部領域", lang:"EN",
+    sub:"宇宙 · 星球 · 地球。把每個宣稱放上兩條軸:社群共識 × 已收錄證據。偏離對角線的點,是誠實攤開的張力。",
+    search:"搜尋宣稱…", all:"全部領域", allThemes:"全部主題",
+    themes:{cosmos:"宇宙", planets:"星球", earth:"地球"}, lang:"EN",
     xaxis:"共識軸(人工判定,可回溯)",
     yaxis:"證據軸(機械湧現,無人宣告)",
     note:"著色角落 = 強共識建立在非直接證據上:⚡ 分岔區。計數皆為可見清單之計數 —— 請自行重數。",
@@ -174,20 +180,25 @@ const I18N = {
 };
 
 let DATA = null;
-let state = { lang:"en", topic:"", q:"", sel:null };
+let state = { lang:"en", theme:"", topic:"", q:"", sel:null };
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g,
   c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const L = () => I18N[state.lang];
 const cf = (c, f) => state.lang === "zh" ? c[f + "_zh"] : c[f];
+const topicMeta = id => (DATA.topics || []).find(t => t.id === id) || {};
 
 function visible() {
   const q = state.q.toLowerCase();
-  return DATA.claims.filter(c =>
-    (!state.topic || c.topic === state.topic) &&
-    (!q || (c.title + " " + c.title_zh + " " + c.id + " " + c.topic)
-       .toLowerCase().includes(q)));
+  return DATA.claims.filter(c => {
+    const tm = topicMeta(c.topic);
+    if (state.theme && tm.theme !== state.theme) return false;
+    if (state.topic && c.topic !== state.topic) return false;
+    if (q && !(c.title + " " + c.title_zh + " " + c.id + " " + c.topic)
+         .toLowerCase().includes(q)) return false;
+    return true;
+  });
 }
 
 /* ---------------- map ---------------- */
@@ -353,10 +364,34 @@ function renderChrome() {
   $("langbtn").textContent = t.lang;
   $("mapnote").textContent = t.note;
   $("foot").innerHTML = t.foot;
+  const themes = DATA.themes || [
+    {id:"cosmos", title:"Cosmos", title_zh:"宇宙"},
+    {id:"planets", title:"Planets", title_zh:"星球"},
+    {id:"earth", title:"Earth", title_zh:"地球"},
+  ];
+  const tbar = [`<button class="themechip${state.theme ? "" : " on"}" data-th="">${esc(t.allThemes)}</button>`];
+  for (const th of themes) {
+    const lab = state.lang === "zh" ? th.title_zh : th.title;
+    tbar.push(`<button class="themechip${state.theme === th.id ? " on" : ""}"
+      data-th="${esc(th.id)}">${esc(lab)}</button>`);
+  }
+  $("themebar").innerHTML = tbar.join("");
+  $("themebar").querySelectorAll(".themechip").forEach(b =>
+    b.addEventListener("click", () => {
+      state.theme = b.dataset.th || "";
+      if (state.topic) {
+        const tm = topicMeta(state.topic);
+        if (state.theme && tm.theme !== state.theme) state.topic = "";
+      }
+      renderAll();
+    }));
+  const domainTopics = (DATA.topics || []).filter(tp =>
+    !state.theme || tp.theme === state.theme);
   const bar = [`<button class="chip${state.topic ? "" : " on"}" data-t="">${esc(t.all)}</button>`];
-  for (const tp of DATA.topics) {
+  for (const tp of domainTopics) {
+    const n = tp.n_claims != null ? ` · ${tp.n_claims}` : "";
     bar.push(`<button class="chip${state.topic === tp.id ? " on" : ""}"
-      data-t="${esc(tp.id)}">${esc(state.lang === "zh" ? tp.title_zh : tp.title)}</button>`);
+      data-t="${esc(tp.id)}">${esc(state.lang === "zh" ? tp.title_zh : tp.title)}${n}</button>`);
   }
   $("topicbar").innerHTML = bar.join("");
   $("topicbar").querySelectorAll(".chip").forEach(b =>

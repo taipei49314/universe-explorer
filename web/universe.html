@@ -165,17 +165,33 @@ const stars = [], dust = [], galaxies = [];
       hue:["199,224,234","234,214,199","214,199,234"][i % 3] });
 }
 
-/* layout: each topic = a constellation cluster */
+/* layout: each topic = a constellation cluster, grouped by theme */
 function layout() {
-  const anchors = [ {x:-1520,y:-840}, {x:1460,y:-780}, {x:-1400,y:900}, {x:1500,y:960} ];
-  clusters = DATA.topics.map((t, i) => ({ ...t, ...anchors[i % 4] }));
+  // theme regions: cosmos (NW), planets (NE), earth (S)
+  const themeAnchor = {
+    cosmos:  { x:-900,  y:-720 },
+    planets: { x: 1100, y:-640 },
+    earth:   { x:  80,  y: 980 },
+  };
+  const offset = {
+    cosmology:[-380,-120], dark_matter:[120,-200], black_hole:[420,80],
+    planets:[-280,-40], exoplanets:[320,120],
+    ocean:[-360,40], seismology:[340,-80],
+  };
+  clusters = DATA.topics.map((t) => {
+    const th = t.theme || "cosmos";
+    const base = themeAnchor[th] || themeAnchor.cosmos;
+    const off = offset[t.id] || [0, 0];
+    return { ...t, x: base.x + off[0], y: base.y + off[1] };
+  });
   bodies = [];
   for (const c of clusters) {
     const cl = DATA.claims.filter(k => k.topic === c.id);
     const r = rnd(c.id);
+    const spread = 150 + Math.min(cl.length, 18) * 8;
     cl.forEach((k, i) => {
-      const ang = (i / cl.length) * 6.283 + r() * 0.8;
-      const dist = 170 + r() * 210;
+      const ang = (i / Math.max(cl.length, 1)) * 6.283 + r() * 0.8;
+      const dist = 140 + r() * spread;
       bodies.push({ c:k, cl:c,
         bx:c.x + Math.cos(ang) * dist, by:c.y + Math.sin(ang) * dist * 0.72,
         x:0, y:0, ph:r() * 6.283, sp:0.25 + r() * 0.5,
