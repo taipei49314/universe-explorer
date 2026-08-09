@@ -149,8 +149,9 @@ const I18N = {
 
 let DATA = null, bodies = [], clusters = [];
 const UNCHARTED = [ {x:0,y:-1500}, {x:2320,y:220}, {x:-2380,y:160}, {x:60,y:1660} ];
-let state = { lang:"en", sel:null };
+let state = { lang:"en", sel:null, expandId:null };
 const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let expandT = 0; // 0..1 animated expand factor
 
 const cv = document.getElementById("space");
 const cx = cv.getContext("2d");
@@ -289,9 +290,10 @@ function layout() {
     const spread = 150 + Math.min(cl.length, 18) * 8;
     cl.forEach((k, i) => {
       const ang = (i / Math.max(cl.length, 1)) * 6.283 + r() * 0.8;
-      const dist = 140 + r() * spread;
+      const dist0 = 140 + r() * spread;
       bodies.push({ c:k, cl:c,
-        bx:c.x + Math.cos(ang) * dist, by:c.y + Math.sin(ang) * dist * 0.72,
+        ang, dist0,
+        bx:c.x + Math.cos(ang) * dist0, by:c.y + Math.sin(ang) * dist0 * 0.72,
         x:0, y:0, ph:r() * 6.283, sp:0.25 + r() * 0.5,
         size:24 - k.axis_rank * 3.6,   // size = evidence strength
         orb:r() * 6.283,
@@ -301,6 +303,16 @@ function layout() {
           ph:r()*6.283 })) });
     });
   }
+}
+function expandCluster(id) {
+  const c = clusters.find(x => x.id === id);
+  if (!c) return;
+  const was = state.expandId === id;
+  state.expandId = was ? null : id;
+  AudioFX.unlock(); AudioFX.blip();
+  if (state.expandId) flyTo(c.x, c.y, 1.35, 1.0);
+  else flyTo(0, 30, overviewZ(), 1.0);
+  renderHud();
 }
 
 /* draw one epistemic body */
@@ -460,25 +472,62 @@ function frame(ms) {
   }
   cx.globalAlpha = 1;
 
-  for (const b of bodies) {              // ambient bobbing in world space
+  // animate expand factor
+  const targetExp = state.expandId ? 1 : 0;
+  expandT += (targetExp - expandT) * (REDUCED ? 1 : 0.06);
+
+  for (const b of bodies) {              // ambient bobbing + cluster expand
+    const isExp = state.expandId && b.cl.id === state.expandId;
+    const isDim = state.expandId && b.cl.id !== state.expandId;
+    const mult = 1 + (isExp ? expandT * 1.35 : 0);
+    const dist = b.dist0 * mult;
+    b.bx = b.cl.x + Math.cos(b.ang) * dist;
+    b.by = b.cl.y + Math.sin(b.ang) * dist * 0.72;
     b.wx = b.bx + (REDUCED ? 0 : Math.sin(t * b.sp + b.ph) * 9);
     b.wy = b.by + (REDUCED ? 0 : Math.cos(t * b.sp * 0.8 + b.ph) * 7);
     b.x = (b.wx - cam.x) * cam.z + W/2;
     b.y = (b.wy - cam.y) * cam.z + H/2;
+    b._dim = isDim ? 0.22 + (1 - expandT) * 0.78 : 1;
   }
   for (const c of clusters) {            // constellation lines + name
     const mem = bodies.filter(b => b.cl === c);
-    cx.strokeStyle = "rgba(150,175,190,.16)"; cx.lineWidth = 1;
+    const isExp = state.expandId === c.id;
+    const isOther = state.expandId && !isExp;
+    cx.globalAlpha = isOther ? 0.2 : 1;
+    cx.strokeStyle = isExp ? "rgba(180,210,255,.35)" : "rgba(150,175,190,.16)";
+    cx.lineWidth = isExp ? 1.6 : 1;
     cx.beginPath();
     mem.forEach((b, i) => i ? cx.lineTo(b.x, b.y) : cx.moveTo(b.x, b.y));
     cx.stroke();
     const sx = (c.x - cam.x) * cam.z + W/2, sy = (c.y - cam.y) * cam.z + H/2;
-    cx.font = "500 " + Math.max(13, 15*cam.z) + "px Georgia, Songti SC, serif";
-    cx.fillStyle = "rgba(190,205,212,.5)"; cx.textAlign = "center";
-    cx.fillText(state.lang === "zh" ? c.title_zh : c.title, sx, sy);
+    const fs = Math.max(13, (isExp ? 18 : 15) * cam.z);
+    cx.font = (isExp ? "600 " : "500 ") + fs + "px -apple-system, Georgia, Songti SC, serif";
+    cx.fillStyle = isExp ? "rgba(230,240,255,.92)" : "rgba(190,205,212,.55)";
+    cx.textAlign = "center";
+    const label = (state.lang === "zh" ? c.title_zh : c.title)
+      + (isExp ? "  ·" : "");
+    cx.fillText(label, sx, sy);
+    if (isExp) {
+      cx.font = Math.max(10, 11 * cam.z) + "px system-ui";
+      cx.fillStyle = "rgba(180,200,220,.7)";
+      const n = mem.length;
+      cx.fillText(n + (state.lang === "zh" ? " 則宣稱 · 點天體閱讀" : " claims · click a body"),
+        sx, sy + fs * 1.15);
+    }
+    cx.globalAlpha = 1;
+    c._sx = sx; c._sy = sy; c._hitR = Math.max(40, 55 * cam.z);
+  }
+  // dim non-expanded bodies slightly
+  for (const b of bodies) {
+    if (b._dim < 1) { /* applied in draw via globalAlpha wrapper */ }
   }
   const sc = [...bodies].sort((a, b) => a === hover ? 1 : b === hover ? -1 : 0);
-  for (const b of sc) drawBody(b, t, b === hover);
+  for (const b of sc) {
+    cx.save();
+    cx.globalAlpha = b._dim != null ? b._dim : 1;
+    drawBody(b, t, b === hover);
+    cx.restore();
+  }
 
   // intro black hole (pull-back from event horizon)
   if (introBH.active || introBH.life > 0.01) {
@@ -527,6 +576,11 @@ cv.addEventListener("pointerup", e => { drag.on = false;
       const hitR = Math.max(16, (b.size + 10) * cam.z);
       if (Math.hypot(e.clientX - b.x, e.clientY - b.y) < hitR) hit = b; }
     if (hit) { openPanel(hit.c); return; }
+    // click constellation label → expand / collapse domain
+    for (const c of clusters) {
+      if (c._sx == null) continue;
+      if (Math.hypot(e.clientX - c._sx, e.clientY - c._sy) < (c._hitR || 50)) {
+        expandCluster(c.id); return; } }
     for (const u of UNCHARTED) {
       const ux = (u.x - cam.x) * cam.z + W/2, uy = (u.y - cam.y) * cam.z + H/2;
       if (Math.hypot(e.clientX - ux, e.clientY - uy) < 300 * cam.z) {
@@ -633,9 +687,17 @@ function renderHud() {
   $("nav").innerHTML = nav.join("");
   $("nav").querySelectorAll("button[data-a]").forEach(b =>
     b.addEventListener("click", () => {
-      if (b.dataset.a === "home") flyTo(0, 30, overviewZ());
-      else { const c = clusters.find(x => x.id === b.dataset.a.slice(2));
-        flyTo(c.x, c.y, 1.15); } }));
+      if (b.dataset.a === "home") {
+        state.expandId = null; flyTo(0, 30, overviewZ()); renderHud();
+      } else {
+        // expand domain (stars, cosmology, …) then fly in
+        expandCluster(b.dataset.a.slice(2));
+      } }));
+  // highlight expanded domain button
+  if (state.expandId) {
+    const on = $("nav").querySelector(`button[data-a="c:${CSS.escape(state.expandId)}"]`);
+    if (on) on.classList.add("on");
+  }
   $("soundbtn").addEventListener("click", () => {
     AudioFX.unlock();
     AudioFX.toggle();

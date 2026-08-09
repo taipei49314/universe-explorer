@@ -438,12 +438,25 @@ def render_index(topics: List[Topic]) -> str:
             f'title="{_esc(c.title)}">{c.status.light}</span>'
             for c in claims
         )
+        claim_rows = "".join(
+            f'<a class="claim-row" href="{_esc(t.id)}.html#c-{_esc(c.id)}">'
+            f'<span>{c.status.light}</span>'
+            f'<b>{_esc(c.title)}</b>'
+            f'<span class="cid">{_esc(c.id)}</span></a>'
+            for c in claims
+        )
         by_theme.setdefault(theme, []).append(
-            f'<a class="topic-card" href="{_esc(t.id)}.html">'
+            f'<div class="topic-card" data-topic="{_esc(t.id)}">'
+            f'<button type="button" class="topic-toggle" aria-expanded="false">'
+            f'<span class="chev" aria-hidden="true">›</span>'
             f'<h2>{_esc(t.title)} '
-            f'<span class="n">{len(t.claims)}</span></h2>'
-            f'<div class="dots">{dots}</div>'
-            f'<p>{_esc(t.summary)}</p></a>'
+            f'<span class="n">{len(t.claims)} claims</span></h2>'
+            f'<div class="dots">{dots}</div></button>'
+            f'<p>{_esc(t.summary)}</p>'
+            f'<div class="claim-list" role="region">{claim_rows}'
+            f'<a class="claim-row" href="{_esc(t.id)}.html" style="justify-content:center;'
+            f'font-weight:500;color:var(--accent)">Open full domain page →</a>'
+            f'</div></div>'
         )
     sections = []
     for tid, meta in THEME_META.items():
@@ -866,21 +879,42 @@ _INDEX = """<!doctype html>
                 font-weight: 500; }}
   .theme-grid {{ display: grid; gap: 14px;
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }}
-  .topic-card {{ display: block; text-decoration: none; color: inherit;
-                border: 1px solid var(--line); border-radius: 20px;
-                padding: 22px 22px 20px; margin: 0; background: var(--card);
-                backdrop-filter: blur(18px);
+  .topic-card {{ display: block; border: 1px solid var(--line); border-radius: 20px;
+                padding: 0; margin: 0; background: var(--card);
+                backdrop-filter: blur(18px); overflow: hidden;
                 box-shadow: 0 4px 24px rgba(0,0,0,.04);
                 transition: transform .35s var(--ease),
                   box-shadow .35s var(--ease), border-color .2s; }}
-  .topic-card:hover {{ transform: translateY(-4px) scale(1.01);
-    box-shadow: 0 16px 40px rgba(0,0,0,.1);
+  .topic-card:hover {{ box-shadow: 0 16px 40px rgba(0,0,0,.1);
     border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }}
-  .topic-card h2 {{ margin: 0 0 8px; font-size: 1.2rem; letter-spacing: -.015em; }}
+  .topic-card.open {{ border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }}
+  .topic-toggle {{ display: flex; flex-wrap: wrap; gap: 8px; align-items: flex-start;
+                  width: 100%; text-align: left; border: 0; background: transparent;
+                  color: inherit; font: inherit; padding: 22px 22px 18px; cursor: pointer; }}
+  .topic-toggle .chev {{ width: 26px; height: 26px; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: color-mix(in srgb, var(--ink) 6%, transparent); margin-right: 4px;
+    transition: transform .3s var(--ease); font-size: .9rem; color: var(--muted); }}
+  .topic-card.open .chev {{ transform: rotate(90deg); background: var(--accent); color: #fff; }}
+  .topic-card h2 {{ margin: 0 0 8px; font-size: 1.2rem; letter-spacing: -.015em; flex: 1; }}
   .topic-card .n {{ font-size: .7em; font-weight: 500; opacity: .5;
                    font-family: ui-monospace, monospace; }}
-  .dots {{ font-size: 1.25em; letter-spacing: 2px; margin-bottom: 10px; }}
-  .topic-card p {{ margin: 0; opacity: .72; font-size: .9rem; line-height: 1.45; }}
+  .dots {{ font-size: 1.25em; letter-spacing: 2px; margin-bottom: 10px; width: 100%;
+           padding-left: 34px; }}
+  .topic-card > p {{ margin: 0; opacity: .72; font-size: .9rem; line-height: 1.45;
+                    padding: 0 22px 14px 56px; }}
+  .claim-list {{ max-height: 0; opacity: 0; overflow: hidden; padding: 0 14px;
+    transition: max-height .45s var(--ease), opacity .3s, padding .3s; }}
+  .topic-card.open .claim-list {{ max-height: 2400px; opacity: 1; padding: 0 14px 16px; }}
+  .claim-row {{ display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap;
+    text-decoration: none; color: inherit; border: 1px solid var(--line);
+    border-radius: 12px; padding: 10px 14px; margin: 6px 0;
+    background: color-mix(in srgb, var(--bg) 40%, transparent);
+    transition: background .2s, transform .2s var(--ease); }}
+  .claim-row:hover {{ background: color-mix(in srgb, var(--accent) 8%, transparent);
+    transform: translateX(3px); }}
+  .claim-row b {{ font-weight: 600; font-size: .92rem; }}
+  .claim-row .cid {{ font-size: .7rem; opacity: .45; font-family: ui-monospace, monospace; }}
   @media (max-width: 640px) {{
     .hero h1 {{ font-size: 2.2rem; }}
     .hero {{ padding-top: 40px; }}
@@ -911,6 +945,29 @@ _INDEX = """<!doctype html>
 {cards}
 </main>
 </div>
+<script>
+document.querySelectorAll(".topic-toggle").forEach(btn => {{
+  btn.addEventListener("click", () => {{
+    const card = btn.closest(".topic-card");
+    const open = !card.classList.contains("open");
+    card.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }});
+}});
+// deep-link ?open=stars or #stars
+(function () {{
+  const q = new URLSearchParams(location.search).get("open");
+  const hash = (location.hash || "").replace(/^#/, "");
+  const id = q || hash;
+  if (!id) return;
+  const card = document.querySelector('.topic-card[data-topic="' + CSS.escape(id) + '"]');
+  if (!card) return;
+  card.classList.add("open");
+  const btn = card.querySelector(".topic-toggle");
+  if (btn) btn.setAttribute("aria-expanded", "true");
+  card.scrollIntoView({{ behavior: "smooth", block: "center" }});
+}})();
+</script>
 </body>
 </html>
 """

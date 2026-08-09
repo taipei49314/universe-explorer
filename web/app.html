@@ -127,16 +127,52 @@ svg text { fill:var(--ink); }
   backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
   box-shadow:0 8px 24px rgba(0,0,0,.25); transition:opacity .15s var(--ease);
   line-height:1.35; }
-#cards { display:grid; gap:10px; }
+#cards { display:grid; gap:12px; }
+.domain-block {
+  background:var(--panel); backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--line); border-radius:20px; overflow:hidden;
+  box-shadow:var(--shadow); }
+.domain-head {
+  display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+  width:100%; text-align:left; border:0; background:transparent;
+  color:var(--ink); font:inherit; padding:16px 18px; cursor:pointer;
+  transition:background .2s var(--ease); }
+.domain-head:hover { background:var(--mono-bg); }
+.domain-head .chev {
+  width:28px; height:28px; border-radius:50%; display:inline-flex;
+  align-items:center; justify-content:center; font-size:.85rem;
+  background:var(--mono-bg); color:var(--muted);
+  transition:transform .3s var(--ease-out), background .2s; }
+.domain-block.open .domain-head .chev { transform:rotate(90deg);
+  background:var(--accent); color:#fff; }
+.domain-head h2 { margin:0; font:600 1.15rem/1.2 -apple-system,BlinkMacSystemFont,
+  "SF Pro Display",serif; letter-spacing:-.02em; flex:1; }
+.domain-head .meta-row { display:flex; flex-wrap:wrap; gap:6px; width:100%;
+  padding-left:40px; margin-top:2px; }
+.domain-sum { color:var(--muted); font-size:.88rem; line-height:1.45;
+  padding:0 18px 14px 58px; margin:0; display:none; }
+.domain-block.open .domain-sum { display:block; }
+.domain-body {
+  display:grid; gap:8px; padding:0 12px 14px;
+  max-height:0; opacity:0; overflow:hidden;
+  transition:max-height .45s var(--ease-out), opacity .3s var(--ease),
+    padding .3s var(--ease); }
+.domain-block.open .domain-body {
+  max-height:4000px; opacity:1; padding:4px 12px 16px; }
 .card { display:flex; gap:12px; align-items:baseline; flex-wrap:wrap;
-  background:var(--panel); backdrop-filter:blur(12px);
+  background:var(--panel-solid); backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
-  border:1px solid var(--line); border-left:4px solid; border-radius:16px;
-  padding:14px 18px; cursor:pointer; }
-.card:hover { background:var(--panel-solid); }
+  border:1px solid var(--line); border-left:4px solid; border-radius:14px;
+  padding:12px 16px; cursor:pointer; }
+.card:hover { background:var(--mono-bg); }
 .card b { font-weight:600; letter-spacing:-.01em; }
 .card .m { font-size:.72rem; color:var(--muted); margin-left:auto;
   font-family:ui-monospace,"SF Mono",Consolas,monospace; opacity:.85; }
+@media (prefers-reduced-motion: reduce) {
+  .domain-body { transition:none; }
+  .domain-block:not(.open) .domain-body { max-height:none; opacity:1; }
+}
 #scrim { position:fixed; inset:0; background:rgba(0,0,0,.28); z-index:15;
   opacity:0; pointer-events:none; backdrop-filter:blur(2px); }
 #scrim.on { opacity:1; pointer-events:auto; }
@@ -226,6 +262,8 @@ const I18N = {
     sub:"Cosmos · Planets · Earth. Every claim on two axes: community consensus × recorded evidence. Dots off the diagonal are honest tensions.",
     search:"search claims…", all:"All domains", allThemes:"All themes",
     themes:{cosmos:"Cosmos", planets:"Planets", earth:"Earth"}, lang:"中文",
+    expand:"Expand", collapse:"Collapse", claimsWord:"claims",
+    openDomain:"Click a domain to expand its claims",
     xaxis:"consensus (human-judged, traceable)",
     yaxis:"evidence (derived, never declared)",
     note:"Shaded corner = high consensus on non-direct evidence: the ⚡ divergence zone. Counts are counts of the visible list — recount them yourself.",
@@ -243,6 +281,8 @@ const I18N = {
     sub:"宇宙 · 星球 · 地球。把每個宣稱放上兩條軸:社群共識 × 已收錄證據。偏離對角線的點,是誠實攤開的張力。",
     search:"搜尋宣稱…", all:"全部領域", allThemes:"全部主題",
     themes:{cosmos:"宇宙", planets:"星球", earth:"地球"}, lang:"EN",
+    expand:"展開", collapse:"收合", claimsWord:"則宣稱",
+    openDomain:"點領域即可展開底下的宣稱",
     xaxis:"共識軸(人工判定,可回溯)",
     yaxis:"證據軸(機械湧現,無人宣告)",
     note:"著色角落 = 強共識建立在非直接證據上:⚡ 分岔區。計數皆為可見清單之計數 —— 請自行重數。",
@@ -259,7 +299,7 @@ const I18N = {
 };
 
 let DATA = null;
-let state = { lang:"en", theme:"", topic:"", q:"", sel:null };
+let state = { lang:"en", theme:"", topic:"", q:"", sel:null, openDomains:{} };
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s).replace(/[&<>"]/g,
@@ -353,22 +393,95 @@ function renderMap() {
   });
 }
 
-/* ---------------- cards ---------------- */
-function renderCards() {
-  const list = visible();
-  $("cards").innerHTML = list.map((c, i) => `
-    <div class="card enter" style="border-left-color:${COLORS[c.status]};animation-delay:${Math.min(i, 12) * 0.03}s"
-         data-id="${esc(c.id)}" tabindex="0" role="button">
-      <span>${c.status_light}</span><b>${esc(cf(c,"title"))}</b>
-      ${c.diverges ? "<span>⚡</span>" : ""}
-      <span class="m">${esc(c.topic)} · ${esc(c.axis)}</span>
-    </div>`).join("");
-  $("cards").querySelectorAll(".card").forEach(el => {
+/* ---------------- cards (domain accordion → claims) ---------------- */
+function claimCardHTML(c, i) {
+  return `<div class="card enter" style="border-left-color:${COLORS[c.status]};animation-delay:${Math.min(i, 12) * 0.03}s"
+       data-id="${esc(c.id)}" tabindex="0" role="button">
+    <span>${c.status_light}</span><b>${esc(cf(c,"title"))}</b>
+    ${c.diverges ? "<span>⚡</span>" : ""}
+    <span class="m">${esc(c.axis)}${c.diverges ? " · ⚡" : ""}</span>
+  </div>`;
+}
+function bindClaimCards(root) {
+  root.querySelectorAll(".card").forEach(el => {
     const c = DATA.claims.find(x => x.id === el.dataset.id);
-    el.addEventListener("click", () => openPanel(c));
+    el.addEventListener("click", e => { e.stopPropagation(); openPanel(c); });
     el.addEventListener("keydown", e => {
-      if (e.key === "Enter") openPanel(c); });
+      if (e.key === "Enter") { e.preventDefault(); openPanel(c); }});
   });
+}
+function renderCards() {
+  const t = L();
+  const list = visible();
+  const byTopic = {};
+  for (const c of list) (byTopic[c.topic] = byTopic[c.topic] || []).push(c);
+
+  // Which domain blocks to show
+  let topics = (DATA.topics || []).filter(tp => {
+    if (state.theme && tp.theme !== state.theme) return false;
+    if (state.topic && tp.id !== state.topic) return false;
+    return byTopic[tp.id] && byTopic[tp.id].length;
+  });
+  // Search may surface claims from hidden topics
+  for (const tid of Object.keys(byTopic)) {
+    if (!topics.find(x => x.id === tid)) {
+      const tp = topicMeta(tid);
+      if (tp.id) topics.push(tp);
+    }
+  }
+
+  // Auto-expand: selected topic, or single domain in view, or previously open
+  if (state.topic) state.openDomains[state.topic] = true;
+  if (topics.length === 1) state.openDomains[topics[0].id] = true;
+
+  if (!topics.length) {
+    $("cards").innerHTML = `<p class="mapnote">${esc(t.openDomain)}</p>`;
+    return;
+  }
+
+  let html = "";
+  if (!state.topic && !state.q) {
+    html += `<p class="mapnote" style="margin:0 0 4px">${esc(t.openDomain)}</p>`;
+  }
+  topics.forEach((tp, di) => {
+    const claims = byTopic[tp.id] || [];
+    const open = !!state.openDomains[tp.id];
+    const title = state.lang === "zh" ? (tp.title_zh || tp.title) : tp.title;
+    const sum = state.lang === "zh" ? (tp.summary_zh || tp.summary) : tp.summary;
+    const lights = claims.map(c => c.status_light).join("");
+    html += `<section class="domain-block${open ? " open" : ""} enter"
+      style="animation-delay:${Math.min(di, 8) * 0.04}s" data-domain="${esc(tp.id)}">
+      <button type="button" class="domain-head" aria-expanded="${open}"
+        data-domain="${esc(tp.id)}">
+        <span class="chev" aria-hidden="true">›</span>
+        <h2>${esc(title)} <span class="m" style="margin-left:8px;font-weight:500">${claims.length} ${esc(t.claimsWord)}</span></h2>
+        <div class="meta-row"><span class="dots" style="letter-spacing:2px;font-size:1.1em">${lights}</span></div>
+      </button>
+      <p class="domain-sum">${esc(sum || "")}</p>
+      <div class="domain-body" role="region">
+        ${claims.map((c, i) => claimCardHTML(c, i)).join("")}
+      </div>
+    </section>`;
+  });
+  $("cards").innerHTML = html;
+
+  $("cards").querySelectorAll(".domain-head").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.domain;
+      const block = btn.closest(".domain-block");
+      const willOpen = !block.classList.contains("open");
+      state.openDomains[id] = willOpen;
+      // optional: set topic filter when expanding from "all"
+      if (willOpen && !state.topic) {
+        /* keep all domains visible; just expand this one */
+      }
+      block.classList.toggle("open", willOpen);
+      btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+      AudioFX.unlock();
+      if (willOpen) AudioFX.blip();
+    });
+  });
+  bindClaimCards($("cards"));
 }
 
 /* ---------------- panel + soft SFX (muted by default) ---------------- */
@@ -553,7 +666,19 @@ function renderChrome() {
   }
   $("topicbar").innerHTML = bar.join("");
   $("topicbar").querySelectorAll(".chip").forEach(b =>
-    b.addEventListener("click", () => { state.topic = b.dataset.t; renderAll(); }));
+    b.addEventListener("click", () => {
+      const id = b.dataset.t || "";
+      state.topic = id;
+      if (id) state.openDomains[id] = true;
+      renderAll();
+      // scroll to expanded domain block
+      if (id) {
+        requestAnimationFrame(() => {
+          const el = document.querySelector(`.domain-block[data-domain="${CSS.escape(id)}"]`);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+    }));
   const seen = new Set();
   $("legend").innerHTML = DATA.claims
     .filter(c => !seen.has(c.status) && seen.add(c.status))
