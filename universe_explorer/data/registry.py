@@ -11,12 +11,26 @@ from typing import List
 
 from ..model import Topic
 from .black_hole import BLACK_HOLE
+from .cosmology import COSMOLOGY
 from .dark_matter import DARK_MATTER
 from .exoplanets import EXOPLANETS
 from .ocean import OCEAN
+from .planets import PLANETS
 from .seismology import SEISMOLOGY
 
-TOPICS: List[Topic] = [BLACK_HOLE, OCEAN, EXOPLANETS, SEISMOLOGY, DARK_MATTER]
+# Theme clusters (documentation only; engine iterates TOPICS flat):
+#   宇宙 cosmos  — cosmology, dark_matter, black_hole
+#   星球 planets — planets, exoplanets
+#   地球 Earth   — ocean, seismology
+TOPICS: List[Topic] = [
+    BLACK_HOLE,
+    COSMOLOGY,
+    DARK_MATTER,
+    EXOPLANETS,
+    PLANETS,
+    OCEAN,
+    SEISMOLOGY,
+]
 
 
 def get_topic(topic_id: str) -> Topic:

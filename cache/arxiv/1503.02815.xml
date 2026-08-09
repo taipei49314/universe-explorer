@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/p27qX6GH6QpMb9enGZnIExjgQ78</id>
+  <title>arXiv Query: search_query=&amp;id_list=1503.02815&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:47:34Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1503.02815" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1503.02815v1</id>
+    <title>On the Performance of Multi-Antenna Wireless-Powered Communications with Energy Beamforming</title>
+    <updated>2015-03-10T08:51:32Z</updated>
+    <link href="https://arxiv.org/abs/1503.02815v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1503.02815v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>In this paper, we study the average throughput performance of energy beamforming in a multi-antenna wireless-powered communication network (WPCN). The considered network consists of one hybrid access-point (AP) with multiple antennas and a single antenna user. The user does not have constant power supply and thus needs to harvest energy from the signals broadcast by the AP in the downlink (DL), before sending its data back to the AP with the harvested energy in the uplink (UL). We derive closed-form expressions of the average throughput and their asymptotic expressions at high SNR for both delay-limited and delay-tolerant transmission modes. The optimal DL energy harvesting time, which maximizes the system throughput, is then obtained for high SNR. All analytical expressions are validated by numerical simulations. The impact of various parameters, such as the AP transmit power, the energy harvesting time, and the number of antennas, on the system throughput is also investigated.</summary>
+    <category term="cs.IT" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2015-03-10T08:51:32Z</published>
+    <arxiv:comment>Accepted to appear in IEEE Transactions on Vehicular Technology</arxiv:comment>
+    <arxiv:primary_category term="cs.IT"/>
+    <author>
+      <name>Wenzhu Huang</name>
+    </author>
+    <author>
+      <name>He Chen</name>
+    </author>
+    <author>
+      <name>Yonghui Li</name>
+    </author>
+    <author>
+      <name>Branka Vucetic</name>
+    </author>
+    <arxiv:doi>10.1109/TVT.2015.2412532</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1109/TVT.2015.2412532" title="doi"/>
+  </entry>
+</feed>

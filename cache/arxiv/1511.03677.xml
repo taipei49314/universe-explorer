@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/SosvPFaFAkgDa5zPw7YpGs0MWtM</id>
+  <title>arXiv Query: search_query=&amp;id_list=1511.03677&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:25:00Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1511.03677" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1511.03677v7</id>
+    <title>Learning to Diagnose with LSTM Recurrent Neural Networks</title>
+    <updated>2017-03-21T21:29:50Z</updated>
+    <link href="https://arxiv.org/abs/1511.03677v7" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1511.03677v7" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Clinical medical data, especially in the intensive care unit (ICU), consist of multivariate time series of observations. For each patient visit (or episode), sensor data and lab test results are recorded in the patient's Electronic Health Record (EHR). While potentially containing a wealth of insights, the data is difficult to mine effectively, owing to varying length, irregular sampling and missing data. Recurrent Neural Networks (RNNs), particularly those using Long Short-Term Memory (LSTM) hidden units, are powerful and increasingly popular models for learning from sequence data. They effectively model varying length sequences and capture long range dependencies. We present the first study to empirically evaluate the ability of LSTMs to recognize patterns in multivariate time series of clinical measurements. Specifically, we consider multilabel classification of diagnoses, training a model to classify 128 diagnoses given 13 frequently but irregularly sampled clinical measurements. First, we establish the effectiveness of a simple LSTM network for modeling clinical data. Then we demonstrate a straightforward and effective training strategy in which we replicate targets at each sequence step. Trained only on raw time series, our models outperform several strong baselines, including a multilayer perceptron trained on hand-engineered features.</summary>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2015-11-11T21:01:28Z</published>
+    <arxiv:primary_category term="cs.LG"/>
+    <author>
+      <name>Zachary C. Lipton</name>
+    </author>
+    <author>
+      <name>David C. Kale</name>
+    </author>
+    <author>
+      <name>Charles Elkan</name>
+    </author>
+    <author>
+      <name>Randall Wetzel</name>
+    </author>
+  </entry>
+</feed>

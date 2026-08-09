@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/YW49Gj9WgfzF3G31G6ddRPdUzMQ</id>
+  <title>arXiv Query: search_query=&amp;id_list=1504.03388&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:51:08Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1504.03388" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1504.03388v1</id>
+    <title>The behaviour of dark matter associated with 4 bright cluster galaxies in the 10kpc core of Abell 3827</title>
+    <updated>2015-04-13T23:34:29Z</updated>
+    <link href="https://arxiv.org/abs/1504.03388v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1504.03388v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Galaxy cluster Abell 3827 hosts the stellar remnants of four almost equally bright elliptical galaxies within a core of radius 10kpc. Such corrugation of the stellar distribution is very rare, and suggests recent formation by several simultaneous mergers. We map the distribution of associated dark matter, using new Hubble Space Telescope imaging and VLT/MUSE integral field spectroscopy of a gravitationally lensed system threaded through the cluster core. We find that each of the central galaxies retains a dark matter halo, but that (at least) one of these is spatially offset from its stars. The best-constrained offset is 1.62+/-0.48kpc, where the 68% confidence limit includes both statistical error and systematic biases in mass modelling. Such offsets are not seen in field galaxies, but are predicted during the long infall to a cluster, if dark matter self-interactions generate an extra drag force. With such a small physical separation, it is difficult to definitively rule out astrophysical effects operating exclusively in dense cluster core environments - but if interpreted solely as evidence for self-interacting dark matter, this offset implies a cross-section sigma/m=(1.7+/-0.7)x10^{-4}cm^2/g x (t/10^9yrs)^{-2}, where t is the infall duration.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2015-04-13T23:34:29Z</published>
+    <arxiv:comment>15 pages, 9 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>MNRAS 449 (2015) 3393</arxiv:journal_ref>
+    <author>
+      <name>Richard Massey</name>
+      <arxiv:affiliation>Durham</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Liliya Williams</name>
+      <arxiv:affiliation>Minnesota</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Renske Smit</name>
+      <arxiv:affiliation>Durham</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Mark Swinbank</name>
+      <arxiv:affiliation>Durham</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Thomas Kitching</name>
+      <arxiv:affiliation>MSSL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>David Harvey</name>
+      <arxiv:affiliation>EPFL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Mathilde Jauzac</name>
+      <arxiv:affiliation>Durham</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Holger Israel</name>
+      <arxiv:affiliation>Durham</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Douglas Clowe</name>
+      <arxiv:affiliation>Ohio</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Alastair Edge</name>
+      <arxiv:affiliation>Durham</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Matt Hilton</name>
+      <arxiv:affiliation>ACRU</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Eric Jullo</name>
+      <arxiv:affiliation>LAM</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Adrienne Leonard</name>
+      <arxiv:affiliation>UCL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jori Liesenborgs</name>
+      <arxiv:affiliation>Hasselt</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Julian Merten</name>
+      <arxiv:affiliation>JPL</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Irshad Mohammed</name>
+      <arxiv:affiliation>Zurich</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Daisuke Nagai</name>
+      <arxiv:affiliation>Yale</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Johan Richard</name>
+      <arxiv:affiliation>Lyon</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Andrew Robertson</name>
+      <arxiv:affiliation>Durham</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Prasenjit Saha</name>
+      <arxiv:affiliation>Zurich</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Rebecca Santana</name>
+      <arxiv:affiliation>Ohio</arxiv:affiliation>
+    </author>
+    <author>
+      <name>John Stott</name>
+      <arxiv:affiliation>Durham</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Eric Tittley</name>
+      <arxiv:affiliation>Edinburgh</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1093/mnras/stv467</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1093/mnras/stv467" title="doi"/>
+  </entry>
+</feed>

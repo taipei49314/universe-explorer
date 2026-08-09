@@ -1,5 +1,5 @@
 {
-  "committed_at": "2026-08-09T10:52:39Z",
+  "committed_at": "2026-08-09T12:26:17Z",
   "claims": {
     "event_horizon_exists": {
       "status": "ESTABLISHED",
@@ -56,7 +56,7 @@
         "rule E4: only theoretical derivations/results are recorded -> theoretical only"
       ]
     },
-    "hydrothermal_vents_exist": {
+    "universe_is_expanding": {
       "status": "ESTABLISHED",
       "evidence_axis": "E1",
       "evidence_items": 2,
@@ -67,51 +67,7 @@
         "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
       ]
     },
-    "ocean_heat_uptake": {
-      "status": "STRONG",
-      "evidence_axis": "E2",
-      "evidence_items": 1,
-      "sources": 1,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
-        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
-      ]
-    },
-    "amoc_weakening": {
-      "status": "COMPETING",
-      "evidence_axis": "E3",
-      "evidence_items": 2,
-      "sources": 2,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
-        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
-      ]
-    },
-    "ccz_biodiversity_unknown": {
-      "status": "FRONTIER",
-      "evidence_axis": "E3",
-      "evidence_items": 1,
-      "sources": 1,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
-        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
-      ]
-    },
-    "dark_oxygen_production": {
-      "status": "SPECULATIVE",
-      "evidence_axis": "E2",
-      "evidence_items": 2,
-      "sources": 2,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
-        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
-      ]
-    },
-    "exoplanets_exist": {
+    "cmb_hot_big_bang": {
       "status": "ESTABLISHED",
       "evidence_axis": "E1",
       "evidence_items": 2,
@@ -122,29 +78,18 @@
         "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
       ]
     },
-    "proxima_b_exists": {
-      "status": "ESTABLISHED",
-      "evidence_axis": "E1",
-      "evidence_items": 2,
-      "sources": 2,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
-        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
-      ]
-    },
-    "planets_are_common": {
+    "accelerated_expansion": {
       "status": "STRONG",
       "evidence_axis": "E3",
-      "evidence_items": 1,
-      "sources": 1,
+      "evidence_items": 2,
+      "sources": 2,
       "diverges": true,
       "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
         "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
       ]
     },
-    "planet_nine": {
+    "H0_tension_local_vs_cmb": {
       "status": "COMPETING",
       "evidence_axis": "E3",
       "evidence_items": 2,
@@ -155,85 +100,8 @@
         "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
       ]
     },
-    "trappist1b_bare_rock": {
+    "cosmic_inflation_early_universe": {
       "status": "FRONTIER",
-      "evidence_axis": "E2",
-      "evidence_items": 1,
-      "sources": 1,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
-        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
-      ]
-    },
-    "trappist1_inner_planets_airless": {
-      "status": "FRONTIER",
-      "evidence_axis": "E1",
-      "evidence_items": 2,
-      "sources": 2,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
-        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
-      ]
-    },
-    "k2_18b_biosignature": {
-      "status": "SPECULATIVE",
-      "evidence_axis": "E2",
-      "evidence_items": 2,
-      "sources": 2,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
-        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
-      ]
-    },
-    "plate_tectonics_drives_earthquakes": {
-      "status": "ESTABLISHED",
-      "evidence_axis": "E1",
-      "evidence_items": 2,
-      "sources": 2,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
-        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
-      ]
-    },
-    "eew_gives_usable_warning": {
-      "status": "STRONG",
-      "evidence_axis": "E3",
-      "evidence_items": 1,
-      "sources": 1,
-      "diverges": true,
-      "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
-        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
-      ]
-    },
-    "characteristic_earthquake_model": {
-      "status": "COMPETING",
-      "evidence_axis": "E3",
-      "evidence_items": 2,
-      "sources": 2,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
-        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
-      ]
-    },
-    "oef_informs_civil_protection": {
-      "status": "FRONTIER",
-      "evidence_axis": "E3",
-      "evidence_items": 1,
-      "sources": 1,
-      "diverges": false,
-      "derivation": [
-        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
-        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
-      ]
-    },
-    "van_electric_precursors": {
-      "status": "SPECULATIVE",
       "evidence_axis": "E3",
       "evidence_items": 2,
       "sources": 2,
@@ -241,6 +109,17 @@
       "derivation": [
         "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 1 theoretical",
         "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "cyclic_or_bounce_replaces_bb": {
+      "status": "SPECULATIVE",
+      "evidence_axis": "E4",
+      "evidence_items": 1,
+      "sources": 1,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 0 indirect/analog, 1 theoretical",
+        "rule E4: only theoretical derivations/results are recorded -> theoretical only"
       ]
     },
     "mass_discrepancy_observed": {
@@ -439,6 +318,248 @@
       "derivation": [
         "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 0 indirect/analog, 1 theoretical",
         "rule E4: only theoretical derivations/results are recorded -> theoretical only"
+      ]
+    },
+    "exoplanets_exist": {
+      "status": "ESTABLISHED",
+      "evidence_axis": "E1",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    "proxima_b_exists": {
+      "status": "ESTABLISHED",
+      "evidence_axis": "E1",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    "planets_are_common": {
+      "status": "STRONG",
+      "evidence_axis": "E3",
+      "evidence_items": 1,
+      "sources": 1,
+      "diverges": true,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "planet_nine": {
+      "status": "COMPETING",
+      "evidence_axis": "E3",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "trappist1b_bare_rock": {
+      "status": "FRONTIER",
+      "evidence_axis": "E2",
+      "evidence_items": 1,
+      "sources": 1,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    "trappist1_inner_planets_airless": {
+      "status": "FRONTIER",
+      "evidence_axis": "E1",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    "k2_18b_biosignature": {
+      "status": "SPECULATIVE",
+      "evidence_axis": "E2",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    "solar_system_age": {
+      "status": "ESTABLISHED",
+      "evidence_axis": "E1",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    "moon_giant_impact": {
+      "status": "STRONG",
+      "evidence_axis": "E3",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": true,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 1 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "late_heavy_bombardment": {
+      "status": "COMPETING",
+      "evidence_axis": "E3",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "ocean_worlds_icy_moons": {
+      "status": "FRONTIER",
+      "evidence_axis": "E3",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "mars_sustained_surface_habitability_now": {
+      "status": "SPECULATIVE",
+      "evidence_axis": "E2",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 1 indirect/analog, 0 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    "hydrothermal_vents_exist": {
+      "status": "ESTABLISHED",
+      "evidence_axis": "E1",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    "ocean_heat_uptake": {
+      "status": "STRONG",
+      "evidence_axis": "E2",
+      "evidence_items": 1,
+      "sources": 1,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 0 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    "amoc_weakening": {
+      "status": "COMPETING",
+      "evidence_axis": "E3",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "ccz_biodiversity_unknown": {
+      "status": "FRONTIER",
+      "evidence_axis": "E3",
+      "evidence_items": 1,
+      "sources": 1,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "dark_oxygen_production": {
+      "status": "SPECULATIVE",
+      "evidence_axis": "E2",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    "plate_tectonics_drives_earthquakes": {
+      "status": "ESTABLISHED",
+      "evidence_axis": "E1",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    "eew_gives_usable_warning": {
+      "status": "STRONG",
+      "evidence_axis": "E3",
+      "evidence_items": 1,
+      "sources": 1,
+      "diverges": true,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "characteristic_earthquake_model": {
+      "status": "COMPETING",
+      "evidence_axis": "E3",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "oef_informs_civil_protection": {
+      "status": "FRONTIER",
+      "evidence_axis": "E3",
+      "evidence_items": 1,
+      "sources": 1,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "van_electric_precursors": {
+      "status": "SPECULATIVE",
+      "evidence_axis": "E3",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 1 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
       ]
     }
   }

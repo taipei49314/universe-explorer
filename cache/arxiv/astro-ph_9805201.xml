@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/F5m+vJDoQFkCwVFRqnrr4tLgx9c</id>
+  <title>arXiv Query: search_query=&amp;id_list=astro-ph/9805201&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:24:41Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=astro-ph/9805201" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/astro-ph/9805201v1</id>
+    <title>Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant</title>
+    <updated>1998-05-15T03:59:02Z</updated>
+    <link href="https://arxiv.org/abs/astro-ph/9805201v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/astro-ph/9805201v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  We present observations of 10 type Ia supernovae (SNe Ia) between 0.16 &lt; z &lt; 0.62. With previous data from our High-Z Supernova Search Team, this expanded set of 16 high-redshift supernovae and 34 nearby supernovae are used to place constraints on the Hubble constant (H_0), the mass density (Omega_M), the cosmological constant (Omega_Lambda), the deceleration parameter (q_0), and the dynamical age of the Universe (t_0). The distances of the high-redshift SNe Ia are, on average, 10% to 15% farther than expected in a low mass density (Omega_M=0.2) Universe without a cosmological constant. Different light curve fitting methods, SN Ia subsamples, and prior constraints unanimously favor eternally expanding models with positive cosmological constant (i.e., Omega_Lambda &gt; 0) and a current acceleration of the expansion (i.e., q_0 &lt; 0). With no prior constraint on mass density other than Omega_M &gt; 0, the spectroscopically confirmed SNe Ia are consistent with q_0 &lt;0 at the 2.8 sigma and 3.9 sigma confidence levels, and with Omega_Lambda &gt;0 at the 3.0 sigma and 4.0 sigma confidence levels, for two fitting methods respectively. Fixing a ``minimal'' mass density, Omega_M=0.2, results in the weakest detection, Omega_Lambda&gt;0 at the 3.0 sigma confidence level. For a flat-Universe prior (Omega_M+Omega_Lambda=1), the spectroscopically confirmed SNe Ia require Omega_Lambda &gt;0 at 7 sigma and 9 sigma level for the two fitting methods. A Universe closed by ordinary matter (i.e., Omega_M=1) is ruled out at the 7 sigma to 8 sigma level. We estimate the size of systematic errors, including evolution, extinction, sample selection bias, local flows, gravitational lensing, and sample contamination. Presently, none of these effects reconciles the data with Omega_Lambda=0 and q_0 &gt; 0.</summary>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>1998-05-15T03:59:02Z</published>
+    <arxiv:comment>36 pages, 13 figures, 3 table files Accepted to the Astronomical Journal</arxiv:comment>
+    <arxiv:primary_category term="astro-ph"/>
+    <arxiv:journal_ref>Astron.J.116:1009-1038,1998</arxiv:journal_ref>
+    <author>
+      <name>Adam G. Riess</name>
+    </author>
+    <author>
+      <name>Alexei V. Filippenko</name>
+    </author>
+    <author>
+      <name>Peter Challis</name>
+    </author>
+    <author>
+      <name>Alejandro Clocchiattia</name>
+    </author>
+    <author>
+      <name>Alan Diercks</name>
+    </author>
+    <author>
+      <name>Peter M. Garnavich</name>
+    </author>
+    <author>
+      <name>Ron L. Gilliland</name>
+    </author>
+    <author>
+      <name>Craig J. Hogan</name>
+    </author>
+    <author>
+      <name>Saurabh Jha</name>
+    </author>
+    <author>
+      <name>Robert P. Kirshner</name>
+    </author>
+    <author>
+      <name>B. Leibundgut</name>
+    </author>
+    <author>
+      <name>M. M. Phillips</name>
+    </author>
+    <author>
+      <name>David Reiss</name>
+    </author>
+    <author>
+      <name>Brian P. Schmidt</name>
+    </author>
+    <author>
+      <name>Robert A. Schommer</name>
+    </author>
+    <author>
+      <name>R. Chris Smith</name>
+    </author>
+    <author>
+      <name>J. Spyromilio</name>
+    </author>
+    <author>
+      <name>Christopher Stubbs</name>
+    </author>
+    <author>
+      <name>Nicholas B. Suntzeff</name>
+    </author>
+    <author>
+      <name>John Tonry</name>
+    </author>
+    <arxiv:doi>10.1086/300499</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1086/300499" title="doi"/>
+  </entry>
+</feed>

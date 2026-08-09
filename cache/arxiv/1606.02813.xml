@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/LWYPvC+EeU0gOJuY6V9+IX+UlB8</id>
+  <title>arXiv Query: search_query=&amp;id_list=1606.02813&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:25:56Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1606.02813" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1606.02813v1</id>
+    <title>The Climate of Early Mars</title>
+    <updated>2016-06-09T03:41:16Z</updated>
+    <link href="https://arxiv.org/abs/1606.02813v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1606.02813v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The nature of the early Martian climate is one of the major unanswered questions of planetary science. Key challenges remain, but a new wave of orbital and in situ observations and improvements in climate modeling have led to significant advances over the last decade. Multiple lines of geologic evidence now point to an episodically warm surface during the late Noachian and early Hesperian periods 3-4 Ga. The low solar flux received by Mars in its first billion years and inefficiency of plausible greenhouse gases such as CO2 means that the steady-state early Martian climate was likely cold. A denser CO2 atmosphere would have caused adiabatic cooling of the surface and hence migration of water ice to the higher altitude equatorial and southern regions of the planet. Transient warming caused melting of snow and ice deposits and a temporarily active hydrological cycle, leading to erosion of the valley networks and other fluvial features. Precise details of the warming mechanisms remain unclear, but impacts, volcanism and orbital forcing all likely played an important role. The lack of evidence for glaciation across much of Mars' ancient terrain suggests the late Noachian surface water inventory was not sufficient to sustain a northern ocean. While mainly inhospitable on the surface, early Mars may nonetheless have presented significant opportunities for the development of microbial life.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-06-09T03:41:16Z</published>
+    <arxiv:comment>In press. See published version for enhanced figures and sidenotes (http://www.annualreviews.org/doi/abs/10.1146/annurev-earth-060115-012355)</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <arxiv:journal_ref>Annual Review of Earth and Planetary Sciences 2016, 44:1-31</arxiv:journal_ref>
+    <author>
+      <name>Robin Wordsworth</name>
+    </author>
+    <arxiv:doi>10.1146/annurev-earth-060115-012355</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1146/annurev-earth-060115-012355" title="doi"/>
+  </entry>
+</feed>

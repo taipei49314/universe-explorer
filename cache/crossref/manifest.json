@@ -178,5 +178,104 @@
     "title": "A new era in the search for dark matter",
     "container": "Nature",
     "issued": 2018
+  },
+  "10.1086/148307": {
+    "endpoint": "https://api.crossref.org/works/10.1086%2F148307",
+    "retrieved_at": "2026-08-09T12:25:01Z",
+    "cache_file": "10-1086_148307.json",
+    "sha256": "6f598361dffb699206bcf70a07ac69ae02f41f34467815adf42e19d4df4c9275",
+    "title": "A Measurement of Excess Antenna Temperature at 4080 Mc/s.",
+    "container": "The Astrophysical Journal",
+    "issued": 1965
+  },
+  "10.1103/physrevd.23.347": {
+    "endpoint": "https://api.crossref.org/works/10.1103%2Fphysrevd.23.347",
+    "retrieved_at": "2026-08-09T12:25:03Z",
+    "cache_file": "10-1103_physrevd-23-347.json",
+    "sha256": "6e08fad854fc4364cd40d873955232c63920ce68f817ab5e8c6b24b8189d9619",
+    "title": "Inflationary universe: A possible solution to the horizon and flatness problems",
+    "container": "Physical Review D",
+    "issued": 1981
+  },
+  "10.1126/science.1073950": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1073950",
+    "retrieved_at": "2026-08-09T12:25:04Z",
+    "cache_file": "10-1126_science-1073950.json",
+    "sha256": "13ef860935ca4fea4246670d44f2a55518a27004ef2201c1e946358650c84c9f",
+    "title": "Lead Isotopic Ages of Chondrules and Calcium-Aluminum-Rich Inclusions",
+    "container": "Science",
+    "issued": 2002
+  },
+  "10.1126/science.1226919": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1226919",
+    "retrieved_at": "2026-08-09T12:25:06Z",
+    "cache_file": "10-1126_science-1226919.json",
+    "sha256": "9bfd6cb4ee2d0d1ce5f7b7b9c70d5f99ba777a5b93aa91dc17ece763b5091ba3",
+    "title": "The Absolute Chronology and Thermal Processing of Solids in the Solar Protoplanetary Disk",
+    "container": "Science",
+    "issued": 2012
+  },
+  "10.1126/science.1226073": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1226073",
+    "retrieved_at": "2026-08-09T12:25:09Z",
+    "cache_file": "10-1126_science-1226073.json",
+    "sha256": "5cacddd3f04627c2169716bd8185c6da7895fb488dd22941d9406f9e62d109ee",
+    "title": "Forming a Moon with an Earth-like Composition via a Giant Impact",
+    "container": "Science",
+    "issued": 2012
+  },
+  "10.1073/pnas.1611535113": {
+    "endpoint": "https://api.crossref.org/works/10.1073%2Fpnas.1611535113",
+    "retrieved_at": "2026-08-09T12:25:16Z",
+    "cache_file": "10-1073_pnas-1611535113.json",
+    "sha256": "a31b6e567b1a6e3422ca108e43f680836562d6d6a5743ee7fd77be2a606d1b8a",
+    "title": "Illusory Late Heavy Bombardments",
+    "container": "Proceedings of the National Academy of Sciences",
+    "issued": 2016
+  },
+  "10.1126/science.289.5483.1340": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.289.5483.1340",
+    "retrieved_at": "2026-08-09T12:25:18Z",
+    "cache_file": "10-1126_science-289-5483-1340.json",
+    "sha256": "d9b55ff356f6acaeea1e9b4e88f96a4a37f48f0db1d519dd2a667ddfb6afd0f2",
+    "title": "Galileo Magnetometer Measurements: A Stronger Case for a Subsurface Ocean at Europa",
+    "container": "Science",
+    "issued": 2000
+  },
+  "10.1016/j.icarus.2015.08.037": {
+    "endpoint": "https://api.crossref.org/works/10.1016%2Fj.icarus.2015.08.037",
+    "retrieved_at": "2026-08-09T12:25:19Z",
+    "cache_file": "10-1016_j-icarus-2015-08-037.json",
+    "sha256": "c9d51c3756c26df8ebf231c1433a947ee8ee6bd564802a21a8ff36b5824333ad",
+    "title": "Enceladus’s measured physical libration requires a global subsurface ocean",
+    "container": "Icarus",
+    "issued": 2016
+  },
+  "10.1126/science.1242777": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1242777",
+    "retrieved_at": "2026-08-09T12:25:22Z",
+    "cache_file": "10-1126_science-1242777.json",
+    "sha256": "09f64086a875a339b3058eb19072ea470d3b5bbeef1d7b806d55a705e6daceef",
+    "title": "A Habitable Fluvio-Lacustrine Environment at Yellowknife Bay, Gale Crater, Mars",
+    "container": "Science",
+    "issued": 2014
+  },
+  "10.1038/35089010": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2F35089010",
+    "retrieved_at": "2026-08-09T12:25:57Z",
+    "cache_file": "10-1038_35089010.json",
+    "sha256": "329bacee5f0ef4d5d5fa10ed39311eb79d28d192527361cac89b94eec2912e10",
+    "title": "Origin of the Moon in a giant impact near the end of the Earth's formation",
+    "container": "Nature",
+    "issued": 2001
+  },
+  "10.1016/0012-821x(74)90059-4": {
+    "endpoint": "https://api.crossref.org/works/10.1016%2F0012-821x%2874%2990059-4",
+    "retrieved_at": "2026-08-09T12:25:59Z",
+    "cache_file": "10-1016_0012-821x(74)90059-4.json",
+    "sha256": "c7c6e1979a873ae69ce23ae5ae3f3fe35f7f6ca8a5fb8c1904dc84a02058da9b",
+    "title": "Isotopic evidence for a terminal lunar cataclysm",
+    "container": "Earth and Planetary Science Letters",
+    "issued": 1974
   }
 }
