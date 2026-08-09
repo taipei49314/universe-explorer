@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ecZqXO4e9niYVDeEoyoufercDhA</id>
+  <title>arXiv Query: search_query=&amp;id_list=2102.10874&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:41:44Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2102.10874" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2102.10874v2</id>
+    <title>Search for new phenomena in events with an energetic jet and missing transverse momentum in $pp$ collisions at $\sqrt{s} = 13$ TeV with the ATLAS detector</title>
+    <updated>2024-11-21T08:44:55Z</updated>
+    <link href="https://arxiv.org/abs/2102.10874v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2102.10874v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Results of a search for new physics in final states with an energetic jet and large missing transverse momentum are reported. The search uses proton-proton collision data corresponding to an integrated luminosity of 139 fb$^{-1}$ at a center-of-mass energy of 13 TeV collected in the period 2015-2018 with the ATLAS detector at the Large Hadron Collider. Compared to previous publications, in addition to an increase of almost a factor of four in the data size, the analysis implements a number of improvements in the signal selection and the background determination leading to enhanced sensitivity. Events are required to have at least one jet with transverse momentum above 150 GeV and no reconstructed leptons ($e$, $μ$ or $τ$) or photons. Several signal regions are considered with increasing requirements on the missing transverse momentum starting at 200 GeV. Overall agreement is observed between the number of events in data and the Standard Model predictions. Model-independent $95%$ confidence-level limits on visible cross sections for new processes are obtained in the range between 736 fb and 0.3 fb. Results are also translated into improved exclusion limits in models with pair-produced weakly interacting dark-matter candidates, large extra spatial dimensions, supersymmetric particles in several compressed scenarios, axion-like particles, and new scalar particles in dark-energy-inspired models. In addition, the data are translated into bounds on the invisible branching ratio of the Higgs boson.</summary>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2021-02-22T10:15:46Z</published>
+    <arxiv:comment>57 pages in total, author list starting page 41, 11 figures, 10 tables. All figures including auxiliary figures are available at http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/EXOT-2018-06</arxiv:comment>
+    <arxiv:primary_category term="hep-ex"/>
+    <arxiv:journal_ref>Phys. Rev. D 103, 112006 (2021)</arxiv:journal_ref>
+    <author>
+      <name> ATLAS Collaboration</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevD.103.112006</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevD.103.112006" title="doi"/>
+  </entry>
+</feed>

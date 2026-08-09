@@ -1,0 +1,571 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/m5lyDOZNs6n72XK64/Yithm8MXo</id>
+  <title>arXiv Query: search_query=&amp;id_list=1807.06209&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:33:23Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1807.06209" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1807.06209v4</id>
+    <title>Planck 2018 results. VI. Cosmological parameters</title>
+    <updated>2021-08-09T10:43:18Z</updated>
+    <link href="https://arxiv.org/abs/1807.06209v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1807.06209v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We present cosmological parameter results from the final full-mission Planck measurements of the CMB anisotropies. We find good consistency with the standard spatially-flat 6-parameter $Λ$CDM cosmology having a power-law spectrum of adiabatic scalar perturbations (denoted "base $Λ$CDM" in this paper), from polarization, temperature, and lensing, separately and in combination. A combined analysis gives dark matter density $Ω_c h^2 = 0.120\pm 0.001$, baryon density $Ω_b h^2 = 0.0224\pm 0.0001$, scalar spectral index $n_s = 0.965\pm 0.004$, and optical depth $τ= 0.054\pm 0.007$ (in this abstract we quote $68\,\%$ confidence regions on measured parameters and $95\,\%$ on upper limits). The angular acoustic scale is measured to $0.03\,\%$ precision, with $100θ_*=1.0411\pm 0.0003$. These results are only weakly dependent on the cosmological model and remain stable, with somewhat increased errors, in many commonly considered extensions. Assuming the base-$Λ$CDM cosmology, the inferred late-Universe parameters are: Hubble constant $H_0 = (67.4\pm 0.5)$km/s/Mpc; matter density parameter $Ω_m = 0.315\pm 0.007$; and matter fluctuation amplitude $σ_8 = 0.811\pm 0.006$. We find no compelling evidence for extensions to the base-$Λ$CDM model. Combining with BAO we constrain the effective extra relativistic degrees of freedom to be $N_{\rm eff} = 2.99\pm 0.17$, and the neutrino mass is tightly constrained to $\sum m_ν&lt; 0.12$eV. The CMB spectra continue to prefer higher lensing amplitudes than predicted in base -$Λ$CDM at over $2\,σ$, which pulls some parameters that affect the lensing amplitude away from the base-$Λ$CDM model; however, this is not supported by the lensing reconstruction or (in models that also change the background geometry) BAO data. (Abridged)</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-07-17T04:05:07Z</published>
+    <arxiv:comment>73 pages; Updated with published reionization result corrigendum on p59. Parameter tables and chains available at https://wiki.cosmos.esa.int/planck-legacy-archive/index.php/Cosmological_Parameters</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>A&amp;A 641, A6 (2020)</arxiv:journal_ref>
+    <author>
+      <name> Planck Collaboration</name>
+    </author>
+    <author>
+      <name>N. Aghanim</name>
+    </author>
+    <author>
+      <name>Y. Akrami</name>
+    </author>
+    <author>
+      <name>M. Ashdown</name>
+    </author>
+    <author>
+      <name>J. Aumont</name>
+    </author>
+    <author>
+      <name>C. Baccigalupi</name>
+    </author>
+    <author>
+      <name>M. Ballardini</name>
+    </author>
+    <author>
+      <name>A. J. Banday</name>
+    </author>
+    <author>
+      <name>R. B. Barreiro</name>
+    </author>
+    <author>
+      <name>N. Bartolo</name>
+    </author>
+    <author>
+      <name>S. Basak</name>
+    </author>
+    <author>
+      <name>R. Battye</name>
+    </author>
+    <author>
+      <name>K. Benabed</name>
+    </author>
+    <author>
+      <name>J. -P. Bernard</name>
+    </author>
+    <author>
+      <name>M. Bersanelli</name>
+    </author>
+    <author>
+      <name>P. Bielewicz</name>
+    </author>
+    <author>
+      <name>J. J. Bock</name>
+    </author>
+    <author>
+      <name>J. R. Bond</name>
+    </author>
+    <author>
+      <name>J. Borrill</name>
+    </author>
+    <author>
+      <name>F. R. Bouchet</name>
+    </author>
+    <author>
+      <name>F. Boulanger</name>
+    </author>
+    <author>
+      <name>M. Bucher</name>
+    </author>
+    <author>
+      <name>C. Burigana</name>
+    </author>
+    <author>
+      <name>R. C. Butler</name>
+    </author>
+    <author>
+      <name>E. Calabrese</name>
+    </author>
+    <author>
+      <name>J. -F. Cardoso</name>
+    </author>
+    <author>
+      <name>J. Carron</name>
+    </author>
+    <author>
+      <name>A. Challinor</name>
+    </author>
+    <author>
+      <name>H. C. Chiang</name>
+    </author>
+    <author>
+      <name>J. Chluba</name>
+    </author>
+    <author>
+      <name>L. P. L. Colombo</name>
+    </author>
+    <author>
+      <name>C. Combet</name>
+    </author>
+    <author>
+      <name>D. Contreras</name>
+    </author>
+    <author>
+      <name>B. P. Crill</name>
+    </author>
+    <author>
+      <name>F. Cuttaia</name>
+    </author>
+    <author>
+      <name>P. de Bernardis</name>
+    </author>
+    <author>
+      <name>G. de Zotti</name>
+    </author>
+    <author>
+      <name>J. Delabrouille</name>
+    </author>
+    <author>
+      <name>J. -M. Delouis</name>
+    </author>
+    <author>
+      <name>E. Di Valentino</name>
+    </author>
+    <author>
+      <name>J. M. Diego</name>
+    </author>
+    <author>
+      <name>O. Doré</name>
+    </author>
+    <author>
+      <name>M. Douspis</name>
+    </author>
+    <author>
+      <name>A. Ducout</name>
+    </author>
+    <author>
+      <name>X. Dupac</name>
+    </author>
+    <author>
+      <name>S. Dusini</name>
+    </author>
+    <author>
+      <name>G. Efstathiou</name>
+    </author>
+    <author>
+      <name>F. Elsner</name>
+    </author>
+    <author>
+      <name>T. A. Enßlin</name>
+    </author>
+    <author>
+      <name>H. K. Eriksen</name>
+    </author>
+    <author>
+      <name>Y. Fantaye</name>
+    </author>
+    <author>
+      <name>M. Farhang</name>
+    </author>
+    <author>
+      <name>J. Fergusson</name>
+    </author>
+    <author>
+      <name>R. Fernandez-Cobos</name>
+    </author>
+    <author>
+      <name>F. Finelli</name>
+    </author>
+    <author>
+      <name>F. Forastieri</name>
+    </author>
+    <author>
+      <name>M. Frailis</name>
+    </author>
+    <author>
+      <name>A. A. Fraisse</name>
+    </author>
+    <author>
+      <name>E. Franceschi</name>
+    </author>
+    <author>
+      <name>A. Frolov</name>
+    </author>
+    <author>
+      <name>S. Galeotta</name>
+    </author>
+    <author>
+      <name>S. Galli</name>
+    </author>
+    <author>
+      <name>K. Ganga</name>
+    </author>
+    <author>
+      <name>R. T. Génova-Santos</name>
+    </author>
+    <author>
+      <name>M. Gerbino</name>
+    </author>
+    <author>
+      <name>T. Ghosh</name>
+    </author>
+    <author>
+      <name>J. González-Nuevo</name>
+    </author>
+    <author>
+      <name>K. M. Górski</name>
+    </author>
+    <author>
+      <name>S. Gratton</name>
+    </author>
+    <author>
+      <name>A. Gruppuso</name>
+    </author>
+    <author>
+      <name>J. E. Gudmundsson</name>
+    </author>
+    <author>
+      <name>J. Hamann</name>
+    </author>
+    <author>
+      <name>W. Handley</name>
+    </author>
+    <author>
+      <name>F. K. Hansen</name>
+    </author>
+    <author>
+      <name>D. Herranz</name>
+    </author>
+    <author>
+      <name>S. R. Hildebrandt</name>
+    </author>
+    <author>
+      <name>E. Hivon</name>
+    </author>
+    <author>
+      <name>Z. Huang</name>
+    </author>
+    <author>
+      <name>A. H. Jaffe</name>
+    </author>
+    <author>
+      <name>W. C. Jones</name>
+    </author>
+    <author>
+      <name>A. Karakci</name>
+    </author>
+    <author>
+      <name>E. Keihänen</name>
+    </author>
+    <author>
+      <name>R. Keskitalo</name>
+    </author>
+    <author>
+      <name>K. Kiiveri</name>
+    </author>
+    <author>
+      <name>J. Kim</name>
+    </author>
+    <author>
+      <name>T. S. Kisner</name>
+    </author>
+    <author>
+      <name>L. Knox</name>
+    </author>
+    <author>
+      <name>N. Krachmalnicoff</name>
+    </author>
+    <author>
+      <name>M. Kunz</name>
+    </author>
+    <author>
+      <name>H. Kurki-Suonio</name>
+    </author>
+    <author>
+      <name>G. Lagache</name>
+    </author>
+    <author>
+      <name>J. -M. Lamarre</name>
+    </author>
+    <author>
+      <name>A. Lasenby</name>
+    </author>
+    <author>
+      <name>M. Lattanzi</name>
+    </author>
+    <author>
+      <name>C. R. Lawrence</name>
+    </author>
+    <author>
+      <name>M. Le Jeune</name>
+    </author>
+    <author>
+      <name>P. Lemos</name>
+    </author>
+    <author>
+      <name>J. Lesgourgues</name>
+    </author>
+    <author>
+      <name>F. Levrier</name>
+    </author>
+    <author>
+      <name>A. Lewis</name>
+    </author>
+    <author>
+      <name>M. Liguori</name>
+    </author>
+    <author>
+      <name>P. B. Lilje</name>
+    </author>
+    <author>
+      <name>M. Lilley</name>
+    </author>
+    <author>
+      <name>V. Lindholm</name>
+    </author>
+    <author>
+      <name>M. López-Caniego</name>
+    </author>
+    <author>
+      <name>P. M. Lubin</name>
+    </author>
+    <author>
+      <name>Y. -Z. Ma</name>
+    </author>
+    <author>
+      <name>J. F. Macías-Pérez</name>
+    </author>
+    <author>
+      <name>G. Maggio</name>
+    </author>
+    <author>
+      <name>D. Maino</name>
+    </author>
+    <author>
+      <name>N. Mandolesi</name>
+    </author>
+    <author>
+      <name>A. Mangilli</name>
+    </author>
+    <author>
+      <name>A. Marcos-Caballero</name>
+    </author>
+    <author>
+      <name>M. Maris</name>
+    </author>
+    <author>
+      <name>P. G. Martin</name>
+    </author>
+    <author>
+      <name>M. Martinelli</name>
+    </author>
+    <author>
+      <name>E. Martínez-González</name>
+    </author>
+    <author>
+      <name>S. Matarrese</name>
+    </author>
+    <author>
+      <name>N. Mauri</name>
+    </author>
+    <author>
+      <name>J. D. McEwen</name>
+    </author>
+    <author>
+      <name>P. R. Meinhold</name>
+    </author>
+    <author>
+      <name>A. Melchiorri</name>
+    </author>
+    <author>
+      <name>A. Mennella</name>
+    </author>
+    <author>
+      <name>M. Migliaccio</name>
+    </author>
+    <author>
+      <name>M. Millea</name>
+    </author>
+    <author>
+      <name>S. Mitra</name>
+    </author>
+    <author>
+      <name>M. -A. Miville-Deschênes</name>
+    </author>
+    <author>
+      <name>D. Molinari</name>
+    </author>
+    <author>
+      <name>L. Montier</name>
+    </author>
+    <author>
+      <name>G. Morgante</name>
+    </author>
+    <author>
+      <name>A. Moss</name>
+    </author>
+    <author>
+      <name>P. Natoli</name>
+    </author>
+    <author>
+      <name>H. U. Nørgaard-Nielsen</name>
+    </author>
+    <author>
+      <name>L. Pagano</name>
+    </author>
+    <author>
+      <name>D. Paoletti</name>
+    </author>
+    <author>
+      <name>B. Partridge</name>
+    </author>
+    <author>
+      <name>G. Patanchon</name>
+    </author>
+    <author>
+      <name>H. V. Peiris</name>
+    </author>
+    <author>
+      <name>F. Perrotta</name>
+    </author>
+    <author>
+      <name>V. Pettorino</name>
+    </author>
+    <author>
+      <name>F. Piacentini</name>
+    </author>
+    <author>
+      <name>L. Polastri</name>
+    </author>
+    <author>
+      <name>G. Polenta</name>
+    </author>
+    <author>
+      <name>J. -L. Puget</name>
+    </author>
+    <author>
+      <name>J. P. Rachen</name>
+    </author>
+    <author>
+      <name>M. Reinecke</name>
+    </author>
+    <author>
+      <name>M. Remazeilles</name>
+    </author>
+    <author>
+      <name>A. Renzi</name>
+    </author>
+    <author>
+      <name>G. Rocha</name>
+    </author>
+    <author>
+      <name>C. Rosset</name>
+    </author>
+    <author>
+      <name>G. Roudier</name>
+    </author>
+    <author>
+      <name>J. A. Rubiño-Martín</name>
+    </author>
+    <author>
+      <name>B. Ruiz-Granados</name>
+    </author>
+    <author>
+      <name>L. Salvati</name>
+    </author>
+    <author>
+      <name>M. Sandri</name>
+    </author>
+    <author>
+      <name>M. Savelainen</name>
+    </author>
+    <author>
+      <name>D. Scott</name>
+    </author>
+    <author>
+      <name>E. P. S. Shellard</name>
+    </author>
+    <author>
+      <name>C. Sirignano</name>
+    </author>
+    <author>
+      <name>G. Sirri</name>
+    </author>
+    <author>
+      <name>L. D. Spencer</name>
+    </author>
+    <author>
+      <name>R. Sunyaev</name>
+    </author>
+    <author>
+      <name>A. -S. Suur-Uski</name>
+    </author>
+    <author>
+      <name>J. A. Tauber</name>
+    </author>
+    <author>
+      <name>D. Tavagnacco</name>
+    </author>
+    <author>
+      <name>M. Tenti</name>
+    </author>
+    <author>
+      <name>L. Toffolatti</name>
+    </author>
+    <author>
+      <name>M. Tomasi</name>
+    </author>
+    <author>
+      <name>T. Trombetti</name>
+    </author>
+    <author>
+      <name>L. Valenziano</name>
+    </author>
+    <author>
+      <name>J. Valiviita</name>
+    </author>
+    <author>
+      <name>B. Van Tent</name>
+    </author>
+    <author>
+      <name>L. Vibert</name>
+    </author>
+    <author>
+      <name>P. Vielva</name>
+    </author>
+    <author>
+      <name>F. Villa</name>
+    </author>
+    <author>
+      <name>N. Vittorio</name>
+    </author>
+    <author>
+      <name>B. D. Wandelt</name>
+    </author>
+    <author>
+      <name>I. K. Wehus</name>
+    </author>
+    <author>
+      <name>M. White</name>
+    </author>
+    <author>
+      <name>S. D. M. White</name>
+    </author>
+    <author>
+      <name>A. Zacchei</name>
+    </author>
+    <author>
+      <name>A. Zonca</name>
+    </author>
+    <arxiv:doi>10.1051/0004-6361/201833910</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1051/0004-6361/201833910" title="doi"/>
+  </entry>
+</feed>

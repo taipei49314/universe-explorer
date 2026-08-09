@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/lFE5kwpkOeV3AeX02zqU/TNt2XY</id>
+  <title>arXiv Query: search_query=&amp;id_list=1804.05750&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:37:46Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1804.05750" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1804.05750v2</id>
+    <title>A Search for Invisible Axion Dark Matter with the Axion Dark Matter Experiment</title>
+    <updated>2018-04-17T17:03:45Z</updated>
+    <link href="https://arxiv.org/abs/1804.05750v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1804.05750v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This Letter reports results from a haloscope search for dark matter axions with masses between 2.66 and 2.81 $μ$eV. The search excludes the range of axion-photon couplings predicted by plausible models of the invisible axion. This unprecedented sensitivity is achieved by operating a large-volume haloscope at sub-kelvin temperatures, thereby reducing thermal noise as well as the excess noise from the ultra-low-noise SQUID amplifier used for the signal power readout. Ongoing searches will provide nearly definitive tests of the invisible axion model over a wide range of axion masses.</summary>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.ins-det" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-04-16T15:44:54Z</published>
+    <arxiv:comment>5 pages, 4 figures</arxiv:comment>
+    <arxiv:primary_category term="hep-ex"/>
+    <arxiv:journal_ref>Phys. Rev. Lett. 120, 151301 (2018)</arxiv:journal_ref>
+    <author>
+      <name>N. Du</name>
+    </author>
+    <author>
+      <name>N. Force</name>
+    </author>
+    <author>
+      <name>R. Khatiwada</name>
+    </author>
+    <author>
+      <name>E. Lentz</name>
+    </author>
+    <author>
+      <name>R. Ottens</name>
+    </author>
+    <author>
+      <name>L. J Rosenberg</name>
+    </author>
+    <author>
+      <name>G. Rybka</name>
+    </author>
+    <author>
+      <name>G. Carosi</name>
+    </author>
+    <author>
+      <name>N. Woolett</name>
+    </author>
+    <author>
+      <name>D. Bowring</name>
+    </author>
+    <author>
+      <name>A. S. Chou</name>
+    </author>
+    <author>
+      <name>A. Sonnenschein</name>
+    </author>
+    <author>
+      <name>W. Wester</name>
+    </author>
+    <author>
+      <name>C. Boutan</name>
+    </author>
+    <author>
+      <name>N. S. Oblath</name>
+    </author>
+    <author>
+      <name>R. Bradley</name>
+    </author>
+    <author>
+      <name>E. J. Daw</name>
+    </author>
+    <author>
+      <name>A. V. Dixit</name>
+    </author>
+    <author>
+      <name>J. Clarke</name>
+    </author>
+    <author>
+      <name>S. R. O'Kelley</name>
+    </author>
+    <author>
+      <name>N. Crisosto</name>
+    </author>
+    <author>
+      <name>J. R. Gleason</name>
+    </author>
+    <author>
+      <name>S. Jois</name>
+    </author>
+    <author>
+      <name>P. Sikivie</name>
+    </author>
+    <author>
+      <name>I. Stern</name>
+    </author>
+    <author>
+      <name>N. S. Sullivan</name>
+    </author>
+    <author>
+      <name>D. B. Tanner</name>
+    </author>
+    <author>
+      <name>G. C. Hilton</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.120.151301</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.120.151301" title="doi"/>
+  </entry>
+</feed>

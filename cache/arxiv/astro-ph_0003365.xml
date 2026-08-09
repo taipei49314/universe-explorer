@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/1MHw5HjClOpDScuLEq/L5EfjpD8</id>
+  <title>arXiv Query: search_query=&amp;id_list=astro-ph/0003365&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:43:50Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=astro-ph/0003365" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/astro-ph/0003365v2</id>
+    <title>Cold and Fuzzy Dark Matter</title>
+    <updated>2000-03-26T22:50:24Z</updated>
+    <link href="https://arxiv.org/abs/astro-ph/0003365v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/astro-ph/0003365v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  Cold dark matter (CDM) models predict small-scale structure in excess of observations of the cores and abundance of dwarf galaxies. These problems might be solved, and the virtues of CDM models retained, even without postulating {\it ad hoc} dark matter particle or field interactions, if the dark matter is composed of ultra-light scalar particles (m ~ 10^{-22}eV), initially in a (cold) Bose-Einstein condensate, similar to axion dark matter models. The wave properties of the dark matter stabilize gravitational collapse providing halo cores and sharply suppressing small-scale linear power.</summary>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2000-03-24T00:29:30Z</published>
+    <arxiv:comment>4 pages, 2 figures, submitted to PRL</arxiv:comment>
+    <arxiv:primary_category term="astro-ph"/>
+    <arxiv:journal_ref>Phys.Rev.Lett. 85 (2000) 1158-1161</arxiv:journal_ref>
+    <author>
+      <name>Wayne Hu</name>
+      <arxiv:affiliation>IAS, Princeton</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Rennan Barkana</name>
+      <arxiv:affiliation>IAS, Princeton</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Andrei Gruzinov</name>
+      <arxiv:affiliation>IAS, Princeton</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.85.1158</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.85.1158" title="doi"/>
+  </entry>
+</feed>

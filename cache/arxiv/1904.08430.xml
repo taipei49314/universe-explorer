@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/W860XMbMaULBRDu+fuA5TIVHGao</id>
+  <title>arXiv Query: search_query=&amp;id_list=1904.08430&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:37:53Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1904.08430" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1904.08430v1</id>
+    <title>Dark Matter Strikes Back at the Galactic Center</title>
+    <updated>2019-04-17T18:00:03Z</updated>
+    <link href="https://arxiv.org/abs/1904.08430v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1904.08430v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Statistical evidence has previously suggested that the Galactic Center GeV Excess (GCE) originates largely from point sources, and not from annihilating dark matter. We examine the impact of unmodeled source populations on identifying the true origin of the GCE using non-Poissonian template fitting (NPTF) methods. In a proof-of-principle example with simulated data, we discover that unmodeled sources in the Fermi Bubbles can lead to a dark matter signal being misattributed to point sources by the NPTF. We discover striking behavior consistent with a mismodeling effect in the real Fermi data, finding that large artificial injected dark matter signals are completely misattributed to point sources. Consequently, we conclude that dark matter may provide a dominant contribution to the GCE after all.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-04-17T18:00:03Z</published>
+    <arxiv:comment>7+32 pages, 2+20 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <arxiv:journal_ref>Phys. Rev. Lett. 123, 241101 (2019)</arxiv:journal_ref>
+    <author>
+      <name>Rebecca K. Leane</name>
+    </author>
+    <author>
+      <name>Tracy R. Slatyer</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.123.241101</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.123.241101" title="doi"/>
+  </entry>
+</feed>

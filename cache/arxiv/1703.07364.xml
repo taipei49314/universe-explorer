@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ilm94DN+6t12zxSnnP+MLaUeTYk</id>
+  <title>arXiv Query: search_query=&amp;id_list=1703.07364&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:48:08Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1703.07364" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1703.07364v1</id>
+    <title>The Waning of the WIMP? A Review of Models, Searches, and Constraints</title>
+    <updated>2017-03-21T18:00:12Z</updated>
+    <link href="https://arxiv.org/abs/1703.07364v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1703.07364v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Weakly Interacting Massive Particles (WIMPs) are among the best-motivated dark matter candidates. In light of no conclusive detection signal yet despite an extensive search program that combines, often in a complementary way, direct, indirect, and collider probes, we find it timely to give a broad overview of the WIMP paradigm. In particular, we review here the theoretical foundations of the WIMP paradigm, discuss status and prospects of various detection strategies, and explore future experimental challenges and opportunities.</summary>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-03-21T18:00:12Z</published>
+    <arxiv:comment>101 pages, 20 figures</arxiv:comment>
+    <arxiv:primary_category term="hep-ph"/>
+    <author>
+      <name>Giorgio Arcadi</name>
+    </author>
+    <author>
+      <name>Maíra Dutra</name>
+    </author>
+    <author>
+      <name>Pradipta Ghosh</name>
+    </author>
+    <author>
+      <name>Manfred Lindner</name>
+    </author>
+    <author>
+      <name>Yann Mambrini</name>
+    </author>
+    <author>
+      <name>Mathias Pierre</name>
+    </author>
+    <author>
+      <name>Stefano Profumo</name>
+    </author>
+    <author>
+      <name>Farinaldo S. Queiroz</name>
+    </author>
+    <arxiv:doi>10.1140/epjc/s10052-018-5662-y</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1140/epjc/s10052-018-5662-y" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/atVyZ1Hm4+XPHgtajNQ2y9VrAEE</id>
+  <title>arXiv Query: search_query=&amp;id_list=1611.03184&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:47:49Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1611.03184" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1611.03184v1</id>
+    <title>Searching for Dark Matter Annihilation in Recently Discovered Milky Way Satellites with Fermi-LAT</title>
+    <updated>2016-11-10T04:46:57Z</updated>
+    <link href="https://arxiv.org/abs/1611.03184v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1611.03184v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We search for excess gamma-ray emission coincident with the positions of confirmed and candidate Milky Way satellite galaxies using 6 years of data from the Fermi Large Area Telescope (LAT). Our sample of 45 stellar systems includes 28 kinematically confirmed dark-matter-dominated dwarf spheroidal galaxies (dSphs) and 17 recently discovered systems that have photometric characteristics consistent with the population of known dSphs. For each of these targets, the relative predicted gamma-ray flux due to dark matter annihilation is taken from kinematic analysis if available, and estimated from a distance-based scaling relation otherwise, assuming that the stellar systems are dark-matter-dominated dSphs. LAT data coincident with four of the newly discovered targets show a slight preference (each ~$2 σ$ local) for gamma-ray emission in excess of the background. However, the ensemble of derived gamma-ray flux upper limits for individual targets is consistent with the expectation from analyzing random blank-sky regions, and a combined analysis of the population of stellar systems yields no globally significant excess (global significance $&lt;1 σ$). Our analysis has increased sensitivity compared to the analysis of 15 confirmed dSphs by Ackermann et al. 2015. The observed constraints on the dark matter annihilation cross section are statistically consistent with the background expectation, improving by a factor of ~2 for large dark matter masses ($m_{{\rm DM},b \bar b} \gtrsim 1$ TeV and $m_{{\rm DM},τ^{+}τ^{-}} \gtrsim 70$ GeV) and weakening by a factor of ~1.5 at lower masses relative to previously observed limits.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-11-10T04:46:57Z</published>
+    <arxiv:comment>16 pages, 11 figures, accepted for publication in ApJ, public data files and example analysis scripts available at https://www-glast.stanford.edu/pub_data/1203/</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <author>
+      <name>The Fermi-LAT</name>
+    </author>
+    <author>
+      <name>DES Collaborations</name>
+    </author>
+    <author>
+      <name>A. Albert</name>
+    </author>
+    <author>
+      <name>B. Anderson</name>
+    </author>
+    <author>
+      <name>K. Bechtol</name>
+    </author>
+    <author>
+      <name>A. Drlica-Wagner</name>
+    </author>
+    <author>
+      <name>M. Meyer</name>
+    </author>
+    <author>
+      <name>M. Sanchez-Conde</name>
+    </author>
+    <author>
+      <name>L. Strigari</name>
+    </author>
+    <author>
+      <name>M. Wood</name>
+    </author>
+    <author>
+      <name>T. M. C. Abbott</name>
+    </author>
+    <author>
+      <name>F. B. Abdalla</name>
+    </author>
+    <author>
+      <name>A. Benoit-Levy</name>
+    </author>
+    <author>
+      <name>G. M. Bernstein</name>
+    </author>
+    <author>
+      <name>R. A. Bernstein</name>
+    </author>
+    <author>
+      <name>E. Bertin</name>
+    </author>
+    <author>
+      <name>D. Brooks</name>
+    </author>
+    <author>
+      <name>D. L. Burke</name>
+    </author>
+    <author>
+      <name>A. Carnero Rosell</name>
+    </author>
+    <author>
+      <name>M. Carrasco Kind</name>
+    </author>
+    <author>
+      <name>J. Carretero</name>
+    </author>
+    <author>
+      <name>M. Crocce</name>
+    </author>
+    <author>
+      <name>C. E. Cunha</name>
+    </author>
+    <author>
+      <name>C. B. D'Andrea</name>
+    </author>
+    <author>
+      <name>L. N. da Costa</name>
+    </author>
+    <author>
+      <name>S. Desai</name>
+    </author>
+    <author>
+      <name>H. T. Diehl</name>
+    </author>
+    <author>
+      <name>J. P. Dietrich</name>
+    </author>
+    <author>
+      <name>P. Doel</name>
+    </author>
+    <author>
+      <name>T. F. Eifler</name>
+    </author>
+    <author>
+      <name>A. E. Evrard</name>
+    </author>
+    <author>
+      <name>A. Fausti Neto</name>
+    </author>
+    <author>
+      <name>D. A. Finley</name>
+    </author>
+    <author>
+      <name>B. Flaugher</name>
+    </author>
+    <author>
+      <name>P. Fosalba</name>
+    </author>
+    <author>
+      <name>J. Frieman</name>
+    </author>
+    <author>
+      <name>D. W. Gerdes</name>
+    </author>
+    <author>
+      <name>D. A. Goldstein</name>
+    </author>
+    <author>
+      <name>D. Gruen</name>
+    </author>
+    <author>
+      <name>R. A. Gruendl</name>
+    </author>
+    <author>
+      <name>K. Honscheid</name>
+    </author>
+    <author>
+      <name>D. J. James</name>
+    </author>
+    <author>
+      <name>S. Kent</name>
+    </author>
+    <author>
+      <name>K. Kuehn</name>
+    </author>
+    <author>
+      <name>N. Kuropatkin</name>
+    </author>
+    <author>
+      <name>O. Lahav</name>
+    </author>
+    <author>
+      <name>T. S. Li</name>
+    </author>
+    <author>
+      <name>M. A. G. Maia</name>
+    </author>
+    <author>
+      <name>M. March</name>
+    </author>
+    <author>
+      <name>J. L. Marshall</name>
+    </author>
+    <author>
+      <name>P. Martini</name>
+    </author>
+    <author>
+      <name>C. J. Miller</name>
+    </author>
+    <author>
+      <name>R. Miquel</name>
+    </author>
+    <author>
+      <name>E. Neilsen</name>
+    </author>
+    <author>
+      <name>B. Nord</name>
+    </author>
+    <author>
+      <name>R. Ogando</name>
+    </author>
+    <author>
+      <name>A. A. Plazas</name>
+    </author>
+    <author>
+      <name>K. Reil</name>
+    </author>
+    <author>
+      <name>A. K. Romer</name>
+    </author>
+    <author>
+      <name>E. S. Rykoff</name>
+    </author>
+    <author>
+      <name>E. Sanchez</name>
+    </author>
+    <author>
+      <name>B. Santiago</name>
+    </author>
+    <author>
+      <name>M. Schubnell</name>
+    </author>
+    <author>
+      <name>I. Sevilla-Noarbe</name>
+    </author>
+    <author>
+      <name>R. C. Smith</name>
+    </author>
+    <author>
+      <name>M. Soares-Santos</name>
+    </author>
+    <author>
+      <name>F. Sobreira</name>
+    </author>
+    <author>
+      <name>E. Suchyta</name>
+    </author>
+    <author>
+      <name>M. E. C. Swanson</name>
+    </author>
+    <author>
+      <name>G. Tarle</name>
+    </author>
+    <author>
+      <name>V. Vikram</name>
+    </author>
+    <author>
+      <name>A. R. Walker</name>
+    </author>
+    <author>
+      <name>R. H. Wechsler</name>
+    </author>
+    <arxiv:doi>10.3847/1538-4357/834/2/110</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3847/1538-4357/834/2/110" title="doi"/>
+  </entry>
+</feed>

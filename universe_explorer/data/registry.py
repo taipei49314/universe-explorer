@@ -11,11 +11,12 @@ from typing import List
 
 from ..model import Topic
 from .black_hole import BLACK_HOLE
+from .dark_matter import DARK_MATTER
 from .exoplanets import EXOPLANETS
 from .ocean import OCEAN
 from .seismology import SEISMOLOGY
 
-TOPICS: List[Topic] = [BLACK_HOLE, OCEAN, EXOPLANETS, SEISMOLOGY]
+TOPICS: List[Topic] = [BLACK_HOLE, OCEAN, EXOPLANETS, SEISMOLOGY, DARK_MATTER]
 
 
 def get_topic(topic_id: str) -> Topic:

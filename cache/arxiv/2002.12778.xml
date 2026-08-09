@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/BMoKYQLigvjGeyq9+DK/cUHkQLI</id>
+  <title>arXiv Query: search_query=&amp;id_list=2002.12778&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:33:30Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2002.12778" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2002.12778v2</id>
+    <title>Constraints on Primordial Black Holes</title>
+    <updated>2021-05-09T18:33:50Z</updated>
+    <link href="https://arxiv.org/abs/2002.12778v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2002.12778v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We update the constraints on the fraction of the Universe that may have gone into primordial black holes (PBHs) over the mass range $10^{-5}\text{--}10^{50}$ g. Those smaller than $\sim 10^{15}$ g would have evaporated by now due to Hawking radiation, so their abundance at formation is constrained by the effects of evaporated particles on big bang nucleosynthesis, the cosmic microwave background (CMB), the Galactic and extragalactic $γ$-ray and cosmic ray backgrounds and the possible generation of stable Planck mass relics. PBHs larger than $\sim 10^{15}$ g are subject to a variety of constraints associated with gravitational lensing, dynamical effects, influence on large-scale structure, accretion and gravitational waves. We discuss the constraints on both the initial collapse fraction and the current fraction of the CDM in PBHs at each mass scale but stress that many of the constraints are associated with observational or theoretical uncertainties. We also consider indirect constraints associated with the amplitude of the primordial density fluctuations, such as second-order tensor perturbations and $μ$-distortions arising from the effect of acoustic reheating on the CMB, if PBHs are created from the high-$σ$ peaks of nearly Gaussian fluctuations. Finally we discuss how the constraints are modified if the PBHs have an extended mass function, this being relevant if PBHs provide some combination of the dark matter, the LIGO/Virgo coalescences and the seeds for cosmic structure. Even if PBHs make a small contribution to the dark matter, they could play an important cosmological role and provide a unique probe of the early Universe.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="gr-qc" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-02-27T05:17:54Z</published>
+    <arxiv:comment>67 pages, 22 figures, REVTeX 4.1, updated to include papers in 2020. arXiv admin note: text overlap with arXiv:0912.5297</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Bernard Carr</name>
+    </author>
+    <author>
+      <name>Kazunori Kohri</name>
+    </author>
+    <author>
+      <name>Yuuiti Sendouda</name>
+    </author>
+    <author>
+      <name>Jun'ichi Yokoyama</name>
+    </author>
+    <arxiv:doi>10.1088/1361-6633/ac1e31</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1088/1361-6633/ac1e31" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/JTgb6xDtT+RFrSdWXwaX2yXCTTw</id>
+  <title>arXiv Query: search_query=&amp;id_list=1402.6703&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:37:50Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1402.6703" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1402.6703v2</id>
+    <title>The Characterization of the Gamma-Ray Signal from the Central Milky Way: A Compelling Case for Annihilating Dark Matter</title>
+    <updated>2015-03-17T22:31:07Z</updated>
+    <link href="https://arxiv.org/abs/1402.6703v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1402.6703v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Past studies have identified a spatially extended excess of $\sim$1-3 GeV gamma rays from the region surrounding the Galactic Center, consistent with the emission expected from annihilating dark matter. We revisit and scrutinize this signal with the intention of further constraining its characteristics and origin. By applying cuts to the \textit{Fermi} event parameter CTBCORE, we suppress the tails of the point spread function and generate high resolution gamma-ray maps, enabling us to more easily separate the various gamma-ray components. Within these maps, we find the GeV excess to be robust and highly statistically significant, with a spectrum, angular distribution, and overall normalization that is in good agreement with that predicted by simple annihilating dark matter models. For example, the signal is very well fit by a 36-51 GeV dark matter particle annihilating to $b\bar{b}$ with an annihilation cross section of $σv = (1-3)\times 10^{-26}$ cm$^3$/s (normalized to a local dark matter density of 0.4 GeV/cm$^3$). Furthermore, we confirm that the angular distribution of the excess is approximately spherically symmetric and centered around the dynamical center of the Milky Way (within $\sim$$0.05^{\circ}$ of Sgr A$^*$), showing no sign of elongation along the Galactic Plane. The signal is observed to extend to at least $\simeq10^{\circ}$ from the Galactic Center, disfavoring the possibility that this emission originates from millisecond pulsars.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2014-02-26T21:00:31Z</published>
+    <arxiv:comment>30 pages, 34 figures</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <arxiv:journal_ref>Physics of the Dark Universe Volume 12, June 2016, Page 1</arxiv:journal_ref>
+    <author>
+      <name>Tansu Daylan</name>
+    </author>
+    <author>
+      <name>Douglas P. Finkbeiner</name>
+    </author>
+    <author>
+      <name>Dan Hooper</name>
+    </author>
+    <author>
+      <name>Tim Linden</name>
+    </author>
+    <author>
+      <name>Stephen K. N. Portillo</name>
+    </author>
+    <author>
+      <name>Nicholas L. Rodd</name>
+    </author>
+    <author>
+      <name>Tracy R. Slatyer</name>
+    </author>
+    <arxiv:doi>10.1016/j.dark.2015.12.005</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1016/j.dark.2015.12.005" title="doi"/>
+  </entry>
+</feed>

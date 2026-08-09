@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Kbu/+IJ9mXdKAf+64DjQey+dBrw</id>
+  <title>arXiv Query: search_query=&amp;id_list=1307.5458&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:51:15Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1307.5458" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1307.5458v3</id>
+    <title>Implication of neutrino backgrounds on the reach of next generation dark matter direct detection experiments</title>
+    <updated>2014-01-19T18:10:55Z</updated>
+    <link href="https://arxiv.org/abs/1307.5458v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1307.5458v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>As direct dark matter experiments continue to increase in size, they will become sensitive to neutrinos from astrophysical sources. For experiments that do not have directional sensitivity, coherent neutrino scattering (CNS) from several sources represents an important background to understand, as it can almost perfectly mimic an authentic WIMP signal. Here we explore in detail the effect of neutrino backgrounds on the discovery potential of WIMPs over the entire mass range of 500 MeV to 10 TeV. We show that, given the theoretical and measured uncertainties on the neutrino backgrounds, direct detection experiments lose sensitivity to light (~10 GeV) and heavy (~100 GeV) WIMPs with a spin-independent cross section below 10^{-45} cm^2 and 10^{-49} cm^2, respectively.</summary>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2013-07-20T20:16:11Z</published>
+    <arxiv:comment>15 pages, 12 figures, 7Be fluxes revised, conclusions unchanged</arxiv:comment>
+    <arxiv:primary_category term="hep-ph"/>
+    <arxiv:journal_ref>Phys. Rev. D 89, 023524 (2014)</arxiv:journal_ref>
+    <author>
+      <name>J. Billard</name>
+      <arxiv:affiliation>MIT</arxiv:affiliation>
+    </author>
+    <author>
+      <name>L. Strigari</name>
+      <arxiv:affiliation>KIPAC/Stanford</arxiv:affiliation>
+    </author>
+    <author>
+      <name>E. Figueroa-Feliciano</name>
+      <arxiv:affiliation>MIT</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1103/PhysRevD.89.023524</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevD.89.023524" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/OSlE9KMIwgolCpC2q92a71zVK1U</id>
+  <title>arXiv Query: search_query=&amp;id_list=astro-ph/0608407&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:33:19Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=astro-ph/0608407" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/astro-ph/0608407v1</id>
+    <title>A direct empirical proof of the existence of dark matter</title>
+    <updated>2006-08-19T17:51:03Z</updated>
+    <link href="https://arxiv.org/abs/astro-ph/0608407v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/astro-ph/0608407v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  We present new weak lensing observations of 1E0657-558 (z=0.296), a unique cluster merger, that enable a direct detection of dark matter, independent of assumptions regarding the nature of the gravitational force law. Due to the collision of two clusters, the dissipationless stellar component and the fluid-like X-ray emitting plasma are spatially segregated. By using both wide-field ground based images and HST/ACS images of the cluster cores, we create gravitational lensing maps which show that the gravitational potential does not trace the plasma distribution, the dominant baryonic mass component, but rather approximately traces the distribution of galaxies. An 8-sigma significance spatial offset of the center of the total mass from the center of the baryonic mass peaks cannot be explained with an alteration of the gravitational force law, and thus proves that the majority of the matter in the system is unseen.</summary>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2006-08-19T17:51:03Z</published>
+    <arxiv:comment>Accepted for publication in ApJL</arxiv:comment>
+    <arxiv:primary_category term="astro-ph"/>
+    <arxiv:journal_ref>Astrophys.J.648:L109-L113,2006</arxiv:journal_ref>
+    <author>
+      <name>Douglas Clowe</name>
+      <arxiv:affiliation>Steward Observatory, Tucson</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Marusa Bradac</name>
+      <arxiv:affiliation>KIPAC, Stanford</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Anthony H. Gonzalez</name>
+      <arxiv:affiliation>Department of Astronomy, Gainesville</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Maxim Markevitch</name>
+      <arxiv:affiliation>CfA, Cambridge</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Scott W. Randall</name>
+      <arxiv:affiliation>CfA, Cambridge</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Christine Jones</name>
+      <arxiv:affiliation>CfA, Cambridge</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Dennis Zaritsky</name>
+      <arxiv:affiliation>Steward Observatory, Tucson</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1086/508162</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1086/508162" title="doi"/>
+  </entry>
+</feed>

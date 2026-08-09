@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/5ggvDxVtldl/DQjpfXpBqlQUzO4</id>
+  <title>arXiv Query: search_query=&amp;id_list=1707.04256&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:37:39Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1707.04256" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1707.04256v2</id>
+    <title>Small-Scale Challenges to the $Λ$CDM Paradigm</title>
+    <updated>2019-09-02T22:12:33Z</updated>
+    <link href="https://arxiv.org/abs/1707.04256v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1707.04256v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The dark energy plus cold dark matter ($Λ$CDM) cosmological model has been a demonstrably successful framework for predicting and explaining the large-scale structure of Universe and its evolution with time. Yet on length scales smaller than $\sim 1$ Mpc and mass scales smaller than $\sim 10^{11} M_{\odot}$, the theory faces a number of challenges. For example, the observed cores of many dark-matter dominated galaxies are both less dense and less cuspy than naively predicted in $Λ$CDM. The number of small galaxies and dwarf satellites in the Local Group is also far below the predicted count of low-mass dark matter halos and subhalos within similar volumes. These issues underlie the most well-documented problems with $Λ$CDM: Cusp/Core, Missing Satellites, and Too-Big-to-Fail. The key question is whether a better understanding of baryon physics, dark matter physics, or both will be required to meet these challenges. Other anomalies, including the observed planar and orbital configurations of Local Group satellites and the tight baryonic/dark matter scaling relations obeyed by the galaxy population, have been less thoroughly explored in the context of $Λ$CDM theory. Future surveys to discover faint, distant dwarf galaxies and to precisely measure their masses and density structure hold promising avenues for testing possible solutions to the small-scale challenges going forward. Observational programs to constrain or discover and characterize the number of truly dark low-mass halos are among the most important, and achievable, goals in this field over then next decade. These efforts will either further verify the $Λ$CDM paradigm or demand a substantial revision in our understanding of the nature of dark matter.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-07-13T18:00:00Z</published>
+    <arxiv:comment>47 pages, 15 figures. Draft of a review to appear in ARAA, volume 55. See http://www.annualreviews.org/doi/10.1146/annurev-astro-091916-055313 for updated version. Final online publication date: August 18, 2017. v2: corrected coefficients for Eqs. 8-10</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>Annual Review of Astronomy and Astrophysics, vol. 55, pp. 343-387 (2017)</arxiv:journal_ref>
+    <author>
+      <name>James S. Bullock</name>
+      <arxiv:affiliation>UC Irvine</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Michael Boylan-Kolchin</name>
+      <arxiv:affiliation>UT Austin</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1146/annurev-astro-091916-055313</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1146/annurev-astro-091916-055313" title="doi"/>
+  </entry>
+</feed>

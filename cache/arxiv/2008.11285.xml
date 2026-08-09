@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/jk1FVakcOEzkemEkNeO7OhiHi+g</id>
+  <title>arXiv Query: search_query=&amp;id_list=2008.11285&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:47:53Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2008.11285" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2008.11285v4</id>
+    <title>Cosmology Intertwined III: $f σ_8$ and $S_8$</title>
+    <updated>2020-10-13T11:11:55Z</updated>
+    <link href="https://arxiv.org/abs/2008.11285v4" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2008.11285v4" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The standard $Λ$ Cold Dark Matter cosmological model provides a wonderful fit to current cosmological data, but a few tensions and anomalies became statistically significant with the latest data analyses. While these anomalies could be due to the presence of systematic errors in the experiments, they could also indicate the need for new physics beyond the standard model. In this Letter of Interest we focus on the tension of the Planck data with weak lensing measurements and redshift surveys, about the value of the matter energy density $Ω_m$, and the amplitude or rate of the growth of structure ($σ_8,fσ_8$). We list a few interesting models for solving this tension, and we discuss the importance of trying to fit with a single model a full array of data and not just one parameter at a time.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-08-25T21:41:42Z</published>
+    <arxiv:comment>Snowmass2021 - Letter of Interest</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>Astropart. Phys. 131, 102604 (2021)</arxiv:journal_ref>
+    <author>
+      <name>Eleonora Di Valentino</name>
+    </author>
+    <author>
+      <name>Luis A. Anchordoqui</name>
+    </author>
+    <author>
+      <name>Ozgur Akarsu</name>
+    </author>
+    <author>
+      <name>Yacine Ali-Haimoud</name>
+    </author>
+    <author>
+      <name>Luca Amendola</name>
+    </author>
+    <author>
+      <name>Nikki Arendse</name>
+    </author>
+    <author>
+      <name>Marika Asgari</name>
+    </author>
+    <author>
+      <name>Mario Ballardini</name>
+    </author>
+    <author>
+      <name>Spyros Basilakos</name>
+    </author>
+    <author>
+      <name>Elia Battistelli</name>
+    </author>
+    <author>
+      <name>Micol Benetti</name>
+    </author>
+    <author>
+      <name>Simon Birrer</name>
+    </author>
+    <author>
+      <name>François R. Bouchet</name>
+    </author>
+    <author>
+      <name>Marco Bruni</name>
+    </author>
+    <author>
+      <name>Erminia Calabrese</name>
+    </author>
+    <author>
+      <name>David Camarena</name>
+    </author>
+    <author>
+      <name>Salvatore Capozziello</name>
+    </author>
+    <author>
+      <name>Angela Chen</name>
+    </author>
+    <author>
+      <name>Jens Chluba</name>
+    </author>
+    <author>
+      <name>Anton Chudaykin</name>
+    </author>
+    <author>
+      <name>Eoin Ó Colgáin</name>
+    </author>
+    <author>
+      <name>Francis-Yan Cyr-Racine</name>
+    </author>
+    <author>
+      <name>Paolo de Bernardis</name>
+    </author>
+    <author>
+      <name>Javier de Cruz Pérez</name>
+    </author>
+    <author>
+      <name>Jacques Delabrouille</name>
+    </author>
+    <author>
+      <name>Jo Dunkley</name>
+    </author>
+    <author>
+      <name>Celia Escamilla-Rivera</name>
+    </author>
+    <author>
+      <name>Agnès Ferté</name>
+    </author>
+    <author>
+      <name>Fabio Finelli</name>
+    </author>
+    <author>
+      <name>Wendy Freedman</name>
+    </author>
+    <author>
+      <name>Noemi Frusciante</name>
+    </author>
+    <author>
+      <name>Elena Giusarma</name>
+    </author>
+    <author>
+      <name>Adrià Gómez-Valent</name>
+    </author>
+    <author>
+      <name>Will Handley</name>
+    </author>
+    <author>
+      <name>Ian Harrison</name>
+    </author>
+    <author>
+      <name>Luke Hart</name>
+    </author>
+    <author>
+      <name>Alan Heavens</name>
+    </author>
+    <author>
+      <name>Hendrik Hildebrandt</name>
+    </author>
+    <author>
+      <name>Daniel Holz</name>
+    </author>
+    <author>
+      <name>Dragan Huterer</name>
+    </author>
+    <author>
+      <name>Mikhail M. Ivanov</name>
+    </author>
+    <author>
+      <name>Shahab Joudaki</name>
+    </author>
+    <author>
+      <name>Marc Kamionkowski</name>
+    </author>
+    <author>
+      <name>Tanvi Karwal</name>
+    </author>
+    <author>
+      <name>Lloyd Knox</name>
+    </author>
+    <author>
+      <name>Suresh Kumar</name>
+    </author>
+    <author>
+      <name>Luca Lamagna</name>
+    </author>
+    <author>
+      <name>Julien Lesgourgues</name>
+    </author>
+    <author>
+      <name>Matteo Lucca</name>
+    </author>
+    <author>
+      <name>Valerio Marra</name>
+    </author>
+    <author>
+      <name>Silvia Masi</name>
+    </author>
+    <author>
+      <name>Sabino Matarrese</name>
+    </author>
+    <author>
+      <name>Arindam Mazumdar</name>
+    </author>
+    <author>
+      <name>Alessandro Melchiorri</name>
+    </author>
+    <author>
+      <name>Olga Mena</name>
+    </author>
+    <author>
+      <name>Laura Mersini-Houghton</name>
+    </author>
+    <author>
+      <name>Vivian Miranda</name>
+    </author>
+    <author>
+      <name>Cristian Moreno-Pulido</name>
+    </author>
+    <author>
+      <name>David F. Mota</name>
+    </author>
+    <author>
+      <name>Jessica Muir</name>
+    </author>
+    <author>
+      <name>Ankan Mukherjee</name>
+    </author>
+    <author>
+      <name>Florian Niedermann</name>
+    </author>
+    <author>
+      <name>Alessio Notari</name>
+    </author>
+    <author>
+      <name>Rafael C. Nunes</name>
+    </author>
+    <author>
+      <name>Francesco Pace</name>
+    </author>
+    <author>
+      <name>Andronikos Paliathanasis</name>
+    </author>
+    <author>
+      <name>Antonella Palmese</name>
+    </author>
+    <author>
+      <name>Supriya Pan</name>
+    </author>
+    <author>
+      <name>Daniela Paoletti</name>
+    </author>
+    <author>
+      <name>Valeria Pettorino</name>
+    </author>
+    <author>
+      <name>Francesco Piacentini</name>
+    </author>
+    <author>
+      <name>Vivian Poulin</name>
+    </author>
+    <author>
+      <name>Marco Raveri</name>
+    </author>
+    <author>
+      <name>Adam G. Riess</name>
+    </author>
+    <author>
+      <name>Vincenzo Salzano</name>
+    </author>
+    <author>
+      <name>Emmanuel N. Saridakis</name>
+    </author>
+    <author>
+      <name>Anjan A. Sen</name>
+    </author>
+    <author>
+      <name>Arman Shafieloo</name>
+    </author>
+    <author>
+      <name>Anowar J. Shajib</name>
+    </author>
+    <author>
+      <name>Joseph Silk</name>
+    </author>
+    <author>
+      <name>Alessandra Silvestri</name>
+    </author>
+    <author>
+      <name>Martin S. Sloth</name>
+    </author>
+    <author>
+      <name>Tristan L. Smith</name>
+    </author>
+    <author>
+      <name>Joan Solà</name>
+    </author>
+    <author>
+      <name>Carsten van de Bruck</name>
+    </author>
+    <author>
+      <name>Licia Verde</name>
+    </author>
+    <author>
+      <name>Luca Visinelli</name>
+    </author>
+    <author>
+      <name>Benjamin D. Wandelt</name>
+    </author>
+    <author>
+      <name>Deng Wang</name>
+    </author>
+    <author>
+      <name>Jian-Min Wang</name>
+    </author>
+    <author>
+      <name>Anil K. Yadav</name>
+    </author>
+    <author>
+      <name>Weiqiang Yang</name>
+    </author>
+    <arxiv:doi>10.1016/j.astropartphys.2021.102604</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1016/j.astropartphys.2021.102604" title="doi"/>
+  </entry>
+</feed>

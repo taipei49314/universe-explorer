@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="640" viewBox="0 0 920 640">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="460" y="28" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#1f2328">Fig. 1 — Dark matter claims: consensus light vs evidence axis</text>
+<rect x="110" y="50" width="770" height="500" fill="#f6f8fa" stroke="#d0d7de"/>
+<line x1="187.0" y1="50" x2="187.0" y2="550" stroke="#eaeef2"/>
+<text x="187.0" y="578" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2328">E1</text>
+<line x1="341.0" y1="50" x2="341.0" y2="550" stroke="#eaeef2"/>
+<text x="341.0" y="578" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2328">E2</text>
+<line x1="495.0" y1="50" x2="495.0" y2="550" stroke="#eaeef2"/>
+<text x="495.0" y="578" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2328">E3</text>
+<line x1="649.0" y1="50" x2="649.0" y2="550" stroke="#eaeef2"/>
+<text x="649.0" y="578" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2328">E4</text>
+<line x1="803.0" y1="50" x2="803.0" y2="550" stroke="#eaeef2"/>
+<text x="803.0" y="578" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2328">E5</text>
+<line x1="110" y1="500.0" x2="880" y2="500.0" stroke="#eaeef2"/>
+<text x="98" y="504.0" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">Established</text>
+<line x1="110" y1="400.0" x2="880" y2="400.0" stroke="#eaeef2"/>
+<text x="98" y="404.0" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">Strong</text>
+<line x1="110" y1="300.0" x2="880" y2="300.0" stroke="#eaeef2"/>
+<text x="98" y="304.0" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">Competing</text>
+<line x1="110" y1="200.0" x2="880" y2="200.0" stroke="#eaeef2"/>
+<text x="98" y="204.0" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">Frontier</text>
+<line x1="110" y1="100.0" x2="880" y2="100.0" stroke="#eaeef2"/>
+<text x="98" y="104.0" text-anchor="end" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#1f2328">Speculative</text>
+<text x="495.0" y="612" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#656d76">Evidence axis (derived, never declared) →</text>
+<text x="24" y="300.0" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="13" fill="#656d76" transform="rotate(-90 24 300.0)">← Consensus light (human + status_reason)</text>
+<circle cx="187.0" cy="500.0" r="7" fill="#1a7f37" stroke="#ffffff" stroke-width="1.5"><title>mass_discrepancy_observed: Under general relativity, luminous matter alone cannot account for observed galactic dynamics and cluster mass maps</title></circle>
+<text x="187.0" y="518.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">mass_discrepancy…</text>
+<circle cx="495.0" cy="400.0" r="7" fill="#0969da" stroke="#ffffff" stroke-width="1.5"><title>lcdm_includes_cold_dm: The standard cosmological model requires a dominant non-baryonic cold dark matter component</title></circle>
+<text x="495.0" y="418.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">lcdm_includes_co…</text>
+<circle cx="341.0" cy="300.0" r="7" fill="#9a6700" stroke="#ffffff" stroke-width="1.5"><title>particle_vs_modified_gravity: Galactic dynamics are explained by particle dark-matter halos versus modified Newtonian dynamics</title></circle>
+<text x="341.0" y="318.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">particle_vs_modi…</text>
+<circle cx="327.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>dm_particle_identity: The particle identity of dark matter remains unknown</title></circle>
+<text x="327.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">dm_particle_iden…</text>
+<circle cx="341.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>thermal_wimp_freezeout_benchmark: A thermal freeze-out WIMP with weak-scale mass and couplings remains a benchmark dark-matter target despite null searches</title></circle>
+<text x="341.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">thermal_wimp_fre…</text>
+<circle cx="180.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>direct_detection_wimp_searches: Underground direct-detection experiments set leading limits on WIMP-nucleon scattering without a confirmed discovery</title></circle>
+<text x="180.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">direct_detection…</text>
+<circle cx="460.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>neutrino_floor_direct_detection: Coherent neutrino-nucleus scattering sets an irreducible background floor for WIMP direct detection</title></circle>
+<text x="460.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">neutrino_floor_d…</text>
+<circle cx="474.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>small_scale_cdm_challenges: Cold dark matter faces open small-scale challenges in galaxies and satellites</title></circle>
+<text x="474.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">small_scale_cdm_…</text>
+<circle cx="355.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>axion_dm_candidate: The QCD axion (or axion-like particle) is a viable dark-matter candidate under active laboratory search</title></circle>
+<text x="355.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">axion_dm_candidate</text>
+<circle cx="488.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>sidm_small_scales: Velocity-dependent self-interacting dark matter can reconcile small-scale structure without spoiling large-scale success</title></circle>
+<text x="488.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">sidm_small_scales</text>
+<circle cx="502.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>cluster_sidm_cross_section_bounds: Merging galaxy clusters bound the dark-matter self-interaction cross section per unit mass</title></circle>
+<text x="502.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">cluster_sidm_cro…</text>
+<circle cx="194.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>monojet_collider_searches: LHC mono-jet and missing-transverse-momentum searches constrain dark-matter production without yet identifying a particle</title></circle>
+<text x="194.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">monojet_collider…</text>
+<circle cx="516.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>fuzzy_wave_dark_matter: Ultralight scalar &#x27;fuzzy&#x27; dark matter with de Broglie-scale wave effects is a viable alternative to cold particle CDM on small scales</title></circle>
+<text x="516.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">fuzzy_wave_dark_…</text>
+<circle cx="530.0" cy="200.0" r="7" fill="#bc4c00" stroke="#ffffff" stroke-width="1.5"><title>dwarf_spheroidal_indirect_limits: Fermi-LAT observations of dwarf spheroidal galaxies set strong limits on dark-matter annihilation without a confirmed signal</title></circle>
+<text x="530.0" y="218.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">dwarf_spheroidal…</text>
+<circle cx="488.0" cy="300.0" r="7" fill="#9a6700" stroke="#ffffff" stroke-width="1.5"><title>fermi_gc_excess_origin: The Fermi Galactic Centre gamma-ray excess is dark-matter annihilation versus unresolved astrophysical sources</title></circle>
+<text x="488.0" y="318.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">fermi_gc_excess_…</text>
+<circle cx="502.0" cy="300.0" r="7" fill="#9a6700" stroke="#ffffff" stroke-width="1.5"><title>s8_structure_tension_dark_sector: The S8 structure-growth tension is resolved by new dark-sector physics versus survey systematics within ΛCDM</title></circle>
+<text x="502.0" y="318.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">s8_structure_ten…</text>
+<circle cx="495.0" cy="100.0" r="7" fill="#cf222e" stroke="#ffffff" stroke-width="1.5"><title>sterile_neutrino_7kev_line: A ~7 keV sterile neutrino is the dark matter and produces the 3.5 keV X-ray line</title></circle>
+<text x="495.0" y="118.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">sterile_neutrino…</text>
+<circle cx="649.0" cy="100.0" r="7" fill="#cf222e" stroke="#ffffff" stroke-width="1.5"><title>pbh_all_dark_matter: Primordial black holes constitute all of the dark matter</title></circle>
+<text x="649.0" y="118.0" text-anchor="middle" font-family="Consolas, Menlo, monospace" font-size="8" fill="#57606a">pbh_all_dark_mat…</text>
+<text x="110" y="628" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="11" fill="#656d76">Bedrock (Established) at bottom · ceiling (Speculative) at top · divergence = high consensus + weak evidence (e.g. ΛCDM on E3)</text>
+</svg>

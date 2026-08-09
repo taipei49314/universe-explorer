@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/1fLPkyzZKsNzXU0II5tMQB0g0UQ</id>
+  <title>arXiv Query: search_query=&amp;id_list=1503.07675&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:52:16Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1503.07675" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1503.07675v2</id>
+    <title>The non-gravitational interactions of dark matter in colliding galaxy clusters</title>
+    <updated>2015-04-13T09:50:56Z</updated>
+    <link href="https://arxiv.org/abs/1503.07675v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1503.07675v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Collisions between galaxy clusters provide a test of the non-gravitational forces acting on dark matter. Dark matter's lack of deceleration in the `bullet cluster collision' constrained its self-interaction cross-section σ_DM/m &lt; 1.25cm2/g (68% confidence limit) for long-ranged forces. Using the Chandra and Hubble Space Telescopes we have now observed 72 collisions, including both `major' and `minor' mergers. Combining these measurements statistically, we detect the existence of dark mass at 7.6σsignificance. The position of the dark mass has remained closely aligned within 5.8+/-8.2 kpc of associated stars: implying a self-interaction cross-section σ_DM/m &lt; 0.47 cm2/g (95% CL) and disfavoring some proposed extensions to the standard model.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2015-03-26T10:22:48Z</published>
+    <arxiv:comment>5 Pages, 4 Figures and 18 pages supplementary information</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>Science, Vol. 347 no. 6229 pp. 1462-1465 (2015)</arxiv:journal_ref>
+    <author>
+      <name>David Harvey</name>
+    </author>
+    <author>
+      <name>Richard Massey</name>
+    </author>
+    <author>
+      <name>Thomas Kitching</name>
+    </author>
+    <author>
+      <name>Andy Taylor</name>
+    </author>
+    <author>
+      <name>Eric Tittley</name>
+    </author>
+    <arxiv:doi>10.1126/science.1261381</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1126/science.1261381" title="doi"/>
+  </entry>
+</feed>

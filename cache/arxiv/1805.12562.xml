@@ -1,0 +1,389 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/dX3Qok5wCGJxxd6R4q/ECZJhqDs</id>
+  <title>arXiv Query: search_query=&amp;id_list=1805.12562&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:47:42Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1805.12562" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1805.12562v2</id>
+    <title>Dark Matter Search Results from a One Tonne$\times$Year Exposure of XENON1T</title>
+    <updated>2018-09-13T17:43:18Z</updated>
+    <link href="https://arxiv.org/abs/1805.12562v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1805.12562v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We report on a search for Weakly Interacting Massive Particles (WIMPs) using 278.8 days of data collected with the XENON1T experiment at LNGS. XENON1T utilizes a liquid xenon time projection chamber with a fiducial mass of $(1.30 \pm 0.01)$ t, resulting in a 1.0 t$\times$yr exposure. The energy region of interest, [1.4, 10.6] $\mathrm{keV_{ee}}$ ([4.9, 40.9] $\mathrm{keV_{nr}}$), exhibits an ultra-low electron recoil background rate of $(82\substack{+5 \\ -3}\textrm{ (sys)}\pm3\textrm{ (stat)})$ events/$(\mathrm{t}\times\mathrm{yr}\times\mathrm{keV_{ee}})$. No significant excess over background is found and a profile likelihood analysis parameterized in spatial and energy dimensions excludes new parameter space for the WIMP-nucleon spin-independent elastic scatter cross-section for WIMP masses above 6 GeV/c${}^2$, with a minimum of $4.1\times10^{-47}$ cm$^2$ at 30 GeV/c${}^2$ and 90% confidence level.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.ins-det" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-05-31T17:06:59Z</published>
+    <arxiv:comment>8 pages, 5 figures, v2 limit points as csv</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>Phys. Rev. Lett. 121, 111302 (2018)</arxiv:journal_ref>
+    <author>
+      <name>E. Aprile</name>
+    </author>
+    <author>
+      <name>J. Aalbers</name>
+    </author>
+    <author>
+      <name>F. Agostini</name>
+    </author>
+    <author>
+      <name>M. Alfonsi</name>
+    </author>
+    <author>
+      <name>L. Althueser</name>
+    </author>
+    <author>
+      <name>F. D. Amaro</name>
+    </author>
+    <author>
+      <name>M. Anthony</name>
+    </author>
+    <author>
+      <name>F. Arneodo</name>
+    </author>
+    <author>
+      <name>L. Baudis</name>
+    </author>
+    <author>
+      <name>B. Bauermeister</name>
+    </author>
+    <author>
+      <name>M. L. Benabderrahmane</name>
+    </author>
+    <author>
+      <name>T. Berger</name>
+    </author>
+    <author>
+      <name>P. A. Breur</name>
+    </author>
+    <author>
+      <name>A. Brown</name>
+    </author>
+    <author>
+      <name>A. Brown</name>
+    </author>
+    <author>
+      <name>E. Brown</name>
+    </author>
+    <author>
+      <name>S. Bruenner</name>
+    </author>
+    <author>
+      <name>G. Bruno</name>
+    </author>
+    <author>
+      <name>R. Budnik</name>
+    </author>
+    <author>
+      <name>C. Capelli</name>
+    </author>
+    <author>
+      <name>J. M. R. Cardoso</name>
+    </author>
+    <author>
+      <name>D. Cichon</name>
+    </author>
+    <author>
+      <name>D. Coderre</name>
+    </author>
+    <author>
+      <name>A. P. Colijn</name>
+    </author>
+    <author>
+      <name>J. Conrad</name>
+    </author>
+    <author>
+      <name>J. P. Cussonneau</name>
+    </author>
+    <author>
+      <name>M. P. Decowski</name>
+    </author>
+    <author>
+      <name>P. de Perio</name>
+    </author>
+    <author>
+      <name>P. Di Gangi</name>
+    </author>
+    <author>
+      <name>A. Di Giovanni</name>
+    </author>
+    <author>
+      <name>S. Diglio</name>
+    </author>
+    <author>
+      <name>A. Elykov</name>
+    </author>
+    <author>
+      <name>G. Eurin</name>
+    </author>
+    <author>
+      <name>J. Fei</name>
+    </author>
+    <author>
+      <name>A. D. Ferella</name>
+    </author>
+    <author>
+      <name>A. Fieguth</name>
+    </author>
+    <author>
+      <name>W. Fulgione</name>
+    </author>
+    <author>
+      <name>A. Gallo Rosso</name>
+    </author>
+    <author>
+      <name>M. Galloway</name>
+    </author>
+    <author>
+      <name>F. Gao</name>
+    </author>
+    <author>
+      <name>M. Garbini</name>
+    </author>
+    <author>
+      <name>C. Geis</name>
+    </author>
+    <author>
+      <name>L. Grandi</name>
+    </author>
+    <author>
+      <name>Z. Greene</name>
+    </author>
+    <author>
+      <name>H. Qiu</name>
+    </author>
+    <author>
+      <name>C. Hasterok</name>
+    </author>
+    <author>
+      <name>E. Hogenbirk</name>
+    </author>
+    <author>
+      <name>J. Howlett</name>
+    </author>
+    <author>
+      <name>R. Itay</name>
+    </author>
+    <author>
+      <name>F. Joerg</name>
+    </author>
+    <author>
+      <name>B. Kaminsky</name>
+    </author>
+    <author>
+      <name>S. Kazama</name>
+    </author>
+    <author>
+      <name>A. Kish</name>
+    </author>
+    <author>
+      <name>G. Koltman</name>
+    </author>
+    <author>
+      <name>H. Landsman</name>
+    </author>
+    <author>
+      <name>R. F. Lang</name>
+    </author>
+    <author>
+      <name>L. Levinson</name>
+    </author>
+    <author>
+      <name>Q. Lin</name>
+    </author>
+    <author>
+      <name>S. Lindemann</name>
+    </author>
+    <author>
+      <name>M. Lindner</name>
+    </author>
+    <author>
+      <name>F. Lombardi</name>
+    </author>
+    <author>
+      <name>J. A. M. Lopes</name>
+    </author>
+    <author>
+      <name>J. Mahlstedt</name>
+    </author>
+    <author>
+      <name>A. Manfredini</name>
+    </author>
+    <author>
+      <name>T. Marrodán Undagoitia</name>
+    </author>
+    <author>
+      <name>J. Masbou</name>
+    </author>
+    <author>
+      <name>D. Masson</name>
+    </author>
+    <author>
+      <name>M. Messina</name>
+    </author>
+    <author>
+      <name>K. Micheneau</name>
+    </author>
+    <author>
+      <name>K. Miller</name>
+    </author>
+    <author>
+      <name>A. Molinario</name>
+    </author>
+    <author>
+      <name>K. Morå</name>
+    </author>
+    <author>
+      <name>M. Murra</name>
+    </author>
+    <author>
+      <name>J. Naganoma</name>
+    </author>
+    <author>
+      <name>K. Ni</name>
+    </author>
+    <author>
+      <name>U. Oberlack</name>
+    </author>
+    <author>
+      <name>B. Pelssers</name>
+    </author>
+    <author>
+      <name>F. Piastra</name>
+    </author>
+    <author>
+      <name>J. Pienaar</name>
+    </author>
+    <author>
+      <name>V. Pizzella</name>
+    </author>
+    <author>
+      <name>G. Plante</name>
+    </author>
+    <author>
+      <name>R. Podviianiuk</name>
+    </author>
+    <author>
+      <name>N. Priel</name>
+    </author>
+    <author>
+      <name>D. Ramírez García</name>
+    </author>
+    <author>
+      <name>L. Rauch</name>
+    </author>
+    <author>
+      <name>S. Reichard</name>
+    </author>
+    <author>
+      <name>C. Reuter</name>
+    </author>
+    <author>
+      <name>B. Riedel</name>
+    </author>
+    <author>
+      <name>A. Rizzo</name>
+    </author>
+    <author>
+      <name>A. Rocchetti</name>
+    </author>
+    <author>
+      <name>N. Rupp</name>
+    </author>
+    <author>
+      <name>J. M. F. dos Santos</name>
+    </author>
+    <author>
+      <name>G. Sartorelli</name>
+    </author>
+    <author>
+      <name>M. Scheibelhut</name>
+    </author>
+    <author>
+      <name>S. Schindler</name>
+    </author>
+    <author>
+      <name>J. Schreiner</name>
+    </author>
+    <author>
+      <name>D. Schulte</name>
+    </author>
+    <author>
+      <name>M. Schumann</name>
+    </author>
+    <author>
+      <name>L. Scotto Lavina</name>
+    </author>
+    <author>
+      <name>M. Selvi</name>
+    </author>
+    <author>
+      <name>P. Shagin</name>
+    </author>
+    <author>
+      <name>E. Shockley</name>
+    </author>
+    <author>
+      <name>M. Silva</name>
+    </author>
+    <author>
+      <name>H. Simgen</name>
+    </author>
+    <author>
+      <name>D. Thers</name>
+    </author>
+    <author>
+      <name>F. Toschi</name>
+    </author>
+    <author>
+      <name>G. Trinchero</name>
+    </author>
+    <author>
+      <name>C. Tunnell</name>
+    </author>
+    <author>
+      <name>N. Upole</name>
+    </author>
+    <author>
+      <name>M. Vargas</name>
+    </author>
+    <author>
+      <name>O. Wack</name>
+    </author>
+    <author>
+      <name>H. Wang</name>
+    </author>
+    <author>
+      <name>Z. Wang</name>
+    </author>
+    <author>
+      <name>Y. Wei</name>
+    </author>
+    <author>
+      <name>C. Weinheimer</name>
+    </author>
+    <author>
+      <name>C. Wittweg</name>
+    </author>
+    <author>
+      <name>J. Wulf</name>
+    </author>
+    <author>
+      <name>J. Ye</name>
+    </author>
+    <author>
+      <name>Y. Zhang</name>
+    </author>
+    <author>
+      <name>T. Zhu</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.121.111302</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.121.111302" title="doi"/>
+  </entry>
+</feed>

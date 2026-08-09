@@ -151,5 +151,32 @@
     "title": "Earthquakes Cannot Be Predicted",
     "container": "Science",
     "issued": 1997
+  },
+  "10.1086/158003": {
+    "endpoint": "https://api.crossref.org/works/10.1086%2F158003",
+    "retrieved_at": "2026-08-09T10:33:19Z",
+    "cache_file": "10-1086_158003.json",
+    "sha256": "24a7a14dc3008b216c299477627f12b7ddb7f8d48d408548083f46605e6e612c",
+    "title": "Rotational properties of 21 SC galaxies with a large range of luminosities and radii, from NGC 4605 /R = 4kpc/ to UGC 2885 /R = 122 kpc/",
+    "container": "The Astrophysical Journal",
+    "issued": 1980
+  },
+  "10.1086/161130": {
+    "endpoint": "https://api.crossref.org/works/10.1086%2F161130",
+    "retrieved_at": "2026-08-09T10:33:21Z",
+    "cache_file": "10-1086_161130.json",
+    "sha256": "04a250aeef89d6408f1eaf574eb1ac7e9b1ad0577d96d5697b762e3a0e79c573",
+    "title": "A modification of the Newtonian dynamics as a possible alternative to the hidden mass hypothesis",
+    "container": "The Astrophysical Journal",
+    "issued": 1983
+  },
+  "10.1038/s41586-018-0542-z": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2Fs41586-018-0542-z",
+    "retrieved_at": "2026-08-09T10:33:22Z",
+    "cache_file": "10-1038_s41586-018-0542-z.json",
+    "sha256": "a625861842a967f8954545fc14fdd1193c39c867eead6d9fa0a37baecadc3522",
+    "title": "A new era in the search for dark matter",
+    "container": "Nature",
+    "issued": 2018
   }
 }

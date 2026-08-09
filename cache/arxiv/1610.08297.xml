@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/qxaNsJcwgEHxAiaqj0cKT/kOtg0</id>
+  <title>arXiv Query: search_query=&amp;id_list=1610.08297&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:43:54Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1610.08297" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1610.08297v2</id>
+    <title>Ultralight scalars as cosmological dark matter</title>
+    <updated>2017-02-24T21:01:45Z</updated>
+    <link href="https://arxiv.org/abs/1610.08297v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1610.08297v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>An intriguing alternative to cold dark matter (CDM) is that the dark matter is a light ( $m \sim 10^{-22}$ eV) boson having a de Broglie wavelength $λ\sim 1$ kpc, often called fuzzy dark matter (FDM). We describe the arguments from particle physics that motivate FDM, review previous work on its astrophysical signatures, and analyze several unexplored aspects of its behavior. In particular, (i) FDM halos smaller than about $10^7 (m/10^{-22} {\rm eV})^{-3/2} M_\odot$ do not form. (ii) FDM halos are comprised of a core that is a stationary, minimum-energy configuration called a "soliton", surrounded by an envelope that resembles a CDM halo. (iii) The transition between soliton and envelope is determined by a relaxation process analogous to two-body relaxation in gravitating systems, which proceeds as if the halo were composed of particles with mass $\sim ρλ^3$ where $ρ$ is the halo density. (iv) Relaxation may have substantial effects on the stellar disk and bulge in the inner parts of disk galaxies. (v) Relaxation can produce FDM disks but an FDM disk in the solar neighborhood must have a half-thickness of at least $300 (m/10^{-22} {\rm eV})^{-2/3}$ pc. (vi) Solitonic FDM sub-halos evaporate by tunneling through the tidal radius and this limits the minimum sub-halo mass inside 30 kpc of the Milky Way to roughly $10^8 (m/10^{-22} {\rm eV})^{-3/2} M_\odot$. (vii) If the dark matter in the Fornax dwarf galaxy is composed of CDM, most of the globular clusters observed in that galaxy should have long ago spiraled to its center, and this problem is resolved if the dark matter is FDM.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-10-26T12:25:05Z</published>
+    <arxiv:comment>37 pages, 3 figures. Additional references and discussions on clusters and the soliton-to-host-mass relation. Accepted for publication in PRD</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <arxiv:journal_ref>Phys. Rev. D 95, 043541 (2017)</arxiv:journal_ref>
+    <author>
+      <name>Lam Hui</name>
+    </author>
+    <author>
+      <name>Jeremiah P. Ostriker</name>
+    </author>
+    <author>
+      <name>Scott Tremaine</name>
+    </author>
+    <author>
+      <name>Edward Witten</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevD.95.043541</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevD.95.043541" title="doi"/>
+  </entry>
+</feed>

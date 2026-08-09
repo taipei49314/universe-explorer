@@ -1,0 +1,442 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/SNZ0LnJe6PNvyJfSAvejpBrhrvQ</id>
+  <title>arXiv Query: search_query=&amp;id_list=1507.00966&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T10:41:41Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1507.00966" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1507.00966v1</id>
+    <title>Dark Matter Benchmark Models for Early LHC Run-2 Searches: Report of the ATLAS/CMS Dark Matter Forum</title>
+    <updated>2015-07-03T16:54:32Z</updated>
+    <link href="https://arxiv.org/abs/1507.00966v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1507.00966v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>This document is the final report of the ATLAS-CMS Dark Matter Forum, a forum organized by the ATLAS and CMS collaborations with the participation of experts on theories of Dark Matter, to select a minimal basis set of dark matter simplified models that should support the design of the early LHC Run-2 searches. A prioritized, compact set of benchmark models is proposed, accompanied by studies of the parameter space of these models and a repository of generator implementations. This report also addresses how to apply the Effective Field Theory formalism for collider searches and present the results of such interpretations.</summary>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2015-07-03T16:54:32Z</published>
+    <arxiv:primary_category term="hep-ex"/>
+    <arxiv:journal_ref>Phys. Dark Univ. 26 (2019) 100371</arxiv:journal_ref>
+    <author>
+      <name>Daniel Abercrombie</name>
+    </author>
+    <author>
+      <name>Nural Akchurin</name>
+    </author>
+    <author>
+      <name>Ece Akilli</name>
+    </author>
+    <author>
+      <name>Juan Alcaraz Maestre</name>
+    </author>
+    <author>
+      <name>Brandon Allen</name>
+    </author>
+    <author>
+      <name>Barbara Alvarez Gonzalez</name>
+    </author>
+    <author>
+      <name>Jeremy Andrea</name>
+    </author>
+    <author>
+      <name>Alexandre Arbey</name>
+    </author>
+    <author>
+      <name>Georges Azuelos</name>
+    </author>
+    <author>
+      <name>Patrizia Azzi</name>
+    </author>
+    <author>
+      <name>Mihailo Backović</name>
+    </author>
+    <author>
+      <name>Yang Bai</name>
+    </author>
+    <author>
+      <name>Swagato Banerjee</name>
+    </author>
+    <author>
+      <name>James Beacham</name>
+    </author>
+    <author>
+      <name>Alexander Belyaev</name>
+    </author>
+    <author>
+      <name>Antonio Boveia</name>
+    </author>
+    <author>
+      <name>Amelia Jean Brennan</name>
+    </author>
+    <author>
+      <name>Oliver Buchmueller</name>
+    </author>
+    <author>
+      <name>Matthew R. Buckley</name>
+    </author>
+    <author>
+      <name>Giorgio Busoni</name>
+    </author>
+    <author>
+      <name>Michael Buttignol</name>
+    </author>
+    <author>
+      <name>Giacomo Cacciapaglia</name>
+    </author>
+    <author>
+      <name>Regina Caputo</name>
+    </author>
+    <author>
+      <name>Linda Carpenter</name>
+    </author>
+    <author>
+      <name>Nuno Filipe Castro</name>
+    </author>
+    <author>
+      <name>Guillelmo Gomez Ceballos</name>
+    </author>
+    <author>
+      <name>Yangyang Cheng</name>
+    </author>
+    <author>
+      <name>John Paul Chou</name>
+    </author>
+    <author>
+      <name>Arely Cortes Gonzalez</name>
+    </author>
+    <author>
+      <name>Chris Cowden</name>
+    </author>
+    <author>
+      <name>Francesco D'Eramo</name>
+    </author>
+    <author>
+      <name>Annapaola De Cosa</name>
+    </author>
+    <author>
+      <name>Michele De Gruttola</name>
+    </author>
+    <author>
+      <name>Albert De Roeck</name>
+    </author>
+    <author>
+      <name>Andrea De Simone</name>
+    </author>
+    <author>
+      <name>Aldo Deandrea</name>
+    </author>
+    <author>
+      <name>Zeynep Demiragli</name>
+    </author>
+    <author>
+      <name>Anthony DiFranzo</name>
+    </author>
+    <author>
+      <name>Caterina Doglioni</name>
+    </author>
+    <author>
+      <name>Tristan du Pree</name>
+    </author>
+    <author>
+      <name>Robin Erbacher</name>
+    </author>
+    <author>
+      <name>Johannes Erdmann</name>
+    </author>
+    <author>
+      <name>Cora Fischer</name>
+    </author>
+    <author>
+      <name>Henning Flaecher</name>
+    </author>
+    <author>
+      <name>Patrick J. Fox</name>
+    </author>
+    <author>
+      <name>Benjamin Fuks</name>
+    </author>
+    <author>
+      <name>Marie-Helene Genest</name>
+    </author>
+    <author>
+      <name>Bhawna Gomber</name>
+    </author>
+    <author>
+      <name>Andreas Goudelis</name>
+    </author>
+    <author>
+      <name>Johanna Gramling</name>
+    </author>
+    <author>
+      <name>John Gunion</name>
+    </author>
+    <author>
+      <name>Kristian Hahn</name>
+    </author>
+    <author>
+      <name>Ulrich Haisch</name>
+    </author>
+    <author>
+      <name>Roni Harnik</name>
+    </author>
+    <author>
+      <name>Philip C. Harris</name>
+    </author>
+    <author>
+      <name>Kerstin Hoepfner</name>
+    </author>
+    <author>
+      <name>Siew Yan Hoh</name>
+    </author>
+    <author>
+      <name>Dylan George Hsu</name>
+    </author>
+    <author>
+      <name>Shih-Chieh Hsu</name>
+    </author>
+    <author>
+      <name>Yutaro Iiyama</name>
+    </author>
+    <author>
+      <name>Valerio Ippolito</name>
+    </author>
+    <author>
+      <name>Thomas Jacques</name>
+    </author>
+    <author>
+      <name>Xiangyang Ju</name>
+    </author>
+    <author>
+      <name>Felix Kahlhoefer</name>
+    </author>
+    <author>
+      <name>Alexis Kalogeropoulos</name>
+    </author>
+    <author>
+      <name>Laser Seymour Kaplan</name>
+    </author>
+    <author>
+      <name>Lashkar Kashif</name>
+    </author>
+    <author>
+      <name>Valentin V. Khoze</name>
+    </author>
+    <author>
+      <name>Raman Khurana</name>
+    </author>
+    <author>
+      <name>Khristian Kotov</name>
+    </author>
+    <author>
+      <name>Dmytro Kovalskyi</name>
+    </author>
+    <author>
+      <name>Suchita Kulkarni</name>
+    </author>
+    <author>
+      <name>Shuichi Kunori</name>
+    </author>
+    <author>
+      <name>Viktor Kutzner</name>
+    </author>
+    <author>
+      <name>Hyun Min Lee</name>
+    </author>
+    <author>
+      <name>Sung-Won Lee</name>
+    </author>
+    <author>
+      <name>Seng Pei Liew</name>
+    </author>
+    <author>
+      <name>Tongyan Lin</name>
+    </author>
+    <author>
+      <name>Steven Lowette</name>
+    </author>
+    <author>
+      <name>Romain Madar</name>
+    </author>
+    <author>
+      <name>Sarah Malik</name>
+    </author>
+    <author>
+      <name>Fabio Maltoni</name>
+    </author>
+    <author>
+      <name>Mario Martinez Perez</name>
+    </author>
+    <author>
+      <name>Olivier Mattelaer</name>
+    </author>
+    <author>
+      <name>Kentarou Mawatari</name>
+    </author>
+    <author>
+      <name>Christopher McCabe</name>
+    </author>
+    <author>
+      <name>Théo Megy</name>
+    </author>
+    <author>
+      <name>Enrico Morgante</name>
+    </author>
+    <author>
+      <name>Stephen Mrenna</name>
+    </author>
+    <author>
+      <name>Siddharth M. Narayanan</name>
+    </author>
+    <author>
+      <name>Andy Nelson</name>
+    </author>
+    <author>
+      <name>Sérgio F. Novaes</name>
+    </author>
+    <author>
+      <name>Klaas Ole Padeken</name>
+    </author>
+    <author>
+      <name>Priscilla Pani</name>
+    </author>
+    <author>
+      <name>Michele Papucci</name>
+    </author>
+    <author>
+      <name>Manfred Paulini</name>
+    </author>
+    <author>
+      <name>Christoph Paus</name>
+    </author>
+    <author>
+      <name>Jacopo Pazzini</name>
+    </author>
+    <author>
+      <name>Björn Penning</name>
+    </author>
+    <author>
+      <name>Michael E. Peskin</name>
+    </author>
+    <author>
+      <name>Deborah Pinna</name>
+    </author>
+    <author>
+      <name>Massimiliano Procura</name>
+    </author>
+    <author>
+      <name>Shamona F. Qazi</name>
+    </author>
+    <author>
+      <name>Davide Racco</name>
+    </author>
+    <author>
+      <name>Emanuele Re</name>
+    </author>
+    <author>
+      <name>Antonio Riotto</name>
+    </author>
+    <author>
+      <name>Thomas G. Rizzo</name>
+    </author>
+    <author>
+      <name>Rainer Roehrig</name>
+    </author>
+    <author>
+      <name>David Salek</name>
+    </author>
+    <author>
+      <name>Arturo Sanchez Pineda</name>
+    </author>
+    <author>
+      <name>Subir Sarkar</name>
+    </author>
+    <author>
+      <name>Alexander Schmidt</name>
+    </author>
+    <author>
+      <name>Steven Randolph Schramm</name>
+    </author>
+    <author>
+      <name>William Shepherd</name>
+    </author>
+    <author>
+      <name>Gurpreet Singh</name>
+    </author>
+    <author>
+      <name>Livia Soffi</name>
+    </author>
+    <author>
+      <name>Norraphat Srimanobhas</name>
+    </author>
+    <author>
+      <name>Kevin Sung</name>
+    </author>
+    <author>
+      <name>Tim M. P. Tait</name>
+    </author>
+    <author>
+      <name>Timothee Theveneaux-Pelzer</name>
+    </author>
+    <author>
+      <name>Marc Thomas</name>
+    </author>
+    <author>
+      <name>Mia Tosi</name>
+    </author>
+    <author>
+      <name>Daniele Trocino</name>
+    </author>
+    <author>
+      <name>Sonaina Undleeb</name>
+    </author>
+    <author>
+      <name>Alessandro Vichi</name>
+    </author>
+    <author>
+      <name>Fuquan Wang</name>
+    </author>
+    <author>
+      <name>Lian-Tao Wang</name>
+    </author>
+    <author>
+      <name>Ren-Jie Wang</name>
+    </author>
+    <author>
+      <name>Nikola Whallon</name>
+    </author>
+    <author>
+      <name>Steven Worm</name>
+    </author>
+    <author>
+      <name>Mengqing Wu</name>
+    </author>
+    <author>
+      <name>Sau Lan Wu</name>
+    </author>
+    <author>
+      <name>Hongtao Yang</name>
+    </author>
+    <author>
+      <name>Yong Yang</name>
+    </author>
+    <author>
+      <name>Shin-Shan Yu</name>
+    </author>
+    <author>
+      <name>Bryan Zaldivar</name>
+    </author>
+    <author>
+      <name>Marco Zanetti</name>
+    </author>
+    <author>
+      <name>Zhiqing Zhang</name>
+    </author>
+    <author>
+      <name>Alberto Zucchetta</name>
+    </author>
+    <arxiv:doi>10.1016/j.dark.2019.100371</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1016/j.dark.2019.100371" title="doi"/>
+  </entry>
+</feed>
