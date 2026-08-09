@@ -812,54 +812,104 @@ _INDEX = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Universe Explorer</title>
 <style>
-  :root {{ color-scheme: light dark; }}
-  body {{ font: 16px/1.55 system-ui, sans-serif; max-width: 820px;
-         margin: 0 auto; padding: 24px; }}
-  header p {{ opacity: .8; }}
-  .banner {{ font-size: .85em; opacity: .7; border: 1px dashed currentColor;
-            padding: 8px 12px; border-radius: 6px; margin: 12px 0; }}
-  .legend {{ display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 24px; }}
-  .chip {{ border: 1px solid; border-radius: 999px; padding: 2px 10px;
-          font-size: .82em; }}
+  :root {{ color-scheme: light dark;
+    --bg: #F5F5F7; --ink: #1D1D1F; --muted: #6E6E73; --accent: #0071E3;
+    --card: rgba(255,255,255,.72); --line: rgba(0,0,0,.08);
+    --ease: cubic-bezier(.16,1,.3,1); }}
+  @media (prefers-color-scheme: dark) {{ :root {{
+    --bg: #000; --ink: #F5F5F7; --muted: #98989D; --accent: #0A84FF;
+    --card: rgba(28,28,30,.78); --line: rgba(255,255,255,.1); }} }}
+  * {{ box-sizing: border-box; }}
+  body {{ margin: 0; font: 17px/1.47 -apple-system, BlinkMacSystemFont,
+         "SF Pro Text", "Segoe UI", "PingFang TC", sans-serif;
+         background: var(--bg); color: var(--ink);
+         -webkit-font-smoothing: antialiased; letter-spacing: -.01em; }}
+  body::before {{ content: ""; position: fixed; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse 80% 50% at 30% -5%,
+      color-mix(in srgb, var(--accent) 14%, transparent), transparent 55%); }}
+  a {{ color: var(--accent); text-decoration: none; }}
+  a:hover {{ opacity: .8; }}
+  .wrap {{ max-width: 980px; margin: 0 auto; padding: 0 24px 80px;
+           position: relative; z-index: 1; }}
+  .hero {{ padding: 72px 0 28px; text-align: center; }}
+  .hero h1 {{ font: 600 3.2rem/1.05 -apple-system, BlinkMacSystemFont,
+             "SF Pro Display", Georgia, "Songti SC", serif;
+             letter-spacing: -.035em; margin: 0 0 14px; }}
+  .hero .tag {{ color: var(--muted); font-size: 1.2rem; max-width: 28em;
+               margin: 0 auto 28px; line-height: 1.4; }}
+  .cta {{ display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+         margin-bottom: 18px; }}
+  .cta a {{ display: inline-flex; align-items: center; gap: 6px;
+           border-radius: 980px; padding: 12px 22px; font-size: .95rem;
+           font-weight: 500; transition: transform .25s var(--ease),
+           opacity .2s; }}
+  .cta a:hover {{ transform: scale(1.04); opacity: 1; }}
+  .cta .primary {{ background: var(--accent); color: #fff; }}
+  .cta .ghost {{ border: 1px solid var(--line); color: var(--ink);
+               background: var(--card);
+               backdrop-filter: blur(16px); }}
+  .banner {{ font-size: .88rem; color: var(--muted); text-align: center;
+            margin: 8px auto 36px; max-width: 36em; }}
+  .legend {{ display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin: 0 0 40px; }}
+  .chip {{ border: 1px solid var(--line); border-radius: 980px;
+          padding: 4px 12px; font-size: .8rem; background: var(--card);
+          backdrop-filter: blur(12px); }}
+  .lead {{ color: var(--muted); margin: 0 0 8px; font-size: .95rem;
+          text-align: center; }}
+  .theme-block {{ margin: 48px 0; }}
+  .theme-h {{ font: 600 1.5rem/1.15 -apple-system, BlinkMacSystemFont,
+             "SF Pro Display", Georgia, serif; margin: 0 0 18px;
+             letter-spacing: -.02em; text-align: center; }}
+  .theme-h-zh {{ font-size: .75em; opacity: .55; margin-left: 8px;
+                font-weight: 500; }}
+  .theme-grid {{ display: grid; gap: 14px;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }}
   .topic-card {{ display: block; text-decoration: none; color: inherit;
-                border: 1px solid currentColor; border-radius: 10px;
-                padding: 12px 18px; margin: 0;
-                background: color-mix(in srgb, currentColor 4%, transparent); }}
-  .topic-card:hover {{ background: color-mix(in srgb, currentColor 9%, transparent); }}
-  .topic-card h2 {{ margin: 0 0 4px; }}
-  .topic-card .n {{ font-size: .72em; font-weight: 500; opacity: .55;
+                border: 1px solid var(--line); border-radius: 20px;
+                padding: 22px 22px 20px; margin: 0; background: var(--card);
+                backdrop-filter: blur(18px);
+                box-shadow: 0 4px 24px rgba(0,0,0,.04);
+                transition: transform .35s var(--ease),
+                  box-shadow .35s var(--ease), border-color .2s; }}
+  .topic-card:hover {{ transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 16px 40px rgba(0,0,0,.1);
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }}
+  .topic-card h2 {{ margin: 0 0 8px; font-size: 1.2rem; letter-spacing: -.015em; }}
+  .topic-card .n {{ font-size: .7em; font-weight: 500; opacity: .5;
                    font-family: ui-monospace, monospace; }}
-  .dots {{ font-size: 1.3em; letter-spacing: 3px; margin-bottom: 4px; }}
-  .topic-card p {{ margin: 0; opacity: .8; font-size: .92em; }}
-  .lead {{ opacity: .85; margin: 8px 0 20px; }}
-  .theme-block {{ margin: 28px 0; }}
-  .theme-h {{ font: 500 1.15rem Georgia, "Songti SC", serif; margin: 0 0 12px;
-             border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent);
-             padding-bottom: 6px; }}
-  .theme-h-zh {{ font-size: .85em; opacity: .65; margin-left: 8px;
-                font-weight: 400; }}
-  .theme-grid {{ display: grid; gap: 12px; }}
+  .dots {{ font-size: 1.25em; letter-spacing: 2px; margin-bottom: 10px; }}
+  .topic-card p {{ margin: 0; opacity: .72; font-size: .9rem; line-height: 1.45; }}
+  @media (max-width: 640px) {{
+    .hero h1 {{ font-size: 2.2rem; }}
+    .hero {{ padding-top: 40px; }}
+  }}
+  @media (prefers-reduced-motion: reduce) {{
+    .topic-card, .cta a {{ transition: none; }}
+  }}
 </style>
 </head>
 <body>
-<header>
+<div class="wrap">
+<header class="hero">
   <h1>Universe Explorer</h1>
-  <p>Honestly separating what we know from what we don't. Themes:
-  <b>Cosmos</b> · <b>Planets</b> · <b>Earth</b>. A topic is only a
-  container &mdash; lights belong to claims.
-  <a href="universe.html"><b>Drift the universe &rarr;</b></a> ·
-  <a href="app.html"><b>Knowledge map &rarr;</b></a> ·
-  <a href="explore.html">Explore all claims &rarr;</a> ·
-  <a href="about.html">How to read this</a> ·
-  <a href="zh.html">中文版 &rarr;</a> ·
-  <a href="feed.xml">RSS</a></p>
-  <div class="banner">Reference first, AI last. Certainty emerges from evidence
-  you can open and read &mdash; never from a declared number.</div>
+  <p class="tag">Honestly separating what we know from what we don't.
+  Cosmos · Planets · Earth &mdash; lights belong to claims, never topics.</p>
+  <div class="cta">
+    <a class="primary" href="universe.html">Drift the universe</a>
+    <a class="ghost" href="app.html">Knowledge map</a>
+    <a class="ghost" href="explore.html">Explore claims</a>
+    <a class="ghost" href="zh.html">中文</a>
+  </div>
+  <p class="banner">Reference first, AI last. Certainty emerges from evidence
+  you can open &mdash; never from a declared number.
+  <a href="about.html">How to read this</a> · <a href="feed.xml">Feed</a></p>
   {legend}
 </header>
 <main>
 {cards}
 </main>
+</div>
 </body>
 </html>
 """

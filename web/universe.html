@@ -5,74 +5,94 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Universe Explorer — Drift</title>
 <style>
-/* This page deliberately commits to one visual world: deep space.
-   Body VISUALS encode epistemics (form=status, size=evidence, binary=competing,
-   nebula=frontier, ghost=speculative, pulse=divergence) — never decoration. */
+/* Immersive drift — epistemic body forms, game camera feel, glass HUD */
 :root {
   --est:#57C186; --strong:#6FA8E8; --comp:#D9B14A; --front:#E8794E; --spec:#D66BB4;
-  --ink:#DCE6E0; --muted:#8296A0; --panel:rgba(13,18,28,.92); --line:#2A3548;
+  --ink:#F5F5F7; --muted:#8E9AAB; --panel:rgba(12,14,22,.72); --line:rgba(255,255,255,.12);
+  --ease-out:cubic-bezier(.16,1,.3,1);
 }
 * { box-sizing:border-box; margin:0; }
-html, body { height:100%; overflow:hidden; background:#05080F;
-  font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; color:var(--ink); }
+html, body { height:100%; overflow:hidden; background:#03050A;
+  font:14px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif;
+  color:var(--ink); -webkit-font-smoothing:antialiased; }
 #space { position:fixed; inset:0; display:block; cursor:grab; touch-action:none; }
 #space.drag { cursor:grabbing; }
+#vignette { position:fixed; inset:0; pointer-events:none; z-index:5;
+  background:radial-gradient(ellipse 75% 70% at 50% 45%, transparent 40%,
+    rgba(0,0,0,.55) 100%); }
 .hud { position:fixed; z-index:10; }
-#brand { top:18px; left:20px; pointer-events:none; }
-#brand h1 { font:500 1.25rem Georgia,"Songti SC","Noto Serif CJK TC",serif;
-  letter-spacing:.02em; text-shadow:0 0 18px rgba(0,0,0,.9); }
-#brand p { color:var(--muted); font-size:.78rem; margin-top:2px; }
+#brand { top:22px; left:24px; pointer-events:none; max-width:min(420px,70vw); }
+#brand h1 { font:600 1.45rem/1.1 -apple-system,BlinkMacSystemFont,"SF Pro Display",
+  Georgia,"Songti SC",serif; letter-spacing:-.02em;
+  text-shadow:0 2px 24px rgba(0,0,0,.85); }
+#brand p { color:var(--muted); font-size:.8rem; margin-top:6px; line-height:1.4;
+  text-shadow:0 1px 12px rgba(0,0,0,.8); }
 #nav { top:18px; right:18px; display:flex; gap:8px; flex-wrap:wrap;
-  justify-content:flex-end; max-width:60vw; }
+  justify-content:flex-end; max-width:min(62vw,720px); }
 .btn { border:1px solid var(--line); background:var(--panel); color:var(--ink);
-  border-radius:999px; padding:5px 14px; font:inherit; font-size:.8rem;
-  cursor:pointer; backdrop-filter:blur(6px); }
-.btn:hover { border-color:var(--muted); }
+  border-radius:980px; padding:7px 15px; font:inherit; font-size:.78rem;
+  font-weight:500; cursor:pointer; backdrop-filter:blur(18px) saturate(1.3);
+  -webkit-backdrop-filter:blur(18px) saturate(1.3);
+  transition:transform .25s var(--ease-out), border-color .2s, background .2s; }
+.btn:hover { border-color:rgba(255,255,255,.28); transform:scale(1.04);
+  background:rgba(22,26,38,.85); }
 .btn.on { border-color:var(--est); font-weight:700; }
-#hint { bottom:16px; left:50%; transform:translateX(-50%); color:var(--muted);
-  font-size:.75rem; background:var(--panel); border:1px solid var(--line);
-  border-radius:999px; padding:4px 16px; pointer-events:none; opacity:.9; }
-#legend { bottom:16px; left:18px; font-size:.72rem; color:var(--muted);
-  background:var(--panel); border:1px solid var(--line); border-radius:10px;
-  padding:8px 12px; display:grid; gap:3px; }
+#hint { bottom:20px; left:50%; transform:translateX(-50%); color:var(--muted);
+  font-size:.74rem; background:var(--panel); border:1px solid var(--line);
+  border-radius:980px; padding:7px 18px; pointer-events:none; opacity:.92;
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  letter-spacing:.02em; }
+#legend { bottom:18px; left:18px; font-size:.7rem; color:var(--muted);
+  background:var(--panel); border:1px solid var(--line); border-radius:14px;
+  padding:10px 14px; display:grid; gap:4px;
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); }
 #legend i { display:inline-block; width:9px; height:9px; border-radius:50%;
-  margin-right:7px; }
-#panel { position:fixed; top:0; right:0; height:100%; width:min(480px,94vw);
-  background:var(--panel); backdrop-filter:blur(10px);
-  border-left:1px solid var(--line); z-index:20; transform:translateX(103%);
-  overflow-y:auto; padding:20px 22px 60px; }
+  margin-right:7px; vertical-align:middle; }
+#panel { position:fixed; top:0; right:0; height:100%; width:min(460px,96vw);
+  background:rgba(10,12,20,.82); backdrop-filter:blur(28px) saturate(1.4);
+  -webkit-backdrop-filter:blur(28px) saturate(1.4);
+  border-left:1px solid var(--line); z-index:20; transform:translateX(104%);
+  overflow-y:auto; padding:26px 24px 70px;
+  box-shadow:-20px 0 50px rgba(0,0,0,.4); }
 #panel.open { transform:translateX(0); }
 @media (prefers-reduced-motion: no-preference) {
-  #panel { transition:transform .25s ease; } }
-#panel h2 { font:500 1.2rem Georgia,"Songti SC",serif; margin:6px 0;
+  #panel { transition:transform .48s var(--ease-out); }
+  .btn { transition:transform .25s var(--ease-out), border-color .2s, background .2s; }
+}
+#panel h2 { font:600 1.35rem/1.2 -apple-system,BlinkMacSystemFont,"SF Pro Display",
+  Georgia,"Songti SC",serif; margin:10px 0 8px; letter-spacing:-.02em;
   text-wrap:balance; }
-#panel h3 { font-size:.72rem; letter-spacing:.07em; text-transform:uppercase;
-  color:var(--muted); margin:16px 0 5px; border-top:1px dashed var(--line);
-  padding-top:10px; }
+#panel h3 { font-size:.68rem; letter-spacing:.09em; text-transform:uppercase;
+  color:var(--muted); margin:20px 0 8px; border-top:1px solid var(--line);
+  padding-top:14px; font-weight:600; }
 #panel ul { padding-left:16px; }
-#panel li { margin:5px 0; font-size:.86rem; }
-.badge { font-family:ui-monospace,Consolas,monospace; font-size:.72rem;
-  background:rgba(255,255,255,.07); border-radius:4px; padding:2px 8px;
+#panel li { margin:7px 0; font-size:.86rem; line-height:1.45; }
+.badge { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:.7rem;
+  background:rgba(255,255,255,.07); border-radius:8px; padding:3px 9px;
   color:var(--muted); }
-.cond { font-family:ui-monospace,Consolas,monospace; font-size:.72rem;
-  display:block; color:var(--est); }
+.cond { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:.7rem;
+  display:block; color:var(--est); font-weight:600; }
 .note { color:var(--muted); }
-.ref { font-family:ui-monospace,Consolas,monospace; font-size:.7rem;
+.ref { font-family:ui-monospace,"SF Mono",Consolas,monospace; font-size:.68rem;
   color:var(--muted); }
-.tier { font-size:.64em; font-weight:700; border:1px solid currentColor;
-  border-radius:3px; padding:0 4px; opacity:.75; }
-#closep { float:right; border:1px solid var(--line); background:transparent;
-  color:var(--ink); border-radius:8px; font:inherit; padding:3px 11px;
-  cursor:pointer; }
-.plinks { margin-top:14px; font-size:.82rem; display:flex; gap:14px;
-  flex-wrap:wrap; }
-.plinks a { color:var(--est); }
+.tier { font-size:.62em; font-weight:700; border:1px solid currentColor;
+  border-radius:4px; padding:0 4px; opacity:.75; }
+#closep { float:right; border:1px solid var(--line); background:rgba(255,255,255,.06);
+  color:var(--ink); border-radius:980px; font:inherit; font-size:.78rem;
+  font-weight:500; padding:6px 14px; cursor:pointer;
+  transition:transform .2s var(--ease-out); }
+#closep:hover { transform:scale(1.05); }
+.plinks { margin-top:18px; font-size:.84rem; display:flex; gap:16px;
+  flex-wrap:wrap; font-weight:500; }
+.plinks a { color:var(--est); text-decoration:none; }
+.plinks a:hover { opacity:.8; }
 button:focus-visible, a:focus-visible { outline:2px solid var(--est);
-  outline-offset:2px; }
+  outline-offset:3px; }
 </style>
 </head>
 <body>
 <canvas id="space"></canvas>
+<div id="vignette" aria-hidden="true"></div>
 <div class="hud" id="brand"><h1 id="t-title"></h1><p id="t-sub"></p></div>
 <div class="hud" id="nav"></div>
 <div class="hud" id="legend"></div>
@@ -85,8 +105,8 @@ const COLORS = { ESTABLISHED:"#57C186", STRONG:"#6FA8E8", COMPETING:"#D9B14A",
   FRONTIER:"#E8794E", SPECULATIVE:"#D66BB4" };
 const I18N = {
   en: { title:"Universe Explorer",
-    sub:"drift through what we know — and what we don't. every body here cost a verified source; the dark is honest.",
-    hint:"drag to drift · scroll to zoom · click a body to read it",
+    sub:"Drift through verified knowledge. Every star costs a source — the dark is honest.",
+    hint:"Drag to drift  ·  Scroll to zoom  ·  Click a body",
     overview:"Overview", lang:"中文", map:"Map view", plain:"Plain site",
     whylight:"Why this light", evidence:"Evidence",
     open:"Open questions", sources:"Sources", close:"close",
@@ -99,8 +119,8 @@ const I18N = {
     unchartedBody:"Nothing is drawn here because nothing has been verified here. Every body in this universe costs a real, fetched, hash-checked source — emptiness is not a bug, it is the honest report of how much work knowing takes. Want this region mapped? Suggest a domain:",
     suggest:"suggest a domain →" },
   zh: { title:"宇宙探索者",
-    sub:"漂流過我們的已知與未知。這裡每顆天體都以一筆經核實的出處為代價;黑暗是誠實的。",
-    hint:"拖曳漂移 · 滾輪縮放 · 點擊天體閱讀它",
+    sub:"漂流過已核實的知識。每顆天體都以出處為代價 —— 黑暗是誠實的。",
+    hint:"拖曳漂移  ·  滾輪縮放  ·  點擊天體",
     overview:"總覽", lang:"EN", map:"地圖視圖", plain:"陽春版",
     whylight:"為什麼是這個燈號", evidence:"證據",
     open:"開放問題", sources:"出處", close:"關閉",
@@ -141,7 +161,7 @@ function overviewZ() {
 }
 function flyTo(x, y, z) {
   if (REDUCED) { cam.x = x; cam.y = y; cam.z = z; return; }
-  fly = { fx:cam.x, fy:cam.y, fz:cam.z, tx:x, ty:y, tz:z, t:0 };
+  fly = { fx:cam.x, fy:cam.y, fz:cam.z, tx:x, ty:y, tz:z, t:0, dur:1.15 };
 }
 
 /* deterministic pseudo-random (stable layout per claim) */
@@ -293,17 +313,27 @@ function frame(ms) {
   const liveW = innerWidth || document.documentElement.clientWidth || 960;
   const liveH = innerHeight || document.documentElement.clientHeight || 600;
   if (liveW !== W || liveH !== H) resize();
-  if (fly) { fly.t = Math.min(1, fly.t + (ms - tPrev) / 900);
-    const e = 1 - Math.pow(1 - fly.t, 3);
+  if (fly) {
+    fly.t = Math.min(1, fly.t + (ms - tPrev) / ((fly.dur || 1.15) * 1000));
+    // smoothstep * ease-out expo feel
+    const u = fly.t;
+    const e = u * u * u * (u * (u * 6 - 15) + 10); // smootherstep
     cam.x = fly.fx + (fly.tx - fly.fx) * e;
     cam.y = fly.fy + (fly.ty - fly.fy) * e;
     cam.z = fly.fz + (fly.tz - fly.fz) * e;
-    if (fly.t >= 1) fly = null; }
-  else if (!drag.on) { cam.x += cam.vx; cam.y += cam.vy;
-    cam.vx *= 0.93; cam.vy *= 0.93; }
+    if (fly.t >= 1) fly = null;
+  } else if (!drag.on) {
+    cam.x += cam.vx; cam.y += cam.vy;
+    cam.vx *= 0.94; cam.vy *= 0.94;
+    if (Math.abs(cam.vx) < 0.002) cam.vx = 0;
+    if (Math.abs(cam.vy) < 0.002) cam.vy = 0;
+  }
   tPrev = ms;
 
-  cx.fillStyle = "#05080F"; cx.fillRect(0, 0, W, H);
+  // deep space gradient
+  const bg = cx.createRadialGradient(W*0.5, H*0.42, 0, W*0.5, H*0.5, Math.max(W,H)*0.75);
+  bg.addColorStop(0, "#0A1020"); bg.addColorStop(0.55, "#05080F"); bg.addColorStop(1, "#020308");
+  cx.fillStyle = bg; cx.fillRect(0, 0, W, H);
 
   for (const g of galaxies) {            // distant galaxies, deepest parallax
     const gx = (g.x - cam.x * 0.07) * cam.z + W/2;
@@ -406,8 +436,9 @@ cv.addEventListener("pointerup", e => { drag.on = false;
         openUncharted(); return; } }
     closePanel(); } });
 cv.addEventListener("wheel", e => { e.preventDefault();
-  const f = Math.exp(-e.deltaY * 0.0012);
-  const z2 = Math.min(2.4, Math.max(0.3, cam.z * f));
+  fly = null;
+  const f = Math.exp(-e.deltaY * 0.00105);
+  const z2 = Math.min(2.6, Math.max(0.22, cam.z * f));
   const wx = (e.clientX - W/2) / cam.z + cam.x;
   const wy = (e.clientY - H/2) / cam.z + cam.y;
   cam.x = wx - (e.clientX - W/2) / z2; cam.y = wy - (e.clientY - H/2) / z2;
