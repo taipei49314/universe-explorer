@@ -302,6 +302,7 @@ TOPIC_THEMES = {
     "cosmology": "cosmos",
     "dark_matter": "cosmos",
     "black_hole": "cosmos",
+    "stars": "cosmos",
     "planets": "planets",
     "exoplanets": "planets",
     "ocean": "earth",

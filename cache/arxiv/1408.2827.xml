@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/UZjauGO1vYJyS03XiAIUN9DtDik</id>
+  <title>arXiv Query: search_query=&amp;id_list=1408.2827&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:00:07Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1408.2827" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1408.2827v1</id>
+    <title>Current status of the Spectrograph System for the SuMIRe/PFS</title>
+    <updated>2014-08-12T20:00:18Z</updated>
+    <link href="https://arxiv.org/abs/1408.2827v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1408.2827v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Prime Focus Spectrograph (PFS) is a new facility instrument for Subaru Telescope which will be installed in around 2017. It is a multi-object spectrograph fed by about 2400 fibers placed at the prime focus covering a hexagonal field-of-view with 1.35 deg diagonals and capable of simultaneously obtaining data of spectra with wavelengths ranging from 0.38 um to 1.26 um. The spectrograph system is composed of four identical modules each receiving the light from 600 fibers. Each module incorporates three channels covering the wavelength ranges 0.38-0.65 mu ("Blue"), 0.63-0.97 mu ("Red"), and 0.94-1.26 mu ("NIR") respectively; with resolving power which progresses fairly smoothly from about 2000 in the blue to about 4000 in the infrared. An additional spectral mode allows reaching a spectral resolution of 5000 at 0.8mu (red). The proposed optical design is based on a Schmidt collimator facing three Schmidt cameras (one per spectral channel). This architecture is very robust, well known and documented. It allows for high image quality with only few simple elements (high throughput) at the expense of the central obscuration, which leads to larger optics. Each module has to be modular in its design to allow for integration and tests and for its safe transport up to the telescope: this is the main driver for the mechanical design. In particular, each module will be firstly fully integrated and validated at LAM (France) before it is shipped to Hawaii. All sub-assemblies will be indexed on the bench to allow for their accurate repositioning. This paper will give an overview of the spectrograph system which has successfully passed the Critical Design Review (CDR) in 2014 March and which is now in the construction phase.</summary>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2014-08-12T20:00:18Z</published>
+    <arxiv:comment>9 pages, 7 figures, submitted to "Ground-based and Airborne Instrumentation for Astronomy V, Suzanne K. Ramsay, Ian S. McLean, Hideki Takami, Editors, Proc. SPIE 9147 (2014)"</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.IM"/>
+    <author>
+      <name>S. Vives</name>
+    </author>
+    <author>
+      <name>D. Le Mignant</name>
+    </author>
+    <author>
+      <name>J. E. Gunn</name>
+    </author>
+    <author>
+      <name>S. Smee</name>
+    </author>
+    <author>
+      <name>L. Souza de Oliveira</name>
+    </author>
+    <author>
+      <name>N. Tamura</name>
+    </author>
+    <author>
+      <name>H. Sugai</name>
+    </author>
+    <author>
+      <name>R. Barkhouser</name>
+    </author>
+    <author>
+      <name>A. Bozier</name>
+    </author>
+    <author>
+      <name>M. A. Carr</name>
+    </author>
+    <author>
+      <name>A. Cesar de Oliveira</name>
+    </author>
+    <author>
+      <name>D. Ferrand</name>
+    </author>
+    <author>
+      <name>M. Golebiowski</name>
+    </author>
+    <author>
+      <name>M. Hart</name>
+    </author>
+    <author>
+      <name>S. Hope</name>
+    </author>
+    <author>
+      <name>M. Jaquet</name>
+    </author>
+    <author>
+      <name>F. Madec</name>
+    </author>
+    <author>
+      <name>S. Pascal</name>
+    </author>
+    <author>
+      <name>T. Pegot-Ogier</name>
+    </author>
+    <author>
+      <name>M. Vittal de Arruda</name>
+    </author>
+    <arxiv:doi>10.1117/12.2056401</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1117/12.2056401" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/uN6F26EF2JobILyJpLpI0DOXIL8</id>
+  <title>arXiv Query: search_query=&amp;id_list=astro-ph/0010346&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:57:58Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=astro-ph/0010346" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/astro-ph/0010346v2</id>
+    <title>Solar Models: current epoch and time dependences, neutrinos, and helioseismological properties</title>
+    <updated>2001-03-13T00:05:55Z</updated>
+    <link href="https://arxiv.org/abs/astro-ph/0010346v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/astro-ph/0010346v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  We calculate accurate solar models and report the detailed time dependences of important solar quantities. We use helioseismology to constrain the luminosity evolution of the sun and report the discovery of semi-convection in evolved solar models that include diffusion. In addition, we compare the computed sound speeds with the results of p-mode observations by BiSON, GOLF, GONG, LOWL, and MDI instruments. We contrast the neutrino predictions from a set of eight standard-like solar models and four deviant (or deficient) solar models with the results of solar neutrino experiments. For solar neutrino and for helioseismological applications, we present present-epoch numerical tabulations of characteristics of the standard solar model as a function of solar radius, including the principal physical and composition variables, sound speeds, neutrino fluxes, and functions needed for calculating solar neutrino oscillations.</summary>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="nucl-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="nucl-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2000-10-17T23:02:05Z</published>
+    <arxiv:comment>Accepted ApJ. Have used refined satellite value for solar luminosity. Changes slightly best neutrino fluxes. Include new references, number density of scatterers of sterile neutrinos, some additional helioseismological predictions. 70 pages, 16 figures, additional material at http://www.sns.ias.edu/~jnb</arxiv:comment>
+    <arxiv:primary_category term="astro-ph"/>
+    <arxiv:journal_ref>Astrophys.J.555:990-1012,2001</arxiv:journal_ref>
+    <author>
+      <name>John N. Bahcall</name>
+    </author>
+    <author>
+      <name>M. H. Pinsonneault</name>
+    </author>
+    <author>
+      <name>Sarbani Basu</name>
+    </author>
+    <arxiv:doi>10.1086/321493</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1086/321493" title="doi"/>
+  </entry>
+</feed>

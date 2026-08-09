@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/t81niWIvu7dVMPxqJdCQ4kT5O+U</id>
+  <title>arXiv Query: search_query=&amp;id_list=nucl-ex/0204008&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:59:55Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=nucl-ex/0204008" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/nucl-ex/0204008v2</id>
+    <title>Direct Evidence for Neutrino Flavor Transformation from Neutral-Current Interactions in the Sudbury Neutrino Observatory</title>
+    <updated>2002-05-09T17:44:59Z</updated>
+    <link href="https://arxiv.org/abs/nucl-ex/0204008v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/nucl-ex/0204008v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  Observations of neutral current neutrino interactions on deuterium in the Sudbury Neutrino Observatory are reported. Using the neutral current, elastic scattering, and charged current reactions and assuming the standard 8B shape, the electron-neutrino component of the 8B solar flux is 1.76 +/-0.05(stat.)+/-0.09(syst.) x10^6/(cm^2 s), for a kinetic energy threshold of 5 MeV. The non-electron neutrino component is 3.41+/-0.45(stat.)+0.48,-0.45(syst.) x10^6/(cm^2 s), 5.3 standard deviations greater than zero, providing strong evidence for solar electron neutrino flavor transformation. The total flux measured with the NC reaction is 5.09 +0.44,-0.43(stat.)+0.46,-0.43(syst.)x10^6/(cm^2 s), consistent with solar models.</summary>
+    <category term="nucl-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2002-04-21T10:39:40Z</published>
+    <arxiv:comment>6 pages, 3 figures, correction to author list and minor typographical corrections to references</arxiv:comment>
+    <arxiv:primary_category term="nucl-ex"/>
+    <arxiv:journal_ref>Phys.Rev.Lett.89:011301,2002</arxiv:journal_ref>
+    <author>
+      <name> SNO Collaboration</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.89.011301</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.89.011301" title="doi"/>
+  </entry>
+</feed>

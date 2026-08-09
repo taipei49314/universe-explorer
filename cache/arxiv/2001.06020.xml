@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/UYQQN5Tq0XIxCPG1EERpFWAAiMM</id>
+  <title>arXiv Query: search_query=&amp;id_list=2001.06020&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:00:03Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2001.06020" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2001.06020v1</id>
+    <title>The `Red Supergiant Problem': the upper luminosity boundary of type-II supernova progenitors</title>
+    <updated>2020-01-16T19:00:18Z</updated>
+    <link href="https://arxiv.org/abs/2001.06020v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2001.06020v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>By comparing the properties of Red Supergiant (RSG) supernova progenitors to those of field RSGs, it has been claimed that there is an absence of progenitors with luminosities $L$ above $\log(L/L_\odot) &gt; 5.2$. This is in tension with the empirical upper luminosity limit of RSGs at $\log(L/L_\odot) = 5.5$, a result known as the `Red Supergiant Problem'. This has been interpreted as evidence for an upper mass threshold for the formation of black-holes. In this paper, we compare the observed luminosities of RSG SN progenitors with the observed RSG $L$-distribution in the Magellanic Clouds. Our results indicate that the absence of bright SN II-P/L progenitors in the current sample can be explained at least in part by the steepness of the $L$-distribution and a small sample size, and that the statistical significance of the Red Supergiant Problem is between 1-2$σ$ . Secondly, we model the luminosity distribution of II-P/L progenitors as a simple power-law with an upper and lower cutoff, and find an upper luminosity limit of $\log(L_{\rm hi}/L_\odot) = 5.20^{+0.17}_{-0.11}$ (68\% confidence), though this increases to $\sim$5.3 if one fixes the power-law slope to be that expected from theoretical arguments. Again, the results point to the significance of the RSG Problem being within $\sim 2 σ$. Under the assumption that all progenitors are the result of single-star evolution, this corresponds to an upper mass limit for the parent distribution of $M_{\rm hi} = 19.2{\rm M_\odot}$, $\pm1.3 {\rm M_\odot (systematic)}$, $^{+4.5}_{-2.3} {\rm M_\odot}$ (random) (68\% confidence limits).</summary>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2020-01-16T19:00:18Z</published>
+    <arxiv:comment>9 pages, 7 figures, accepted for publication in MNRAS</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.SR"/>
+    <author>
+      <name>Ben Davies</name>
+    </author>
+    <author>
+      <name>Emma R. Beasor</name>
+    </author>
+    <arxiv:doi>10.1093/mnras/staa174</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1093/mnras/staa174" title="doi"/>
+  </entry>
+</feed>

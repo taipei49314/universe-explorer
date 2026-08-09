@@ -17,15 +17,17 @@ from .exoplanets import EXOPLANETS
 from .ocean import OCEAN
 from .planets import PLANETS
 from .seismology import SEISMOLOGY
+from .stars import STARS
 
 # Theme clusters (documentation only; engine iterates TOPICS flat):
-#   宇宙 cosmos  — cosmology, dark_matter, black_hole
+#   宇宙 cosmos  — cosmology, dark_matter, black_hole, stars
 #   星球 planets — planets, exoplanets
 #   地球 Earth   — ocean, seismology
 TOPICS: List[Topic] = [
     BLACK_HOLE,
     COSMOLOGY,
     DARK_MATTER,
+    STARS,
     EXOPLANETS,
     PLANETS,
     OCEAN,

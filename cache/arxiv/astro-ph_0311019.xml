@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/NSlSXuPnk2qfBC0j+TGKpKYahQk</id>
+  <title>arXiv Query: search_query=&amp;id_list=astro-ph/0311019&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:58:20Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=astro-ph/0311019" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/astro-ph/0311019v1</id>
+    <title>The First Stars</title>
+    <updated>2003-11-03T02:31:37Z</updated>
+    <link href="https://arxiv.org/abs/astro-ph/0311019v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/astro-ph/0311019v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  We review recent theoretical results on the formation of the first stars in the universe, and emphasize related open questions. In particular, we discuss the initial conditions for Population III star formation, as given by variants of the cold dark matter cosmology. Numerical simulations have investigated the collapse and the fragmentation of metal-free gas, showing that the first stars were predominantly very massive. The exact determination of the stellar masses, and the precise form of the primordial initial mass function, is still hampered by our limited understanding of the accretion physics and the protostellar feedback effects. We address the importance of heavy elements in bringing about the transition from an early star formation mode dominated by massive stars, to the familiar mode dominated by low mass stars, at later times. We show how complementary observations, both at high redshifts and in our local cosmic neighborhood, can be utilized to probe the first epoch of star formation.</summary>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2003-11-03T02:31:37Z</published>
+    <arxiv:comment>38 pages, 10 figures, draft version for 2004 Annual Reviews of Astronomy and Astrophysics, high-resolution version available at http://cfa-www.harvard.edu/~vbromm/</arxiv:comment>
+    <arxiv:primary_category term="astro-ph"/>
+    <arxiv:journal_ref>Ann.Rev.Astron.Astrophys.42:79-118,2004</arxiv:journal_ref>
+    <author>
+      <name>Volker Bromm</name>
+    </author>
+    <author>
+      <name>Richard B. Larson</name>
+    </author>
+    <arxiv:doi>10.1146/annurev.astro.42.053102.134034</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1146/annurev.astro.42.053102.134034" title="doi"/>
+  </entry>
+</feed>

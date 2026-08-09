@@ -1,0 +1,387 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/6DJVFnh0CYU8d7AxVOaaOHLgy6I</id>
+  <title>arXiv Query: search_query=&amp;id_list=1710.05841&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:58:01Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1710.05841" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1710.05841v2</id>
+    <title>A kilonova as the electromagnetic counterpart to a gravitational-wave source</title>
+    <updated>2017-10-17T15:25:29Z</updated>
+    <link href="https://arxiv.org/abs/1710.05841v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1710.05841v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gravitational waves were discovered with the detection of binary black hole mergers and they should also be detectable from lower mass neutron star mergers. These are predicted to eject material rich in heavy radioactive isotopes that can power an electromagnetic signal called a kilonova. The gravitational wave source GW170817 arose from a binary neutron star merger in the nearby Universe with a relatively well confined sky position and distance estimate. Here we report observations and physical modelling of a rapidly fading electromagnetic transient in the galaxy NGC4993, which is spatially coincident with GW170817 and a weak short gamma-ray burst. The transient has physical parameters broadly matching the theoretical predictions of blue kilonovae from neutron star mergers. The emitted electromagnetic radiation can be explained with an ejected mass of 0.04 +/- 0.01 Msol, with an opacity of kappa &lt;= 0.5 cm2/gm at a velocity of 0.2 +/- 0.1c. The power source is constrained to have a power law slope of beta = -1.2 +/- 0.3, consistent with radioactive powering from r-process nuclides. We identify line features in the spectra that are consistent with light r-process elements (90 &lt; A &lt; 140). As it fades, the transient rapidly becomes red, and emission may have contribution by a higher opacity, lanthanide-rich ejecta component. This indicates that neutron star mergers produce gravitational waves, radioactively powered kilonovae, and are a nucleosynthetic source of the r-process elements.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-10-16T16:57:47Z</published>
+    <arxiv:comment>Nature, in press, DOI 10.1038/nature24303. Data files will be made available at http://www.pessto.org</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <author>
+      <name>S. J. Smartt</name>
+    </author>
+    <author>
+      <name>T. -W. Chen</name>
+    </author>
+    <author>
+      <name>A. Jerkstrand</name>
+    </author>
+    <author>
+      <name>M. Coughlin</name>
+    </author>
+    <author>
+      <name>E. Kankare</name>
+    </author>
+    <author>
+      <name>S. A. Sim</name>
+    </author>
+    <author>
+      <name>M. Fraser</name>
+    </author>
+    <author>
+      <name>C. Inserra</name>
+    </author>
+    <author>
+      <name>K. Maguire</name>
+    </author>
+    <author>
+      <name>K. C. Chambers</name>
+    </author>
+    <author>
+      <name>M. E. Huber</name>
+    </author>
+    <author>
+      <name>T. Kruhler</name>
+    </author>
+    <author>
+      <name>G. Leloudas</name>
+    </author>
+    <author>
+      <name>M. Magee</name>
+    </author>
+    <author>
+      <name>L. J. Shingles</name>
+    </author>
+    <author>
+      <name>K. W. Smith</name>
+    </author>
+    <author>
+      <name>D. R. Young</name>
+    </author>
+    <author>
+      <name>J. Tonry</name>
+    </author>
+    <author>
+      <name>R. Kotak</name>
+    </author>
+    <author>
+      <name>A. Gal-Yam</name>
+    </author>
+    <author>
+      <name>J. D. Lyman</name>
+    </author>
+    <author>
+      <name>D. S. Homan</name>
+    </author>
+    <author>
+      <name>C. Agliozzo</name>
+    </author>
+    <author>
+      <name>J. P. Anderson</name>
+    </author>
+    <author>
+      <name>C. R. Angus C. Ashall</name>
+    </author>
+    <author>
+      <name>C. Barbarino</name>
+    </author>
+    <author>
+      <name>F. E. Bauer</name>
+    </author>
+    <author>
+      <name>M. Berton</name>
+    </author>
+    <author>
+      <name>M. T. Botticella</name>
+    </author>
+    <author>
+      <name>M. Bulla</name>
+    </author>
+    <author>
+      <name>J. Bulger</name>
+    </author>
+    <author>
+      <name>G. Cannizzaro</name>
+    </author>
+    <author>
+      <name>Z. Cano</name>
+    </author>
+    <author>
+      <name>R. Cartier</name>
+    </author>
+    <author>
+      <name>A. Cikota</name>
+    </author>
+    <author>
+      <name>P. Clark</name>
+    </author>
+    <author>
+      <name>A. De Cia</name>
+    </author>
+    <author>
+      <name>M. Della Valle</name>
+    </author>
+    <author>
+      <name>L. Denneau</name>
+    </author>
+    <author>
+      <name>M. Dennefeld</name>
+    </author>
+    <author>
+      <name>L. Dessart</name>
+    </author>
+    <author>
+      <name>G. Dimitriadis</name>
+    </author>
+    <author>
+      <name>N. Elias-Rosa</name>
+    </author>
+    <author>
+      <name>R. E. Firth</name>
+    </author>
+    <author>
+      <name>H. Flewelling</name>
+    </author>
+    <author>
+      <name>A. Flors</name>
+    </author>
+    <author>
+      <name>A. Franckowiak</name>
+    </author>
+    <author>
+      <name>C. Frohmaier</name>
+    </author>
+    <author>
+      <name>L. Galbany</name>
+    </author>
+    <author>
+      <name>S. Gonzalez-Gaitan</name>
+    </author>
+    <author>
+      <name>J. Greiner</name>
+    </author>
+    <author>
+      <name>M. Gromadzki</name>
+    </author>
+    <author>
+      <name>A. Nicuesa Guelbenzu</name>
+    </author>
+    <author>
+      <name>C. P. Gutierrez</name>
+    </author>
+    <author>
+      <name>A. Hamanowicz</name>
+    </author>
+    <author>
+      <name>L. Hanlon</name>
+    </author>
+    <author>
+      <name>J. Harmanen</name>
+    </author>
+    <author>
+      <name>K. E. Heintz</name>
+    </author>
+    <author>
+      <name>A. Heinze</name>
+    </author>
+    <author>
+      <name>M. -S. Hernandez</name>
+    </author>
+    <author>
+      <name>S. T. Hodgkin</name>
+    </author>
+    <author>
+      <name>I. M. Hook</name>
+    </author>
+    <author>
+      <name>L. Izzo</name>
+    </author>
+    <author>
+      <name>P. A. James</name>
+    </author>
+    <author>
+      <name>P. G. Jonker</name>
+    </author>
+    <author>
+      <name>W. E. Kerzendorf</name>
+    </author>
+    <author>
+      <name>S. Klose</name>
+    </author>
+    <author>
+      <name>Z. Kostrzewa-Rutkowska</name>
+    </author>
+    <author>
+      <name>M. Kowalski</name>
+    </author>
+    <author>
+      <name>M. Kromer</name>
+    </author>
+    <author>
+      <name>H. Kuncarayakti</name>
+    </author>
+    <author>
+      <name>A. Lawrence</name>
+    </author>
+    <author>
+      <name>T. B. Lowe</name>
+    </author>
+    <author>
+      <name>E. A. Magnier</name>
+    </author>
+    <author>
+      <name>I. Manulis</name>
+    </author>
+    <author>
+      <name>A. Martin-Carrillo</name>
+    </author>
+    <author>
+      <name>S. Mattila</name>
+    </author>
+    <author>
+      <name>O. McBrien</name>
+    </author>
+    <author>
+      <name>A. Muller</name>
+    </author>
+    <author>
+      <name>J. Nordin</name>
+    </author>
+    <author>
+      <name>D. O'Neill</name>
+    </author>
+    <author>
+      <name>F. Onori</name>
+    </author>
+    <author>
+      <name>J. T. Palmerio</name>
+    </author>
+    <author>
+      <name>A. Pastorello</name>
+    </author>
+    <author>
+      <name>F. Patat</name>
+    </author>
+    <author>
+      <name>G. Pignata</name>
+    </author>
+    <author>
+      <name>Ph. Podsiadlowski</name>
+    </author>
+    <author>
+      <name>M. L. Pumo</name>
+    </author>
+    <author>
+      <name>S. J. Prentice</name>
+    </author>
+    <author>
+      <name>A. Rau</name>
+    </author>
+    <author>
+      <name>A. Razza</name>
+    </author>
+    <author>
+      <name>A. Rest</name>
+    </author>
+    <author>
+      <name>T. Reynolds</name>
+    </author>
+    <author>
+      <name>R. Roy</name>
+    </author>
+    <author>
+      <name>A. J. Ruiter</name>
+    </author>
+    <author>
+      <name>K. A. Rybicki</name>
+    </author>
+    <author>
+      <name>L. Salmon</name>
+    </author>
+    <author>
+      <name>P. Schady</name>
+    </author>
+    <author>
+      <name>A. S. B. Schultz</name>
+    </author>
+    <author>
+      <name>T. Schweyer</name>
+    </author>
+    <author>
+      <name>I. R. Seitenzahl</name>
+    </author>
+    <author>
+      <name>M. Smith</name>
+    </author>
+    <author>
+      <name>J. Sollerman</name>
+    </author>
+    <author>
+      <name>B. Stalder</name>
+    </author>
+    <author>
+      <name>C. W. Stubbs</name>
+    </author>
+    <author>
+      <name>M. Sullivan</name>
+    </author>
+    <author>
+      <name>H. Szegedi</name>
+    </author>
+    <author>
+      <name>F. Taddia</name>
+    </author>
+    <author>
+      <name>S. Taubenberger</name>
+    </author>
+    <author>
+      <name>G. Terreran</name>
+    </author>
+    <author>
+      <name>B. van Soelen</name>
+    </author>
+    <author>
+      <name>J. Vos</name>
+    </author>
+    <author>
+      <name>R. J. Wainscoat</name>
+    </author>
+    <author>
+      <name>N. A. Walton</name>
+    </author>
+    <author>
+      <name>C. Waters</name>
+    </author>
+    <author>
+      <name>H. Weiland</name>
+    </author>
+    <author>
+      <name>M. Willman</name>
+    </author>
+    <author>
+      <name>P. Wiseman</name>
+    </author>
+    <author>
+      <name>D. E. Wright</name>
+    </author>
+    <author>
+      <name>L. Wyrzykowski</name>
+    </author>
+    <author>
+      <name>O. Yaron</name>
+    </author>
+    <arxiv:doi>10.1038/nature24303</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/nature24303" title="doi"/>
+  </entry>
+</feed>

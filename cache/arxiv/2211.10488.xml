@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/3JyaysfUTsJoV8XVmW/SxvIOmuE</id>
+  <title>arXiv Query: search_query=&amp;id_list=2211.10488&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:00:15Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2211.10488" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2211.10488v1</id>
+    <title>Early Release Science of the Exoplanet WASP-39b with JWST NIRSpec G395H</title>
+    <updated>2022-11-18T19:57:14Z</updated>
+    <link href="https://arxiv.org/abs/2211.10488v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2211.10488v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Measuring the abundances of carbon and oxygen in exoplanet atmospheres is considered a crucial avenue for unlocking the formation and evolution of exoplanetary systems. Access to an exoplanet's chemical inventory requires high-precision observations, often inferred from individual molecular detections with low-resolution space-based and high-resolution ground-based facilities. Here we report the medium-resolution (R$\sim$600) transmission spectrum of an exoplanet atmosphere between 3-5 $μ$m covering multiple absorption features for the Saturn-mass exoplanet WASP-39b, obtained with JWST NIRSpec G395H. Our observations achieve 1.46x photon precision, providing an average transit depth uncertainty of 221 ppm per spectroscopic bin, and present minimal impacts from systematic effects. We detect significant absorption from CO$_2$ (28.5$σ$) and H$_2$O (21.5$σ$), and identify SO$_2$ as the source of absorption at 4.1 $μ$m (4.8$σ$). Best-fit atmospheric models range between 3 and 10x solar metallicity, with sub-solar to solar C/O ratios. These results, including the detection of SO$_2$, underscore the importance of characterising the chemistry in exoplanet atmospheres, and showcase NIRSpec G395H as an excellent mode for time series observations over this critical wavelength range.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-11-18T19:57:14Z</published>
+    <arxiv:comment>44 pages, 11 figures, 3 tables. Resubmitted after revision to Nature</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <author>
+      <name>Lili Alderson</name>
+    </author>
+    <author>
+      <name>Hannah R. Wakeford</name>
+    </author>
+    <author>
+      <name>Munazza K. Alam</name>
+    </author>
+    <author>
+      <name>Natasha E. Batalha</name>
+    </author>
+    <author>
+      <name>Joshua D. Lothringer</name>
+    </author>
+    <author>
+      <name>Jea Adams Redai</name>
+    </author>
+    <author>
+      <name>Saugata Barat</name>
+    </author>
+    <author>
+      <name>Jonathan Brande</name>
+    </author>
+    <author>
+      <name>Mario Damiano</name>
+    </author>
+    <author>
+      <name>Tansu Daylan</name>
+    </author>
+    <author>
+      <name>Néstor Espinoza</name>
+    </author>
+    <author>
+      <name>Laura Flagg</name>
+    </author>
+    <author>
+      <name>Jayesh M. Goyal</name>
+    </author>
+    <author>
+      <name>David Grant</name>
+    </author>
+    <author>
+      <name>Renyu Hu</name>
+    </author>
+    <author>
+      <name>Julie Inglis</name>
+    </author>
+    <author>
+      <name>Elspeth K. H. Lee</name>
+    </author>
+    <author>
+      <name>Thomas Mikal-Evans</name>
+    </author>
+    <author>
+      <name>Lakeisha Ramos-Rosado</name>
+    </author>
+    <author>
+      <name>Pierre-Alexis Roy</name>
+    </author>
+    <author>
+      <name>Nicole L. Wallack</name>
+    </author>
+    <author>
+      <name>Natalie M. Batalha</name>
+    </author>
+    <author>
+      <name>Jacob L. Bean</name>
+    </author>
+    <author>
+      <name>Björn Benneke</name>
+    </author>
+    <author>
+      <name>Zachory K. Berta-Thompson</name>
+    </author>
+    <author>
+      <name>Aarynn L. Carter</name>
+    </author>
+    <author>
+      <name>Quentin Changeat</name>
+    </author>
+    <author>
+      <name>Knicole D. Colón</name>
+    </author>
+    <author>
+      <name>Ian J. M. Crossfield</name>
+    </author>
+    <author>
+      <name>Jean-Michel Désert</name>
+    </author>
+    <author>
+      <name>Daniel Foreman-Mackey</name>
+    </author>
+    <author>
+      <name>Neale P. Gibson</name>
+    </author>
+    <author>
+      <name>Laura Kreidberg</name>
+    </author>
+    <author>
+      <name>Michael R. Line</name>
+    </author>
+    <author>
+      <name>Mercedes López-Morales</name>
+    </author>
+    <author>
+      <name>Karan Molaverdikhani</name>
+    </author>
+    <author>
+      <name>Sarah E. Moran</name>
+    </author>
+    <author>
+      <name>Giuseppe Morello</name>
+    </author>
+    <author>
+      <name>Julianne I. Moses</name>
+    </author>
+    <author>
+      <name>Sagnick Mukherjee</name>
+    </author>
+    <author>
+      <name>Everett Schlawin</name>
+    </author>
+    <author>
+      <name>David K. Sing</name>
+    </author>
+    <author>
+      <name>Kevin B. Stevenson</name>
+    </author>
+    <author>
+      <name>Jake Taylor</name>
+    </author>
+    <author>
+      <name>Keshav Aggarwal</name>
+    </author>
+    <author>
+      <name>Eva-Maria Ahrer</name>
+    </author>
+    <author>
+      <name>Natalie H. Allen</name>
+    </author>
+    <author>
+      <name>Joanna K. Barstow</name>
+    </author>
+    <author>
+      <name>Taylor J. Bell</name>
+    </author>
+    <author>
+      <name>Jasmina Blecic</name>
+    </author>
+    <author>
+      <name>Sarah L. Casewell</name>
+    </author>
+    <author>
+      <name>Katy L. Chubb</name>
+    </author>
+    <author>
+      <name>Nicolas Crouzet</name>
+    </author>
+    <author>
+      <name>Patricio E. Cubillos</name>
+    </author>
+    <author>
+      <name>Leen Decin</name>
+    </author>
+    <author>
+      <name>Adina D. Feinstein</name>
+    </author>
+    <author>
+      <name>Joanthan J. Fortney</name>
+    </author>
+    <author>
+      <name>Joseph Harrington</name>
+    </author>
+    <author>
+      <name>Kevin Heng</name>
+    </author>
+    <author>
+      <name>Nicolas Iro</name>
+    </author>
+    <author>
+      <name>Eliza M. -R. Kempton</name>
+    </author>
+    <author>
+      <name>James Kirk</name>
+    </author>
+    <author>
+      <name>Heather A. Knutson</name>
+    </author>
+    <author>
+      <name>Jessica Krick</name>
+    </author>
+    <author>
+      <name>Jérémy Leconte</name>
+    </author>
+    <author>
+      <name>Monika Lendl</name>
+    </author>
+    <author>
+      <name>Ryan J. MacDonald</name>
+    </author>
+    <author>
+      <name>Luigi Mancini</name>
+    </author>
+    <author>
+      <name>Megan Mansfield</name>
+    </author>
+    <author>
+      <name>Erin M. May</name>
+    </author>
+    <author>
+      <name>Nathan J. Mayne</name>
+    </author>
+    <author>
+      <name>Yamila Miguel</name>
+    </author>
+    <author>
+      <name>Nikolay K. Nikolov</name>
+    </author>
+    <author>
+      <name>Kazumasa Ohno</name>
+    </author>
+    <author>
+      <name>Enric Palle</name>
+    </author>
+    <author>
+      <name>Vivien Parmentier</name>
+    </author>
+    <author>
+      <name>Dominique J. M. Petit dit de la Roche</name>
+    </author>
+    <author>
+      <name>Caroline Piaulet</name>
+    </author>
+    <author>
+      <name>Diana Powell</name>
+    </author>
+    <author>
+      <name>Benjamin V. Rackham</name>
+    </author>
+    <author>
+      <name>Seth Redfield</name>
+    </author>
+    <author>
+      <name>Laura K. Rogers</name>
+    </author>
+    <author>
+      <name>Zafar Rustamkulov</name>
+    </author>
+    <author>
+      <name>Xianyu Tan</name>
+    </author>
+    <author>
+      <name>P. Tremblin</name>
+    </author>
+    <author>
+      <name>Shang-Min Tsai</name>
+    </author>
+    <author>
+      <name>Jake D. Turner</name>
+    </author>
+    <author>
+      <name>Miguel de Val-Borro</name>
+    </author>
+    <author>
+      <name>Olivia Venot</name>
+    </author>
+    <author>
+      <name>Luis Welbanks</name>
+    </author>
+    <author>
+      <name>Peter J. Wheatley</name>
+    </author>
+    <author>
+      <name>Xi Zhang</name>
+    </author>
+    <arxiv:doi>10.1038/s41586-022-05591-3</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/s41586-022-05591-3" title="doi"/>
+  </entry>
+</feed>

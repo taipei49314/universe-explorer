@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Ke5UK1x0e8ROVfRKxeeAO/x9UJA</id>
+  <title>arXiv Query: search_query=&amp;id_list=hep-ex/9807003&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:59:59Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=hep-ex/9807003" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/hep-ex/9807003v2</id>
+    <title>Evidence for oscillation of atmospheric neutrinos</title>
+    <updated>1998-08-31T21:28:10Z</updated>
+    <link href="https://arxiv.org/abs/hep-ex/9807003v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/hep-ex/9807003v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  We present an analysis of atmospheric neutrino data from a 33.0 kiloton-year (535-day) exposure of the Super-Kamiokande detector. The data exhibit a zenith angle dependent deficit of muon neutrinos which is inconsistent with expectations based on calculations of the atmospheric neutrino flux. Experimental biases and uncertainties in the prediction of neutrino fluxes and cross sections are unable to explain our observation. The data are consistent, however, with two-flavor nu_mu &lt;-&gt; nu_tau oscillations with sin^2(2theta)&gt;0.82 and 5x10^-4 &lt; delta m^2 &lt; 6x10^-3 eV^2 at 90% confidence level.</summary>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <published>1998-07-03T14:23:51Z</published>
+    <arxiv:comment>9 pages (two-column) with 4 figures. Small corrections to Eqn.4 and Fig.3. Final version to appear in PRL</arxiv:comment>
+    <arxiv:primary_category term="hep-ex"/>
+    <arxiv:journal_ref>Phys.Rev.Lett.81:1562-1567,1998</arxiv:journal_ref>
+    <author>
+      <name>The Super-Kamiokande Collaboration</name>
+    </author>
+    <author>
+      <name>Y. Fukuda et al</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.81.1562</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.81.1562" title="doi"/>
+  </entry>
+</feed>

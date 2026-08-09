@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/X9heRRZEFCRpXdA0psnssHvfz9U</id>
+  <title>arXiv Query: search_query=&amp;id_list=1705.10810&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:00:11Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1705.10810" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1705.10810v2</id>
+    <title>The evaporation valley in the Kepler planets</title>
+    <updated>2017-10-04T18:56:30Z</updated>
+    <link href="https://arxiv.org/abs/1705.10810v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1705.10810v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>A new piece of evidence supporting the photoevaporation-driven evolution model for low-mass, close-in exoplanets was recently presented by the California-Kepler-Survey. The radius distribution of the Kepler planets is shown to be bimodal, with a ``valley' separating two peaks at 1.3 and 2.6 Rearth. Such an ``evaporation-valley' had been predicted by numerical models previously. Here, we develop a minimal model to demonstrate that this valley results from the following fact: the timescale for envelope erosion is the longest for those planets with hydrogen/helium-rich envelopes that, while only a few percent in weight, double its radius. The timescale falls for envelopes lighter than this because the planet's radius remains largely constant for tenuous envelopes. The timescale also drops for heavier envelopes because the planet swells up faster than the addition of envelope mass. Photoevaporation, therefore, herds planets into either bare cores ~1.3 Rearth, or those with double the core's radius (~2.6 Rearth). This process mostly occurs during the first 100 Myrs when the stars' high energy flux are high and nearly constant. The observed radius distribution further requires that the Kepler planets are clustered around 3 Mearth in mass, are born with H/He envelopes more than a few percent in mass, and that their cores are similar to the Earth in composition. Such envelopes must have been accreted before the dispersal of the gas disks, while the core composition indicates formation inside the ice-line. Lastly, the photoevaporation model fails to account for bare planets beyond ~30-60 days, if these planets are abundant, they may point to a significant second channel for planet formation, resembling the Solar-System terrestrial planets.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-05-30T18:13:47Z</published>
+    <arxiv:comment>15 pages, published in ApJ</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <arxiv:journal_ref>2017 ApJ 847 29</arxiv:journal_ref>
+    <author>
+      <name>James E. Owen</name>
+      <arxiv:affiliation>IAS</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Yanqin Wu</name>
+      <arxiv:affiliation>Toronto</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.3847/1538-4357/aa890a</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3847/1538-4357/aa890a" title="doi"/>
+  </entry>
+</feed>

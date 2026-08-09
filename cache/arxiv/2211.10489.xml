@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/zs51zpSFc5XqIbVXxzBHbxoOJH8</id>
+  <title>arXiv Query: search_query=&amp;id_list=2211.10489&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:58:34Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2211.10489" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2211.10489v1</id>
+    <title>Early Release Science of the exoplanet WASP-39b with JWST NIRCam</title>
+    <updated>2022-11-18T19:57:14Z</updated>
+    <link href="https://arxiv.org/abs/2211.10489v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2211.10489v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Measuring the metallicity and carbon-to-oxygen (C/O) ratio in exoplanet atmospheres is a fundamental step towards constraining the dominant chemical processes at work and, if in equilibrium, revealing planet formation histories. Transmission spectroscopy provides the necessary means by constraining the abundances of oxygen- and carbon-bearing species; however, this requires broad wavelength coverage, moderate spectral resolution, and high precision that, together, are not achievable with previous observatories. Now that JWST has commenced science operations, we are able to observe exoplanets at previously uncharted wavelengths and spectral resolutions. Here we report time-series observations of the transiting exoplanet WASP-39b using JWST's Near InfraRed Camera (NIRCam). The long-wavelength spectroscopic and short-wavelength photometric light curves span 2.0 - 4.0 $μ$m, exhibit minimal systematics, and reveal well-defined molecular absorption features in the planet's spectrum. Specifically, we detect gaseous H$_2$O in the atmosphere and place an upper limit on the abundance of CH$_4$. The otherwise prominent CO$_2$ feature at 2.8 $μ$m is largely masked by H$_2$O. The best-fit chemical equilibrium models favour an atmospheric metallicity of 1-100$\times$ solar (i.e., an enrichment of elements heavier than helium relative to the Sun) and a sub-stellar carbon-to-oxygen (C/O) ratio. The inferred high metallicity and low C/O ratio may indicate significant accretion of solid materials during planet formation or disequilibrium processes in the upper atmosphere.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2022-11-18T19:57:14Z</published>
+    <arxiv:comment>35 pages, 13 figures, 3 tables, Nature, accepted</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <author>
+      <name>Eva-Maria Ahrer</name>
+    </author>
+    <author>
+      <name>Kevin B. Stevenson</name>
+    </author>
+    <author>
+      <name>Megan Mansfield</name>
+    </author>
+    <author>
+      <name>Sarah E. Moran</name>
+    </author>
+    <author>
+      <name>Jonathan Brande</name>
+    </author>
+    <author>
+      <name>Giuseppe Morello</name>
+    </author>
+    <author>
+      <name>Catriona A. Murray</name>
+    </author>
+    <author>
+      <name>Nikolay K. Nikolov</name>
+    </author>
+    <author>
+      <name>Dominique J. M. Petit dit de la Roche</name>
+    </author>
+    <author>
+      <name>Everett Schlawin</name>
+    </author>
+    <author>
+      <name>Peter J. Wheatley</name>
+    </author>
+    <author>
+      <name>Sebastian Zieba</name>
+    </author>
+    <author>
+      <name>Natasha E. Batalha</name>
+    </author>
+    <author>
+      <name>Mario Damiano</name>
+    </author>
+    <author>
+      <name>Jayesh M Goyal</name>
+    </author>
+    <author>
+      <name>Monika Lendl</name>
+    </author>
+    <author>
+      <name>Joshua D. Lothringer</name>
+    </author>
+    <author>
+      <name>Sagnick Mukherjee</name>
+    </author>
+    <author>
+      <name>Kazumasa Ohno</name>
+    </author>
+    <author>
+      <name>Natalie M. Batalha</name>
+    </author>
+    <author>
+      <name>Matthew P. Battley</name>
+    </author>
+    <author>
+      <name>Jacob L. Bean</name>
+    </author>
+    <author>
+      <name>Thomas G. Beatty</name>
+    </author>
+    <author>
+      <name>Björn Benneke</name>
+    </author>
+    <author>
+      <name>Zachory K. Berta-Thompson</name>
+    </author>
+    <author>
+      <name>Aarynn L. Carter</name>
+    </author>
+    <author>
+      <name>Patricio E. Cubillos</name>
+    </author>
+    <author>
+      <name>Tansu Daylan</name>
+    </author>
+    <author>
+      <name>Néstor Espinoza</name>
+    </author>
+    <author>
+      <name>Peter Gao</name>
+    </author>
+    <author>
+      <name>Neale P. Gibson</name>
+    </author>
+    <author>
+      <name>Samuel Gill</name>
+    </author>
+    <author>
+      <name>Joseph Harrington</name>
+    </author>
+    <author>
+      <name>Renyu Hu</name>
+    </author>
+    <author>
+      <name>Laura Kreidberg</name>
+    </author>
+    <author>
+      <name>Nikole K. Lewis</name>
+    </author>
+    <author>
+      <name>Michael R. Line</name>
+    </author>
+    <author>
+      <name>Mercedes López-Morales</name>
+    </author>
+    <author>
+      <name>Vivien Parmentier</name>
+    </author>
+    <author>
+      <name>Diana K. Powell</name>
+    </author>
+    <author>
+      <name>David K. Sing</name>
+    </author>
+    <author>
+      <name>Shang-Min Tsai</name>
+    </author>
+    <author>
+      <name>Hannah R Wakeford</name>
+    </author>
+    <author>
+      <name>Luis Welbanks</name>
+    </author>
+    <author>
+      <name>Munazza K. Alam</name>
+    </author>
+    <author>
+      <name>Lili Alderson</name>
+    </author>
+    <author>
+      <name>Natalie H. Allen</name>
+    </author>
+    <author>
+      <name>David R. Anderson</name>
+    </author>
+    <author>
+      <name>Joanna K. Barstow</name>
+    </author>
+    <author>
+      <name>Daniel Bayliss</name>
+    </author>
+    <author>
+      <name>Taylor J. Bell</name>
+    </author>
+    <author>
+      <name>Jasmina Blecic</name>
+    </author>
+    <author>
+      <name>Edward M. Bryant</name>
+    </author>
+    <author>
+      <name>Matthew R. Burleigh</name>
+    </author>
+    <author>
+      <name>Ludmila Carone</name>
+    </author>
+    <author>
+      <name>S. L. Casewell</name>
+    </author>
+    <author>
+      <name>Quentin Changeat</name>
+    </author>
+    <author>
+      <name>Katy L. Chubb</name>
+    </author>
+    <author>
+      <name>Ian J. M. Crossfield</name>
+    </author>
+    <author>
+      <name>Nicolas Crouzet</name>
+    </author>
+    <author>
+      <name>Leen Decin</name>
+    </author>
+    <author>
+      <name>Jean-Michel Désert</name>
+    </author>
+    <author>
+      <name>Adina D. Feinstein</name>
+    </author>
+    <author>
+      <name>Laura Flagg</name>
+    </author>
+    <author>
+      <name>Jonathan J. Fortney</name>
+    </author>
+    <author>
+      <name>John E. Gizis</name>
+    </author>
+    <author>
+      <name>Kevin Heng</name>
+    </author>
+    <author>
+      <name>Nicolas Iro</name>
+    </author>
+    <author>
+      <name>Eliza M. -R. Kempton</name>
+    </author>
+    <author>
+      <name>Sarah Kendrew</name>
+    </author>
+    <author>
+      <name>James Kirk</name>
+    </author>
+    <author>
+      <name>Heather A. Knutson</name>
+    </author>
+    <author>
+      <name>Thaddeus D. Komacek</name>
+    </author>
+    <author>
+      <name>Pierre-Olivier Lagage</name>
+    </author>
+    <author>
+      <name>Jérémy Leconte</name>
+    </author>
+    <author>
+      <name>Jacob Lustig-Yaeger</name>
+    </author>
+    <author>
+      <name>Ryan J. MacDonald</name>
+    </author>
+    <author>
+      <name>Luigi Mancini</name>
+    </author>
+    <author>
+      <name>E. M. May</name>
+    </author>
+    <author>
+      <name>N. J. Mayne</name>
+    </author>
+    <author>
+      <name>Yamila Miguel</name>
+    </author>
+    <author>
+      <name>Thomas Mikal-Evans</name>
+    </author>
+    <author>
+      <name>Karan Molaverdikhani</name>
+    </author>
+    <author>
+      <name>Enric Palle</name>
+    </author>
+    <author>
+      <name>Caroline Piaulet</name>
+    </author>
+    <author>
+      <name>Benjamin V. Rackham</name>
+    </author>
+    <author>
+      <name>Seth Redfield</name>
+    </author>
+    <author>
+      <name>Laura K. Rogers</name>
+    </author>
+    <author>
+      <name>Pierre-Alexis Roy</name>
+    </author>
+    <author>
+      <name>Zafar Rustamkulov</name>
+    </author>
+    <author>
+      <name>Evgenya L. Shkolnik</name>
+    </author>
+    <author>
+      <name>Kristin S. Sotzen</name>
+    </author>
+    <author>
+      <name>Jake Taylor</name>
+    </author>
+    <author>
+      <name>P. Tremblin</name>
+    </author>
+    <author>
+      <name>Gregory S. Tucker</name>
+    </author>
+    <author>
+      <name>Jake D. Turner</name>
+    </author>
+    <author>
+      <name>Miguel de Val-Borro</name>
+    </author>
+    <author>
+      <name>Olivia Venot</name>
+    </author>
+    <author>
+      <name>Xi Zhang</name>
+    </author>
+    <arxiv:doi>10.1038/s41586-022-05590-4</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1038/s41586-022-05590-4" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/7ksLyuuj6ltN7yyF6owlb+DK2H0</id>
+  <title>arXiv Query: search_query=&amp;id_list=hep-ex/0103032&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:00:42Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=hep-ex/0103032" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/hep-ex/0103032v1</id>
+    <title>Solar 8B and hep Neutrino Measurements from 1258 Days of Super-Kamiokande Data</title>
+    <updated>2001-03-20T23:36:57Z</updated>
+    <link href="https://arxiv.org/abs/hep-ex/0103032v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/hep-ex/0103032v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  Solar neutrino measurements from 1258 days of data from the Super-Kamiokande detector are presented. The measurements are based on recoil electrons in the energy range 5.0-20.0MeV. The measured solar neutrino flux is 2.32 +- 0.03(stat.) +0.08-0.07(sys.)*10^6cm^{-2}s^{-1}, which is 45.1+-0.5(stat.)+1.6-1.4(sys.)% of that predicted by the BP2000 SSM. The day vs night flux asymmetry is 0.033+-0.022(stat.)+0.013-0.012(sys.). The recoil electron energy spectrum is consistent with no spectral distortion (χ^2/d.o.f. = 19.0/18). The seasonal variation of the flux is consistent with that expected from the eccentricity of the Earth's orbit (χ^2/d.o.f. = 3.7/7). For the hep neutrino flux, we set a 90% C.L. upper limit of 40 *10^3cm^{-2}s^{-1}, which is 4.3 times the BP2000 SSM prediction.</summary>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2001-03-20T23:36:57Z</published>
+    <arxiv:comment>7 pages, 5 figures, submitted to PRL (part of this paper)</arxiv:comment>
+    <arxiv:primary_category term="hep-ex"/>
+    <arxiv:journal_ref>Phys.Rev.Lett.86:5651-5655,2001</arxiv:journal_ref>
+    <author>
+      <name>The Super-Kamiokande Collaboration</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevLett.86.5651</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevLett.86.5651" title="doi"/>
+  </entry>
+</feed>

@@ -1,5 +1,5 @@
 {
-  "committed_at": "2026-08-09T12:36:32Z",
+  "committed_at": "2026-08-09T13:01:29Z",
   "claims": {
     "event_horizon_exists": {
       "status": "ESTABLISHED",
@@ -430,6 +430,72 @@
         "rule E4: only theoretical derivations/results are recorded -> theoretical only"
       ]
     },
+    "stars_powered_by_fusion": {
+      "status": "ESTABLISHED",
+      "evidence_axis": "E1",
+      "evidence_items": 3,
+      "sources": 3,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 1 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    "stellar_nucleosynthesis_makes_elements": {
+      "status": "STRONG",
+      "evidence_axis": "E2",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    "core_collapse_forms_ns_bh": {
+      "status": "STRONG",
+      "evidence_axis": "E2",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    "red_supergiant_problem": {
+      "status": "COMPETING",
+      "evidence_axis": "E3",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    "solar_dynamo_cycle": {
+      "status": "FRONTIER",
+      "evidence_axis": "E2",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    "pop_iii_already_routinely_observed": {
+      "status": "SPECULATIVE",
+      "evidence_axis": "E3",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 1 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
     "exoplanets_exist": {
       "status": "ESTABLISHED",
       "evidence_axis": "E1",
@@ -474,6 +540,17 @@
         "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
       ]
     },
+    "radius_valley_mechanism": {
+      "status": "COMPETING",
+      "evidence_axis": "E3",
+      "evidence_items": 3,
+      "sources": 3,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 2 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
     "trappist1b_bare_rock": {
       "status": "FRONTIER",
       "evidence_axis": "E2",
@@ -486,6 +563,17 @@
       ]
     },
     "trappist1_inner_planets_airless": {
+      "status": "FRONTIER",
+      "evidence_axis": "E1",
+      "evidence_items": 2,
+      "sources": 2,
+      "diverges": false,
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    "jwst_exoplanet_atmospheres": {
       "status": "FRONTIER",
       "evidence_axis": "E1",
       "evidence_items": 2,

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/PlV/sMMq159Zwa3zTXYynsX8r/4</id>
+  <title>arXiv Query: search_query=&amp;id_list=1703.10375&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:58:23Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1703.10375" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1703.10375v2</id>
+    <title>The California-Kepler Survey. III. A Gap in the Radius Distribution of Small Planets</title>
+    <updated>2017-06-16T17:56:47Z</updated>
+    <link href="https://arxiv.org/abs/1703.10375v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1703.10375v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The size of a planet is an observable property directly connected to the physics of its formation and evolution. We used precise radius measurements from the California-Kepler Survey (CKS) to study the size distribution of 2025 $\textit{Kepler}$ planets in fine detail. We detect a factor of $\geq$2 deficit in the occurrence rate distribution at 1.5-2.0 R$_{\oplus}$. This gap splits the population of close-in ($P$ &lt; 100 d) small planets into two size regimes: R$_P$ &lt; 1.5 R$_{\oplus}$ and R$_P$ = 2.0-3.0 R$_{\oplus}$, with few planets in between. Planets in these two regimes have nearly the same intrinsic frequency based on occurrence measurements that account for planet detection efficiencies. The paucity of planets between 1.5 and 2.0 R$_{\oplus}$ supports the emerging picture that close-in planets smaller than Neptune are composed of rocky cores measuring 1.5 R$_{\oplus}$ or smaller with varying amounts of low-density gas that determine their total sizes.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-03-30T09:25:04Z</published>
+    <arxiv:comment>Paper III in the California-Kepler Survey series, accepted to the Astronomical Journal</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <author>
+      <name>Benjamin J. Fulton</name>
+    </author>
+    <author>
+      <name>Erik A. Petigura</name>
+    </author>
+    <author>
+      <name>Andrew W. Howard</name>
+    </author>
+    <author>
+      <name>Howard Isaacson</name>
+    </author>
+    <author>
+      <name>Geoffrey W. Marcy</name>
+    </author>
+    <author>
+      <name>Phillip A. Cargile</name>
+    </author>
+    <author>
+      <name>Leslie Hebb</name>
+    </author>
+    <author>
+      <name>Lauren M. Weiss</name>
+    </author>
+    <author>
+      <name>John Asher Johnson</name>
+    </author>
+    <author>
+      <name>Timothy D. Morton</name>
+    </author>
+    <author>
+      <name>Evan Sinukoff</name>
+    </author>
+    <author>
+      <name>Ian J. M. Crossfield</name>
+    </author>
+    <author>
+      <name>Lea A. Hirsch</name>
+    </author>
+    <arxiv:doi>10.3847/1538-3881/aa80eb</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3847/1538-3881/aa80eb" title="doi"/>
+  </entry>
+</feed>

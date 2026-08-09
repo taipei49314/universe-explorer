@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/Oe/k4z76uy+lExIxfARTdxqs0yM</id>
+  <title>arXiv Query: search_query=&amp;id_list=1708.01621&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:58:27Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1708.01621" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1708.01621v2</id>
+    <title>Core-powered mass loss and the radius distribution of small exoplanets</title>
+    <updated>2018-03-06T07:59:29Z</updated>
+    <link href="https://arxiv.org/abs/1708.01621v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1708.01621v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Recent observations identify a valley in the radius distribution of small exoplanets, with planets in the range $1.5-2.0\,{\rm R}_{\oplus}$ significantly less common than somewhat smaller or larger planets. This valley may suggest a bimodal population of rocky planets that are either engulfed by massive gas envelopes that significantly enlarge their radius, or do not have detectable atmospheres at all. One explanation of such a bimodal distribution is atmospheric erosion by high-energy stellar photons. We investigate an alternative mechanism: the luminosity of the cooling rocky core, which can completely erode light envelopes while preserving heavy ones, produces a deficit of intermediate sized planets. We evolve planetary populations that are derived from observations using a simple analytical prescription, accounting self-consistently for envelope accretion, cooling and mass loss, and demonstrate that core-powered mass loss naturally reproduces the observed radius distribution, regardless of the high-energy incident flux. Observations of planets around different stellar types may distinguish between photoevaporation, which is powered by the high-energy tail of the stellar radiation, and core-powered mass loss, which depends on the bolometric flux through the planet's equilibrium temperature that sets both its cooling and mass-loss rates.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-08-04T18:00:09Z</published>
+    <arxiv:comment>Matched to published version</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <arxiv:journal_ref>MNRAS 476, 759-765 (2018)</arxiv:journal_ref>
+    <author>
+      <name>Sivan Ginzburg</name>
+    </author>
+    <author>
+      <name>Hilke E. Schlichting</name>
+    </author>
+    <author>
+      <name>Re'em Sari</name>
+    </author>
+    <arxiv:doi>10.1093/mnras/sty290</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1093/mnras/sty290" title="doi"/>
+  </entry>
+</feed>

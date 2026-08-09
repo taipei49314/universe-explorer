@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/gi2AlUP0I9HXyA6GQpQdg5hcUZc</id>
+  <title>arXiv Query: search_query=&amp;id_list=1705.08891&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:58:31Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1705.08891" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1705.08891v1</id>
+    <title>Planet Detection Simulations for Several Possible TESS Extended Missions</title>
+    <updated>2017-05-24T18:00:00Z</updated>
+    <link href="https://arxiv.org/abs/1705.08891v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1705.08891v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Transiting Exoplanet Survey Satellite (TESS) will perform a two-year survey of nearly the entire sky, with the main goal of detecting exoplanets smaller than Neptune around bright and nearby stars. There do not appear to be any fundamental obstacles to continuing science operations for at least several years after the two-year Primary Mission. To provide a head start to those who will plan and propose for such a mission, we present simulations of exoplanet detections in a third year of TESS operations. Our goal is to provide a helpful reference for the exoplanet-related aspects of any Extended Mission, while recognizing this will be only one part of a larger community discussion of the scientific goals. We use Monte Carlo simulations to try and anticipate the quantities and types of planets that would be detected in each of 6 plausible scenarios for a one-year Extended Mission following the two-year Primary Mission. We find that: (1) there is no sharp fall-off in the planet discovery rate in the third year; (2) the quantity of newly detected sub-Neptune radius planets does not depend strongly on the schedule of pointings; (3) an important function of an Extended Mission would be improving our ability to predict the times of future transits and occultations of TESS-detected planets.</summary>
+    <category term="astro-ph.EP" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.IM" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2017-05-24T18:00:00Z</published>
+    <arxiv:comment>The views, opinions, assumptions, examples, and results expressed in this article are solely those of the authors and do not necessarily reflect the official policy or position of the TESS Science Team, any of the authors' employers or affiliated institutions, NASA, or any agency of the U.S. government. This article has not been endorsed or reviewed by NASA or the TESS Science Team</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.EP"/>
+    <author>
+      <name>L. G. Bouma</name>
+      <arxiv:affiliation>Princeton University</arxiv:affiliation>
+      <arxiv:affiliation>MIT</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Joshua N. Winn</name>
+      <arxiv:affiliation>Princeton University</arxiv:affiliation>
+      <arxiv:affiliation>MIT</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Jacobi Kosiarek</name>
+      <arxiv:affiliation>MIT</arxiv:affiliation>
+    </author>
+    <author>
+      <name>P. R. McCullough</name>
+      <arxiv:affiliation>JHU</arxiv:affiliation>
+    </author>
+  </entry>
+</feed>

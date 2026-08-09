@@ -1,0 +1,126 @@
+{
+  "at": "20260809T130129Z",
+  "note": "mechanical diff against the committed snapshot; the trigger interface for future push channels",
+  "events": [
+    {
+      "kind": "claim_added",
+      "claim": "stars_powered_by_fusion",
+      "after": {
+        "status": "ESTABLISHED",
+        "evidence_axis": "E1",
+        "evidence_items": 3,
+        "sources": 3,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 1 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "stellar_nucleosynthesis_makes_elements",
+      "after": {
+        "status": "STRONG",
+        "evidence_axis": "E2",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "core_collapse_forms_ns_bh",
+      "after": {
+        "status": "STRONG",
+        "evidence_axis": "E2",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "red_supergiant_problem",
+      "after": {
+        "status": "COMPETING",
+        "evidence_axis": "E3",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 2 indirect/analog, 0 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "solar_dynamo_cycle",
+      "after": {
+        "status": "FRONTIER",
+        "evidence_axis": "E2",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 1 direct (distinct sources: 1, of which PRIMARY: 1), 0 indirect/analog, 1 theoretical",
+        "rule E2: direct observation exists but not from two distinct PRIMARY sources -> single direct line"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "pop_iii_already_routinely_observed",
+      "after": {
+        "status": "SPECULATIVE",
+        "evidence_axis": "E3",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 1 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "radius_valley_mechanism",
+      "after": {
+        "status": "COMPETING",
+        "evidence_axis": "E3",
+        "evidence_items": 3,
+        "sources": 3,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 0 direct (distinct sources: 0, of which PRIMARY: 0), 1 indirect/analog, 2 theoretical",
+        "rule E3: no direct observation; indirect or analog evidence exists -> indirect/analog only"
+      ]
+    },
+    {
+      "kind": "claim_added",
+      "claim": "jwst_exoplanet_atmospheres",
+      "after": {
+        "status": "FRONTIER",
+        "evidence_axis": "E1",
+        "evidence_items": 2,
+        "sources": 2,
+        "diverges": false
+      },
+      "derivation": [
+        "recorded evidence: 2 direct (distinct sources: 2, of which PRIMARY: 2), 0 indirect/analog, 0 theoretical",
+        "rule E1 (amendment-4): at least two direct observations hanging on distinct PRIMARY sources -> multiple independent direct"
+      ]
+    }
+  ]
+}

@@ -514,23 +514,204 @@ k2_18b_biosignature = Claim(
     status_history=[],
 )
 
+# --------------------------------------------------------------------------- #
+# Claim 5 — radius valley mechanism                      🟡 Competing          #
+# --------------------------------------------------------------------------- #
+radius_valley_mechanism = Claim(
+    id="radius_valley_mechanism",
+    title=(
+        "The exoplanet radius valley is carved by photoevaporation versus "
+        "core-powered mass loss"
+    ),
+    status=Status.COMPETING,
+    sources=[
+        Source(
+            label="Fulton2017",
+            url_or_id="arXiv:1703.10375",
+            kind="peer-reviewed paper (AJ 154, 109, 2017; radius gap)",
+        ),
+        Source(
+            label="Ginzburg2018",
+            url_or_id="arXiv:1708.01621",
+            kind="peer-reviewed paper (MNRAS; core-powered mass loss)",
+        ),
+        Source(
+            label="OwenWu2017",
+            url_or_id="arXiv:1705.10810",
+            kind="peer-reviewed paper (ApJ; photoevaporation valley)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Kepler occurrence studies find a deficit of planets between "
+                "roughly 1.5 and 2.0 Earth radii — the radius valley — "
+                "separating super-Earths from sub-Neptunes."
+            ),
+            source_ref="Fulton2017",
+        ),
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Core-powered mass-loss models strip envelopes using the "
+                "planet's own cooling luminosity after formation, reproducing "
+                "a valley without requiring high-energy stellar irradiation "
+                "as the sole driver."
+            ),
+            source_ref="Ginzburg2018",
+        ),
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Photoevaporation models driven by XUV irradiation from the "
+                "host star also carve a radius valley whose location depends "
+                "on stellar type and orbital period."
+            ),
+            source_ref="OwenWu2017",
+        ),
+    ],
+    competing_models=[
+        CompetingModel(
+            name="Photoevaporation",
+            supporting=(
+                "XUV-driven hydrodynamic escape naturally opens a gap near "
+                "the observed radii for close-in planets."
+            ),
+            opposing=(
+                "Valley demographics versus stellar age and type may not "
+                "uniquely match pure photoevaporation in all samples."
+            ),
+            limitations=(
+                "Depends on uncertain early stellar XUV histories."
+            ),
+        ),
+        CompetingModel(
+            name="Core-powered mass loss",
+            supporting=(
+                "Envelope loss powered by core cooling heat can produce a "
+                "similar valley with weaker dependence on stellar activity."
+            ),
+            opposing=(
+                "Must still match detailed slopes with period and stellar "
+                "mass across surveys."
+            ),
+            limitations=(
+                "Formation pathways and envelope compositions remain "
+                "degenerate."
+            ),
+        ),
+    ],
+    open_questions=[
+        "Do age-dated clusters show a valley that evolves as "
+        "photoevaporation predicts?",
+        "Can atmospheric metallicities break the degeneracy?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "two_or_more_mainstream_models", True,
+            "Photoevaporation and core-powered mass loss are both leading "
+            "published explanations of the radius valley.",
+        ),
+        ConditionAssessment(
+            "no_decisive_evidence_yet", True,
+            "Current demographics do not uniquely select one mechanism.",
+        ),
+        ConditionAssessment(
+            "genuine_scientific_camps", True,
+            "An active literature compares and combines the two channels.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 6 — JWST transmission atmospheres                🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+jwst_exoplanet_atmospheres = Claim(
+    id="jwst_exoplanet_atmospheres",
+    title=(
+        "JWST transmission spectroscopy measures molecular abundances in "
+        "exoplanet atmospheres"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="JWST_WASP39_2023",
+            url_or_id="arXiv:2211.10488",
+            kind="collaboration / peer-reviewed result (Nature 2023; "
+                 "WASP-39b CO2 detection)",
+        ),
+        Source(
+            label="Greene2023c",
+            url_or_id="arXiv:2303.14849",
+            kind="peer-reviewed paper (Nature 618, 39, 2023; TRAPPIST-1 b)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "JWST NIRSpec/PRISM transmission spectra of the hot Saturn "
+                "WASP-39b show a clear carbon dioxide absorption feature, "
+                "demonstrating molecular detection in an exoplanet "
+                "atmosphere at high confidence."
+            ),
+            source_ref="JWST_WASP39_2023",
+        ),
+        Evidence(
+            type="direct observation",
+            description=(
+                "JWST thermal-emission photometry of rocky TRAPPIST-1 planets "
+                "extends atmospheric characterisation into the terrestrial "
+                "regime, albeit still with sparse wavelength coverage."
+            ),
+            source_ref="Greene2023c",
+        ),
+    ],
+    open_questions=[
+        "How common are metal-rich versus metal-poor hot-giant atmospheres?",
+        "Can JWST robustly detect atmospheres on temperate rocky planets "
+        "around M dwarfs?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "new_discovery", True,
+            "JWST has opened a new precision regime for exoplanet "
+            "spectroscopy.",
+        ),
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "Early-release and GO programmes are producing atmosphere "
+            "papers at high cadence.",
+        ),
+        ConditionAssessment(
+            "insufficient_sample", True,
+            "Detailed molecular inventories still cover a limited planet "
+            "set relative to the known population.",
+        ),
+    ],
+    status_history=[],
+)
+
 
 EXOPLANETS = Topic(
     id="exoplanets",
     title="Exoplanets",
     summary=(
-        "Third domain through the identical engine — and this one re-exercises "
-        "the arXiv cite=>fetch pipeline on fresh sources. The shape again: a 🟢 "
-        "bedrock (they exist) under a 🔴 ceiling (a biosignature), with a real "
-        "🟡 two-camp dispute (Planet Nine) in between."
+        "Planets around other stars. 🟢 existence; 🔵 commonality; 🟡 Planet "
+        "Nine + radius-valley mechanisms; 🟠 TRAPPIST/JWST atmospheres; "
+        "🔴 contested biosignature claims."
     ),
     claims=[
         exoplanets_exist,
         proxima_b_exists,
         planets_are_common,
         planet_nine,
+        radius_valley_mechanism,
         trappist1b_bare_rock,
         trappist1_inner_pair_airless,
+        jwst_exoplanet_atmospheres,
         k2_18b_biosignature,
     ],
 )

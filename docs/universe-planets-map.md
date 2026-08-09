@@ -7,20 +7,22 @@ Engine: same constitution; each domain is still a `Topic` of atomic claims.
 
 | Theme | Domain id | Role | Seed scale |
 |-------|-----------|------|------------|
-| **宇宙** | `cosmology` | Expansion, CMB, acceleration, H0, inflation | 6 claims |
-| **宇宙** | `dark_matter` | Mass discrepancy → particle searches | 18 claims (paper-grade) |
+| **宇宙** | `cosmology` | Expansion, CMB, H0, inflation | 16 claims |
+| **宇宙** | `dark_matter` | Mass discrepancy → particle searches | 18 claims |
 | **宇宙** | `black_hole` | Compact objects / horizons | 5 claims |
-| **星球** | `planets` | Solar system age, Moon, bombardment, ocean worlds | 5 claims |
-| **星球** | `exoplanets` | Planets around other stars | 7 claims |
-| **地球** | `ocean` / `seismology` | Earth systems (unchanged) | 5+5 |
+| **宇宙** | `stars` | Fusion, nucleosynthesis, SN, dynamo | 6 claims |
+| **星球** | `planets` | Solar system + ocean worlds | 10 claims |
+| **星球** | `exoplanets` | Other stars; radius valley; JWST | 9 claims |
+| **地球** | `ocean` / `seismology` | Earth systems | 5+5 |
 
 ```
-                    ┌─ cosmology ──────────── 宇宙 large-scale
+                    ┌─ cosmology ──────────── large-scale / H0 / inflation
   宇宙 Cosmos ──────┼─ dark_matter ────────── matter budget / identity
-                    └─ black_hole ─────────── strong gravity endpoints
+                    ├─ black_hole ─────────── strong-gravity endpoints
+                    └─ stars ──────────────── stellar physics
 
-  星球 Planets ─────┬─ planets ────────────── our system + formation
-                    └─ exoplanets ─────────── other stars
+  星球 Planets ─────┬─ planets ────────────── solar system + ocean worlds
+                    └─ exoplanets ─────────── other stars + atmospheres
 
   地球 Earth ───────┬─ ocean
                     └─ seismology

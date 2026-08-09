@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/rnA5pyXY3YS/OCoswqZ7SOZy2wI</id>
+  <title>arXiv Query: search_query=&amp;id_list=1502.07020&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:58:16Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1502.07020" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1502.07020v1</id>
+    <title>The Solar Cycle</title>
+    <updated>2015-02-25T00:54:37Z</updated>
+    <link href="https://arxiv.org/abs/1502.07020v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1502.07020v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The Solar Cycle is reviewed. The 11-year cycle of solar activity is characterized by the rise and fall in the numbers and surface area of sunspots. A number of other solar activity indicators also vary in association with the sunspots including; the 10.7cm radio flux, the total solar irradiance, the magnetic field, flares and coronal mass ejections, geomagnetic activity, galactic cosmic ray fluxes, and radioisotopes in tree rings and ice cores. Individual solar cycles are characterized by their maxima and minima, cycle periods and amplitudes, cycle shape, the equatorward drift of the active latitudes, hemispheric asymmetries, and active longitudes. Cycle-to-cycle variability includes the Maunder Minimum, the Gleissberg Cycle, and the Gnevyshev-Ohl (even-odd) Rule. Short-term variability includes the 154-day periodicity, quasi-biennial variations, and double-peaked maxima. We conclude with an examination of prediction techniques for the solar cycle and a closer look at cycles 23 and 24.</summary>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2015-02-25T00:54:37Z</published>
+    <arxiv:comment>81 pages, 47 figures, 5 tables, Submitted Oct. 20, 2014 to Living Reviews in Solar Physics</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.SR"/>
+    <arxiv:journal_ref>Living Reviews in Solar Physics, 12 (2015), 4</arxiv:journal_ref>
+    <author>
+      <name>David H. Hathaway</name>
+    </author>
+    <arxiv:doi>10.1007/lrsp-2015-4</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1007/lrsp-2015-4" title="doi"/>
+  </entry>
+</feed>

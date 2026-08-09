@@ -322,5 +322,41 @@
     "title": "Titan's gravity field and interior structure after Cassini",
     "container": "Icarus",
     "issued": 2019
+  },
+  "10.1103/physrev.55.434": {
+    "endpoint": "https://api.crossref.org/works/10.1103%2Fphysrev.55.434",
+    "retrieved_at": "2026-08-09T12:58:36Z",
+    "cache_file": "10-1103_physrev-55-434.json",
+    "sha256": "20894f25149c6b5cb0865ec1cedf22c9ac8ff50944cecb48b82af52c32fb7699",
+    "title": "Energy Production in Stars",
+    "container": "Physical Review",
+    "issued": 1939
+  },
+  "10.1103/revmodphys.29.547": {
+    "endpoint": "https://api.crossref.org/works/10.1103%2Frevmodphys.29.547",
+    "retrieved_at": "2026-08-09T12:58:38Z",
+    "cache_file": "10-1103_revmodphys-29-547.json",
+    "sha256": "e78608bd49baa5c69218ddbd6b2f047c034488767c427426ea099a1de352a16c",
+    "title": "Synthesis of the Elements in Stars",
+    "container": "Reviews of Modern Physics",
+    "issued": 1957
+  },
+  "10.1073/pnas.20.5.254": {
+    "endpoint": "https://api.crossref.org/works/10.1073%2Fpnas.20.5.254",
+    "retrieved_at": "2026-08-09T12:58:39Z",
+    "cache_file": "10-1073_pnas-20-5-254.json",
+    "sha256": "57b25832060b3bc807c9d88df44506ead798029b820ffa24c733c380953b8469",
+    "title": "On Super-Novae",
+    "container": "Proceedings of the National Academy of Sciences",
+    "issued": 1934
+  },
+  "10.12942/lrsp-2010-3": {
+    "endpoint": "https://api.crossref.org/works/10.12942%2Flrsp-2010-3",
+    "retrieved_at": "2026-08-09T13:01:12Z",
+    "cache_file": "10-12942_lrsp-2010-3.json",
+    "sha256": "f0512bb33e33ad3d6dc3e0918ba4a3ca992e77840e84e561abba76f4fbfd3fb5",
+    "title": "Dynamo Models of the Solar Cycle",
+    "container": "Living Reviews in Solar Physics",
+    "issued": 2010
   }
 }

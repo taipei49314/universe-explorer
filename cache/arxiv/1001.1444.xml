@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/B1WjiwYK2SKFU0lZ71paKAp+6Rc</id>
+  <title>arXiv Query: search_query=&amp;id_list=1001.1444&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:58:12Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1001.1444" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1001.1444v3</id>
+    <title>Modave Lectures on Fuzzballs and Emission from the D1-D5 System</title>
+    <updated>2010-09-08T11:59:04Z</updated>
+    <link href="https://arxiv.org/abs/1001.1444v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1001.1444v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>These lecture notes present an introduction to the fuzzball proposal and emission from the D1-D5 system which is geared to an audience of graduate students and others with little background in the subject. The presentation begins with a discussion of the Penrose process and Hawking radiation. The fuzzball proposal is then introduced, and the two- and three-charge systems are reviewed. In the three-charge case details are not discussed. A detailed discussion of emission calculations for D1-D5-P black holes and for certain non-extremal fuzzballs from both the gravity and CFT perspectives is included. We explicitly demonstrate how seemingly different emission processes in gravity, namely, Hawking radiation and superradiance from D1-D5-P black holes, and ergoregion emission from certain non-extremal fuzzballs, are only different manifestations of the same phenomenon in the CFT.</summary>
+    <category term="hep-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2010-01-10T12:57:58Z</published>
+    <arxiv:comment>54 pages, 20 figures; notes of lectures presented at the 5th Modave Summer School; to appear in proceedings of the Solvay Institutes; v3 minor typos corrected</arxiv:comment>
+    <arxiv:primary_category term="hep-th"/>
+    <author>
+      <name>Borun D. Chowdhury</name>
+    </author>
+    <author>
+      <name>Amitabh Virmani</name>
+    </author>
+  </entry>
+</feed>

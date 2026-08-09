@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ElgDvwKFCc+f5c538Wd1i+u9GpE</id>
+  <title>arXiv Query: search_query=&amp;id_list=1801.10522&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T12:58:09Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1801.10522" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1801.10522v1</id>
+    <title>On the chiral expansion of vector meson masses</title>
+    <updated>2018-01-31T16:09:30Z</updated>
+    <link href="https://arxiv.org/abs/1801.10522v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1801.10522v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We study the chiral expansion of meson masses and decay constants using a chiral Lagrangian that was constructed previously based on the hadrogenesis conjecture. The one-loop self energies of the Goldstone bosons and vector mesons are evaluated. It is illustrated that a renormalizeable effective field theory arises once specific conditions on the low-energy constants are imposed. For the case where the hadrogenesis mass gap scale Lambda_{HG} is substantially larger than the chiral symmetry breaking scale Lambda_chi a partial summation scheme is required. All terms proportional to (M/Λ_χ)^n can be summed by a suitable renormalization, where M is the chiral and large-N_c limit of the vector meson masses in QCD. The size of loop effects from vector meson degrees of freedom is illustrated for physical quarks masses. Naturally sized effects are observed that have significant impact on the chiral structure of low-energy QCD with three light flavours.</summary>
+    <category term="hep-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="nucl-th" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2018-01-31T16:09:30Z</published>
+    <arxiv:comment>39 pages, 8 figures</arxiv:comment>
+    <arxiv:primary_category term="hep-ph"/>
+    <arxiv:journal_ref>Phys. Rev. D 98, 056005 (2018)</arxiv:journal_ref>
+    <author>
+      <name>Ruchipas Bavontaweepanya</name>
+    </author>
+    <author>
+      <name>Xiao-Yu Guo</name>
+    </author>
+    <author>
+      <name>Matthias F. M. Lutz</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevD.98.056005</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevD.98.056005" title="doi"/>
+  </entry>
+</feed>
