@@ -1,12 +1,12 @@
 # Dark matter: what is established, what competes, and what remains open
 
 **Manuscript skeleton — Introduction + Discussion only**  
-Status: draft scaffold (2026-08-09) · Claims source: `universe_explorer/data/dark_matter.py` (18 claims)  
+Status: draft scaffold (2026-08-09); **Abstract + §8.3 near-final prose** · Claims: `universe_explorer/data/dark_matter.py` (18 claims)  
 Companion artifacts: `dark-matter-paper-map.md` · `fig1-light-vs-evidence.svg` · open-questions & sources tables  
 
 > **How to use this file**  
-> - Prose in normal text is *starter wording* (editable).  
-> - `[FILL: …]` = author must write / verify.  
+> - **Abstract** and **§8.3** below are written as near-submission English; edit for house style, not for substance, unless claims change.  
+> - Other sections may still contain starter wording or `[FILL: …]`.  
 > - `` `claim_id` `` = must stay consistent with the knowledge map; do not upgrade a 🔴/🟠 claim to “known fact” in prose.  
 > - No confidence percentages. Lights and evidence grades are structural, not rhetorical flourishes.
 
@@ -26,22 +26,18 @@ Companion artifacts: `dark-matter-paper-map.md` · `fig1-light-vs-evidence.svg` 
 
 ---
 
-## Abstract (skeleton — write last)
+## Abstract (near-final)
 
-**Background.** `[FILL: 1–2 sentences on mass discrepancy + cosmology.]`  
+Dark matter is not one question. The phrase is used for an observed mass discrepancy under general relativity, for a cold non-baryonic ingredient in the standard cosmological model, and for a still-unidentified particle—layers that are often conflated in both pedagogy and public discussion. We present an epistemically stratified map of the problem as eighteen atomic claims. Each claim carries a consensus light fixed by explicit entry conditions and an evidence grade derived mechanically from recorded evidence types, not declared as a confidence score (Fig. 1).
 
-**Approach.** We organise the dark-matter problem as a set of **atomic claims**, each carrying (i) a consensus light fixed by explicit entry conditions and (ii) an **evidence grade** derived mechanically from recorded evidence types—not declared as a confidence score (Fig. 1).  
+On that map, the mass discrepancy under luminous matter alone is Established on multiple independent direct lines (`mass_discrepancy_observed`). The need for a cold non-baryonic component in ΛCDM is Strong Consensus, yet rests largely on indirect cosmological inference (`lcdm_includes_cold_dm`)—a structural divergence between consensus and directness. Three Competing nodes mark multi-year scientific camps rather than rhetorical binaries: particle dark-matter halos versus modified Newtonian dynamics (`particle_vs_modified_gravity`); dark-matter annihilation versus unresolved astrophysics for the Fermi Galactic Centre excess (`fermi_gc_excess_origin`); and new dark-sector physics versus survey systematics for the S8 structure-growth tension (`s8_structure_tension_dark_sector`). A broad Frontier layer records what remains open without pretending it is settled: the particle identity; the thermal WIMP freeze-out benchmark under laboratory and collider nulls; axion, self-interacting, and fuzzy/wave programmes; dwarf-spheroidal gamma-ray limits; merging-cluster bounds on the self-interaction cross section per unit mass; and the neutrino floor for direct detection. Speculative ceilings—most notably the claim that a ~7 keV sterile neutrino produces the 3.5 keV X-ray line and constitutes the dark matter, and that primordial black holes make up all of the dark matter—are retained only with that status light.
 
-**Results (map, not discovery).**  
-- 🟢 Established: mass discrepancy under GR + luminous matter alone (`mass_discrepancy_observed`, E1).  
-- 🔵 Strong: non-baryonic cold component in the standard cosmology (`lcdm_includes_cold_dm`, E3; **axes diverge**).  
-- 🟡 Competing: particle halos vs modified dynamics; GC excess origin; S8 vs systematics.  
-- 🟠 Frontier: identity, WIMP benchmark, lab/collider nulls, small-scale programmes, axions, SIDM, fuzzy DM, dSph limits, cluster σ/m, neutrino floor.  
-- 🔴 Speculative: 7 keV sterile-neutrino line claim; PBHs as *all* DM.  
+The map does not identify dark matter. It separates what observations establish from what models compete over, and from what searches constrain without yet detecting. Cosmological success is not particle identification; null results are knowledge, not emptiness; and live competitions should be argued on both sides until decisive evidence selects between them.
 
-**Conclusions.** `[FILL: one sentence — identity unknown; channels constrain without identifying; do not conflate cosmology success with particle ID.]`  
+**Word count:** ~280 (trim 30–50 words for journals with a 200–250 limit by dropping the Speculative sentence or merging the Frontier list).
 
-**Word budget:** abstract ≤ 200–250 words when filled.
+**Claim anchors (do not remove in editing):**  
+`mass_discrepancy_observed` · `lcdm_includes_cold_dm` · `particle_vs_modified_gravity` · `fermi_gc_excess_origin` · `s8_structure_tension_dark_sector` · `dm_particle_identity` · thermal WIMP / axion / SIDM / fuzzy / dSph / cluster σ⁄m / neutrino floor / mono-jet cluster · `sterile_neutrino_7kev_line` · `pbh_all_dark_matter`
 
 ---
 
@@ -138,29 +134,47 @@ Conversely, laboratory nulls (`direct_detection_wimp_searches`, `monojet_collide
 
 **Discussion takeaway A.** *Cosmological cold DM ≠ identified particle ≠ dead modified dynamics.*
 
-## 8.3 The three competitions that are not “noise”
+## 8.3 The three competitions that are not “noise” (near-final)
 
-### 8.3.1 Particle dark matter vs modified dynamics  
-(`particle_vs_modified_gravity` 🟡)
+Not every disagreement in the dark-matter literature is a scientific competition in the sense used here. We reserve the Competing light for splits that (i) host at least two frameworks actively maintained in the peer-reviewed literature, (ii) still lack decisive evidence selecting between them, and (iii) are not artefacts of a single disputed analysis. Three nodes meet that bar. They are load-bearing: much of the Frontier layer is best read as an attempt to *live with*, *sharpen*, or *escape* one of these yellow tensions. Orange claims, by contrast, are where experiments primarily mint limits. We discuss the three in turn without declaring winners.
 
-Clusters and cosmology (including offset lensing mass in merging systems) pressure pure gravity-only explanations; galactic scaling laws keep MOND-like programmes alive. Prose must not pick a winner. Cross-links: small-scale CDM challenges (`small_scale_cdm_challenges`); cluster σ/m (`cluster_sidm_cross_section_bounds`); SIDM as a particle-side response (`sidm_small_scales`).
+### 8.3.1 Particle dark-matter halos versus modified dynamics
 
-**Open (select 2–3 for the printed table):**  
-- Relativistic completions of MOND vs CMB/cluster data.  
-- How much small-scale tension is baryonic feedback vs new dark physics.  
-- `[FILL: one observational programme you will emphasise]`
+Claim: `particle_vs_modified_gravity` (Competing).
 
-### 8.3.2 Galactic Centre excess  
-(`fermi_gc_excess_origin` 🟡)
+At galactic scales, two reading frames remain in simultaneous use. In the first, flat rotation curves and related scaling relations are explained by extended, largely collisionless particle dark-matter halos embedded in the ΛCDM paradigm. That frame inherits large-scale support from the cosmological need for non-baryonic cold matter (`lcdm_includes_cold_dm`) and from merging-cluster configurations in which lensing mass remains spatially offset from collisional baryonic gas—behaviour natural for a collisionless mass component and a persistent challenge for gravity-only alternatives (e.g. the Bullet Cluster line of evidence recorded under the same claim map). Hierarchical structure formation in N-body simulations further organises the particle-halo picture into a predictive, if baryon-dependent, programme.
 
-DM annihilation versus unresolved astrophysics (e.g. MSPs) remains open after years of template and statistical work. Cross-link: dSph joint limits (`dwarf_spheroidal_indirect_limits`) as a cleaner but fainter channel that has not delivered a corroborating discovery.
+In the second frame, the force law itself is modified at very low accelerations so that flat rotation curves and several galactic regularities—classically including the baryonic Tully–Fisher relation—emerge with few free parameters per system, without assigning each galaxy a flexible halo (Milgrom’s MOND and its relativistic extensions). The appeal of this programme is empirical thrift at galaxy scales, not denial of the mass discrepancy under Newtonian gravity with luminous matter alone. The cost is well advertised by its critics: clusters and cosmology are difficult without reintroducing unseen mass or additional fields, and stable, cosmology-compatible relativistic completions that pass the full suite of tests remain unfinished work.
 
-### 8.3.3 S8 / structure growth  
-(`s8_structure_tension_dark_sector` 🟡)
+Neither side is a straw man. Particle CDM is the working standard of precision cosmology; MOND-like dynamics remains an active, peer-reviewed research programme for galactic phenomenology. No single observation has closed the debate *at all scales*. The honest cross-links on our map are therefore not rhetorical. Small-scale challenges to collisionless CDM in dwarfs and satellites (`small_scale_cdm_challenges`) keep open the question of how much tension is baryonic feedback versus new dark-sector physics—an invitation to particle-side elaborations such as velocity-dependent self-interactions (`sidm_small_scales`), which must still face merging-cluster bounds on the cross section per unit mass (`cluster_sidm_cross_section_bounds`). Fuzzy or wave dark matter (`fuzzy_wave_dark_matter`) offers a different microphysical route to cores and suppressed small-scale power. On the gravity side, the decisive tests remain whether relativistic completions can meet CMB and cluster constraints without effectively smuggling dark mass back in. Laboratory and collider nulls constrain couplings; they do not, by themselves, adjudicate this macroscopic split.
 
-Late-time lensing/clustering preferences for lower S8 relative to primary CMB may reflect systematics **or** dark-sector extensions. Not the same claim as galactic small-scale challenges, though both sit in “structure” language—Discussion should keep them **orthogonal until proven linked**.
+**What would move this light.** A relativistic modified-dynamics framework that simultaneously satisfies CMB, clusters, and galactic scaling—or a clean, widely accepted failure thereof—would collapse the competition. Absent that, both camps remain scientific, and prose that “settles” the issue by tone alone is out of scope for this map.
 
-**Discussion takeaway B.** *Yellow nodes are the load-bearing debates; orange nodes are where experiments mint limits.*
+### 8.3.2 The Fermi Galactic Centre excess: annihilation versus unresolved sources
+
+Claim: `fermi_gc_excess_origin` (Competing).
+
+Analyses of Fermi-LAT data have long reported a roughly spherical GeV gamma-ray excess toward the Galactic Centre whose spectrum and morphology can be argued to match annihilating thermal WIMPs of tens of GeV. That reading would be of first importance if confirmed: it would be a positive, if still model-dependent, *signal* in a field dominated by limits. The opposing camp attributes the same excess to unresolved astrophysical sources—most prominently a faint population of millisecond pulsars or related stellar remnants—without new particle physics. The dispute is not whether an excess relative to some diffuse models has been discussed; it is whether the residual is dark matter, stars, or an artefact of Galactic emission systematics.
+
+Subsequent statistical work has not closed the case. Preferred non-Poissonian template fits that once appeared to favour a point-source population have been argued to be pathological, reopening tension between the two interpretations rather than awarding victory to either. The uncertainty budget is dominated by the Galactic diffuse foreground. Required annihilation cross sections and density profiles are model-dependent, and other targets have not delivered a corroborating discovery. In particular, joint Fermi-LAT analyses of dwarf spheroidal galaxies—cleaner targets with lower astrophysical backgrounds—set strong limits on annihilation without a confirmed signal (`dwarf_spheroidal_indirect_limits`). That null does not logically refute every GC dark-matter model, but it raises the bar: a particle explanation of the Centre should eventually face the dwarf channel under consistent microphysics.
+
+**What would move this light.** Decisive control of diffuse systematics, a securely observed stellar-remnant population that accounts for the residual, or a multi-target dark-matter pattern (Centre plus dwarfs or other systems) under one particle model would select a camp. Until then, the GC excess remains a Competing node, not a discovery claim and not a dismissed curiosity.
+
+### 8.3.3 The S8 structure-growth tension: dark sector versus systematics
+
+Claim: `s8_structure_tension_dark_sector` (Competing).
+
+A mild-to-moderate discrepancy in the clustering amplitude \(S_8\) between primary CMB inferences and several weak-lensing and galaxy-clustering surveys has become a standing feature of the cosmological conversation. On one side, Planck baseline parameters, extrapolated in flat ΛCDM, fix a higher late-time clustering amplitude. On the other, analyses such as Dark Energy Survey Year 3 \(3\times2\)pt results prefer a lower \(S_8\) when interpreted in the same model family. Reviews of cosmological tensions document the persistence of this offset across combinations, while emphasising that its formal significance depends on dataset choice and pipeline.
+
+Two responses are actively published. The first explores new dark-sector or late-time physics—decaying, interacting, or growth-suppressing dark matter among other extensions—that can lower \(S_8\) relative to the primary CMB without immediately abandoning early-universe successes. The limitation is familiar: many extensions reintroduce tension elsewhere (CMB lensing, cluster counts, BAO) or require fine-tuned couplings, and no single dark-sector fix is uniquely selected. The second response keeps ΛCDM and attributes the offset to residual systematics—shear calibration, photometric redshifts, intrinsic alignments, scale cuts—or to statistical variation across analyses. Alternate pipelines sometimes weaken the tension; yet multiple independent lensing teams reporting low \(S_8\) makes a single-experiment flaw an incomplete dismissal. End-to-end cross-survey consensus on residual systematics is still forming.
+
+This competition is **not** the same claim as galactic small-scale CDM challenges (`small_scale_cdm_challenges`), even though both are discussed under the loose heading of “structure.” One concerns the growth amplitude on cosmological weak-lensing scales relative to the CMB; the other concerns the internal structure and satellite populations of galaxies relative to collisionless simulations. They may eventually share a microphysical cause; they may not. Our map treats them as orthogonal until joint evidence forces a link. Forthcoming wide surveys (Euclid, LSST/Rubin, Roman) will either reduce the \(S_8\) offset, sharpen it, or relocate it—any of which moves the light more honestly than premature dark-sector marketing or premature denial.
+
+**What would move this light.** Survey-level consensus that removes the offset inside ΛCDM, or a dark-sector model that survives joint CMB, full-shape clustering, and lensing likelihoods without collateral damage, would narrow the competition. Present data do not yet deliver either verdict.
+
+### 8.3.4 Synthesis
+
+The three yellow nodes fail different kinds of impatience. Particle-versus-MOND impatience wants a single sentence for “what gravity does in galaxies.” GC-excess impatience wants a discovery press release or a burial. S8 impatience wants either a new dark sector or an assurance that systematics will vanish. The map’s job is narrower: to keep both camps legible, to cross-link the Frontier programmes that try to relieve each tension, and to refuse false closure. **Yellow nodes are the load-bearing debates; orange nodes are where experiments mint limits; green and blue nodes are what those debates are not allowed to erase.**
 
 ## 8.4 Microphysics: a portfolio, not a single horse
 
@@ -245,8 +259,9 @@ Discussion should state **mechanisms of light migration**, not predictions of wi
 - [ ] No sentence upgrades 🔴/🟠 identity claims to Established.  
 - [ ] Divergence of `lcdm_includes_cold_dm` mentioned once in Intro and once in Discussion.  
 - [ ] Each 🟡 has both camps in prose.  
-- [ ] Abstract written last; matches claim lights.  
-- [ ] All `[FILL]` removed or resolved.  
+- [x] Abstract near-final; matches claim lights (trim if journal word cap requires).  
+- [x] §8.3 three competitions in near-final prose; both camps each.  
+- [ ] Remaining `[FILL]` outside Abstract/§8.3 removed or resolved.  
 - [ ] Freeze date and software/data links present.  
 - [ ] Re-run `python -m universe_explorer.dataops.export_dm_paper` if claims changed.  
 - [ ] `python run_tests.py` green on the claim freeze commit.
@@ -255,8 +270,8 @@ Discussion should state **mechanisms of light migration**, not predictions of wi
 
 ## Next writing sprints (optional order)
 
-1. Fill Abstract + §1.2 audience paragraph (30–45 min).  
-2. Expand §8.3 three competitions with 2–3 spine citations each (half day).  
-3. Curate print Table 2 open questions down to ≤15 (1–2 h).  
+1. ~~Abstract + §8.3~~ **done (near-final).**  
+2. Curate print Table 2 open questions down to ≤15 (1–2 h).  
+3. Fill §1.2 audience paragraph + §8.5 survey generation paragraph.  
 4. Draft full Results body from claims (multi-day; can be semi-automated from narrative engine).  
-5. Human pass for tone (no hype, no false balance on 🟢).
+5. Human pass for tone (no hype, no false balance on 🟢); journal word-count trim of Abstract if needed.
