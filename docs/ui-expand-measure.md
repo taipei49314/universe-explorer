@@ -54,7 +54,9 @@ The channel is **silent unless opt-in**. It never invents a confidence number.
 
 ## Stars (恆星) focus
 
-Default `--focus stars`. A green report means: contracts present, state machine
-scenarios pass for that domain, and inventory matches the engine export.
+Default `--focus stars`. Inventory rows recount whatever claim count the
+engine currently exports (deepened stars map is 12 claims as of the stars
+expansion). A green report means: contracts present, state machine scenarios
+pass for that domain, and inventory matches the engine export.
 It does **not** mean a human has watched the animation — only that every
 *recorded* measurement in this suite passed.

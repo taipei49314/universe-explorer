@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/iCvx3k9m7Fmd8K/b5BVwwVW0rI4</id>
+  <title>arXiv Query: search_query=&amp;id_list=astro-ph/0207403&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:25:14Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=astro-ph/0207403" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/astro-ph/0207403v1</id>
+    <title>Helioseismology</title>
+    <updated>2002-07-18T20:43:00Z</updated>
+    <link href="https://arxiv.org/abs/astro-ph/0207403v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/astro-ph/0207403v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  Oscillations detected on the solar surface provide a unique possibility for investigations of the interior properties of a star. Through major observational efforts, including extensive observations from space, as well as development of sophisticated tools for the analysis and interpretation of the data, we have been able to infer the large-scale structure and rotation of the solar interior with substantial accuracy, and we are beginning to get information about the complex subsurface structure and dynamics of sunspot regions, which dominate the magnetic activity in the solar atmosphere and beyond. The results provide a detailed test of the modeling of stellar structure and evolution, and hence of the physical properties of matter assumed in the models. In this way the basis for using stellar modeling in other branches of science is very substantially strengthened; an important example is the use of observations of solar neutrinos to constrain the properties of the neutrino.</summary>
+    <category term="astro-ph" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2002-07-18T20:43:00Z</published>
+    <arxiv:comment>60 pages, 27 figures. Scheduled for publication in Rev. Mod. Phys., Oct. 2002. A larger gzipped postscript version, with higher-quality figures, is available at http://astro.ifa.au.dk/~jcd/papers/rmp01/text-13.ps.gz</arxiv:comment>
+    <arxiv:primary_category term="astro-ph"/>
+    <arxiv:journal_ref>Rev.Mod.Phys.74:1073-1129,2003</arxiv:journal_ref>
+    <author>
+      <name>J. Christensen-Dalsgaard</name>
+    </author>
+    <arxiv:doi>10.1103/RevModPhys.74.1073</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/RevModPhys.74.1073" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/KBaVUARWxDn/d01Ab7OD4/v9oa8</id>
+  <title>arXiv Query: search_query=&amp;id_list=1910.12874&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:25:36Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1910.12874" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1910.12874v1</id>
+    <title>Mind the gap: The location of the lower edge of the pair instability supernovae black hole mass gap</title>
+    <updated>2019-10-28T18:00:01Z</updated>
+    <link href="https://arxiv.org/abs/1910.12874v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1910.12874v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Gravitational-wave detections are now starting to probe the mass distribution of stellar-mass black holes (BHs). Robust predictions from stellar models are needed to interpret these. Theory predicts the existence of a gap in the BH mass distribution because of pair-instability supernova. The maximum BH mass below the gap is the result of pulsational mass loss. We evolve massive helium stars through their late hydrodynamical phases of evolution using the open-source MESA stellar evolution code. We find that the location of the lower edge of the mass gap at 45$M_\odot$ is remarkably robust against variations in the metallicity ($\approx 3M_\odot$), the treatment of internal mixing ($\approx 1M_\odot$), stellar wind mass loss ($\approx 4M_\odot$), making it the most robust predictions for the final stages of massive star evolution. The reason is that the onset of the instability is dictated by the near-final core mass, which in turn sets the resulting BH mass. However, varying $^{12}C\left(α,γ\right)^{16}O$ reaction rate within its $1σ$ uncertainties shifts the location of the gap between $40M_\odot$ and $56M_\odot$. We provide updated analytic fits for population synthesis simulations. Our results imply that the detection of merging BHs can provide constraints on nuclear astrophysics. Furthermore, the robustness against metallicity suggests that there is a universal maximum for the location of the lower edge of the gap, which is insensitive to the formation environment and redshift for first-generation BHs. This is promising for the possibility to use the location of the gap as a "standard siren" across the Universe.</summary>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2019-10-28T18:00:01Z</published>
+    <arxiv:comment>17 pages, 5 figures, 1 Table, Accepted ApJ</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.SR"/>
+    <author>
+      <name>R. Farmer</name>
+    </author>
+    <author>
+      <name>M. Renzo</name>
+    </author>
+    <author>
+      <name>S. E de Mink</name>
+    </author>
+    <author>
+      <name>P. Marchant</name>
+    </author>
+    <author>
+      <name>S. Justham</name>
+    </author>
+    <arxiv:doi>10.3847/1538-4357/ab518b</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3847/1538-4357/ab518b" title="doi"/>
+  </entry>
+</feed>

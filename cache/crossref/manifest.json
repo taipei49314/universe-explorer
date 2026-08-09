@@ -358,5 +358,14 @@
     "title": "Dynamo Models of the Solar Cycle",
     "container": "Living Reviews in Solar Physics",
     "issued": 2010
+  },
+  "10.1086/143324": {
+    "endpoint": "https://api.crossref.org/works/10.1086%2F143324",
+    "retrieved_at": "2026-08-09T13:25:51Z",
+    "cache_file": "10-1086_143324.json",
+    "sha256": "1a4f1b51e3f1dfaf0189611ac7c8a5afefa050075eb11eccb6f4fe14c483a114",
+    "title": "The Maximum Mass of Ideal White Dwarfs",
+    "container": "The Astrophysical Journal",
+    "issued": 1931
   }
 }

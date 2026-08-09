@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/LB4SyXzHk1ovRvgyBpWqCmg9OvQ</id>
+  <title>arXiv Query: search_query=&amp;id_list=2307.14636&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:25:33Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=2307.14636" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/2307.14636v1</id>
+    <title>Final results of Borexino on CNO solar neutrinos</title>
+    <updated>2023-07-27T05:56:32Z</updated>
+    <link href="https://arxiv.org/abs/2307.14636v1" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/2307.14636v1" rel="related" type="application/pdf" title="pdf"/>
+    <summary>We report the first measurement of CNO solar neutrinos by Borexino that uses the Correlated Integrated Directionality (CID) method, exploiting the sub-dominant Cherenkov light in the liquid scintillator detector. The directional information of the solar origin of the neutrinos is preserved by the fast Cherenkov photons from the neutrino scattered electrons, and is used to discriminate between signal and background. The directional information is independent from the spectral information on which the previous CNO solar neutrino measurements by Borexino were based. While the CNO spectral analysis could only be applied on the Phase-III dataset, the directional analysis can use the complete Borexino data taking period from 2007 to 2021. The absence of CNO neutrinos has been rejected with &gt;5σ credible level using the Bayesian statistics. The directional CNO measurement is obtained without an external constraint on the $^{210}$Bi contamination of the liquid scintillator, which was applied in the spectral analysis approach. The final and the most precise CNO measurement of Borexino is then obtained by combining the new CID-based CNO result with an improved spectral fit of the Phase-III dataset. Including the statistical and the systematic errors, the extracted CNO interaction rate is $R(\mathrm{CNO})=6.7^{+1.2}_{-0.8} \, \mathrm{cpd/100 \, tonnes}$. Taking into account the neutrino flavor conversion, the resulting CNO neutrino flux at Earth is $Φ_\mathrm{CNO}=6.7 ^{+1.2}_{-0.8} \times 10^8 \, \mathrm{cm^{-2} s^{-1}}$, in agreement with the high metallicity Standard Solar Models. The results described in this work reinforce the role of the event directional information in large-scale liquid scintillator detectors and open up new avenues for the next-generation liquid scintillator or hybrid neutrino experiments.</summary>
+    <category term="hep-ex" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.ins-det" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2023-07-27T05:56:32Z</published>
+    <arxiv:primary_category term="hep-ex"/>
+    <author>
+      <name>D. Basilico</name>
+    </author>
+    <author>
+      <name>G. Bellini</name>
+    </author>
+    <author>
+      <name>J. Benziger</name>
+    </author>
+    <author>
+      <name>R. Biondi</name>
+    </author>
+    <author>
+      <name>B. Caccianiga</name>
+    </author>
+    <author>
+      <name>F. Calaprice</name>
+    </author>
+    <author>
+      <name>A. Caminata</name>
+    </author>
+    <author>
+      <name>A. Chepurnov</name>
+    </author>
+    <author>
+      <name>D. D'Angelo</name>
+    </author>
+    <author>
+      <name>A. Derbin</name>
+    </author>
+    <author>
+      <name>A. Di Giacinto</name>
+    </author>
+    <author>
+      <name>V. Di Marcello</name>
+    </author>
+    <author>
+      <name>X. F. Ding</name>
+    </author>
+    <author>
+      <name>A. Di Ludovico</name>
+    </author>
+    <author>
+      <name>L. Di Noto</name>
+    </author>
+    <author>
+      <name>I. Drachnev</name>
+    </author>
+    <author>
+      <name>D. Franco</name>
+    </author>
+    <author>
+      <name>C. Galbiati</name>
+    </author>
+    <author>
+      <name>C. Ghiano</name>
+    </author>
+    <author>
+      <name>M. Giammarchi</name>
+    </author>
+    <author>
+      <name>A. Goretti</name>
+    </author>
+    <author>
+      <name>M. Gromov</name>
+    </author>
+    <author>
+      <name>D. Guffanti</name>
+    </author>
+    <author>
+      <name>Aldo Ianni</name>
+    </author>
+    <author>
+      <name>Andrea Ianni</name>
+    </author>
+    <author>
+      <name>A. Jany</name>
+    </author>
+    <author>
+      <name>V. Kobychev</name>
+    </author>
+    <author>
+      <name>G. Korga</name>
+    </author>
+    <author>
+      <name>S. Kumaran</name>
+    </author>
+    <author>
+      <name>M. Laubenstein</name>
+    </author>
+    <author>
+      <name>E. Litvinovich</name>
+    </author>
+    <author>
+      <name>P. Lombardi</name>
+    </author>
+    <author>
+      <name>I. Lomskaya</name>
+    </author>
+    <author>
+      <name>L. Ludhova</name>
+    </author>
+    <author>
+      <name>I. Machulin</name>
+    </author>
+    <author>
+      <name>J. Martyn</name>
+    </author>
+    <author>
+      <name>E. Meroni</name>
+    </author>
+    <author>
+      <name>L. Miramonti</name>
+    </author>
+    <author>
+      <name>M. Misiaszek</name>
+    </author>
+    <author>
+      <name>V. Muratova</name>
+    </author>
+    <author>
+      <name>R. Nugmanov</name>
+    </author>
+    <author>
+      <name>L. Oberauer</name>
+    </author>
+    <author>
+      <name>V. Orekhov</name>
+    </author>
+    <author>
+      <name>F. Ortica</name>
+    </author>
+    <author>
+      <name>M. Pallavicini</name>
+    </author>
+    <author>
+      <name>L. Pelicci</name>
+    </author>
+    <author>
+      <name>Ö. Penek</name>
+    </author>
+    <author>
+      <name>L. Pietrofaccia</name>
+    </author>
+    <author>
+      <name>N. Pilipenko</name>
+    </author>
+    <author>
+      <name>A. Pocar</name>
+    </author>
+    <author>
+      <name>G. Raikov</name>
+    </author>
+    <author>
+      <name>M. T. Ranalli</name>
+    </author>
+    <author>
+      <name>G. Ranucci</name>
+    </author>
+    <author>
+      <name>A. Razeto</name>
+    </author>
+    <author>
+      <name>A. Re</name>
+    </author>
+    <author>
+      <name>N. Rossi</name>
+    </author>
+    <author>
+      <name>S. Schönert</name>
+    </author>
+    <author>
+      <name>D. Semenov</name>
+    </author>
+    <author>
+      <name>G. Settanta</name>
+    </author>
+    <author>
+      <name>M. Skorokhvatov</name>
+    </author>
+    <author>
+      <name>A. Singhal</name>
+    </author>
+    <author>
+      <name>O. Smirnov</name>
+    </author>
+    <author>
+      <name>A. Sotnikov</name>
+    </author>
+    <author>
+      <name>R. Tartaglia</name>
+    </author>
+    <author>
+      <name>G. Testera</name>
+    </author>
+    <author>
+      <name>E. Unzhakov</name>
+    </author>
+    <author>
+      <name>F. L. Villante</name>
+    </author>
+    <author>
+      <name>A. Vishneva</name>
+    </author>
+    <author>
+      <name>R. B. Vogelaar</name>
+    </author>
+    <author>
+      <name>F. von Feilitzsch</name>
+    </author>
+    <author>
+      <name>M. Wojcik</name>
+    </author>
+    <author>
+      <name>M. Wurm</name>
+    </author>
+    <author>
+      <name>S. Zavatarelli</name>
+    </author>
+    <author>
+      <name>K. Zuber</name>
+    </author>
+    <author>
+      <name>G. Zuzel</name>
+    </author>
+    <arxiv:doi>10.1103/PhysRevD.108.102005</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1103/PhysRevD.108.102005" title="doi"/>
+  </entry>
+</feed>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/sAxjNC7B839Q9uXroHjunlr4XZk</id>
+  <title>arXiv Query: search_query=&amp;id_list=1312.0628&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:25:25Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1312.0628" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1312.0628v3</id>
+    <title>Observational clues to the progenitors of Type-Ia supernovae</title>
+    <updated>2014-08-13T12:31:00Z</updated>
+    <link href="https://arxiv.org/abs/1312.0628v3" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1312.0628v3" rel="related" type="application/pdf" title="pdf"/>
+    <summary>Type-Ia supernovae (SNe Ia) are important distance indicators, element factories, cosmic-ray accelerators, kinetic-energy sources in galaxy evolution, and endpoints of stellar binary evolution. It has long been clear that a SN Ia must be the runaway thermonuclear explosion of a degenerate carbon-oxygen stellar core, most likely a white dwarf (WD). However, the specific progenitor systems of SNe Ia, and the processes that lead to their ignition, have not been identified. Two broad classes of progenitor binary systems have long been considered: single-degenerate (SD), in which a WD gains mass from a non-degenerate star; and double-degenerate (DD), involving the merger of two WDs. New theoretical work has enriched these possibilities with some interesting updates and variants. We review the significant recent observational progress in addressing the progenitor problem. We consider clues that have emerged from the observed properties of the various proposed progenitor populations, from studies of their sites, pre- and post-explosion, from analysis of the explosions themselves, and from the measurement of event rates. The recent nearby and well-studied event, SN 2011fe, has been particularly revealing. The observational results are not yet conclusive, and sometimes prone to competing theoretical interpretations. Nevertheless, it appears that DD progenitors, long considered the underdog option, could be behind some, if not all, SNe Ia. We point to some directions that may lead to future progress.</summary>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2013-12-02T21:14:19Z</published>
+    <arxiv:comment>to appear in Annual Reviews of Astronomy and Astrophysics, 2014. For near-final published version see http://www.annualreviews.org/doi/abs/10.1146/annurev-astro-082812-141031</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.CO"/>
+    <author>
+      <name>Dan Maoz</name>
+    </author>
+    <author>
+      <name>Filippo Mannucci</name>
+    </author>
+    <author>
+      <name>Gijs Nelemans</name>
+    </author>
+    <arxiv:doi>10.1146/annurev-astro-082812-141031</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1146/annurev-astro-082812-141031" title="doi"/>
+  </entry>
+</feed>

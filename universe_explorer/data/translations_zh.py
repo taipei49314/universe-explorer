@@ -786,6 +786,142 @@ CLAIMS = {
             "是否有極貧金屬本地恆星保留純 Pop III 印記?",
         ],
     },
+    "helioseismology_constrains_solar_interior": {
+        "title": "日震緊密約束太陽內部結構,並在整體上驗證標準太陽模型",
+        "reasons": {
+            "mainstream_model_support":
+                "以日震反演探測太陽結構是標準太陽物理。",
+            "minor_alternatives_exist":
+                "豐度混合與近表面建模細節仍有辯論;整體日震成功並未動搖。",
+            "overall_direction_robust":
+                "數十年 BiSON/GONG/SOHO/SDO 資料 refined、而非推翻日震內部圖像。",
+        },
+        "evidence": [
+            "全球 p 模頻率反演得到太陽內部大部分的聲速與密度剖面,"
+            "提供對流層與輻射核的地震圖。",
+            "匹配日震約束的標準太陽模型重現觀測聲學結構,"
+            "並為後來實驗確認的微中子通量預測提供依據。",
+        ],
+        "open_questions": [
+            "修訂後的太陽豐度如何與日震聲速剖面調和(太陽豐度問題)?",
+            "差旋層的細部結構為何?",
+        ],
+    },
+    "white_dwarfs_electron_degenerate": {
+        "title": "白矮星由電子簡併壓抵抗重力支撐",
+        "reasons": {
+            "mainstream_model_support":
+                "簡併白矮星是教科書級恆星終點。",
+            "minor_alternatives_exist":
+                "組成、自轉與磁場修正質量;並不取代簡併支撐。",
+            "overall_direction_robust":
+                "Gaia 白矮星序列與雙星質量測量持續強化簡併圖像。",
+        },
+        "evidence": [
+            "電子簡併構型給出由量子統計與廣義相對論修正決定的有限最大白矮星質量"
+            "(錢德拉塞卡極限)。",
+            "觀測白矮星質量分布與冷卻序列符合電子簡併支撐,"
+            "作為低至中等質量恆星演化終點。",
+        ],
+        "open_questions": [
+            "爆炸白矮星在 Ia 型事件中的經驗錢德拉塞卡質量精確值?",
+            "結晶與核心組成如何影響冷卻年齡?",
+        ],
+    },
+    "imf_approximately_universal": {
+        "title": "恆星初始質量函數在當代恆星形成區近似普適",
+        "reasons": {
+            "mainstream_model_support":
+                "近似普適的本地 IMF 是銀河化學演化與族群合成的預設假設。",
+            "minor_alternatives_exist":
+                "極端環境提出 top-heavy 或 bottom-light IMF;是普適性的 refinement,"
+                "不是取代 IMF 概念。",
+            "overall_direction_robust":
+                "數十年恆星計數與星團工作使本地 IMF 形狀穩定,即使極端情況仍在辯論。",
+        },
+        "evidence": [
+            "本地場、疏散星團與近鄰星系的解析恆星族群,"
+            "在廣泛環境中給出接近 Salpeter 的高質量斜率。",
+            "多段冪律(或類似)IMF 擬合本地從棕矮星到 O 星的恆星計數,"
+            "當代盤中環境間散布不大。",
+        ],
+        "open_questions": [
+            "極端星暴或極低金屬度下 IMF 是否 top-heavy?",
+            "亞恆星質量函數如何銜接恆星 IMF?",
+        ],
+    },
+    "sn_ia_progenitor_channels": {
+        "title": "Ia 型超新星主要經單簡併還是雙簡併通道產生",
+        "reasons": {
+            "two_or_more_mainstream_models":
+                "單簡併與雙簡併家族都在同行評審文獻中充分發展。",
+            "no_decisive_evidence_yet":
+                "尚無單一觀測為正常 Ia 族群排除任一通道。",
+            "genuine_scientific_camps":
+                "綜述記錄了數十年的陣營結構,不是修辭分裂。",
+        },
+        "evidence": [
+            "延遲時間分布、伴星搜尋、射電/X 射線上限與爆炸前約束,"
+            "使單簡併(白矮星+非簡併供體)與雙簡併(白矮星+白矮星)在族群層面都仍成立。",
+            "近錢德拉塞卡或次錢德拉塞卡白矮星中的爆炸碳燃燒,"
+            "大體再現 Ia 型中等質量元素與鐵族產額特徵。",
+        ],
+        "competing": [
+            {"name": "單簡併(白矮星+非簡併伴星)",
+             "for": "吸積趨近錢德拉塞卡質量提供自然爆炸觸發;部分系統顯示可能伴星印記。",
+             "against": "許多事件中伴星與星周物質的嚴格未偵測挑戰普適 SD 通道。",
+             "limits": "滯留效率與穩定燃燒體制不確定。"},
+            {"name": "雙簡併(白矮星+白矮星併合/碰撞)",
+             "for": "延遲時間分布與缺乏存活伴星有利於大量事件走 WD+WD 路徑。",
+             "against": "哪些併合點燃為正常 Ia、哪些塌縮或失敗仍依賴模型。",
+             "limits": "併合流體力學與視角多樣性難以逐事件約束。"},
+        ],
+        "open_questions": [
+            "正常 Ia 各有多少比例來自各通道?",
+            "次錢德拉塞卡雙引爆是否主導某些子類?",
+        ],
+    },
+    "cno_cycle_solar_neutrinos_detected": {
+        "title": "太陽 CNO 循環產生的微中子已被實驗偵測到",
+        "reasons": {
+            "new_discovery":
+                "首次偵測 CNO 循環太陽微中子是近期實驗里程碑。",
+            "no_consensus_formed_yet":
+                "社群大體接受偵測;其作為決定性金屬度仲裁的用法仍在發展。",
+            "insufficient_observation":
+                "事件統計與殘餘本底仍限制精度,相對 pp 鏈微中子測量為弱。",
+        },
+        "evidence": [
+            "Borexino 以超低本底液體閃爍體報告太陽碳–氮–氧融合循環產生微中子的"
+            "首次實驗證據。",
+            "後續納入相關積分方向性的 Borexino 分析強化 CNO 微中子測量並降低本底系統誤差。",
+        ],
+        "open_questions": [
+            "CNO 微中子能多精確約束太陽核心金屬度?",
+            "下一代閃爍體實驗能否把 CNO 變成精密金屬度探針?",
+        ],
+    },
+    "pair_instability_bh_mass_gap": {
+        "title": "對不穩定性超新星在約 50–120 太陽質量附近刻出恆星黑洞質量間隙",
+        "reasons": {
+            "rapidly_growing_literature":
+                "PISN 質量間隙預測與重力波質量譜檢驗構成快速文獻。",
+            "no_consensus_formed_yet":
+                "理論間隙被廣泛討論;觀測 BH 質量中的經驗銳利度尚未底定。",
+            "insufficient_observation":
+                "最高恆星 BH 質量的重力波樣本仍有限。",
+        },
+        "evidence": [
+            "極大質量恆星核心中的電子–正電子對產生觸發脈動或完全對不穩定性超新星,"
+            "理論預測在殘骸黑洞質量中留下間隙。",
+            "現代恆星模型把預測間隙下沿映射為核反應率與風物理的函數,"
+            "為重力波質量譜提供靶標。",
+        ],
+        "open_questions": [
+            "當前 LIGO–Virgo–KAGRA 目錄是否顯示乾淨高質量間隙,或被階層併合模糊?",
+            "間隙邊緣對 12C(α,γ)16O 率有多敏感?",
+        ],
+    },
     # ---- exoplanets expansions ----------------------------------------------
     "radius_valley_mechanism": {
         "title": "系外行星半徑谷由光致蒸發還是核心供能質量損失刻出",

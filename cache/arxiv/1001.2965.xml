@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/ZNP/zTppFqqSKFYexlU9DGc1tp4</id>
+  <title>arXiv Query: search_query=&amp;id_list=1001.2965&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:25:18Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1001.2965" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1001.2965v2</id>
+    <title>A Universal Stellar Initial Mass Function? A Critical Look at Variations</title>
+    <updated>2010-01-25T15:58:50Z</updated>
+    <link href="https://arxiv.org/abs/1001.2965v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1001.2965v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>  Few topics in astronomy initiate such vigorous discussion as whether or not the initial mass function (IMF) of stars is universal, or instead sensitive to the initial conditions of star formation. The distinction is of critical importance: the IMF influences most of the observable properties of stellar populations and galaxies, and detecting variations in the IMF could provide deep insights into the process by which stars form. In this review, we take a critical look at the case for IMF variations, with a view towards whether other explanations are sufficient given the evidence. Studies of the field, local young clusters and associations, and old globular clusters suggest that the vast majority were drawn from a "universal" IMF: a power-law of Salpeter index ($Γ=1.35$) above a few solar masses, and a log normal or shallower power-law ($Γ\sim 0-0.25$) between a few tenths and a few solar masses (ignoring the effects of unresolved binaries). The shape and universality of the IMF at the stellar-substellar boundary is still under investigation and uncertainties remain large, but most observations are consistent with a IMF that declines ($Γ&lt; -0.5$) well below the hydrogen burning limit. Observations of resolved stellar populations and the integrated properties of most galaxies are also consistent with a "universal IMF", suggesting no gross variations in the IMF over much of cosmic time. There are indications of "non-standard" IMFs in specific local and extragalactic environments, which clearly warrant further study. Nonetheless, there is no clear evidence that the IMF varies strongly and systematically as a function of initial conditions after the first few generations of stars.</summary>
+    <category term="astro-ph.GA" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.CO" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2010-01-18T07:23:13Z</published>
+    <arxiv:comment>49 pages, 5 figures, to appear in Annual Reviews of Astronomy and Astrophysics (2010, volume 48)</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.GA"/>
+    <author>
+      <name>Nate Bastian</name>
+      <arxiv:affiliation>IoA, Cambridge</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Kevin R. Covey</name>
+      <arxiv:affiliation>Cornell</arxiv:affiliation>
+      <arxiv:affiliation>Harvard-Smithsonian CfA</arxiv:affiliation>
+    </author>
+    <author>
+      <name>Michael R. Meyer</name>
+      <arxiv:affiliation>ETH Zurich</arxiv:affiliation>
+      <arxiv:affiliation>Steward Observatory</arxiv:affiliation>
+    </author>
+    <arxiv:doi>10.1146/annurev-astro-082708-101642</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.1146/annurev-astro-082708-101642" title="doi"/>
+  </entry>
+</feed>

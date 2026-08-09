@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:arxiv="http://arxiv.org/schemas/atom" xmlns="http://www.w3.org/2005/Atom">
+  <id>https://arxiv.org/api/abHfFFrVSPZRGlQ1Y/lvmDFufOc</id>
+  <title>arXiv Query: search_query=&amp;id_list=1608.08939&amp;start=0&amp;max_results=1</title>
+  <updated>2026-08-09T13:25:40Z</updated>
+  <link href="https://arxiv.org/api/query?search_query=&amp;start=0&amp;max_results=1&amp;id_list=1608.08939" type="application/atom+xml"/>
+  <opensearch:itemsPerPage>1</opensearch:itemsPerPage>
+  <opensearch:totalResults>1</opensearch:totalResults>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <entry>
+    <id>http://arxiv.org/abs/1608.08939v2</id>
+    <title>Pulsational Pair-Instability Supernovae</title>
+    <updated>2017-01-12T19:26:31Z</updated>
+    <link href="https://arxiv.org/abs/1608.08939v2" rel="alternate" type="text/html"/>
+    <link href="https://arxiv.org/pdf/1608.08939v2" rel="related" type="application/pdf" title="pdf"/>
+    <summary>The final evolution of stars in the mass range 70 - 140 solar masses is explored. Depending upon their mass loss history and rotation rates, these stars will end their lives as pulsational pair-instability supernovae producing a great variety of observational transients with total durations ranging from weeks to millennia and luminosities from 10$^{41}$ to over 10$^{44}$ erg s$^{-1}$. No non-rotating model radiates more than $5 \times 10^{50}$ erg of light or has a kinetic energy exceeding $5 \times 10^{51}$ erg, but greater energies are possible, in principle, in magnetar-powered explosions which are explored. Many events resemble Type Ibn, Icn, and IIn supernovae, and some potential observational counterparts are mentioned. Some PPISN can exist in a dormant state for extended periods, producing explosions millennia after their first violent pulse. These dormant supernovae contain bright Wolf-Rayet stars, possibly embedded in bright x-ray and radio sources. The relevance of PPISN to supernova impostors like Eta Carinae, to super-luminous supernovae, and to sources of gravitational radiation is discussed. No black holes between 52 and 133 solar masses are expected from stellar evolution in close binaries.</summary>
+    <category term="astro-ph.HE" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="astro-ph.SR" scheme="http://arxiv.org/schemas/atom"/>
+    <published>2016-08-31T16:57:09Z</published>
+    <arxiv:comment>39 pages, 28 figures, submitted to Astrophysical Journal, Aug. 31, 2016. Revised and accepted Jan. 2, 2017</arxiv:comment>
+    <arxiv:primary_category term="astro-ph.HE"/>
+    <author>
+      <name>S. E. Woosley</name>
+    </author>
+    <arxiv:doi>10.3847/1538-4357/836/2/244</arxiv:doi>
+    <link rel="related" href="https://doi.org/10.3847/1538-4357/836/2/244" title="doi"/>
+  </entry>
+</feed>

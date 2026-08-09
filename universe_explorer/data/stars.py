@@ -2,13 +2,20 @@
 
 Complements black_hole (endpoints) and cosmology (large-scale). Same courts.
 
-Expected lights:
-  stars_powered_by_fusion                 -> 🟢 Established
-  stellar_nucleosynthesis_makes_elements  -> 🔵 Strong
-  core_collapse_forms_ns_bh               -> 🔵 Strong
-  red_supergiant_problem                  -> 🟡 Competing
-  solar_dynamo_cycle                      -> 🟠 Frontier
-  pop_iii_already_routinely_observed      -> 🔴 Speculative
+Deepened map (solar interior · remnants · birth/death channels):
+
+  🟢 stars_powered_by_fusion
+  🔵 stellar_nucleosynthesis_makes_elements
+  🔵 core_collapse_forms_ns_bh
+  🔵 helioseismology_constrains_solar_interior
+  🔵 white_dwarfs_electron_degenerate
+  🔵 imf_approximately_universal
+  🟡 red_supergiant_problem
+  🟡 sn_ia_progenitor_channels
+  🟠 solar_dynamo_cycle
+  🟠 cno_cycle_solar_neutrinos_detected
+  🟠 pair_instability_bh_mass_gap
+  🔴 pop_iii_already_routinely_observed
 """
 
 from __future__ import annotations
@@ -475,21 +482,481 @@ pop_iii_already_routinely_observed = Claim(
     status_history=[],
 )
 
+# --------------------------------------------------------------------------- #
+# Claim 7 — helioseismology                              🔵 Strong             #
+# --------------------------------------------------------------------------- #
+helioseismology_constrains_solar_interior = Claim(
+    id="helioseismology_constrains_solar_interior",
+    title=(
+        "Helioseismology tightly constrains the Sun's interior structure "
+        "and validates standard solar models in bulk"
+    ),
+    status=Status.STRONG,
+    sources=[
+        Source(
+            label="ChristensenDalsgaard2002",
+            url_or_id="arXiv:astro-ph/0207403",
+            kind="peer-reviewed paper (Rev. Mod. Phys. 74, 1073, 2002; "
+                 "helioseismology review)",
+        ),
+        Source(
+            label="Bahcall2001",
+            url_or_id="arXiv:astro-ph/0010346",
+            kind="peer-reviewed paper (ApJ; solar models, neutrinos, "
+                 "helioseismology)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "Global p-mode frequencies invert to sound-speed and density "
+                "profiles throughout most of the solar interior, providing "
+                "a seismic map of the convective zone and radiative core."
+            ),
+            source_ref="ChristensenDalsgaard2002",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Standard solar models matched to helioseismic constraints "
+                "reproduce the observed acoustic structure and inform the "
+                "neutrino flux predictions later confirmed experimentally."
+            ),
+            source_ref="Bahcall2001",
+        ),
+    ],
+    open_questions=[
+        "How should revised solar abundances be reconciled with the "
+        "seismic sound-speed profile (the solar abundance problem)?",
+        "What is the detailed structure of the tachocline?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "mainstream_model_support", True,
+            "Helioseismic inversion as a probe of solar structure is "
+            "standard solar physics.",
+        ),
+        ConditionAssessment(
+            "minor_alternatives_exist", True,
+            "Abundance mixtures and near-surface modelling details remain "
+            "debated; the bulk seismic success is not.",
+        ),
+        ConditionAssessment(
+            "overall_direction_robust", True,
+            "Decades of BiSON/GONG/SOHO/SDO data have refined, not "
+            "overturned, the seismic interior picture.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 8 — white dwarfs                                 🔵 Strong             #
+# --------------------------------------------------------------------------- #
+white_dwarfs_electron_degenerate = Claim(
+    id="white_dwarfs_electron_degenerate",
+    title=(
+        "White dwarfs are supported against gravity by electron degeneracy "
+        "pressure"
+    ),
+    status=Status.STRONG,
+    sources=[
+        Source(
+            label="Chandrasekhar1931",
+            url_or_id="doi:10.1086/143324",
+            kind="peer-reviewed paper (ApJ 74, 81, 1931; highly collapsed "
+                 "configurations / mass limit)",
+        ),
+        Source(
+            label="B2FH1957c",
+            url_or_id="doi:10.1103/RevModPhys.29.547",
+            kind="peer-reviewed paper (Rev. Mod. Phys. 29, 547, 1957; "
+                 "stellar endpoints context)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Electron-degenerate configurations yield a finite maximum "
+                "white-dwarf mass (the Chandrasekhar limit) set by quantum "
+                "statistics and general relativity corrections."
+            ),
+            source_ref="Chandrasekhar1931",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Observed white-dwarf mass distributions and cooling "
+                "sequences align with degenerate-electron support as the "
+                "endpoint of low- and intermediate-mass stellar evolution."
+            ),
+            source_ref="B2FH1957c",
+        ),
+    ],
+    open_questions=[
+        "What is the precise empirical Chandrasekhar mass for exploding "
+        "white dwarfs in Type Ia events?",
+        "How do crystallization and core composition affect cooling ages?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "mainstream_model_support", True,
+            "Degenerate white dwarfs are textbook stellar endpoints.",
+        ),
+        ConditionAssessment(
+            "minor_alternatives_exist", True,
+            "Composition, rotation and magnetic corrections refine masses; "
+            "they do not replace degeneracy support.",
+        ),
+        ConditionAssessment(
+            "overall_direction_robust", True,
+            "Gaia white-dwarf sequences and binary mass measurements "
+            "continually reinforce the degenerate picture.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 9 — IMF                                          🔵 Strong             #
+# --------------------------------------------------------------------------- #
+imf_approximately_universal = Claim(
+    id="imf_approximately_universal",
+    title=(
+        "The stellar initial mass function is approximately universal in "
+        "present-day star-forming regions"
+    ),
+    status=Status.STRONG,
+    sources=[
+        Source(
+            label="Bastian2010",
+            url_or_id="arXiv:1001.2965",
+            kind="peer-reviewed paper (ARA&A 48, 339, 2010; universal IMF "
+                 "review)",
+        ),
+        Source(
+            label="Kroupa2001",
+            url_or_id="arXiv:astro-ph/0009005",
+            kind="peer-reviewed paper (MNRAS 322, 231, 2001; multi-part "
+                 "power-law IMF)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Resolved stellar populations in the local field, open "
+                "clusters and nearby galaxies yield similar high-mass "
+                "slopes near the Salpeter value over a wide range of "
+                "environments."
+            ),
+            source_ref="Bastian2010",
+        ),
+        Evidence(
+            type="indirect observation",
+            description=(
+                "A multi-part power-law (or similar) IMF fits local star "
+                "counts from brown-dwarf to O-star masses with only modest "
+                "environment-to-environment scatter in the present-day "
+                "disc."
+            ),
+            source_ref="Kroupa2001",
+        ),
+    ],
+    open_questions=[
+        "Is the IMF top-heavy in extreme starbursts or at very low "
+        "metallicity?",
+        "How does the substellar mass function connect to the stellar IMF?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "mainstream_model_support", True,
+            "An approximately universal local IMF is the default assumption "
+            "in galactic chemical evolution and population synthesis.",
+        ),
+        ConditionAssessment(
+            "minor_alternatives_exist", True,
+            "Top-heavy or bottom-light IMFs are proposed for extreme "
+            "environments; they are refinements of universality, not a "
+            "replacement of the IMF concept.",
+        ),
+        ConditionAssessment(
+            "overall_direction_robust", True,
+            "Decades of star-count and cluster work leave the local IMF "
+            "shape stable even as extremes are debated.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 10 — SN Ia progenitors                           🟡 Competing          #
+# --------------------------------------------------------------------------- #
+sn_ia_progenitor_channels = Claim(
+    id="sn_ia_progenitor_channels",
+    title=(
+        "Type Ia supernovae arise primarily via the single-degenerate "
+        "versus double-degenerate channel"
+    ),
+    status=Status.COMPETING,
+    sources=[
+        Source(
+            label="Maoz2014",
+            url_or_id="arXiv:1312.0628",
+            kind="peer-reviewed paper (ARA&A 52, 107, 2014; SN Ia "
+                 "progenitor clues)",
+        ),
+        Source(
+            label="B2FH1957d",
+            url_or_id="doi:10.1103/RevModPhys.29.547",
+            kind="peer-reviewed paper (Rev. Mod. Phys. 29, 547, 1957; "
+                 "explosive nucleosynthesis context)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="indirect observation",
+            description=(
+                "Delay-time distributions, companion searches, radio/X-ray "
+                "limits and pre-explosion constraints leave both "
+                "single-degenerate (WD + non-degenerate donor) and "
+                "double-degenerate (WD + WD) channels viable at population "
+                "level."
+            ),
+            source_ref="Maoz2014",
+        ),
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Explosive carbon burning in a near-Chandrasekhar or "
+                "sub-Chandrasekhar white dwarf reproduces the hallmark "
+                "intermediate-mass-element and iron-group yields of Type Ia "
+                "events in outline."
+            ),
+            source_ref="B2FH1957d",
+        ),
+    ],
+    competing_models=[
+        CompetingModel(
+            name="Single-degenerate (WD + non-degenerate companion)",
+            supporting=(
+                "Accretion toward the Chandrasekhar mass provides a natural "
+                "explosion trigger; some systems show possible companion "
+                "signatures."
+            ),
+            opposing=(
+                "Stringent non-detections of companions and circumstellar "
+                "material in many events challenge a universal SD channel."
+            ),
+            limitations=(
+                "Retention efficiency and steady burning regimes are "
+                "uncertain."
+            ),
+        ),
+        CompetingModel(
+            name="Double-degenerate (WD + WD merger / collision)",
+            supporting=(
+                "Delay-time distributions and the absence of surviving "
+                "companions favour WD+WD pathways in a large fraction of "
+                "events."
+            ),
+            opposing=(
+                "Which mergers ignite as normal SNe Ia versus collapse or "
+                "fail remains model-dependent."
+            ),
+            limitations=(
+                "Merger hydrodynamics and viewing-angle diversity are hard "
+                "to constrain event-by-event."
+            ),
+        ),
+    ],
+    open_questions=[
+        "What fraction of normal SNe Ia come from each channel?",
+        "Do sub-Chandrasekhar double detonations dominate some subclasses?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "two_or_more_mainstream_models", True,
+            "Single- and double-degenerate families are both extensively "
+            "developed in the peer-reviewed literature.",
+        ),
+        ConditionAssessment(
+            "no_decisive_evidence_yet", True,
+            "No single observation has eliminated either channel for the "
+            "normal SN Ia population.",
+        ),
+        ConditionAssessment(
+            "genuine_scientific_camps", True,
+            "Reviews document a multi-decade camp structure, not a "
+            "rhetorical split.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 11 — CNO solar neutrinos                         🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+cno_cycle_solar_neutrinos_detected = Claim(
+    id="cno_cycle_solar_neutrinos_detected",
+    title=(
+        "Neutrinos from the solar CNO cycle have been experimentally "
+        "detected"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Borexino2020-CNO",
+            url_or_id="arXiv:2006.15115",
+            kind="collaboration result (peer-reviewed, Nature 2020; first "
+                 "CNO solar-neutrino evidence)",
+        ),
+        Source(
+            label="Borexino2023-CNO",
+            url_or_id="arXiv:2307.14636",
+            kind="collaboration result (peer-reviewed; Borexino final CNO "
+                 "results with CID method)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="direct observation",
+            description=(
+                "Borexino reports the first experimental evidence of solar "
+                "neutrinos produced in the carbon–nitrogen–oxygen fusion "
+                "cycle, using an ultra-radio-pure liquid scintillator."
+            ),
+            source_ref="Borexino2020-CNO",
+        ),
+        Evidence(
+            type="direct observation",
+            description=(
+                "Subsequent Borexino analyses incorporating correlated "
+                "integrated directionality strengthen the CNO neutrino "
+                "measurement and reduce background systematics."
+            ),
+            source_ref="Borexino2023-CNO",
+        ),
+    ],
+    open_questions=[
+        "How precisely can CNO neutrinos constrain the solar core "
+        "metallicity?",
+        "Will next-generation scintillator experiments turn CNO into a "
+        "precision metallicity probe?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "new_discovery", True,
+            "First detection of CNO-cycle solar neutrinos is a recent "
+            "experimental milestone.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "The community accepts the detection in outline; its use as a "
+            "decisive metallicity arbiter is still developing.",
+        ),
+        ConditionAssessment(
+            "insufficient_observation", True,
+            "Event statistics and residual backgrounds still limit "
+            "precision relative to pp-chain neutrino measurements.",
+        ),
+    ],
+    status_history=[],
+)
+
+# --------------------------------------------------------------------------- #
+# Claim 12 — pair-instability mass gap                   🟠 Frontier           #
+# --------------------------------------------------------------------------- #
+pair_instability_bh_mass_gap = Claim(
+    id="pair_instability_bh_mass_gap",
+    title=(
+        "Pair-instability supernovae carve a gap in the stellar black-hole "
+        "mass spectrum near ~50–120 solar masses"
+    ),
+    status=Status.FRONTIER,
+    sources=[
+        Source(
+            label="Farmer2019",
+            url_or_id="arXiv:1910.12874",
+            kind="peer-reviewed paper (ApJ; lower edge of the PISN black "
+                 "hole mass gap)",
+        ),
+        Source(
+            label="Woosley2017",
+            url_or_id="arXiv:1608.08939",
+            kind="peer-reviewed paper (ApJ; pulsational pair instability "
+                 "and massive star deaths)",
+        ),
+    ],
+    evidence=[
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Electron–positron pair production in very massive stellar "
+                "cores triggers pulsational or complete pair-instability "
+                "supernovae that are predicted to leave a gap in remnant "
+                "black-hole masses."
+            ),
+            source_ref="Woosley2017",
+        ),
+        Evidence(
+            type="theoretical result",
+            description=(
+                "Modern stellar models map the lower edge of the predicted "
+                "gap as a function of nuclear rates and wind physics, "
+                "providing targets for gravitational-wave mass spectra."
+            ),
+            source_ref="Farmer2019",
+        ),
+    ],
+    open_questions=[
+        "Do current LIGO–Virgo–KAGRA catalogues show a clean high-mass "
+        "gap, or is it blurred by hierarchical mergers?",
+        "How sensitive is the gap edge to the 12C(α,γ)16O rate?",
+    ],
+    status_reason=[
+        ConditionAssessment(
+            "rapidly_growing_literature", True,
+            "PISN mass-gap predictions and GW mass-spectrum tests form a "
+            "fast-moving literature.",
+        ),
+        ConditionAssessment(
+            "no_consensus_formed_yet", True,
+            "The theoretical gap is widely discussed; its empirical "
+            "sharpness in observed BH masses is not settled.",
+        ),
+        ConditionAssessment(
+            "insufficient_observation", True,
+            "GW samples at the highest stellar BH masses remain limited.",
+        ),
+    ],
+    status_history=[],
+)
+
 
 STARS = Topic(
     id="stars",
     title="Stars",
     summary=(
-        "Stellar physics container (cosmos theme). 🟢 fusion bedrock; 🔵 "
-        "nucleosynthesis + compact remnants; 🟡 red-supergiant problem; "
-        "🟠 solar dynamo; 🔴 routine local Pop III (not accepted)."
+        "Stellar physics container (cosmos theme). 🟢 fusion; 🔵 "
+        "nucleosynthesis, remnants, helioseismology, white dwarfs, IMF; "
+        "🟡 RSG problem + SN Ia channels; 🟠 dynamo, CNO neutrinos, "
+        "PISN mass gap; 🔴 routine local Pop III (not accepted)."
     ),
     claims=[
         stars_powered_by_fusion,
         stellar_nucleosynthesis_makes_elements,
         core_collapse_forms_ns_bh,
+        helioseismology_constrains_solar_interior,
+        white_dwarfs_electron_degenerate,
+        imf_approximately_universal,
         red_supergiant_problem,
+        sn_ia_progenitor_channels,
         solar_dynamo_cycle,
+        cno_cycle_solar_neutrinos_detected,
+        pair_instability_bh_mass_gap,
         pop_iii_already_routinely_observed,
     ],
 )

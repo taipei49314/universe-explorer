@@ -71,7 +71,10 @@ def test_chip_forces_open_and_filters_view():
     U.app_auto_expand(st, view)
     assert view == ["stars"]
     assert st.is_open("stars")
-    assert len(claims_by["stars"]) == 6
+    # claim count is an inventory measurement, not a frozen constant
+    assert len(claims_by["stars"]) >= 1
+    stars_meta = next(t for t in data["topics"] if t["id"] == "stars")
+    assert stars_meta["n_claims"] == len(claims_by["stars"])
 
 
 def test_universe_cluster_toggle():
