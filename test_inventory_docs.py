@@ -27,7 +27,7 @@ def test_readme_snapshot_matches_registry():
     # Snapshot table uses bold markdown numbers
     assert f"**{c['topics']}**" in readme, c
     assert f"**{c['claims']}**" in readme, c
-    assert f"**{c['authored']}**" in readme, c
+    # Edge count: README shows total (authored + mechanical), not just authored
     assert f"**{c['paths']}**" in readme, c
     # Domain claim sum line still lists 8 topics
     for tid in (

@@ -35,13 +35,19 @@ SUITES = [
     "test_transport.py",      # P5b webhook/SMTP transport (env-gated)
     "test_surface.py",        # P-Read/Shell/Pulse/Audit/Guide surface checks
     "test_inventory_docs.py", # README/milestones list-counts match registry
+    "test_discovery.py",      # Discovery Pipeline: adapters, candidate builder
+    "test_precheck.py",       # Discovery Pipeline: constitution precheck
+    "test_crossdomain.py",    # Cross-domain: shared sources, conflicts, gaps
+    "test_reader.py",         # Reader: search, filter, dual-axis, guided reading
+    "test_integration.py",    # End-to-end integration tests
 ]
 
 
 def main() -> int:
     failed = []
     for suite in SUITES:
-        r = subprocess.run([sys.executable, suite], capture_output=True, text=True)
+        r = subprocess.run([sys.executable, suite], capture_output=True, text=True,
+                           encoding="utf-8", errors="replace")
         tail = (r.stdout.strip().splitlines() or ["(no output)"])[-1]
         mark = "ok " if r.returncode == 0 else "FAIL"
         print(f"  {mark} {suite:22} {tail}")
@@ -51,7 +57,8 @@ def main() -> int:
             print(r.stderr)
 
     r = subprocess.run([sys.executable, "build.py", "--check"],
-                       capture_output=True, text=True)
+                       capture_output=True, text=True,
+                       encoding="utf-8", errors="replace")
     mark = "ok " if r.returncode == 0 else "FAIL"
     print(f"  {mark} build.py --check       (constitution gate, all topics)")
     if r.returncode != 0:
