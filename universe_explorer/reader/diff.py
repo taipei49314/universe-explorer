@@ -236,3 +236,4 @@ if __name__ == "__main__":
         print("  python -m universe_explorer.reader.diff --has-notes <true|false>")
         print("  python -m universe_explorer.reader.diff --has-competing <true|false>")
         print("  python -m universe_explorer.reader.diff --has-open-questions <true|false>")
+        print("  python -m universe_explorer.reader.diff --diverges <true|false>")
