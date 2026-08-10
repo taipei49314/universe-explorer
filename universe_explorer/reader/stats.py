@@ -254,6 +254,7 @@ if __name__ == "__main__":
     from ..data.registry import TOPICS
 
     parser = argparse.ArgumentParser(description="Knowledge base statistics")
+    parser.add_argument("--domain", help="Filter by domain")
     parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--label", help="Filter by annotation label")
     parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
