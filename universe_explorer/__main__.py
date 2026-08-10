@@ -70,6 +70,7 @@ def main(argv: list = None) -> int:
         p.add_argument("--label", help="Filter by annotation label")
         p.add_argument("--has-notes", type=lambda x: x.lower() == "true")
         p.add_argument("--has-competing", type=lambda x: x.lower() == "true")
+        p.add_argument("--has-open-questions", type=lambda x: x.lower() == "true")
         opts = p.parse_args(args)
         f = ClaimFilter(TOPICS)
         criteria = FilterCriteria(
@@ -77,6 +78,7 @@ def main(argv: list = None) -> int:
             evidence_axis=opts.axis, diverges=opts.diverges,
             tag=opts.tag, label=opts.label, has_notes=opts.has_notes,
             has_competing_models=opts.has_competing,
+            has_open_questions=opts.has_open_questions,
         )
         results = f.filter(criteria)
         print(f"Filter: {len(results)} claims")
