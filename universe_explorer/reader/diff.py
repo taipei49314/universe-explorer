@@ -234,3 +234,4 @@ if __name__ == "__main__":
         print("  python -m universe_explorer.reader.diff --tag <tag>")
         print("  python -m universe_explorer.reader.diff --label <label>")
         print("  python -m universe_explorer.reader.diff --has-notes <true|false>")
+        print("  python -m universe_explorer.reader.diff --has-competing <true|false>")
