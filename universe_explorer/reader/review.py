@@ -315,6 +315,8 @@ if __name__ == "__main__":
                         help="Filter by whether claim has competing models")
     parser.add_argument("--has-open-questions", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has open questions")
+    parser.add_argument("--diverges", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim diverges")
     args = parser.parse_args()
 
     manager = ReviewManager()
@@ -358,6 +360,16 @@ if __name__ == "__main__":
             else:
                 reviews = [r for r in reviews
                            if r["claim_id"] in claim_map and not claim_map[r["claim_id"]].open_questions]
+        if args.diverges is not None:
+            from ..axes import diverges as _diverges
+            from ..data.registry import TOPICS
+            claim_map = {c.id: c for t in TOPICS for c in t.claims}
+            if args.diverges:
+                reviews = [r for r in reviews
+                           if r["claim_id"] in claim_map and _diverges(claim_map[r["claim_id"]])]
+            else:
+                reviews = [r for r in reviews
+                           if r["claim_id"] in claim_map and not _diverges(claim_map[r["claim_id"]])]
         print(f"Reviews: {len(reviews)}")
         for r in reviews:
             print(f"  {r['claim_id']}: {r['status']} ({r['progress']:.0f}%)")
