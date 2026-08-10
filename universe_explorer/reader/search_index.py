@@ -3,19 +3,26 @@
 Pure Python inverted index — no external dependencies.
 Indexes: title, open_questions, evidence descriptions, status_reason notes.
 
+Supports optional disk caching to avoid rebuilding the index every time.
+
 Usage:
     python -m universe_explorer.reader.search_index "gravitational wave"
 """
 
 from __future__ import annotations
 
+import hashlib
+import json
 import re
 from collections import defaultdict
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import Dict, List, Optional, Set, Tuple
 
 from ..axes import derive, diverges
 from ..model import Claim, Topic
+
+_CACHE_DIR = Path(__file__).parent.parent.parent / "cache" / "search_index"
 
 
 @dataclass
@@ -41,16 +48,24 @@ class SearchResult:
 class ClaimSearchIndex:
     """Inverted index over claim text fields."""
 
-    def __init__(self, topics: List[Topic]):
+    def __init__(self, topics: List[Topic], use_cache: bool = True):
         self._index: Dict[str, Set[Tuple[str, str, str]]] = defaultdict(set)
         # token → {(claim_id, topic_id, field_name)}
         self._claims: Dict[str, Tuple[str, Claim]] = {}
         # claim_id → (topic_id, Claim)
 
+        # Try to load from cache.
+        if use_cache and self._try_load_cache(topics):
+            return
+
         for topic in topics:
             for claim in topic.claims:
                 self._claims[claim.id] = (topic.id, claim)
                 self._index_claim(claim, topic.id)
+
+        # Save to cache.
+        if use_cache:
+            self._save_cache(topics)
 
     def _index_claim(self, claim: Claim, topic_id: str):
         """Index all text fields of a claim."""
@@ -116,6 +131,54 @@ class ClaimSearchIndex:
         matches.sort()
         return matches[:20]
 
+    def _cache_key(self, topics: List[Topic]) -> str:
+        """Compute a cache key based on claim count and ids."""
+        ids = sorted(c.id for t in topics for c in t.claims)
+        content = f"{len(ids)}:{','.join(ids)}"
+        return hashlib.md5(content.encode()).hexdigest()
+
+    def _try_load_cache(self, topics: List[Topic]) -> bool:
+        """Try to load index from cache. Returns True if successful."""
+        if not _CACHE_DIR.exists():
+            return False
+
+        key = self._cache_key(topics)
+        cache_file = _CACHE_DIR / f"{key}.json"
+        if not cache_file.exists():
+            return False
+
+        try:
+            data = json.loads(cache_file.read_text(encoding="utf-8"))
+            # Rebuild claims map from topics.
+            for topic in topics:
+                for claim in topic.claims:
+                    self._claims[claim.id] = (topic.id, claim)
+
+            # Rebuild index from cached data.
+            for token, entries in data.get("index", {}).items():
+                for entry in entries:
+                    self._index[token].add(tuple(entry))
+
+            return True
+        except Exception:
+            return False
+
+    def _save_cache(self, topics: List[Topic]):
+        """Save index to cache."""
+        _CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        key = self._cache_key(topics)
+        cache_file = _CACHE_DIR / f"{key}.json"
+
+        # Convert sets to lists for JSON serialization.
+        index_data = {}
+        for token, entries in self._index.items():
+            index_data[token] = [list(e) for e in entries]
+
+        cache_file.write_text(
+            json.dumps({"index": index_data}, ensure_ascii=False),
+            encoding="utf-8",
+        )
+
 
 def _tokenize(text: str) -> List[str]:
     """Split text into lowercase alphanumeric tokens."""
@@ -136,3 +199,4 @@ if __name__ == "__main__":
     for r in results:
         print(f"  [{r.claim_id}] {r.title} (score={r.score}, "
               f"fields={r.matched_fields})")
+
