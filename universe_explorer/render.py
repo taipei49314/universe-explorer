@@ -723,7 +723,9 @@ but the evidence axis is weaker than the consensus — so the card may show
 <b>⚡ axes diverge</b>. That is the product in one claim: high agreement does
 not invent direct astrophysical detection. Count the open questions yourself.
 Related edges (e.g. to the horizon or the information paradox) are
-<i>recorded links</i>, not a score of who is right.</p>
+<i>recorded links</i>, not a score of who is right.
+Full pipeline notes (data → axes → narrative → UI):
+<a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/hawking-walkthrough.md">hawking-walkthrough.md</a>.</p>
 
 <h2>The five lights (they belong to claims, never to topics)</h2>
 <table class="lights">
@@ -806,7 +808,9 @@ _ABOUT_ZH = f"""<!doctype html>
 <p>在地圖打開 <a href="app.html?c=hawking_radiation"><code>hawking_radiation</code></a>。
 燈號是<strong>強共識</strong>(主流理論 + 類比實驗),但證據軸可能弱於共識 —
 卡片可能出現 <b>⚡ 雙軸分岔</b>。這就是產品的一句話:高共識不捏造直接天文偵測。
-開放問題請自己數。關聯邊(例如連到視界或資訊悖論)是<i>已記錄的連結</i>,不是勝負分數。</p>
+開放問題請自己數。關聯邊(例如連到視界或資訊悖論)是<i>已記錄的連結</i>,不是勝負分數。
+完整管線說明(data → axes → narrative → UI):
+<a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/hawking-walkthrough.md">hawking-walkthrough.md</a>。</p>
 
 <h2>五格燈號(屬於 claim,永不屬於 topic)</h2>
 <table class="lights">

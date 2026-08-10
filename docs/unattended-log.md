@@ -15,4 +15,5 @@ Append-only operational notes. Not a product surface. No confidence scores.
 | UTC (approx) | Batch | Result |
 |--------------|-------|--------|
 | 2026-08-10T03:xx | README rewrite (91 claims, dual-axis, run, challenge) | pushed `1210506` · tests green |
-| 2026-08-10T03:xx | Honest adjacency edges (→ 96 authored, 0 isolated) · hawking walkthrough · milestones · unattended log | tests green · push this commit |
+| 2026-08-10T03:xx | Honest adjacency edges (→ 96 authored, 0 isolated) · hawking walkthrough · milestones · unattended log | pushed `5d0831d` · tests green |
+| 2026-08-10T03:xx | Align inventory counts (96 edges) · about/CONTRIBUTING walkthrough links · GitHub topics | tests green · push this commit |

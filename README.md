@@ -23,7 +23,7 @@ It does **not** tell you “the answer.” It shows, claim by claim:
 | Topics | **8** |
 | Claims | **91** |
 | Themes | Cosmos · Planets · Earth |
-| Authored relation edges | **87** (+ mechanical shared-source links) |
+| Authored relation edges | **96** (+ mechanical shared-source links; recount with `python -m universe_explorer.relations --validate`) |
 | Reading paths | **7** |
 | Engine | Constitution-gated Python · static `dist/` site |
 | AI at runtime | **None required** (narrative is a gated bottom layer) |

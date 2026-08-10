@@ -39,3 +39,6 @@ Your issue is the permanent record of the overturn.
   (`docs/amendment-*.md`).
 
 Run everything locally: `python run_tests.py` (all suites + the gate).
+
+For a worked example of data → axes → narrative → UI on one claim, see
+[`docs/hawking-walkthrough.md`](docs/hawking-walkthrough.md).

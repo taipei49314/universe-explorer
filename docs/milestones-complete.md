@@ -27,7 +27,7 @@
 - **Topics:** 8  
 - **Claims:** 91  
 - **Reading paths:** 7  
-- **Authored relation edges:** 87 + honest adjacency batch (recount via `python -m universe_explorer.relations --validate`)  
+- **Authored relation edges:** **96** (0 authored-isolated claims; recount via `python -m universe_explorer.relations --validate`)  
 
 ## How to deliver digests (P5b)
 
