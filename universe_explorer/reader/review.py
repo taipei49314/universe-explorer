@@ -307,6 +307,7 @@ if __name__ == "__main__":
     parser.add_argument("--list", action="store_true", help="List all reviews")
     parser.add_argument("--note", default="", help="Note for approve/reject")
     parser.add_argument("--checklist", default="default", help="Checklist type")
+    parser.add_argument("--domain", help="Filter by domain")
     parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--label", help="Filter by annotation label")
     parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
@@ -323,6 +324,11 @@ if __name__ == "__main__":
 
     if args.list:
         reviews = manager.list_reviews()
+        if args.domain:
+            from ..data.registry import TOPICS
+            claim_map = {c.id: t.id for t in TOPICS for c in t.claims}
+            reviews = [r for r in reviews
+                       if r["claim_id"] in claim_map and claim_map[r["claim_id"]] == args.domain]
         if args.tag:
             from .annotate import ClaimAnnotations
             annotations = ClaimAnnotations()
