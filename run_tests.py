@@ -40,6 +40,7 @@ SUITES = [
     "test_crossdomain.py",    # Cross-domain: shared sources, conflicts, gaps
     "test_reader.py",         # Reader: search, filter, dual-axis, guided reading
     "test_integration.py",    # End-to-end integration tests
+    "test_new_modules.py",    # Stats, export, diff, annotate, review, batch
 ]
 
 
