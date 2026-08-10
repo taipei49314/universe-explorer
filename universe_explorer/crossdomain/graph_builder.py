@@ -208,20 +208,26 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Cross-domain graph")
     parser.add_argument("--tag", help="Filter by annotation tag")
+    parser.add_argument("--label", help="Filter by annotation label")
     args = parser.parse_args()
 
     graph = build_cross_domain_graph(TOPICS)
 
-    if args.tag:
+    if args.tag or args.label:
         from ..reader.annotate import ClaimAnnotations
         annotations = ClaimAnnotations()
-        tagged_ids = set()
+        filtered_ids = set()
         for claim_dir in (Path(__file__).parent.parent.parent / "annotations").iterdir():
-            if claim_dir.is_dir() and annotations.has_tag(claim_dir.name, args.tag):
-                tagged_ids.add(claim_dir.name)
-        graph.nodes = [n for n in graph.nodes if n.id in tagged_ids]
+            if not claim_dir.is_dir():
+                continue
+            claim_id = claim_dir.name
+            if args.tag and annotations.has_tag(claim_id, args.tag):
+                filtered_ids.add(claim_id)
+            if args.label and args.label in annotations.get_labels(claim_id):
+                filtered_ids.add(claim_id)
+        graph.nodes = [n for n in graph.nodes if n.id in filtered_ids]
         graph.edges = [e for e in graph.edges
-                       if e.source in tagged_ids and e.target in tagged_ids]
+                       if e.source in filtered_ids and e.target in filtered_ids]
 
     print(format_graph_report(graph))
     # Write graph JSON to dist/.
