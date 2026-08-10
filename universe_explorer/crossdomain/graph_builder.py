@@ -210,6 +210,7 @@ if __name__ == "__main__":
     parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--label", help="Filter by annotation label")
     parser.add_argument("--domain", help="Filter by domain")
+    parser.add_argument("--claim-status", help="Filter by claim status")
     parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has notes")
     parser.add_argument("--has-competing", type=lambda x: x.lower() == "true",
@@ -229,6 +230,14 @@ if __name__ == "__main__":
         graph.nodes = [n for n in graph.nodes if n.id in domain_ids]
         graph.edges = [e for e in graph.edges
                        if e.source in domain_ids and e.target in domain_ids]
+
+    if args.claim_status:
+        # Filter by claim status
+        claim_map = {c.id: c.status.name for t in TOPICS for c in t.claims}
+        status_ids = {nid for nid, status in claim_map.items() if status == args.claim_status}
+        graph.nodes = [n for n in graph.nodes if n.id in status_ids]
+        graph.edges = [e for e in graph.edges
+                       if e.source in status_ids and e.target in status_ids]
 
     if args.tag or args.label or args.has_notes is not None or args.has_competing is not None or args.has_open_questions is not None or args.diverges is not None:
         from ..reader.annotate import ClaimAnnotations
