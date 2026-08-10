@@ -1,7 +1,8 @@
 """Guided reading — navigate claims along reading paths.
 
 Wraps the existing reading paths from relations.py into a guided
-exploration experience with context at each step.
+exploration experience with context at each step. Also includes
+dynamically generated paths from graph structure.
 
 Usage:
     python -m universe_explorer.reader.guided_reading --path 0
@@ -15,6 +16,7 @@ from typing import Dict, List, Optional
 from ..axes import derive, diverges
 from ..model import Claim, Topic
 from ..relations import reading_paths, all_links
+from .dynamic_paths import DynamicPath, generate_dynamic_paths
 
 
 @dataclass
@@ -48,7 +50,7 @@ class ReadingStep:
 
 
 class GuidedReader:
-    """Navigate claims along reading paths."""
+    """Navigate claims along reading paths (authored + dynamic)."""
 
     def __init__(self, topics: List[Topic]):
         self._topics = topics
@@ -56,24 +58,37 @@ class GuidedReader:
         for t in topics:
             for c in t.claims:
                 self._claim_map[c.id] = (t.id, c)
-        self._paths = reading_paths()
+        self._authored_paths = reading_paths()
+        self._dynamic_paths = generate_dynamic_paths(topics)
         self._links = all_links(topics)
 
     def list_paths(self) -> List[dict]:
-        """List all available reading paths."""
-        return [
-            {"index": i, "id": p.id, "title": p.title,
-             "claim_ids": list(p.steps)}
-            for i, p in enumerate(self._paths)
-        ]
+        """List all available reading paths (authored + dynamic)."""
+        paths = []
+        # Authored paths first.
+        for i, p in enumerate(self._authored_paths):
+            paths.append({
+                "index": i, "id": p.id, "title": p.title,
+                "claim_ids": list(p.steps), "source": "authored",
+            })
+        # Dynamic paths after.
+        for i, p in enumerate(self._dynamic_paths):
+            paths.append({
+                "index": len(self._authored_paths) + i,
+                "id": p.id, "title": p.title,
+                "claim_ids": p.claim_ids, "source": "dynamic",
+                "kind": p.kind,
+            })
+        return paths
 
     def get_path_steps(self, path_index: int) -> List[ReadingStep]:
         """Get all steps in a reading path."""
-        if path_index < 0 or path_index >= len(self._paths):
+        all_paths = self.list_paths()
+        if path_index < 0 or path_index >= len(all_paths):
             return []
-        path = self._paths[path_index]
+        path = all_paths[path_index]
         steps = []
-        for cid in path.steps:
+        for cid in path["claim_ids"]:
             step = self._make_step(cid)
             if step:
                 steps.append(step)
