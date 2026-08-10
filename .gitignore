@@ -2,6 +2,7 @@
 dist/
 __pycache__/
 *.pyc
+cache/search_index/
 
 # NOT ignored on purpose (they are records, not build products):
 #   cache/     — verbatim fetched sources; the validator hash-checks these
