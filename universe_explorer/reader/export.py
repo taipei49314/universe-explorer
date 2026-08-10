@@ -178,6 +178,8 @@ if __name__ == "__main__":
                         help="Filter by whether claim has notes")
     parser.add_argument("--has-competing", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has competing models")
+    parser.add_argument("--has-open-questions", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has open questions")
     parser.add_argument("--stats", action="store_true", help="Export stats instead of claims")
     args = parser.parse_args()
 
@@ -192,5 +194,6 @@ if __name__ == "__main__":
             label=args.label,
             has_notes=args.has_notes,
             has_competing_models=args.has_competing,
+            has_open_questions=args.has_open_questions,
         )
         print(export_claims(TOPICS, args.format, criteria))
