@@ -27,7 +27,7 @@ It does **not** tell you “the answer.” It shows, claim by claim:
 | Reading paths | **8** (one authored path per registered domain) |
 | Engine | Constitution-gated Python · static `dist/` site |
 | AI at runtime | **None required** (narrative is a gated bottom layer) |
-| CI test modules | **31** suites in `run_tests.py` (**319** `test_*` functions) |
+| CI test modules | **30** suites in `run_tests.py` (**320** `test_*` functions) |
 
 ### Domains
 

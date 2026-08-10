@@ -493,5 +493,23 @@
     "title": "Deep-Sea Mining With No Net Loss of Biodiversity—An Impossible Aim",
     "container": "Frontiers in Marine Science",
     "issued": 2018
+  },
+  "10.1007/s41116-020-00025-6": {
+    "endpoint": "https://api.crossref.org/works/10.1007%2Fs41116-020-00025-6",
+    "retrieved_at": "2026-08-10T07:16:45Z",
+    "cache_file": "10-1007_s41116-020-00025-6.json",
+    "sha256": "e4a27dcc995f71140204539de3dc0b2c82d6da7bd4b80e3c1910dad31385d7a8",
+    "title": "Dynamo models of the solar cycle",
+    "container": "Living Reviews in Solar Physics",
+    "issued": 2020
+  },
+  "10.3389/fmars.2018.00195": {
+    "endpoint": "https://api.crossref.org/works/10.3389%2Ffmars.2018.00195",
+    "retrieved_at": "2026-08-10T07:16:47Z",
+    "cache_file": "10-3389_fmars-2018-00195.json",
+    "sha256": "da0f4bf84c6b929bc2b4bb9204ded1780d8df12b62ea013745fee1fddf5de552",
+    "title": "Corrigendum: Deep-Sea Mining With No Net Loss of Biodiversity—An Impossible Aim",
+    "container": "Frontiers in Marine Science",
+    "issued": 2018
   }
 }

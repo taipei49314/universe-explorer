@@ -509,7 +509,15 @@ deep_sea_mining_impacts_uncertain = Claim(
             label="Niner2018",
             url_or_id="doi:10.3389/fmars.2018.00053",
             kind="peer-reviewed paper (Front. Mar. Sci. 5, 53, 2018; "
-                 "deep-sea mining and no net loss of biodiversity)",
+                 "deep-sea mining and no net loss of biodiversity; "
+                 "corrigendum 10.3389/fmars.2018.00195)",
+        ),
+        Source(
+            label="Niner2018corrigendum",
+            url_or_id="doi:10.3389/fmars.2018.00195",
+            kind="peer-reviewed corrigendum (Front. Mar. Sci. 2018; "
+                 "publisher update to Niner2018; does not reverse the "
+                 "no-net-loss impossibility claim)",
         ),
     ],
     evidence=[

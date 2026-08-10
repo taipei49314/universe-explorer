@@ -1,0 +1,33 @@
+{
+  "at": "20260810T071614Z",
+  "note": "mechanical Crossref reverse lookup (filter=updates:DOI); the health check reports, humans re-judge",
+  "checked": 55,
+  "findings": [
+    {
+      "source_doi": "10.12942/lrsp-2010-3",
+      "updating_doi": "10.1007/s41116-020-00025-6",
+      "update_types": [
+        "new_version"
+      ],
+      "title": "Dynamo models of the solar cycle",
+      "issued": [
+        2020,
+        6,
+        17
+      ]
+    },
+    {
+      "source_doi": "10.3389/fmars.2018.00053",
+      "updating_doi": "10.3389/fmars.2018.00195",
+      "update_types": [
+        "corrigendum"
+      ],
+      "title": "Corrigendum: Deep-Sea Mining With No Net Loss of Biodiversity—An Impossible Aim",
+      "issued": [
+        2018,
+        6,
+        13
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "at": "20260810T071614Z",
+  "note": "mechanical diff against the committed snapshot; the trigger interface for future push channels",
+  "events": [
+    {
+      "kind": "source_update_found",
+      "claim": "(source-level)",
+      "source_doi": "10.12942/lrsp-2010-3",
+      "updating_doi": "10.1007/s41116-020-00025-6",
+      "update_types": [
+        "new_version"
+      ],
+      "title": "Dynamo models of the solar cycle"
+    },
+    {
+      "kind": "source_update_found",
+      "claim": "(source-level)",
+      "source_doi": "10.3389/fmars.2018.00053",
+      "updating_doi": "10.3389/fmars.2018.00195",
+      "update_types": [
+        "corrigendum"
+      ],
+      "title": "Corrigendum: Deep-Sea Mining With No Net Loss of Biodiversity—An Impossible Aim"
+    }
+  ]
+}

@@ -367,7 +367,14 @@ solar_dynamo_cycle = Claim(
             label="Charbonneau2010",
             url_or_id="doi:10.12942/lrsp-2010-3",
             kind="peer-reviewed paper (Living Rev. Sol. Phys. 7, 3, 2010; "
-                 "dynamo models of the solar cycle)",
+                 "dynamo models of the solar cycle; superseded by "
+                 "10.1007/s41116-020-00025-6)",
+        ),
+        Source(
+            label="Charbonneau2020",
+            url_or_id="doi:10.1007/s41116-020-00025-6",
+            kind="peer-reviewed paper (Living Rev. Sol. Phys. 2020; "
+                 "publisher new_version of Charbonneau2010 dynamo review)",
         ),
         Source(
             label="Hathaway2015",
@@ -383,7 +390,7 @@ solar_dynamo_cycle = Claim(
                 "oscillatory large-scale fields that reverse polarity each "
                 "cycle, providing the leading framework for the solar cycle."
             ),
-            source_ref="Charbonneau2010",
+            source_ref="Charbonneau2020",
         ),
         Evidence(
             type="direct observation",
