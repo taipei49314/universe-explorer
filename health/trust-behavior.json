@@ -1,7 +1,7 @@
 {
   "kind": "trust_behavior_measure",
-  "n_measurements": 487,
-  "n_pass": 487,
+  "n_measurements": 492,
+  "n_pass": 492,
   "n_fail": 0,
   "all_ok": true,
   "n_topics": 8,
@@ -4327,6 +4327,69 @@
       ],
       "ok": true,
       "note": "v5 Q1: at least one documented closed loop (accept or reasoned reject)"
+    },
+    {
+      "id": "overturn.weekly_record_exists",
+      "surface": "inventory",
+      "kind": "overturn",
+      "expected": "≥1 docs/weeklies/*.md",
+      "observed": "2026-W33.md",
+      "ok": true,
+      "note": "v5 S2 TL-3: weekly ritual or legal silence on disk"
+    },
+    {
+      "id": "overturn.health_embeds_trust_loop",
+      "surface": "surface",
+      "kind": "overturn",
+      "expected": "health.json trust_loop inventory keys",
+      "observed": [
+        "candidates",
+        "challenge_records",
+        "challenge_records_dir",
+        "github_challenge_label",
+        "kind",
+        "latest_weekly",
+        "n_challenge_records",
+        "n_verdict_accept",
+        "n_verdict_reject",
+        "n_verdict_unknown",
+        "n_weeklies",
+        "note",
+        "weeklies",
+        "weeklies_dir"
+      ],
+      "ok": true,
+      "note": "v5 S2 TL-2: instrument panel data"
+    },
+    {
+      "id": "overturn.health_html_trust_loop_section",
+      "surface": "surface",
+      "kind": "overturn",
+      "expected": "health.html #trust-loop section",
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "overturn.changes_html_overturn_and_weeklies",
+      "surface": "surface",
+      "kind": "overturn",
+      "expected": "changes.html overturn + weeklies + silence language",
+      "observed": {
+        "overturn": true,
+        "weeklies": true
+      },
+      "ok": true,
+      "note": "v5 S2 TL-2/TL-3 surface copy"
+    },
+    {
+      "id": "overturn.weeklies_protocol_readme",
+      "surface": "contract",
+      "kind": "overturn",
+      "expected": "docs/weeklies/README.md documents legal silence",
+      "observed": true,
+      "ok": true,
+      "note": ""
     },
     {
       "id": "export.claims_json_no_banned_keys",

@@ -30,6 +30,7 @@
 | **v5 Trust Loop** | 🔄 in progress | [`roadmap-v5-trust-loop.md`](roadmap-v5-trust-loop.md) |
 | **v5 S0 measure rows** | ✅ 2026-08-10 | `measure_overturn_loop` ids in `trust_behavior.py` |
 | **v5 S1 first closed challenge** | ✅ 2026-08-10 | issue [#2](https://github.com/taipei49314/universe-explorer/issues/2) · [`challenges/2026-08-10-hawking-strong-re-review.md`](challenges/2026-08-10-hawking-strong-re-review.md) — **reject** light change; dual-axis reaffirmed |
+| **v5 S2 panel + weeklies** | ✅ 2026-08-10 | `challenge_ops` → health/changes Trust Loop panel; [`weeklies/2026-W33.md`](weeklies/2026-W33.md); candidates N≤3 ritual |
 | **`planets` authored reading path** | ✅ 2026-08-10 | `path_planets` chronology → icy moons → life/Mars ceilings |
 
 ## Totals after closeout

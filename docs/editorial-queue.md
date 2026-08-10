@@ -29,11 +29,14 @@ Each domain should either cover the five light layers or **explicitly note** a m
 
 ## Weekly ritual (suggested N = 3)
 
-1. Open `candidates/` — process up to **3** files (accept → claim draft path, or reject with note).  
+**Write-up location:** [`docs/weeklies/YYYY-Www.md`](weeklies/README.md) (required each ISO week).
+
+1. Open `candidates/` — process up to **3** files (accept → claim draft path, or reject → `candidates/rejected/` with weekly note).  
 2. Run `python -m universe_explorer.dataops.source_health` (or wait for Action).  
 3. If events: `python -m universe_explorer.dataops.push` (+ `--deliver` if webhook set).  
 4. If data changed: `python run_tests.py` · `python build.py` · commit.  
-5. If nothing moved: record “silent week” in the weekly Action log — **legal silence**.
+5. If nothing moved: record **legal silence** in that week's weekly file (not a fake commit).  
+6. Check Trust Loop panel: `health.html#trust-loop` / `changes.html#overturn` (counts only).
 
 ## Challenge intake
 

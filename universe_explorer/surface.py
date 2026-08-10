@@ -314,7 +314,7 @@ def render_changes_html() -> str:
     if recs:
         ch_html = "<ul>" + "".join(
             f"<li><code>{_esc(r['claim_id'])}</code> — "
-            f"<b>{_esc(r['verdict'])}</b> { _esc(r.get('issue', '')) } "
+            f"<b>{_esc(r['verdict'])}</b> {_esc(r.get('issue', ''))} "
             f"(<code>{_esc(r['file'])}</code>)</li>"
             for r in recs
         ) + "</ul>"

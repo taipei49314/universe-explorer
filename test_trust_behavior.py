@@ -96,6 +96,11 @@ def test_v5_overturn_loop_measurements_pass():
         "overturn.feed_or_changes_surface",
         "canonical.tour_mentions_axes",
         "overturn.public_record_exists",
+        "overturn.weekly_record_exists",
+        "overturn.health_embeds_trust_loop",
+        "overturn.health_html_trust_loop_section",
+        "overturn.changes_html_overturn_and_weeklies",
+        "overturn.weeklies_protocol_readme",
     ):
         assert mid in by, mid
         assert by[mid].ok is True, (mid, by[mid].observed)

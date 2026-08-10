@@ -20,7 +20,24 @@ def test_health_payload_counts():
     assert p["n_claims"] == sum(len(t.claims) for t in TOPICS)
     assert p["n_topics"] == len(TOPICS)
     assert len(p["audit_sample"]) == 3
-    assert "confidence" not in json.dumps(p)
+
+    def no_banned_keys(x):
+        if isinstance(x, dict):
+            for k, v in x.items():
+                assert k.lower() not in {
+                    "confidence", "score", "probability", "certainty", "trust",
+                }, k
+                no_banned_keys(v)
+        elif isinstance(x, list):
+            for v in x:
+                no_banned_keys(v)
+
+    no_banned_keys(p)
+    # v5 S2 Trust Loop panel
+    tl = p["trust_loop"]
+    assert tl["n_challenge_records"] >= 1
+    assert tl["n_weeklies"] >= 1
+    assert "n_pending" in tl["candidates"]
 
 
 def test_sample_stable_for_day():
@@ -44,11 +61,16 @@ def test_health_html_has_nav():
         "stats.json",
     ):
         assert href in html, href
+    assert 'id="trust-loop"' in html
+    assert "hawking_radiation" in html or "Closed challenge" in html
 
 
 def test_changes_html_renders():
     html = render_changes_html()
     assert "Changes" in html and "feed.xml" in html
+    assert 'id="overturn"' in html
+    assert 'id="weeklies"' in html
+    assert "legal silence" in html.lower()
 
 
 def test_write_surface_pages(tmp_path: Path = None):

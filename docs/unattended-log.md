@@ -15,6 +15,7 @@ Append-only operational notes. Not a product surface. No confidence scores.
 | UTC (approx) | Batch | Result |
 |--------------|-------|--------|
 | 2026-08-10 | **v5 S0+S1** Trust Loop: overturn measure rows + first public challenge #2 (hawking Strong re-review → reject light change; dual-axis reaffirmed) | tests + trust_behavior green · push |
+| 2026-08-10 | **v5 S2** Trust Loop panel on health/changes + weeklies 2026-W33 + 2 candidate reject-archives (N≤3) | tests + measures green · push |
 | 2026-08-10T03:xx | README rewrite (91 claims, dual-axis, run, challenge) | pushed `1210506` · tests green |
 | 2026-08-10T03:xx | Honest adjacency edges (→ 96 authored, 0 isolated) · hawking walkthrough · milestones · unattended log | pushed `5d0831d` · tests green |
 | 2026-08-10T03:xx | Align inventory counts (96 edges) · about/CONTRIBUTING walkthrough links · GitHub topics | pushed `384465d` · tests green |

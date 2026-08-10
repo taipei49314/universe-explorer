@@ -49,8 +49,14 @@ recount them yourself.
 | `overturn.feed_or_changes_surface` | dist feed/changes **or** generator modules present |
 | `canonical.tour_mentions_axes` | app tour teaches dual axes / denies confidence % |
 | `overturn.public_record_exists` | ≥1 `docs/challenges/*.md` closed-loop record |
+| `overturn.weekly_record_exists` | ≥1 `docs/weeklies/*.md` |
+| `overturn.health_embeds_trust_loop` | `health.json` has `trust_loop` inventory |
+| `overturn.health_html_trust_loop_section` | `health.html` `#trust-loop` |
+| `overturn.changes_html_overturn_and_weeklies` | changes shows overturn + weeklies + silence language |
+| `overturn.weeklies_protocol_readme` | `docs/weeklies/README.md` documents legal silence |
 
-First public record: [`docs/challenges/2026-08-10-hawking-strong-re-review.md`](challenges/2026-08-10-hawking-strong-re-review.md) (issue #2).
+First public record: [`docs/challenges/2026-08-10-hawking-strong-re-review.md`](challenges/2026-08-10-hawking-strong-re-review.md) (issue #2).  
+First weekly: [`docs/weeklies/2026-W33.md`](weeklies/2026-W33.md).
 
 ## Blind-spot tests
 

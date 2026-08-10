@@ -472,6 +472,72 @@ def measure_overturn_loop() -> List[Measurement]:
         observed=[p.name for p in challenge_records],
         note="v5 Q1: at least one documented closed loop (accept or reasoned reject)",
     ))
+
+    # --- v5 S2: TL-2 panel + TL-3 weeklies ---
+    from .challenge_ops import trust_loop_inventory, WEEKLIES_DIR
+    from .surface import health_payload, render_changes_html, render_health_html
+
+    inv = trust_loop_inventory()
+    ms.append(_m_bool(
+        "overturn.weekly_record_exists",
+        "inventory", "overturn",
+        ok=inv.get("n_weeklies", 0) >= 1,
+        expected="≥1 docs/weeklies/*.md",
+        observed=inv.get("latest_weekly"),
+        note="v5 S2 TL-3: weekly ritual or legal silence on disk",
+    ))
+
+    hp = health_payload()
+    tl = hp.get("trust_loop") or {}
+    ms.append(_m_bool(
+        "overturn.health_embeds_trust_loop",
+        "surface", "overturn",
+        ok=(
+            isinstance(tl, dict)
+            and "n_challenge_records" in tl
+            and "candidates" in tl
+            and "n_weeklies" in tl
+        ),
+        expected="health.json trust_loop inventory keys",
+        observed=sorted(tl.keys()) if isinstance(tl, dict) else type(tl).__name__,
+        note="v5 S2 TL-2: instrument panel data",
+    ))
+
+    health_html = render_health_html(hp)
+    ms.append(_m_bool(
+        "overturn.health_html_trust_loop_section",
+        "surface", "overturn",
+        ok=("trust-loop" in health_html and "Closed challenge" in health_html),
+        expected="health.html #trust-loop section",
+        observed="trust-loop" in health_html,
+    ))
+
+    changes_html = render_changes_html()
+    ms.append(_m_bool(
+        "overturn.changes_html_overturn_and_weeklies",
+        "surface", "overturn",
+        ok=(
+            "overturn" in changes_html
+            and "weeklies" in changes_html.lower()
+            and ("legal silence" in changes_html.lower() or "Legal silence" in changes_html)
+        ),
+        expected="changes.html overturn + weeklies + silence language",
+        observed={
+            "overturn": "overturn" in changes_html,
+            "weeklies": "weeklies" in changes_html.lower(),
+        },
+        note="v5 S2 TL-2/TL-3 surface copy",
+    ))
+
+    # weeklies dir protocol README
+    weekly_readme = WEEKLIES_DIR / "README.md"
+    ms.append(_m_bool(
+        "overturn.weeklies_protocol_readme",
+        "contract", "overturn",
+        ok=weekly_readme.is_file() and "legal silence" in weekly_readme.read_text(encoding="utf-8").lower(),
+        expected="docs/weeklies/README.md documents legal silence",
+        observed=weekly_readme.is_file(),
+    ))
     return ms
 
 
