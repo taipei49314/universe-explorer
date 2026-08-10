@@ -155,6 +155,8 @@ if __name__ == "__main__":
     parser.add_argument("--axis", help="Filter by evidence axis")
     parser.add_argument("--filter-tag", help="Filter by annotation tag")
     parser.add_argument("--filter-label", help="Filter by annotation label")
+    parser.add_argument("--filter-has-notes", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has notes")
     args = parser.parse_args()
 
     criteria = FilterCriteria(
@@ -163,6 +165,7 @@ if __name__ == "__main__":
         evidence_axis=args.axis,
         tag=args.filter_tag,
         label=args.filter_label,
+        has_notes=args.filter_has_notes,
     )
 
     if args.export:
