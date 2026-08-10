@@ -209,6 +209,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Cross-domain graph")
     parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--label", help="Filter by annotation label")
+    parser.add_argument("--domain", help="Filter by domain")
     parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has notes")
     parser.add_argument("--has-competing", type=lambda x: x.lower() == "true",
@@ -220,6 +221,14 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     graph = build_cross_domain_graph(TOPICS)
+
+    if args.domain:
+        # Filter by domain: only keep nodes and edges within the specified domain
+        claim_map = {c.id: t.id for t in TOPICS for c in t.claims}
+        domain_ids = {nid for nid, tid in claim_map.items() if tid == args.domain}
+        graph.nodes = [n for n in graph.nodes if n.id in domain_ids]
+        graph.edges = [e for e in graph.edges
+                       if e.source in domain_ids and e.target in domain_ids]
 
     if args.tag or args.label or args.has_notes is not None or args.has_competing is not None or args.has_open_questions is not None or args.diverges is not None:
         from ..reader.annotate import ClaimAnnotations
