@@ -260,6 +260,8 @@ if __name__ == "__main__":
                         help="Filter by whether claim has notes")
     parser.add_argument("--has-competing", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has competing models")
+    parser.add_argument("--has-open-questions", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has open questions")
     args = parser.parse_args()
 
     stats = compute_stats(TOPICS)
