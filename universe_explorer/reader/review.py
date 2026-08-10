@@ -308,6 +308,7 @@ if __name__ == "__main__":
     parser.add_argument("--note", default="", help="Note for approve/reject")
     parser.add_argument("--checklist", default="default", help="Checklist type")
     parser.add_argument("--tag", help="Filter by annotation tag")
+    parser.add_argument("--label", help="Filter by annotation label")
     args = parser.parse_args()
 
     manager = ReviewManager()
@@ -319,6 +320,11 @@ if __name__ == "__main__":
             annotations = ClaimAnnotations()
             reviews = [r for r in reviews
                        if annotations.has_tag(r["claim_id"], args.tag)]
+        if args.label:
+            from .annotate import ClaimAnnotations
+            annotations = ClaimAnnotations()
+            reviews = [r for r in reviews
+                       if args.label in annotations.get_labels(r["claim_id"])]
         print(f"Reviews: {len(reviews)}")
         for r in reviews:
             print(f"  {r['claim_id']}: {r['status']} ({r['progress']:.0f}%)")
