@@ -1,7 +1,7 @@
 # Milestone closeout (unattended run)
 
-**Date:** 2026-08-09  
-**Commit family:** R-Graph + P5b + Earth deepen  
+**Date:** 2026-08-10 (extended from 2026-08-09)  
+**Commit family:** R-Graph + P5b + Earth deepen · product README · honest isolations  
 
 ## Status board
 
@@ -14,9 +14,11 @@
 | V4-2 Constitution | ✅ prior | `docs/constitution.md` + about links |
 | V4-3 arXiv version watch | ✅ prior | `source_health.arxiv_version_findings` + tests |
 | R-Graph | ✅ | Ego graph, reading paths, edge challenges |
-| Relations + inference | ✅ | 87+ authored edges |
+| Relations + inference | ✅ | 87+ authored edges; honest adjacency pass for former isolates |
 | Stars / BH / exoplanets depth | ✅ | Discussions on disk |
 | **Earth deepen** | ✅ | ocean 5→8, seismology 5→8 + short Discussions |
+| **Product README** | ✅ 2026-08-10 | 91-claim dual-axis surface; run + challenge paths |
+| **Hawking walkthrough** | ✅ 2026-08-10 | `docs/hawking-walkthrough.md` data→axes→narrative→UI |
 | NASA/ESA adapter | ❌ deferred | Explicit non-goal until a real inlet exists |
 | T4b multi-source 7B | ❌ deferred | Needs model ops; not blocking product honesty |
 
@@ -25,7 +27,7 @@
 - **Topics:** 8  
 - **Claims:** 91  
 - **Reading paths:** 7  
-- **Authored relation edges:** 87  
+- **Authored relation edges:** 87 + honest adjacency batch (recount via `python -m universe_explorer.relations --validate`)  
 
 ## How to deliver digests (P5b)
 

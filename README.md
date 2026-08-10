@@ -216,6 +216,7 @@ Knowledge grows by **human editorial hours** under the constitution — not by c
 | [`docs/product-remediation-7.md`](docs/product-remediation-7.md) | P-Read … P-Sustain |
 | [`docs/amendment-*.md`](docs/) | Numbered constitution changes |
 | [`docs/editorial-queue.md`](docs/editorial-queue.md) | What editors work on this season |
+| [`docs/hawking-walkthrough.md`](docs/hawking-walkthrough.md) | Dual-axis stress case, data → UI |
 
 ---
 

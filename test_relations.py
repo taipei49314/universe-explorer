@@ -139,6 +139,26 @@ def test_coverage_stats_honest_sparsity():
     assert "confidence" not in cov
 
 
+def test_honest_adjacencies_for_formerly_isolated():
+    """Claims that were map-isolated get one honest authored edge each —
+    not a densification campaign; fixed ids only."""
+    links = authored_links()
+    touched = set()
+    for L in links:
+        touched.add(L.source)
+        touched.add(L.target)
+    for cid in (
+        "cluster_sidm_cross_section_bounds",
+        "monojet_collider_searches",
+        "dwarf_spheroidal_indirect_limits",
+        "late_heavy_bombardment",
+        "mars_sustained_surface_habitability_now",
+        "trappist1_inner_planets_airless",
+    ):
+        assert cid in claim_index(TOPICS)
+        assert cid in touched, f"{cid} still lacks an authored edge"
+
+
 def test_graph_neighborhood_ego():
     g = graph_neighborhood("event_horizon_exists", TOPICS, authored_only=True)
     assert g["center"] == "event_horizon_exists"
