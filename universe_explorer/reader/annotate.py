@@ -211,6 +211,7 @@ if __name__ == "__main__":
     parser.add_argument("--diverges", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim diverges")
     parser.add_argument("--domain", help="Filter by domain")
+    parser.add_argument("--claim-status", help="Filter by claim status")
     args = parser.parse_args()
 
     annotations = ClaimAnnotations()
