@@ -733,7 +733,30 @@ not invent direct astrophysical detection. Count the open questions yourself.
 Related edges (e.g. to the horizon or the information paradox) are
 <i>recorded links</i>, not a score of who is right.
 Full pipeline notes (data → axes → narrative → UI):
-<a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/hawking-walkthrough.md">hawking-walkthrough.md</a>.</p>
+<a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/hawking-walkthrough.md">hawking-walkthrough.md</a>.
+Closed challenge (Trust Loop):
+<a href="https://github.com/taipei49314/universe-explorer/issues/2">issue #2</a>
+— Strong re-review, light unchanged.</p>
+
+<h2 id="canonicals">Three stories to learn the product</h2>
+<p class="note" style="opacity:.8;font-size:.9rem">Teaching anchors only —
+not a ranking of science. Each opens a claim and a reading path.</p>
+<ol>
+<li><b>Dual axes (Cosmos)</b> —
+  <a href="app.html?c=hawking_radiation"><code>hawking_radiation</code></a>
+  · path <a href="app.html?path=path_black_hole"><code>path_black_hole</code></a>
+  — Strong consensus × non-direct evidence (⚡ diverge).</li>
+<li><b>Competing models (Cosmos)</b> —
+  <a href="app.html?c=H0_tension_local_vs_cmb"><code>H0_tension_local_vs_cmb</code></a>
+  · path <a href="app.html?path=path_h0"><code>path_h0</code></a>
+  — yellow umbrella; poles and relief routes; <i>no path step is a winner</i>.</li>
+<li><b>Competing models (Earth)</b> —
+  <a href="app.html?c=short_term_deterministic_prediction"><code>short_term_deterministic_prediction</code></a>
+  · path <a href="app.html?path=path_seismology"><code>path_seismology</code></a>
+  — prediction vs forecasting; season secondary in the editorial queue.</li>
+</ol>
+<p>Machine list: <code>universe_explorer/canonicals.py</code> · inventory also on
+<a href="health.html#trust-loop">health Trust Loop panel</a>.</p>
 
 <h2>The five lights (they belong to claims, never to topics)</h2>
 <table class="lights">
@@ -827,7 +850,29 @@ _ABOUT_ZH = f"""<!doctype html>
 卡片可能出現 <b>⚡ 雙軸分岔</b>。這就是產品的一句話:高共識不捏造直接天文偵測。
 開放問題請自己數。關聯邊(例如連到視界或資訊悖論)是<i>已記錄的連結</i>,不是勝負分數。
 完整管線說明(data → axes → narrative → UI):
-<a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/hawking-walkthrough.md">hawking-walkthrough.md</a>。</p>
+<a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/hawking-walkthrough.md">hawking-walkthrough.md</a>。
+Trust Loop 已關閉挑戰:
+<a href="https://github.com/taipei49314/universe-explorer/issues/2">issue #2</a>
+— Strong 覆核,燈號未改。</p>
+
+<h2 id="canonicals">三則故事,學會這個產品</h2>
+<p style="opacity:.8;font-size:.9rem">僅教學錨點 —— 不是科學排名。每一則連到宣稱與閱讀路徑。</p>
+<ol>
+<li><b>雙軸(宇宙)</b> —
+  <a href="app.html?c=hawking_radiation"><code>hawking_radiation</code></a>
+  · 路徑 <a href="app.html?path=path_black_hole"><code>path_black_hole</code></a>
+  — 強共識 × 非直接證據(⚡ 分岔)。</li>
+<li><b>競爭模型(宇宙)</b> —
+  <a href="app.html?c=H0_tension_local_vs_cmb"><code>H0_tension_local_vs_cmb</code></a>
+  · 路徑 <a href="app.html?path=path_h0"><code>path_h0</code></a>
+  — 黃燈傘形;兩極與緩解路徑;<i>路徑步驟沒有勝負</i>。</li>
+<li><b>競爭模型(地球)</b> —
+  <a href="app.html?c=short_term_deterministic_prediction"><code>short_term_deterministic_prediction</code></a>
+  · 路徑 <a href="app.html?path=path_seismology"><code>path_seismology</code></a>
+  — 確定性預測 vs 預報;本季 editorial 次要域。</li>
+</ol>
+<p>機器清單:<code>universe_explorer/canonicals.py</code> · 亦見
+<a href="health.html#trust-loop">health Trust Loop 面板</a>。</p>
 
 <h2>五格燈號(屬於 claim,永不屬於 topic)</h2>
 <table class="lights">
