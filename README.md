@@ -259,7 +259,8 @@ Knowledge grows by **human editorial hours** under the constitution — not by c
 | [`docs/constitution.md`](docs/constitution.md) | Consolidated laws |
 | [`docs/design-framework.md`](docs/design-framework.md) | North star + roadmap history |
 | [`docs/milestones-complete.md`](docs/milestones-complete.md) | Closeout board (P5b, R-Graph, …) |
-| [`docs/roadmap-v5-trust-loop.md`](docs/roadmap-v5-trust-loop.md) | **Next:** V1 Trust Loop (overturn · editorial week · 3 canonicals) |
+| [`docs/roadmap-v5-trust-loop.md`](docs/roadmap-v5-trust-loop.md) | V1 Trust Loop (S0+S1 done; S2/S3 next) |
+| [`docs/challenges/`](docs/challenges/) | Closed challenge records (first: Hawking #2) |
 | [`docs/product-remediation-7.md`](docs/product-remediation-7.md) | P-Read … P-Sustain |
 | [`docs/amendment-*.md`](docs/) | Numbered constitution changes |
 | [`docs/editorial-queue.md`](docs/editorial-queue.md) | What editors work on this season |

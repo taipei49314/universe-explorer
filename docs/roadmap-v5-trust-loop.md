@@ -1,6 +1,6 @@
 # Roadmap v5 — Trust Loop（可被挑戰的公共知識台帳）
 
-> **狀態：** 規劃已定，待分 sprint 執行。  
+> **狀態：** 規劃已定；**S0 + S1 已完成**（2026-08-10），S2/S3 待做。  
 > **日期：** 2026-08-10  
 > **前置：** v0–v4 引擎與產品表面已合閘；CI 含 pytest 全 suite +  
 > `trust_behavior`（481）+ `ui_expand`（56）。  
@@ -37,7 +37,7 @@ python run_tests.py
 | Authored edges | 96 |
 | Reading paths | 8（每 domain 至少一條） |
 | trust_behavior | n_fail 必須為 0 才准談「可信」 |
-| 公開 overturn 案例 | **0**（本 roadmap 主缺口） |
+| 公開 overturn 案例 | **≥1** — issue [#2](https://github.com/taipei49314/universe-explorer/issues/2)（reasoned **reject**；見 `docs/challenges/`） |
 
 ### 憲法紅線（v5 全程）
 
@@ -95,8 +95,8 @@ Q3 不得在 Q1 量測閘門變紅時上線「更炫 UI」當替代。
 
 | Sprint | 長度 | 交付 |
 |--------|------|------|
-| **S0** | 2–3 日 | 本文件合入；trust_behavior 掛 TL 量測 ID（§6）；milestones 加 v5 列 |
-| **S1** | 1 週 | **TL-1**：完成第一條公開挑戰閉環（接受或有據駁回） |
+| **S0** | ✅ 2026-08-10 | 本文件合入；`measure_overturn_loop` TL 量測 ID；milestones v5 列 |
+| **S1** | ✅ 2026-08-10 | **TL-1**：issue #2 `hawking_radiation` 公開閉環 — **reject** light change（條件級理由 + `docs/challenges/` 紀錄） |
 | **S2** | 1 週 | **TL-3** 週儀式落地 + **TL-2** 最小儀表（changes/health 文案即可） |
 | **S3** | 1–2 週 | **TL-4** 三 canonical 導覽對齊；第二條挑戰可選 |
 

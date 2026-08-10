@@ -27,7 +27,9 @@
 | **Editorial tooling (T19/T20)** | ✅ 2026-08-10 | annotate / claim review / batch — store outside `data/`; never auto-write lights |
 | NASA/ESA adapter | ❌ deferred | Explicit non-goal until a real inlet exists |
 | T4b multi-source 7B | ❌ deferred | Needs model ops; not blocking product honesty |
-| **v5 Trust Loop** | 🔄 planned | [`roadmap-v5-trust-loop.md`](roadmap-v5-trust-loop.md) — public overturn · weekly SLA · 3 canonicals; not claim-count KPI |
+| **v5 Trust Loop** | 🔄 in progress | [`roadmap-v5-trust-loop.md`](roadmap-v5-trust-loop.md) |
+| **v5 S0 measure rows** | ✅ 2026-08-10 | `measure_overturn_loop` ids in `trust_behavior.py` |
+| **v5 S1 first closed challenge** | ✅ 2026-08-10 | issue [#2](https://github.com/taipei49314/universe-explorer/issues/2) · [`challenges/2026-08-10-hawking-strong-re-review.md`](challenges/2026-08-10-hawking-strong-re-review.md) — **reject** light change; dual-axis reaffirmed |
 | **`planets` authored reading path** | ✅ 2026-08-10 | `path_planets` chronology → icy moons → life/Mars ceilings |
 
 ## Totals after closeout

@@ -39,6 +39,19 @@ execute). A suite that collects **0 items** is a failure — bare
 `n_pass` / `n_fail` / `n_measurements` are **counts of the measurement list** —
 recount them yourself.
 
+## v5 Trust Loop rows (S0)
+
+| id | Pass when |
+|----|-----------|
+| `overturn.challenge_verdict_template` | `.github/ISSUE_TEMPLATE/challenge-a-verdict.yml` exists |
+| `overturn.challenge_relation_template` | relation challenge template exists |
+| `overturn.contributing_mentions_challenge` | CONTRIBUTING documents challenge + `status_reason` |
+| `overturn.feed_or_changes_surface` | dist feed/changes **or** generator modules present |
+| `canonical.tour_mentions_axes` | app tour teaches dual axes / denies confidence % |
+| `overturn.public_record_exists` | ≥1 `docs/challenges/*.md` closed-loop record |
+
+First public record: [`docs/challenges/2026-08-10-hawking-strong-re-review.md`](challenges/2026-08-10-hawking-strong-re-review.md) (issue #2).
+
 ## Blind-spot tests
 
 `test_trust_behavior.py` deliberately injects broken shapes:

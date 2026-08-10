@@ -354,6 +354,7 @@ def measure_ui_contracts() -> List[Measurement]:
         ))
 
     # Challenge issue templates — overturn path is real
+    # (legacy ids kept; v5 Trust Loop ids live in measure_overturn_loop)
     for name, mid in (
         ("challenge-a-verdict.yml", "ui.challenge_verdict_template"),
         ("challenge-a-relation.yml", "ui.challenge_relation_template"),
@@ -366,6 +367,111 @@ def measure_ui_contracts() -> List[Measurement]:
             observed=p.is_file(),
             note="GitHub overturn inlet",
         ))
+    return ms
+
+
+def measure_overturn_loop() -> List[Measurement]:
+    """v5 Trust Loop (S0): surfaces that make overturn a product path, not a slogan.
+
+    Measurement ids match docs/roadmap-v5-trust-loop.md §7.2.
+    """
+    ms: List[Measurement] = []
+    contributing = ROOT / "CONTRIBUTING.md"
+    contrib_text = (
+        contributing.read_text(encoding="utf-8") if contributing.is_file() else ""
+    )
+    app = WEB_APP.read_text(encoding="utf-8") if WEB_APP.is_file() else ""
+
+    verdict_tpl = ISSUE_DIR / "challenge-a-verdict.yml"
+    relation_tpl = ISSUE_DIR / "challenge-a-relation.yml"
+    ms.append(_m_bool(
+        "overturn.challenge_verdict_template",
+        "contract", "overturn",
+        ok=verdict_tpl.is_file(),
+        expected="challenge-a-verdict.yml",
+        observed=verdict_tpl.is_file(),
+        note="v5 TL: verdict overturn inlet",
+    ))
+    ms.append(_m_bool(
+        "overturn.challenge_relation_template",
+        "contract", "overturn",
+        ok=relation_tpl.is_file(),
+        expected="challenge-a-relation.yml",
+        observed=relation_tpl.is_file(),
+        note="v5 TL: edge overturn inlet",
+    ))
+    ms.append(_m_bool(
+        "overturn.contributing_mentions_challenge",
+        "contract", "overturn",
+        ok=("challenge" in contrib_text.lower()
+            and "status_reason" in contrib_text),
+        expected="CONTRIBUTING documents challenge + status_reason path",
+        observed={
+            "exists": contributing.is_file(),
+            "has_challenge": "challenge" in contrib_text.lower(),
+            "has_status_reason": "status_reason" in contrib_text,
+        },
+        note="10-minute re-review path",
+    ))
+
+    # feed / changes: source of truth is build outputs when dist present;
+    # otherwise require the *generators* so the path is real pre-build.
+    feed_dist = DIST / "feed.xml"
+    changes_dist = DIST / "changes.html"
+    feed_src_ok = (ROOT / "universe_explorer" / "dataops" / "feed.py").is_file()
+    surface_src_ok = (ROOT / "universe_explorer" / "surface.py").is_file()
+    if feed_dist.is_file() and changes_dist.is_file():
+        feed_ok, obs = True, "dist/feed.xml + dist/changes.html"
+    else:
+        feed_ok = feed_src_ok and surface_src_ok
+        obs = {
+            "dist_feed": feed_dist.is_file(),
+            "dist_changes": changes_dist.is_file(),
+            "feed_module": feed_src_ok,
+            "surface_module": surface_src_ok,
+        }
+    ms.append(_m_bool(
+        "overturn.feed_or_changes_surface",
+        "surface", "overturn",
+        ok=feed_ok,
+        expected="feed + changes publish path",
+        observed=obs,
+        note="challenge outcomes must be able to surface as restated events",
+    ))
+
+    # Canonical tour: axes without confidence % (about + app tour copy)
+    tour_ok = (
+        "no confidence" in app.lower()
+        or "Two axes, no confidence" in app
+        or "two axes" in app.lower()
+    )
+    ms.append(_m_bool(
+        "canonical.tour_mentions_axes",
+        "contract", "ui",
+        ok=tour_ok,
+        expected="tour teaches dual axes / denies confidence %",
+        observed=tour_ok,
+        note="v5 TL-4 / PP-1 entry story",
+    ))
+
+    # Public record that at least one challenge closed loop exists (ops, not vanity)
+    challenges_dir = ROOT / "docs" / "challenges"
+    challenge_records = (
+        list(challenges_dir.glob("*.md")) if challenges_dir.is_dir() else []
+    )
+    # Exclude a pure README placeholder if we add one later
+    challenge_records = [
+        p for p in challenge_records
+        if p.name.lower() not in ("readme.md", "template.md")
+    ]
+    ms.append(_m_bool(
+        "overturn.public_record_exists",
+        "inventory", "overturn",
+        ok=len(challenge_records) >= 1,
+        expected="≥1 docs/challenges/*.md record",
+        observed=[p.name for p in challenge_records],
+        note="v5 Q1: at least one documented closed loop (accept or reasoned reject)",
+    ))
     return ms
 
 
@@ -549,6 +655,7 @@ def measure(
     measurements.extend(measure_inventory(topics))
     measurements.extend(measure_stress_hawking(topics))
     measurements.extend(measure_ui_contracts())
+    measurements.extend(measure_overturn_loop())
     if include_dist:
         measurements.extend(measure_dist_exports(topics))
 

@@ -1,7 +1,7 @@
 {
   "kind": "trust_behavior_measure",
-  "n_measurements": 481,
-  "n_pass": 481,
+  "n_measurements": 487,
+  "n_pass": 487,
   "n_fail": 0,
   "all_ok": true,
   "n_topics": 8,
@@ -4267,6 +4267,66 @@
       "observed": true,
       "ok": true,
       "note": "GitHub overturn inlet"
+    },
+    {
+      "id": "overturn.challenge_verdict_template",
+      "surface": "contract",
+      "kind": "overturn",
+      "expected": "challenge-a-verdict.yml",
+      "observed": true,
+      "ok": true,
+      "note": "v5 TL: verdict overturn inlet"
+    },
+    {
+      "id": "overturn.challenge_relation_template",
+      "surface": "contract",
+      "kind": "overturn",
+      "expected": "challenge-a-relation.yml",
+      "observed": true,
+      "ok": true,
+      "note": "v5 TL: edge overturn inlet"
+    },
+    {
+      "id": "overturn.contributing_mentions_challenge",
+      "surface": "contract",
+      "kind": "overturn",
+      "expected": "CONTRIBUTING documents challenge + status_reason path",
+      "observed": {
+        "exists": true,
+        "has_challenge": true,
+        "has_status_reason": true
+      },
+      "ok": true,
+      "note": "10-minute re-review path"
+    },
+    {
+      "id": "overturn.feed_or_changes_surface",
+      "surface": "surface",
+      "kind": "overturn",
+      "expected": "feed + changes publish path",
+      "observed": "dist/feed.xml + dist/changes.html",
+      "ok": true,
+      "note": "challenge outcomes must be able to surface as restated events"
+    },
+    {
+      "id": "canonical.tour_mentions_axes",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": "tour teaches dual axes / denies confidence %",
+      "observed": true,
+      "ok": true,
+      "note": "v5 TL-4 / PP-1 entry story"
+    },
+    {
+      "id": "overturn.public_record_exists",
+      "surface": "inventory",
+      "kind": "overturn",
+      "expected": "≥1 docs/challenges/*.md record",
+      "observed": [
+        "2026-08-10-hawking-strong-re-review.md"
+      ],
+      "ok": true,
+      "note": "v5 Q1: at least one documented closed loop (accept or reasoned reject)"
     },
     {
       "id": "export.claims_json_no_banned_keys",

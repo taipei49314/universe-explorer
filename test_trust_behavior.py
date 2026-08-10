@@ -85,6 +85,33 @@ def test_dist_automation_rows_present_when_built():
     assert row["ok"] is True, row
 
 
+def test_v5_overturn_loop_measurements_pass():
+    """S0 Trust Loop ids must be present and green after first public record."""
+    ms = TB.measure_overturn_loop()
+    by = {m.id: m for m in ms}
+    for mid in (
+        "overturn.challenge_verdict_template",
+        "overturn.challenge_relation_template",
+        "overturn.contributing_mentions_challenge",
+        "overturn.feed_or_changes_surface",
+        "canonical.tour_mentions_axes",
+        "overturn.public_record_exists",
+    ):
+        assert mid in by, mid
+        assert by[mid].ok is True, (mid, by[mid].observed)
+
+
+def test_challenge_record_names_issue_and_claim():
+    """Blind spot: empty challenge markdown must not satisfy the measure."""
+    records = list(Path("docs/challenges").glob("*.md"))
+    records = [p for p in records if p.name.lower() not in ("readme.md", "template.md")]
+    assert len(records) >= 1
+    text = records[0].read_text(encoding="utf-8")
+    assert "hawking_radiation" in text
+    assert "issues/" in text or "issue" in text.lower()
+    assert "Reject" in text or "reject" in text or "Accept" in text
+
+
 def test_cli_exit_zero_on_live():
     assert TB.main([]) == 0
 
