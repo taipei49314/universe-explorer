@@ -150,6 +150,11 @@ def main(argv) -> int:
     from universe_explorer.reader.api_docs import generate_api_docs
     generate_api_docs(dist_dir=out_dir)
 
+    # Changelog
+    from universe_explorer.reader.changelog import generate_changelog
+    changelog = generate_changelog()
+    (out_dir / "CHANGELOG.md").write_text(changelog, encoding="utf-8")
+
     print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
           f"+ zh.html + discovery/crossdomain/reader/dashboard/stats pages -> {out_dir}")
     print(f"Health: all green. Automation: {metrics.automation_rate}")
