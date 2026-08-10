@@ -12,6 +12,7 @@ Commands:
     paths           List all reading paths
     discover <q>    Run discovery pipeline
     graph           Build cross-domain graph
+    health          Run health checks on all components
     help            Show this help
 
 Examples:
@@ -20,6 +21,7 @@ Examples:
     python -m universe_explorer filter --domain cosmology --status STRONG
     python -m universe_explorer stats
     python -m universe_explorer discover "gravitational wave" --topic cosmology
+    python -m universe_explorer health
 """
 
 from __future__ import annotations
@@ -114,6 +116,14 @@ def main(argv: list = None) -> int:
         graph = build_cross_domain_graph(TOPICS)
         print(format_graph_report(graph))
         return 0
+
+    if cmd == "health":
+        from .data.registry import TOPICS
+        from .reader.health_check import run_health_checks, format_health_report
+        checks = run_health_checks(TOPICS, verbose="--verbose" in args)
+        print(format_health_report(checks))
+        errors = sum(1 for c in checks if c.status == "error")
+        return 1 if errors > 0 else 0
 
     print(f"Unknown command: {cmd!r}. Run 'python -m universe_explorer help' for usage.")
     return 1
