@@ -116,8 +116,12 @@ def main(argv) -> int:
     (out_dir / "dual-axis.svg").write_text(
         generate_dual_axis_svg(TOPICS), encoding="utf-8")
 
+    # Dashboard: central hub linking all pages
+    from universe_explorer.reader.dashboard import render_dashboard
+    render_dashboard(TOPICS, dist_dir=out_dir)
+
     print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
-          f"+ zh.html + discovery/crossdomain/reader pages -> {out_dir}")
+          f"+ zh.html + discovery/crossdomain/reader/dashboard pages -> {out_dir}")
     return 0
 
 
