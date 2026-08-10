@@ -128,8 +128,27 @@ def main(argv) -> int:
         json.dumps(stats.to_dict(), indent=2, ensure_ascii=False),
         encoding="utf-8")
 
+    # Health check validation gate
+    from universe_explorer.reader.health_check import run_health_checks
+    health_checks = run_health_checks(TOPICS)
+    health_errors = sum(1 for c in health_checks if c.status == "error")
+    if health_errors > 0:
+        print(f"\nBuild blocked: {health_errors} health check error(s).")
+        for c in health_checks:
+            if c.status == "error":
+                print(f"  ✗ {c.component}: {c.message}")
+        return 1
+
+    # Automation metrics
+    from universe_explorer.reader.automation_metrics import compute_metrics
+    metrics = compute_metrics()
+    (out_dir / "automation-metrics.json").write_text(
+        json.dumps(metrics.to_dict(), indent=2, ensure_ascii=False),
+        encoding="utf-8")
+
     print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
           f"+ zh.html + discovery/crossdomain/reader/dashboard/stats pages -> {out_dir}")
+    print(f"Health: all green. Automation: {metrics.automation_rate}")
     return 0
 
 
