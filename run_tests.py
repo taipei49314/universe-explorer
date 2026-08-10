@@ -50,6 +50,8 @@ SUITES = [
     "test_integration.py",    # End-to-end integration tests
     "test_new_modules.py",    # Stats, export, diff, annotate, review, batch
     "test_links.py",          # link / reading-path integrity
+    "test_content.py",        # every claim content/provenance/status shape
+    "test_benchmarks.py",     # latency budgets (measure, then trust speed)
     "test_adversarial.py",    # adversarial: empty/unicode/cache edges
     "test_adversarial_2.py",  # adversarial: constitutional invariants
     "test_adversarial_3.py",  # adversarial: watch/discovery/cache/reviews
