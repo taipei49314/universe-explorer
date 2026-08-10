@@ -306,6 +306,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Health check")
     parser.add_argument("--verbose", action="store_true", help="Show all details")
+    parser.add_argument("--tag", help="Filter by annotation tag")
     args = parser.parse_args()
 
     checks = run_health_checks(TOPICS, verbose=args.verbose)
