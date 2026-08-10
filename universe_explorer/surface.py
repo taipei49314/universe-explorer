@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 from typing import Any, List, Sequence
 
+from .challenge_ops import trust_loop_inventory
 from .data.registry import TOPICS
 from .model import Status, Topic
 from .relations import relations_payload
@@ -84,10 +85,13 @@ def health_payload(topics: Sequence[Topic] | None = None) -> dict:
         "coverage": cov,
         "by_topic": by_topic,
         "audit_sample": sample_claims(topics, n=3),
+        "trust_loop": trust_loop_inventory(),
         "note": (
             "Mechanical inventory for third-party audit. "
             "Counts are list counts — recount them yourself. "
-            "Challenge lights and edges on GitHub."
+            "Challenge lights and edges on GitHub. "
+            "trust_loop panel: closed records + weeklies + candidate counts "
+            "(no confidence)."
         ),
         "links": {
             "map": "app.html",
@@ -102,10 +106,65 @@ def health_payload(topics: Sequence[Topic] | None = None) -> dict:
                 "https://github.com/taipei49314/universe-explorer/issues/new"
                 "?template=challenge-a-relation.yml"
             ),
+            "challenge_records": (
+                "https://github.com/taipei49314/universe-explorer/tree/main/docs/challenges"
+            ),
+            "weeklies": (
+                "https://github.com/taipei49314/universe-explorer/tree/main/docs/weeklies"
+            ),
         },
     }
     assert not (set(payload) & BANNED)
     return payload
+
+
+def _render_trust_loop_section(tl: dict, links: dict) -> str:
+    """TL-2: pending is GitHub; closed records + weeklies + candidates are local counts."""
+    recs = tl.get("challenge_records") or []
+    if recs:
+        rows = "".join(
+            f"<tr><td><code>{_esc(r.get('claim_id', ''))}</code></td>"
+            f"<td>{_esc(r.get('verdict', ''))}</td>"
+            f"<td>{_esc(r.get('issue', ''))}</td>"
+            f"<td><code>{_esc(r.get('file', ''))}</code></td>"
+            f"<td>{_esc(r.get('date', ''))}</td></tr>"
+            for r in recs
+        )
+        table = (
+            "<table><tr><th>Claim</th><th>Verdict</th><th>Issue</th>"
+            f"<th>Record</th><th>Date</th></tr>{rows}</table>"
+        )
+    else:
+        table = (
+            "<p><b>No closed challenge records yet.</b> "
+            "Open a challenge, then write <code>docs/challenges/*.md</code>.</p>"
+        )
+    cands = tl.get("candidates") or {}
+    latest_w = tl.get("latest_weekly") or "—"
+    gh = _esc(tl.get("github_challenge_label") or links.get("challenge_verdict", "#"))
+    rec_link = _esc(links.get("challenge_records", "#"))
+    week_link = _esc(links.get("weeklies", "#"))
+    return f"""
+<h2 id="trust-loop">Trust Loop (overturn panel)</h2>
+<p class="note">{_esc(tl.get("note", ""))}</p>
+<ul>
+  <li>Closed challenge records: <b>{tl.get("n_challenge_records", 0)}</b>
+      (reject: <b>{tl.get("n_verdict_reject", 0)}</b>
+      · accept: <b>{tl.get("n_verdict_accept", 0)}</b>)</li>
+  <li>Open / labeled challenges: see
+      <a href="{gh}">GitHub label <code>challenge</code></a>
+      (live issue tracker — not a local score)</li>
+  <li>Weeklies: <b>{tl.get("n_weeklies", 0)}</b>
+      · latest: <code>{_esc(str(latest_w))}</code>
+      · <a href="{week_link}">docs/weeklies/</a></li>
+  <li>Candidates pending: <b>{cands.get("n_pending", 0)}</b>
+      · rejected archive: <b>{cands.get("n_rejected_archived", 0)}</b>
+      (process ≤3/week or legal silence)</li>
+  <li>Records dir:
+      <a href="{rec_link}">docs/challenges/</a></li>
+</ul>
+{table}
+"""
 
 
 def render_health_html(payload: dict) -> str:
@@ -165,6 +224,7 @@ h1 {{ margin-bottom: 4px; }}
       / {cov.get("n_claims")}
       · isolated (authored): <b>{cov.get("n_isolated_authored")}</b></li>
 </ul>
+{_render_trust_loop_section(payload.get("trust_loop") or {}, payload.get("links") or {})}
 <h2>Today's audit sample (3 claims)</h2>
 <p class="note">Deterministic sample for the UTC date — recount sources yourself.</p>
 <table>
@@ -225,6 +285,7 @@ def list_recent_events(limit: int = 8) -> List[dict]:
 def render_changes_html() -> str:
     digests = list_recent_digests()
     events = list_recent_events()
+    tl = trust_loop_inventory()
     if digests:
         d_html = "".join(
             f"<section><h3><code>{_esc(d['name'])}</code> "
@@ -248,6 +309,38 @@ def render_changes_html() -> str:
     else:
         e_html = "<p>No event files found.</p>"
 
+    # TL-2/TL-3: overturn + weekly ritual surface (counts only)
+    recs = tl.get("challenge_records") or []
+    if recs:
+        ch_html = "<ul>" + "".join(
+            f"<li><code>{_esc(r['claim_id'])}</code> — "
+            f"<b>{_esc(r['verdict'])}</b> { _esc(r.get('issue', '')) } "
+            f"(<code>{_esc(r['file'])}</code>)</li>"
+            for r in recs
+        ) + "</ul>"
+    else:
+        ch_html = (
+            "<p>No closed challenge records. "
+            "A quiet channel here is not a trust score — "
+            "open a challenge or keep legal silence in weeklies.</p>"
+        )
+    weeks = tl.get("weeklies") or []
+    if weeks:
+        w_html = "<ul>" + "".join(
+            f"<li><code>{_esc(w['file'])}</code>"
+            f"{' · legal silence' if w.get('legal_silence') else ''}"
+            f"{' · mentions challenge' if w.get('mentions_challenge') else ''}"
+            f"</li>"
+            for w in weeks
+        ) + "</ul>"
+    else:
+        w_html = (
+            "<p><b>No weeklies yet.</b> "
+            "Write <code>docs/weeklies/YYYY-Www.md</code> — "
+            "either work done (≤3 candidates) or <b>legal silence</b>.</p>"
+        )
+    cands = tl.get("candidates") or {}
+
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -269,12 +362,27 @@ pre {{ background: #f4f4f5; padding: 12px; overflow: auto; font-size: .78rem;
 <p class="nav">
   <a href="app.html">Map</a>
   <a href="health.html">Health</a>
+  <a href="health.html#trust-loop">Trust Loop</a>
   <a href="about.html">How to read</a>
   <a href="feed.xml">Atom feed</a>
+  <a href="challenge.html">Challenge</a>
 </p>
 <h1>Changes</h1>
 <p class="note">Mechanical restatement of recorded state changes. Digests do not
-interpret science. If nothing changed, the channel stays silent — that is a feature.</p>
+interpret science. If nothing changed, the channel stays silent — that is a feature
+(<b>legal silence</b>), not a confidence score.</p>
+
+<h2 id="overturn">Closed challenges (overturn ledger)</h2>
+<p class="note">Permanent records under <code>docs/challenges/</code>.
+Open issues: <a href="{_esc(tl.get('github_challenge_label', '#'))}">label challenge</a>.</p>
+{ch_html}
+
+<h2 id="weeklies">Editorial weeklies</h2>
+<p class="note">Ritual: process ≤3 candidates <b>or</b> record legal silence.
+Latest: <code>{_esc(str(tl.get('latest_weekly') or '—'))}</code>.
+Pending candidates: <b>{cands.get('n_pending', 0)}</b>.</p>
+{w_html}
+
 <h2>Recent digests</h2>
 {d_html}
 <h2>Recent event files</h2>
