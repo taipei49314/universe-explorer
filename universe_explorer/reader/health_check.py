@@ -310,6 +310,8 @@ if __name__ == "__main__":
     parser.add_argument("--label", help="Filter by annotation label")
     parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has notes")
+    parser.add_argument("--has-competing", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has competing models")
     args = parser.parse_args()
 
     checks = run_health_checks(TOPICS, verbose=args.verbose)
