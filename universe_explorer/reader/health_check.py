@@ -309,6 +309,7 @@ if __name__ == "__main__":
     parser.add_argument("--domain", help="Filter by domain")
     parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--label", help="Filter by annotation label")
+    parser.add_argument("--claim-status", help="Filter by claim status")
     parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has notes")
     parser.add_argument("--has-competing", type=lambda x: x.lower() == "true",
