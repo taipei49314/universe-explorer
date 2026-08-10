@@ -313,6 +313,8 @@ if __name__ == "__main__":
                         help="Filter by whether claim has notes")
     parser.add_argument("--has-competing", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has competing models")
+    parser.add_argument("--has-open-questions", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has open questions")
     args = parser.parse_args()
 
     manager = ReviewManager()
@@ -347,6 +349,15 @@ if __name__ == "__main__":
             else:
                 reviews = [r for r in reviews
                            if r["claim_id"] in claim_map and not claim_map[r["claim_id"]].competing_models]
+        if args.has_open_questions is not None:
+            from ..data.registry import TOPICS
+            claim_map = {c.id: c for t in TOPICS for c in t.claims}
+            if args.has_open_questions:
+                reviews = [r for r in reviews
+                           if r["claim_id"] in claim_map and claim_map[r["claim_id"]].open_questions]
+            else:
+                reviews = [r for r in reviews
+                           if r["claim_id"] in claim_map and not claim_map[r["claim_id"]].open_questions]
         print(f"Reviews: {len(reviews)}")
         for r in reviews:
             print(f"  {r['claim_id']}: {r['status']} ({r['progress']:.0f}%)")
