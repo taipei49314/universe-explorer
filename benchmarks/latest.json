@@ -1,7 +1,7 @@
 {
-  "search_10x_ms": 2.5,
-  "filter_10x_ms": 4.0,
-  "stats_10x_ms": 8.0,
-  "graph_1x_ms": 1.0,
-  "validate_all_1x_ms": 5.0
+  "search_10x_ms": 2.0,
+  "filter_10x_ms": 4.5,
+  "stats_10x_ms": 7.5,
+  "graph_1x_ms": 1.1,
+  "validate_all_1x_ms": 5.1
 }
