@@ -160,6 +160,11 @@ def main(argv) -> int:
     sitemap = generate_sitemap()
     (out_dir / "sitemap.xml").write_text(sitemap, encoding="utf-8")
 
+    # Robots.txt
+    from universe_explorer.reader.robots import generate_robots
+    robots = generate_robots()
+    (out_dir / "robots.txt").write_text(robots, encoding="utf-8")
+
     print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
           f"+ zh.html + discovery/crossdomain/reader/dashboard/stats pages -> {out_dir}")
     print(f"Health: all green. Automation: {metrics.automation_rate}")
