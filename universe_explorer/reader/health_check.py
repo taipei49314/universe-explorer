@@ -308,6 +308,8 @@ if __name__ == "__main__":
     parser.add_argument("--verbose", action="store_true", help="Show all details")
     parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--label", help="Filter by annotation label")
+    parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has notes")
     args = parser.parse_args()
 
     checks = run_health_checks(TOPICS, verbose=args.verbose)
