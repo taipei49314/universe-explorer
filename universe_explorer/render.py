@@ -716,11 +716,13 @@ so that <b>every verdict can be checked — and overturned — by anyone</b>.
 <p><a href="app.html">Open the map</a> · first visit shows a 60-second tour ·
 or jump to the <a href="app.html?c=hawking_radiation">Hawking radiation example</a>.</p>
 <p>Other surfaces (same data, different lenses):
+<a href="dashboard.html">dashboard</a> ·
 <a href="explore-v2.html">search &amp; filter</a> ·
 <a href="epistemic_map.html">cross-domain map</a> ·
 <a href="explore.html">browse all claims</a> ·
 <a href="challenge.html">challenge a verdict</a> ·
-<a href="health.html">inventory health</a>.</p>
+<a href="health.html">inventory health</a> ·
+<a href="stats.json">stats.json</a>.</p>
 
 <h2 id="example">Canonical example: Hawking radiation</h2>
 <p>Open <a href="app.html?c=hawking_radiation"><code>hawking_radiation</code></a>
@@ -811,11 +813,13 @@ _ABOUT_ZH = f"""<!doctype html>
 <p><a href="app.html">打開地圖</a> · 首次造訪有約 60 秒導覽 ·
 或直接看範例 <a href="app.html?c=hawking_radiation">霍金輻射</a>。</p>
 <p>其他介面（同一套資料、不同切面）:
+<a href="dashboard.html">總覽儀表板</a> ·
 <a href="explore-v2.html">搜尋與篩選</a> ·
 <a href="epistemic_map.html">跨領域地圖</a> ·
 <a href="explore-zh.html">瀏覽全部宣稱</a> ·
 <a href="challenge.html">挑戰判定</a> ·
-<a href="health.html">盤點健康</a>。</p>
+<a href="health.html">盤點健康</a> ·
+<a href="stats.json">stats.json</a>。</p>
 
 <h2 id="example">標準範例:霍金輻射</h2>
 <p>在地圖打開 <a href="app.html?c=hawking_radiation"><code>hawking_radiation</code></a>。
@@ -1017,6 +1021,7 @@ _INDEX = """<!doctype html>
   <div class="cta">
     <a class="primary" href="universe.html">Drift the universe</a>
     <a class="ghost" href="app.html">Knowledge map</a>
+    <a class="ghost" href="dashboard.html">Dashboard</a>
     <a class="ghost" href="explore-v2.html">Search &amp; filter</a>
     <a class="ghost" href="epistemic_map.html">Cross-domain map</a>
     <a class="ghost" href="explore.html">Explore claims</a>

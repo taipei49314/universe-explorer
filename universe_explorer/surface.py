@@ -142,12 +142,14 @@ h1 {{ margin-bottom: 4px; }}
 <body>
 <p class="nav">
   <a href="app.html">Map</a>
+  <a href="dashboard.html">Dashboard</a>
   <a href="explore-v2.html">Search</a>
   <a href="epistemic_map.html">Cross-domain</a>
   <a href="challenge.html">Challenge</a>
   <a href="changes.html">Changes</a>
   <a href="about.html">How to read</a>
   <a href="feed.xml">Feed</a>
+  <a href="stats.json">stats.json</a>
   <a href="health.json">health.json</a>
 </p>
 <h1>Site health</h1>

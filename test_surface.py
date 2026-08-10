@@ -35,8 +35,14 @@ def test_sample_stable_for_day():
 def test_health_html_has_nav():
     html = render_health_html(health_payload(TOPICS))
     assert "health.json" in html and "challenge" in html.lower()
-    # Phase 1–3 surfaces stay one hop from the audit page
-    for href in ("explore-v2.html", "epistemic_map.html", "challenge.html"):
+    # Phase 1–3 + dashboard/stats stay one hop from the audit page
+    for href in (
+        "explore-v2.html",
+        "epistemic_map.html",
+        "challenge.html",
+        "dashboard.html",
+        "stats.json",
+    ):
         assert href in html, href
 
 

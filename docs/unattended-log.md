@@ -19,4 +19,6 @@ Append-only operational notes. Not a product surface. No confidence scores.
 | 2026-08-10T03:xx | Align inventory counts (96 edges) · about/CONTRIBUTING walkthrough links · GitHub topics | pushed `384465d` · tests green |
 | 2026-08-10T03:xx | Lock inventory honesty: `test_inventory_docs.py` wires README/milestones to live counts | pushed `285f7c0` · tests green |
 | 2026-08-10T0x:xx | Phase 1–3 code: discovery / crossdomain / reader + build integration + e2e tests | pushed `b64f7de`–`8a88e70` · tests green |
-| 2026-08-10T04:14Z | Product/docs honesty for Phase 1–3 surfaces: README layout+surfaces+modules; about EN/ZH; index CTA; health nav; milestones rows; inventory/surface locks | tests green · push this commit |
+| 2026-08-10T04:14Z | Product/docs honesty for Phase 1–3 surfaces: README layout+surfaces+modules; about EN/ZH; index CTA; health nav; milestones rows; inventory/surface locks | pushed `55479f0` · tests green |
+| 2026-08-10T0x:xx | Reader tooling: annotate, claim review (T19), batch (T20), dashboard, stats/export/diff + CI suite | pushed `8c0f8aa`–`de1076f` · tests green |
+| 2026-08-10T05:15Z | Product honesty after tooling: fix edge-count split (96/67/171), test inventory 318, document annotate/review/batch, link dashboard+stats on about/index/health; note planets path still open | tests green · push this commit |

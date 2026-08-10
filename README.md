@@ -23,11 +23,11 @@ It does **not** tell you “the answer.” It shows, claim by claim:
 | Topics | **8** |
 | Claims | **91** |
 | Themes | Cosmos · Planets · Earth |
-| Relation edges | **171** (96 authored + 75 mechanical; 8 cross-domain) |
-| Reading paths | **7** |
+| Authored relation edges | **96** (+ **67** mechanical shared-source via `all_links`; epistemic map may add detector edges → **171** graph edges / **8** cross-domain flags) |
+| Reading paths | **7** (one domain still path-thin: `planets` has edges but no authored path yet) |
 | Engine | Constitution-gated Python · static `dist/` site |
 | AI at runtime | **None required** (narrative is a gated bottom layer) |
-| Tests | **284** (unit + integration) |
+| CI test modules | **30** suites in `run_tests.py` (**318** `test_*` functions) |
 
 ### Domains
 
@@ -102,7 +102,8 @@ universe_explorer/
   surface.py        # changes / health surfaces
   discovery/        # search → candidates → precheck → review.html (never auto-writes claims)
   crossdomain/      # shared-source graph → epistemic_map.html
-  reader/           # search/filter, explore-v2, challenge form, dual-axis viz
+  reader/           # explore-v2, challenge, dual-axis, dashboard, stats/export;
+                    # editorial: annotate, review workflow, batch, diff, dynamic_paths
   data/             # hand-authored topics (the only place knowledge grows)
   dataops/          # fetch, push, health, transport
 build.py            # gate ALL topics → write dist/
@@ -111,6 +112,8 @@ web/                # app.html, universe.html (shipped into dist/)
 docs/               # specs, amendments, editorial queue
 cache/              # verbatim API responses + hashes
 candidates/         # discovery inlet only (never auto-writes claims)
+annotations/        # editorial tags/notes (outside claim data; never auto-writes lights)
+reviews/            # claim review checklist state (outside claim data)
 ```
 
 Engine files are hash-frozen (`engine_hashes.json`). Changing them requires a numbered amendment under `docs/amendment-*.md`.
@@ -150,6 +153,12 @@ python -m universe_explorer.dataops.arxiv_fetch     # fetch cited arXiv ids
 python -m universe_explorer.dataops.arxiv_search "…"  # discovery → candidates/ only
 python -m universe_explorer.discovery.pipeline "…"  # search → candidates → precheck → review.html
 python -m universe_explorer.discovery.review        # regenerate dist/review.html
+python -m universe_explorer.reader.dashboard        # regenerate dist/dashboard.html
+python -m universe_explorer.reader.stats            # structural inventory report
+python -m universe_explorer.reader.export           # JSON/CSV/Markdown export (filtered)
+python -m universe_explorer.reader.annotate         # tags/notes/labels → annotations/ (not claim data)
+python -m universe_explorer.reader.review           # checklist review workflow → reviews/
+python -m universe_explorer.reader.batch            # bulk export / tag / review-start / stats
 python -m universe_explorer.proposals               # mechanical status proposals
 python -m universe_explorer.watch                   # diff vs snapshot/state.json
 python -m universe_explorer.dataops.push            # events → outbox digests (restatement only)
@@ -186,12 +195,13 @@ Full path: [`CONTRIBUTING.md`](CONTRIBUTING.md) · editorial focus: [`docs/edito
 | Surface | What |
 |---------|------|
 | `dist/dashboard.html` | Central hub — stats, status distribution, links to all pages |
+| `dist/stats.json` | Machine-readable inventory (counts only; no confidence scores) |
 | `dist/index.html` | Topic cards, expand, deep-link `?open=` |
 | `dist/app.html` | Interactive map / Drift / ego graph / guides (`?c=` · `?path=`) |
 | `dist/universe.html` | Constellation view |
 | `dist/explore.html` (+ `-zh`) | Browse / export-oriented |
 | `dist/explore-v2.html` | Search + filter + dual-axis reader (Phase 3) |
-| `dist/epistemic_map.html` · `epistemic-graph.json` | Cross-domain graph (Phase 2; shared sources + authored edges) |
+| `dist/epistemic_map.html` · `epistemic-graph.json` | Cross-domain graph (Phase 2; shared sources + authored edges + detectors) |
 | `dist/challenge.html` | Standalone challenge form (links into GitHub issue templates) |
 | `dist/dual-axis.svg` | Snapshot of consensus vs evidence across claims |
 | `dist/review.html` | Discovery candidate review dashboard (editorial; never auto-writes claims) |
@@ -206,8 +216,10 @@ Full path: [`CONTRIBUTING.md`](CONTRIBUTING.md) · editorial focus: [`docs/edito
 ## What this is not
 
 - Not a chatbot and not an LLM knowledge base  
+- Not live NASA/ESA ingestion into claims (adapters deferred until a real inlet exists)  
 - Not automatic light classification that replaces human status decisions  
-- Not confidence scores, rankings, or “trust percentages”
+- Not confidence scores, rankings, or “trust percentages”  
+- Not auto-writing claim lights from annotations, review checklists, or batch tools
 
 Knowledge grows by **human editorial hours** under the constitution — not by claim-count KPIs.
 

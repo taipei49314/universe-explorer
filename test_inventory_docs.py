@@ -27,7 +27,7 @@ def test_readme_snapshot_matches_registry():
     # Snapshot table uses bold markdown numbers
     assert f"**{c['topics']}**" in readme, c
     assert f"**{c['claims']}**" in readme, c
-    # Edge count: README shows total (authored + mechanical), not just authored
+    assert f"**{c['authored']}**" in readme, c
     assert f"**{c['paths']}**" in readme, c
     # Domain claim sum line still lists 8 topics
     for tid in (
@@ -47,10 +47,32 @@ def test_readme_lists_phase13_surfaces():
         "review.html",
         "dual-axis.svg",
         "epistemic-graph.json",
+        "dashboard.html",
+        "stats.json",
     ):
         assert surface in readme, surface
     for pkg in ("discovery/", "crossdomain/", "reader/"):
         assert pkg in readme, pkg
+    # Editorial tools exist but must not be described as auto-writing claims
+    assert "annotations/" in readme
+    assert "never auto-write" in readme.lower() or "never auto-writes" in readme.lower()
+
+
+def test_readme_relation_edge_split_is_honest():
+    """Do not conflate all_links mechanical count with epistemic-map graph size."""
+    from universe_explorer.data.registry import TOPICS
+    from universe_explorer.relations import all_links
+    from universe_explorer.crossdomain.graph_builder import build_cross_domain_graph
+
+    links = all_links(TOPICS)
+    authored = sum(1 for L in links if L.origin == "authored")
+    mechanical = sum(1 for L in links if L.origin == "mechanical")
+    graph_n = len(build_cross_domain_graph(TOPICS).edges)
+    readme = Path("README.md").read_text(encoding="utf-8")
+    assert f"**{authored}**" in readme
+    assert f"**{mechanical}**" in readme
+    assert f"**{graph_n}**" in readme
+    assert authored + mechanical == len(links)
 
 
 def test_milestones_claim_count_matches():
@@ -63,6 +85,8 @@ def test_milestones_claim_count_matches():
     assert "Phase 1 Discovery" in text
     assert "Phase 2 Cross-domain map" in text
     assert "Phase 3 Reader" in text
+    assert "Dashboard + stats.json" in text
+    assert "planets" in text and "reading path" in text.lower()
 
 
 def test_domain_claim_lines_sum():

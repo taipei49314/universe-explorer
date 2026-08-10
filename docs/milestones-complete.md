@@ -23,8 +23,11 @@
 | **Phase 2 Cross-domain map** | ✅ 2026-08-10 | `crossdomain/` → `epistemic_map.html` + `epistemic-graph.json` |
 | **Phase 3 Reader** | ✅ 2026-08-10 | `reader/` → `explore-v2.html`, `challenge.html`, `dual-axis.svg` |
 | **Phase 1–3 surface honesty** | ✅ 2026-08-10 | README / about / index / health nav list the live pages |
+| **Dashboard + stats.json** | ✅ 2026-08-10 | `reader/dashboard.py` + `stats.json` from `build.py` |
+| **Editorial tooling (T19/T20)** | ✅ 2026-08-10 | annotate / claim review / batch — store outside `data/`; never auto-write lights |
 | NASA/ESA adapter | ❌ deferred | Explicit non-goal until a real inlet exists |
 | T4b multi-source 7B | ❌ deferred | Needs model ops; not blocking product honesty |
+| `planets` authored reading path | ❌ open | Domain has 11 authored edges; path still missing (relations next) |
 
 ## Totals after closeout
 
