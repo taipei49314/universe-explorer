@@ -159,9 +159,11 @@ class ClaimAnnotations:
         claim_dir = self._dir / annotation.claim_id
         claim_dir.mkdir(parents=True, exist_ok=True)
 
-        # Use timestamp as filename for uniqueness.
+        # Use timestamp + value hash for uniqueness.
+        import hashlib
         stamp = annotation.timestamp.replace(":", "").replace("-", "")
-        out_path = claim_dir / f"{stamp}_{annotation.kind}.json"
+        val_hash = hashlib.md5(annotation.value.encode()).hexdigest()[:8]
+        out_path = claim_dir / f"{stamp}_{val_hash}_{annotation.kind}.json"
         out_path.write_text(
             json.dumps(annotation.to_dict(), indent=2, ensure_ascii=False),
             encoding="utf-8",
