@@ -174,6 +174,8 @@ if __name__ == "__main__":
     parser.add_argument("--axis", help="Filter by evidence axis")
     parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--label", help="Filter by annotation label")
+    parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has notes")
     parser.add_argument("--stats", action="store_true", help="Export stats instead of claims")
     args = parser.parse_args()
 
@@ -186,5 +188,6 @@ if __name__ == "__main__":
             evidence_axis=args.axis,
             tag=args.tag,
             label=args.label,
+            has_notes=args.has_notes,
         )
         print(export_claims(TOPICS, args.format, criteria))
