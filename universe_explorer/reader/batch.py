@@ -153,12 +153,14 @@ if __name__ == "__main__":
     parser.add_argument("--domain", help="Filter by domain")
     parser.add_argument("--status", help="Filter by status")
     parser.add_argument("--axis", help="Filter by evidence axis")
+    parser.add_argument("--filter-tag", help="Filter by annotation tag")
     args = parser.parse_args()
 
     criteria = FilterCriteria(
         domain=args.domain,
         status=args.status,
         evidence_axis=args.axis,
+        tag=args.filter_tag,
     )
 
     if args.export:
