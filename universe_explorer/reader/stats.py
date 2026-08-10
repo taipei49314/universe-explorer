@@ -250,7 +250,13 @@ def format_stats_report(stats: KnowledgeStats) -> str:
 
 
 if __name__ == "__main__":
+    import argparse
     from ..data.registry import TOPICS
+
+    parser = argparse.ArgumentParser(description="Knowledge base statistics")
+    parser.add_argument("--tag", help="Filter by annotation tag")
+    args = parser.parse_args()
+
     stats = compute_stats(TOPICS)
     print(format_stats_report(stats))
 
