@@ -202,6 +202,8 @@ if __name__ == "__main__":
     parser.add_argument("--label", help="Add a label")
     parser.add_argument("--list", action="store_true", help="List annotations")
     parser.add_argument("--remove-tag", help="Remove a tag")
+    parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has notes")
     args = parser.parse_args()
 
     annotations = ClaimAnnotations()
