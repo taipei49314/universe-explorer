@@ -1,7 +1,7 @@
 {
   "kind": "trust_behavior_measure",
-  "n_measurements": 492,
-  "n_pass": 492,
+  "n_measurements": 499,
+  "n_pass": 499,
   "n_fail": 0,
   "all_ok": true,
   "n_topics": 8,
@@ -4344,6 +4344,7 @@
       "expected": "health.json trust_loop inventory keys",
       "observed": [
         "candidates",
+        "canonicals",
         "challenge_records",
         "challenge_records_dir",
         "github_challenge_label",
@@ -4388,6 +4389,69 @@
       "kind": "overturn",
       "expected": "docs/weeklies/README.md documents legal silence",
       "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "canonical.count_is_three",
+      "surface": "inventory",
+      "kind": "path",
+      "expected": 3,
+      "observed": 3,
+      "ok": true,
+      "note": "v5 TL-4: fixed teaching set size"
+    },
+    {
+      "id": "canonical.claims_in_registry",
+      "surface": "inventory",
+      "kind": "path",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "canonical.paths_registered",
+      "surface": "inventory",
+      "kind": "path",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "canonical.hawking_still_diverges",
+      "surface": "stress",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "teaching anchor must keep dual-axis stress"
+    },
+    {
+      "id": "canonical.about_lists_all_three",
+      "surface": "surface",
+      "kind": "ui",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "about EN/ZH #canonicals"
+    },
+    {
+      "id": "canonical.tour_mentions_three_stories",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": "tour step names three stories + paths",
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "canonical.health_lists_canonicals",
+      "surface": "surface",
+      "kind": "overturn",
+      "expected": 3,
+      "observed": 3,
       "ok": true,
       "note": ""
     },

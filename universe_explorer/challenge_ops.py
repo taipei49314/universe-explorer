@@ -154,11 +154,14 @@ def candidate_counts() -> dict:
 
 def trust_loop_inventory() -> Dict[str, Any]:
     """Panel numbers for health.json — list counts only."""
+    from .canonicals import as_payload as canonicals_payload
+
     records = list_challenge_records()
     weeklies = list_weeklies()
     cands = candidate_counts()
     n_reject = sum(1 for r in records if r.verdict == "reject")
     n_accept = sum(1 for r in records if r.verdict == "accept")
+    can = canonicals_payload()
     inv = {
         "kind": "trust_loop_inventory",
         "n_challenge_records": len(records),
@@ -170,6 +173,7 @@ def trust_loop_inventory() -> Dict[str, Any]:
         "latest_weekly": weeklies[0]["file"] if weeklies else None,
         "weeklies": weeklies[:8],
         "candidates": cands,
+        "canonicals": can,
         "github_challenge_label": (
             "https://github.com/taipei49314/universe-explorer/issues"
             "?q=label%3Achallenge"
@@ -179,7 +183,8 @@ def trust_loop_inventory() -> Dict[str, Any]:
         "note": (
             "Pending open issues are on GitHub (label challenge) — "
             "not invented here. Legal silence weeks are recorded under "
-            "docs/weeklies/. No banned-key fields exist."
+            "docs/weeklies/. Three product canonicals are teaching anchors "
+            "only. No banned-key fields exist."
         ),
     }
     assert not (set(inv) & BANNED)

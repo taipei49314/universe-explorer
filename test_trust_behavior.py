@@ -101,6 +101,13 @@ def test_v5_overturn_loop_measurements_pass():
         "overturn.health_html_trust_loop_section",
         "overturn.changes_html_overturn_and_weeklies",
         "overturn.weeklies_protocol_readme",
+        "canonical.count_is_three",
+        "canonical.claims_in_registry",
+        "canonical.paths_registered",
+        "canonical.hawking_still_diverges",
+        "canonical.about_lists_all_three",
+        "canonical.tour_mentions_three_stories",
+        "canonical.health_lists_canonicals",
     ):
         assert mid in by, mid
         assert by[mid].ok is True, (mid, by[mid].observed)

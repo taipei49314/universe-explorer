@@ -416,6 +416,7 @@ def app_data_json(topics: List[Topic]) -> str:
             })
     # Claim relations + mechanical inference paths (no confidence fields).
     from .relations import relations_payload
+    from .canonicals import as_payload as canonicals_payload
     rel = relations_payload(topics)
     by = rel["by_claim"]
     for row in claims_out:
@@ -430,7 +431,9 @@ def app_data_json(topics: List[Topic]) -> str:
                  "mechanical derivations; zh fields are a presentation "
                  "overlay that falls back to English. Relations are authored "
                  "edges plus mechanical shared-source; inference paths are "
-                 "listed routes — never confidence scores."),
+                 "listed routes — never confidence scores. "
+                 "canonicals are three teaching anchors only."),
+        "canonicals": canonicals_payload(),
         "relations": {
             "note": rel["note"],
             "kinds": rel["kinds"],

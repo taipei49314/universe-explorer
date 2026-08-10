@@ -1,6 +1,6 @@
 # Roadmap v5 — Trust Loop（可被挑戰的公共知識台帳）
 
-> **狀態：** 規劃已定；**S0 + S1 + S2 已完成**（2026-08-10），S3 待做。  
+> **狀態：** 規劃已定；**S0–S3 已完成**（2026-08-10）。Q1 最低合格已滿足；Q2 待開。  
 > **日期：** 2026-08-10  
 > **前置：** v0–v4 引擎與產品表面已合閘；CI 含 pytest 全 suite +  
 > `trust_behavior`（481）+ `ui_expand`（56）。  
@@ -98,16 +98,18 @@ Q3 不得在 Q1 量測閘門變紅時上線「更炫 UI」當替代。
 | **S0** | ✅ 2026-08-10 | 本文件合入；`measure_overturn_loop` TL 量測 ID；milestones v5 列 |
 | **S1** | ✅ 2026-08-10 | **TL-1**：issue #2 `hawking_radiation` 公開閉環 — **reject** light change（條件級理由 + `docs/challenges/` 紀錄） |
 | **S2** | ✅ 2026-08-10 | **TL-2** health/changes Trust Loop 面板 + **TL-3** `docs/weeklies/` 儀式（2026-W33；2 candidates reject-archive） |
-| **S3** | 1–2 週 | **TL-4** 三 canonical 導覽對齊；第二條挑戰可選 |
+| **S3** | ✅ 2026-08-10 | **TL-4** 三 canonical：Hawking / H0 / seismology prediction；about+tour+health+app-data；量測鎖 diverges |
 
 ### 4.3 Q1 合格線 / 優秀線
 
 **最低合格：**
 
-1. ≥1 公開挑戰閉環（接受 **或** 有據駁回，寫在 issue）  
-2. `run_tests.py` + trust_behavior + ui_expand 持續綠  
-3. 4 週 log：candidate 處理 **或** legal silence  
-4. 三 canonical 可在 about/tour 指認；Hawking 仍軸分叉  
+1. ≥1 公開挑戰閉環（接受 **或** 有據駁回，寫在 issue） — ✅ #2  
+2. `run_tests.py` + trust_behavior + ui_expand 持續綠 — ✅ S0–S3 閘門  
+3. 週 log：candidate 處理 **或** legal silence — ✅ 2026-W33（2 reject + 5 silence）  
+4. 三 canonical 可在 about/tour 指認；Hawking 仍軸分叉 — ✅ S3  
+
+（連續 4 週 weeklies 仍為 Q1 優秀運營目標；結構已落地。）
 
 **優秀：**
 

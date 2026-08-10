@@ -538,6 +538,87 @@ def measure_overturn_loop() -> List[Measurement]:
         expected="docs/weeklies/README.md documents legal silence",
         observed=weekly_readme.is_file(),
     ))
+
+    # --- v5 S3: three product canonicals ---
+    from .canonicals import (
+        CANONICALS,
+        canonical_claim_ids,
+        canonical_path_ids,
+    )
+    from .data.registry import TOPICS as _TOPICS
+    from .relations import reading_paths
+    from .axes import diverges as _diverges
+
+    claim_index = {c.id: c for t in _TOPICS for c in t.claims}
+    path_ids = {p.id for p in reading_paths()}
+    ms.append(_m(
+        "canonical.count_is_three",
+        "inventory", "path",
+        3, len(CANONICALS),
+        note="v5 TL-4: fixed teaching set size",
+    ))
+    missing_claims = [cid for cid in canonical_claim_ids() if cid not in claim_index]
+    ms.append(_m_bool(
+        "canonical.claims_in_registry",
+        "inventory", "path",
+        ok=len(missing_claims) == 0,
+        expected=[],
+        observed=missing_claims,
+    ))
+    missing_paths = [pid for pid in canonical_path_ids() if pid not in path_ids]
+    ms.append(_m_bool(
+        "canonical.paths_registered",
+        "inventory", "path",
+        ok=len(missing_paths) == 0,
+        expected=[],
+        observed=missing_paths,
+    ))
+    hawking = claim_index.get("hawking_radiation")
+    ms.append(_m_bool(
+        "canonical.hawking_still_diverges",
+        "stress", "dual_axis",
+        ok=hawking is not None and _diverges(hawking),
+        expected=True,
+        observed=_diverges(hawking) if hawking else None,
+        note="teaching anchor must keep dual-axis stress",
+    ))
+    # about pages list all three claim ids
+    from .render import render_about
+    about_en = render_about("en")
+    about_zh = render_about("zh")
+    missing_about = [
+        cid for cid in canonical_claim_ids()
+        if cid not in about_en or cid not in about_zh
+    ]
+    ms.append(_m_bool(
+        "canonical.about_lists_all_three",
+        "surface", "ui",
+        ok=len(missing_about) == 0 and 'id="canonicals"' in about_en,
+        expected=[],
+        observed=missing_about,
+        note="about EN/ZH #canonicals",
+    ))
+    # tour teaches three stories
+    app = WEB_APP.read_text(encoding="utf-8") if WEB_APP.is_file() else ""
+    ms.append(_m_bool(
+        "canonical.tour_mentions_three_stories",
+        "contract", "ui",
+        ok=(
+            "Three teaching stories" in app
+            or "三則教學故事" in app
+        ) and "path_h0" in app and "path_seismology" in app,
+        expected="tour step names three stories + paths",
+        observed="Three teaching stories" in app or "三則教學故事" in app,
+    ))
+    # health panel embeds canonicals
+    can_block = (hp.get("trust_loop") or {}).get("canonicals") or {}
+    ms.append(_m_bool(
+        "canonical.health_lists_canonicals",
+        "surface", "overturn",
+        ok=can_block.get("n") == 3,
+        expected=3,
+        observed=can_block.get("n"),
+    ))
     return ms
 
 

@@ -162,9 +162,28 @@ def _render_trust_loop_section(tl: dict, links: dict) -> str:
       (process ≤3/week or legal silence)</li>
   <li>Records dir:
       <a href="{rec_link}">docs/challenges/</a></li>
+  <li>Product canonicals (teaching anchors):
+      <b>{(tl.get("canonicals") or {}).get("n", 0)}</b>
+      — see about <code>#canonicals</code></li>
 </ul>
+{_render_canonicals_mini(tl.get("canonicals") or {})}
 {table}
 """
+
+
+def _render_canonicals_mini(can: dict) -> str:
+    rows = can.get("canonicals") or []
+    if not rows:
+        return ""
+    items = "".join(
+        f"<li><a href=\"{_esc(c.get('map_href', '#'))}\">"
+        f"<code>{_esc(c.get('claim_id', ''))}</code></a> — "
+        f"{_esc(c.get('title_en', ''))} · path "
+        f"<a href=\"{_esc(c.get('path_href', '#'))}\">"
+        f"<code>{_esc(c.get('path_id', ''))}</code></a></li>"
+        for c in rows
+    )
+    return f"<h3>Three canonical stories</h3><ol>{items}</ol>"
 
 
 def render_health_html(payload: dict) -> str:
