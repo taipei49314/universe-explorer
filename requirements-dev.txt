@@ -1,0 +1,2 @@
+# Dev / CI only. Runtime product code stays stdlib.
+pytest>=7.0

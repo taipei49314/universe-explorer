@@ -1,6 +1,6 @@
 # The constitution rides in CI: unconstitutional data cannot reach the site.
-# run_tests.py = 10 suites + the four-gate build check; only then do we build
-# and deploy dist/ to GitHub Pages.
+# run_tests.py = pytest all suites + build --check + trust/ui measures;
+# only then do we build and deploy dist/ to GitHub Pages (public).
 name: constitution-gate-and-pages
 
 on:
@@ -28,9 +28,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Constitution gate (10 suites + build check)
+      - name: Install test runner (pytest)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "pytest>=7.0"
+      - name: Constitution gate (all suites + measures + build check)
         run: python run_tests.py
-      - name: Build site (en topics + index + zh single-file)
+      - name: Build site (en topics + index + zh + product surfaces)
         run: python build.py
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
