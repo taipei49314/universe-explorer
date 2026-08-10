@@ -27,13 +27,13 @@
 | **Editorial tooling (T19/T20)** | ✅ 2026-08-10 | annotate / claim review / batch — store outside `data/`; never auto-write lights |
 | NASA/ESA adapter | ❌ deferred | Explicit non-goal until a real inlet exists |
 | T4b multi-source 7B | ❌ deferred | Needs model ops; not blocking product honesty |
-| `planets` authored reading path | ❌ open | Domain has 11 authored edges; path still missing (relations next) |
+| **`planets` authored reading path** | ✅ 2026-08-10 | `path_planets` chronology → icy moons → life/Mars ceilings |
 
 ## Totals after closeout
 
 - **Topics:** 8  
 - **Claims:** 91  
-- **Reading paths:** 7  
+- **Reading paths:** 8  
 - **Authored relation edges:** **96** (0 authored-isolated claims; recount via `python -m universe_explorer.relations --validate`)  
 
 ## How to deliver digests (P5b)

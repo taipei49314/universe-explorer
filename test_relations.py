@@ -119,12 +119,22 @@ def test_boundary_cross_domain():
     assert any(r["id"] == "lower_mass_gap_compact_objects" for r in n)
 
 
+def test_every_domain_has_authored_reading_path():
+    """Each registry topic should have at least one authored path (no vanity edges)."""
+    domains = {t.id for t in TOPICS}
+    covered = {p.domain for p in reading_paths()}
+    missing = sorted(domains - covered)
+    assert missing == [], missing
+    assert any(p.id == "path_planets" for p in reading_paths())
+
+
 def test_reading_paths_in_payload():
     payload = relations_payload(TOPICS)
     paths = payload["reading_paths"]
     assert len(paths) >= 3
     ids = {p["id"] for p in paths}
     assert "path_h0" in ids and "path_stars" in ids and "path_black_hole" in ids
+    assert "path_planets" in ids
     for p in paths:
         assert p["n_steps"] == len(p["steps"]) == len(p["step_meta"])
         assert p["n_steps"] >= 2

@@ -8,7 +8,7 @@
 | Surface | Behaviour |
 |---------|-----------|
 | **Ego graph** | Select a claim → polar neighbourhood of recorded neighbours; edge kinds colour-coded; click node opens claim |
-| **Reading paths** | Authored sequences (H0, stars, black holes, dark matter, exoplanets) — not rankings |
+| **Reading paths** | Authored sequences (H0, stars, black holes, dark matter, exoplanets, ocean, seismology, planets) — not rankings |
 | **Panel** | Related list + inference paths + **challenge an edge** link |
 | **Data** | `app-data.json` → `relations.reading_paths`, `relations.coverage` |
 | **Challenge** | `.github/ISSUE_TEMPLATE/challenge-a-relation.yml` |

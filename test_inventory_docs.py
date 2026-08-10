@@ -86,7 +86,7 @@ def test_milestones_claim_count_matches():
     assert "Phase 2 Cross-domain map" in text
     assert "Phase 3 Reader" in text
     assert "Dashboard + stats.json" in text
-    assert "planets" in text and "reading path" in text.lower()
+    assert "path_planets" in text or "planets` authored reading path" in text
 
 
 def test_domain_claim_lines_sum():

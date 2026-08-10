@@ -24,7 +24,7 @@ It does **not** tell you “the answer.” It shows, claim by claim:
 | Claims | **91** |
 | Themes | Cosmos · Planets · Earth |
 | Authored relation edges | **96** (+ **67** mechanical shared-source via `all_links`; epistemic map may add detector edges → **171** graph edges / **8** cross-domain flags) |
-| Reading paths | **7** (one domain still path-thin: `planets` has edges but no authored path yet) |
+| Reading paths | **8** (one authored path per registered domain) |
 | Engine | Constitution-gated Python · static `dist/` site |
 | AI at runtime | **None required** (narrative is a gated bottom layer) |
 | CI test modules | **31** suites in `run_tests.py` (**319** `test_*` functions) |

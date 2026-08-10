@@ -617,6 +617,44 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
             "vs 預報是 Competing。OEF 與 ETS 是前沿。VAN 電前兆停在推測。"
         ),
     ),
+    ReadingPath(
+        id="path_planets",
+        title="Solar system — chronology to ocean-world ceilings",
+        title_zh="太陽系 —— 年代學到海洋世界天花板",
+        domain="planets",
+        steps=(
+            "solar_system_age",
+            "moon_giant_impact",
+            "late_heavy_bombardment",
+            "ocean_worlds_icy_moons",
+            "europa_induced_field_ocean",
+            "enceladus_plume_global_ocean",
+            "titan_subsurface_ocean",
+            "enceladus_plume_organics",
+            "ocean_world_life_today",
+            "mars_sustained_surface_habitability_now",
+        ),
+        note=(
+            "Chronology bedrock → Moon formation → LHB debate → icy-moon ocean "
+            "umbrella and poles → organics → life-today and Mars habitability ceilings."
+        ),
+        note_zh=(
+            "年代學地基 → 月球形成 → LHB 辯論 → 冰衛星海洋傘與極點 → "
+            "有機物 → 今日生命與火星宜居天花板。"
+        ),
+        guide=(
+            "Solar-system age is Established chronology. The giant-impact Moon is "
+            "Strong working history. Late heavy bombardment is Competing. Icy-moon "
+            "oceans are a Frontier umbrella (Europa, Enceladus, Titan poles); plume "
+            "organics deepen Enceladus. Extant ocean life and present-day Mars surface "
+            "habitability remain Speculative ceilings — different domains, same map edge."
+        ),
+        guide_zh=(
+            "太陽系年齡是已確立年代學。巨型撞擊成月是強共識工作史。晚期重轟擊是 Competing。"
+            "冰衛星海洋是前沿傘(木衛二、土衛二、土衛六為極點)；羽流有機物加深土衛二。"
+            "今日海洋生命與現今火星表面宜居停在推測天花板 —— 不同切面，同一地圖邊界。"
+        ),
+    ),
 )
 
 
