@@ -212,6 +212,7 @@ if __name__ == "__main__":
                         help="Filter by whether claim diverges")
     parser.add_argument("--domain", help="Filter by domain")
     parser.add_argument("--claim-status", help="Filter by claim status")
+    parser.add_argument("--evidence-axis", help="Filter by evidence axis (E1-E5)")
     args = parser.parse_args()
 
     annotations = ClaimAnnotations()
