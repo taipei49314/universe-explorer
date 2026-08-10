@@ -203,8 +203,26 @@ def format_graph_report(graph: DomainGraph) -> str:
 
 
 if __name__ == "__main__":
+    import argparse
     from ..data.registry import TOPICS
+
+    parser = argparse.ArgumentParser(description="Cross-domain graph")
+    parser.add_argument("--tag", help="Filter by annotation tag")
+    args = parser.parse_args()
+
     graph = build_cross_domain_graph(TOPICS)
+
+    if args.tag:
+        from ..reader.annotate import ClaimAnnotations
+        annotations = ClaimAnnotations()
+        tagged_ids = set()
+        for claim_dir in (Path(__file__).parent.parent.parent / "annotations").iterdir():
+            if claim_dir.is_dir() and annotations.has_tag(claim_dir.name, args.tag):
+                tagged_ids.add(claim_dir.name)
+        graph.nodes = [n for n in graph.nodes if n.id in tagged_ids]
+        graph.edges = [e for e in graph.edges
+                       if e.source in tagged_ids and e.target in tagged_ids]
+
     print(format_graph_report(graph))
     # Write graph JSON to dist/.
     dist = Path(__file__).parent.parent.parent / "dist"
