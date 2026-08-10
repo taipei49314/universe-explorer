@@ -179,7 +179,7 @@ def trust_loop_inventory() -> Dict[str, Any]:
         "note": (
             "Pending open issues are on GitHub (label challenge) — "
             "not invented here. Legal silence weeks are recorded under "
-            "docs/weeklies/. No confidence field exists."
+            "docs/weeklies/. No banned-key fields exist."
         ),
     }
     assert not (set(inv) & BANNED)
