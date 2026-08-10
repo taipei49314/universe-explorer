@@ -306,6 +306,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Health check")
     parser.add_argument("--verbose", action="store_true", help="Show all details")
+    parser.add_argument("--domain", help="Filter by domain")
     parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--label", help="Filter by annotation label")
     parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
