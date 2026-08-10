@@ -255,6 +255,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Knowledge base statistics")
     parser.add_argument("--tag", help="Filter by annotation tag")
+    parser.add_argument("--label", help="Filter by annotation label")
     args = parser.parse_args()
 
     stats = compute_stats(TOPICS)
