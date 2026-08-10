@@ -209,11 +209,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Cross-domain graph")
     parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--label", help="Filter by annotation label")
+    parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has notes")
     args = parser.parse_args()
 
     graph = build_cross_domain_graph(TOPICS)
 
-    if args.tag or args.label:
+    if args.tag or args.label or args.has_notes is not None:
         from ..reader.annotate import ClaimAnnotations
         annotations = ClaimAnnotations()
         filtered_ids = set()
@@ -225,6 +227,10 @@ if __name__ == "__main__":
                 filtered_ids.add(claim_id)
             if args.label and args.label in annotations.get_labels(claim_id):
                 filtered_ids.add(claim_id)
+            if args.has_notes is not None:
+                has = bool(annotations.get_notes(claim_id))
+                if has == args.has_notes:
+                    filtered_ids.add(claim_id)
         graph.nodes = [n for n in graph.nodes if n.id in filtered_ids]
         graph.edges = [e for e in graph.edges
                        if e.source in filtered_ids and e.target in filtered_ids]
