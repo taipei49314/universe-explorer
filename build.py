@@ -146,6 +146,10 @@ def main(argv) -> int:
         json.dumps(metrics.to_dict(), indent=2, ensure_ascii=False),
         encoding="utf-8")
 
+    # API documentation
+    from universe_explorer.reader.api_docs import generate_api_docs
+    generate_api_docs(dist_dir=out_dir)
+
     print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
           f"+ zh.html + discovery/crossdomain/reader/dashboard/stats pages -> {out_dir}")
     print(f"Health: all green. Automation: {metrics.automation_rate}")
