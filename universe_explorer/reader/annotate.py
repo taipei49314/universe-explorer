@@ -208,6 +208,8 @@ if __name__ == "__main__":
                         help="Filter by whether claim has competing models")
     parser.add_argument("--has-open-questions", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has open questions")
+    parser.add_argument("--diverges", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim diverges")
     args = parser.parse_args()
 
     annotations = ClaimAnnotations()
