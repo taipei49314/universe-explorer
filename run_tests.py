@@ -51,6 +51,7 @@ SUITES = [
     "test_new_modules.py",    # Stats, export, diff, annotate, review, batch
     "test_links.py",          # link / reading-path integrity
     "test_content.py",        # every claim content/provenance/status shape
+    "test_security.py",       # XSS / path / injection surface smoke
     "test_benchmarks.py",     # latency budgets (measure, then trust speed)
     "test_adversarial.py",    # adversarial: empty/unicode/cache edges
     "test_adversarial_2.py",  # adversarial: constitutional invariants
