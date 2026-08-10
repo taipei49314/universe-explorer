@@ -232,3 +232,4 @@ if __name__ == "__main__":
         print("  python -m universe_explorer.reader.diff <claim_id1> <claim_id2>")
         print("  python -m universe_explorer.reader.diff --snapshot [claim_id]")
         print("  python -m universe_explorer.reader.diff --tag <tag>")
+        print("  python -m universe_explorer.reader.diff --label <label>")
