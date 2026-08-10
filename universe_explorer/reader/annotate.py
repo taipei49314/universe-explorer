@@ -210,6 +210,7 @@ if __name__ == "__main__":
                         help="Filter by whether claim has open questions")
     parser.add_argument("--diverges", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim diverges")
+    parser.add_argument("--domain", help="Filter by domain")
     args = parser.parse_args()
 
     annotations = ClaimAnnotations()
