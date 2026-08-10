@@ -215,11 +215,13 @@ if __name__ == "__main__":
                         help="Filter by whether claim has competing models")
     parser.add_argument("--has-open-questions", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has open questions")
+    parser.add_argument("--diverges", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim diverges")
     args = parser.parse_args()
 
     graph = build_cross_domain_graph(TOPICS)
 
-    if args.tag or args.label or args.has_notes is not None or args.has_competing is not None or args.has_open_questions is not None:
+    if args.tag or args.label or args.has_notes is not None or args.has_competing is not None or args.has_open_questions is not None or args.diverges is not None:
         from ..reader.annotate import ClaimAnnotations
         annotations = ClaimAnnotations()
         filtered_ids = set()
@@ -248,6 +250,15 @@ if __name__ == "__main__":
                         has = bool(claim_map[node.id].open_questions)
                         if has == args.has_open_questions:
                             filtered_ids.add(node.id)
+        # For diverges, we need to check claim data
+        if args.diverges is not None:
+            from ..axes import diverges as _diverges
+            claim_map = {c.id: c for t in TOPICS for c in t.claims}
+            for node in graph.nodes:
+                if node.id in claim_map:
+                    has = _diverges(claim_map[node.id])
+                    if has == args.diverges:
+                        filtered_ids.add(node.id)
         graph.nodes = [n for n in graph.nodes if n.id in filtered_ids]
         graph.edges = [e for e in graph.edges
                        if e.source in filtered_ids and e.target in filtered_ids]
