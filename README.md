@@ -23,10 +23,11 @@ It does **not** tell you “the answer.” It shows, claim by claim:
 | Topics | **8** |
 | Claims | **91** |
 | Themes | Cosmos · Planets · Earth |
-| Authored relation edges | **96** (+ mechanical shared-source links; recount with `python -m universe_explorer.relations --validate`) |
+| Relation edges | **171** (96 authored + 75 mechanical; 8 cross-domain) |
 | Reading paths | **7** |
 | Engine | Constitution-gated Python · static `dist/` site |
 | AI at runtime | **None required** (narrative is a gated bottom layer) |
+| Tests | **284** (unit + integration) |
 
 ### Domains
 
@@ -184,6 +185,7 @@ Full path: [`CONTRIBUTING.md`](CONTRIBUTING.md) · editorial focus: [`docs/edito
 
 | Surface | What |
 |---------|------|
+| `dist/dashboard.html` | Central hub — stats, status distribution, links to all pages |
 | `dist/index.html` | Topic cards, expand, deep-link `?open=` |
 | `dist/app.html` | Interactive map / Drift / ego graph / guides (`?c=` · `?path=`) |
 | `dist/universe.html` | Constellation view |
@@ -204,7 +206,6 @@ Full path: [`CONTRIBUTING.md`](CONTRIBUTING.md) · editorial focus: [`docs/edito
 ## What this is not
 
 - Not a chatbot and not an LLM knowledge base  
-- Not live NASA/ESA ingestion into claims (adapters deferred until a real inlet exists)  
 - Not automatic light classification that replaces human status decisions  
 - Not confidence scores, rankings, or “trust percentages”
 
