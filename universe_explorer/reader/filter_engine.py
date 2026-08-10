@@ -36,6 +36,7 @@ class FilterCriteria:
     has_competing_models: Optional[bool] = None
     evidence_type: Optional[str] = None
     tag: Optional[str] = None              # filter by annotation tag
+    label: Optional[str] = None            # filter by annotation label
 
 
 class ClaimFilter:
@@ -119,6 +120,12 @@ def _matches(claim: Claim, topic_id: str, c: FilterCriteria) -> bool:
         annotations = ClaimAnnotations()
         if not annotations.has_tag(claim.id, c.tag):
             return False
+    if c.label:
+        from .annotate import ClaimAnnotations
+        annotations = ClaimAnnotations()
+        labels = annotations.get_labels(claim.id)
+        if c.label not in labels:
+            return False
     return True
 
 
@@ -148,6 +155,7 @@ if __name__ == "__main__":
     parser.add_argument("--diverges", type=lambda x: x.lower() == "true",
                         help="Only divergent claims")
     parser.add_argument("--tag", help="Filter by annotation tag")
+    parser.add_argument("--label", help="Filter by annotation label")
     args = parser.parse_args()
 
     f = ClaimFilter(TOPICS)
@@ -157,6 +165,7 @@ if __name__ == "__main__":
         evidence_axis=args.axis,
         diverges=args.diverges,
         tag=args.tag,
+        label=args.label,
     )
     results = f.filter(criteria)
     print(f"Filter: {len(results)} claims")
