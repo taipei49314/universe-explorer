@@ -211,11 +211,13 @@ if __name__ == "__main__":
     parser.add_argument("--label", help="Filter by annotation label")
     parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has notes")
+    parser.add_argument("--has-competing", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has competing models")
     args = parser.parse_args()
 
     graph = build_cross_domain_graph(TOPICS)
 
-    if args.tag or args.label or args.has_notes is not None:
+    if args.tag or args.label or args.has_notes is not None or args.has_competing is not None:
         from ..reader.annotate import ClaimAnnotations
         annotations = ClaimAnnotations()
         filtered_ids = set()
@@ -231,6 +233,14 @@ if __name__ == "__main__":
                 has = bool(annotations.get_notes(claim_id))
                 if has == args.has_notes:
                     filtered_ids.add(claim_id)
+        # For has_competing, we need to check claim data
+        if args.has_competing is not None:
+            claim_map = {c.id: c for t in TOPICS for c in t.claims}
+            for node in graph.nodes:
+                if node.id in claim_map:
+                    has = bool(claim_map[node.id].competing_models)
+                    if has == args.has_competing:
+                        filtered_ids.add(node.id)
         graph.nodes = [n for n in graph.nodes if n.id in filtered_ids]
         graph.edges = [e for e in graph.edges
                        if e.source in filtered_ids and e.target in filtered_ids]
