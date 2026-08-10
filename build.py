@@ -155,6 +155,11 @@ def main(argv) -> int:
     changelog = generate_changelog()
     (out_dir / "CHANGELOG.md").write_text(changelog, encoding="utf-8")
 
+    # Sitemap
+    from universe_explorer.reader.sitemap import generate_sitemap
+    sitemap = generate_sitemap()
+    (out_dir / "sitemap.xml").write_text(sitemap, encoding="utf-8")
+
     print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
           f"+ zh.html + discovery/crossdomain/reader/dashboard/stats pages -> {out_dir}")
     print(f"Health: all green. Automation: {metrics.automation_rate}")
