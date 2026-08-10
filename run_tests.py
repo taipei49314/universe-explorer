@@ -34,6 +34,7 @@ SUITES = [
     "test_relations.py",      # claim links + inference paths (no confidence)
     "test_transport.py",      # P5b webhook/SMTP transport (env-gated)
     "test_surface.py",        # P-Read/Shell/Pulse/Audit/Guide surface checks
+    "test_inventory_docs.py", # README/milestones list-counts match registry
 ]
 
 
