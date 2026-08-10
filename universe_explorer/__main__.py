@@ -66,11 +66,13 @@ def main(argv: list = None) -> int:
         p.add_argument("--status", help="Status name")
         p.add_argument("--axis", help="Evidence axis (E1-E5)")
         p.add_argument("--diverges", type=lambda x: x.lower() == "true")
+        p.add_argument("--tag", help="Filter by annotation tag")
         opts = p.parse_args(args)
         f = ClaimFilter(TOPICS)
         criteria = FilterCriteria(
             domain=opts.domain, status=opts.status,
             evidence_axis=opts.axis, diverges=opts.diverges,
+            tag=opts.tag,
         )
         results = f.filter(criteria)
         print(f"Filter: {len(results)} claims")

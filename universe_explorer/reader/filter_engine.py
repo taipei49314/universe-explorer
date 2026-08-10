@@ -8,9 +8,11 @@ Filters can be combined arbitrarily:
   - has_open_questions (bool)
   - has_competing_models (bool)
   - evidence_type (str)
+  - tag (str) — filter by annotation tag
 
 Usage:
     python -m universe_explorer.reader.filter_engine --domain cosmology --status STRONG
+    python -m universe_explorer.reader.filter_engine --tag needs-review
 """
 
 from __future__ import annotations
@@ -33,6 +35,7 @@ class FilterCriteria:
     has_open_questions: Optional[bool] = None
     has_competing_models: Optional[bool] = None
     evidence_type: Optional[str] = None
+    tag: Optional[str] = None              # filter by annotation tag
 
 
 class ClaimFilter:
@@ -111,6 +114,11 @@ def _matches(claim: Claim, topic_id: str, c: FilterCriteria) -> bool:
         types = {ev.type for ev in claim.evidence}
         if c.evidence_type not in types:
             return False
+    if c.tag:
+        from .annotate import ClaimAnnotations
+        annotations = ClaimAnnotations()
+        if not annotations.has_tag(claim.id, c.tag):
+            return False
     return True
 
 
@@ -139,6 +147,7 @@ if __name__ == "__main__":
     parser.add_argument("--axis", help="Evidence axis (E1-E5)")
     parser.add_argument("--diverges", type=lambda x: x.lower() == "true",
                         help="Only divergent claims")
+    parser.add_argument("--tag", help="Filter by annotation tag")
     args = parser.parse_args()
 
     f = ClaimFilter(TOPICS)
@@ -147,6 +156,7 @@ if __name__ == "__main__":
         status=args.status,
         evidence_axis=args.axis,
         diverges=args.diverges,
+        tag=args.tag,
     )
     results = f.filter(criteria)
     print(f"Filter: {len(results)} claims")
