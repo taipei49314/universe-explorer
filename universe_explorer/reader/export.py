@@ -172,6 +172,7 @@ if __name__ == "__main__":
     parser.add_argument("--domain", help="Filter by domain")
     parser.add_argument("--status", help="Filter by status")
     parser.add_argument("--axis", help="Filter by evidence axis")
+    parser.add_argument("--tag", help="Filter by annotation tag")
     parser.add_argument("--stats", action="store_true", help="Export stats instead of claims")
     args = parser.parse_args()
 
@@ -182,5 +183,6 @@ if __name__ == "__main__":
             domain=args.domain,
             status=args.status,
             evidence_axis=args.axis,
+            tag=args.tag,
         )
         print(export_claims(TOPICS, args.format, criteria))
