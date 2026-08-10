@@ -99,6 +99,9 @@ universe_explorer/
   relations.py      # edges + reading paths (no confidence)
   render.py         # static pages
   surface.py        # changes / health surfaces
+  discovery/        # search → candidates → precheck → review.html (never auto-writes claims)
+  crossdomain/      # shared-source graph → epistemic_map.html
+  reader/           # search/filter, explore-v2, challenge form, dual-axis viz
   data/             # hand-authored topics (the only place knowledge grows)
   dataops/          # fetch, push, health, transport
 build.py            # gate ALL topics → write dist/
@@ -134,6 +137,8 @@ python build.py
 python -m http.server 8731 --directory dist
 # open http://localhost:8731/          (index)
 #      http://localhost:8731/app.html?c=hawking_radiation
+#      http://localhost:8731/explore-v2.html
+#      http://localhost:8731/epistemic_map.html
 #      http://localhost:8731/universe.html
 ```
 
@@ -142,6 +147,8 @@ python -m http.server 8731 --directory dist
 ```sh
 python -m universe_explorer.dataops.arxiv_fetch     # fetch cited arXiv ids
 python -m universe_explorer.dataops.arxiv_search "…"  # discovery → candidates/ only
+python -m universe_explorer.discovery.pipeline "…"  # search → candidates → precheck → review.html
+python -m universe_explorer.discovery.review        # regenerate dist/review.html
 python -m universe_explorer.proposals               # mechanical status proposals
 python -m universe_explorer.watch                   # diff vs snapshot/state.json
 python -m universe_explorer.dataops.push            # events → outbox digests (restatement only)
@@ -160,7 +167,8 @@ Core promise: **anyone with a checkable argument can overturn a light.**
 1. Open [`claims.json`](https://taipei49314.github.io/universe-explorer/claims.json) or a claim card on the site.
 2. Read `status_reason` against `STATUS_CONDITIONS` in `universe_explorer/model.py`.
 3. Recompute the evidence axis with `axes.py` rules (or read `evidence_axis` + `axis_derivation` in the JSON).
-4. Open an issue with a template:
+4. Open a challenge with a checkable source:
+   - On-site form: [`challenge.html`](https://taipei49314.github.io/universe-explorer/challenge.html) (static; routes into GitHub issue templates)  
    - **[Challenge a verdict](.github/ISSUE_TEMPLATE/challenge-a-verdict.yml)** — wrong light / wrong condition / misread source  
    - **[Challenge a relation](.github/ISSUE_TEMPLATE/challenge-a-relation.yml)** — wrong or missing edge  
    - **[Report a source problem](.github/ISSUE_TEMPLATE/report-a-source-problem.yml)** — fetch / hash / mis-cite  
@@ -180,10 +188,15 @@ Full path: [`CONTRIBUTING.md`](CONTRIBUTING.md) · editorial focus: [`docs/edito
 | `dist/app.html` | Interactive map / Drift / ego graph / guides (`?c=` · `?path=`) |
 | `dist/universe.html` | Constellation view |
 | `dist/explore.html` (+ `-zh`) | Browse / export-oriented |
+| `dist/explore-v2.html` | Search + filter + dual-axis reader (Phase 3) |
+| `dist/epistemic_map.html` · `epistemic-graph.json` | Cross-domain graph (Phase 2; shared sources + authored edges) |
+| `dist/challenge.html` | Standalone challenge form (links into GitHub issue templates) |
+| `dist/dual-axis.svg` | Snapshot of consensus vs evidence across claims |
+| `dist/review.html` | Discovery candidate review dashboard (editorial; never auto-writes claims) |
 | `dist/zh.html` | Single-file Chinese edition |
 | `dist/changes.html` | Recent restated events (P-Pulse) |
 | `dist/health.html` · `health.json` | Inventory audit (P-Audit) |
-| `dist/about.html` | How to read · constitution · support |
+| `dist/about.html` (+ `-zh`) | How to read · constitution · support |
 | `dist/feed.xml` | Atom of change events (restates, never interprets) |
 
 ---
@@ -217,6 +230,7 @@ Knowledge grows by **human editorial hours** under the constitution — not by c
 | [`docs/amendment-*.md`](docs/) | Numbered constitution changes |
 | [`docs/editorial-queue.md`](docs/editorial-queue.md) | What editors work on this season |
 | [`docs/hawking-walkthrough.md`](docs/hawking-walkthrough.md) | Dual-axis stress case, data → UI |
+| [`docs/north-star-v2-architecture.md`](docs/north-star-v2-architecture.md) | Discovery · cross-domain map · reader (Phase 1–3) |
 
 ---
 

@@ -715,6 +715,12 @@ so that <b>every verdict can be checked — and overturned — by anyone</b>.
 <a href="about-zh.html">中文版 &rarr;</a></p>
 <p><a href="app.html">Open the map</a> · first visit shows a 60-second tour ·
 or jump to the <a href="app.html?c=hawking_radiation">Hawking radiation example</a>.</p>
+<p>Other surfaces (same data, different lenses):
+<a href="explore-v2.html">search &amp; filter</a> ·
+<a href="epistemic_map.html">cross-domain map</a> ·
+<a href="explore.html">browse all claims</a> ·
+<a href="challenge.html">challenge a verdict</a> ·
+<a href="health.html">inventory health</a>.</p>
 
 <h2 id="example">Canonical example: Hawking radiation</h2>
 <p>Open <a href="app.html?c=hawking_radiation"><code>hawking_radiation</code></a>
@@ -768,7 +774,8 @@ its entry conditions with a checkable source. The full re-review path is in
 <a href="https://github.com/taipei49314/universe-explorer/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>;
 every rule and its legal basis is consolidated in the
 <a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/constitution.md">constitution</a>;
-the machine-readable data is <a href="claims.json">claims.json</a>; changes
+the machine-readable data is <a href="claims.json">claims.json</a>; the
+on-site form is <a href="challenge.html">challenge.html</a>; changes
 stream to the <a href="feed.xml">Atom feed</a> and
 <a href="changes.html">changes.html</a>. Audit inventory:
 <a href="health.html">health.html</a>. Code is MIT; content is
@@ -803,6 +810,12 @@ _ABOUT_ZH = f"""<!doctype html>
 任何一個判定</b>。<a href="about.html">English &rarr;</a></p>
 <p><a href="app.html">打開地圖</a> · 首次造訪有約 60 秒導覽 ·
 或直接看範例 <a href="app.html?c=hawking_radiation">霍金輻射</a>。</p>
+<p>其他介面（同一套資料、不同切面）:
+<a href="explore-v2.html">搜尋與篩選</a> ·
+<a href="epistemic_map.html">跨領域地圖</a> ·
+<a href="explore-zh.html">瀏覽全部宣稱</a> ·
+<a href="challenge.html">挑戰判定</a> ·
+<a href="health.html">盤點健康</a>。</p>
 
 <h2 id="example">標準範例:霍金輻射</h2>
 <p>在地圖打開 <a href="app.html?c=hawking_radiation"><code>hawking_radiation</code></a>。
@@ -844,7 +857,8 @@ _ABOUT_ZH = f"""<!doctype html>
 <a href="https://github.com/taipei49314/universe-explorer/blob/main/CONTRIBUTING.md">CONTRIBUTING</a>;
 全部規則與法源彙編於
 <a href="https://github.com/taipei49314/universe-explorer/blob/main/docs/constitution.md">憲法</a>;
-機器可讀資料在 <a href="claims.json">claims.json</a>;所有變化流向
+機器可讀資料在 <a href="claims.json">claims.json</a>;站內表單在
+<a href="challenge.html">challenge.html</a>;所有變化流向
 <a href="feed.xml">Atom feed</a> 與 <a href="changes.html">changes.html</a>。
 覆核清單:<a href="health.html">health.html</a>。程式碼 MIT、內容 CC BY 4.0 ——
 挑戰我們,完全不需要任何人的許可。</p>
@@ -1003,12 +1017,16 @@ _INDEX = """<!doctype html>
   <div class="cta">
     <a class="primary" href="universe.html">Drift the universe</a>
     <a class="ghost" href="app.html">Knowledge map</a>
+    <a class="ghost" href="explore-v2.html">Search &amp; filter</a>
+    <a class="ghost" href="epistemic_map.html">Cross-domain map</a>
     <a class="ghost" href="explore.html">Explore claims</a>
     <a class="ghost" href="zh.html">中文</a>
   </div>
   <p class="banner">Reference first, AI last. Certainty emerges from evidence
   you can open &mdash; never from a declared number.
-  <a href="about.html">How to read this</a> · <a href="feed.xml">Feed</a></p>
+  <a href="about.html">How to read this</a> ·
+  <a href="challenge.html">Challenge</a> ·
+  <a href="feed.xml">Feed</a></p>
   {legend}
 </header>
 <main>

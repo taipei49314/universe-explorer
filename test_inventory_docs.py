@@ -37,12 +37,32 @@ def test_readme_snapshot_matches_registry():
         assert tid in readme
 
 
+def test_readme_lists_phase13_surfaces():
+    """Product surfaces table must name pages that build.py actually writes."""
+    readme = Path("README.md").read_text(encoding="utf-8")
+    for surface in (
+        "explore-v2.html",
+        "epistemic_map.html",
+        "challenge.html",
+        "review.html",
+        "dual-axis.svg",
+        "epistemic-graph.json",
+    ):
+        assert surface in readme, surface
+    for pkg in ("discovery/", "crossdomain/", "reader/"):
+        assert pkg in readme, pkg
+
+
 def test_milestones_claim_count_matches():
     c = _counts()
     text = Path("docs/milestones-complete.md").read_text(encoding="utf-8")
     assert f"**Claims:** {c['claims']}" in text or f"**Claims:** **{c['claims']}**" in text
     # Topics line
     assert f"**Topics:** {c['topics']}" in text or f"**Topics:** **{c['topics']}**" in text
+    # Phase 1–3 closeout rows stay visible once shipped
+    assert "Phase 1 Discovery" in text
+    assert "Phase 2 Cross-domain map" in text
+    assert "Phase 3 Reader" in text
 
 
 def test_domain_claim_lines_sum():
