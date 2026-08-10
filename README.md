@@ -1,213 +1,222 @@
-# Universe Explorer — v0 (black hole)
+# Universe Explorer
 
-A knowledge-exploration system that honestly separates **what humanity knows**
-from **what it does not**. v0 proves the epistemology on one real topic —
-*black holes* — end to end, from sourced evidence to a plain web page.
+**Honestly separating what we know from what we don't.**  
+誠實區分已知與未知的科學知識系統。
 
-It does not tell you the answer. It tells you: what we know, how we know it,
-what we still don't, and which competing hypotheses exist.
+Live site: <https://taipei49314.github.io/universe-explorer/>  
+Open data: [`claims.json`](https://taipei49314.github.io/universe-explorer/claims.json) · Atom feed: [`feed.xml`](https://taipei49314.github.io/universe-explorer/feed.xml)
 
-## The constitution (hard red lines, enforced by code)
+It does **not** tell you “the answer.” It shows, claim by claim:
 
-1. **Reference first, AI last.** `Data → Evidence → Knowledge → AI Narrative`,
-   one-directional. AI sits at the bottom; no source, no upper-layer claim.
-2. **AI does not declare facts**, it only organises recorded evidence. (v0 emits
-   no AI narrative at all — only sourced structure — so it stays trivially inside
-   this line.)
-3. **No fake precision.** No confidence percentages, no numeric `open_questions`
-   counts. Certainty must *emerge* from the evidence, never be declared.
-4. **Every "known" claim hangs on a real source.** No source → demoted.
+- **what** is claimed  
+- **how** we know it (sources + evidence)  
+- **which light** it carries, and **why** (entry conditions, overturnable)  
+- **how strong the evidence is** as a separate, mechanical axis  
+- **what is still open** (questions you can count yourself)
 
-The **status light belongs to the Claim, not the Topic.** A topic is a container
-with no light; claims under it can differ.
+---
 
-## Layout
+## Snapshot (measured, not marketed)
+
+| Measure | Value |
+|---------|-------|
+| Topics | **8** |
+| Claims | **91** |
+| Themes | Cosmos · Planets · Earth |
+| Authored relation edges | **87** (+ mechanical shared-source links) |
+| Reading paths | **7** |
+| Engine | Constitution-gated Python · static `dist/` site |
+| AI at runtime | **None required** (narrative is a gated bottom layer) |
+
+### Domains
+
+| Theme | Topics | Claims |
+|-------|--------|--------|
+| **Cosmos** | `black_hole`, `cosmology`, `dark_matter`, `stars` | 10 + 16 + 18 + 12 |
+| **Planets** | `planets`, `exoplanets` | 10 + 9 |
+| **Earth** | `ocean`, `seismology` | 8 + 8 |
+
+*Counts are inventory from the topic registry. Re-measure after data edits with `python build.py --check`.*
+
+---
+
+## The constitution (enforced by code)
+
+Hard red lines live in `universe_explorer/validator.py` (`LAWS`) and related gates — not only in prose.
+
+1. **Reference first, AI last.**  
+   `Data → Evidence → Knowledge → AI Narrative` (one-way). No source → no upper-layer claim.
+2. **AI does not declare facts.**  
+   It may only organise recorded evidence. Narrative sentences must carry resolvable refs; on failure the whole narrative is **withheld** (rather absent than overreaching).
+3. **No fake precision.**  
+   No confidence percentages, no numeric “open questions” counts as a score. Certainty must **emerge** from evidence.
+4. **Every “known” hangs on a real source.**  
+   Cite arXiv/DOI ⇒ must have **fetched** and hash-verified the record (P1 / Amendment #6).
+5. **Lights never change silently.**  
+   Status moves need `status_history` + watch events (P3).
+
+The **status light belongs to the Claim, not the Topic.** A topic is a container; claims under it can disagree.
+
+Human overview: [`docs/constitution.md`](docs/constitution.md) · design frame: [`docs/design-framework.md`](docs/design-framework.md)
+
+---
+
+## Dual axes (the point of the system)
+
+Two axes sit on every claim. They are **not** averaged into one trust score.
+
+| Axis | Who sets it | What it is |
+|------|-------------|------------|
+| **Consensus** (five-cell light) | Human, with traceable `status_reason` | Established · Strong · Competing · Frontier · Speculative |
+| **Evidence** (E1–E5) | **Nobody fills it in** — derived by public rules in `axes.py` | E1 multiple independent **PRIMARY** direct · … · E5 none |
+
+Entry conditions for each light are frozen in `model.STATUS_CONDITIONS` (mode `all` or `any`). A third party can recompute and overturn.
+
+### Canonical stress case: `hawking_radiation`
+
+| Field | Value |
+|-------|--------|
+| Light | **Strong Consensus** (🔵) |
+| Evidence axis | **E3** — indirect / analog only |
+| `diverges` | **true** — axes point apart |
+
+Strong theory + analog lab work; **no direct astrophysical detection**. That split is structural, not a footnote.  
+Deep-link: `app.html?c=hawking_radiation`
+
+---
+
+## Layout (where things live)
 
 ```
 universe_explorer/
-  model.py            # frozen schema + the 5-cell taxonomy as machine-checkable conditions
-  validator.py        # the constitution checker (mechanical)
-  data/black_hole.py  # 4 hand-filled claims, real content, real sources
-  render.py           # plain static-HTML renderer
-build.py              # validate -> gate -> render (dist/index.html)
-test_validator.py     # proves the validator actually catches violations
+  model.py          # frozen schema + five-cell taxonomy
+  validator.py      # constitution court
+  axes.py           # evidence axis (derived, never declared)
+  provenance.py     # cite ⇒ fetch (arXiv / DOI)
+  proposals.py      # propose, never decide
+  watch.py          # no silent light changes
+  narrative.py      # compose + check (same court for any composer)
+  relations.py      # edges + reading paths (no confidence)
+  render.py         # static pages
+  surface.py        # changes / health surfaces
+  data/             # hand-authored topics (the only place knowledge grows)
+  dataops/          # fetch, push, health, transport
+build.py            # gate ALL topics → write dist/
+run_tests.py        # every suite + build --check
+web/                # app.html, universe.html (shipped into dist/)
+docs/               # specs, amendments, editorial queue
+cache/              # verbatim API responses + hashes
+candidates/         # discovery inlet only (never auto-writes claims)
 ```
 
-## Run
+Engine files are hash-frozen (`engine_hashes.json`). Changing them requires a numbered amendment under `docs/amendment-*.md`.
+
+---
+
+## Run (local)
+
+Requires **Python 3.9+**. No third-party packages for the core gate.
 
 ```sh
-python test_validator.py     # v0: 12 tests — real data clean + every rule bites
-python test_provenance.py    # P1: 8 tests — data-layer provenance rules bite
-python test_axes.py          # P1.5: 7 tests — evidence axis emerges, never declared
-python test_proposals.py     # P2: 8 tests — propose, never decide; audit trail
-python test_watch.py         # P3: 7 tests — no silent light changes; events trace back
-python test_p4.py            # P4: 8 tests — engine byte-frozen; ocean passes every gate
-python test_narrative.py     # R6: 7 tests — every narrative sentence carries resolvable refs
-python test_registry.py      # all gates x all topics, automatically for future domains
-python test_push.py          # P5: 3 tests — digests restate, never interpret
-                             # (test_validator includes Amendment #1: sourced % vs declared confidence)
-python build.py              # both constitutions gate, then render dist/index.html
-python build.py --check      # validate only
+git clone https://github.com/taipei49314/universe-explorer.git
+cd universe-explorer
+
+# One command: all test suites + constitution gate on every topic
+python run_tests.py
+
+# Validate only
+python build.py --check
+
+# Validate + render site → dist/
+python build.py
+
+# Browse
+python -m http.server 8731 --directory dist
+# open http://localhost:8731/          (index)
+#      http://localhost:8731/app.html?c=hawking_radiation
+#      http://localhost:8731/universe.html
 ```
 
-## P1 — Data-layer provenance (built on 2026-07-10)
-
-Rule: **cite an arXiv source => you must actually have fetched it.**
+### Useful modules
 
 ```sh
-python -m universe_explorer.dataops.arxiv_fetch      # fetch every cited arXiv id
-python -m universe_explorer.dataops.arxiv_search "black hole islands"   # discovery inlet
+python -m universe_explorer.dataops.arxiv_fetch     # fetch cited arXiv ids
+python -m universe_explorer.dataops.arxiv_search "…"  # discovery → candidates/ only
+python -m universe_explorer.proposals               # mechanical status proposals
+python -m universe_explorer.watch                   # diff vs snapshot/state.json
+python -m universe_explorer.dataops.push            # events → outbox digests (restatement only)
+python -m universe_explorer.dataops.push --deliver  # optional webhook/SMTP (env-gated)
+python -m universe_explorer.dataops.source_health
 ```
 
-- `cache/arxiv/` holds the official API responses **verbatim** (sha256-proven,
-  no rewriting anywhere in the pipeline — there is no AI step at all).
-- `cache/arxiv/manifest.json` records endpoint URL, UTC time, hash, and the
-  verbatim title/authors for human eyeballing.
-- The validator re-parses the cached XML itself (`provenance_id_mismatch`), so
-  a manifest's self-report is not trusted.
-- `candidates/` is a discovery inlet only: results stay pending forever; no code
-  path writes a candidate into claim data. A human must edit the data file —
-  and then the cite=>fetch rule takes over mechanically.
-- Non-arXiv sources (textbooks, print journals, prize citations) are honestly
-  exempt: no fetchable endpoint. The rule splits on "does an endpoint exist".
+CI: `.github/workflows/` — Pages deploy, source health, weekly pulse.
 
-See [docs/p1-spec.md](docs/p1-spec.md) for the acceptance lines (defined before
-the code was written) and [docs/design-framework.md](docs/design-framework.md)
-for the whole-project frame.
+---
 
-## P1.5 — Two axes (built on 2026-07-10)
+## Challenge a verdict (how to overturn us)
 
-The consensus axis (five-cell light, human-judged, traceable) is now paired
-with an **evidence axis that nobody fills in**: it is derived by public rules
-(`axes.py`) over the recorded evidence items. The only way to move a claim on
-it is to record new evidence — which the v0 constitution and the P1 cite=>fetch
-rule police. `hawking_radiation` now shows its long-recorded tension
-structurally: **Strong Consensus × E3 indirect/analog only → ⚡ axes diverge.**
-Spec: [docs/p1.5-spec.md](docs/p1.5-spec.md).
+Core promise: **anyone with a checkable argument can overturn a light.**
 
-## P2 — Semi-automatic status proposals (built on 2026-07-10)
+1. Open [`claims.json`](https://taipei49314.github.io/universe-explorer/claims.json) or a claim card on the site.
+2. Read `status_reason` against `STATUS_CONDITIONS` in `universe_explorer/model.py`.
+3. Recompute the evidence axis with `axes.py` rules (or read `evidence_axis` + `axis_derivation` in the JSON).
+4. Open an issue with a template:
+   - **[Challenge a verdict](.github/ISSUE_TEMPLATE/challenge-a-verdict.yml)** — wrong light / wrong condition / misread source  
+   - **[Challenge a relation](.github/ISSUE_TEMPLATE/challenge-a-relation.yml)** — wrong or missing edge  
+   - **[Report a source problem](.github/ISSUE_TEMPLATE/report-a-source-problem.yml)** — fetch / hash / mis-cite  
 
-`python -m universe_explorer.proposals` — a mechanical engine that **proposes,
-never decides**: it marks which lights are compatible with the recorded
-evidence, may *exclude* a light on a hard contradiction (never approve one),
-answers "cannot judge — needs a human" for every human-only condition (textbook
-acceptance, real scientific camps...), and writes nothing into claim data.
-Human decisions over proposals go to an append-only audit log
-(`audit/decisions.jsonl`) via `--decide <claim> accept|reject <name> <reason>`.
-Spec: [docs/p2-spec.md](docs/p2-spec.md).
+A challenge **without a checkable source** (DOI / arXiv / journal) is itself an unsupported claim.
 
-## P3 — Change detection (built on 2026-07-10)
+Successful challenges: data file edited → cite⇒fetch → `status_history` if light moves → `python run_tests.py` → feed / changes surface.  
+Full path: [`CONTRIBUTING.md`](CONTRIBUTING.md) · editorial focus: [`docs/editorial-queue.md`](docs/editorial-queue.md)
 
-`python -m universe_explorer.watch` — diffs the current knowledge state against
-the committed snapshot (`snapshot/state.json`); differences become event files
-(`events/*.json`, the trigger interface for future push channels) carrying
-before/after values and the mechanical derivation, no interpretation. New
-constitution rule, build-blocking: **lights may change, never silently** — a
-status change without a matching `status_history` entry is
-`undocumented_status_change`. Snapshot updates only on explicit `--commit`.
-Spec: [docs/p3-spec.md](docs/p3-spec.md).
+---
 
-## P4 — Cross-domain: same engine, new domain (built on 2026-07-10)
+## Product surfaces
 
-A second topic — **the deep ocean** — runs through the identical engine with
-**zero edits to the six engine files** (`model`, `validator`, `axes`,
-`provenance`, `proposals`, `watch`), verified byte-for-byte against
-`engine_hashes.json`. Only the Data layer changed: `data/ocean.py` +
-`data/registry.py`, plus build/render wiring. Every source was verified online
-before being written (Corliss 1979, Spiess 1980, Caesar 2018, Worthington 2021,
-Rabone 2023, Sweetman 2024, Frontiers 2025) — none from memory. The AMOC claim
-finally exercises `competing_models` on a real two-camp dispute (retiring
-tension R4), and dark-oxygen production shows the reverse combo — a single
-direct observation (E2) under a 🔴 Speculative light. `python build.py` now
-renders an index over both topics. Spec: [docs/p4-spec.md](docs/p4-spec.md).
+| Surface | What |
+|---------|------|
+| `dist/index.html` | Topic cards, expand, deep-link `?open=` |
+| `dist/app.html` | Interactive map / Drift / ego graph / guides (`?c=` · `?path=`) |
+| `dist/universe.html` | Constellation view |
+| `dist/explore.html` (+ `-zh`) | Browse / export-oriented |
+| `dist/zh.html` | Single-file Chinese edition |
+| `dist/changes.html` | Recent restated events (P-Pulse) |
+| `dist/health.html` · `health.json` | Inventory audit (P-Audit) |
+| `dist/about.html` | How to read · constitution · support |
+| `dist/feed.xml` | Atom of change events (restates, never interprets) |
 
-Note: P4 surfaced tension **R7** — resolved by **Amendment #1**
-([docs/amendment-1-r7.md](docs/amendment-1-r7.md)): evidence descriptions
-(which are forced to hang on real sources) may carry measured percentages;
-declared-confidence vocabulary stays banned everywhere, evidence included.
+---
 
-## R6 — AI Narrative layer (built on 2026-07-10)
+## What this is not
 
-The fourth layer, finally filled in — under the constitution's terms. Every
-narrative sentence must carry refs resolving to the claim's sources or
-status_reason conditions; the mandated opening is "Based on the evidence
-recorded here"; percentages only as verbatim quotes of evidence descriptions;
-if the gate rejects anything, the whole narrative is withheld (rather absent
-than overreaching). Composer and checker are separate: today's composer is a
-mechanical assembler; a future LLM composer must pass the **same** `check()`.
-Spec: [docs/r6-narrative-spec.md](docs/r6-narrative-spec.md).
+- Not a chatbot and not an LLM knowledge base  
+- Not live NASA/ESA ingestion into claims (adapters deferred until a real inlet exists)  
+- Not automatic light classification that replaces human status decisions  
+- Not confidence scores, rankings, or “trust percentages”
 
-## Third domain — Exoplanets (built on 2026-07-10)
+Knowledge grows by **human editorial hours** under the constitution — not by claim-count KPIs.
 
-`data/exoplanets.py`: 🟢 they exist (RV + transit, independent) / 🟡 Planet
-Nine (clustering real vs survey bias — a second real `competing_models`) /
-🟠 TRAPPIST-1 b bare rock (JWST era just opening) / 🔴 K2-18 b biosignature
-(observation exists, mainstream unconvinced). Six new arXiv sources verified
-online and fetched through the P1 pipeline (manifest now 14 records).
-`test_registry.py` holds every current and future domain to every gate.
+---
 
-## Amendment #2 — Narrative localization (2026-07-10)
+## License
 
-Language is a presentation property; the gate is a structural property.
-`narrative.py` gained a `Localization` seam — sentence templates + evidence-text
-access per language — and `check()` now takes the localization too, so a Chinese
-(or any) narrative passes the **same court**: per-sentence refs, the localized
-constitutional opening (「根據目前收錄的證據」), percentages only as verbatim
-quotes of the localized evidence text. The Chinese localization lives in the
-data layer (`data/translations_zh.py`); the engine knows the protocol, never a
-language. Default calls behave exactly as before. This is the fourth
-"swap the smart part, never the court" seam (P2 proposer, R6 composer, R6
-narrative-checker, now language). Spec:
-[docs/amendment-2-narrative-i18n.md](docs/amendment-2-narrative-i18n.md).
+- **Code:** MIT — [`LICENSE`](LICENSE)  
+- **Content** (claim text, narratives, translations): CC BY — [`LICENSE-CONTENT.md`](LICENSE-CONTENT.md)
 
-The bilingual artifact generator is [dataops_artifact.py](dataops_artifact.py)
-(`python dataops_artifact.py out.html [en|zh]`).
+---
 
-## P5 (partial) — Push channel (built on 2026-07-10)
+## Docs map
 
-`python -m universe_explorer.dataops.watch_all` watches all topics (wiring over
-the frozen engine); `python -m universe_explorer.dataops.push` turns event
-files into digests in `outbox/` — restating before/after values, never
-interpreting, each line naming the event file that traces back to the
-derivation. No events => silence. Real transport (SMTP/webhook) and NASA/ESA
-adapters are deliberately not wired: sending is deployment, digesting is model.
+| Doc | Role |
+|-----|------|
+| [`docs/constitution.md`](docs/constitution.md) | Consolidated laws |
+| [`docs/design-framework.md`](docs/design-framework.md) | North star + roadmap history |
+| [`docs/milestones-complete.md`](docs/milestones-complete.md) | Closeout board (P5b, R-Graph, …) |
+| [`docs/product-remediation-7.md`](docs/product-remediation-7.md) | P-Read … P-Sustain |
+| [`docs/amendment-*.md`](docs/) | Numbered constitution changes |
+| [`docs/editorial-queue.md`](docs/editorial-queue.md) | What editors work on this season |
 
-To view the page: `python -m http.server 8731 --directory universe-explorer/dist`
-then open <http://localhost:8731>.
+---
 
-## The four claims (they carry three... four different lights)
-
-| Claim | Light | Status |
-|---|---|---|
-| `event_horizon_exists` | 🟢 | Established Consensus |
-| `hawking_radiation` | 🔵 | Strong Consensus |
-| `information_paradox` | 🟠 | Frontier Research |
-| `firewall` | 🔴 | Speculative |
-
-`hawking_radiation` is the deliberate stress case: theoretical consensus is very
-strong while direct astrophysical evidence is essentially zero. That split is
-**recorded in `status_reason`, not forced onto one light** — the frozen spec
-leaves axis-splitting (consensus strength vs evidence strength) to a later
-version.
-
-## v0 acceptance (spec §6) — result
-
-1. **Zero constitution violations** — `build.py` reports PASS on all 4 claims.
-2. **Light divergence holds** — 4 distinct lights across 4 claims, proving the
-   light belongs to the claim, not the topic.
-3. **Traceability holds** — each `status_reason` is a condition-by-condition
-   list a third party can check against §3 and overturn; `test_validator.py`
-   shows the checker fails a claim whose reasons don't cover its status.
-4. **Knowledge shape is visible** — the page reads bedrock-first: a 🟢 base
-   (the horizon exists) under a 🔴 ceiling (the firewall), not one averaged blob.
-
-> v0 passing = the epistemology stands up on one real topic. It does **not** mean
-> the system is complete or shippable — real automated ingestion (NASA/ESA/arXiv)
-> is v1 and is intentionally not built here.
-
-## Deliberately NOT in v0
-
-No live API ingestion, no 3D/orbit simulation, no daily push (the
-`status_history` field is kept as its future trigger), no persona debate, no
-ocean topic, no automatic light classification. v0 proves *traceable human
-judgement* as the foundation; automated classification is v1.
+*Completing a roadmap item does not invent confidence. Every claim still hangs on sources; every digest still restates events; every edge remains challengeable.*
