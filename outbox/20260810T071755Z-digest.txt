@@ -1,0 +1,85 @@
+UNIVERSE EXPLORER — change digest
+(mechanical restatement of recorded state changes; every line names its event file, which carries the derivation back to the evidence)
+
+== 20260809T103409Z  (20260809T103409Z-events.json)
+  * mass_discrepancy_observed: new claim recorded — status ESTABLISHED, evidence axis E1
+  * lcdm_includes_cold_dm: new claim recorded — status STRONG, evidence axis E3
+  * particle_vs_modified_gravity: new claim recorded — status COMPETING, evidence axis E2
+  * dm_particle_identity: new claim recorded — status FRONTIER, evidence axis E2
+  * pbh_all_dark_matter: new claim recorded — status SPECULATIVE, evidence axis E4
+
+== 20260809T103425Z  (20260809T103425Z-events.json)
+  * mass_discrepancy_observed: new claim recorded — status ESTABLISHED, evidence axis E1
+  * lcdm_includes_cold_dm: new claim recorded — status STRONG, evidence axis E3
+  * particle_vs_modified_gravity: new claim recorded — status COMPETING, evidence axis E2
+  * dm_particle_identity: new claim recorded — status FRONTIER, evidence axis E2
+  * pbh_all_dark_matter: new claim recorded — status SPECULATIVE, evidence axis E4
+
+== 20260809T103824Z  (20260809T103824Z-events.json)
+  * small_scale_cdm_challenges: new claim recorded — status FRONTIER, evidence axis E3
+  * axion_dm_candidate: new claim recorded — status FRONTIER, evidence axis E2
+  * sidm_small_scales: new claim recorded — status FRONTIER, evidence axis E3
+  * fermi_gc_excess_origin: new claim recorded — status COMPETING, evidence axis E3
+
+== 20260809T104222Z  (20260809T104222Z-events.json)
+  * monojet_collider_searches: new claim recorded — status FRONTIER, evidence axis E1
+  * sterile_neutrino_7kev_line: new claim recorded — status SPECULATIVE, evidence axis E3
+
+== 20260809T104424Z  (20260809T104424Z-events.json)
+  * fuzzy_wave_dark_matter: new claim recorded — status FRONTIER, evidence axis E3
+
+== 20260809T104842Z  (20260809T104842Z-events.json)
+  * thermal_wimp_freezeout_benchmark: new claim recorded — status FRONTIER, evidence axis E2
+  * direct_detection_wimp_searches: new claim recorded — status FRONTIER, evidence axis E1
+  * dwarf_spheroidal_indirect_limits: new claim recorded — status FRONTIER, evidence axis E3
+  * s8_structure_tension_dark_sector: new claim recorded — status COMPETING, evidence axis E3
+
+== 20260809T105146Z  (20260809T105146Z-events.json)
+  * neutrino_floor_direct_detection: new claim recorded — status FRONTIER, evidence axis E3
+  * cluster_sidm_cross_section_bounds: new claim recorded — status FRONTIER, evidence axis E3
+
+== 20260809T122617Z  (20260809T122617Z-events.json)
+  * universe_is_expanding: new claim recorded — status ESTABLISHED, evidence axis E1
+  * cmb_hot_big_bang: new claim recorded — status ESTABLISHED, evidence axis E1
+  * accelerated_expansion: new claim recorded — status STRONG, evidence axis E3
+  * H0_tension_local_vs_cmb: new claim recorded — status COMPETING, evidence axis E3
+  * cosmic_inflation_early_universe: new claim recorded — status FRONTIER, evidence axis E3
+  * cyclic_or_bounce_replaces_bb: new claim recorded — status SPECULATIVE, evidence axis E4
+  * solar_system_age: new claim recorded — status ESTABLISHED, evidence axis E1
+  * moon_giant_impact: new claim recorded — status STRONG, evidence axis E3
+  * late_heavy_bombardment: new claim recorded — status COMPETING, evidence axis E3
+  * ocean_worlds_icy_moons: new claim recorded — status FRONTIER, evidence axis E3
+  * mars_sustained_surface_habitability_now: new claim recorded — status SPECULATIVE, evidence axis E2
+
+== 20260809T123015Z  (20260809T123015Z-events.json)
+  * shoes_local_H0_high: new claim recorded — status FRONTIER, evidence axis E3
+  * cmb_lcdm_implies_low_H0: new claim recorded — status FRONTIER, evidence axis E3
+  * trgb_vs_cepheid_local_H0: new claim recorded — status COMPETING, evidence axis E3
+  * early_dark_energy_H0_fix: new claim recorded — status FRONTIER, evidence axis E3
+  * strong_lensing_time_delay_H0: new claim recorded — status FRONTIER, evidence axis E3
+  * standard_sirens_H0: new claim recorded — status FRONTIER, evidence axis E2
+
+== 20260809T123632Z  (20260809T123632Z-events.json)
+  * inflation_slow_roll_planck: new claim recorded — status FRONTIER, evidence axis E3
+  * primordial_tensors_undetected: new claim recorded — status FRONTIER, evidence axis E2
+  * inflation_vs_noninflation_alts: new claim recorded — status COMPETING, evidence axis E3
+  * eternal_inflation_multiverse: new claim recorded — status SPECULATIVE, evidence axis E3
+  * europa_induced_field_ocean: new claim recorded — status FRONTIER, evidence axis E3
+  * enceladus_plume_global_ocean: new claim recorded — status FRONTIER, evidence axis E2
+  * titan_subsurface_ocean: new claim recorded — status FRONTIER, evidence axis E3
+  * enceladus_plume_organics: new claim recorded — status FRONTIER, evidence axis E1
+  * ocean_world_life_today: new claim recorded — status SPECULATIVE, evidence axis E2
+
+== 20260809T130129Z  (20260809T130129Z-events.json)
+  * stars_powered_by_fusion: new claim recorded — status ESTABLISHED, evidence axis E1
+  * stellar_nucleosynthesis_makes_elements: new claim recorded — status STRONG, evidence axis E2
+  * core_collapse_forms_ns_bh: new claim recorded — status STRONG, evidence axis E2
+  * red_supergiant_problem: new claim recorded — status COMPETING, evidence axis E3
+  * solar_dynamo_cycle: new claim recorded — status FRONTIER, evidence axis E2
+  * pop_iii_already_routinely_observed: new claim recorded — status SPECULATIVE, evidence axis E3
+  * radius_valley_mechanism: new claim recorded — status COMPETING, evidence axis E3
+  * jwst_exoplanet_atmospheres: new claim recorded — status FRONTIER, evidence axis E1
+
+== 20260810T071614Z  (20260810T071614Z-events.json)
+  * (source-level): cited source has formal update records
+  * (source-level): cited source has formal update records
