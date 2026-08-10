@@ -93,8 +93,31 @@ def main(argv) -> int:
           + build_single("zh"))
     (out_dir / "zh.html").write_text(zh, encoding="utf-8")
 
+    # Phase 1: Discovery review dashboard
+    from universe_explorer.discovery.review import generate_review_dashboard
+    generate_review_dashboard(dist_dir=out_dir)
+
+    # Phase 2: Cross-domain epistemic map + graph JSON
+    from universe_explorer.crossdomain.graph_builder import build_cross_domain_graph
+    from universe_explorer.crossdomain.render_map import render_epistemic_map
+    import json
+    graph = build_cross_domain_graph(TOPICS)
+    render_epistemic_map(graph, dist_dir=out_dir)
+    (out_dir / "epistemic-graph.json").write_text(
+        json.dumps(graph.to_dict(), indent=2, ensure_ascii=False),
+        encoding="utf-8")
+
+    # Phase 3: Reader experience pages
+    from universe_explorer.reader.render_explore import render_explore_v2
+    from universe_explorer.reader.challenge_form import generate_challenge_form
+    from universe_explorer.reader.dual_axis_viz import generate_dual_axis_svg
+    render_explore_v2(TOPICS, dist_dir=out_dir)
+    generate_challenge_form(dist_dir=out_dir)
+    (out_dir / "dual-axis.svg").write_text(
+        generate_dual_axis_svg(TOPICS), encoding="utf-8")
+
     print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
-          f"+ zh.html -> {out_dir}")
+          f"+ zh.html + discovery/crossdomain/reader pages -> {out_dir}")
     return 0
 
 
