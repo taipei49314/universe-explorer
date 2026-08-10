@@ -166,6 +166,8 @@ if __name__ == "__main__":
     parser.add_argument("--label", help="Filter by annotation label")
     parser.add_argument("--has-notes", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has notes")
+    parser.add_argument("--has-competing", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has competing models")
     args = parser.parse_args()
 
     f = ClaimFilter(TOPICS)
@@ -177,6 +179,7 @@ if __name__ == "__main__":
         tag=args.tag,
         label=args.label,
         has_notes=args.has_notes,
+        has_competing_models=args.has_competing,
     )
     results = f.filter(criteria)
     print(f"Filter: {len(results)} claims")
