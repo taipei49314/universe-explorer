@@ -23,6 +23,7 @@ from universe_explorer.discovery.adapters.base import (
 )
 from universe_explorer.discovery.adapters.arxiv_adapter import ArxivAdapter
 from universe_explorer.discovery.adapters.doi_adapter import DoiAdapter
+from universe_explorer.discovery.adapters.nasa_adapter import NasaAdapter
 from universe_explorer.discovery.candidate_builder import (
     build_candidate,
     list_candidates,
@@ -62,6 +63,19 @@ class TestAdapterABC:
     def test_can_handle_doi(self):
         adapter = DoiAdapter()
         assert adapter.can_handle("doi:10.1038/xyz")
+        assert not adapter.can_handle("arXiv:2311.08680")
+
+    def test_nasa_adapter_implements_interface(self):
+        adapter = NasaAdapter()
+        assert adapter.name == "nasa"
+        assert adapter.source_ref_prefix == "ADS:"
+        assert hasattr(adapter, "search")
+        assert hasattr(adapter, "fetch")
+        assert hasattr(adapter, "extract_evidence")
+
+    def test_can_handle_nasa(self):
+        adapter = NasaAdapter()
+        assert adapter.can_handle("ADS:2023ApJ...950L..20S")
         assert not adapter.can_handle("arXiv:2311.08680")
 
 

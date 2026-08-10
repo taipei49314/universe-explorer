@@ -26,6 +26,7 @@ from typing import Dict, List, Optional
 from .adapters.arxiv_adapter import ArxivAdapter
 from .adapters.base import SourceAdapter
 from .adapters.doi_adapter import DoiAdapter
+from .adapters.nasa_adapter import NasaAdapter
 from .candidate_builder import build_candidate, list_candidates
 from .precheck import PrecheckReport, format_precheck_report, precheck
 from .review import generate_review_dashboard
@@ -34,6 +35,7 @@ from .review import generate_review_dashboard
 ADAPTERS: Dict[str, SourceAdapter] = {
     "arxiv": ArxivAdapter(),
     "doi": DoiAdapter(),
+    "nasa": NasaAdapter(),
 }
 
 
