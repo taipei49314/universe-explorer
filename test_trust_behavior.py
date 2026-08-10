@@ -73,6 +73,18 @@ def test_report_is_json_serializable():
     assert again["all_ok"] == report["all_ok"]
 
 
+def test_dist_automation_rows_present_when_built():
+    """After build.py, automation output measurements must be in the report."""
+    if not (Path("dist") / "claims.json").is_file():
+        return  # optional skip — live gate still covers engine rows
+    report = TB.measure(TOPICS, include_dist=True)
+    ids = {m["id"] for m in report["measurements"]}
+    assert "export.automation_outputs_present" in ids
+    row = next(m for m in report["measurements"]
+               if m["id"] == "export.automation_outputs_present")
+    assert row["ok"] is True, row
+
+
 def test_cli_exit_zero_on_live():
     assert TB.main([]) == 0
 

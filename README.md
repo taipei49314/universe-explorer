@@ -128,7 +128,8 @@ Requires **Python 3.9+**. No third-party packages for the core gate.
 git clone https://github.com/taipei49314/universe-explorer.git
 cd universe-explorer
 
-# One command: all test suites + constitution gate on every topic
+# One command: pytest every suite + constitution gate + trust/ui measures
+# (class-based suites must actually run — 0 collected items is a failure)
 python run_tests.py
 
 # Validate only

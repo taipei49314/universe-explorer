@@ -1,12 +1,17 @@
-"""One-command gate: all test suites + the constitution build check.
+"""One-command gate: all test suites + constitution build check + trust measure.
 
     python run_tests.py
 
 Exit code 0 = everything green. This is the CI entrypoint.
+
+Important: suites are executed via ``python -m pytest <file>`` so
+class-based tests actually run. Bare ``python test_*.py`` that prints
+nothing and exits 0 is treated as a **failure** (silent-suite blind spot).
 """
 
 from __future__ import annotations
 
+import re
 import subprocess
 import sys
 
@@ -32,6 +37,8 @@ SUITES = [
     "test_app.py",            # D4 dynamic frontend: data + self-containment
     "test_ui_expand.py",      # domain expand: measure first, then gate
     "test_trust_behavior.py", # trust surfaces: measure first, then trust
+    "test_automation.py",     # automation metrics (must actually execute)
+    "test_build_validation.py",  # dist shape + dynamic claim counts
     "test_relations.py",      # claim links + inference paths (no confidence)
     "test_transport.py",      # P5b webhook/SMTP transport (env-gated)
     "test_surface.py",        # P-Read/Shell/Pulse/Audit/Guide surface checks
@@ -42,35 +49,103 @@ SUITES = [
     "test_reader.py",         # Reader: search, filter, dual-axis, guided reading
     "test_integration.py",    # End-to-end integration tests
     "test_new_modules.py",    # Stats, export, diff, annotate, review, batch
+    "test_links.py",          # link / reading-path integrity
+    "test_adversarial.py",    # adversarial: empty/unicode/cache edges
+    "test_adversarial_2.py",  # adversarial: constitutional invariants
+    "test_adversarial_3.py",  # adversarial: watch/discovery/cache/reviews
 ]
+
+
+_PASSED_RE = re.compile(r"(\d+)\s+passed")
+_COLLECTED_RE = re.compile(r"collected\s+(\d+)\s+item")
+
+
+def _run_suite(suite: str) -> tuple[int, str]:
+    """Run one suite under pytest. Exit 1 if zero tests collected."""
+    r = subprocess.run(
+        [sys.executable, "-m", "pytest", suite, "-q", "--tb=line"],
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
+    out = ((r.stdout or "") + "\n" + (r.stderr or "")).strip()
+    low = out.lower()
+    # Blind spot: suite that collects nothing must not look green
+    if "no tests ran" in low or re.search(r"collected 0 items", low):
+        return 1, "FAIL collected 0 items (silent suite)"
+    m = _PASSED_RE.search(out)
+    n_pass = int(m.group(1)) if m else None
+    if r.returncode == 0 and n_pass == 0:
+        return 1, "FAIL 0 passed (silent suite)"
+    if r.returncode == 0 and n_pass is None and "passed" not in low:
+        # extremely quiet success with no summary — treat as blind spot
+        return 1, "FAIL no pytest summary (silent suite)"
+    tail = out.splitlines()[-1] if out.splitlines() else "(no output)"
+    if r.returncode != 0:
+        return r.returncode, tail
+    return 0, tail if n_pass is None else f"{n_pass} passed"
 
 
 def main() -> int:
     failed = []
     for suite in SUITES:
-        r = subprocess.run([sys.executable, suite], capture_output=True, text=True,
-                           encoding="utf-8", errors="replace")
-        tail = (r.stdout.strip().splitlines() or ["(no output)"])[-1]
-        mark = "ok " if r.returncode == 0 else "FAIL"
-        print(f"  {mark} {suite:22} {tail}")
-        if r.returncode != 0:
+        code, tail = _run_suite(suite)
+        mark = "ok " if code == 0 else "FAIL"
+        print(f"  {mark} {suite:24} {tail}")
+        if code != 0:
             failed.append(suite)
+            # re-run verbose enough to see failures once
+            r = subprocess.run(
+                [sys.executable, "-m", "pytest", suite, "--tb=short", "-q"],
+                capture_output=True, text=True, encoding="utf-8", errors="replace",
+            )
             print(r.stdout)
             print(r.stderr)
 
-    r = subprocess.run([sys.executable, "build.py", "--check"],
-                       capture_output=True, text=True,
-                       encoding="utf-8", errors="replace")
+    r = subprocess.run(
+        [sys.executable, "build.py", "--check"],
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
     mark = "ok " if r.returncode == 0 else "FAIL"
-    print(f"  {mark} build.py --check       (constitution gate, all topics)")
+    print(f"  {mark} build.py --check         (constitution gate, all topics)")
     if r.returncode != 0:
         failed.append("build.py --check")
+        print(r.stdout)
+
+    # Carry the trust measurer in the gate — measure before trusting green
+    r = subprocess.run(
+        [sys.executable, "-m", "universe_explorer.trust_behavior"],
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
+    meas_tail = (r.stdout or "").strip().splitlines()
+    summary = next(
+        (ln for ln in meas_tail if ln.startswith("pass:") or "all_ok" in ln),
+        meas_tail[-1] if meas_tail else "(no measure output)",
+    )
+    mark = "ok " if r.returncode == 0 else "FAIL"
+    print(f"  {mark} trust_behavior measure   {summary}")
+    if r.returncode != 0:
+        failed.append("trust_behavior")
+        print(r.stdout)
+
+    r = subprocess.run(
+        [sys.executable, "-m", "universe_explorer.ui_expand"],
+        capture_output=True, text=True, encoding="utf-8", errors="replace",
+    )
+    ui_lines = (r.stdout or "").strip().splitlines()
+    ui_sum = next(
+        (ln for ln in ui_lines if "fail" in ln.lower() or "pass" in ln.lower()
+         or "all_ok" in ln.lower() or "measurements" in ln.lower()),
+        ui_lines[-1] if ui_lines else "(no ui_expand output)",
+    )
+    mark = "ok " if r.returncode == 0 else "FAIL"
+    print(f"  {mark} ui_expand measure        {ui_sum}")
+    if r.returncode != 0:
+        failed.append("ui_expand")
         print(r.stdout)
 
     if failed:
         print(f"\nFAILED: {failed}")
         return 1
-    print("\nall suites + constitution gate: green")
+    print("\nall suites + constitution gate + measures: green")
     return 0
 
 

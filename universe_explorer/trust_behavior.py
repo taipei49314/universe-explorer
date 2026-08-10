@@ -457,6 +457,77 @@ def measure_dist_exports(topics: Sequence[Topic]) -> List[Measurement]:
         expected=[],
         observed=missing[:12],
     ))
+
+    # Automation inventory: every expected build output exists (when dist present)
+    try:
+        from .reader.automation_metrics import EXPECTED_OUTPUTS
+        absent = [n for n, _ in EXPECTED_OUTPUTS if not (DIST / n).is_file()]
+    except Exception as e:  # pragma: no cover
+        absent = [f"import_error:{e}"]
+    ms.append(_m_bool(
+        "export.automation_outputs_present",
+        "export", "constitution",
+        ok=len(absent) == 0,
+        expected=[],
+        observed=absent[:15],
+        note="dist/ must match EXPECTED_OUTPUTS (measure before trusting ship)",
+    ))
+
+    auto_path = DIST / "automation-metrics.json"
+    if auto_path.is_file():
+        auto = json.loads(auto_path.read_text(encoding="utf-8"))
+        ms.append(_m_bool(
+            "export.automation_metrics_zero_missing",
+            "export", "constitution",
+            ok=auto.get("missing_outputs") == 0,
+            expected=0,
+            observed=auto.get("missing_outputs"),
+        ))
+        auto_hits: List[str] = []
+        walk(auto)  # reuse banned-key walker → writes banned_hits; re-walk clean
+        # dedicated walk for automation payload
+        def walk_auto(x: Any, path: str = "") -> None:
+            if isinstance(x, dict):
+                for k, v in x.items():
+                    if isinstance(k, str) and k.lower() in BANNED_PAYLOAD_KEYS:
+                        auto_hits.append(f"{path}.{k}")
+                    walk_auto(v, f"{path}.{k}")
+            elif isinstance(x, list):
+                for i, v in enumerate(x[:200]):
+                    walk_auto(v, f"{path}[{i}]")
+        walk_auto(auto)
+        ms.append(_m_bool(
+            "export.automation_metrics_no_banned_keys",
+            "export", "constitution",
+            ok=len(auto_hits) == 0,
+            expected=[],
+            observed=auto_hits[:10],
+        ))
+    else:
+        ms.append(_m_bool(
+            "export.automation_metrics_present",
+            "export", "constitution",
+            ok=False,
+            expected="automation-metrics.json",
+            observed=False,
+            note="build.py should emit this",
+        ))
+
+    # stats.json claim count parity
+    stats_path = DIST / "stats.json"
+    if stats_path.is_file():
+        stats = json.loads(stats_path.read_text(encoding="utf-8"))
+        n_engine = len(by_id)
+        n_stats = None
+        if isinstance(stats.get("counts"), dict):
+            n_stats = stats["counts"].get("claims") or stats["counts"].get("n_claims")
+        n_stats = n_stats or stats.get("total_claims") or stats.get("n_claims")
+        ms.append(_m(
+            "export.stats_claim_count",
+            "export", "constitution",
+            n_engine, n_stats,
+            note="stats.json must recount the registry",
+        ))
     return ms
 
 

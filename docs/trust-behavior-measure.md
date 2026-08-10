@@ -27,10 +27,14 @@ python -m universe_explorer.trust_behavior
 python -m universe_explorer.trust_behavior --json
 python -m universe_explorer.trust_behavior --out health/trust-behavior.json
 python test_trust_behavior.py
-python run_tests.py   # includes test_trust_behavior
+python run_tests.py   # pytest every suite + trust_behavior + ui_expand measures
 ```
 
 Exit code **0** only when `n_fail == 0`.
+
+`run_tests.py` runs suites under **pytest** (class-based tests must actually
+execute). A suite that collects **0 items** is a failure — bare
+`python test_foo.py` exiting 0 with no tests is the silent-suite blind spot.
 
 `n_pass` / `n_fail` / `n_measurements` are **counts of the measurement list** —
 recount them yourself.

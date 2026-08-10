@@ -1,7 +1,7 @@
 {
   "kind": "trust_behavior_measure",
-  "n_measurements": 477,
-  "n_pass": 477,
+  "n_measurements": 481,
+  "n_pass": 481,
   "n_fail": 0,
   "all_ok": true,
   "n_topics": 8,
@@ -4303,6 +4303,42 @@
       "observed": [],
       "ok": true,
       "note": ""
+    },
+    {
+      "id": "export.automation_outputs_present",
+      "surface": "export",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "dist/ must match EXPECTED_OUTPUTS (measure before trusting ship)"
+    },
+    {
+      "id": "export.automation_metrics_zero_missing",
+      "surface": "export",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "export.automation_metrics_no_banned_keys",
+      "surface": "export",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "export.stats_claim_count",
+      "surface": "export",
+      "kind": "constitution",
+      "expected": 91,
+      "observed": 91,
+      "ok": true,
+      "note": "stats.json must recount the registry"
     }
   ]
 }
