@@ -181,8 +181,11 @@ class ClaimSearchIndex:
 
 
 def _tokenize(text: str) -> List[str]:
-    """Split text into lowercase alphanumeric tokens."""
-    return [t for t in re.split(r"[^a-z0-9]+", text.lower()) if len(t) > 2]
+    """Split text into tokens. Handles both ASCII and Unicode (e.g. Chinese)."""
+    # Split on whitespace and ASCII punctuation, keep Unicode word chars together
+    tokens = re.findall(r'[a-z0-9]+|[\u4e00-\u9fff\u3400-\u4dbf]+', text.lower())
+    # ASCII tokens need length > 2; Chinese tokens are valid at any length
+    return [t for t in tokens if len(t) > 2 or re.match(r'[\u4e00-\u9fff]', t)]
 
 
 if __name__ == "__main__":
