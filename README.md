@@ -27,7 +27,7 @@ It does **not** tell you “the answer.” It shows, claim by claim:
 | Reading paths | **7** (one domain still path-thin: `planets` has edges but no authored path yet) |
 | Engine | Constitution-gated Python · static `dist/` site |
 | AI at runtime | **None required** (narrative is a gated bottom layer) |
-| CI test modules | **30** suites in `run_tests.py` (**318** `test_*` functions) |
+| CI test modules | **31** suites in `run_tests.py` (**319** `test_*` functions) |
 
 ### Domains
 
@@ -146,6 +146,20 @@ python -m http.server 8731 --directory dist
 #      http://localhost:8731/universe.html
 ```
 
+### Unified CLI
+
+```sh
+python -m universe_explorer build           # validate + render site
+python -m universe_explorer build --check   # validate only
+python -m universe_explorer search "query"  # full-text search
+python -m universe_explorer filter --domain cosmology --status STRONG
+python -m universe_explorer stats           # knowledge base statistics
+python -m universe_explorer paths           # list all reading paths
+python -m universe_explorer discover "q" --topic cosmology --adapter arxiv
+python -m universe_explorer graph           # cross-domain graph report
+python -m universe_explorer health          # integrity check all components
+```
+
 ### Useful modules
 
 ```sh
@@ -153,12 +167,15 @@ python -m universe_explorer.dataops.arxiv_fetch     # fetch cited arXiv ids
 python -m universe_explorer.dataops.arxiv_search "…"  # discovery → candidates/ only
 python -m universe_explorer.discovery.pipeline "…"  # search → candidates → precheck → review.html
 python -m universe_explorer.discovery.review        # regenerate dist/review.html
+python -m universe_explorer.crossdomain.render_map  # regenerate dist/epistemic_map.html
 python -m universe_explorer.reader.dashboard        # regenerate dist/dashboard.html
 python -m universe_explorer.reader.stats            # structural inventory report
 python -m universe_explorer.reader.export           # JSON/CSV/Markdown export (filtered)
-python -m universe_explorer.reader.annotate         # tags/notes/labels → annotations/ (not claim data)
-python -m universe_explorer.reader.review           # checklist review workflow → reviews/
+python -m universe_explorer.reader.annotate         # tags/notes/labels → annotations/
+python -m universe_explorer.reader.review           # checklist review workflow
 python -m universe_explorer.reader.batch            # bulk export / tag / review-start / stats
+python -m universe_explorer.reader.diff             # compare two claims field-by-field
+python -m universe_explorer.reader.health_check     # integrity check all components
 python -m universe_explorer.proposals               # mechanical status proposals
 python -m universe_explorer.watch                   # diff vs snapshot/state.json
 python -m universe_explorer.dataops.push            # events → outbox digests (restatement only)
