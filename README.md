@@ -176,6 +176,8 @@ python -m universe_explorer.reader.review           # checklist review workflow
 python -m universe_explorer.reader.batch            # bulk export / tag / review-start / stats
 python -m universe_explorer.reader.diff             # compare two claims field-by-field
 python -m universe_explorer.reader.health_check     # integrity check all components
+python -m universe_explorer.trust_behavior          # measure trust surfaces before trusting them
+python -m universe_explorer.ui_expand               # measure domain-expand UX contracts
 python -m universe_explorer.proposals               # mechanical status proposals
 python -m universe_explorer.watch                   # diff vs snapshot/state.json
 python -m universe_explorer.dataops.push            # events → outbox digests (restatement only)
@@ -260,6 +262,8 @@ Knowledge grows by **human editorial hours** under the constitution — not by c
 | [`docs/amendment-*.md`](docs/) | Numbered constitution changes |
 | [`docs/editorial-queue.md`](docs/editorial-queue.md) | What editors work on this season |
 | [`docs/hawking-walkthrough.md`](docs/hawking-walkthrough.md) | Dual-axis stress case, data → UI |
+| [`docs/trust-behavior-measure.md`](docs/trust-behavior-measure.md) | Measure first; trust only counted rows |
+| [`docs/ui-expand-measure.md`](docs/ui-expand-measure.md) | Domain-expand measure gate |
 | [`docs/north-star-v2-architecture.md`](docs/north-star-v2-architecture.md) | Discovery · cross-domain map · reader (Phase 1–3) |
 
 ---

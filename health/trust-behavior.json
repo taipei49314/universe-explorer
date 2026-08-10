@@ -1,0 +1,4308 @@
+{
+  "kind": "trust_behavior_measure",
+  "n_measurements": 477,
+  "n_pass": 477,
+  "n_fail": 0,
+  "all_ok": true,
+  "n_topics": 8,
+  "n_claims": 91,
+  "note": "Measure first; trust only what the counts show. n_pass/n_fail are list counts — recount them yourself. No confidence field exists in this report.",
+  "measurements": [
+    {
+      "id": "black_hole:event_horizon_exists.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:event_horizon_exists.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:event_horizon_exists.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "black_hole:event_horizon_exists.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:event_horizon_exists.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "black_hole:hawking_radiation.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:hawking_radiation.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:hawking_radiation.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "status=STRONG axis=E3"
+    },
+    {
+      "id": "black_hole:hawking_radiation.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:hawking_radiation.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "black_hole:kerr_describes_astrophysical_bh.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:kerr_describes_astrophysical_bh.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:kerr_describes_astrophysical_bh.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=STRONG axis=E1"
+    },
+    {
+      "id": "black_hole:kerr_describes_astrophysical_bh.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:kerr_describes_astrophysical_bh.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "black_hole:smbh_common_in_galaxy_nuclei.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:smbh_common_in_galaxy_nuclei.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:smbh_common_in_galaxy_nuclei.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=STRONG axis=E2"
+    },
+    {
+      "id": "black_hole:smbh_common_in_galaxy_nuclei.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:smbh_common_in_galaxy_nuclei.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "black_hole:lower_mass_gap_compact_objects.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:lower_mass_gap_compact_objects.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:lower_mass_gap_compact_objects.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E2"
+    },
+    {
+      "id": "black_hole:lower_mass_gap_compact_objects.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:lower_mass_gap_compact_objects.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "black_hole:bbh_mergers_catalogued.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:bbh_mergers_catalogued.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:bbh_mergers_catalogued.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E2"
+    },
+    {
+      "id": "black_hole:bbh_mergers_catalogued.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:bbh_mergers_catalogued.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "black_hole:jets_extract_bh_spin.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:jets_extract_bh_spin.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:jets_extract_bh_spin.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "black_hole:jets_extract_bh_spin.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:jets_extract_bh_spin.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "black_hole:information_paradox.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:information_paradox.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:information_paradox.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E4"
+    },
+    {
+      "id": "black_hole:information_paradox.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:information_paradox.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "black_hole:firewall.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:firewall.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:firewall.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E4"
+    },
+    {
+      "id": "black_hole:firewall.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:firewall.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "black_hole:horizonless_gw_echoes.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "black_hole:horizonless_gw_echoes.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "black_hole:horizonless_gw_echoes.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E3"
+    },
+    {
+      "id": "black_hole:horizonless_gw_echoes.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "black_hole:horizonless_gw_echoes.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:universe_is_expanding.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:universe_is_expanding.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:universe_is_expanding.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "cosmology:universe_is_expanding.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:universe_is_expanding.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:cmb_hot_big_bang.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:cmb_hot_big_bang.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:cmb_hot_big_bang.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "cosmology:cmb_hot_big_bang.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:cmb_hot_big_bang.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:accelerated_expansion.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:accelerated_expansion.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:accelerated_expansion.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "status=STRONG axis=E3"
+    },
+    {
+      "id": "cosmology:accelerated_expansion.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:accelerated_expansion.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:H0_tension_local_vs_cmb.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:H0_tension_local_vs_cmb.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:H0_tension_local_vs_cmb.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "cosmology:H0_tension_local_vs_cmb.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:H0_tension_local_vs_cmb.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:shoes_local_H0_high.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:shoes_local_H0_high.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:shoes_local_H0_high.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "cosmology:shoes_local_H0_high.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:shoes_local_H0_high.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:cmb_lcdm_implies_low_H0.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:cmb_lcdm_implies_low_H0.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:cmb_lcdm_implies_low_H0.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "cosmology:cmb_lcdm_implies_low_H0.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:cmb_lcdm_implies_low_H0.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:trgb_vs_cepheid_local_H0.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:trgb_vs_cepheid_local_H0.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:trgb_vs_cepheid_local_H0.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "cosmology:trgb_vs_cepheid_local_H0.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:trgb_vs_cepheid_local_H0.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:early_dark_energy_H0_fix.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:early_dark_energy_H0_fix.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:early_dark_energy_H0_fix.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "cosmology:early_dark_energy_H0_fix.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:early_dark_energy_H0_fix.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:strong_lensing_time_delay_H0.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:strong_lensing_time_delay_H0.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:strong_lensing_time_delay_H0.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "cosmology:strong_lensing_time_delay_H0.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:strong_lensing_time_delay_H0.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:standard_sirens_H0.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:standard_sirens_H0.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:standard_sirens_H0.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E2"
+    },
+    {
+      "id": "cosmology:standard_sirens_H0.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:standard_sirens_H0.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:cosmic_inflation_early_universe.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:cosmic_inflation_early_universe.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:cosmic_inflation_early_universe.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "cosmology:cosmic_inflation_early_universe.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:cosmic_inflation_early_universe.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:inflation_slow_roll_planck.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:inflation_slow_roll_planck.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:inflation_slow_roll_planck.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "cosmology:inflation_slow_roll_planck.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:inflation_slow_roll_planck.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:primordial_tensors_undetected.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:primordial_tensors_undetected.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:primordial_tensors_undetected.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E2"
+    },
+    {
+      "id": "cosmology:primordial_tensors_undetected.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:primordial_tensors_undetected.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:inflation_vs_noninflation_alts.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:inflation_vs_noninflation_alts.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:inflation_vs_noninflation_alts.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "cosmology:inflation_vs_noninflation_alts.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:inflation_vs_noninflation_alts.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:eternal_inflation_multiverse.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:eternal_inflation_multiverse.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:eternal_inflation_multiverse.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E3"
+    },
+    {
+      "id": "cosmology:eternal_inflation_multiverse.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:eternal_inflation_multiverse.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "cosmology:cyclic_or_bounce_replaces_bb.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "cosmology:cyclic_or_bounce_replaces_bb.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "cosmology:cyclic_or_bounce_replaces_bb.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E4"
+    },
+    {
+      "id": "cosmology:cyclic_or_bounce_replaces_bb.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "cosmology:cyclic_or_bounce_replaces_bb.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:mass_discrepancy_observed.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:mass_discrepancy_observed.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:mass_discrepancy_observed.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "dark_matter:mass_discrepancy_observed.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:mass_discrepancy_observed.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:lcdm_includes_cold_dm.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:lcdm_includes_cold_dm.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:lcdm_includes_cold_dm.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "status=STRONG axis=E3"
+    },
+    {
+      "id": "dark_matter:lcdm_includes_cold_dm.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:lcdm_includes_cold_dm.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:particle_vs_modified_gravity.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:particle_vs_modified_gravity.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:particle_vs_modified_gravity.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E2"
+    },
+    {
+      "id": "dark_matter:particle_vs_modified_gravity.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:particle_vs_modified_gravity.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:dm_particle_identity.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:dm_particle_identity.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:dm_particle_identity.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E2"
+    },
+    {
+      "id": "dark_matter:dm_particle_identity.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:dm_particle_identity.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:thermal_wimp_freezeout_benchmark.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:thermal_wimp_freezeout_benchmark.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:thermal_wimp_freezeout_benchmark.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E2"
+    },
+    {
+      "id": "dark_matter:thermal_wimp_freezeout_benchmark.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:thermal_wimp_freezeout_benchmark.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:direct_detection_wimp_searches.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:direct_detection_wimp_searches.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:direct_detection_wimp_searches.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E1"
+    },
+    {
+      "id": "dark_matter:direct_detection_wimp_searches.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:direct_detection_wimp_searches.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:neutrino_floor_direct_detection.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:neutrino_floor_direct_detection.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:neutrino_floor_direct_detection.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "dark_matter:neutrino_floor_direct_detection.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:neutrino_floor_direct_detection.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:small_scale_cdm_challenges.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:small_scale_cdm_challenges.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:small_scale_cdm_challenges.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "dark_matter:small_scale_cdm_challenges.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:small_scale_cdm_challenges.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:axion_dm_candidate.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:axion_dm_candidate.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:axion_dm_candidate.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E2"
+    },
+    {
+      "id": "dark_matter:axion_dm_candidate.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:axion_dm_candidate.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:sidm_small_scales.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:sidm_small_scales.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:sidm_small_scales.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "dark_matter:sidm_small_scales.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:sidm_small_scales.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:cluster_sidm_cross_section_bounds.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:cluster_sidm_cross_section_bounds.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:cluster_sidm_cross_section_bounds.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "dark_matter:cluster_sidm_cross_section_bounds.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:cluster_sidm_cross_section_bounds.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:monojet_collider_searches.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:monojet_collider_searches.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:monojet_collider_searches.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E1"
+    },
+    {
+      "id": "dark_matter:monojet_collider_searches.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:monojet_collider_searches.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:fuzzy_wave_dark_matter.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:fuzzy_wave_dark_matter.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:fuzzy_wave_dark_matter.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "dark_matter:fuzzy_wave_dark_matter.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:fuzzy_wave_dark_matter.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:dwarf_spheroidal_indirect_limits.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:dwarf_spheroidal_indirect_limits.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:dwarf_spheroidal_indirect_limits.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "dark_matter:dwarf_spheroidal_indirect_limits.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:dwarf_spheroidal_indirect_limits.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:fermi_gc_excess_origin.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:fermi_gc_excess_origin.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:fermi_gc_excess_origin.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "dark_matter:fermi_gc_excess_origin.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:fermi_gc_excess_origin.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:s8_structure_tension_dark_sector.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:s8_structure_tension_dark_sector.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:s8_structure_tension_dark_sector.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "dark_matter:s8_structure_tension_dark_sector.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:s8_structure_tension_dark_sector.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:sterile_neutrino_7kev_line.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:sterile_neutrino_7kev_line.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:sterile_neutrino_7kev_line.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E3"
+    },
+    {
+      "id": "dark_matter:sterile_neutrino_7kev_line.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:sterile_neutrino_7kev_line.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "dark_matter:pbh_all_dark_matter.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "dark_matter:pbh_all_dark_matter.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "dark_matter:pbh_all_dark_matter.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E4"
+    },
+    {
+      "id": "dark_matter:pbh_all_dark_matter.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "dark_matter:pbh_all_dark_matter.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:stars_powered_by_fusion.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:stars_powered_by_fusion.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:stars_powered_by_fusion.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "stars:stars_powered_by_fusion.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:stars_powered_by_fusion.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:stellar_nucleosynthesis_makes_elements.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:stellar_nucleosynthesis_makes_elements.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:stellar_nucleosynthesis_makes_elements.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=STRONG axis=E2"
+    },
+    {
+      "id": "stars:stellar_nucleosynthesis_makes_elements.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:stellar_nucleosynthesis_makes_elements.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:core_collapse_forms_ns_bh.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:core_collapse_forms_ns_bh.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:core_collapse_forms_ns_bh.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=STRONG axis=E2"
+    },
+    {
+      "id": "stars:core_collapse_forms_ns_bh.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:core_collapse_forms_ns_bh.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:helioseismology_constrains_solar_interior.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:helioseismology_constrains_solar_interior.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:helioseismology_constrains_solar_interior.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=STRONG axis=E2"
+    },
+    {
+      "id": "stars:helioseismology_constrains_solar_interior.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:helioseismology_constrains_solar_interior.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:white_dwarfs_electron_degenerate.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:white_dwarfs_electron_degenerate.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:white_dwarfs_electron_degenerate.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "status=STRONG axis=E3"
+    },
+    {
+      "id": "stars:white_dwarfs_electron_degenerate.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:white_dwarfs_electron_degenerate.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:imf_approximately_universal.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:imf_approximately_universal.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:imf_approximately_universal.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "status=STRONG axis=E3"
+    },
+    {
+      "id": "stars:imf_approximately_universal.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:imf_approximately_universal.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:red_supergiant_problem.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:red_supergiant_problem.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:red_supergiant_problem.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "stars:red_supergiant_problem.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:red_supergiant_problem.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:sn_ia_progenitor_channels.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:sn_ia_progenitor_channels.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:sn_ia_progenitor_channels.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "stars:sn_ia_progenitor_channels.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:sn_ia_progenitor_channels.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:solar_dynamo_cycle.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:solar_dynamo_cycle.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:solar_dynamo_cycle.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E2"
+    },
+    {
+      "id": "stars:solar_dynamo_cycle.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:solar_dynamo_cycle.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:cno_cycle_solar_neutrinos_detected.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:cno_cycle_solar_neutrinos_detected.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:cno_cycle_solar_neutrinos_detected.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E1"
+    },
+    {
+      "id": "stars:cno_cycle_solar_neutrinos_detected.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:cno_cycle_solar_neutrinos_detected.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:pair_instability_bh_mass_gap.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:pair_instability_bh_mass_gap.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:pair_instability_bh_mass_gap.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E4"
+    },
+    {
+      "id": "stars:pair_instability_bh_mass_gap.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:pair_instability_bh_mass_gap.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "stars:pop_iii_already_routinely_observed.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "stars:pop_iii_already_routinely_observed.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stars:pop_iii_already_routinely_observed.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E3"
+    },
+    {
+      "id": "stars:pop_iii_already_routinely_observed.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "stars:pop_iii_already_routinely_observed.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "exoplanets:exoplanets_exist.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "exoplanets:exoplanets_exist.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "exoplanets:exoplanets_exist.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "exoplanets:exoplanets_exist.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "exoplanets:exoplanets_exist.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "exoplanets:proxima_b_exists.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "exoplanets:proxima_b_exists.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "exoplanets:proxima_b_exists.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "exoplanets:proxima_b_exists.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "exoplanets:proxima_b_exists.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "exoplanets:planets_are_common.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "exoplanets:planets_are_common.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "exoplanets:planets_are_common.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "status=STRONG axis=E3"
+    },
+    {
+      "id": "exoplanets:planets_are_common.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "exoplanets:planets_are_common.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "exoplanets:planet_nine.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "exoplanets:planet_nine.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "exoplanets:planet_nine.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "exoplanets:planet_nine.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "exoplanets:planet_nine.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "exoplanets:radius_valley_mechanism.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "exoplanets:radius_valley_mechanism.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "exoplanets:radius_valley_mechanism.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "exoplanets:radius_valley_mechanism.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "exoplanets:radius_valley_mechanism.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "exoplanets:trappist1b_bare_rock.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "exoplanets:trappist1b_bare_rock.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "exoplanets:trappist1b_bare_rock.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E2"
+    },
+    {
+      "id": "exoplanets:trappist1b_bare_rock.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "exoplanets:trappist1b_bare_rock.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "exoplanets:trappist1_inner_planets_airless.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "exoplanets:trappist1_inner_planets_airless.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "exoplanets:trappist1_inner_planets_airless.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E1"
+    },
+    {
+      "id": "exoplanets:trappist1_inner_planets_airless.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "exoplanets:trappist1_inner_planets_airless.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "exoplanets:jwst_exoplanet_atmospheres.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "exoplanets:jwst_exoplanet_atmospheres.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "exoplanets:jwst_exoplanet_atmospheres.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E1"
+    },
+    {
+      "id": "exoplanets:jwst_exoplanet_atmospheres.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "exoplanets:jwst_exoplanet_atmospheres.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "exoplanets:k2_18b_biosignature.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "exoplanets:k2_18b_biosignature.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "exoplanets:k2_18b_biosignature.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E2"
+    },
+    {
+      "id": "exoplanets:k2_18b_biosignature.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 1,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "exoplanets:k2_18b_biosignature.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:solar_system_age.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:solar_system_age.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:solar_system_age.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "planets:solar_system_age.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:solar_system_age.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:moon_giant_impact.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:moon_giant_impact.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:moon_giant_impact.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "status=STRONG axis=E3"
+    },
+    {
+      "id": "planets:moon_giant_impact.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:moon_giant_impact.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:late_heavy_bombardment.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:late_heavy_bombardment.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:late_heavy_bombardment.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "planets:late_heavy_bombardment.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:late_heavy_bombardment.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:ocean_worlds_icy_moons.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:ocean_worlds_icy_moons.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:ocean_worlds_icy_moons.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "planets:ocean_worlds_icy_moons.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:ocean_worlds_icy_moons.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:europa_induced_field_ocean.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:europa_induced_field_ocean.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:europa_induced_field_ocean.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "planets:europa_induced_field_ocean.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:europa_induced_field_ocean.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:enceladus_plume_global_ocean.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:enceladus_plume_global_ocean.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:enceladus_plume_global_ocean.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E2"
+    },
+    {
+      "id": "planets:enceladus_plume_global_ocean.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:enceladus_plume_global_ocean.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:titan_subsurface_ocean.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:titan_subsurface_ocean.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:titan_subsurface_ocean.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "planets:titan_subsurface_ocean.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:titan_subsurface_ocean.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:enceladus_plume_organics.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:enceladus_plume_organics.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:enceladus_plume_organics.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E1"
+    },
+    {
+      "id": "planets:enceladus_plume_organics.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:enceladus_plume_organics.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:ocean_world_life_today.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:ocean_world_life_today.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:ocean_world_life_today.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E2"
+    },
+    {
+      "id": "planets:ocean_world_life_today.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:ocean_world_life_today.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "planets:mars_sustained_surface_habitability_now.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "planets:mars_sustained_surface_habitability_now.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "planets:mars_sustained_surface_habitability_now.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E2"
+    },
+    {
+      "id": "planets:mars_sustained_surface_habitability_now.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "planets:mars_sustained_surface_habitability_now.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "ocean:hydrothermal_vents_exist.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "ocean:hydrothermal_vents_exist.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "ocean:hydrothermal_vents_exist.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "ocean:hydrothermal_vents_exist.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "ocean:hydrothermal_vents_exist.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "ocean:ocean_heat_uptake.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "ocean:ocean_heat_uptake.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "ocean:ocean_heat_uptake.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=STRONG axis=E2"
+    },
+    {
+      "id": "ocean:ocean_heat_uptake.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "ocean:ocean_heat_uptake.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "ocean:ocean_acidification_anthropogenic.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "ocean:ocean_acidification_anthropogenic.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "ocean:ocean_acidification_anthropogenic.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=STRONG axis=E2"
+    },
+    {
+      "id": "ocean:ocean_acidification_anthropogenic.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "ocean:ocean_acidification_anthropogenic.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "ocean:amoc_weakening.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "ocean:amoc_weakening.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "ocean:amoc_weakening.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "ocean:amoc_weakening.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "ocean:amoc_weakening.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "ocean:ccz_biodiversity_unknown.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "ocean:ccz_biodiversity_unknown.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "ocean:ccz_biodiversity_unknown.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "ocean:ccz_biodiversity_unknown.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "ocean:ccz_biodiversity_unknown.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "ocean:microplastics_reach_deep_ocean.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "ocean:microplastics_reach_deep_ocean.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "ocean:microplastics_reach_deep_ocean.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E1"
+    },
+    {
+      "id": "ocean:microplastics_reach_deep_ocean.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "ocean:microplastics_reach_deep_ocean.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "ocean:deep_sea_mining_impacts_uncertain.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "ocean:deep_sea_mining_impacts_uncertain.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "ocean:deep_sea_mining_impacts_uncertain.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "ocean:deep_sea_mining_impacts_uncertain.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "ocean:deep_sea_mining_impacts_uncertain.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "ocean:dark_oxygen_production.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "ocean:dark_oxygen_production.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "ocean:dark_oxygen_production.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E2"
+    },
+    {
+      "id": "ocean:dark_oxygen_production.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 1,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "ocean:dark_oxygen_production.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "seismology:plate_tectonics_drives_earthquakes.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "seismology:plate_tectonics_drives_earthquakes.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "seismology:plate_tectonics_drives_earthquakes.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=ESTABLISHED axis=E1"
+    },
+    {
+      "id": "seismology:plate_tectonics_drives_earthquakes.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 4,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "seismology:plate_tectonics_drives_earthquakes.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "seismology:eew_gives_usable_warning.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "seismology:eew_gives_usable_warning.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "seismology:eew_gives_usable_warning.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "status=STRONG axis=E3"
+    },
+    {
+      "id": "seismology:eew_gives_usable_warning.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "seismology:eew_gives_usable_warning.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "seismology:induced_seismicity_human_activities.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "seismology:induced_seismicity_human_activities.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "seismology:induced_seismicity_human_activities.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=STRONG axis=E1"
+    },
+    {
+      "id": "seismology:induced_seismicity_human_activities.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "seismology:induced_seismicity_human_activities.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "seismology:characteristic_earthquake_model.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "seismology:characteristic_earthquake_model.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "seismology:characteristic_earthquake_model.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E3"
+    },
+    {
+      "id": "seismology:characteristic_earthquake_model.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "seismology:characteristic_earthquake_model.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "seismology:short_term_deterministic_prediction.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "seismology:short_term_deterministic_prediction.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "seismology:short_term_deterministic_prediction.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=COMPETING axis=E4"
+    },
+    {
+      "id": "seismology:short_term_deterministic_prediction.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "seismology:short_term_deterministic_prediction.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "seismology:oef_informs_civil_protection.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "seismology:oef_informs_civil_protection.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "seismology:oef_informs_civil_protection.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E3"
+    },
+    {
+      "id": "seismology:oef_informs_civil_protection.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 2,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "seismology:oef_informs_civil_protection.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "seismology:slow_slip_and_ets_observed.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "seismology:slow_slip_and_ets_observed.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "seismology:slow_slip_and_ets_observed.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=FRONTIER axis=E1"
+    },
+    {
+      "id": "seismology:slow_slip_and_ets_observed.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 3,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "seismology:slow_slip_and_ets_observed.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "seismology:van_electric_precursors.evidence_sources_resolve",
+      "surface": "claim",
+      "kind": "provenance",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "every evidence.source_ref must resolve to a Source.label"
+    },
+    {
+      "id": "seismology:van_electric_precursors.constitution_pass",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "seismology:van_electric_precursors.diverges_matches_rule",
+      "surface": "claim",
+      "kind": "dual_axis",
+      "expected": false,
+      "observed": false,
+      "ok": true,
+      "note": "status=SPECULATIVE axis=E3"
+    },
+    {
+      "id": "seismology:van_electric_precursors.status_reason_nonempty",
+      "surface": "claim",
+      "kind": "overturn",
+      "expected": "≥1 status_reason line",
+      "observed": 1,
+      "ok": true,
+      "note": "overturn path needs entry conditions"
+    },
+    {
+      "id": "seismology:van_electric_precursors.no_declared_confidence_text",
+      "surface": "claim",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "declared confidence / trust score language"
+    },
+    {
+      "id": "inventory.nonempty",
+      "surface": "inventory",
+      "kind": "path",
+      "expected": "topics>0 and claims>0",
+      "observed": {
+        "n_topics": 8,
+        "n_claims": 91
+      },
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "inventory.every_domain_has_reading_path",
+      "surface": "inventory",
+      "kind": "path",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": "navigation path, not a ranking"
+    },
+    {
+      "id": "inventory.authored_links_valid",
+      "surface": "inventory",
+      "kind": "path",
+      "expected": 0,
+      "observed": 0,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "inventory.has_divergence_stress_case",
+      "surface": "inventory",
+      "kind": "dual_axis",
+      "expected": "≥1 diverging claim",
+      "observed": 8,
+      "ok": true,
+      "note": "system must show axis split somewhere, not hide it"
+    },
+    {
+      "id": "stress.hawking_present",
+      "surface": "stress",
+      "kind": "dual_axis",
+      "expected": "hawking_radiation in registry",
+      "observed": true,
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "stress.hawking_status_strong",
+      "surface": "stress",
+      "kind": "dual_axis",
+      "expected": "STRONG",
+      "observed": "STRONG",
+      "ok": true,
+      "note": "canonical about example"
+    },
+    {
+      "id": "stress.hawking_diverges",
+      "surface": "stress",
+      "kind": "dual_axis",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "Strong × non-direct evidence"
+    },
+    {
+      "id": "stress.hawking_axis_not_direct",
+      "surface": "stress",
+      "kind": "dual_axis",
+      "expected": "E3|E4|E5",
+      "observed": "E3",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "ui.app_exists",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "web/app.html present"
+    },
+    {
+      "id": "ui.app_tour",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "60s tour surface"
+    },
+    {
+      "id": "ui.app_no_confidence_tour",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "tour denies confidence %"
+    },
+    {
+      "id": "ui.app_diverge_copy",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "axes diverge copy"
+    },
+    {
+      "id": "ui.app_challenge_copy",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "challenge CTA"
+    },
+    {
+      "id": "ui.app_measure_channel",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "opt-in measure log"
+    },
+    {
+      "id": "ui.app_deeplink_c",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "claim deep-link"
+    },
+    {
+      "id": "ui.universe_exists",
+      "surface": "contract",
+      "kind": "ui",
+      "expected": true,
+      "observed": true,
+      "ok": true,
+      "note": "web/universe.html present"
+    },
+    {
+      "id": "ui.challenge_verdict_template",
+      "surface": "contract",
+      "kind": "overturn",
+      "expected": "challenge-a-verdict.yml",
+      "observed": true,
+      "ok": true,
+      "note": "GitHub overturn inlet"
+    },
+    {
+      "id": "ui.challenge_relation_template",
+      "surface": "contract",
+      "kind": "overturn",
+      "expected": "challenge-a-relation.yml",
+      "observed": true,
+      "ok": true,
+      "note": "GitHub overturn inlet"
+    },
+    {
+      "id": "export.claims_json_no_banned_keys",
+      "surface": "export",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "export.claims_json_note_denies_confidence",
+      "surface": "export",
+      "kind": "constitution",
+      "expected": "note denies confidence / only recorded fields",
+      "observed": "Universe Explorer open data. Only recorded fields and mechanical derivations — no confidence numbers exist anywhere in t",
+      "ok": true,
+      "note": ""
+    },
+    {
+      "id": "export.dual_axis_parity",
+      "surface": "export",
+      "kind": "dual_axis",
+      "expected": 0,
+      "observed": [],
+      "ok": true,
+      "note": "export must restate engine, never reinterpret"
+    },
+    {
+      "id": "export.complete_claim_set",
+      "surface": "export",
+      "kind": "constitution",
+      "expected": [],
+      "observed": [],
+      "ok": true,
+      "note": ""
+    }
+  ]
+}

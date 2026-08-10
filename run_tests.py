@@ -31,6 +31,7 @@ SUITES = [
     "test_constitution.py",   # V4-2 the doc and the code cannot drift
     "test_app.py",            # D4 dynamic frontend: data + self-containment
     "test_ui_expand.py",      # domain expand: measure first, then gate
+    "test_trust_behavior.py", # trust surfaces: measure first, then trust
     "test_relations.py",      # claim links + inference paths (no confidence)
     "test_transport.py",      # P5b webhook/SMTP transport (env-gated)
     "test_surface.py",        # P-Read/Shell/Pulse/Audit/Guide surface checks
