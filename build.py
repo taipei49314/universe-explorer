@@ -120,8 +120,16 @@ def main(argv) -> int:
     from universe_explorer.reader.dashboard import render_dashboard
     render_dashboard(TOPICS, dist_dir=out_dir)
 
+    # Stats: knowledge base statistics JSON
+    from universe_explorer.reader.stats import compute_stats
+    import json
+    stats = compute_stats(TOPICS)
+    (out_dir / "stats.json").write_text(
+        json.dumps(stats.to_dict(), indent=2, ensure_ascii=False),
+        encoding="utf-8")
+
     print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
-          f"+ zh.html + discovery/crossdomain/reader/dashboard pages -> {out_dir}")
+          f"+ zh.html + discovery/crossdomain/reader/dashboard/stats pages -> {out_dir}")
     return 0
 
 
