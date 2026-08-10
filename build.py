@@ -169,6 +169,10 @@ def main(argv) -> int:
     from universe_explorer.reader.error_pages import generate_404
     (out_dir / "404.html").write_text(generate_404(), encoding="utf-8")
 
+    # Favicon
+    from universe_explorer.reader.favicon import generate_favicon
+    (out_dir / "favicon.svg").write_text(generate_favicon(), encoding="utf-8")
+
     print(f"\nRendered {len(TOPICS)} topic(s) + index + explore + claims.json "
           f"+ zh.html + discovery/crossdomain/reader/dashboard/stats pages -> {out_dir}")
     print(f"Health: all green. Automation: {metrics.automation_rate}")
