@@ -258,3 +258,44 @@ class TestChallengeForm:
             assert len(list((tmp_path / "challenges").glob("*.json"))) == 1
         finally:
             cf._CHALLENGES_DIR = old_dir
+
+
+# ---------------------------------------------------------------------------
+# Dynamic reading paths
+# ---------------------------------------------------------------------------
+
+
+from universe_explorer.reader.dynamic_paths import (
+    DynamicPath,
+    generate_dynamic_paths,
+    _divergence_paths,
+    _evidence_chain_paths,
+    _frontier_trail_paths,
+)
+
+
+class TestDynamicPaths:
+    def test_generates_paths(self):
+        paths = generate_dynamic_paths(_sample_topics())
+        assert isinstance(paths, list)
+
+    def test_divergence_paths(self):
+        paths = _divergence_paths(_sample_topics())
+        assert isinstance(paths, list)
+
+    def test_evidence_chain_paths(self):
+        paths = _evidence_chain_paths(_sample_topics())
+        assert isinstance(paths, list)
+
+    def test_frontier_trail_paths(self):
+        paths = _frontier_trail_paths(_sample_topics())
+        assert isinstance(paths, list)
+
+    def test_dynamic_path_to_dict(self):
+        p = DynamicPath(
+            id="test", title="Test", description="A test path",
+            claim_ids=["c1", "c2"], kind="divergence",
+        )
+        d = p.to_dict()
+        assert d["id"] == "test"
+        assert len(d["claim_ids"]) == 2
