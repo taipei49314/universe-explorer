@@ -157,6 +157,8 @@ if __name__ == "__main__":
     parser.add_argument("--filter-label", help="Filter by annotation label")
     parser.add_argument("--filter-has-notes", type=lambda x: x.lower() == "true",
                         help="Filter by whether claim has notes")
+    parser.add_argument("--filter-has-competing", type=lambda x: x.lower() == "true",
+                        help="Filter by whether claim has competing models")
     args = parser.parse_args()
 
     criteria = FilterCriteria(
@@ -166,6 +168,7 @@ if __name__ == "__main__":
         tag=args.filter_tag,
         label=args.filter_label,
         has_notes=args.filter_has_notes,
+        has_competing_models=args.filter_has_competing,
     )
 
     if args.export:
