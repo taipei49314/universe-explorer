@@ -27,6 +27,7 @@
 | **Editorial tooling (T19/T20)** | ✅ 2026-08-10 | annotate / claim review / batch — store outside `data/`; never auto-write lights |
 | NASA/ESA adapter | ❌ deferred | Explicit non-goal until a real inlet exists |
 | T4b multi-source 7B | ❌ deferred | Needs model ops; not blocking product honesty |
+| **v5 Trust Loop** | 🔄 planned | [`roadmap-v5-trust-loop.md`](roadmap-v5-trust-loop.md) — public overturn · weekly SLA · 3 canonicals; not claim-count KPI |
 | **`planets` authored reading path** | ✅ 2026-08-10 | `path_planets` chronology → icy moons → life/Mars ceilings |
 
 ## Totals after closeout
