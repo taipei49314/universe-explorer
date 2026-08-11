@@ -45,7 +45,9 @@ def cited_dois() -> List[str]:
 
 
 def _safe_name(doi: str) -> str:
-    return doi.replace("/", "_").replace(".", "-") + ".json"
+    # Always lowercase: Linux CI is case-sensitive; Windows is not. Manifest
+    # keys are lowercased DOIs, so cache filenames must match exactly.
+    return doi.lower().replace("/", "_").replace(".", "-") + ".json"
 
 
 def fetch_dois(dois: List[str]) -> int:
