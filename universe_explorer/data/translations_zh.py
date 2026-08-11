@@ -1322,12 +1322,19 @@ CLAIMS = {
     "shoes_local_H0_high": {
         "title": "以造父變星校準的 Ia 型超新星階梯測得偏高的本地哈伯常數(約 73 km s^-1 Mpc^-1)",
         "reasons": {
-            "rapidly_growing_literature":
-                "SH0ES 更新、JWST 造父論文與系統誤差再分析形成快速文獻。",
-            "no_consensus_formed_yet":
-                "本地高 H0 結果被高度引用,但尚未被普遍接受為無殘餘系統誤差。",
-            "insufficient_observation":
-                "獨立幾何錨與替代校準器仍限制單一封閉的本地值。",
+            "mainstream_model_support":
+                "造父 → Ia 型超新星距離階梯是晚期宇宙測 H0 的主流路線之一;"
+                "SH0ES 報告本地值約 73 km s^-1 Mpc^-1 並附系統誤差預算"
+                "(Riess et al., ApJL 934, L7, 2022; arXiv:2112.04510)。",
+            "minor_alternatives_exist":
+                "TRGB 等替代本地校準與持續的系統誤差再分析構成少數/替代路徑;"
+                "它們精煉或交叉檢查階梯,而非取代造父–SN 作為主流綱領"
+                "(脈絡見 Verde, Treu & Riess 2019; arXiv:1907.10625)。",
+            "overall_direction_robust":
+                "多年來本地高 H0 的方向穩定;新證據多集中在零點與系統差"
+                "(見 open_questions),而非放棄階梯方法。與 CMB+ΛCDM 的殘餘張力"
+                "由獨立的 COMPETING 宣稱 H0_tension_local_vs_cmb 承載,"
+                "不應把本極鎖在 Frontier。",
         },
         "evidence": [
             "SH0ES 計畫建立幾何錨 → 造父 → SN Ia 距離階梯,報告本地 H0 明顯高於"

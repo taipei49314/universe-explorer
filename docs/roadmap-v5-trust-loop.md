@@ -123,7 +123,11 @@ Q3 不得在 Q1 量測閘門變紅時上線「更炫 UI」當替代。
 
 **時間盒：** 約 4–6 週。  
 **前提：** Q1 最低合格已滿足。  
-**完成一句話：** 人仍決策，但 candidate→claim 與 provenance 值班**可計數、可回放**。
+**完成一句話：** 人仍決策，但 candidate→claim 與 provenance 值班**可計數、可回放**；且至少一次公開 **accept** 閉環。
+
+> **展開全文（工作包 EO-1…6、量測列、Sprint A–C、自攻目標）：**  
+> [`roadmap-v5-q2-editorial-os.md`](roadmap-v5-q2-editorial-os.md)  
+> **Sprint A 目標 claim 設計包：** [`challenges/SPRINT-A-TARGET-shoes-local-H0.md`](challenges/SPRINT-A-TARGET-shoes-local-H0.md)
 
 | ID | 名稱 | 做什麼 | 完成定義 |
 |----|------|--------|----------|
@@ -131,6 +135,10 @@ Q3 不得在 Q1 量測閘門變紅時上線「更炫 UI」當替代。
 | **EO-2** | Provenance 值班 | source_health + acknowledge 固定週儀式 | 無 silent light；digest 只 restatement（現有 P5/P5b 憲章） |
 | **EO-3** | Discussion 深度 | 只加深 editorial primary/secondary（現：cosmology H0、seismology） | 每域 Author-Year 完整 + 至少一組 competing 寫清 |
 | **EO-4** | 貢獻路徑實測 | CONTRIBUTING 10 分鐘流程用一次真實 PR 或外部 issue 跑通 | 步驟零跳號；記錄在 weeklies 或 challenge issue |
+| **EO-5** | Inbox 可見性 | 統一 challenge issues + candidates 待審計數 | 5 分鐘內可答「待審 N」 |
+| **EO-6** | Accept 閉環 | ≥1 次接受（燈動或證據實質增補） | 燈動 ⇒ status_history；紀錄進 `docs/challenges/` |
+
+**Sprint A 主目標（規劃 accept）：** `shoes_local_H0_high` FRONTIER→STRONG（不解決 H0 張力；張力仍在 `H0_tension_local_vs_cmb`）。
 
 **Q2 不做：** 新 domain、claim 數目標、自動升燈。
 

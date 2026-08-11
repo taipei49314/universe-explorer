@@ -6,7 +6,7 @@ with particle dark matter (see dark_matter) or settle H0 by tone alone.
 
 H0 cluster (read together):
   H0_tension_local_vs_cmb     🟡 umbrella competition (local ladder vs CMB+ΛCDM)
-  shoes_local_H0_high         🟠 Cepheid–SN local programme
+  shoes_local_H0_high         🔵 Cepheid–SN local programme (Strong pole; tension stays Competing)
   cmb_lcdm_implies_low_H0     🟠 early-universe inference under ΛCDM
   trgb_vs_cepheid_local_H0    🟡 calibrator split inside the local ladder
   early_dark_energy_H0_fix  🟠 proposed early-universe relief
@@ -33,6 +33,7 @@ from ..model import (
     Evidence,
     Source,
     Status,
+    StatusChange,
     Topic,
 )
 
@@ -346,7 +347,9 @@ H0_tension_local_vs_cmb = Claim(
 )
 
 # --------------------------------------------------------------------------- #
-# Claim 4a — SH0ES local ladder                          🟠 Frontier           #
+# Claim 4a — SH0ES local ladder                          🔵 Strong             #
+# Overturn: issue #5 accept FRONTIER→STRONG (v5-Q2 Sprint A). Tension stays
+# on H0_tension_local_vs_cmb (COMPETING). Evidence axis remains E3 (indirect).
 # --------------------------------------------------------------------------- #
 shoes_local_H0_high = Claim(
     id="shoes_local_H0_high",
@@ -354,7 +357,7 @@ shoes_local_H0_high = Claim(
         "Cepheid-calibrated Type Ia supernova ladders measure a high local "
         "Hubble constant near 73 km s^-1 Mpc^-1"
     ),
-    status=Status.FRONTIER,
+    status=Status.STRONG,
     sources=[
         Source(
             label="Riess2022b",
@@ -397,22 +400,45 @@ shoes_local_H0_high = Claim(
     ],
     status_reason=[
         ConditionAssessment(
-            "rapidly_growing_literature", True,
-            "SH0ES updates, JWST Cepheid papers and systematic reanalyses "
-            "form a fast-moving literature.",
+            "mainstream_model_support", True,
+            "The Cepheid → Type Ia supernova distance ladder is a mainstream "
+            "late-universe route to H0; the SH0ES programme reports a local "
+            "value near 73 km s^-1 Mpc^-1 with a published systematic budget "
+            "(Riess et al., ApJL 934, L7, 2022; arXiv:2112.04510).",
         ),
         ConditionAssessment(
-            "no_consensus_formed_yet", True,
-            "The local high-H0 result is highly cited but not universally "
-            "accepted as free of residual systematics.",
+            "minor_alternatives_exist", True,
+            "Alternate local calibrators (e.g. TRGB) and ongoing systematic "
+            "reanalyses form a genuine minority/alternate track; they refine "
+            "or cross-check the ladder rather than displace Cepheid–SN as a "
+            "mainstream programme (context in Verde, Treu & Riess 2019; "
+            "arXiv:1907.10625).",
         ),
         ConditionAssessment(
-            "insufficient_observation", True,
-            "Independent geometric anchors and alternate calibrators still "
-            "limit a single closed local value.",
+            "overall_direction_robust", True,
+            "The multi-year direction of a high local H0 from Cepheid–SN "
+            "ladders is stable; new evidence concentrates on zero-point and "
+            "systematics (open_questions), not on abandoning the ladder "
+            "method. Residual tension with CMB+ΛCDM is carried by the "
+            "separate Competing claim H0_tension_local_vs_cmb — not by "
+            "keeping this pole at Frontier.",
         ),
     ],
-    status_history=[],
+    status_history=[
+        StatusChange(
+            date="2026-08-11",
+            from_status="Frontier Research",
+            to_status="Strong Consensus",
+            trigger=(
+                "v5-Q2 Sprint A accept: issue "
+                "https://github.com/taipei49314/universe-explorer/issues/5 — "
+                "Frontier over-weighted literature motion and residual "
+                "systematics; Strong triad holds for the local ladder "
+                "determination. H0 tension remains Competing on "
+                "H0_tension_local_vs_cmb. Evidence axis unchanged (E3)."
+            ),
+        ),
+    ],
 )
 
 # --------------------------------------------------------------------------- #
