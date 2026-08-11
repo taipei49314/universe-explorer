@@ -1,61 +1,61 @@
 {
   "10.1126/science.203.4385.1073": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.203.4385.1073",
-    "retrieved_at": "2026-07-10T13:09:43Z",
+    "retrieved_at": "2026-08-11T02:50:10Z",
     "cache_file": "10-1126_science-203-4385-1073.json",
-    "sha256": "ea606176aaa209e8407c962c62e5598ddc1b4354ea7b44502469e322475f30f0",
+    "sha256": "66ec66e359efc71137df1865045667c1b7c70ea7d69d8d0d9864f24a722cb6d9",
     "title": "Submarine Thermal Springs on the Galápagos Rift",
     "container": "Science",
     "issued": 1979
   },
   "10.1126/science.207.4438.1421": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.207.4438.1421",
-    "retrieved_at": "2026-07-10T13:09:45Z",
+    "retrieved_at": "2026-08-11T02:50:12Z",
     "cache_file": "10-1126_science-207-4438-1421.json",
-    "sha256": "b8a4ca70b65c3e56b3e3a6c9b002582f41b58cd83b4ba48ec7d5dc3de4f1c79d",
+    "sha256": "3dee3a7f8362601e906b77b256cb0374a684f0f83ccde92b6412d918843a99e6",
     "title": "East Pacific Rise: Hot Springs and Geophysical Experiments",
     "container": "Science",
     "issued": 1980
   },
   "10.1038/s41586-018-0006-5": {
     "endpoint": "https://api.crossref.org/works/10.1038%2Fs41586-018-0006-5",
-    "retrieved_at": "2026-07-10T13:09:47Z",
+    "retrieved_at": "2026-08-11T02:50:20Z",
     "cache_file": "10-1038_s41586-018-0006-5.json",
-    "sha256": "a1151dd971ad3017ada6d3b8e45d706f038f983cb0d16537e2e31dfb7d1388a3",
+    "sha256": "5a8979d7151ca16c73826435851f64d65b74b1555e5e715848b9779d728c0896",
     "title": "Observed fingerprint of a weakening Atlantic Ocean overturning circulation",
     "container": "Nature",
     "issued": 2018
   },
   "10.5194/os-17-285-2021": {
     "endpoint": "https://api.crossref.org/works/10.5194%2Fos-17-285-2021",
-    "retrieved_at": "2026-07-10T13:09:49Z",
+    "retrieved_at": "2026-08-11T02:50:21Z",
     "cache_file": "10-5194_os-17-285-2021.json",
-    "sha256": "7b64ae3a8ecc2449d025a054a9b82f1e953b9e591e27cb7606161d005e71bf58",
+    "sha256": "e7e9639ac7ef93e429376a031dd19b19c6d950a3deb59f29be7f464f03a3aa5b",
     "title": "A 30-year reconstruction of the Atlantic meridional overturning circulation shows no decline",
     "container": "Ocean Science",
     "issued": 2021
   },
   "10.1016/j.cub.2023.04.052": {
     "endpoint": "https://api.crossref.org/works/10.1016%2Fj.cub.2023.04.052",
-    "retrieved_at": "2026-07-10T13:09:51Z",
+    "retrieved_at": "2026-08-11T02:50:23Z",
     "cache_file": "10-1016_j-cub-2023-04-052.json",
-    "sha256": "5d0d5a21748fd76d30cbbe737b016f1a63fd895973cc4253efc50d3ac48ba7fc",
+    "sha256": "f490d50346b04c1f3ac14aa93b143658c4d0c2c5660e4000d9fdd7b1c8240266",
     "title": "How many metazoan species live in the world’s largest mineral exploration region?",
     "container": "Current Biology",
     "issued": 2023
   },
   "10.1038/s41561-024-01480-8": {
     "endpoint": "https://api.crossref.org/works/10.1038%2Fs41561-024-01480-8",
-    "retrieved_at": "2026-07-10T13:09:53Z",
+    "retrieved_at": "2026-08-11T02:50:34Z",
     "cache_file": "10-1038_s41561-024-01480-8.json",
-    "sha256": "9c509673aa1b3e9d5f645f2b3d7837eaac532ba6200367609fef815da3448cd2",
+    "sha256": "fe0f0282a6666641b42e4083026e599a376ff670c0988f5bcc5d93c4edd1ee12",
     "title": "Evidence of dark oxygen production at the abyssal seafloor",
     "container": "Nature Geoscience",
     "issued": 2024
   },
   "10.3389/fmars.2025.1721853": {
     "endpoint": "https://api.crossref.org/works/10.3389%2Ffmars.2025.1721853",
-    "retrieved_at": "2026-07-10T13:09:54Z",
+    "retrieved_at": "2026-08-11T02:50:36Z",
     "cache_file": "10-3389_fmars-2025-1721853.json",
     "sha256": "2517275c591bae79812467b5264b56080549f338d2ecb108410f3841189fc3ac",
     "title": "Extraordinary claims require extraordinary evidence: evaluating nodule-associated dark oxygen production",
@@ -64,62 +64,62 @@
   },
   "10.5194/essd-12-2013-2020": {
     "endpoint": "https://api.crossref.org/works/10.5194%2Fessd-12-2013-2020",
-    "retrieved_at": "2026-07-10T13:16:43Z",
+    "retrieved_at": "2026-08-11T02:50:14Z",
     "cache_file": "10-5194_essd-12-2013-2020.json",
-    "sha256": "4bb175bd2837dbf8314fb22572cff10b944fcaadf3433786c79318f5100c6692",
+    "sha256": "1664f476f142c53c7588ccb217913f2a7155773f5688dd456292566970cc4d9e",
     "title": "Heat stored in the Earth system: where does the energy go?",
     "container": "Earth System Science Data",
     "issued": 2020
   },
   "10.1038/nature10684": {
     "endpoint": "https://api.crossref.org/works/10.1038%2Fnature10684",
-    "retrieved_at": "2026-07-10T13:16:45Z",
+    "retrieved_at": "2026-08-11T02:49:44Z",
     "cache_file": "10-1038_nature10684.json",
-    "sha256": "51f042859f96e824c50b0b157acce6cb1f9e1d9e9086c2d718460e8df4c02a25",
+    "sha256": "698023cdf8f8115e61148301607858c666b64a374f30e3a281c16eb231f78970",
     "title": "One or more bound planets per Milky Way star from microlensing observations",
     "container": "Nature",
     "issued": 2012
   },
   "10.1038/199947a0": {
     "endpoint": "https://api.crossref.org/works/10.1038%2F199947a0",
-    "retrieved_at": "2026-07-10T15:33:38Z",
+    "retrieved_at": "2026-08-11T02:50:37Z",
     "cache_file": "10-1038_199947a0.json",
-    "sha256": "dd0517d2555d2c75ada38d0ef4801c0561d45d8a4ddfbe994b8aed0bcd05c8d1",
+    "sha256": "ee6953f79c01aabc6432b04d6d5d74bdb0a746886b2fe1acaf1c0251619d4fbf",
     "title": "Magnetic Anomalies Over Oceanic Ridges",
     "container": "Nature",
     "issued": 1963
   },
   "10.1111/j.1365-246x.2009.04491.x": {
-    "endpoint": "https://api.crossref.org/works/10.1111%2Fj.1365-246X.2009.04491.x",
-    "retrieved_at": "2026-07-10T15:33:40Z",
-    "cache_file": "10-1111_j-1365-246X-2009-04491-x.json",
-    "sha256": "93e6beab6554a9b9600f7907ff463b4a2a1881e49619b400b1e399b3e8f88a75",
+    "endpoint": "https://api.crossref.org/works/10.1111%2Fj.1365-246x.2009.04491.x",
+    "retrieved_at": "2026-08-11T02:50:39Z",
+    "cache_file": "10-1111_j-1365-246x-2009-04491-x.json",
+    "sha256": "95f72ba117da41c7ad6695ee92c8681081747283f6dfa7f6ce5b7d847440d0b0",
     "title": "Geologically current plate motions",
     "container": "Geophysical Journal International",
     "issued": 2010
   },
   "10.1146/annurev-earth-053018-060457": {
     "endpoint": "https://api.crossref.org/works/10.1146%2Fannurev-earth-053018-060457",
-    "retrieved_at": "2026-07-10T15:33:42Z",
+    "retrieved_at": "2026-08-11T02:50:41Z",
     "cache_file": "10-1146_annurev-earth-053018-060457.json",
-    "sha256": "f8dfe64b93a7b3005523b21f3556be1c5f172ef589652c8f3169c3b677e1de1e",
+    "sha256": "bca63f22f79ccafe39b24ba9d6946bc34464996b8330bfd766dcbde370557af2",
     "title": "Earthquake Early Warning: Advances, Scientific Challenges, and Societal Needs",
     "container": "Annual Review of Earth and Planetary Sciences",
     "issued": 2019
   },
   "10.1029/jb089ib07p05681": {
-    "endpoint": "https://api.crossref.org/works/10.1029%2FJB089iB07p05681",
-    "retrieved_at": "2026-07-10T15:33:44Z",
-    "cache_file": "10-1029_JB089iB07p05681.json",
-    "sha256": "a8970e5d3d53a935e4ed77524c0713bdacc379c1b6c5460ca4546ab955ad8f84",
+    "endpoint": "https://api.crossref.org/works/10.1029%2Fjb089ib07p05681",
+    "retrieved_at": "2026-08-11T02:50:46Z",
+    "cache_file": "10-1029_jb089ib07p05681.json",
+    "sha256": "102cc93daed412d3e64d97f6874ed4b6928ac020bf554a1bfcf4d503c308ee31",
     "title": "Fault behavior and characteristic earthquakes: Examples from the Wasatch and San Andreas Fault Zones",
     "container": "Journal of Geophysical Research: Solid Earth",
     "issued": 1984
   },
   "10.1029/91jb02210": {
-    "endpoint": "https://api.crossref.org/works/10.1029%2F91JB02210",
-    "retrieved_at": "2026-07-10T15:33:46Z",
-    "cache_file": "10-1029_91JB02210.json",
+    "endpoint": "https://api.crossref.org/works/10.1029%2F91jb02210",
+    "retrieved_at": "2026-08-11T02:50:48Z",
+    "cache_file": "10-1029_91jb02210.json",
     "sha256": "436947e59e0597ebe34925b89da2512762a9d7911cc4df0c87920fcd4b9136c3",
     "title": "Seismic Gap Hypothesis: Ten years after",
     "container": "Journal of Geophysical Research: Solid Earth",
@@ -127,7 +127,7 @@
   },
   "10.4401/ag-5350": {
     "endpoint": "https://api.crossref.org/works/10.4401%2Fag-5350",
-    "retrieved_at": "2026-08-09T13:56:38Z",
+    "retrieved_at": "2026-08-11T02:50:51Z",
     "cache_file": "10-4401_ag-5350.json",
     "sha256": "6aa3485f08f588f1319f6830d55f577df0093b536e46c758340d302a475c10b5",
     "title": "OPERATIONAL EARTHQUAKE FORECASTING. State of Knowledge and Guidelines for Utilization",
@@ -136,16 +136,16 @@
   },
   "10.1016/0040-1951(84)90059-3": {
     "endpoint": "https://api.crossref.org/works/10.1016%2F0040-1951%2884%2990059-3",
-    "retrieved_at": "2026-07-10T15:33:49Z",
+    "retrieved_at": "2026-08-11T02:50:56Z",
     "cache_file": "10-1016_0040-1951(84)90059-3.json",
-    "sha256": "e4362f397e8ad9f0d4d5c528b572199af67cca3d339969ea5691dd2fb433d4c5",
+    "sha256": "d52e1d6a783de97a5a14cf0a4840967bc3d13cfa7cafae029282606ca77fe3a2",
     "title": "Physical properties of the variations of the electric field of the earth preceding earthquakes, I",
     "container": "Tectonophysics",
     "issued": 1984
   },
   "10.1126/science.275.5306.1616": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.275.5306.1616",
-    "retrieved_at": "2026-08-09T13:56:37Z",
+    "retrieved_at": "2026-08-11T02:50:49Z",
     "cache_file": "10-1126_science-275-5306-1616.json",
     "sha256": "3d7a12572589ad723c8690b2e0509add0dcc135cec9885c8f4e5d7cee95a3acf",
     "title": "Earthquakes Cannot Be Predicted",
@@ -154,7 +154,7 @@
   },
   "10.1086/158003": {
     "endpoint": "https://api.crossref.org/works/10.1086%2F158003",
-    "retrieved_at": "2026-08-09T10:33:19Z",
+    "retrieved_at": "2026-08-11T02:49:27Z",
     "cache_file": "10-1086_158003.json",
     "sha256": "24a7a14dc3008b216c299477627f12b7ddb7f8d48d408548083f46605e6e612c",
     "title": "Rotational properties of 21 SC galaxies with a large range of luminosities and radii, from NGC 4605 /R = 4kpc/ to UGC 2885 /R = 122 kpc/",
@@ -163,7 +163,7 @@
   },
   "10.1086/161130": {
     "endpoint": "https://api.crossref.org/works/10.1086%2F161130",
-    "retrieved_at": "2026-08-09T10:33:21Z",
+    "retrieved_at": "2026-08-11T02:49:31Z",
     "cache_file": "10-1086_161130.json",
     "sha256": "04a250aeef89d6408f1eaf574eb1ac7e9b1ad0577d96d5697b762e3a0e79c573",
     "title": "A modification of the Newtonian dynamics as a possible alternative to the hidden mass hypothesis",
@@ -172,7 +172,7 @@
   },
   "10.1038/s41586-018-0542-z": {
     "endpoint": "https://api.crossref.org/works/10.1038%2Fs41586-018-0542-z",
-    "retrieved_at": "2026-08-09T10:33:22Z",
+    "retrieved_at": "2026-08-11T02:49:29Z",
     "cache_file": "10-1038_s41586-018-0542-z.json",
     "sha256": "a625861842a967f8954545fc14fdd1193c39c867eead6d9fa0a37baecadc3522",
     "title": "A new era in the search for dark matter",
@@ -181,7 +181,7 @@
   },
   "10.1086/148307": {
     "endpoint": "https://api.crossref.org/works/10.1086%2F148307",
-    "retrieved_at": "2026-08-09T12:25:01Z",
+    "retrieved_at": "2026-08-11T02:49:24Z",
     "cache_file": "10-1086_148307.json",
     "sha256": "6f598361dffb699206bcf70a07ac69ae02f41f34467815adf42e19d4df4c9275",
     "title": "A Measurement of Excess Antenna Temperature at 4080 Mc/s.",
@@ -190,16 +190,16 @@
   },
   "10.1103/physrevd.23.347": {
     "endpoint": "https://api.crossref.org/works/10.1103%2Fphysrevd.23.347",
-    "retrieved_at": "2026-08-09T12:25:03Z",
+    "retrieved_at": "2026-08-11T02:49:26Z",
     "cache_file": "10-1103_physrevd-23-347.json",
-    "sha256": "6e08fad854fc4364cd40d873955232c63920ce68f817ab5e8c6b24b8189d9619",
+    "sha256": "027e7ba37074965eaeaf01f1479f29d86ca2c212127b23cc579dd73b1350f94f",
     "title": "Inflationary universe: A possible solution to the horizon and flatness problems",
     "container": "Physical Review D",
     "issued": 1981
   },
   "10.1126/science.1073950": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1073950",
-    "retrieved_at": "2026-08-09T12:25:04Z",
+    "retrieved_at": "2026-08-11T02:49:46Z",
     "cache_file": "10-1126_science-1073950.json",
     "sha256": "13ef860935ca4fea4246670d44f2a55518a27004ef2201c1e946358650c84c9f",
     "title": "Lead Isotopic Ages of Chondrules and Calcium-Aluminum-Rich Inclusions",
@@ -208,7 +208,7 @@
   },
   "10.1126/science.1226919": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1226919",
-    "retrieved_at": "2026-08-09T12:25:06Z",
+    "retrieved_at": "2026-08-11T02:49:47Z",
     "cache_file": "10-1126_science-1226919.json",
     "sha256": "9bfd6cb4ee2d0d1ce5f7b7b9c70d5f99ba777a5b93aa91dc17ece763b5091ba3",
     "title": "The Absolute Chronology and Thermal Processing of Solids in the Solar Protoplanetary Disk",
@@ -217,7 +217,7 @@
   },
   "10.1126/science.1226073": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1226073",
-    "retrieved_at": "2026-08-09T12:25:09Z",
+    "retrieved_at": "2026-08-11T02:49:51Z",
     "cache_file": "10-1126_science-1226073.json",
     "sha256": "5cacddd3f04627c2169716bd8185c6da7895fb488dd22941d9406f9e62d109ee",
     "title": "Forming a Moon with an Earth-like Composition via a Giant Impact",
@@ -226,7 +226,7 @@
   },
   "10.1073/pnas.1611535113": {
     "endpoint": "https://api.crossref.org/works/10.1073%2Fpnas.1611535113",
-    "retrieved_at": "2026-08-09T12:25:16Z",
+    "retrieved_at": "2026-08-11T02:49:54Z",
     "cache_file": "10-1073_pnas-1611535113.json",
     "sha256": "a31b6e567b1a6e3422ca108e43f680836562d6d6a5743ee7fd77be2a606d1b8a",
     "title": "Illusory Late Heavy Bombardments",
@@ -235,7 +235,7 @@
   },
   "10.1126/science.289.5483.1340": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.289.5483.1340",
-    "retrieved_at": "2026-08-09T12:25:18Z",
+    "retrieved_at": "2026-08-11T02:49:56Z",
     "cache_file": "10-1126_science-289-5483-1340.json",
     "sha256": "d9b55ff356f6acaeea1e9b4e88f96a4a37f48f0db1d519dd2a667ddfb6afd0f2",
     "title": "Galileo Magnetometer Measurements: A Stronger Case for a Subsurface Ocean at Europa",
@@ -244,7 +244,7 @@
   },
   "10.1016/j.icarus.2015.08.037": {
     "endpoint": "https://api.crossref.org/works/10.1016%2Fj.icarus.2015.08.037",
-    "retrieved_at": "2026-08-09T12:25:19Z",
+    "retrieved_at": "2026-08-11T02:49:58Z",
     "cache_file": "10-1016_j-icarus-2015-08-037.json",
     "sha256": "c9d51c3756c26df8ebf231c1433a947ee8ee6bd564802a21a8ff36b5824333ad",
     "title": "Enceladus’s measured physical libration requires a global subsurface ocean",
@@ -253,7 +253,7 @@
   },
   "10.1126/science.1242777": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1242777",
-    "retrieved_at": "2026-08-09T12:25:22Z",
+    "retrieved_at": "2026-08-11T02:50:08Z",
     "cache_file": "10-1126_science-1242777.json",
     "sha256": "09f64086a875a339b3058eb19072ea470d3b5bbeef1d7b806d55a705e6daceef",
     "title": "A Habitable Fluvio-Lacustrine Environment at Yellowknife Bay, Gale Crater, Mars",
@@ -262,7 +262,7 @@
   },
   "10.1038/35089010": {
     "endpoint": "https://api.crossref.org/works/10.1038%2F35089010",
-    "retrieved_at": "2026-08-09T12:25:57Z",
+    "retrieved_at": "2026-08-11T02:49:49Z",
     "cache_file": "10-1038_35089010.json",
     "sha256": "329bacee5f0ef4d5d5fa10ed39311eb79d28d192527361cac89b94eec2912e10",
     "title": "Origin of the Moon in a giant impact near the end of the Earth's formation",
@@ -271,7 +271,7 @@
   },
   "10.1016/0012-821x(74)90059-4": {
     "endpoint": "https://api.crossref.org/works/10.1016%2F0012-821x%2874%2990059-4",
-    "retrieved_at": "2026-08-09T12:25:59Z",
+    "retrieved_at": "2026-08-11T02:49:52Z",
     "cache_file": "10-1016_0012-821x(74)90059-4.json",
     "sha256": "c7c6e1979a873ae69ce23ae5ae3f3fe35f7f6ca8a5fb8c1904dc84a02058da9b",
     "title": "Isotopic evidence for a terminal lunar cataclysm",
@@ -280,7 +280,7 @@
   },
   "10.1126/science.1123013": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1123013",
-    "retrieved_at": "2026-08-09T12:35:23Z",
+    "retrieved_at": "2026-08-11T02:50:01Z",
     "cache_file": "10-1126_science-1123013.json",
     "sha256": "3abf8f19cad633f7aa1c98200e9fadf8b23bb34e0957325477ad0b2ce8a6b7ff",
     "title": "Cassini Observes the Active South Pole of Enceladus",
@@ -289,7 +289,7 @@
   },
   "10.1126/science.1219631": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1219631",
-    "retrieved_at": "2026-08-09T12:35:24Z",
+    "retrieved_at": "2026-08-11T02:50:03Z",
     "cache_file": "10-1126_science-1219631.json",
     "sha256": "e97a85b262a68a2a952809d84fde0297d8c9a9094c83ec82890aafd428da90b7",
     "title": "The Tides of Titan",
@@ -298,7 +298,7 @@
   },
   "10.1038/27394": {
     "endpoint": "https://api.crossref.org/works/10.1038%2F27394",
-    "retrieved_at": "2026-08-09T12:36:12Z",
+    "retrieved_at": "2026-08-11T02:49:59Z",
     "cache_file": "10-1038_27394.json",
     "sha256": "bf4cb436e8ffd64dde587fc917a9fd0bfe4354ca9270259ec67b07ccca2fa4b5",
     "title": "Induced magnetic fields as evidence for subsurface oceans in Europa and Callisto",
@@ -307,7 +307,7 @@
   },
   "10.1038/s41586-018-0246-4": {
     "endpoint": "https://api.crossref.org/works/10.1038%2Fs41586-018-0246-4",
-    "retrieved_at": "2026-08-09T12:36:14Z",
+    "retrieved_at": "2026-08-11T02:50:06Z",
     "cache_file": "10-1038_s41586-018-0246-4.json",
     "sha256": "69f6d764a47dd9ae51e8b582a02e8c3fd24871a1deff36e89bdbd0d0942fbd2c",
     "title": "Macromolecular organic compounds from the depths of Enceladus",
@@ -316,7 +316,7 @@
   },
   "10.1016/j.icarus.2019.03.003": {
     "endpoint": "https://api.crossref.org/works/10.1016%2Fj.icarus.2019.03.003",
-    "retrieved_at": "2026-08-09T12:36:15Z",
+    "retrieved_at": "2026-08-11T02:50:05Z",
     "cache_file": "10-1016_j-icarus-2019-03-003.json",
     "sha256": "4da7404ced7472be93ec61f9f0b09daa19056009df5d4e4ac9f4360ddf29f8cd",
     "title": "Titan's gravity field and interior structure after Cassini",
@@ -325,7 +325,7 @@
   },
   "10.1103/physrev.55.434": {
     "endpoint": "https://api.crossref.org/works/10.1103%2Fphysrev.55.434",
-    "retrieved_at": "2026-08-09T12:58:36Z",
+    "retrieved_at": "2026-08-11T02:49:33Z",
     "cache_file": "10-1103_physrev-55-434.json",
     "sha256": "20894f25149c6b5cb0865ec1cedf22c9ac8ff50944cecb48b82af52c32fb7699",
     "title": "Energy Production in Stars",
@@ -334,25 +334,25 @@
   },
   "10.1103/revmodphys.29.547": {
     "endpoint": "https://api.crossref.org/works/10.1103%2Frevmodphys.29.547",
-    "retrieved_at": "2026-08-09T12:58:38Z",
+    "retrieved_at": "2026-08-11T02:49:35Z",
     "cache_file": "10-1103_revmodphys-29-547.json",
-    "sha256": "e78608bd49baa5c69218ddbd6b2f047c034488767c427426ea099a1de352a16c",
+    "sha256": "9916792f773a3dc51c77ae7562108cec116a49fbdbe61540e379a2714f0d2aca",
     "title": "Synthesis of the Elements in Stars",
     "container": "Reviews of Modern Physics",
     "issued": 1957
   },
   "10.1073/pnas.20.5.254": {
     "endpoint": "https://api.crossref.org/works/10.1073%2Fpnas.20.5.254",
-    "retrieved_at": "2026-08-09T12:58:39Z",
+    "retrieved_at": "2026-08-11T02:49:36Z",
     "cache_file": "10-1073_pnas-20-5-254.json",
-    "sha256": "57b25832060b3bc807c9d88df44506ead798029b820ffa24c733c380953b8469",
+    "sha256": "84519684ddfebe8d4c0f50d8b2183dd9bd3cde36659c5c5e4969db0171bfa5f6",
     "title": "On Super-Novae",
     "container": "Proceedings of the National Academy of Sciences",
     "issued": 1934
   },
   "10.12942/lrsp-2010-3": {
     "endpoint": "https://api.crossref.org/works/10.12942%2Flrsp-2010-3",
-    "retrieved_at": "2026-08-09T13:01:12Z",
+    "retrieved_at": "2026-08-11T02:49:40Z",
     "cache_file": "10-12942_lrsp-2010-3.json",
     "sha256": "f0512bb33e33ad3d6dc3e0918ba4a3ca992e77840e84e561abba76f4fbfd3fb5",
     "title": "Dynamo Models of the Solar Cycle",
@@ -361,16 +361,16 @@
   },
   "10.1086/143324": {
     "endpoint": "https://api.crossref.org/works/10.1086%2F143324",
-    "retrieved_at": "2026-08-09T13:25:51Z",
+    "retrieved_at": "2026-08-11T02:49:38Z",
     "cache_file": "10-1086_143324.json",
-    "sha256": "1a4f1b51e3f1dfaf0189611ac7c8a5afefa050075eb11eccb6f4fe14c483a114",
+    "sha256": "c3cc60737391369034d483ee377999e32f2d49c7257d2ea26a014c3986f70160",
     "title": "The Maximum Mass of Ideal White Dwarfs",
     "container": "The Astrophysical Journal",
     "issued": 1931
   },
   "10.1093/mnras/179.3.433": {
     "endpoint": "https://api.crossref.org/works/10.1093%2Fmnras%2F179.3.433",
-    "retrieved_at": "2026-08-09T13:38:41Z",
+    "retrieved_at": "2026-08-11T02:49:22Z",
     "cache_file": "10-1093_mnras_179-3-433.json",
     "sha256": "25609cd0d098ee1752e92dbacac507b5bdceaeb7d13bbd59bacf827af4b9112f",
     "title": "Electromagnetic extraction of energy from Kerr black holes",
@@ -379,7 +379,7 @@
   },
   "10.1146/annurev.marine.010908.163834": {
     "endpoint": "https://api.crossref.org/works/10.1146%2Fannurev.marine.010908.163834",
-    "retrieved_at": "2026-08-09T13:56:24Z",
+    "retrieved_at": "2026-08-11T02:50:16Z",
     "cache_file": "10-1146_annurev-marine-010908-163834.json",
     "sha256": "80e2093f23e83da903ff80313c494f8e895748ac55fbd00d0ddf1cd138e6418e",
     "title": "Ocean Acidification: The Other CO<sub>2</sub>Problem",
@@ -388,16 +388,16 @@
   },
   "10.1017/9781009157896": {
     "endpoint": "https://api.crossref.org/works/10.1017%2F9781009157896",
-    "retrieved_at": "2026-08-09T13:56:25Z",
+    "retrieved_at": "2026-08-11T02:50:18Z",
     "cache_file": "10-1017_9781009157896.json",
-    "sha256": "ae08dd8742d87b65c4026f9c68d050b8d1e0dc21710ffd1de12bdf71874ccaaf",
+    "sha256": "229ad7fce42b66c0cd96879be09194390841f18393d80b8bda77e58e830e2fcf",
     "title": "Climate Change 2021 – The Physical Science Basis",
     "container": "",
     "issued": 2023
   },
   "10.1098/rsos.140317": {
     "endpoint": "https://api.crossref.org/works/10.1098%2Frsos.140317",
-    "retrieved_at": "2026-08-09T13:56:27Z",
+    "retrieved_at": "2026-08-11T02:50:25Z",
     "cache_file": "10-1098_rsos-140317.json",
     "sha256": "baf5d6f85562ea229ab7d7a1c3e6c6ddce221e07454108b04d495c68e1eb92ab",
     "title": "The deep sea is a major sink for microplastic debris",
@@ -415,7 +415,7 @@
   },
   "10.3389/fmars.2017.00418": {
     "endpoint": "https://api.crossref.org/works/10.3389%2Ffmars.2017.00418",
-    "retrieved_at": "2026-08-09T13:56:30Z",
+    "retrieved_at": "2026-08-11T02:50:29Z",
     "cache_file": "10-3389_fmars-2017-00418.json",
     "sha256": "8c2836c73c8dbf3f3a2eb8cc27bdd84a3b8b636e9cd041282892ee1e97089128",
     "title": "An Overview of Seabed Mining Including the Current State of Development, Environmental Impacts, and Knowledge Gaps",
@@ -433,7 +433,7 @@
   },
   "10.1126/science.1225942": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1225942",
-    "retrieved_at": "2026-08-09T13:56:34Z",
+    "retrieved_at": "2026-08-11T02:50:43Z",
     "cache_file": "10-1126_science-1225942.json",
     "sha256": "570ef4eaecdc14e76adf351f18b92c1ddec0e4a07458caf12ebbee522e3a1883",
     "title": "Injection-Induced Earthquakes",
@@ -442,16 +442,16 @@
   },
   "10.1126/science.1255802": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1255802",
-    "retrieved_at": "2026-08-09T13:56:35Z",
+    "retrieved_at": "2026-08-11T02:50:44Z",
     "cache_file": "10-1126_science-1255802.json",
-    "sha256": "b26aee7aec2fe8196f879169f0ad8a8c7d32f8b577567974f35322731685a8e1",
+    "sha256": "c6cf5029949085aaa1e956ce8180f00cdfe1b3ec4f22964821d26602f64ff4af",
     "title": "Sharp increase in central Oklahoma seismicity since 2008 induced by massive wastewater injection",
     "container": "Science",
     "issued": 2014
   },
   "10.1126/science.1084783": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1084783",
-    "retrieved_at": "2026-08-09T13:56:40Z",
+    "retrieved_at": "2026-08-11T02:50:53Z",
     "cache_file": "10-1126_science-1084783.json",
     "sha256": "80284c33ab1b2dec06f049cbfe69fb2e5d0bfdc03ea325ef196d3a0774541889",
     "title": "Episodic Tremor and Slip on the Cascadia Subduction Zone: The Chatter of Silent Slip",
@@ -460,7 +460,7 @@
   },
   "10.1126/science.1070378": {
     "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1070378",
-    "retrieved_at": "2026-08-09T13:56:42Z",
+    "retrieved_at": "2026-08-11T02:50:54Z",
     "cache_file": "10-1126_science-1070378.json",
     "sha256": "0e8d0991706ecf438c9d0a1708c7407d72403a366a5319c6221c0a64609bf560",
     "title": "Nonvolcanic Deep Tremor Associated with Subduction in Southwest Japan",
@@ -469,7 +469,7 @@
   },
   "10.7185/geochemlet.1829": {
     "endpoint": "https://api.crossref.org/works/10.7185%2Fgeochemlet.1829",
-    "retrieved_at": "2026-08-09T13:58:20Z",
+    "retrieved_at": "2026-08-11T02:50:27Z",
     "cache_file": "10-7185_geochemlet-1829.json",
     "sha256": "ac7f680f32a95296af809fe16183ab76e66d53dd55bd00f2b9dda7f2f3c9b4a4",
     "title": "Microplastics contaminate the deepest part of the world’s ocean",
@@ -487,7 +487,7 @@
   },
   "10.3389/fmars.2018.00053": {
     "endpoint": "https://api.crossref.org/works/10.3389%2Ffmars.2018.00053",
-    "retrieved_at": "2026-08-09T13:58:39Z",
+    "retrieved_at": "2026-08-11T02:50:30Z",
     "cache_file": "10-3389_fmars-2018-00053.json",
     "sha256": "7994da849377211e5fb04f86fb90511c9c60db964331832ae391032931e8701b",
     "title": "Deep-Sea Mining With No Net Loss of Biodiversity—An Impossible Aim",
@@ -496,7 +496,7 @@
   },
   "10.1007/s41116-020-00025-6": {
     "endpoint": "https://api.crossref.org/works/10.1007%2Fs41116-020-00025-6",
-    "retrieved_at": "2026-08-10T07:16:45Z",
+    "retrieved_at": "2026-08-11T02:49:42Z",
     "cache_file": "10-1007_s41116-020-00025-6.json",
     "sha256": "e4a27dcc995f71140204539de3dc0b2c82d6da7bd4b80e3c1910dad31385d7a8",
     "title": "Dynamo models of the solar cycle",
@@ -505,11 +505,119 @@
   },
   "10.3389/fmars.2018.00195": {
     "endpoint": "https://api.crossref.org/works/10.3389%2Ffmars.2018.00195",
-    "retrieved_at": "2026-08-10T07:16:47Z",
+    "retrieved_at": "2026-08-11T02:50:32Z",
     "cache_file": "10-3389_fmars-2018-00195.json",
     "sha256": "da0f4bf84c6b929bc2b4bb9204ded1780d8df12b62ea013745fee1fddf5de552",
     "title": "Corrigendum: Deep-Sea Mining With No Net Loss of Biodiversity—An Impossible Aim",
     "container": "Frontiers in Marine Science",
     "issued": 2018
+  },
+  "10.1126/science.1141038": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1141038",
+    "retrieved_at": "2026-08-11T02:50:58Z",
+    "cache_file": "10-1126_science-1141038.json",
+    "sha256": "36b243f12e74be6815cd6dc166f785a1d3c7315a4801cd318370b54bd423fde1",
+    "title": "Orbital and Millennial Antarctic Climate Variability over the Past 800,000 Years",
+    "container": "Science",
+    "issued": 2007
+  },
+  "10.1038/20859": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2F20859",
+    "retrieved_at": "2026-08-11T02:51:00Z",
+    "cache_file": "10-1038_20859.json",
+    "sha256": "90499e76b29b058062134c86555092c9a9541b7b79a6a6def85a416a6da8af32",
+    "title": "Climate and atmospheric history of the past 420,000 years from the Vostok ice core, Antarctica",
+    "container": "Nature",
+    "issued": 1999
+  },
+  "10.1007/s10584-011-0101-1": {
+    "endpoint": "https://api.crossref.org/works/10.1007%2Fs10584-011-0101-1",
+    "retrieved_at": "2026-08-11T02:51:02Z",
+    "cache_file": "10-1007_s10584-011-0101-1.json",
+    "sha256": "8d6d70791405c3b3a84da91b20cfaf88edb1a8c092ca8dc02afa5c3bb5aff080",
+    "title": "The Arctic’s rapidly shrinking sea ice cover: a research synthesis",
+    "container": "Climatic Change",
+    "issued": 2011
+  },
+  "10.1017/9781009157896.011": {
+    "endpoint": "https://api.crossref.org/works/10.1017%2F9781009157896.011",
+    "retrieved_at": "2026-08-11T02:51:03Z",
+    "cache_file": "10-1017_9781009157896-011.json",
+    "sha256": "43c503a9aa312e97af5f1da1436ad1e368a9b348e37f1bb572446b6b5d638d58",
+    "title": "Ocean, Cryosphere and Sea Level Change",
+    "container": "Climate Change 2021 – The Physical Science Basis",
+    "issued": 2023
+  },
+  "10.1038/s41586-019-1855-2": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2Fs41586-019-1855-2",
+    "retrieved_at": "2026-08-11T02:51:05Z",
+    "cache_file": "10-1038_s41586-019-1855-2.json",
+    "sha256": "08788c881231f9ecf8c92170286223cd9c42a2a75d9980211029428250707bc3",
+    "title": "Mass balance of the Greenland Ice Sheet from 1992 to 2018",
+    "container": "Nature",
+    "issued": 2019
+  },
+  "10.1038/s41586-018-0179-y": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2Fs41586-018-0179-y",
+    "retrieved_at": "2026-08-11T02:51:07Z",
+    "cache_file": "10-1038_s41586-018-0179-y.json",
+    "sha256": "b7835ae51f88bbe08bb92f31396e50e32ab8cff0c4a9ebc637988e819391a1fe",
+    "title": "Mass balance of the Antarctic Ice Sheet from 1992 to 2017",
+    "container": "Nature",
+    "issued": 2018
+  },
+  "10.1126/science.1249055": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.1249055",
+    "retrieved_at": "2026-08-11T02:51:09Z",
+    "cache_file": "10-1126_science-1249055.json",
+    "sha256": "a4b12dadfd2033102f8bc5eb118a616ac1050f934402e7b022ffb894ce3ec25c",
+    "title": "Marine Ice Sheet Collapse Potentially Under Way for the Thwaites Glacier Basin, West Antarctica",
+    "container": "Science",
+    "issued": 2014
+  },
+  "10.1002/2014gl060140": {
+    "endpoint": "https://api.crossref.org/works/10.1002%2F2014gl060140",
+    "retrieved_at": "2026-08-11T02:51:10Z",
+    "cache_file": "10-1002_2014gl060140.json",
+    "sha256": "556b99015446c999333c317a94a1668efccad5d4a0de64b0adde61e16ea5a66c",
+    "title": "Widespread, rapid grounding line retreat of Pine Island, Thwaites, Smith, and Kohler glaciers, West Antarctica, from 1992 to 2011",
+    "container": "Geophysical Research Letters",
+    "issued": 2014
+  },
+  "10.1038/nature14338": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2Fnature14338",
+    "retrieved_at": "2026-08-11T02:51:12Z",
+    "cache_file": "10-1038_nature14338.json",
+    "sha256": "10cd7f1aecba9d0d65edfb4046781ed791448689a2918ee853a11ac7c4309635",
+    "title": "Climate change and the permafrost carbon feedback",
+    "container": "Nature",
+    "issued": 2015
+  },
+  "10.1073/pnas.2100163118": {
+    "endpoint": "https://api.crossref.org/works/10.1073%2Fpnas.2100163118",
+    "retrieved_at": "2026-08-11T02:51:14Z",
+    "cache_file": "10-1073_pnas-2100163118.json",
+    "sha256": "a811a71f3eccdec62e90e694acaa6bc844a7392b251cfbdaacbc73e2b0971116",
+    "title": "Permafrost carbon feedbacks threaten global climate goals",
+    "container": "Proceedings of the National Academy of Sciences",
+    "issued": 2021
+  },
+  "10.1073/pnas.1906556116": {
+    "endpoint": "https://api.crossref.org/works/10.1073%2Fpnas.1906556116",
+    "retrieved_at": "2026-08-11T02:51:16Z",
+    "cache_file": "10-1073_pnas-1906556116.json",
+    "sha256": "68019186016e5b85c461383225768aadb72e49c6e2e5df2086833236b28be448",
+    "title": "A 40-y record reveals gradual Antarctic sea ice increases followed by decreases at rates far exceeding the rates seen in the Arctic",
+    "container": "Proceedings of the National Academy of Sciences",
+    "issued": 2019
+  },
+  "10.1126/science.aag2345": {
+    "endpoint": "https://api.crossref.org/works/10.1126%2Fscience.aag2345",
+    "retrieved_at": "2026-08-11T02:51:17Z",
+    "cache_file": "10-1126_science-aag2345.json",
+    "sha256": "ce874c78a66c1bea05c0e9fb618f6f5d0a3ce9eb56a837e1ef6d28fe96011f7f",
+    "title": "Observed Arctic sea-ice loss directly follows anthropogenic CO\n            <sub>2</sub>\n            emission",
+    "container": "Science",
+    "issued": 2016
   }
 }

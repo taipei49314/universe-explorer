@@ -88,6 +88,8 @@ EXPECTED_OUTPUTS = [
     ("index.html", True),
     ("app.html", True),
     ("universe.html", True),
+    ("explore3d.html", True),
+    ("scene3d.json", True),
     ("explore.html", True),
     ("explore-zh.html", True),
     ("claims.json", True),
@@ -117,6 +119,7 @@ EXPECTED_OUTPUTS = [
     ("planets.html", True),
     ("ocean.html", True),
     ("seismology.html", True),
+    ("polar.html", True),
 ]
 
 

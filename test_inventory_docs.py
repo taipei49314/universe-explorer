@@ -29,10 +29,10 @@ def test_readme_snapshot_matches_registry():
     assert f"**{c['claims']}**" in readme, c
     assert f"**{c['authored']}**" in readme, c
     assert f"**{c['paths']}**" in readme, c
-    # Domain claim sum line still lists 8 topics
+    # Domain claim sum line still lists every registered topic
     for tid in (
         "black_hole", "cosmology", "dark_matter", "stars",
-        "planets", "exoplanets", "ocean", "seismology",
+        "planets", "exoplanets", "ocean", "seismology", "polar",
     ):
         assert tid in readme
 

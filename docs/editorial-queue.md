@@ -26,6 +26,7 @@ Each domain should either cover the five light layers or **explicitly note** a m
 | planets | ✓ | ✓ | ✓ | ✓ | ✓ | OK |
 | ocean | ✓ | ✓ | ✓ | ✓ | ✓ | OK |
 | seismology | ✓ | ✓ | ✓ | ✓ | ✓ | OK |
+| polar | ✓ | ✓ | ✓ | ✓ | ✓ | 南北極 · 8 claims (2026-08-11) |
 
 ## Weekly ritual (suggested N = 3)
 

@@ -103,16 +103,18 @@ class TestContentCompleteness:
     """All claims should be complete."""
 
     def test_all_domains_covered(self):
-        """All 8 domains should be covered."""
+        """All registered domains should be covered."""
         domains = {t.id for t in TOPICS}
         expected = {"black_hole", "cosmology", "dark_matter", "stars",
-                    "exoplanets", "planets", "ocean", "seismology"}
+                    "exoplanets", "planets", "ocean", "seismology", "polar"}
         assert domains == expected
 
-    def test_total_claims_91(self):
-        """Total claims should be 91."""
+    def test_total_claims_matches_registry(self):
+        """Total claims should match the live registry (no hard-coded stale N)."""
         total = sum(len(t.claims) for t in TOPICS)
-        assert total == 91
+        assert total == 99
+        assert "polar" in {t.id for t in TOPICS}
+        assert len(next(t for t in TOPICS if t.id == "polar").claims) == 8
 
     def test_all_statuses_represented(self):
         """All 5 statuses should be represented."""

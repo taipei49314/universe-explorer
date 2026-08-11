@@ -330,7 +330,9 @@ class TestRenderSafety:
         assert isinstance(data, dict)
         assert "claims" in data
         assert isinstance(data["claims"], list)
-        assert len(data["claims"]) == 91
+        assert len(data["claims"]) == sum(
+            len(t.claims) for t in TOPICS
+        )
 
     def test_claims_json_has_required_fields(self):
         """Every claim in JSON should have required fields."""

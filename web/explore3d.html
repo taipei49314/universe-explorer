@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universe Explorer — 3D Explore / Reason</title>
+<style>
+:root {
+  --bg: #05070c; --panel: rgba(16,20,28,.92); --ink: #e8eef7; --muted: #8b97a8;
+  --line: rgba(255,255,255,.12); --accent: #4da3ff; --warn: #f0b429;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; overflow: hidden; }
+#stage { position: absolute; inset: 0; }
+#hud {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 5;
+  display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  padding: 10px 14px; background: linear-gradient(180deg, rgba(0,0,0,.55), transparent);
+  pointer-events: none;
+}
+#hud > * { pointer-events: auto; }
+#hud h1 { margin: 0; font-size: 1rem; font-weight: 600; letter-spacing: -.02em; }
+#hud .sub { color: var(--muted); font-size: .8rem; margin-right: auto; max-width: 36em; }
+.chip, select, button, a.nav {
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+  border-radius: 999px; padding: 6px 12px; font: inherit; cursor: pointer;
+  text-decoration: none;
+}
+.chip.on, button.primary { background: var(--accent); border-color: transparent; color: #041018; font-weight: 600; }
+.chip:hover, button:hover, a.nav:hover { border-color: var(--accent); }
+#panel {
+  position: absolute; top: 56px; right: 12px; width: min(360px, 92vw); max-height: calc(100vh - 80px);
+  overflow: auto; z-index: 6; background: var(--panel); border: 1px solid var(--line);
+  border-radius: 14px; padding: 14px 16px; box-shadow: 0 16px 48px rgba(0,0,0,.45);
+  display: none;
+}
+#panel.open { display: block; }
+#panel h2 { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.3; }
+#panel .meta { color: var(--muted); font-size: .8rem; margin-bottom: 10px; }
+#panel .badge {
+  display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: .75rem;
+  font-weight: 600; margin-right: 6px; background: rgba(255,255,255,.08);
+}
+#panel .badge.div { color: var(--warn); border: 1px solid rgba(240,180,41,.4); }
+#panel section { margin-top: 12px; }
+#panel h3 { margin: 0 0 4px; font-size: .72rem; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--muted); font-weight: 600; }
+#panel ul { margin: 0; padding-left: 1.1em; }
+#panel li { margin: 4px 0; }
+#panel .empty { color: var(--muted); font-style: italic; }
+#panel .actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+#panel a { color: var(--accent); }
+#hint {
+  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+  z-index: 5; color: var(--muted); font-size: .78rem; text-align: center;
+  background: rgba(0,0,0,.4); padding: 6px 12px; border-radius: 999px;
+  pointer-events: none;
+}
+#err {
+  position: absolute; inset: 0; display: none; align-items: center; justify-content: center;
+  z-index: 20; background: var(--bg); padding: 24px; text-align: center;
+}
+#err.show { display: flex; }
+#err code { background: rgba(255,255,255,.08); padding: 2px 6px; border-radius: 4px; }
+#legend {
+  position: absolute; bottom: 48px; left: 12px; z-index: 5;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 8px 10px; font-size: .72rem; color: var(--muted);
+}
+#legend span { display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+  margin-right: 4px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div id="err"></div>
+<div id="stage"></div>
+<header id="hud">
+  <h1>3D Explore / Reason</h1>
+  <span class="sub">全世界 · 全宇宙 — registered knowledge map only. No confidence scores.</span>
+  <a class="nav" href="index.html">Index</a>
+  <a class="nav" href="app.html">2D Map</a>
+  <a class="nav" href="dashboard.html">Dashboard</a>
+  <button type="button" class="chip on" data-theme="" id="th-all">All layers</button>
+  <button type="button" class="chip" data-theme="cosmos">宇宙 Cosmos</button>
+  <button type="button" class="chip" data-theme="planets">星球 Planets</button>
+  <button type="button" class="chip" data-theme="earth">地球 Earth / World</button>
+  <select id="path-sel" aria-label="Reading path">
+    <option value="">— Reading path —</option>
+  </select>
+  <button type="button" id="path-prev" title="Previous path step">◀</button>
+  <button type="button" id="path-next" class="primary" title="Next path step">Path ▶</button>
+</header>
+<aside id="panel" aria-live="polite"></aside>
+<div id="legend">
+  <div><span style="background:#2F7D46"></span>Established</div>
+  <div><span style="background:#2762A8"></span>Strong</div>
+  <div><span style="background:#A17C0A"></span>Competing</div>
+  <div><span style="background:#C13E2A"></span>Frontier</div>
+  <div><span style="background:#93265E"></span>Speculative</div>
+  <div style="margin-top:4px">Y layers: Cosmos ↑ · Planets · Earth/World ↓</div>
+</div>
+<div id="hint">Drag orbit · scroll zoom · click node · Path steps explore reasoning routes</div>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
+const BANNED = new Set(["confidence", "score", "probability", "certainty", "trust"]);
+const $ = (id) => document.getElementById(id);
+const errBox = $("err");
+const panelEl = $("panel");
+const stage = $("stage");
+
+function showErr(html) {
+  errBox.innerHTML = html;
+  errBox.classList.add("show");
+}
+
+if (location.protocol === "file:") {
+  showErr(
+    "<div><h2>Serve the static site</h2>" +
+    "<p>ES modules cannot load from <code>file:</code>. From the repo root:</p>" +
+    "<p><code>python build.py</code><br>" +
+    "<code>python -m http.server 8731 --directory dist</code><br>" +
+    "then open <code>http://localhost:8731/explore3d.html</code></p></div>"
+  );
+  throw new Error("file: protocol");
+}
+
+/** @type {any} */
+let SCENE_DATA = null;
+/** @type {Map<string, THREE.Mesh>} */
+const meshById = new Map();
+/** @type {string|null} */
+let selectedId = null;
+/** @type {string} */
+let themeFilter = "";
+/** @type {string[]} */
+let pathSteps = [];
+let pathIndex = -1;
+
+const raycaster = new THREE.Raycaster();
+const pointer = new THREE.Vector2();
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x05070c);
+scene.fog = new THREE.FogExp2(0x05070c, 0.012);
+
+const camera = new THREE.PerspectiveCamera(
+  55, window.innerWidth / window.innerHeight, 0.1, 500
+);
+camera.position.set(28, 22, 36);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+stage.appendChild(renderer.domElement);
+// Expose for verification / headless probes
+window.__UE3D = {
+  renderer,
+  canvas: renderer.domElement,
+  getSelectedId: () => selectedId,
+  selectClaim: (id) => selectClaim(id),
+  getThemeFilter: () => themeFilter,
+  getNodeCount: () => meshById.size,
+  getDrawnPixels: () => {
+    // sample a few pixels — non-zero if scene rendered something
+    const gl = renderer.getContext();
+    const w = renderer.domElement.width;
+    const h = renderer.domElement.height;
+    const buf = new Uint8Array(4);
+    gl.readPixels(Math.floor(w / 2), Math.floor(h / 2), 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, buf);
+    return { w, h, rgba: Array.from(buf) };
+  },
+};
+
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.06;
+controls.minDistance = 8;
+controls.maxDistance = 120;
+
+scene.add(new THREE.AmbientLight(0x6688aa, 0.55));
+const key = new THREE.DirectionalLight(0xffffff, 0.85);
+key.position.set(20, 40, 10);
+scene.add(key);
+const rim = new THREE.DirectionalLight(0x4466ff, 0.25);
+rim.position.set(-30, -10, -20);
+scene.add(rim);
+
+// layer reference rings
+function addLayerRing(y, color, label) {
+  const geo = new THREE.RingGeometry(22, 22.15, 64);
+  const mat = new THREE.MeshBasicMaterial({
+    color, side: THREE.DoubleSide, transparent: true, opacity: 0.35,
+  });
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.rotation.x = -Math.PI / 2;
+  mesh.position.y = y;
+  scene.add(mesh);
+}
+addLayerRing(18, 0x4da3ff);
+addLayerRing(0, 0x88aacc);
+addLayerRing(-18, 0x3d9e5c);
+
+const nodeGroup = new THREE.Group();
+scene.add(nodeGroup);
+const edgeGroup = new THREE.Group();
+scene.add(edgeGroup);
+
+function banScan(obj, path = "") {
+  if (obj && typeof obj === "object") {
+    if (Array.isArray(obj)) {
+      obj.slice(0, 500).forEach((v, i) => banScan(v, path + "[" + i + "]"));
+    } else {
+      for (const [k, v] of Object.entries(obj)) {
+        if (BANNED.has(String(k).toLowerCase())) {
+          throw new Error("banned key in scene payload: " + k + " at " + path);
+        }
+        banScan(v, path + "." + k);
+      }
+    }
+  }
+}
+
+async function loadScene() {
+  const res = await fetch("scene3d.json", { cache: "no-store" });
+  if (!res.ok) throw new Error("scene3d.json HTTP " + res.status);
+  SCENE_DATA = await res.json();
+  banScan(SCENE_DATA);
+  buildMeshes();
+  fillPathSelect();
+  // deep-link ?c=claim_id
+  const params = new URLSearchParams(location.search);
+  const c = params.get("c");
+  if (c && SCENE_DATA.panels[c]) selectClaim(c);
+  const p = params.get("path");
+  if (p && SCENE_DATA.path_steps[p]) {
+    $("path-sel").value = p;
+    startPath(p);
+  }
+}
+
+function buildMeshes() {
+  // clear
+  while (nodeGroup.children.length) {
+    const ch = nodeGroup.children.pop();
+    ch.geometry?.dispose?.();
+    ch.material?.dispose?.();
+  }
+  while (edgeGroup.children.length) {
+    const ch = edgeGroup.children.pop();
+    ch.geometry?.dispose?.();
+    ch.material?.dispose?.();
+  }
+  meshById.clear();
+
+  const nodes = SCENE_DATA.nodes || [];
+  for (const n of nodes) {
+    const r = n.diverges ? 0.55 : 0.42;
+    const geo = new THREE.SphereGeometry(r, 16, 12);
+    const mat = new THREE.MeshStandardMaterial({
+      color: n.color || "#888",
+      emissive: n.color || "#888",
+      emissiveIntensity: 0.22,
+      metalness: 0.15,
+      roughness: 0.45,
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.set(n.position.x, n.position.y, n.position.z);
+    mesh.userData.claimId = n.id;
+    mesh.userData.theme = n.theme;
+    mesh.userData.baseScale = 1;
+    nodeGroup.add(mesh);
+    meshById.set(n.id, mesh);
+
+    if (n.diverges) {
+      const ring = new THREE.Mesh(
+        new THREE.TorusGeometry(r * 1.35, 0.05, 8, 24),
+        new THREE.MeshBasicMaterial({ color: 0xf0b429 })
+      );
+      ring.rotation.x = Math.PI / 2;
+      mesh.add(ring);
+    }
+  }
+
+  // edges as thin lines (cap for performance)
+  const posById = Object.fromEntries(
+    nodes.map((n) => [n.id, n.position])
+  );
+  const maxEdges = 400;
+  let count = 0;
+  for (const e of SCENE_DATA.edges || []) {
+    if (count >= maxEdges) break;
+    const a = posById[e.source];
+    const b = posById[e.target];
+    if (!a || !b) continue;
+    const pts = [
+      new THREE.Vector3(a.x, a.y, a.z),
+      new THREE.Vector3(b.x, b.y, b.z),
+    ];
+    const geo = new THREE.BufferGeometry().setFromPoints(pts);
+    const mat = new THREE.LineBasicMaterial({
+      color: 0x334455,
+      transparent: true,
+      opacity: 0.35,
+    });
+    edgeGroup.add(new THREE.Line(geo, mat));
+    count++;
+  }
+  applyThemeFilter();
+}
+
+function fillPathSelect() {
+  const sel = $("path-sel");
+  for (const p of SCENE_DATA.paths || []) {
+    const opt = document.createElement("option");
+    opt.value = p.id;
+    opt.textContent = (p.title || p.id) + " (" + (p.n_steps || 0) + ")";
+    sel.appendChild(opt);
+  }
+}
+
+function applyThemeFilter() {
+  for (const [, mesh] of meshById) {
+    const show = !themeFilter || mesh.userData.theme === themeFilter;
+    mesh.visible = show;
+  }
+  edgeGroup.visible = !themeFilter; // simplify when filtered
+}
+
+function selectClaim(id) {
+  selectedId = id;
+  for (const [cid, mesh] of meshById) {
+    const on = cid === id;
+    const neigh = (SCENE_DATA.nodes.find((n) => n.id === id)?.neighbors || []);
+    const isN = neigh.includes(cid);
+    mesh.scale.setScalar(on ? 1.85 : isN ? 1.25 : 1);
+    mesh.material.emissiveIntensity = on ? 0.55 : isN ? 0.35 : 0.22;
+  }
+  const panel = SCENE_DATA.panels[id];
+  if (!panel) {
+    panelEl.classList.remove("open");
+    panelEl.innerHTML = "";
+    return;
+  }
+  renderPanel(panel);
+  const mesh = meshById.get(id);
+  if (mesh) {
+    controls.target.lerp(mesh.position, 0.35);
+  }
+  // update URL without reload
+  try {
+    const u = new URL(location.href);
+    u.searchParams.set("c", id);
+    history.replaceState(null, "", u);
+  } catch (_) {}
+}
+
+function renderPanel(p) {
+  const oq = p.open_questions || [];
+  const oqHtml = oq.length
+    ? "<ul>" + oq.map((q) => "<li>" + esc(q) + "</li>").join("") + "</ul>"
+    : '<p class="empty">No open questions recorded for this claim.</p>';
+  const neighbors = (SCENE_DATA.nodes.find((n) => n.id === p.id)?.neighbors) || [];
+  const neighBtns = neighbors.slice(0, 8).map((nid) => {
+    const n = SCENE_DATA.nodes.find((x) => x.id === nid);
+    const lab = n ? n.title.slice(0, 40) : nid;
+    return '<button type="button" class="chip neigh" data-id="' + esc(nid) + '">' +
+      esc(lab) + "</button>";
+  }).join(" ");
+
+  panelEl.innerHTML =
+    "<h2>" + esc(p.title || p.what || p.id) + "</h2>" +
+    '<div class="meta">' +
+      '<span class="badge">' + esc(p.status_light || "") + " " +
+        esc(p.status_name || p.status || "") + "</span>" +
+      '<span class="badge">Evidence ' + esc(p.axis || "") +
+        (p.axis_name ? " — " + esc(p.axis_name) : "") + "</span>" +
+      (p.diverges ? '<span class="badge div">⚡ axes diverge</span>' : "") +
+    "</div>" +
+    "<section><h3>What is claimed</h3><p>" + esc(p.what || p.title || "") +
+    "</p></section>" +
+    "<section><h3>Open questions (count yourself)</h3>" + oqHtml + "</section>" +
+    "<section><h3>Explore neighbors</h3><div class=\"actions\">" +
+      (neighBtns || '<span class="empty">No related edges</span>') +
+    "</div></section>" +
+    '<div class="actions">' +
+      (p.permalink ? '<a href="' + esc(p.permalink) + '">Topic page →</a>' : "") +
+      ' <a href="app.html?c=' + encodeURIComponent(p.id) + '">2D map →</a>' +
+      ' <a href="challenge.html">Challenge →</a>' +
+    "</div>";
+  panelEl.classList.add("open");
+  panelEl.querySelectorAll(".neigh").forEach((btn) => {
+    btn.addEventListener("click", () => selectClaim(btn.getAttribute("data-id")));
+  });
+}
+
+function esc(s) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function startPath(pathId) {
+  pathSteps = SCENE_DATA.path_steps[pathId] || [];
+  pathIndex = pathSteps.length ? 0 : -1;
+  if (pathIndex >= 0) selectClaim(pathSteps[pathIndex]);
+}
+
+function pathDelta(d) {
+  if (!pathSteps.length) return;
+  pathIndex = Math.max(0, Math.min(pathSteps.length - 1, pathIndex + d));
+  selectClaim(pathSteps[pathIndex]);
+}
+
+// theme chips
+document.querySelectorAll(".chip[data-theme]").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".chip[data-theme]").forEach((b) => b.classList.remove("on"));
+    btn.classList.add("on");
+    themeFilter = btn.getAttribute("data-theme") || "";
+    applyThemeFilter();
+  });
+});
+
+$("path-sel").addEventListener("change", (e) => {
+  const v = e.target.value;
+  if (v) startPath(v);
+  else {
+    pathSteps = [];
+    pathIndex = -1;
+  }
+});
+$("path-prev").addEventListener("click", () => pathDelta(-1));
+$("path-next").addEventListener("click", () => pathDelta(1));
+
+function onPointer(ev) {
+  const rect = renderer.domElement.getBoundingClientRect();
+  pointer.x = ((ev.clientX - rect.left) / rect.width) * 2 - 1;
+  pointer.y = -((ev.clientY - rect.top) / rect.height) * 2 + 1;
+  raycaster.setFromCamera(pointer, camera);
+  const hits = raycaster.intersectObjects(nodeGroup.children, false);
+  if (hits.length) {
+    const id = hits[0].object.userData.claimId;
+    if (id) selectClaim(id);
+  }
+}
+renderer.domElement.addEventListener("pointerdown", onPointer);
+
+window.addEventListener("keydown", (ev) => {
+  if (ev.key === "Escape") {
+    panelEl.classList.remove("open");
+    selectedId = null;
+  }
+  if (ev.key === "ArrowRight") pathDelta(1);
+  if (ev.key === "ArrowLeft") pathDelta(-1);
+});
+
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+
+loadScene().catch((e) => {
+  console.error(e);
+  showErr("<div><h2>Failed to load 3D scene</h2><p>" + esc(e.message) +
+    "</p><p>Run <code>python build.py</code> so <code>scene3d.json</code> exists in dist/.</p></div>");
+});
+</script>
+</body>
+</html>

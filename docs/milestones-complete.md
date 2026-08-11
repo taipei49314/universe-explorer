@@ -36,10 +36,11 @@
 
 ## Totals after closeout
 
-- **Topics:** 8  
-- **Claims:** 91  
-- **Reading paths:** 8  
-- **Authored relation edges:** **96** (0 authored-isolated claims; recount via `python -m universe_explorer.relations --validate`)  
+- **Topics:** 9  
+- **Claims:** 99  
+- **Reading paths:** 9  
+- **Authored relation edges:** **106** (0 authored-isolated claims; recount via `python -m universe_explorer.relations --validate`)  
+- **Earth domains:** ocean · seismology · **polar (南北極)**
 
 ## How to deliver digests (P5b)
 
