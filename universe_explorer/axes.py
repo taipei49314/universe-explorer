@@ -72,28 +72,50 @@ def derive(claim: Claim) -> Derivation:
 
     # Amendment #4: independence-of-replication is a claim about the reviewed
     # record — only PRIMARY-tier sources can establish E1.
+    # Amendment #7: those PRIMARY sources must also be *fetchable* endpoints
+    # (arXiv or DOI after normalization). A kind string containing
+    # "peer-reviewed" with https://example.com is not E1.
+    # Amendment #9: independence is counted by *paper identity* (normalized
+    # arXiv id / DOI), not by source label — so one paper under two labels
+    # (or v1/v2) cannot mint E1.
+    from .provenance import is_fetchable_endpoint, paper_id_of
+
+    source_by_label = {s.label: s for s in claim.sources}
     tier_by_label = {s.label: tier_of(s.kind) for s in claim.sources}
     direct_sources = {e.source_ref for e in direct}
     primary_direct_sources = {
         ref for ref in direct_sources
         if tier_by_label.get(ref) == "PRIMARY"
     }
+    fetchable_primary_direct = {
+        ref for ref in primary_direct_sources
+        if (src := source_by_label.get(ref)) is not None
+        and is_fetchable_endpoint(src.url_or_id)
+    }
+    independent_paper_ids = {
+        paper_id_of(source_by_label[ref].url_or_id)
+        for ref in fetchable_primary_direct
+        if paper_id_of(source_by_label[ref].url_or_id) is not None
+    }
     reasons.append(
         f"recorded evidence: {len(direct)} direct "
         f"(distinct sources: {len(direct_sources)}, "
-        f"of which PRIMARY: {len(primary_direct_sources)}), "
+        f"of which PRIMARY: {len(primary_direct_sources)}, "
+        f"fetchable PRIMARY labels: {len(fetchable_primary_direct)}, "
+        f"distinct paper ids: {len(independent_paper_ids)}), "
         f"{len(indirect_analog)} indirect/analog, {len(theoretical)} theoretical")
 
-    if len(direct) >= 2 and len(primary_direct_sources) >= 2:
+    if len(direct) >= 2 and len(independent_paper_ids) >= 2:
         reasons.append(
-            "rule E1 (amendment-4): at least two direct observations hanging "
-            "on distinct PRIMARY sources -> multiple independent direct")
+            "rule E1 (amendment-4/7/9): at least two direct observations "
+            "hanging on distinct *papers* (normalized arXiv/DOI) that are "
+            "PRIMARY and fetchable -> multiple independent direct")
         return Derivation(EvidenceStrength.E1_MULTIPLE_DIRECT, reasons)
 
     if direct:
         reasons.append(
             "rule E2: direct observation exists but not from two distinct "
-            "PRIMARY sources -> single direct line")
+            "fetchable PRIMARY *papers* -> single direct line")
         return Derivation(EvidenceStrength.E2_SINGLE_DIRECT, reasons)
 
     if indirect_analog:

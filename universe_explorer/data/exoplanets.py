@@ -30,12 +30,13 @@ from ..model import (
 # --------------------------------------------------------------------------- #
 exoplanets_exist = Claim(
     id="exoplanets_exist",
+    trace_refs=['MayorQueloz1995', 'Charbonneau2000'],
     title="Planets orbiting other stars exist",
     status=Status.ESTABLISHED,
     sources=[
         Source(
             label="MayorQueloz1995",
-            url_or_id="Nature 378, 355-359 (1995)",
+            url_or_id="doi:10.1038/378355a0",
             kind="peer-reviewed paper (51 Peg b radial-velocity discovery; "
                  "2019 Nobel Prize in Physics)",
         ),
@@ -105,6 +106,7 @@ exoplanets_exist = Claim(
 # --------------------------------------------------------------------------- #
 proxima_b_exists = Claim(
     id="proxima_b_exists",
+    trace_refs=['AngladaEscude2016', 'SuarezMascareno2020'],
     title="The nearest star, Proxima Centauri, hosts a temperate "
           "Earth-mass planet",
     status=Status.ESTABLISHED,
@@ -182,6 +184,7 @@ proxima_b_exists = Claim(
 # --------------------------------------------------------------------------- #
 planets_are_common = Claim(
     id="planets_are_common",
+    trace_refs=['Cassan2012'],
     title="Planets are the rule rather than the exception around Milky Way stars",
     status=Status.STRONG,
     sources=[

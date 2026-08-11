@@ -101,6 +101,11 @@ _MAP_TEMPLATE = """<!DOCTYPE html>
     <div class="stat">Edges: {edge_count}</div>
     <div class="stat">Cross-domain: {cross_domain_edges}</div>
     <div class="stat">Domains: {domain_count}</div>
+    <p class="stat" style="margin:.75rem 0;line-height:1.35;color:var(--muted)">
+      <strong>Disclaimer:</strong> many edges are <em>shared citation</em> only —
+      they do <em>not</em> mean the claims agree. Authored supports/tensions are
+      distinct from mechanical co-citation (amendment-10 / C7).
+    </p>
 
     <div class="filter-group">
       <label>Domain</label>

@@ -36,6 +36,7 @@ from ..model import (
 # --------------------------------------------------------------------------- #
 mass_discrepancy_observed = Claim(
     id="mass_discrepancy_observed",
+    trace_refs=['Rubin1980', 'Clowe2006'],
     title=(
         "Under general relativity, luminous matter alone cannot account for "
         "observed galactic dynamics and cluster mass maps"
@@ -117,6 +118,7 @@ mass_discrepancy_observed = Claim(
 # --------------------------------------------------------------------------- #
 lcdm_includes_cold_dm = Claim(
     id="lcdm_includes_cold_dm",
+    trace_refs=['Planck2018-VI', 'BertoneTait2018'],
     title=(
         "The standard cosmological model requires a dominant non-baryonic "
         "cold dark matter component"

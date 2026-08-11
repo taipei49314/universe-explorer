@@ -118,8 +118,8 @@ def test_amendment4_preprints_cannot_establish_independence():
 def test_amendment4_mixed_tier_stays_e2_two_primary_gives_e1():
     c = copy.deepcopy(firewall)
     c.sources = [
-        Source("P1s", "id1", "peer-reviewed paper"),
-        Source("PRE", "id2", "preprint"),
+        Source("P1s", "arXiv:1111.11111", "peer-reviewed paper"),
+        Source("PRE", "arXiv:2222.22222", "preprint"),
     ]
     c.evidence = [
         Evidence(DIRECT, "obs a", "P1s"),
@@ -127,11 +127,12 @@ def test_amendment4_mixed_tier_stays_e2_two_primary_gives_e1():
     ]
     assert derive(c).strength is EvidenceStrength.E2_SINGLE_DIRECT
 
-    c.sources[1] = Source("P2s", "id2", "peer-reviewed paper")
+    # Amendment #7: both PRIMARY sources need fetchable endpoints (arXiv/DOI).
+    c.sources[1] = Source("P2s", "arXiv:2222.22222", "peer-reviewed paper")
     c.evidence[1] = Evidence(DIRECT, "obs b", "P2s")
     d = derive(c)
     assert d.strength is EvidenceStrength.E1_MULTIPLE_DIRECT
-    assert any("amendment-4" in r for r in d.reasoning)  # law cited in reasoning
+    assert any("amendment-4" in r or "amendment-7" in r for r in d.reasoning)
 
 
 def _run():

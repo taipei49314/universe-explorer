@@ -619,5 +619,41 @@
     "title": "Observed Arctic sea-ice loss directly follows anthropogenic CO\n            <sub>2</sub>\n            emission",
     "container": "Science",
     "issued": 2016
+  },
+  "10.1007/bf01608497": {
+    "endpoint": "https://api.crossref.org/works/10.1007%2Fbf01608497",
+    "retrieved_at": "2026-08-11T14:13:44Z",
+    "cache_file": "10-1007_bf01608497.json",
+    "sha256": "995748723b383828abb191caa2b9c1518312764d570380e80d00f7207103a61b",
+    "title": "Particle creation by black holes",
+    "container": "Communications in Mathematical Physics",
+    "issued": 1976
+  },
+  "10.1103/physrevd.14.2460": {
+    "endpoint": "https://api.crossref.org/works/10.1103%2Fphysrevd.14.2460",
+    "retrieved_at": "2026-08-11T14:13:46Z",
+    "cache_file": "10-1103_physrevd-14-2460.json",
+    "sha256": "96c2191532f988074e3d307fe05f8625f40412b07c599d5f5e1e151f3cdadeef",
+    "title": "Breakdown of predictability in gravitational collapse",
+    "container": "Physical Review D",
+    "issued": 1976
+  },
+  "10.1073/pnas.15.3.168": {
+    "endpoint": "https://api.crossref.org/works/10.1073%2Fpnas.15.3.168",
+    "retrieved_at": "2026-08-11T14:13:47Z",
+    "cache_file": "10-1073_pnas-15-3-168.json",
+    "sha256": "d60b18b2aa1d1cf0746895e42c9e13c8e56b266a202abc09b466bfabd19b642d",
+    "title": "A relation between distance and radial velocity among extra-galactic nebulae",
+    "container": "Proceedings of the National Academy of Sciences",
+    "issued": 1929
+  },
+  "10.1038/378355a0": {
+    "endpoint": "https://api.crossref.org/works/10.1038%2F378355a0",
+    "retrieved_at": "2026-08-11T14:13:49Z",
+    "cache_file": "10-1038_378355a0.json",
+    "sha256": "c30ef6155668ae6981ee7cfaa6fad4b634e2e67c0c693e2a5be8e23c7c8db1da",
+    "title": "A Jupiter-mass companion to a solar-type star",
+    "container": "Nature",
+    "issued": 1995
   }
 }

@@ -96,6 +96,13 @@ def test_manifest_points_at_wrong_content():
     assert "provenance_id_mismatch" in _rules(topic, mpath)
 
 
+def test_arxiv_https_abs_url_is_endpoint():
+    assert arxiv_id_of("https://arxiv.org/abs/1234.56789") == "1234.56789"
+    topic = _topic_citing("https://arxiv.org/abs/0000.99999")
+    mpath = _stage(FAKE_XML)
+    assert "arxiv_source_unfetched" in _rules(topic, mpath)
+
+
 def test_non_arxiv_sources_exempt():
     topic = _topic_citing("Commun. Math. Phys. 43, 199 (1975)")
     mpath = _stage(FAKE_XML)

@@ -33,6 +33,7 @@ from ..model import (
 # --------------------------------------------------------------------------- #
 solar_system_age = Claim(
     id="solar_system_age",
+    trace_refs=['Amelin2002', 'Connelly2012'],
     title=(
         "The solar system formed about 4.56 billion years ago from a "
         "collapsing molecular cloud"
@@ -104,6 +105,7 @@ solar_system_age = Claim(
 # --------------------------------------------------------------------------- #
 moon_giant_impact = Claim(
     id="moon_giant_impact",
+    trace_refs=['CanupAsphaug2001', 'Canup2012'],
     title=(
         "The Moon formed from a giant impact of a Mars-sized body with the "
         "early Earth"

@@ -2473,5 +2473,22 @@ class ZhLocalization(Localization):
     def s_open_questions(self, claim: Claim) -> str:
         return "此宣稱仍記錄有開放問題;請展開下方清單、自行清點。"
 
+    def s_review(self, claim: Claim) -> str:
+        from ..model import ReviewState
+        rs = getattr(claim, "review_state", ReviewState.UNVERIFIED)
+        if not isinstance(rs, ReviewState):
+            rs = ReviewState.UNVERIFIED
+        if rs is ReviewState.HUMAN_VERIFIED:
+            who = (getattr(claim, "verified_by", "") or "").strip() or "編輯"
+            when = (getattr(claim, "verified_at", "") or "").strip()
+            tail = f"（{when}）" if when else ""
+            return (f"編輯標記:已由 {who} 人審通過{tail} — "
+                    f"形狀法院加上具名人工檢查;不是真理證明。")
+        if rs is ReviewState.CHALLENGED:
+            return ("編輯標記:受挑戰中 — 已記錄開放挑戰;"
+                    "共識燈在編輯 OS 下尚未結案。")
+        return ("編輯標記:未人審 — 記錄形狀已經機械檢查;"
+                "尚未有 human_verified 語義簽核。")
+
 
 ZH_LOC = ZhLocalization()

@@ -143,9 +143,12 @@ def _infer_kind(record: FetchedRecord) -> str:
     """Infer source kind from the adapter name and record metadata."""
     if "arXiv" in record.source_ref:
         return "preprint (arXiv)"
-    if "doi" in record.source_ref.lower():
+    if record.source_ref.lower().startswith("doi:"):
         container = record.raw_metadata.get("container", "")
         if container:
             return f"peer-reviewed paper ({container})"
         return "peer-reviewed paper"
+    if record.source_ref.lower().startswith("openalex:"):
+        # No DOI path — treat as external archive until a human upgrades the kind.
+        return "dataset (OpenAlex work record)"
     return "external source"

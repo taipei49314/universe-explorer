@@ -30,13 +30,26 @@ from typing import List, Optional
 from .model import Topic
 from .validator import Violation
 
+# Bare arXiv ids (new-style 1906.11238 or old-style hep-th/9306069).
+_ARXIV_ID = r"(?:[a-z-]+(?:\.[A-Z]{2})?/\d{7}|\d{4}\.\d{4,5})"
 # Matches "arXiv:1906.11238" and old-style "arXiv:hep-th/9306069".
-ARXIV_REF_RE = re.compile(r"^arXiv:\s*([a-z-]+(?:\.[A-Z]{2})?/\d{7}|\d{4}\.\d{4,5})$",
-                          re.IGNORECASE)
+ARXIV_REF_RE = re.compile(rf"^arXiv:\s*({_ARXIV_ID})(?:v\d+)?$", re.IGNORECASE)
+# Amendment #7: URL shapes that are the same endpoint.
+# Host may be arxiv.org or export.arxiv.org (same abs ids).
+ARXIV_URL_RE = re.compile(
+    rf"(?:https?://)?(?:export\.)?(?:www\.)?arxiv\.org/(?:abs|pdf|html)/({_ARXIV_ID})(?:v\d+)?(?:\.pdf)?/?(?:\?.*)?$",
+    re.IGNORECASE,
+)
 
-# Amendment #6: DOI sources have an endpoint too (Crossref), so the honest
-# exemption shrinks. Matches "doi:10.xxxx/anything".
+# Amendment #6: DOI sources have an endpoint too (Crossref).
+# Amendment #7: also doi.org URLs and bare 10.xxxx/... strings.
 DOI_REF_RE = re.compile(r"^doi:\s*(10\.\d{4,9}/\S+)$", re.IGNORECASE)
+DOI_URL_RE = re.compile(
+    r"(?:https?://)?(?:dx\.)?doi\.org/(10\.\d{4,9}/\S+)$",
+    re.IGNORECASE,
+)
+# Bare DOI: whole string is a DOI (no spaces). Trailing punctuation stripped.
+BARE_DOI_RE = re.compile(r"^(10\.\d{4,9}/\S+)$", re.IGNORECASE)
 
 CACHE_DIR = Path(__file__).parent.parent / "cache" / "arxiv"
 MANIFEST_PATH = CACHE_DIR / "manifest.json"
@@ -48,16 +61,117 @@ _ATOM = "{http://www.w3.org/2005/Atom}"
 
 
 def arxiv_id_of(url_or_id: str) -> Optional[str]:
-    """Return the bare arXiv id if this source reference is an arXiv one."""
-    m = ARXIV_REF_RE.match(url_or_id.strip())
-    return m.group(1) if m else None
+    """Return the bare arXiv id if this source reference is an arXiv endpoint.
+
+    Amendment #7: accepts ``arXiv:…`` and ``https://arxiv.org/abs|pdf|html/…``
+    (with optional version suffix). Does not accept free-text mentions.
+    """
+    raw = (url_or_id or "").strip()
+    if not raw:
+        return None
+    m = ARXIV_REF_RE.match(raw)
+    if m:
+        return m.group(1)
+    m = ARXIV_URL_RE.match(raw.rstrip("/"))
+    if m:
+        return m.group(1)
+    return None
 
 
 def doi_of(url_or_id: str) -> Optional[str]:
-    """Return the normalized (lowercase — DOIs are case-insensitive) DOI if
-    this source reference is a DOI one."""
-    m = DOI_REF_RE.match(url_or_id.strip())
-    return m.group(1).lower() if m else None
+    """Return the normalized (lowercase) DOI if this reference is a DOI endpoint.
+
+    Amendment #7: ``doi:…``, ``https://doi.org/…``, ``dx.doi.org/…``, or a bare
+    ``10.xxxx/…`` string. Bibliographic prose (``Nature 378, 355 (1995)``) is
+    not a DOI and stays honestly exempt until rewritten.
+    """
+    raw = (url_or_id or "").strip().rstrip(").,;")
+    if not raw:
+        return None
+    # Strip URL query/fragment so ``doi.org/10.x/y?locatt=…`` still parses.
+    if "://" in raw or raw.lower().startswith("doi.org") or raw.lower().startswith("dx.doi.org"):
+        raw = raw.split("?", 1)[0].split("#", 1)[0].rstrip("/")
+    m = DOI_REF_RE.match(raw)
+    if m:
+        return m.group(1).lower()
+    m = DOI_URL_RE.match(raw)
+    if m:
+        return m.group(1).lower()
+    m = BARE_DOI_RE.match(raw)
+    if m:
+        return m.group(1).lower()
+    return None
+
+
+def is_fetchable_endpoint(url_or_id: str) -> bool:
+    """True when cite⇒fetch applies (arXiv or DOI after Amendment #7 normalize)."""
+    return arxiv_id_of(url_or_id) is not None or doi_of(url_or_id) is not None
+
+
+_ARXIV_ATOM = "{http://www.w3.org/2005/Atom}"
+_ARXIV_NS = "{http://arxiv.org/schemas/atom}"
+
+# arxiv:id ↔ doi:id aliases learned from local arXiv Atom caches (amendment-12).
+# Canonical form prefers doi:… when a DOI is known so preprint + journal of the
+# same work cannot mint two independent E1 paper ids.
+_paper_alias_map: Optional[dict] = None
+
+
+def _build_paper_alias_map() -> dict:
+    """Scan cache/arxiv/*.xml for <arxiv:doi> and map both forms to doi:…"""
+    aliases: dict = {}
+    if not CACHE_DIR.exists():
+        return aliases
+    for path in CACHE_DIR.glob("*.xml"):
+        try:
+            root = ET.fromstring(path.read_text(encoding="utf-8"))
+        except (ET.ParseError, OSError, UnicodeDecodeError):
+            continue
+        for entry in root.findall(f"{_ARXIV_ATOM}entry"):
+            id_el = entry.find(f"{_ARXIV_ATOM}id")
+            doi_el = entry.find(f"{_ARXIV_NS}doi")
+            if id_el is None or not id_el.text or doi_el is None or not doi_el.text:
+                continue
+            entry_id = id_el.text.rsplit("/abs/", 1)[-1]
+            entry_id = re.sub(r"v\d+$", "", entry_id).lower()
+            did = doi_of(f"doi:{doi_el.text.strip()}") or doi_of(doi_el.text.strip())
+            if not entry_id or not did:
+                continue
+            canon = f"doi:{did}"
+            aliases[f"arxiv:{entry_id}"] = canon
+            aliases[canon] = canon
+    return aliases
+
+
+def reload_paper_aliases() -> None:
+    """Drop the cached alias map (tests may call after writing fixtures)."""
+    global _paper_alias_map
+    _paper_alias_map = None
+
+
+def paper_id_of(url_or_id: str) -> Optional[str]:
+    """Normalized identity of a fetchable work (Amendment #9 / #12).
+
+    Used so E1 counts *distinct papers*, not distinct source labels:
+    ``arXiv:1906.11238`` and ``https://arxiv.org/abs/1906.11238v2`` share one id.
+    Amendment #12: when the local arXiv cache records a DOI for that arXiv id,
+    both ``arxiv:…`` and ``doi:…`` collapse to the same canonical ``doi:…``.
+    Returns ``None`` when the reference is not a fetchable endpoint.
+    """
+    global _paper_alias_map
+    raw: Optional[str] = None
+    aid = arxiv_id_of(url_or_id)
+    if aid is not None:
+        raw = f"arxiv:{aid.lower()}"
+    else:
+        did = doi_of(url_or_id)
+        if did is not None:
+            raw = f"doi:{did}"
+    if raw is None:
+        return None
+    if _paper_alias_map is None:
+        _paper_alias_map = _build_paper_alias_map()
+    return _paper_alias_map.get(raw, raw)
 
 
 def load_manifest(manifest_path: Path = MANIFEST_PATH) -> dict:

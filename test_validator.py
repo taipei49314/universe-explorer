@@ -89,6 +89,20 @@ def test_amendment5_every_rule_has_a_law():
         # Amendment #6 (provenance.py, DOI)
         "doi_source_unfetched", "doi_cache_missing",
         "doi_hash_mismatch", "doi_id_mismatch",
+        # Amendment #7
+        "primary_source_not_fetchable", "empty_title", "duplicate_source_label",
+        # Amendment #8
+        "consensus_floor_established", "consensus_floor_strong",
+        # Amendment #10
+        "evidence_type_requires_primary_fetchable",
+        "competing_needs_distinct_papers",
+        "status_reason_vacuous_note",
+        "trace_refs_missing", "trace_refs_unknown", "trace_refs_insufficient",
+        "frontier_needs_fetchable_source", "title_hidden_controls",
+        # Amendment #11
+        "invalid_review_state", "verified_without_attribution",
+        # Amendment #12
+        "verified_by_invalid", "verified_note_vacuous", "verified_at_invalid",
         # P3 (watch.py)
         "undocumented_status_change",
     }

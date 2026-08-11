@@ -119,7 +119,8 @@ STATUS_CONDITIONS = {
 # categories, never numeric scores. Since Amendment #4 they weigh into the
 # evidence axis: E1 independence requires PRIMARY sources (axes.py).
 SOURCE_TIERS = {
-    "PRIMARY": ("peer-reviewed",),               # primary literature
+    # Amendment #7: also match "peer reviewed" (space) and common "journal article".
+    "PRIMARY": ("peer-reviewed", "peer reviewed", "journal article"),
     "SECONDARY": ("textbook", "prize citation"),  # authoritative secondary
     "PREPRINT": ("preprint",),                   # unreviewed preprint
     "DATASET": ("dataset", "archive"),           # data record
@@ -127,8 +128,15 @@ SOURCE_TIERS = {
 
 
 def tier_of(kind: str):
-    """Return the tier name for a source kind, or None if unclassifiable."""
+    """Return the tier name for a source kind, or None if unclassifiable.
+
+    Amendment #9: if the kind string still says ``preprint``, it is PREPRINT —
+    even when it also contains ``peer-reviewed`` (a costume that used to promote
+    unreviewed records to PRIMARY for E1).
+    """
     k = kind.lower()
+    if "preprint" in k:
+        return "PREPRINT"
     for tier, keywords in SOURCE_TIERS.items():
         if any(w in k for w in keywords):
             return tier
@@ -186,6 +194,18 @@ class StatusChange:
     trigger: str
 
 
+class ReviewState(Enum):
+    """Editorial OS layer (amendment-11) — orthogonal to consensus lights.
+
+    The constitution can make a *record* well-formed; only a human can mark
+    semantic verification. Default is UNVERIFIED so existing claims stay valid.
+    """
+
+    UNVERIFIED = "unverified"
+    HUMAN_VERIFIED = "human_verified"
+    CHALLENGED = "challenged"
+
+
 @dataclass
 class Claim:
     """The smallest unit. The status light lives here."""
@@ -199,6 +219,15 @@ class Claim:
     open_questions: List[str] = field(default_factory=list)
     sources: List[Source] = field(default_factory=list)
     status_history: List[StatusChange] = field(default_factory=list)
+    # Amendment #10: explicit source labels the consensus light is anchored on.
+    # ESTABLISHED needs ≥2; STRONG needs ≥1; other lights may leave empty.
+    trace_refs: List[str] = field(default_factory=list)
+    # Amendment #11/#12: editorial review layer (not a confidence score).
+    review_state: ReviewState = ReviewState.UNVERIFIED
+    verified_by: str = ""
+    verified_note: str = ""
+    # Amendment #12: ISO date YYYY-MM-DD required when human_verified.
+    verified_at: str = ""
 
 
 @dataclass

@@ -21,7 +21,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Set
 
 from ..axes import EvidenceStrength, derive, diverges
-from ..model import Claim, Status, Topic
+from ..model import Claim, ReviewState, Status, Topic
 
 
 @dataclass
@@ -57,6 +57,9 @@ class ClaimFilter:
             if not _matches(claim, topic_id, criteria):
                 continue
             d = derive(claim)
+            rs = getattr(claim, "review_state", ReviewState.UNVERIFIED)
+            if not isinstance(rs, ReviewState):
+                rs = ReviewState.UNVERIFIED
             results.append({
                 "claim_id": claim.id,
                 "topic_id": topic_id,
@@ -68,6 +71,8 @@ class ClaimFilter:
                 "evidence_count": len(claim.evidence),
                 "open_question_count": len(claim.open_questions),
                 "has_competing": len(claim.competing_models) > 0,
+                "review_state": rs.value,
+                "verified_by": getattr(claim, "verified_by", "") or "",
             })
         return results
 

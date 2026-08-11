@@ -35,6 +35,7 @@ from ..model import (
 # --------------------------------------------------------------------------- #
 event_horizon_exists = Claim(
     id="event_horizon_exists",
+    trace_refs=['EHT2019-M87-I', 'EHT2022-SgrA-I', 'LIGO2016-GW150914', 'Nobel2020'],
     title="Astrophysical black holes with an event horizon exist",
     status=Status.ESTABLISHED,
     sources=[
@@ -88,7 +89,8 @@ event_horizon_exists = Claim(
             source_ref="LIGO2016-GW150914",
         ),
         Evidence(
-            type="direct observation",
+            # Prize citation is SECONDARY (amendment-10): cannot carry direct/analog.
+            type="indirect observation",
             description=(
                 "Decades of tracking individual stellar orbits around Sgr A* pin a "
                 "dark, compact mass into a volume no ordinary matter distribution "
@@ -143,13 +145,14 @@ event_horizon_exists = Claim(
 # --------------------------------------------------------------------------- #
 hawking_radiation = Claim(
     id="hawking_radiation",
+    trace_refs=['Hawking1975', 'Steinhauer2016'],
     title="Black holes emit thermal Hawking radiation and slowly evaporate",
     status=Status.STRONG,
     sources=[
         Source(
             label="Hawking1975",
-            url_or_id="Commun. Math. Phys. 43, 199 (1975)",
-            kind="peer-reviewed paper (original derivation)",
+            url_or_id="doi:10.1007/BF01608497",
+            kind="peer-reviewed paper (original derivation; Commun. Math. Phys. 43, 199)",
         ),
         Source(
             label="Steinhauer2016",
@@ -280,7 +283,7 @@ information_paradox = Claim(
     sources=[
         Source(
             label="Hawking1976",
-            url_or_id="Phys. Rev. D 14, 2460 (1976)",
+            url_or_id="doi:10.1103/PhysRevD.14.2460",
             kind="peer-reviewed paper (states the paradox / information loss)",
         ),
         Source(
@@ -407,6 +410,7 @@ firewall = Claim(
 # --------------------------------------------------------------------------- #
 kerr_describes_astrophysical_bh = Claim(
     id="kerr_describes_astrophysical_bh",
+    trace_refs=['LIGO2016-GR-tests', 'EHT2019-M87-I-kerr'],
     title=(
         "Astrophysical black holes are well described by the Kerr metric "
         "(mass and spin)"
@@ -478,6 +482,7 @@ kerr_describes_astrophysical_bh = Claim(
 # --------------------------------------------------------------------------- #
 smbh_common_in_galaxy_nuclei = Claim(
     id="smbh_common_in_galaxy_nuclei",
+    trace_refs=['KormendyHo2013', 'EHT2022-SgrA-smbh'],
     title=(
         "Supermassive black holes commonly inhabit the nuclei of massive "
         "galaxies"

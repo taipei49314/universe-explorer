@@ -18,7 +18,7 @@ import html
 from typing import List
 
 from .axes import EvidenceStrength, derive, diverges
-from .model import Claim, Status, Topic
+from .model import Claim, ReviewState, Status, Topic
 from .narrative import narrate
 
 _LIGHT_COLOR = {
@@ -55,6 +55,28 @@ def _claim_html(claim: Claim) -> str:
         'evidence — the two axes point apart">⚡ axes diverge</span>'
         if diverges(claim) else ""
     )
+    rs = getattr(claim, "review_state", ReviewState.UNVERIFIED)
+    if not isinstance(rs, ReviewState):
+        rs = ReviewState.UNVERIFIED
+    if rs is ReviewState.HUMAN_VERIFIED:
+        who = _esc((getattr(claim, "verified_by", "") or "").strip() or "editor")
+        review_badge = (
+            f'<span class="review-badge review-verified" '
+            f'title="named human signed off on this record">'
+            f'✓ human_verified ({who})</span>'
+        )
+    elif rs is ReviewState.CHALLENGED:
+        review_badge = (
+            '<span class="review-badge review-challenged" '
+            'title="open challenge — light is not editorially settled">'
+            '⚠ challenged</span>'
+        )
+    else:
+        review_badge = (
+            '<span class="review-badge review-unverified" '
+            'title="shape court only — no human_verified semantic sign-off">'
+            '○ unverified</span>'
+        )
     parts.append(
         f'<div class="claim-head">'
         f'<span class="light">{claim.status.light}</span>'
@@ -62,7 +84,8 @@ def _claim_html(claim: Claim) -> str:
         f'<span class="status" style="color:{color}">{_esc(claim.status.value)}'
         f'</span> <span class="axis-badge">'
         f'{_esc(derivation.strength.short)} · '
-        f'{_esc(derivation.strength.value)}</span> {diverge_badge}'
+        f'{_esc(derivation.strength.value)}</span> {diverge_badge} '
+        f'{review_badge}'
         f'<code class="cid">{_esc(claim.id)}</code>'
         f'<a class="permalink" href="#c-{_esc(claim.id)}" '
         f'title="permanent link to this claim">&para;</a>'
@@ -290,11 +313,23 @@ def claims_json(topics: List[Topic]) -> str:
                     {"date": h.date, "from": h.from_status,
                      "to": h.to_status, "trigger": h.trigger}
                     for h in c.status_history],
+                # Amendment #12 / R4-1: editorial OS is part of the public ledger.
+                "review_state": (
+                    c.review_state.value
+                    if isinstance(getattr(c, "review_state", None), ReviewState)
+                    else ReviewState.UNVERIFIED.value
+                ),
+                "verified_by": getattr(c, "verified_by", "") or "",
+                "verified_note": getattr(c, "verified_note", "") or "",
+                "verified_at": getattr(c, "verified_at", "") or "",
+                "trace_refs": list(getattr(c, "trace_refs", None) or []),
             })
     return _json.dumps({
         "note": ("Universe Explorer open data. Only recorded fields and "
                  "mechanical derivations — no confidence numbers exist "
-                 "anywhere in this system by constitution."),
+                 "anywhere in this system by constitution. "
+                 "review_state is the editorial OS mark (unverified / "
+                 "human_verified / challenged), not a confidence score."),
         "claims": out,
     }, ensure_ascii=False, indent=1)
 
@@ -414,6 +449,16 @@ def app_data_json(topics: List[Topic]) -> str:
                              "to": h.to_status, "trigger": h.trigger}
                             for h in c.status_history],
                 "permalink": f"{t.id}.html#c-{c.id}",
+                # Amendment #12 / R4-1: editorial OS on the dynamic frontend.
+                "review_state": (
+                    c.review_state.value
+                    if isinstance(getattr(c, "review_state", None), ReviewState)
+                    else ReviewState.UNVERIFIED.value
+                ),
+                "verified_by": getattr(c, "verified_by", "") or "",
+                "verified_note": getattr(c, "verified_note", "") or "",
+                "verified_at": getattr(c, "verified_at", "") or "",
+                "trace_refs": list(getattr(c, "trace_refs", None) or []),
             })
     # Claim relations + mechanical inference paths (no confidence fields).
     from .relations import relations_payload
@@ -543,6 +588,12 @@ _PAGE = """<!doctype html>
   .diverge {{ font-size: .78em; font-weight: 700; border-radius: 999px;
              padding: 1px 8px; margin-left: 6px;
              background: color-mix(in srgb, currentColor 12%, transparent); }}
+  .review-badge {{ font-size: .74em; font-weight: 600; border-radius: 999px;
+                  padding: 1px 8px; margin-left: 6px; border: 1px solid currentColor; }}
+  .review-unverified {{ opacity: .75; }}
+  .review-verified {{ color: #2e7d32; border-color: #2e7d32; }}
+  .review-challenged {{ color: #c62828; border-color: #c62828;
+                       font-weight: 700; }}
   .cid {{ opacity: .6; font-size: .82em; margin-left: 6px; }}
   .permalink {{ opacity: .35; text-decoration: none; margin-left: 6px; }}
   .permalink:hover {{ opacity: .9; }}

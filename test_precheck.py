@@ -55,7 +55,7 @@ def _valid_candidate() -> dict:
             {
                 "label": "arXiv-2311-08680",
                 "url_or_id": "arXiv:2311.08680",
-                "kind": "preprint (arXiv)",
+                "kind": "peer-reviewed paper",
             }
         ],
         "status_history": [],

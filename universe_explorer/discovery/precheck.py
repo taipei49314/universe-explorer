@@ -21,10 +21,13 @@ from ..axes import EvidenceStrength, derive, diverges
 from ..model import (
     STATUS_CONDITIONS,
     Claim,
+    CompetingModel,
     ConditionAssessment,
     Evidence,
+    ReviewState,
     Source,
     Status,
+    StatusChange,
     Topic,
 )
 from ..proposals import MACHINE_CONDITIONS, propose as _propose
@@ -88,8 +91,9 @@ def precheck(candidate: dict) -> PrecheckReport:
             "Could not convert candidate to Claim — missing required fields"))
         return report
 
-    # 2. Constitution check (same validator as real claims).
-    report.violations = validate_claim(claim)
+    # 2. Constitution check — amendment-12 / R4-6: same court as build
+    # (shape + cite⇒fetch). Dress rehearsal must not be softer than gate().
+    report.violations = validate_claim(claim, check_provenance=True)
     report.pass_constitution = len(report.violations) == 0
 
     # 3. Evidence axis (mechanical derivation).
@@ -134,10 +138,19 @@ def precheck(candidate: dict) -> PrecheckReport:
 
 def _dict_to_claim(candidate: dict) -> Optional[Claim]:
     """Convert a candidate JSON dict to a Claim object.
-    Returns None if required fields are missing."""
+    Returns None if required fields are missing.
+
+    Amendment #12 / R4-6: preserve trace_refs, review_state, competing_models,
+    and status_history so precheck exercises the same fields as production.
+    """
     try:
         status_val = candidate.get("status")
-        status = Status[status_val] if status_val else Status.FRONTIER
+        if status_val is None:
+            status = Status.FRONTIER
+        elif isinstance(status_val, Status):
+            status = status_val
+        else:
+            status = Status[str(status_val)]
 
         sources = [
             Source(label=s["label"], url_or_id=s["url_or_id"], kind=s["kind"])
@@ -153,16 +166,49 @@ def _dict_to_claim(candidate: dict) -> Optional[Claim]:
                 condition=ca["condition"], holds=ca["holds"], note=ca["note"])
             for ca in candidate.get("status_reason", [])
         ]
+        competing = [
+            CompetingModel(
+                name=m["name"],
+                supporting=m.get("supporting", ""),
+                opposing=m.get("opposing", ""),
+                limitations=m.get("limitations", ""),
+            )
+            for m in candidate.get("competing_models", [])
+        ]
+        history = [
+            StatusChange(
+                date=h.get("date", ""),
+                from_status=h.get("from_status", h.get("from", "")),
+                to_status=h.get("to_status", h.get("to", "")),
+                trigger=h.get("trigger", ""),
+            )
+            for h in candidate.get("status_history", [])
+        ]
+        rs_raw = candidate.get("review_state", "unverified")
+        if isinstance(rs_raw, ReviewState):
+            rs = rs_raw
+        else:
+            try:
+                rs = ReviewState(str(rs_raw))
+            except ValueError:
+                rs = ReviewState.UNVERIFIED
         return Claim(
             id=candidate["id"],
             title=candidate.get("title", ""),
             status=status,
             status_reason=status_reason,
             evidence=evidence,
+            competing_models=competing,
             open_questions=candidate.get("open_questions", []),
             sources=sources,
+            status_history=history,
+            trace_refs=list(candidate.get("trace_refs") or []),
+            review_state=rs,
+            verified_by=candidate.get("verified_by", "") or "",
+            verified_note=candidate.get("verified_note", "") or "",
+            verified_at=candidate.get("verified_at", "") or "",
         )
-    except (KeyError, TypeError):
+    except (KeyError, TypeError, ValueError):
         return None
 
 

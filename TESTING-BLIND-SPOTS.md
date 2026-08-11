@@ -56,10 +56,8 @@ python -m pytest test_reader.py test_discovery.py test_accessibility.py -q
 
 **位置：** `universe_explorer/model.py`（`SOURCE_TIERS`）
 
-**問題：** keyword 子字串比對漏掉 `"peer reviewed"`、`"journal article"`、`"conference paper"` 等常見寫法。
-
-**現有測試：** adversarial 多測 unknown kind，少測合法變體。  
-**狀態：** ⬜ 未修（engine 凍結檔；需 amendment）
+**問題：** keyword 子字串比對漏掉 `"peer reviewed"`、`"journal article"` 等。  
+**狀態：** ✅ **部分已修（amendment-7）** — 已加 `peer reviewed`、`journal article`；`conference paper` 仍可能未接。
 
 ---
 
@@ -68,14 +66,14 @@ python -m pytest test_reader.py test_discovery.py test_accessibility.py -q
 **位置：** `universe_explorer/validator.py`
 
 **問題：** `title="   "` 可過 gate。  
-**狀態：** ⬜ 未修（engine 凍結）
+**狀態：** ✅ **已修（amendment-7）** — `empty_title`
 
 ---
 
 #### 3. 重複 source labels 不被偵測
 
 **位置：** `universe_explorer/validator.py`  
-**狀態：** ⬜ 未修（engine 凍結）
+**狀態：** ✅ **已修（amendment-7）** — `duplicate_source_label`
 
 ---
 

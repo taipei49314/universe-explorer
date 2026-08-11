@@ -37,6 +37,7 @@ from ..model import (
 # --------------------------------------------------------------------------- #
 plate_tectonics_drives_earthquakes = Claim(
     id="plate_tectonics_drives_earthquakes",
+    trace_refs=['VineMatthews1963', 'DeMets2010'],
     title="Moving tectonic plates cause the world's earthquakes",
     status=Status.ESTABLISHED,
     sources=[
@@ -108,6 +109,7 @@ plate_tectonics_drives_earthquakes = Claim(
 # --------------------------------------------------------------------------- #
 eew_gives_usable_warning = Claim(
     id="eew_gives_usable_warning",
+    trace_refs=['AllenMelgar2019'],
     title="Earthquake early warning systems provide seconds to tens of "
           "seconds of usable warning",
     status=Status.STRONG,
@@ -382,6 +384,7 @@ van_electric_precursors = Claim(
 # --------------------------------------------------------------------------- #
 induced_seismicity_human_activities = Claim(
     id="induced_seismicity_human_activities",
+    trace_refs=['Ellsworth2013', 'Keranen2014'],
     title=(
         "Human activities (especially fluid injection) can induce earthquakes"
     ),

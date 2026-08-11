@@ -26,7 +26,7 @@ from dataclasses import dataclass
 from typing import List
 
 from .axes import Derivation, derive, diverges
-from .model import Claim
+from .model import Claim, ReviewState
 
 OPENING = "Based on the evidence recorded here"
 
@@ -92,6 +92,23 @@ class Localization:
         return ("Open questions remain recorded on this claim; expand the "
                 "list below and count them yourself.")
 
+    def s_review(self, claim: Claim) -> str:
+        """Amendment #12: narrative must surface the editorial mark (R4-4/5)."""
+        rs = getattr(claim, "review_state", ReviewState.UNVERIFIED)
+        if not isinstance(rs, ReviewState):
+            rs = ReviewState.UNVERIFIED
+        if rs is ReviewState.HUMAN_VERIFIED:
+            who = (getattr(claim, "verified_by", "") or "").strip() or "an editor"
+            when = (getattr(claim, "verified_at", "") or "").strip()
+            tail = f" on {when}" if when else ""
+            return (f"Editorial mark: human_verified by {who}{tail} — "
+                    f"shape court plus a named human check; not a proof of truth.")
+        if rs is ReviewState.CHALLENGED:
+            return ("Editorial mark: challenged — an open challenge is recorded; "
+                    "the consensus light is not settled under the editorial OS.")
+        return ("Editorial mark: unverified — the record shape was checked "
+                "mechanically; no human_verified semantic sign-off is set.")
+
 
 ENGLISH = Localization()
 
@@ -104,6 +121,8 @@ def compose(claim: Claim, loc: Localization = ENGLISH) -> List[NarrativeSentence
 
     ev_refs = sorted({e.source_ref for e in claim.evidence})
     cond_refs = [f"condition:{ca.condition}" for ca in claim.status_reason]
+    # Amendment #12: editorial layer is a first-class narrative fact.
+    review_refs = ["condition:review_state"] + (ev_refs or cond_refs)
 
     out.append(NarrativeSentence(loc.s_opening(claim), refs=ev_refs + cond_refs))
 
@@ -117,6 +136,9 @@ def compose(claim: Claim, loc: Localization = ENGLISH) -> List[NarrativeSentence
     if diverges(claim):
         out.append(NarrativeSentence(loc.s_diverge(claim),
                                      refs=ev_refs + cond_refs))
+
+    # Always state the editorial mark (amendment-12) — prevents silent polish.
+    out.append(NarrativeSentence(loc.s_review(claim), refs=review_refs))
 
     if claim.competing_models:
         out.append(NarrativeSentence(loc.s_competing(claim), refs=ev_refs))
@@ -146,6 +168,8 @@ def check(claim: Claim, sentences: List[NarrativeSentence],
 
     valid_refs = {s.label for s in claim.sources}
     valid_refs |= {f"condition:{ca.condition}" for ca in claim.status_reason}
+    # Amendment #12: editorial review sentence may hang on this synthetic ref.
+    valid_refs.add("condition:review_state")
     evidence_texts = [loc.evidence_text(claim, i)
                       for i in range(len(claim.evidence))]
 

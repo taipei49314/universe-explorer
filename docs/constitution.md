@@ -8,9 +8,10 @@
 
 ## 前言
 
-本系統誠實區分人類的已知與未知。它不宣布答案;它陳列:我們知道什麼、
-怎麼知道的、還不知道什麼、有哪些競爭假說 —— 且每一個判定都可被任何人
-以可查證的論證推翻。
+本系統是**可審計的科學主張帳本**與**編輯作業系統**,不是「機器已分清真偽」。
+它陳列:記錄了什麼、掛了哪些可抓來源、共識燈與證據軸、是否經人審
+(`review_state`) —— 且每一個**記錄層**判定都可被推翻。語義是否支持 claim
+仍需人類與挑戰流程(修正案 #11)。
 
 ## 第一章 架構(v0 §1)
 
@@ -55,6 +56,12 @@ mode=all 須全部成立,mode=any 一條即可。
 - `doi_source_unfetched` / `doi_cache_missing` / `doi_hash_mismatch` / `doi_id_mismatch`
 - 快取為官方 API 回應逐位元保存;validator 重新解析內容,不信 manifest 自我宣稱。
 - 誠實豁免:無 endpoint 的來源(教科書、獎項引文、無 DOI 紙本)。
+- Amendment #7: arXiv/DOI **URL 與裸 DOI** 亦為 endpoint;`primary_source_not_fetchable` — PRIMARY 必須可抓取;E1 僅計可抓取 PRIMARY;`empty_title` / `duplicate_source_label` 記錄衛生。
+- Amendment #8: 共識燈機械地板 — `consensus_floor_established`（🟢 必須 E1）;`consensus_floor_strong`（🔵 禁止 E4/E5；允許 Strong×E3 分岔）。
+- Amendment #9: E1 依**正規化論文 id**（arXiv bare / DOI）去重，不依 source label；`kind` 含 `preprint` 一律 PREPRINT，不得被 `peer-reviewed` 子字串洗成 PRIMARY。
+- Amendment #10: Critical 閉合 — `evidence_type_requires_primary_fetchable`；`validate_claim`/`validate_topic` 含 provenance；`competing_needs_distinct_papers`；`status_reason_vacuous_note`；`trace_refs_missing` / `trace_refs_unknown` / `trace_refs_insufficient`；`frontier_needs_fetchable_source`；`title_hidden_controls`；圖 shared-citation disclaimer。
+- Amendment #11: 帳本+編輯 OS — `invalid_review_state` / `verified_without_attribution`；`review_state`∈{unverified,human_verified,challenged}；OpenAlex 為 discovery 適配器(有 DOI 則回落 Crossref fetch)。
+- Amendment #12: 編輯 OS 公開面與防偽 — `verified_by_invalid` / `verified_note_vacuous` / `verified_at_invalid`；`claims.json`/`app-data`/卡片必出 `review_state`；敘事必述編輯標記；precheck 對齊 build（含 provenance 與 `trace_refs`）；arXiv↔DOI 紙 id 合併；vacuous note 黑名單擴充。
 
 ### 變化憲法(P3)
 - `undocumented_status_change` — 燈號可以變,不准無聲地變(status_history 強制)。
@@ -87,5 +94,11 @@ mode=all 須全部成立,mode=any 一條即可。
 | 4 | 分級進證據軸(E1 需 PRIMARY) | amendment-4-r8-tier-weighting.md |
 | 5 | 違憲報告標註法源 | amendment-4-r8-tier-weighting.md(第二部) |
 | 6 | DOI 納入 cite⇒fetch | amendment-6-c2-doi-provenance.md |
+| 7 | Endpoint 正規化、E1 需可抓取 PRIMARY、PRIMARY 必須可抓、空白 title / 重複 label | amendment-7-endpoint-honesty.md |
+| 8 | 共識燈機械地板（Established→E1；Strong 禁 E4/E5） | amendment-8-consensus-floor.md |
+| 9 | E1 paper-id 去重；preprint 不偽升 PRIMARY | amendment-9-e1-identity.md |
+| 10 | Round-3 Critical 閉合包（direct 限 PRIMARY、trace_refs、vacuous note、Competing/Frontier 地板、claim+provenance） | amendment-10-critical-closures.md |
+| 11 | 帳本定位、`review_state` 編輯 OS、OpenAlex 適配 | amendment-11-ledger-editorial-openalex.md |
+| 12 | Round-4 閉合：編輯 OS 公開面、verified 防偽、precheck 對齊、arxiv↔doi id | amendment-12-r4-editorial-surface.md |
 
 授權:程式碼 MIT;內容 CC BY 4.0(LICENSE / LICENSE-CONTENT.md)。

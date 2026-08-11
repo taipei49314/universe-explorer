@@ -35,6 +35,7 @@ from ..model import (
 # --------------------------------------------------------------------------- #
 stars_powered_by_fusion = Claim(
     id="stars_powered_by_fusion",
+    trace_refs=['SNO2002', 'SuperK2001', 'Bethe1939'],
     title="Main-sequence stars are powered by nuclear fusion in their cores",
     status=Status.ESTABLISHED,
     sources=[
@@ -122,6 +123,7 @@ stars_powered_by_fusion = Claim(
 # --------------------------------------------------------------------------- #
 stellar_nucleosynthesis_makes_elements = Claim(
     id="stellar_nucleosynthesis_makes_elements",
+    trace_refs=['B2FH1957', 'Abbott2017-kilonova'],
     title=(
         "Most chemical elements heavier than helium are made in stars and "
         "stellar explosions"
@@ -190,6 +192,7 @@ stellar_nucleosynthesis_makes_elements = Claim(
 # --------------------------------------------------------------------------- #
 core_collapse_forms_ns_bh = Claim(
     id="core_collapse_forms_ns_bh",
+    trace_refs=['BaadeZwicky1934', 'LIGO2016-GW150914b'],
     title=(
         "Core-collapse supernovae leave behind neutron stars or black holes"
     ),
@@ -494,6 +497,7 @@ pop_iii_already_routinely_observed = Claim(
 # --------------------------------------------------------------------------- #
 helioseismology_constrains_solar_interior = Claim(
     id="helioseismology_constrains_solar_interior",
+    trace_refs=['ChristensenDalsgaard2002', 'Bahcall2001'],
     title=(
         "Helioseismology tightly constrains the Sun's interior structure "
         "and validates standard solar models in bulk"
@@ -563,6 +567,7 @@ helioseismology_constrains_solar_interior = Claim(
 # --------------------------------------------------------------------------- #
 white_dwarfs_electron_degenerate = Claim(
     id="white_dwarfs_electron_degenerate",
+    trace_refs=['Chandrasekhar1931', 'B2FH1957c'],
     title=(
         "White dwarfs are supported against gravity by electron degeneracy "
         "pressure"
@@ -631,6 +636,7 @@ white_dwarfs_electron_degenerate = Claim(
 # --------------------------------------------------------------------------- #
 imf_approximately_universal = Claim(
     id="imf_approximately_universal",
+    trace_refs=['Bastian2010', 'Kroupa2001'],
     title=(
         "The stellar initial mass function is approximately universal in "
         "present-day star-forming regions"

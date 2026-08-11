@@ -17,15 +17,21 @@ def test_every_law_appears_in_the_constitution():
 
 
 def test_every_amendment_is_indexed():
-    # all six amendments have a row in the index table
-    for n in range(1, 7):
+    # all numbered amendments have a row in the index table
+    for n in range(1, 13):
         assert f"| {n} |" in DOC, f"amendment #{n} missing from the index"
     # every referenced amendment file really exists (amendment #5 lives in
     # the amendment-4 file, second part — by design)
     for fname in ("amendment-1-r7.md", "amendment-2-narrative-i18n.md",
                   "amendment-3-source-tiers.md",
                   "amendment-4-r8-tier-weighting.md",
-                  "amendment-6-c2-doi-provenance.md"):
+                  "amendment-6-c2-doi-provenance.md",
+                  "amendment-7-endpoint-honesty.md",
+                  "amendment-8-consensus-floor.md",
+                  "amendment-9-e1-identity.md",
+                  "amendment-10-critical-closures.md",
+                  "amendment-11-ledger-editorial-openalex.md",
+                  "amendment-12-r4-editorial-surface.md"):
         assert fname in DOC, fname
         assert Path("docs", fname).exists(), fname
 

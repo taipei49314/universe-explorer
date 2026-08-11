@@ -58,6 +58,9 @@ SUITES = [
     "test_adversarial.py",    # adversarial: empty/unicode/cache edges
     "test_adversarial_2.py",  # adversarial: constitutional invariants
     "test_adversarial_3.py",  # adversarial: watch/discovery/cache/reviews
+    "test_epistemic_adversary.py",  # amendment-7: red-team PoC must bite
+    "test_editorial_openalex.py",  # amendment-11: ledger OS + OpenAlex
+    "test_r4_closures.py",    # amendment-12: R4 editorial surface + anti-forgery
     "test_scene3d.py",        # 3D explore/reason scene view-model + path/neighbor nav
     "test_accessibility.py",  # a11y smoke: lang/title/viewport/labels (was disk-only)
 ]

@@ -42,12 +42,13 @@ from ..model import (
 # --------------------------------------------------------------------------- #
 universe_is_expanding = Claim(
     id="universe_is_expanding",
+    trace_refs=['Hubble1929', 'Freedman2001'],
     title="The universe is expanding: distant galaxies recede with distance",
     status=Status.ESTABLISHED,
     sources=[
         Source(
             label="Hubble1929",
-            url_or_id="Proc. Natl. Acad. Sci. 15, 168 (1929)",
+            url_or_id="doi:10.1073/pnas.15.3.168",
             kind="peer-reviewed paper (original distance–velocity relation)",
         ),
         Source(
@@ -111,6 +112,7 @@ universe_is_expanding = Claim(
 # --------------------------------------------------------------------------- #
 cmb_hot_big_bang = Claim(
     id="cmb_hot_big_bang",
+    trace_refs=['PenziasWilson1965', 'Planck2018-I'],
     title=(
         "The cosmic microwave background is relic radiation from a hot, "
         "dense early universe"
@@ -184,6 +186,7 @@ cmb_hot_big_bang = Claim(
 # --------------------------------------------------------------------------- #
 accelerated_expansion = Claim(
     id="accelerated_expansion",
+    trace_refs=['Riess1998', 'Perlmutter1999'],
     title="The expansion of the universe is accelerating",
     status=Status.STRONG,
     sources=[
@@ -353,6 +356,7 @@ H0_tension_local_vs_cmb = Claim(
 # --------------------------------------------------------------------------- #
 shoes_local_H0_high = Claim(
     id="shoes_local_H0_high",
+    trace_refs=['Riess2022b', 'Verde2019'],
     title=(
         "Cepheid-calibrated Type Ia supernova ladders measure a high local "
         "Hubble constant near 73 km s^-1 Mpc^-1"

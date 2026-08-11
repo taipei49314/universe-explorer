@@ -448,6 +448,10 @@ const I18N = {
     forlbl:"for", againstlbl:"against", limitslbl:"limits",
     permalink:"permalink", challenge:"challenge this verdict",
     close:"close", diverge:"axes diverge",
+    reviewUnverified:"○ unverified",
+    reviewVerified:"✓ human_verified",
+    reviewChallenged:"⚠ challenged",
+    reviewHint:"Editorial OS mark — not a confidence score. Shape court ≠ semantic sign-off.",
     soundOn:"Sound on", soundOff:"Sound off",
     navMap:"Map", navDrift:"Drift", navRead:"How to read", navChanges:"Changes",
     navHealth:"Health", navFeed:"Feed",
@@ -503,6 +507,10 @@ const I18N = {
     forlbl:"支持", againstlbl:"反對", limitslbl:"侷限",
     permalink:"永久連結", challenge:"挑戰這個判定",
     close:"關閉", diverge:"雙軸分岔",
+    reviewUnverified:"○ 未人審",
+    reviewVerified:"✓ 已人審",
+    reviewChallenged:"⚠ 受挑戰",
+    reviewHint:"編輯 OS 標記 — 不是信心分數。形狀法院 ≠ 語義簽核。",
     soundOn:"開啟音效", soundOff:"關閉音效",
     navMap:"地圖", navDrift:"漂流", navRead:"怎麼讀", navChanges:"變更",
     navHealth:"健康", navFeed:"Feed",
@@ -944,6 +952,17 @@ function openPanel(c) {
       <span class="stbadge" style="color:${COLORS[c.status]}">${esc(cf(c,"status_name"))}</span>
       <span class="badge">${esc(c.axis)} · ${esc(cf(c,"axis_name"))}</span>
       ${c.diverges ? `<span class="dvbadge" style="color:${COLORS.COMPETING}">⚡ ${esc(t.diverge)}</span>` : ""}
+      ${(() => {
+        const rs = c.review_state || "unverified";
+        if (rs === "human_verified") {
+          const who = c.verified_by ? ` (${esc(c.verified_by)})` : "";
+          return `<span class="dvbadge" style="color:var(--est)" title="${esc(t.reviewHint)}">${esc(t.reviewVerified)}${who}</span>`;
+        }
+        if (rs === "challenged") {
+          return `<span class="dvbadge" style="color:var(--front)" title="${esc(t.reviewHint)}">${esc(t.reviewChallenged)}</span>`;
+        }
+        return `<span class="badge" title="${esc(t.reviewHint)}">${esc(t.reviewUnverified)}</span>`;
+      })()}
       <span class="badge">${esc(c.id)}</span></div>
     <h2>${esc(cf(c,"title"))}</h2>
     ${tools}

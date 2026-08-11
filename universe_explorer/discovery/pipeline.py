@@ -29,6 +29,7 @@ from .adapters.arxiv_adapter import ArxivAdapter
 from .adapters.base import SourceAdapter
 from .adapters.doi_adapter import DoiAdapter
 from .adapters.nasa_adapter import NasaAdapter
+from .adapters.openalex_adapter import OpenAlexAdapter
 from .candidate_builder import build_candidate, list_candidates
 from .precheck import PrecheckReport, format_precheck_report, precheck
 from .review import generate_review_dashboard
@@ -38,6 +39,7 @@ ADAPTERS: Dict[str, SourceAdapter] = {
     "arxiv": ArxivAdapter(),
     "doi": DoiAdapter(),
     "nasa": NasaAdapter(),
+    "openalex": OpenAlexAdapter(),
 }
 
 
@@ -179,8 +181,11 @@ if __name__ == "__main__":
         description="Discovery pipeline: search → candidates → precheck → review")
     parser.add_argument("query", help="Search query")
     parser.add_argument("--topic", required=True, help="Target topic id")
-    parser.add_argument("--adapter", default="arxiv",
-                        help="Source adapter (default: arxiv)")
+    parser.add_argument(
+        "--adapter",
+        default="arxiv",
+        help="Source adapter: arxiv | openalex | doi | nasa (default: arxiv)",
+    )
     parser.add_argument("--max", type=int, default=10,
                         help="Max results (default: 10)")
     parser.add_argument("--prefix", default="",

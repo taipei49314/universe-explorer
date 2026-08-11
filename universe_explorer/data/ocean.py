@@ -35,6 +35,7 @@ from ..model import (
 # --------------------------------------------------------------------------- #
 hydrothermal_vents_exist = Claim(
     id="hydrothermal_vents_exist",
+    trace_refs=['Corliss1979', 'Spiess1980'],
     title="Chemosynthetic hydrothermal vent ecosystems exist on the deep seafloor",
     status=Status.ESTABLISHED,
     sources=[
@@ -107,6 +108,7 @@ hydrothermal_vents_exist = Claim(
 # --------------------------------------------------------------------------- #
 ocean_heat_uptake = Claim(
     id="ocean_heat_uptake",
+    trace_refs=['vonSchuckmann2020'],
     title="The ocean absorbs the vast majority of anthropogenic excess heat",
     status=Status.STRONG,
     sources=[
@@ -363,6 +365,7 @@ dark_oxygen_production = Claim(
 # --------------------------------------------------------------------------- #
 ocean_acidification_anthropogenic = Claim(
     id="ocean_acidification_anthropogenic",
+    trace_refs=['Doney2009', 'IPCCAR6WGI'],
     title=(
         "Anthropogenic CO2 uptake is acidifying the surface ocean"
     ),

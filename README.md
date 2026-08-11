@@ -1,18 +1,41 @@
 # Universe Explorer
 
-**Honestly separating what we know from what we don't.**  
-誠實區分已知與未知的科學知識系統。
+**An auditable scientific claim ledger — not a machine that knows the truth.**  
+可審計的科學主張帳本；不是「機器已分清真偽」。
 
 Live site: <https://taipei49314.github.io/universe-explorer/>  
 Open data: [`claims.json`](https://taipei49314.github.io/universe-explorer/claims.json) · Atom feed: [`feed.xml`](https://taipei49314.github.io/universe-explorer/feed.xml)
 
-It does **not** tell you “the answer.” It shows, claim by claim:
+### What this is (narrowed promise)
+
+| Layer | Who | Guarantees |
+|-------|-----|------------|
+| **Record (憲法)** | Machine | Sources fetchable, lights cannot float above the evidence axis, no silent status changes, no fake confidence scores |
+| **Review (編輯 OS)** | Human | `review_state`: `unverified` → `human_verified` / `challenged` |
+| **Discovery** | Adapters | arXiv · **OpenAlex** · DOI · NASA → candidates → precheck → **human gate** |
+
+It does **not** prove that a sentence is entailed by a paper. It **does** raise the cost of writing a dishonest-looking record.
+
+Claim by claim you still see:
 
 - **what** is claimed  
-- **how** we know it (sources + evidence)  
-- **which light** it carries, and **why** (entry conditions, overturnable)  
-- **how strong the evidence is** as a separate, mechanical axis  
+- **how** it is recorded (sources + evidence + `trace_refs`)  
+- **which light** and **evidence axis** (separate, not averaged)  
+- **review_state** (has a human signed off?)  
 - **what is still open** (questions you can count yourself)
+
+Editorial queue:
+
+```sh
+python -m universe_explorer.editorial          # what needs a human
+python -m universe_explorer.editorial --json
+```
+
+Discovery (including OpenAlex):
+
+```sh
+python -m universe_explorer.discovery.pipeline "H0 tension" --topic cosmology --adapter openalex --max 5
+```
 
 ---
 

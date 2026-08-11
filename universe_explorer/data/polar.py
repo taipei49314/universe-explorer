@@ -32,6 +32,7 @@ from ..model import (
 # --------------------------------------------------------------------------- #
 ice_cores_record_paleoclimate = Claim(
     id="ice_cores_record_paleoclimate",
+    trace_refs=['Jouzel2007', 'Petit1999'],
     title=(
         "Polar ice cores preserve a multi-proxy record of past climate and "
         "atmospheric composition"
@@ -104,6 +105,7 @@ ice_cores_record_paleoclimate = Claim(
 # --------------------------------------------------------------------------- #
 arctic_sea_ice_multidecade_decline = Claim(
     id="arctic_sea_ice_multidecade_decline",
+    trace_refs=['Stroeve2012', 'IPCC-AR6-WGI-Ch9'],
     title=(
         "Arctic sea-ice extent has declined multi-decadally in the satellite era"
     ),
@@ -174,6 +176,7 @@ arctic_sea_ice_multidecade_decline = Claim(
 # --------------------------------------------------------------------------- #
 greenland_ice_sheet_losing_mass = Claim(
     id="greenland_ice_sheet_losing_mass",
+    trace_refs=['IMBIE2019', 'IPCC-AR6-WGI-Ch9b'],
     title=(
         "The Greenland Ice Sheet has been losing mass in the satellite era"
     ),

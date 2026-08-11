@@ -84,10 +84,10 @@ class TestEmptyData:
             id="solo", title="Solo", summary="",
             claims=[Claim(
                 id="only", title="The only claim",
-                status=Status.ESTABLISHED,
+                status=Status.SPECULATIVE,
                 sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                                kind="preprint (arXiv)")],
-                evidence=[Evidence(type="direct observation",
+                                kind="peer-reviewed paper")],
+                evidence=[Evidence(type="theoretical derivation",
                                    description="Observed.",
                                    source_ref="s1")],
             )],
@@ -99,7 +99,7 @@ class TestEmptyData:
     def test_claim_with_no_evidence_fails_validator(self):
         claim = Claim(
             id="empty", title="No evidence",
-            status=Status.ESTABLISHED,
+            status=Status.SPECULATIVE,
             sources=[],
             evidence=[],
         )
@@ -109,9 +109,9 @@ class TestEmptyData:
     def test_claim_with_no_sources_fails_validator(self):
         claim = Claim(
             id="nosrc", title="No sources",
-            status=Status.ESTABLISHED,
+            status=Status.SPECULATIVE,
             sources=[],
-            evidence=[Evidence(type="direct observation",
+            evidence=[Evidence(type="theoretical derivation",
                                description="Something",
                                source_ref="nonexistent")],
         )
@@ -121,10 +121,10 @@ class TestEmptyData:
     def test_empty_open_question_fails(self):
         claim = Claim(
             id="eoq", title="Empty question",
-            status=Status.ESTABLISHED,
+            status=Status.SPECULATIVE,
             sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                            kind="preprint (arXiv)")],
-            evidence=[Evidence(type="direct observation",
+                            kind="peer-reviewed paper")],
+            evidence=[Evidence(type="theoretical derivation",
                                description="Something",
                                source_ref="s1")],
             open_questions=[""],
@@ -146,8 +146,8 @@ class TestUnicode:
             id="zh_test", title="黑洞事件視界是否存在",
             status=Status.FRONTIER,
             sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                            kind="preprint (arXiv)")],
-            evidence=[Evidence(type="direct observation",
+                            kind="peer-reviewed paper")],
+            evidence=[Evidence(type="theoretical derivation",
                                description="觀測到黑洞陰影",
                                source_ref="s1")],
             status_reason=[ConditionAssessment("new_discovery", True, "New.")],
@@ -160,8 +160,8 @@ class TestUnicode:
             Claim(id="c1", title="黑洞事件視界",
                   status=Status.FRONTIER,
                   sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                                  kind="preprint (arXiv)")],
-                  evidence=[Evidence(type="direct observation",
+                                  kind="peer-reviewed paper")],
+                  evidence=[Evidence(type="theoretical derivation",
                                      description="觀測",
                                      source_ref="s1")],
                   status_reason=[ConditionAssessment("new_discovery", True, "New.")]),
@@ -187,8 +187,8 @@ class TestUnicode:
             id="emoji", title="Black holes exist",
             status=Status.FRONTIER,
             sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                            kind="preprint (arXiv)")],
-            evidence=[Evidence(type="direct observation",
+                            kind="peer-reviewed paper")],
+            evidence=[Evidence(type="theoretical derivation",
                                description="Observed",
                                source_ref="s1")],
             status_reason=[ConditionAssessment("new_discovery", True, "New.")],
@@ -201,8 +201,8 @@ class TestUnicode:
             id="mixed", title="Black hole observations",
             status=Status.FRONTIER,
             sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                            kind="preprint (arXiv)")],
-            evidence=[Evidence(type="direct observation",
+                            kind="peer-reviewed paper")],
+            evidence=[Evidence(type="theoretical derivation",
                                description="Observed",
                                source_ref="s1")],
             status_reason=[ConditionAssessment("new_discovery", True, "New.")],
@@ -226,8 +226,8 @@ class TestBoundaries:
                 id=f"test_{status.name}", title=f"Test {status.name}",
                 status=status,
                 sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                                kind="preprint (arXiv)")],
-                evidence=[Evidence(type="direct observation",
+                                kind="peer-reviewed paper")],
+                evidence=[Evidence(type="theoretical derivation",
                                    description="Something",
                                    source_ref="s1")],
                 status_reason=_make_reason_for(status),
@@ -245,13 +245,13 @@ class TestBoundaries:
     def test_many_evidence_items(self):
         """Claim with many evidence items shouldn't break."""
         sources = [Source(label=f"s{i}", url_or_id=f"arXiv:{i:04d}.00000",
-                          kind="preprint (arXiv)") for i in range(20)]
-        evidence = [Evidence(type="direct observation",
+                          kind="peer-reviewed paper") for i in range(20)]
+        evidence = [Evidence(type="theoretical derivation",
                              description=f"Observation {i}",
                              source_ref=f"s{i}") for i in range(20)]
         claim = Claim(
             id="many_ev", title="Many evidence items",
-            status=Status.ESTABLISHED,
+            status=Status.SPECULATIVE,
             sources=sources, evidence=evidence,
         )
         d = derive(claim)
@@ -264,8 +264,8 @@ class TestBoundaries:
             id="many_oq", title="Many questions",
             status=Status.FRONTIER,
             sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                            kind="preprint (arXiv)")],
-            evidence=[Evidence(type="direct observation",
+                            kind="peer-reviewed paper")],
+            evidence=[Evidence(type="theoretical derivation",
                                description="Something",
                                source_ref="s1")],
             open_questions=questions,
@@ -281,8 +281,8 @@ class TestBoundaries:
             id="long_title", title=long_title,
             status=Status.FRONTIER,
             sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                            kind="preprint (arXiv)")],
-            evidence=[Evidence(type="direct observation",
+                            kind="peer-reviewed paper")],
+            evidence=[Evidence(type="theoretical derivation",
                                description="Something",
                                source_ref="s1")],
             status_reason=[ConditionAssessment("new_discovery", True, "New.")],
@@ -295,10 +295,10 @@ class TestBoundaries:
         long_desc = "Evidence " * 500
         claim = Claim(
             id="long_ev", title="Long evidence",
-            status=Status.ESTABLISHED,
+            status=Status.SPECULATIVE,
             sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                            kind="preprint (arXiv)")],
-            evidence=[Evidence(type="direct observation",
+                            kind="peer-reviewed paper")],
+            evidence=[Evidence(type="theoretical derivation",
                                description=long_desc,
                                source_ref="s1")],
         )
@@ -311,8 +311,8 @@ class TestBoundaries:
             id="test-claim_v2.0", title="Special ID",
             status=Status.FRONTIER,
             sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                            kind="preprint (arXiv)")],
-            evidence=[Evidence(type="direct observation",
+                            kind="peer-reviewed paper")],
+            evidence=[Evidence(type="theoretical derivation",
                                description="Something",
                                source_ref="s1")],
             status_reason=[ConditionAssessment("new_discovery", True, "New.")],
@@ -339,10 +339,10 @@ class TestCacheCorruption:
         # Should not crash - falls back to rebuild
         topic = Topic(id="t", title="T", summary="", claims=[
             Claim(id="c1", title="Test",
-                  status=Status.ESTABLISHED,
+                  status=Status.SPECULATIVE,
                   sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                                  kind="preprint (arXiv)")],
-                  evidence=[Evidence(type="direct observation",
+                                  kind="peer-reviewed paper")],
+                  evidence=[Evidence(type="theoretical derivation",
                                      description="Something",
                                      source_ref="s1")]),
         ])
@@ -354,10 +354,10 @@ class TestCacheCorruption:
         """Missing cache directory shouldn't crash."""
         topic = Topic(id="t", title="T", summary="", claims=[
             Claim(id="c1", title="Test",
-                  status=Status.ESTABLISHED,
+                  status=Status.SPECULATIVE,
                   sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                                  kind="preprint (arXiv)")],
-                  evidence=[Evidence(type="direct observation",
+                                  kind="peer-reviewed paper")],
+                  evidence=[Evidence(type="theoretical derivation",
                                      description="Something",
                                      source_ref="s1")]),
         ])
@@ -401,10 +401,10 @@ class TestCrossModuleConsistency:
         """Validator and axes should be consistent about evidence types."""
         claim = Claim(
             id="consistency", title="Consistency test",
-            status=Status.ESTABLISHED,
+            status=Status.SPECULATIVE,
             sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                            kind="preprint (arXiv)")],
-            evidence=[Evidence(type="direct observation",
+                            kind="peer-reviewed paper")],
+            evidence=[Evidence(type="theoretical derivation",
                                description="Something",
                                source_ref="s1")],
         )
@@ -418,10 +418,10 @@ class TestCrossModuleConsistency:
         """Filter and search should find overlapping claims."""
         topic = Topic(id="t", title="T", summary="", claims=[
             Claim(id="c1", title="Gravitational waves detected",
-                  status=Status.ESTABLISHED,
+                  status=Status.SPECULATIVE,
                   sources=[Source(label="s1", url_or_id="arXiv:0000.00000",
-                                  kind="preprint (arXiv)")],
-                  evidence=[Evidence(type="direct observation",
+                                  kind="peer-reviewed paper")],
+                  evidence=[Evidence(type="theoretical derivation",
                                      description="LIGO detection",
                                      source_ref="s1")]),
         ])
@@ -568,7 +568,7 @@ def _make_reason_for(status: Status) -> list:
 def _make_multi_domain_topics():
     """Create multiple topics with claims for cross-module testing."""
     src = Source(label="s1", url_or_id="arXiv:0000.00000",
-                 kind="preprint (arXiv)")
+                 kind="peer-reviewed paper")
     topics = []
     for domain in ["cosmology", "stars", "ocean"]:
         claims = []
@@ -578,7 +578,7 @@ def _make_multi_domain_topics():
                 title=f"Claim {i} in {domain}",
                 status=list(Status)[i % 5],
                 sources=[src],
-                evidence=[Evidence(type="direct observation",
+                evidence=[Evidence(type="theoretical derivation",
                                    description=f"Evidence {i}",
                                    source_ref="s1")],
                 status_reason=_make_reason_for(list(Status)[i % 5]),

@@ -166,10 +166,10 @@ class TestDiscoveryPipeline:
                 {"condition": "new_discovery", "holds": True, "note": "New."}
             ],
             "evidence": [{"type": "direct observation",
-                          "description": "Something",
+                          "description": "Something observed in the published record.",
                           "source_ref": "s1"}],
-            "sources": [{"label": "s1", "url_or_id": "arXiv:0000.00000",
-                         "kind": "preprint (arXiv)"}],
+            "sources": [{"label": "s1", "url_or_id": "arXiv:2311.08680",
+                         "kind": "peer-reviewed paper"}],
             "open_questions": [],
         }
         report = precheck(candidate)

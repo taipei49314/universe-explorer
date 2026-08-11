@@ -86,6 +86,7 @@ def _export_csv(claims: List[dict]) -> str:
     fieldnames = [
         "claim_id", "topic_id", "title", "status", "evidence_axis",
         "diverges", "evidence_count", "open_question_count", "has_competing",
+        "review_state", "verified_by",
     ]
     writer = csv.DictWriter(output, fieldnames=fieldnames, extrasaction="ignore")
     writer.writeheader()
