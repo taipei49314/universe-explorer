@@ -84,6 +84,13 @@ class TestAccessibility:
         html = (tmp_path / "challenge.html").read_text(encoding="utf-8")
         assert '<label' in html
 
+    def test_challenge_routes_to_github_templates(self, tmp_path):
+        """challenge.html must link GitHub issue templates (user overturn path)."""
+        generate_challenge_form(dist_dir=tmp_path)
+        html = (tmp_path / "challenge.html").read_text(encoding="utf-8")
+        assert "challenge-a-verdict.yml" in html
+        assert "github.com/taipei49314/universe-explorer" in html
+
     def test_explore_v2_has_aria(self, tmp_path):
         """explore-v2.html should have ARIA or semantic HTML."""
         render_explore_v2(TOPICS, dist_dir=tmp_path)

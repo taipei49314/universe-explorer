@@ -299,3 +299,42 @@ class TestArxivAdapterSearch:
             assert len(results) == 1
             assert results[0].source_ref == "arXiv:2311.08680"
             assert results[0].title == "Test Paper Title"
+
+# --- discovery pipeline error contracts ---
+from unittest.mock import MagicMock, patch
+import pytest
+from universe_explorer.discovery.pipeline import (
+    DiscoveryError,
+    get_adapter,
+    run_pipeline,
+)
+
+
+class TestDiscoveryPipelineErrors:
+    def test_unknown_adapter(self):
+        with pytest.raises(DiscoveryError) as ei:
+            get_adapter("not_a_real_adapter")
+        assert "unknown adapter" in ei.value.message
+
+    def test_unknown_topic_fails_before_network(self):
+        with pytest.raises(DiscoveryError) as ei:
+            run_pipeline("anything", topic_id="nope_not_a_topic")
+        assert "unknown topic" in ei.value.message
+
+    def test_network_timeout_becomes_discovery_error(self):
+        import socket
+        mock_adapter = MagicMock()
+        mock_adapter.search.side_effect = socket.timeout("timed out")
+        with patch.dict(
+            "universe_explorer.discovery.pipeline.ADAPTERS",
+            {"mock": mock_adapter},
+        ):
+            with pytest.raises(DiscoveryError) as ei:
+                run_pipeline("q", topic_id="cosmology", adapter_name="mock")
+        assert "failed" in ei.value.message.lower()
+        assert "No candidates were written" in ei.value.message
+
+    def test_cli_discover_unknown_topic_exit_1(self):
+        from universe_explorer.__main__ import main
+        code = main(["discover", "q", "--topic", "definitely_missing_topic_xyz"])
+        assert code == 1

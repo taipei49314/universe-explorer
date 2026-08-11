@@ -73,9 +73,12 @@ def main(argv: list = None) -> int:
         p.add_argument("--has-open-questions", type=lambda x: x.lower() == "true")
         opts = p.parse_args(args)
         f = ClaimFilter(TOPICS)
+        # Status names are Status.name (UPPER); accept lower/mixed case input.
+        status = opts.status.upper() if opts.status else None
+        axis = opts.axis.upper() if opts.axis else None
         criteria = FilterCriteria(
-            domain=opts.domain, status=opts.status,
-            evidence_axis=opts.axis, diverges=opts.diverges,
+            domain=opts.domain, status=status,
+            evidence_axis=axis, diverges=opts.diverges,
             tag=opts.tag, label=opts.label, has_notes=opts.has_notes,
             has_competing_models=opts.has_competing,
             has_open_questions=opts.has_open_questions,
@@ -107,7 +110,7 @@ def main(argv: list = None) -> int:
         return 0
 
     if cmd == "discover":
-        from .discovery.pipeline import run_pipeline
+        from .discovery.pipeline import DiscoveryError, run_pipeline
         import argparse
         p = argparse.ArgumentParser(description="Discovery pipeline")
         p.add_argument("query", help="Search query")
@@ -115,7 +118,11 @@ def main(argv: list = None) -> int:
         p.add_argument("--adapter", default="arxiv")
         p.add_argument("--max", type=int, default=10)
         opts = p.parse_args(args)
-        run_pipeline(opts.query, opts.topic, opts.adapter, opts.max)
+        try:
+            run_pipeline(opts.query, opts.topic, opts.adapter, opts.max)
+        except DiscoveryError as e:
+            print(f"error: {e.message}", file=sys.stderr)
+            return 1
         return 0
 
     if cmd == "graph":
