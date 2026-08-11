@@ -58,6 +58,7 @@ SUITES = [
     "test_adversarial.py",    # adversarial: empty/unicode/cache edges
     "test_adversarial_2.py",  # adversarial: constitutional invariants
     "test_adversarial_3.py",  # adversarial: watch/discovery/cache/reviews
+    "test_scene3d.py",        # 3D explore/reason scene view-model + path/neighbor nav
 ]
 
 

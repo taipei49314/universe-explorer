@@ -143,6 +143,8 @@ python -m http.server 8731 --directory dist
 # open http://localhost:8731/          (index)
 #      http://localhost:8731/app.html?c=hawking_radiation
 #      http://localhost:8731/explore-v2.html
+#      http://localhost:8731/explore3d.html
+#      http://localhost:8731/explore3d.html?c=hawking_radiation
 #      http://localhost:8731/epistemic_map.html
 #      http://localhost:8731/universe.html
 ```
@@ -221,6 +223,7 @@ Full path: [`CONTRIBUTING.md`](CONTRIBUTING.md) · editorial focus: [`docs/edito
 | `dist/universe.html` | Constellation view |
 | `dist/explore.html` (+ `-zh`) | Browse / export-oriented |
 | `dist/explore-v2.html` | Search + filter + dual-axis reader (Phase 3) |
+| `dist/explore3d.html` · `scene3d.json` | **3D explore/reason** — orbit/zoom map of all claims; cosmos/earth layers; reading paths + neighbors (no confidence scores) |
 | `dist/epistemic_map.html` · `epistemic-graph.json` | Cross-domain graph (Phase 2; shared sources + authored edges + detectors) |
 | `dist/challenge.html` | Standalone challenge form (links into GitHub issue templates) |
 | `dist/dual-axis.svg` | Snapshot of consensus vs evidence across claims |

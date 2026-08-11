@@ -21,6 +21,7 @@ PUBLIC_PAGES = [
     "index.html",
     "app.html",
     "universe.html",
+    "explore3d.html",
     "explore.html",
     "explore-v2.html",
     "epistemic_map.html",

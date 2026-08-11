@@ -180,6 +180,10 @@ _DASHBOARD_TEMPLATE = """<!DOCTYPE html>
 <div class="section">
   <h2>Explore</h2>
   <div class="grid">
+    <a class="link-card" href="explore3d.html">
+      <h3>3D Explore / Reason</h3>
+      <p>Interactive 3D knowledge map — cosmos / world layers, paths, neighbors.</p>
+    </a>
     <a class="link-card" href="explore-v2.html">
       <h3>Explore v2</h3>
       <p>Search, filter, and browse all claims with dual-axis visualization.</p>

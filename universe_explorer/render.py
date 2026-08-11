@@ -505,6 +505,7 @@ def render_index(topics: List[Topic]) -> str:
         f'{len(topics)} domains, <b>{total}</b> claims. '
         f'Lights belong to claims, never to topics. '
         f'<a href="app.html">Knowledge map</a> · '
+        f'<a href="explore3d.html">3D explore</a> · '
         f'<a href="universe.html">Drift</a> · '
         f'<a href="zh.html">中文</a></p>'
     )
@@ -721,6 +722,7 @@ so that <b>every verdict can be checked — and overturned — by anyone</b>.
 or jump to the <a href="app.html?c=hawking_radiation">Hawking radiation example</a>.</p>
 <p>Other surfaces (same data, different lenses):
 <a href="dashboard.html">dashboard</a> ·
+<a href="explore3d.html">3D explore / reason</a> ·
 <a href="explore-v2.html">search &amp; filter</a> ·
 <a href="epistemic_map.html">cross-domain map</a> ·
 <a href="explore.html">browse all claims</a> ·

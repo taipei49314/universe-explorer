@@ -72,11 +72,15 @@ def main(argv) -> int:
 
     # D4: the dynamic frontends — static source files + a bilingual payload
     web = Path(__file__).parent / "web"
-    for page in ("app.html", "universe.html"):
+    for page in ("app.html", "universe.html", "explore3d.html"):
         (out_dir / page).write_text(
             (web / page).read_text(encoding="utf-8"), encoding="utf-8")
     (out_dir / "app-data.json").write_text(
         app_data_json(TOPICS), encoding="utf-8")
+
+    # 3D explore/reason scene payload (pure view-model from live registry)
+    from universe_explorer.reader.scene3d import write_scene3d
+    write_scene3d(dist_dir=out_dir, topics=TOPICS)
 
     # P-Pulse / P-Audit: changes + health surface pages
     from universe_explorer.surface import write_surface_pages
