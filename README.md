@@ -20,14 +20,14 @@ It does **not** tell you “the answer.” It shows, claim by claim:
 
 | Measure | Value |
 |---------|-------|
-| Topics | **8** |
-| Claims | **91** |
+| Topics | **9** |
+| Claims | **99** |
 | Themes | Cosmos · Planets · Earth |
-| Authored relation edges | **96** (+ **67** mechanical shared-source via `all_links`; epistemic map may add detector edges → **171** graph edges / **8** cross-domain flags) |
-| Reading paths | **8** (one authored path per registered domain) |
+| Authored relation edges | **106** (+ **74** mechanical shared-source via `all_links`; epistemic map may add detector edges → **188** graph edges / **8** cross-domain flags) |
+| Reading paths | **9** (one authored path per registered domain) |
 | Engine | Constitution-gated Python · static `dist/` site |
 | AI at runtime | **None required** (narrative is a gated bottom layer) |
-| CI test modules | **30** suites in `run_tests.py` (**320** `test_*` functions) |
+| CI test modules | count re-measured by `python run_tests.py` (list-count only; no confidence) |
 
 ### Domains
 
@@ -35,7 +35,7 @@ It does **not** tell you “the answer.” It shows, claim by claim:
 |-------|--------|--------|
 | **Cosmos** | `black_hole`, `cosmology`, `dark_matter`, `stars` | 10 + 16 + 18 + 12 |
 | **Planets** | `planets`, `exoplanets` | 10 + 9 |
-| **Earth** | `ocean`, `seismology` | 8 + 8 |
+| **Earth** | `ocean`, `seismology`, `polar` | 8 + 8 + 8 |
 
 *Counts are inventory from the topic registry. Re-measure after data edits with `python build.py --check`.*
 

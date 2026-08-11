@@ -309,6 +309,7 @@ TOPIC_THEMES = {
     "exoplanets": "planets",
     "ocean": "earth",
     "seismology": "earth",
+    "polar": "earth",
 }
 THEME_META = {
     "cosmos": {"title": "Cosmos", "title_zh": "宇宙"},

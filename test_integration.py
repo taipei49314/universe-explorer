@@ -58,11 +58,12 @@ class TestCrossDomainRealData:
 
     def test_graph_builder_real_data(self):
         graph = build_cross_domain_graph(TOPICS)
-        assert len(graph.nodes) == 91
+        n_claims = sum(len(t.claims) for t in TOPICS)
+        assert len(graph.nodes) == n_claims
         assert len(graph.edges) > 0
         stats = graph.to_dict()["stats"]
-        assert stats["node_count"] == 91
-        assert stats["domain_count"] == 8
+        assert stats["node_count"] == n_claims
+        assert stats["domain_count"] == len(TOPICS)
 
 
 # ---------------------------------------------------------------------------
@@ -85,7 +86,7 @@ class TestReaderRealData:
     def test_filter_all_claims(self):
         f = ClaimFilter(TOPICS)
         results = f.filter(FilterCriteria())
-        assert len(results) == 91
+        assert len(results) == sum(len(t.claims) for t in TOPICS)
 
     def test_filter_by_domain(self):
         f = ClaimFilter(TOPICS)
@@ -132,8 +133,8 @@ class TestDualAxisRealData:
     def test_svg_contains_all_claims(self):
         svg = generate_dual_axis_svg(TOPICS)
         assert "<svg" in svg
-        # Should have 91 circles
-        assert svg.count("<circle") == 91
+        # One circle per claim
+        assert svg.count("<circle") == sum(len(t.claims) for t in TOPICS)
 
 
 # ---------------------------------------------------------------------------

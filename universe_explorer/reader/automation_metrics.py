@@ -117,6 +117,7 @@ EXPECTED_OUTPUTS = [
     ("planets.html", True),
     ("ocean.html", True),
     ("seismology.html", True),
+    ("polar.html", True),
 ]
 
 

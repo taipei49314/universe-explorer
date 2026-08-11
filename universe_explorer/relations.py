@@ -328,6 +328,37 @@ _AUTHORED: Tuple[Tuple[str, str, str, str], ...] = (
      "Dark-oxygen claim is abyssal nodules — not vent chemistry consensus."),
     ("amoc_weakening", "ocean_heat_uptake", "supports",
      "AMOC debates sit inside a warming, heat-absorbing ocean."),
+
+    # --- polar (Arctic / Antarctic) ---
+    ("ice_cores_record_paleoclimate", "arctic_sea_ice_multidecade_decline",
+     "boundary",
+     "Ice-core paleoclimate is the deep archive; satellite sea ice is the recent era."),
+    ("arctic_sea_ice_multidecade_decline", "arctic_ice_free_summer_imminent",
+     "supports",
+     "Multi-decade decline is the observational floor under ice-free projections — "
+     "not a license for overstated near-term certainty."),
+    ("arctic_sea_ice_multidecade_decline", "greenland_ice_sheet_losing_mass",
+     "boundary",
+     "Sea ice and ice-sheet mass loss are different Arctic cryosphere cuts."),
+    ("greenland_ice_sheet_losing_mass", "antarctic_ice_sheet_losing_mass",
+     "boundary",
+     "Greenland and Antarctic ice sheets share methods (IMBIE) but different budgets."),
+    ("antarctic_ice_sheet_losing_mass", "marine_ice_sheet_instability",
+     "supports",
+     "Continent-scale mass debates frame sector-level MISI / Thwaites questions."),
+    ("marine_ice_sheet_instability", "antarctic_sea_ice_recent_lows",
+     "boundary",
+     "Grounded ice dynamics vs seasonal sea-ice extremes — adjacent but not the same."),
+    ("permafrost_carbon_feedback", "arctic_sea_ice_multidecade_decline",
+     "boundary",
+     "Permafrost carbon is land cryosphere; sea ice is the marine Arctic surface."),
+    ("arctic_sea_ice_multidecade_decline", "ocean_heat_uptake", "boundary",
+     "Polar sea ice sits next to global ocean heat uptake — shared warming story, "
+     "different domains."),
+    ("amoc_weakening", "arctic_sea_ice_multidecade_decline", "boundary",
+     "AMOC and Arctic sea ice couple in models; bookkeeping stays domain-honest."),
+    ("greenland_ice_sheet_losing_mass", "ocean_heat_uptake", "boundary",
+     "Greenland mass loss contributes to sea level inside a heat-absorbing ocean."),
 )
 
 
@@ -615,6 +646,42 @@ _READING_PATHS: Tuple[ReadingPath, ...] = (
         guide_zh=(
             "板塊造成地震(已確立)。EEW 與誘發地震是強能力/事實。特徵地震與確定性預測"
             "vs 預報是 Competing。OEF 與 ETS 是前沿。VAN 電前兆停在推測。"
+        ),
+    ),
+    ReadingPath(
+        id="path_polar",
+        title="Poles — ice cores to ice-free ceiling",
+        title_zh="南北極 —— 冰芯到無冰天花板",
+        domain="polar",
+        steps=(
+            "ice_cores_record_paleoclimate",
+            "arctic_sea_ice_multidecade_decline",
+            "greenland_ice_sheet_losing_mass",
+            "antarctic_ice_sheet_losing_mass",
+            "marine_ice_sheet_instability",
+            "permafrost_carbon_feedback",
+            "antarctic_sea_ice_recent_lows",
+            "arctic_ice_free_summer_imminent",
+        ),
+        note=(
+            "Ice-core archive → Arctic sea ice + Greenland mass → Antarctic "
+            "mass-budget debate → MISI/Thwaites + permafrost + Antarctic sea-ice "
+            "extremes → overstated near-term ice-free certainty ceiling."
+        ),
+        note_zh=(
+            "冰芯檔案 → 北極海冰與格陵蘭質量 → 南極質量收支辯論 → MISI/Thwaites、"
+            "凍土碳與南極海冰極端 → 過度確定的近無冰天花板。"
+        ),
+        guide=(
+            "Ice cores are Established paleoclimate archive. Arctic sea ice decline "
+            "and Greenland mass loss are Strong. Antarctic continent-scale mass "
+            "partition is Competing. MISI, permafrost carbon and Antarctic sea-ice "
+            "extremes are Frontier. Near-term ice-free certainty is Speculative."
+        ),
+        guide_zh=(
+            "冰芯是已確立的古氣候檔案。北極海冰衰退與格陵蘭質量損失是強共識。"
+            "南極全洲質量分配是 Competing。MISI、凍土碳與南極海冰極端是前沿。"
+            "近無冰的過度確定停在推測。"
         ),
     ),
     ReadingPath(
