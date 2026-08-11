@@ -12,6 +12,15 @@
 
 All other domains: bugfixes and challenges only unless a critical source update lands.
 
+### v5-Q2 Sprint A (active)
+
+| Item | Value |
+|------|--------|
+| Roadmap | [`roadmap-v5-q2-editorial-os.md`](roadmap-v5-q2-editorial-os.md) |
+| Target claim | `shoes_local_H0_high` (verdict FRONTIER→STRONG, **planned accept**) |
+| Design pack | [`challenges/SPRINT-A-TARGET-shoes-local-H0.md`](challenges/SPRINT-A-TARGET-shoes-local-H0.md) |
+| Do not | Re-litigate `hawking_radiation` light; auto-resolve H0 tension claim |
+
 ## Domain shape SLA (minimum honest map)
 
 Each domain should either cover the five light layers or **explicitly note** a missing layer.
