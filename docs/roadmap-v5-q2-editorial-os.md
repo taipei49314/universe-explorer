@@ -112,11 +112,11 @@ Q3 前提：Q2 至少 **EO-1 + EO-2 綠**，且 **≥1 accept 閉環**（見 §4
 | 檢查項 | 狀態 |
 |--------|------|
 | 目標 claim 選定 | ✅ `shoes_local_H0_high`（主）；備援見 §8.4 |
-| 攻擊類型 | verdict：`FRONTIER` → `STRONG`（規劃 **accept**） |
-| GitHub issue 已開 | ⬜ Sprint A 執行步 |
-| data 編輯 + `status_history` | ⬜ 接受後 |
-| `run_tests.py` 綠 | ⬜ 接受後 |
-| `docs/challenges/YYYY-MM-DD-shoes-….md` | ⬜ 結案時 |
+| 攻擊類型 | verdict：`FRONTIER` → `STRONG`（**accept**） |
+| GitHub issue 已開 | ✅ [#5](https://github.com/taipei49314/universe-explorer/issues/5) |
+| data 編輯 + `status_history` | ✅ `cosmology.py` + zh overlay |
+| `run_tests.py` 綠 | ✅ trust_behavior 499/499 after rebuild |
+| `docs/challenges/YYYY-MM-DD-shoes-….md` | ✅ `2026-08-11-shoes-local-H0-frontier-to-strong.md` |
 
 ### 5.2 Sprint B — 預告
 
