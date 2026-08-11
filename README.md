@@ -200,7 +200,7 @@ Core promise: **anyone with a checkable argument can overturn a light.**
 2. Read `status_reason` against `STATUS_CONDITIONS` in `universe_explorer/model.py`.
 3. Recompute the evidence axis with `axes.py` rules (or read `evidence_axis` + `axis_derivation` in the JSON).
 4. Open a challenge with a checkable source:
-   - On-site form: [`challenge.html`](https://taipei49314.github.io/universe-explorer/challenge.html) (static; routes into GitHub issue templates)  
+   - On-site form: [`challenge.html`](https://taipei49314.github.io/universe-explorer/challenge.html) (static draft + links into GitHub issue templates; validates claim id and checkable refs)  
    - **[Challenge a verdict](.github/ISSUE_TEMPLATE/challenge-a-verdict.yml)** — wrong light / wrong condition / misread source  
    - **[Challenge a relation](.github/ISSUE_TEMPLATE/challenge-a-relation.yml)** — wrong or missing edge  
    - **[Report a source problem](.github/ISSUE_TEMPLATE/report-a-source-problem.yml)** — fetch / hash / mis-cite  
@@ -225,7 +225,7 @@ Full path: [`CONTRIBUTING.md`](CONTRIBUTING.md) · editorial focus: [`docs/edito
 | `dist/explore-v2.html` | Search + filter + dual-axis reader (Phase 3) |
 | `dist/explore3d.html` · `scene3d.json` | **3D explore/reason** — orbit/zoom map of all claims; cosmos/earth layers; reading paths + neighbors (no confidence scores) |
 | `dist/epistemic_map.html` · `epistemic-graph.json` | Cross-domain graph (Phase 2; shared sources + authored edges + detectors) |
-| `dist/challenge.html` | Standalone challenge form (links into GitHub issue templates) |
+| `dist/challenge.html` | Standalone challenge form (JSON draft + GitHub issue template links; claim-id / checkable-ref contract) |
 | `dist/dual-axis.svg` | Snapshot of consensus vs evidence across claims |
 | `dist/review.html` | Discovery candidate review dashboard (editorial; never auto-writes claims) |
 | `dist/zh.html` | Single-file Chinese edition |

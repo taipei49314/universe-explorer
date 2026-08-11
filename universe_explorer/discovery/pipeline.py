@@ -20,8 +20,10 @@ Usage:
 from __future__ import annotations
 
 import json
+import socket
+import urllib.error
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Set
 
 from .adapters.arxiv_adapter import ArxivAdapter
 from .adapters.base import SourceAdapter
@@ -39,11 +41,28 @@ ADAPTERS: Dict[str, SourceAdapter] = {
 }
 
 
+class DiscoveryError(Exception):
+    """User-facing discovery failure (bad args or network). Not a traceback path."""
+
+    def __init__(self, message: str):
+        super().__init__(message)
+        self.message = message
+
+
 def get_adapter(name: str) -> SourceAdapter:
     if name not in ADAPTERS:
-        raise ValueError(f"unknown adapter: {name!r} (available: "
-                         f"{sorted(ADAPTERS)})")
+        raise DiscoveryError(
+            f"unknown adapter: {name!r} (available: {sorted(ADAPTERS)})"
+        )
     return ADAPTERS[name]
+
+
+def _known_topic_ids() -> Set[str]:
+    try:
+        from ..data.registry import TOPICS
+        return {t.id for t in TOPICS}
+    except Exception:
+        return set()
 
 
 def run_pipeline(
@@ -59,12 +78,39 @@ def run_pipeline(
       - query, topic_id, adapter
       - results: list of {candidate, precheck}
       - review_path: path to generated review.html
+
+    Raises:
+        DiscoveryError: unknown topic/adapter, or network/search failure.
+            Callers (CLI) should print ``e.message`` and exit 1 — never dump
+            a raw stack to a casual user for expected failures.
     """
+    # Validate topic before any network call.
+    known = _known_topic_ids()
+    if known and topic_id not in known:
+        raise DiscoveryError(
+            f"unknown topic: {topic_id!r} (available: {sorted(known)})"
+        )
+
     adapter = get_adapter(adapter_name)
     print(f"[pipeline] query={query!r} topic={topic_id} adapter={adapter_name}")
 
-    # 1. Search.
-    raw_results = adapter.search(query, max_results=max_results)
+    # 1. Search (network failures become DiscoveryError, not traceback).
+    try:
+        raw_results = adapter.search(query, max_results=max_results)
+    except DiscoveryError:
+        raise
+    except (urllib.error.URLError, socket.timeout, TimeoutError, OSError) as e:
+        raise DiscoveryError(
+            f"discovery search failed ({adapter_name}): {e}. "
+            "Check network access to the source API, or retry later. "
+            "No candidates were written."
+        ) from e
+    except Exception as e:
+        raise DiscoveryError(
+            f"discovery search failed ({adapter_name}): {type(e).__name__}: {e}. "
+            "No candidates were written."
+        ) from e
+
     if not raw_results:
         print("[pipeline] no results — nothing to do")
         return {
@@ -127,6 +173,8 @@ def _make_claim_id(title: str, topic_id: str, index: int) -> str:
 
 if __name__ == "__main__":
     import argparse
+    import sys
+
     parser = argparse.ArgumentParser(
         description="Discovery pipeline: search → candidates → precheck → review")
     parser.add_argument("query", help="Search query")
@@ -139,10 +187,14 @@ if __name__ == "__main__":
                         help="Claim id prefix (auto-generated if empty)")
     args = parser.parse_args()
 
-    run_pipeline(
-        query=args.query,
-        topic_id=args.topic,
-        adapter_name=args.adapter,
-        max_results=args.max,
-        claim_id_prefix=args.prefix,
-    )
+    try:
+        run_pipeline(
+            query=args.query,
+            topic_id=args.topic,
+            adapter_name=args.adapter,
+            max_results=args.max,
+            claim_id_prefix=args.prefix,
+        )
+    except DiscoveryError as e:
+        print(f"error: {e.message}", file=sys.stderr)
+        raise SystemExit(1)
