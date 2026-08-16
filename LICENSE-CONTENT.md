@@ -30,3 +30,10 @@ Notes:
   at all. That is the point of the system.
 
 The CODE is separately licensed under MIT; see LICENSE.
+
+## Code license
+
+The CODE of Universe Explorer (the engine under `universe_explorer/*.py`,
+dataops, build/render tooling, and tests) is licensed under MIT — see
+[`LICENSE`](LICENSE). This split was previously described by a scope note
+inside `LICENSE` itself; it now lives here so the MIT text stays canonical.
