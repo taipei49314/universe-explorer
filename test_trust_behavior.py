@@ -115,13 +115,21 @@ def test_v5_overturn_loop_measurements_pass():
 
 def test_challenge_record_names_issue_and_claim():
     """Blind spot: empty challenge markdown must not satisfy the measure."""
-    records = list(Path("docs/challenges").glob("*.md"))
+    # glob() order is filesystem-dependent; records[0] picked an arbitrary
+    # file once a second record landed. Check every completed (date-prefixed)
+    # record instead — targets/plans without a verdict are not records.
+    records = sorted(Path("docs/challenges").glob("*.md"))
     records = [p for p in records if p.name.lower() not in ("readme.md", "template.md")]
     assert len(records) >= 1
-    text = records[0].read_text(encoding="utf-8")
-    assert "hawking_radiation" in text
-    assert "issues/" in text or "issue" in text.lower()
-    assert "Reject" in text or "reject" in text or "Accept" in text
+    completed = [p for p in records if p.name[:1].isdigit()]
+    assert completed, [p.name for p in records]
+    for p in completed:
+        text = p.read_text(encoding="utf-8")
+        assert "issues/" in text or "issue" in text.lower(), p.name
+        assert "Reject" in text or "reject" in text or "Accept" in text, p.name
+    hawking = [p for p in completed if "hawking" in p.name.lower()]
+    assert hawking, [p.name for p in completed]
+    assert "hawking_radiation" in hawking[0].read_text(encoding="utf-8")
 
 
 def test_cli_exit_zero_on_live():
