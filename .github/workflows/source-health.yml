@@ -21,8 +21,8 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.11"
       - name: Run health check
@@ -30,7 +30,8 @@ jobs:
         run: |
           set +e
           python -m universe_explorer.dataops.source_health | tee health.log
-          echo "code=$?" >> "$GITHUB_OUTPUT"
+          code=${PIPESTATUS[0]}
+          echo "code=$code" >> "$GITHUB_OUTPUT"
       - name: Open issue on new findings
         if: steps.health.outputs.code == '1'
         env:
